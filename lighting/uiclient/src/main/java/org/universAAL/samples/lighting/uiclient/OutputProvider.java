@@ -79,7 +79,6 @@ public class OutputProvider extends OutputPublisher {
 		//mainDialog = initMainDialog();
 	}
 
-	@Override
 	public void communicationChannelBroken() {
 		// TODO Auto-generated method stub
 	}
@@ -98,7 +97,7 @@ public class OutputProvider extends OutputPublisher {
 						PROP_SELECTED_LAMP_INDEX,
 						TypeMapper.getDatatypeURI(Integer.class),
 						1, 1)),
-				0);
+				new Integer(0));
 		for (int i=0; i<devices.length; i++)
 			radio.addChoiceItem(
 				new ChoiceItem(devices[i].getURI(),

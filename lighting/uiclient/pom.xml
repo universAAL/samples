@@ -38,7 +38,7 @@
     <dependency>
       <groupId>org.apache.felix</groupId>
       <artifactId>org.apache.felix.log</artifactId>
-			<version>0.9.0-SNAPSHOT</version>
+			<version>1.0.0</version>
     </dependency>
     <!-- universAAL non-ui -->
     

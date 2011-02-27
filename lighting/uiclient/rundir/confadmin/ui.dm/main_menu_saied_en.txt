@@ -1,0 +1,1 @@
+/Lighting UI Client|http://www.igd.fraunhofer.de|urn:samples.lighting.uiclient:ServiceProvider#Main

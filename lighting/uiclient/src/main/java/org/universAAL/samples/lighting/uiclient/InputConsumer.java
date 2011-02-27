@@ -31,17 +31,14 @@ public class InputConsumer extends InputSubscriber {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public void communicationChannelBroken() {
 		// TODO Auto-generated method stub
 	}
 
-	@Override
 	public void dialogAborted(String arg0) {
 		// TODO Auto-generated method stub
 	}
 
-	@Override
 	public void handleInputEvent(InputEvent ie) {
 		if (ie != null) {
 			// Cancel Dialog, go back to main dialog
@@ -74,7 +71,7 @@ public class InputConsumer extends InputSubscriber {
 						scaleval = (String)o;
 						try {
 							int scale = Integer.parseInt(scaleval);
-							LightingConsumer.dimToValue(lampURI, scale);
+							LightingConsumer.dimToValue(lampURI, new Integer(scale));
 						} catch (NumberFormatException e) {}
 					}
 				}
