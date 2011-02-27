@@ -20,13 +20,13 @@
 package org.universAAL.samples.lighting.uiclient;
 
 import org.osgi.framework.BundleContext;
-import org.universAAL.middleware.io.rdf.Form;
 import org.universAAL.middleware.service.CallStatus;
 import org.universAAL.middleware.service.ServiceCall;
 import org.universAAL.middleware.service.ServiceCallee;
 import org.universAAL.middleware.service.ServiceResponse;
 import org.universAAL.middleware.service.owls.profile.ServiceProfile;
 import org.universAAL.middleware.service.owl.InitialServiceDialog;
+import org.universAAL.ontology.lighting.Lighting;
 
 /**
  * @author mtazari
@@ -35,14 +35,13 @@ import org.universAAL.middleware.service.owl.InitialServiceDialog;
 public class ServiceProvider extends ServiceCallee {
 
 	public static final String UI_LIGHTING_CLIENT_NAMESPACE = Activator.CLIENT_LIGHTING_UI_NAMESPACE +"ServiceProvider#";
-	public static final String CLASS_URI = UI_LIGHTING_CLIENT_NAMESPACE + "Main";
-	public static final String START_URI = UI_LIGHTING_CLIENT_NAMESPACE + "MainMenu";
+	public static final String START_URI = UI_LIGHTING_CLIENT_NAMESPACE + "MainDialog";
 
 	
 	ServiceProvider(BundleContext context) {
 		super(context, new ServiceProfile[]{
 				InitialServiceDialog.createInitialDialogProfile(
-						CLASS_URI, //Lighting.MY_URI,
+						Lighting.MY_URI,
 						"http://www.igd.fraunhofer.de",
 						"Sample Lighting UI Client",
 						START_URI)
@@ -65,10 +64,9 @@ public class ServiceProvider extends ServiceCallee {
 			if (operation != null
 					&& operation.startsWith(START_URI)) {
 				System.out.println("-- Lighting UI Client Main Menu --");
-				Form dialog = Activator.outputProvider.startMainDialog();
+				Activator.outputProvider.startMainDialog();
 				
 				ServiceResponse sr = new ServiceResponse(CallStatus.succeeded);
-//				sr.addOutput(new ProcessOutput(DialogService.OUTPUT_STARTED_DIALOG, dialog));
 				return sr;
 			}
 		}
