@@ -41,23 +41,19 @@ public class InputConsumer extends InputSubscriber {
 
 	public void handleInputEvent(InputEvent ie) {
 		if (ie != null) {
-			// Cancel Dialog, go back to main dialog
 			if (OutputProvider.SUBMISSION_EXIT.equals(ie.getSubmissionID()))
-				return;
+				return;		// Cancel Dialog, go back to main dialog
 
-			Object o;
-			
 			// get lamp index
 			int lampindex = -1;
 			String lampURI = null;
-			o = ie.getUserInput(new String[]{OutputProvider.PROP_SELECTED_LAMP_INDEX});
+			Object o = ie.getUserInput(new String[]{OutputProvider.PROP_SELECTED_LAMP_INDEX});
 			if (o instanceof Integer) {
 				lampindex = ((Integer) o).intValue();
 				lampURI = Activator.outputProvider.getDeviceURI(lampindex);
 			}
 			
 			if (lampURI != null) {
-
 				// button
 				if (OutputProvider.SUBMISSION_ON.equals(ie.getSubmissionID())) {
 					LightingConsumer.turnOn(lampURI);
@@ -65,10 +61,9 @@ public class InputConsumer extends InputSubscriber {
 					LightingConsumer.turnOff(lampURI);
 				} else if (OutputProvider.SUBMISSION_SCALE.equals(ie.getSubmissionID())) {
 					// get scale value
-					String scaleval = null;
 					o = ie.getUserInput(new String[]{OutputProvider.PROP_SCALE_VALUE});
 					if (o instanceof String) {
-						scaleval = (String)o;
+						String scaleval = (String)o;
 						try {
 							int scale = Integer.parseInt(scaleval);
 							LightingConsumer.dimToValue(lampURI, new Integer(scale));

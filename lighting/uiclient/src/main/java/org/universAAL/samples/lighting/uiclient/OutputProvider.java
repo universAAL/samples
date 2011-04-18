@@ -86,7 +86,7 @@ public class OutputProvider extends OutputPublisher {
 	private Form initMainDialog() {
 		Form f = Form.newDialog("Sample Lighting UI: Lamp Controller", new Resource());
 		devices = LightingConsumer.getControlledLamps();		
-		Select1 radio = new Select1(f.getIOControls(),
+		Select1 select = new Select1(f.getIOControls(),
 				new Label("Lamps", null),
 				PROP_PATH_LAMP_INDEX,
 				OrderingRestriction.newOrderingRestriction(
@@ -99,7 +99,7 @@ public class OutputProvider extends OutputPublisher {
 						1, 1)),
 				new Integer(0));
 		for (int i=0; i<devices.length; i++)
-			radio.addChoiceItem(
+			select.addChoiceItem(
 				new ChoiceItem(devices[i].getURI(),
 				null,
 				new Integer(i)));
