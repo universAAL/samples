@@ -77,6 +77,16 @@
       <artifactId>ont.profile</artifactId>
       <version>0.3.0-SNAPSHOT</version>
     </dependency>
+    <dependency>
+			<groupId>org.universAAL.support</groupId>
+      <artifactId>jena.osgi</artifactId>
+      <version>0.3.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+			<groupId>org.universAAL.context</groupId>
+      <artifactId>ctxt.jena.converter</artifactId>
+      <version>0.3.0-SNAPSHOT</version>
+    </dependency>
     
     
     <!-- <dependency>
