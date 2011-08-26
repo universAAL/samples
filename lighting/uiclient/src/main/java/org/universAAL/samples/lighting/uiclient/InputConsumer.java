@@ -19,14 +19,14 @@
  */
 package org.universAAL.samples.lighting.uiclient;
 
-import org.osgi.framework.BundleContext;
+import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.input.InputEvent;
 import org.universAAL.middleware.input.InputSubscriber;
 
 
 public class InputConsumer extends InputSubscriber {
 
-	protected InputConsumer(BundleContext context) {
+	protected InputConsumer(ModuleContext context) {
 		super(context);
 		// TODO Auto-generated constructor stub
 	}
@@ -50,7 +50,7 @@ public class InputConsumer extends InputSubscriber {
 			Object o = ie.getUserInput(new String[]{OutputProvider.PROP_SELECTED_LAMP_INDEX});
 			if (o instanceof Integer) {
 				lampindex = ((Integer) o).intValue();
-				lampURI = Activator.outputProvider.getDeviceURI(lampindex);
+				lampURI = SharedResources.outputProvider.getDeviceURI(lampindex);
 			}
 			
 			if (lampURI != null) {
@@ -72,7 +72,7 @@ public class InputConsumer extends InputSubscriber {
 				}
 			}
 		}
-		Activator.outputProvider.startMainDialog();
+		SharedResources.outputProvider.startMainDialog();
 	}
 
 	void subscribe(String dialogID) {

@@ -21,9 +21,9 @@ package org.universAAL.samples.lighting.uiclient;
 
 import java.util.Locale;
 
-import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.rdf.Resource;
 import org.universAAL.middleware.rdf.TypeMapper;
+import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.io.rdf.ChoiceItem;
 import org.universAAL.middleware.io.rdf.Form;
 import org.universAAL.middleware.io.rdf.Label;
@@ -45,7 +45,7 @@ import org.universAAL.middleware.io.rdf.InputField;
  */
 public class OutputProvider extends OutputPublisher {
 
-	static final String OUTPUT_NAMESPACE = Activator.CLIENT_LIGHTING_UI_NAMESPACE+"OutputProvider#";
+	static final String OUTPUT_NAMESPACE = SharedResources.CLIENT_LIGHTING_UI_NAMESPACE+"OutputProvider#";
 	
 	
 	static final String SUBMISSION_ON				= OUTPUT_NAMESPACE+"on";
@@ -74,7 +74,7 @@ public class OutputProvider extends OutputPublisher {
 	// may have changed in the meantime
 	private Device[] devices = null;
 	
-	protected OutputProvider(BundleContext context) {
+	protected OutputProvider(ModuleContext context) {
 		super(context);
 		//mainDialog = initMainDialog();
 	}
@@ -121,10 +121,10 @@ public class OutputProvider extends OutputPublisher {
 		if (mainDialog == null)
 			mainDialog = initMainDialog();
 		OutputEvent out = new OutputEvent(
-				Activator.testUser, mainDialog,
+				SharedResources.testUser, mainDialog,
 				LevelRating.middle, Locale.ENGLISH,
 				PrivacyLevel.insensible);
-		Activator.inputConsumer.subscribe(mainDialog.getDialogID());
+		SharedResources.inputConsumer.subscribe(mainDialog.getDialogID());
 		publish(out);
 		return mainDialog;
 	}

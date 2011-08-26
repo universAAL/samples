@@ -19,7 +19,7 @@
  */
 package org.universAAL.samples.lighting.uiclient;
 
-import org.osgi.framework.BundleContext;
+import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.service.CallStatus;
 import org.universAAL.middleware.service.ServiceCall;
 import org.universAAL.middleware.service.ServiceCallee;
@@ -34,11 +34,11 @@ import org.universAAL.ontology.lighting.Lighting;
  */
 public class ServiceProvider extends ServiceCallee {
 
-	public static final String UI_LIGHTING_CLIENT_NAMESPACE = Activator.CLIENT_LIGHTING_UI_NAMESPACE +"ServiceProvider#";
+	public static final String UI_LIGHTING_CLIENT_NAMESPACE = SharedResources.CLIENT_LIGHTING_UI_NAMESPACE +"ServiceProvider#";
 	public static final String START_URI = UI_LIGHTING_CLIENT_NAMESPACE + "MainDialog";
 
 	
-	ServiceProvider(BundleContext context) {
+	ServiceProvider(ModuleContext context) {
 		super(context, new ServiceProfile[]{
 				InitialServiceDialog.createInitialDialogProfile(
 						Lighting.MY_URI,
@@ -64,7 +64,7 @@ public class ServiceProvider extends ServiceCallee {
 			if (operation != null
 					&& operation.startsWith(START_URI)) {
 				System.out.println("-- Lighting UI Client Main Menu --");
-				Activator.outputProvider.startMainDialog();
+				SharedResources.outputProvider.startMainDialog();
 				
 				ServiceResponse sr = new ServiceResponse(CallStatus.succeeded);
 				return sr;

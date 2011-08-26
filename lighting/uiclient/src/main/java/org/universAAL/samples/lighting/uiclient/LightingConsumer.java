@@ -23,8 +23,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.osgi.framework.BundleContext;
-import org.osgi.service.log.LogService;
+import org.universAAL.middleware.container.ModuleContext;
+import org.universAAL.middleware.container.utils.LogUtils;
 import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.middleware.context.ContextEventPattern;
 import org.universAAL.middleware.context.ContextSubscriber;
@@ -62,7 +62,7 @@ class LightingConsumer extends ContextSubscriber {
 		return new ContextEventPattern[] {cep};
 	}
 	
-	LightingConsumer(BundleContext context){
+	LightingConsumer(ModuleContext context){
 		// the constructor register us to the bus
 		super(context,getContextSubscriptionParams());
 
@@ -272,12 +272,14 @@ class LightingConsumer extends ContextSubscriber {
 	 * @see org.persona.middleware.context.ContextSubscriber#handleContextEvent(org.persona.middleware.context.ContextEvent)
 	 */
 	public void handleContextEvent(ContextEvent event) {
-		Activator.log.log(LogService.LOG_INFO,
+	    LogUtils.logInfo(SharedResources.moduleContext, this.getClass(), "handleContextEvent",
+		    new Object[] {
 				"Received context event:\n" +
 				"    Subject     ="+event.getSubjectURI()+"\n" +
 				"    Subject type="+event.getSubjectTypeURI()+"\n" +
 				"    Predicate   ="+event.getRDFPredicate()+"\n" +
-				"    Object      ="+event.getRDFObject());
+				"    Object      ="+event.getRDFObject() },
+				null);
 	}
 	
 
@@ -286,7 +288,5 @@ class LightingConsumer extends ContextSubscriber {
 	 */
 	public void communicationChannelBroken() {
 		// TODO Auto-generated method stub
-
 	}
-
 }

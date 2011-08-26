@@ -19,19 +19,17 @@
  */
 package org.universAAL.samples.lighting.uiclient;
 
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
-import org.osgi.service.log.LogService;
+import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.util.Constants;
 import org.universAAL.ontology.profile.ElderlyUser;
 
 
-public class Activator implements BundleActivator {
+public class SharedResources {
 
 	public static final String CLIENT_LIGHTING_UI_NAMESPACE = "urn:samples.lighting.uiclient:";
-
 	
-	static LogService log;
+	public static ModuleContext moduleContext;
+	
 	static ServiceProvider serviceProvider;
 	static OutputProvider outputProvider;
 	static InputConsumer inputConsumer;
@@ -44,24 +42,15 @@ public class Activator implements BundleActivator {
 	 * (non-Javadoc)
 	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
 	 */
-	public void start(final BundleContext context) throws Exception {
-		log = (LogService) context.getService(
-				context.getServiceReference(LogService.class.getName()));
+	public void start() throws Exception {
 		new Thread() {
 			public void run() {
-				new LightingConsumer(context);
+				new LightingConsumer(moduleContext);
 
-				Activator.serviceProvider = new ServiceProvider(context);
-				Activator.outputProvider = new OutputProvider(context);
-				Activator.inputConsumer = new InputConsumer(context);
+				SharedResources.serviceProvider = new ServiceProvider(moduleContext);
+				SharedResources.outputProvider = new OutputProvider(moduleContext);
+				SharedResources.inputConsumer = new InputConsumer(moduleContext);
 			}
 		}.start();
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
-	 */
-	public void stop(BundleContext context) throws Exception {
 	}
 }
