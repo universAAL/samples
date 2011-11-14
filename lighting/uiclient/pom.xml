@@ -7,41 +7,37 @@
 		<version>1.0.0</version>
 		<relativePath>../../../../middleware/trunk/pom/pom.xml</relativePath>
   </parent> -->
-  
-  <parent>
-		<groupId>org.universAAL.ui</groupId>
-		<artifactId>ui.pom</artifactId>
-		<version>1.0.0</version>
-		<relativePath>../../../../uaal_ui/trunk/pom/pom.xml</relativePath>
-  </parent>
-  
-  <packaging>bundle</packaging>
-  <groupId>org.universAAL.samples</groupId>
-  <artifactId>smp.lighting.uiclient</artifactId>  
-  <version>0.1.1-SNAPSHOT</version>
-  <name>Lighting UI Client</name>
-  <description>A client using lighting services based on the corresponding domain ontology and interaction based on the dialog package</description>
-  <url/>
 
-  <dependencies>
-    <!-- non-universAAL -->
-    <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.osgi.core</artifactId>
-      <version>1.0.1</version>
-      <scope>provided</scope>
-    </dependency>
-    <!-- <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.osgi.compendium</artifactId>
-    </dependency> -->
-    <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.apache.felix.log</artifactId>
+	<parent>
+		<groupId>org.universAAL.support</groupId>
+		<artifactId>support.pom</artifactId>
+		<version>0.0.1</version>
+		<relativePath>../../../pom/pom.xml</relativePath>
+	</parent>
+
+	<packaging>bundle</packaging>
+	<groupId>org.universAAL.samples</groupId>
+	<artifactId>smp.lighting.uiclient</artifactId>
+	<version>0.1.1-SNAPSHOT</version>
+	<name>Lighting UI Client</name>
+	<description>A client using lighting services based on the corresponding domain ontology and interaction based on the dialog package</description>
+	<url />
+
+	<dependencies>
+		<!-- non-universAAL -->
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+		</dependency>
+		<!-- <dependency> <groupId>org.apache.felix</groupId> <artifactId>org.osgi.compendium</artifactId> 
+			</dependency> -->
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.log</artifactId>
 			<version>1.0.0</version>
-    </dependency>
-    <!-- universAAL non-ui -->
-    
+		</dependency>
+		<!-- universAAL non-ui -->
+
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.data.representation</artifactId>
@@ -55,7 +51,7 @@
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.bus.io</artifactId>
-      <version>0.3.1-SNAPSHOT</version>
+			<version>0.3.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
@@ -72,21 +68,21 @@
 			<artifactId>ont.lighting</artifactId>
 			<version>0.2.1-SNAPSHOT</version>
 		</dependency>
-    <dependency>
+		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
-      <artifactId>ont.profile</artifactId>
-      <version>0.3.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
+			<artifactId>ont.profile</artifactId>
+			<version>0.3.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.universAAL.support</groupId>
-      <artifactId>jena.osgi</artifactId>
-      <version>0.3.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
+			<artifactId>jena.osgi</artifactId>
+			<version>0.3.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.universAAL.context</groupId>
-      <artifactId>ctxt.jena.converter</artifactId>
-      <version>0.3.1-SNAPSHOT</version>
-    </dependency>
+			<artifactId>ctxt.jena.converter</artifactId>
+			<version>0.3.1-SNAPSHOT</version>
+		</dependency>
     
     
     <!-- <dependency>
@@ -131,24 +127,25 @@
       <artifactId>ui.handler.gui</artifactId>
       <version>0.1.1-SNAPSHOT</version>
     </dependency>-->
-  </dependencies>
+	</dependencies>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <extensions>true</extensions>
-        <configuration>
-          <instructions>
-            <Bundle-Name>${project.name}</Bundle-Name>
-            <Bundle-Activator>org.universAAL.samples.lighting.uiclient.osgi.Activator</Bundle-Activator>
-            <Bundle-Description>${project.description}</Bundle-Description>
-            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-            <Private-Package>org.universAAL.samples.lighting.uiclient, org.universAAL.samples.lighting.uiclient.osgi</Private-Package>
-          </instructions>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Name>${project.name}</Bundle-Name>
+						<Bundle-Activator>org.universAAL.samples.lighting.uiclient.osgi.Activator</Bundle-Activator>
+						<Bundle-Description>${project.description}</Bundle-Description>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Private-Package>org.universAAL.samples.lighting.uiclient,
+							org.universAAL.samples.lighting.uiclient.osgi</Private-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
