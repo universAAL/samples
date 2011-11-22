@@ -1,1 +1,0 @@
-/Lighting UI Client|http://www.igd.fraunhofer.de|http://ontology.persona.ima.igd.fhg.de/Lighting.owl#Lighting
