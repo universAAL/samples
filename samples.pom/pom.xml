@@ -5,7 +5,6 @@
 		<artifactId>support.pom</artifactId>
 		<groupId>org.universAAL.support</groupId>
 		<version>0.0.1</version>
-		<relativePath>../../pom</relativePath>
 	</parent>
 	<groupId>org.universAAL.support.samples</groupId>
 	<artifactId>samples.pom</artifactId>
