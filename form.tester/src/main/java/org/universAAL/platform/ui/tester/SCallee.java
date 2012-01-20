@@ -1,8 +1,8 @@
 package org.universAAL.platform.ui.tester;
 
-import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.service.CallStatus;
 import org.universAAL.middleware.service.ServiceCall;
 import org.universAAL.middleware.service.ServiceCallee;
@@ -18,11 +18,11 @@ public class SCallee extends ServiceCallee {
 			CallStatus.serviceSpecificFailure);
 	private final static Logger log = LoggerFactory.getLogger(SCallee.class);
 
-	public SCallee(BundleContext context) {
+	public SCallee(ModuleContext context) {
 		super(context, getProfiles());
 	}
 
-	protected SCallee(BundleContext context, ServiceProfile[] realizedServices) {
+	protected SCallee(ModuleContext context, ServiceProfile[] realizedServices) {
 		super(context, realizedServices);
 		log.debug("Registered the SCallee");
 	}

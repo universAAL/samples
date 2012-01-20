@@ -2,11 +2,22 @@ package org.universAAL.platform.ui.tester;
 
 import java.util.Locale;
 
-import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.io.owl.PrivacyLevel;
-import org.universAAL.middleware.io.rdf.*;
+import org.universAAL.middleware.io.rdf.Form;
+import org.universAAL.middleware.io.rdf.Group;
+import org.universAAL.middleware.io.rdf.InputField;
+import org.universAAL.middleware.io.rdf.Label;
+import org.universAAL.middleware.io.rdf.MediaObject;
+import org.universAAL.middleware.io.rdf.Range;
+import org.universAAL.middleware.io.rdf.Repeat;
+import org.universAAL.middleware.io.rdf.Select;
+import org.universAAL.middleware.io.rdf.Select1;
+import org.universAAL.middleware.io.rdf.SimpleOutput;
+import org.universAAL.middleware.io.rdf.Submit;
+import org.universAAL.middleware.io.rdf.TextArea;
 import org.universAAL.middleware.output.OutputEvent;
 import org.universAAL.middleware.output.OutputPublisher;
 import org.universAAL.middleware.owl.OrderingRestriction;
@@ -21,7 +32,7 @@ public class OPublisher extends OutputPublisher {
 
 	private final static Logger log = LoggerFactory.getLogger(OPublisher.class);
 
-	protected OPublisher(BundleContext context) {
+	protected OPublisher(ModuleContext context) {
 		super(context);
 		// TODO Auto-generated constructor stub
 	}

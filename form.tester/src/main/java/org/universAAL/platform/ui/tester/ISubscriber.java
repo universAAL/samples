@@ -1,8 +1,8 @@
 package org.universAAL.platform.ui.tester;
 
-import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.input.InputEvent;
 import org.universAAL.middleware.input.InputSubscriber;
 import org.universAAL.ontology.profile.User;
@@ -11,7 +11,7 @@ public class ISubscriber extends InputSubscriber {
 	private final static Logger log = LoggerFactory
 			.getLogger(ISubscriber.class);
 
-	protected ISubscriber(BundleContext context) {
+	protected ISubscriber(ModuleContext context) {
 		super(context);
 		// TODO Auto-generated constructor stub
 	}
