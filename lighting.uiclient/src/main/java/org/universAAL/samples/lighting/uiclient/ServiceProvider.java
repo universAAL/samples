@@ -24,52 +24,49 @@ import org.universAAL.middleware.service.CallStatus;
 import org.universAAL.middleware.service.ServiceCall;
 import org.universAAL.middleware.service.ServiceCallee;
 import org.universAAL.middleware.service.ServiceResponse;
-import org.universAAL.middleware.service.owls.profile.ServiceProfile;
 import org.universAAL.middleware.service.owl.InitialServiceDialog;
+import org.universAAL.middleware.service.owls.profile.ServiceProfile;
 import org.universAAL.ontology.lighting.Lighting;
 
 /**
  * @author mtazari
- *
+ * 
  */
 public class ServiceProvider extends ServiceCallee {
 
-	public static final String UI_LIGHTING_CLIENT_NAMESPACE = SharedResources.CLIENT_LIGHTING_UI_NAMESPACE +"ServiceProvider#";
-	public static final String START_URI = UI_LIGHTING_CLIENT_NAMESPACE + "MainDialog";
+    public static final String UI_LIGHTING_CLIENT_NAMESPACE = SharedResources.CLIENT_LIGHTING_UI_NAMESPACE
+	    + "ServiceProvider#";
+    public static final String START_URI = UI_LIGHTING_CLIENT_NAMESPACE
+	    + "MainDialog";
 
-	
-	ServiceProvider(ModuleContext context) {
-		super(context, new ServiceProfile[]{
-				InitialServiceDialog.createInitialDialogProfile(
-						Lighting.MY_URI,
-						"http://www.igd.fraunhofer.de",
-						"Sample Lighting UI Client",
-						START_URI)
-		});
-	}
+    ServiceProvider(ModuleContext mc) {
+	super(mc, new ServiceProfile[] { InitialServiceDialog
+		.createInitialDialogProfile(Lighting.MY_URI,
+			"http://www.igd.fraunhofer.de",
+			"Sample Lighting UI Client", START_URI) });
+    }
 
-	/**
-	 * @see org.persona.middleware.service.ServiceCallee#communicationChannelBroken()
-	 */
-	public void communicationChannelBroken() {
-		// TODO Auto-generated method stub
-	}
+    /**
+     * @see org.persona.middleware.service.ServiceCallee#communicationChannelBroken()
+     */
+    public void communicationChannelBroken() {
+	// TODO Auto-generated method stub
+    }
 
-	/**
-	 * @see org.persona.middleware.service.ServiceCallee#handleCall(org.persona.middleware.service.ServiceCall)
-	 */
-	public ServiceResponse handleCall(ServiceCall call) {
-		if (call != null) {
-			String operation = call.getProcessURI();
-			if (operation != null
-					&& operation.startsWith(START_URI)) {
-				System.out.println("-- Lighting UI Client Main Menu --");
-				SharedResources.outputProvider.startMainDialog();
-				
-				ServiceResponse sr = new ServiceResponse(CallStatus.succeeded);
-				return sr;
-			}
-		}
-		return null;
+    /**
+     * @see org.persona.middleware.service.ServiceCallee#handleCall(org.persona.middleware.service.ServiceCall)
+     */
+    public ServiceResponse handleCall(ServiceCall call) {
+	if (call != null) {
+	    String operation = call.getProcessURI();
+	    if (operation != null && operation.startsWith(START_URI)) {
+		System.out.println("-- Lighting UI Client Main Menu --");
+		SharedResources.uIProvider.startMainDialog();
+
+		ServiceResponse sr = new ServiceResponse(CallStatus.succeeded);
+		return sr;
+	    }
 	}
+	return null;
+    }
 }

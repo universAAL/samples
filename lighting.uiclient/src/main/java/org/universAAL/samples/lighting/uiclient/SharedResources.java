@@ -23,34 +23,34 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.util.Constants;
 import org.universAAL.ontology.profile.ElderlyUser;
 
-
 public class SharedResources {
 
-	public static final String CLIENT_LIGHTING_UI_NAMESPACE = "urn:samples.lighting.uiclient:";
-	
-	public static ModuleContext moduleContext;
-	
-	static ServiceProvider serviceProvider;
-	static OutputProvider outputProvider;
-	static InputConsumer inputConsumer;
+    public static final String CLIENT_LIGHTING_UI_NAMESPACE = "urn:samples.lighting.uiclient:";
 
-	static final ElderlyUser testUser = 
-		new ElderlyUser(Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX + "saied");
+    public static ModuleContext moduleContext;
 
-	
-	/*
-	 * (non-Javadoc)
-	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
-	 */
-	public void start() throws Exception {
-		new Thread() {
-			public void run() {
-				new LightingConsumer(moduleContext);
+    static ServiceProvider serviceProvider;
+    static UIProvider uIProvider;
 
-				SharedResources.serviceProvider = new ServiceProvider(moduleContext);
-				SharedResources.outputProvider = new OutputProvider(moduleContext);
-				SharedResources.inputConsumer = new InputConsumer(moduleContext);
-			}
-		}.start();
-	}
+    static final ElderlyUser testUser = new ElderlyUser(
+	    Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX + "saied");
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext
+     * )
+     */
+    public void start() throws Exception {
+	new Thread() {
+	    public void run() {
+		new LightingConsumer(moduleContext);
+
+		SharedResources.serviceProvider = new ServiceProvider(
+			moduleContext);
+		SharedResources.uIProvider = new UIProvider(moduleContext);
+	    }
+	}.start();
+    }
 }

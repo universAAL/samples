@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-		<groupId>org.universAAL.support.samples</groupId>
-		<artifactId>samples.pom</artifactId>
-		<version>0.1.0-SNAPSHOT</version>
-		<relativePath>../samples.pom/pom.xml</relativePath>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.universAAL.samples</groupId>
+		<artifactId>smp.pom</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 
 	<packaging>bundle</packaging>
 	<groupId>org.universAAL.samples</groupId>
 	<artifactId>smp.lighting.uiclient</artifactId>
-	<version>0.1.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<name>Lighting UI Client</name>
 	<description>A client using lighting services based on the corresponding domain ontology and interaction based on the dialog package</description>
 	<url />
@@ -21,105 +22,61 @@
 		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.osgi.core</artifactId>
-		</dependency>
-		<!-- <dependency> <groupId>org.apache.felix</groupId> <artifactId>org.osgi.compendium</artifactId> 
-			</dependency> -->
-		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.apache.felix.log</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<!-- universAAL non-ui -->
 
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.data.representation</artifactId>
-			<version>0.3.1-SNAPSHOT</version>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.bus.context</artifactId>
-			<version>0.3.1-SNAPSHOT</version>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.bus.io</artifactId>
-			<version>0.3.1-SNAPSHOT</version>
+			<artifactId>mw.bus.ui</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.bus.service</artifactId>
-			<version>0.3.1-SNAPSHOT</version>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
 			<artifactId>ont.phWorld</artifactId>
-			<version>0.2.3-SNAPSHOT</version>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
 			<artifactId>ont.lighting</artifactId>
-			<version>0.2.1-SNAPSHOT</version>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
 			<artifactId>ont.profile</artifactId>
-			<version>0.3.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.universAAL.support</groupId>
-			<artifactId>jena.osgi</artifactId>
-			<version>0.3.0-SNAPSHOT</version>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.context</groupId>
 			<artifactId>ctxt.jena.converter</artifactId>
-			<version>0.3.1-SNAPSHOT</version>
+			<version>1.0.2-SNAPSHOT</version>
 		</dependency>
-    
-    
-    <!-- <dependency>
-      <groupId>org.aal-persona.middleware</groupId>
-      <artifactId>acl.interfaces</artifactId>
-      <version>0.3.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.aal-persona.middleware</groupId>
-      <artifactId>middleware.upper</artifactId>
-      <version>0.3.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.aal-persona.middleware</groupId>
-      <artifactId>sodapop.osgi</artifactId>
-      <version>0.2.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.aal-persona.platform</groupId>
-      <artifactId>casf.ont</artifactId>
-      <version>0.2.0-SNAPSHOT</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.aal-persona.middleware</groupId>
-      <artifactId>rdf.serializer.turtle</artifactId>
-      <version>0.3.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.aal-persona.samples</groupId>
-      <artifactId>lighting.server</artifactId>
-      <version>0.2.0-SNAPSHOT</version>
-    </dependency> -->
-    <!-- universAAL ui -->
-    <!--<dependency>
-      <groupId>org.universAAL.ui</groupId>
-      <artifactId>ui.dm</artifactId>
-      <version>0.2.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.universAAL.ui</groupId>
-      <artifactId>ui.handler.gui</artifactId>
-      <version>0.1.1-SNAPSHOT</version>
-    </dependency>-->
+		<dependency>
+			<groupId>org.universAAL.middleware</groupId>
+			<artifactId>mw.container.xfaces</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.universAAL.middleware</groupId>
+			<artifactId>mw.container.osgi</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -134,8 +91,7 @@
 						<Bundle-Activator>org.universAAL.samples.lighting.uiclient.osgi.Activator</Bundle-Activator>
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Private-Package>org.universAAL.samples.lighting.uiclient,
-							org.universAAL.samples.lighting.uiclient.osgi</Private-Package>
+						<Private-Package>org.universAAL.samples.lighting.uiclient</Private-Package>
 					</instructions>
 				</configuration>
 			</plugin>
