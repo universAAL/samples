@@ -4,7 +4,7 @@
   <groupId>org.universAAL.runners</groupId>
   <artifactId>template</artifactId>
   <packaging>jar</packaging>  
-  <version>1.0.0</version>
+  <version>1.0.1-SNAPSHOT</version>
   <!-- version is here equal to the level of version of the middleware -->
   <name>Runner Folder</name>
 
@@ -18,27 +18,29 @@
           <args>pax.configuration</args>
           <provision>
 
-		<provision>scan-composite:mvn:org.universAAL.middleware/mw.bus.io/1.0.0/composite</provision>
-		<provision>scan-composite:mvn:org.universAAL.middleware/mw.bus.service/1.0.0/composite</provision>
-		<provision>scan-composite:mvn:org.universAAL.middleware/mw.bus.context/1.0.0/composite</provision>
+		<provision>scan-composite:mvn:org.universAAL.middleware/mw.bus.ui/1.0.1-SNAPSHOT/composite</provision>
+		<provision>scan-composite:mvn:org.universAAL.middleware/mw.bus.service/1.0.1-SNAPSHOT/composite</provision>
+		<provision>scan-composite:mvn:org.universAAL.middleware/mw.bus.context/1.0.1-SNAPSHOT/composite</provision>
 		<!-- Ontologies -->
-	    <provision>scan-composite:mvn:org.universAAL.ontology/ont.phWorld/1.0.0/composite</provision>
-	    <provision>mvn:org.universAAL.ontology/ont.profile/1.0.0</provision>
-	    <provision>mvn:org.universAAL.ontology/ont.risk/1.0.0</provision>
-	    <provision>mvn:org.universAAL.ontology/ont.lighting/1.0.0</provision>
-	    <provision>mvn:org.universAAL.ontology/ont.weather/1.0.0</provision>
+	    <provision>scan-composite:mvn:org.universAAL.ontology/ont.phWorld/1.0.1-SNAPSHOT/composite</provision>
+	    <provision>mvn:org.universAAL.ontology/ont.profile/1.0.1-SNAPSHOT</provision>
+	    <provision>mvn:org.universAAL.ontology/ont.risk/1.0.1-SNAPSHOT</provision>
+	    <provision>mvn:org.universAAL.ontology/ont.lighting/1.0.1-SNAPSHOT</provision>
+	    <provision>mvn:org.universAAL.ontology/ont.weather/1.0.1-SNAPSHOT</provision>
 
 		<!-- Platform -->
-<!-- 		<provision>scan-composite:mvn:org.universAAL.context/ctxt.che/1.0.0/composite</provision> -->
-<!-- 		<provision>scan-composite:mvn:org.universAAL.context/ctxt.che.mobile/1.0.0/composite</provision> -->
-<!--		<provision>scan-composite:mvn:org.universAAL.ui/ui.dm/1.0.0/composite</provision> -->
-<!-- 		<provision>scan-composite:mvn:org.universAAL.ui/ui.dm.mobile/1.0.0/composite</provision> -->
-<!--		<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui/1.0.0/composite</provision> -->
-<!-- 		<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.web/1.0.0/composite</provision> -->
+<!-- 		<provision>scan-composite:mvn:org.universAAL.context/ctxt.che/1.0.1-SNAPSHOT/composite</provision> -->
+<!-- 		<provision>scan-composite:mvn:org.universAAL.context/ctxt.che.mobile/1.0.1-SNAPSHOT/composite</provision> -->
+<!--		<provision>scan-composite:mvn:org.universAAL.ui/ui.dm/1.0.2-SNAPSHOT/composite</provision> -->
+<!-- 		<provision>scan-composite:mvn:org.universAAL.ui/ui.dm.mobile/1.0.2-SNAPSHOT/composite</provision> -->
+<!--		<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui/1.0.2-SNAPSHOT/composite</provision> -->
+<!-- 		<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.web/1.0.2-SNAPSHOT/composite</provision> -->
+<!--		<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.newGui/1.0.2-SNAPSHOT/composite</provision> -->
+
 		<!-- Services --> 
-<!--	    <provision>mvn:org.universAAL.samples/smp.lighting.server/1.0.0</provision> -->
-<!--	    <provision>mvn:org.universAAL.samples/smp.lighting.client/1.0.0</provision> -->
-<!-- 		<provision>mvn:org.universAAL.samples/smp.heating/1.0.0</provision> -->
+<!--	    <provision>mvn:org.universAAL.samples/smp.lighting.server/1.0.1-SNAPSHOT</provision> -->
+<!--	    <provision>mvn:org.universAAL.samples/smp.lighting.client/1.0.1-SNAPSHOT</provision> -->
+<!-- 		<provision>mvn:org.universAAL.samples/smp.heating/1.0.1-SNAPSHOT</provision> -->
 	    <!-- Whatever you want, like: -->
 	    <!-- <provision>{opt:wrap}:mvn:{groupId}/{artifactId}/{version}@{opt:#level | nostart | noupdate}</provision> -->
 
