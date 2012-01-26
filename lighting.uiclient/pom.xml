@@ -4,12 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>org.universAAL.samples</groupId>
-		<artifactId>smp.pom</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<groupId>org.universAAL.support.samples</groupId>
+		<artifactId>samples.pom</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+		<relativePath>../samples.pom/</relativePath>
 	</parent>
 
 	<packaging>bundle</packaging>
+	
 	<groupId>org.universAAL.samples</groupId>
 	<artifactId>smp.lighting.uiclient</artifactId>
 	<version>1.0.2-SNAPSHOT</version>
