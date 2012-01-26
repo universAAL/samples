@@ -3,6 +3,6 @@
 <booleanAttribute key="org.eclipse.debug.ui.ATTR_LAUNCH_IN_BACKGROUND" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.apache.felix.main.Main"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value=""/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dfelix.config.properties=file:felix/config.ini -Dfelix.system.properties=file:felix/system.properties -jar bundles/org.apache.felix.main_3.2.2.jar"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dfelix.config.properties=file:felix/config.ini -Dfelix.system.properties=file:felix/system.properties -jar bundles/org.apache.felix.main_*.jar"/>
 <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${project_path}/runner"/>
 </launchConfiguration>
