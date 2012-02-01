@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>support.pom</artifactId>
 		<groupId>org.universAAL.support</groupId>
-		<version>0.0.1</version>
+		<version>1.0.1-SNAPSHOT</version>
 		<relativePath>../../pom/pom.xml</relativePath>
 	</parent>
 	<groupId>org.universAAL.support.samples</groupId>
