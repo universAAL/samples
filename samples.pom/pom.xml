@@ -14,7 +14,7 @@
 	<name>universAAL Extra Samples</name>
 	
 	<modules>
-		<module>../form.tester</module>
+<!-- 	<module>../form.tester</module>-->
 		<module>../lighting.uiclient</module>
 <!-- 		<module>../Runner-Folder-TEMPLATE</module> -->
 		<module>../smp.tta.risk.home</module>
