@@ -1,13 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>org.universAAL.samples</groupId>
-  <artifactId>test.ctxt.bus</artifactId>
-  <version>0.0.5-SNAPSHOT</version>
-  <name>Context bus tester</name>
-  <packaging>bundle</packaging>
-  <description>Context bus tester</description>
-    <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.universAAL.support.samples</groupId>
+		<artifactId>samples.pom</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>../../samples.pom/pom.xml</relativePath>
+	</parent>
+	<groupId>org.universAAL.samples</groupId>
+	<artifactId>test.ctxt.bus</artifactId>
+	<version>0.0.5-SNAPSHOT</version>
+	<name>Context bus tester</name>
+	<packaging>bundle</packaging>
+	<description>Context bus tester</description>
+	<dependencies>
 		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.osgi.core</artifactId>
@@ -34,9 +41,9 @@
 			<version>1.0.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-  			<groupId>org.universAAL.ontology</groupId>
-  			<artifactId>ont.phWorld</artifactId>
-  			<version>1.0.1-SNAPSHOT</version>
+			<groupId>org.universAAL.ontology</groupId>
+			<artifactId>ont.phWorld</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
@@ -89,7 +96,7 @@
 			<version>0.2.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-    <build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.felix</groupId>

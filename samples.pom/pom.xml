@@ -1,22 +1,39 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<parent>
 		<artifactId>support.pom</artifactId>
 		<groupId>org.universAAL.support</groupId>
 		<version>1.0.1-SNAPSHOT</version>
 		<relativePath>../../pom/pom.xml</relativePath>
 	</parent>
+	
 	<groupId>org.universAAL.support.samples</groupId>
 	<artifactId>samples.pom</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>universAAL Extra Samples</name>
+	<name>universAAL Samples</name>
+	<description>A set of components that use the universAAL middleware with different roles and serve as samples.</description>
 	
 	<modules>
-<!-- 	<module>../form.tester</module>-->
+		<module>../form.tester</module>
+		<!-- <module>../full.form.tester</module>--> <!-- using other parent -->
+		<module>../heating</module>
+		<module>../integration.tests/test.ctxt.bus</module>
+		<module>../integration.tests/test.ctxt.bus.mobiledroid</module>
+		<module>../integration.tests/test.serv.bus</module>
+		<module>../integration.tests/test.serv.server</module>
+		<module>../integration.tests/test.ui.bus</module>
+		<module>../lighting/server</module>
+		<module>../lighting/client</module>
 		<module>../lighting.uiclient</module>
-<!-- 		<module>../Runner-Folder-TEMPLATE</module> -->
-		<module>../smp.tta.risk.home</module>
+		<!-- <module>../sieg.examples/ont.deviceActuator</module>--> <!-- using other parent -->
+		<!-- <module>../sieg.examples/smp.deviceActuatorServices.client</module>--> <!-- using old version of this group -->
+		<!-- <module>../sieg.examples/smp.deviceActuatorServices.server</module>--> <!-- using old version of this group -->
+		<!-- <module>../smp.test-location.publisher</module>--> <!-- using old version of this parent -->
+		<!-- <module>../smp.tta.risk.home</module>--> <!-- using old version of this parent -->
+		<!-- <module>../ont.tutorial</module>--> <!-- using other parent -->
+		<!-- <module>../ui.handler.sms.tester</module>--> <!-- using other parent -->
 	</modules>
 </project>

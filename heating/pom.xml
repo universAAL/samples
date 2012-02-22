@@ -2,10 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>org.universAAL.samples</groupId>
-		<artifactId>smp.pom</artifactId>
-		<version>1.0.0</version>
+		<groupId>org.universAAL.support.samples</groupId>
+		<artifactId>samples.pom</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>../samples.pom/pom.xml</relativePath>
 	</parent>
+	<groupId>org.universAAL.samples</groupId>
 	<packaging>bundle</packaging>
 	<artifactId>smp.heating</artifactId>
 	<name>BUNDLE HEATING</name>
