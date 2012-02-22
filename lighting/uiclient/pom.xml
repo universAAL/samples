@@ -7,7 +7,7 @@
 		<groupId>org.universAAL.support.samples</groupId>
 		<artifactId>samples.pom</artifactId>
 		<version>1.0.1-SNAPSHOT</version>
-		<relativePath>../samples.pom/pom.xml</relativePath>
+		<relativePath>../../samples.pom/pom.xml</relativePath>
 	</parent>
 
 	<packaging>bundle</packaging>

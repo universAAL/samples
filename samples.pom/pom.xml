@@ -17,8 +17,8 @@
 	<description>A set of components that use the universAAL middleware with different roles and serve as samples.</description>
 	
 	<modules>
-		<module>../form.tester</module>
-		<!-- <module>../full.form.tester</module>--> <!-- using other parent -->
+		<module>../ui.form.tester</module>
+		<!-- <module>../ui.full.form.tester</module>--> <!-- using other parent -->
 		<module>../heating</module>
 		<module>../integration.tests/test.ctxt.bus</module>
 		<module>../integration.tests/test.ctxt.bus.mobiledroid</module>
@@ -27,7 +27,7 @@
 		<module>../integration.tests/test.ui.bus</module>
 		<module>../lighting/server</module>
 		<module>../lighting/client</module>
-		<module>../lighting.uiclient</module>
+		<module>../lighting/uiclient</module>
 		<!-- <module>../sieg.examples/ont.deviceActuator</module>--> <!-- using other parent -->
 		<!-- <module>../sieg.examples/smp.deviceActuatorServices.client</module>--> <!-- using old version of this group -->
 		<!-- <module>../sieg.examples/smp.deviceActuatorServices.server</module>--> <!-- using old version of this group -->
