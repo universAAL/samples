@@ -19,8 +19,8 @@ import org.universAAL.ontology.profile.UserProfile;
 import org.universAAL.ontology.profile.service.ProfilingService;
 import org.universAAL.samples.service.utils.Arg;
 import org.universAAL.samples.service.utils.Path;
-import org.universAAL.samples.service.utils.SimpleRequest;
-import org.universAAL.samples.service.utils.SimpleEditor;
+import org.universAAL.samples.service.utils.low.SimpleRequest;
+import org.universAAL.samples.service.utils.mid.SimpleEditor;
 import org.universaal.ontology.useridprofileontology.owl.UserIDProfile;
 
 public class ProfileCaller {
@@ -138,7 +138,7 @@ public class ProfileCaller {
 	return null;
     }
 
-    //Methods for get/add/change/remove Profilable
+    //:::::::::::::PROFILABLE GET/ADD/CHANGE/REMOVE:::::::::::::::::
     private String removeProfilable(User profilable) {
 	log.info("Profile Client: RemoveProfilable");
 	ServiceResponse resp = caller.call(SimpleEditor.requestRemove(
@@ -186,7 +186,7 @@ public class ProfileCaller {
 	}
     }
     
-    //Methods for get/add/change/remove Profile
+    //:::::::::::::PROFILE GET/ADD/CHANGE/REMOVE:::::::::::::::::
     private String removeProfile(UserProfile profile) {
 	log.info("Profile Client: RemoveProfilable");
 	ServiceResponse resp = caller.call(SimpleEditor.requestRemove(
@@ -234,7 +234,7 @@ public class ProfileCaller {
 	}
     }
     
-    //Methods for get/add/change/remove SubProfile
+    //:::::::::::::SUBPROFILE GET/ADD/CHANGE/REMOVE:::::::::::::::::
     private String removeSubProfile(SubProfile profile) {
 	log.info("Profile Client: RemoveProfilable");
 	ServiceResponse resp = caller.call(SimpleEditor.requestRemove(
@@ -282,7 +282,7 @@ public class ProfileCaller {
 	}
     }
     
-    //Extra methods
+    //:::::::::::::OTHERS:::::::::::::::::
     private String getSubprofiles(UserProfile profile) {
 	log.info("Profile Client: getSubprofiles");
 	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
