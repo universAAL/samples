@@ -10,6 +10,7 @@
 	<artifactId>ui.handler.sms.tester</artifactId>
 	<packaging>bundle</packaging>
 	<version>1.0.2-SNAPSHOT</version>
+	 <name>SMS Handler tester</name>
 	<description>Tester of UI Handler SMS</description>
 
 	<dependencies>
