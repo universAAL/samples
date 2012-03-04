@@ -332,7 +332,7 @@ public class LightingProvider extends ServiceCallee implements
     /*
      * (non-Javadoc)
      * 
-     * @seeorg.universAAL.samples.lighting.server.unit_impl.LampStateListener#
+     * @see org.universAAL.samples.lighting.server.unit_impl.LampStateListener#
      * lampStateChanged(int, java.lang.String, boolean)
      * 
      * To demonstrate the functionality of the context bus we publish an event
