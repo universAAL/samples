@@ -21,6 +21,6 @@ public class Activator implements BundleActivator {
     public void stop(BundleContext arg0) throws Exception {
 	// Unload the ontologies
 	OntologyManagement om = OntologyManagement.getInstance();
-	om.register(tutorialOntology);
+	om.unregister(tutorialOntology);
     }
 }
