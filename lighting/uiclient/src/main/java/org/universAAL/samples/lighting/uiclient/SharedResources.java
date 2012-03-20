@@ -21,7 +21,7 @@ package org.universAAL.samples.lighting.uiclient;
 
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.util.Constants;
-import org.universAAL.ontology.profile.ElderlyUser;
+import org.universAAL.ontology.profile.AssistedPerson;;
 
 public class SharedResources {
 
@@ -32,7 +32,7 @@ public class SharedResources {
     static ServiceProvider serviceProvider;
     static UIProvider uIProvider;
 
-    static final ElderlyUser testUser = new ElderlyUser(
+    static final AssistedPerson testUser = new AssistedPerson(
 	    Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX + "saied");
 
     /*
