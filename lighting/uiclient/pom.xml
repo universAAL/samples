@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.universAAL.support.samples</groupId>
 		<artifactId>samples.pom</artifactId>
-		<version>1.1.0</version>
+		<version>1.1.1-SNAPSHOT</version>
 		<relativePath>../../samples.pom/pom.xml</relativePath>
 	</parent>
 
@@ -14,7 +14,7 @@
 	
 	<groupId>org.universAAL.samples</groupId>
 	<artifactId>smp.lighting.uiclient</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.1-SNAPSHOT</version>
 	<name>Lighting UI Client</name>
 	<description>A client using lighting services based on the corresponding domain ontology and interaction based on the dialog package</description>
 	<url />
@@ -66,13 +66,7 @@
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.container.osgi</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.universAAL.context</groupId>
-			<artifactId>ctxt.jena.converter</artifactId>
-			<version>1.1.0</version>
-		</dependency>		
+		</dependency>	
 	</dependencies>
 
 	<build>
@@ -100,17 +94,17 @@
 				<dependency>
 					<groupId>org.universAAL.samples</groupId>
 					<artifactId>smp.lighting.server</artifactId>
-					<version>1.1.0</version>
+					<version>1.1.1-SNAPSHOT</version>
 				</dependency>
 				<dependency>
 					<groupId>org.universAAL.ui</groupId>
 					<artifactId>ui.handler.gui</artifactId>
-					<version>1.1.0</version>
+					<version>1.1.1-SNAPSHOT</version>
 				</dependency>
 				<dependency>
 					<groupId>org.universAAL.ui</groupId>
 					<artifactId>ui.dm</artifactId>
-					<version>1.1.0</version>
+					<version>1.1.1-SNAPSHOT</version>
 				</dependency>
 			</dependencies>
 		</profile>

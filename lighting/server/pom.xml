@@ -4,13 +4,13 @@
 	<parent>
 		<groupId>org.universAAL.support.samples</groupId>
 		<artifactId>samples.pom</artifactId>
-		<version>1.1.0</version>
+		<version>1.1.1-SNAPSHOT</version>
 		<relativePath>../../samples.pom/pom.xml</relativePath>
 	</parent>
 	<groupId>org.universAAL.samples</groupId>
 	<packaging>bundle</packaging>
 	<artifactId>smp.lighting.server</artifactId>  
-	<version>1.1.0</version>
+	<version>1.1.1-SNAPSHOT</version>
 	<name>Lighting Server</name>
 	<description>A server based on the domain ontology of lighting services</description>
 	<url/>
