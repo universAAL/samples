@@ -36,4 +36,17 @@
 		<!-- <module>../ont.tutorial</module>--> <!-- using other parent -->
 		<!-- <module>../ui.handler.sms.tester</module>--> <!-- using other parent -->
 	</modules>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.universAAL.support</groupId>
+				<artifactId>uaal-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>
