@@ -4,13 +4,13 @@
 	<parent>
 		<groupId>org.universAAL.support.samples</groupId>
 		<artifactId>samples.pom</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.1.0</version>
 		<relativePath>../../samples.pom/pom.xml</relativePath>
 	</parent>
 	<groupId>org.universAAL.samples</groupId>
 	<packaging>bundle</packaging>
 	<artifactId>smp.lighting.server</artifactId>  
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.1.0</version>
 	<name>Lighting Server</name>
 	<description>A server based on the domain ontology of lighting services</description>
 	<url/>
@@ -59,16 +59,6 @@
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<executions>
-					<execution>
-						<id>bundle-manifest</id>
-						<phase>process-classes</phase>
-						<goals>
-							<goal>manifest</goal>
-						</goals>
-					</execution>
-				</executions>
 				<configuration>
 					<instructions>
 						<Bundle-Name>${project.name}</Bundle-Name>

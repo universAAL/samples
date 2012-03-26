@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.universAAL.support.samples</groupId>
 		<artifactId>samples.pom</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.1.0</version>
 		<relativePath>../../samples.pom/pom.xml</relativePath>
 	</parent>
 
@@ -14,7 +14,7 @@
 	
 	<groupId>org.universAAL.samples</groupId>
 	<artifactId>smp.lighting.uiclient</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.1.0</version>
 	<name>Lighting UI Client</name>
 	<description>A client using lighting services based on the corresponding domain ontology and interaction based on the dialog package</description>
 	<url />
@@ -23,67 +23,56 @@
 		<dependency>
 			<groupId>org.universAAL.support</groupId>
 			<artifactId>itests</artifactId>
-			<version>1.1.0</version>
 		</dependency>	
 		<!-- non-universAAL -->
 		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.osgi.core</artifactId>
-			<version>1.0.1</version>
-			<scope>provided</scope>
 		</dependency>
 		<!-- universAAL non-ui -->
 
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.data.representation</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.bus.context</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.bus.ui</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.bus.service</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
 			<artifactId>ont.phWorld</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
 			<artifactId>ont.lighting</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
 			<artifactId>ont.profile</artifactId>
-			<version>1.0.2-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.universAAL.context</groupId>
-			<artifactId>ctxt.jena.converter</artifactId>
-			<version>1.0.2-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.container.xfaces</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.container.osgi</artifactId>
-			<version>1.0.1-SNAPSHOT</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.universAAL.context</groupId>
+			<artifactId>ctxt.jena.converter</artifactId>
+			<version>1.1.0</version>
+		</dependency>		
 	</dependencies>
 
 	<build>
@@ -91,16 +80,6 @@
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<executions>
-					<execution>
-						<id>bundle-manifest</id>
-						<phase>process-classes</phase>
-						<goals>
-							<goal>manifest</goal>
-						</goals>
-					</execution>
-				</executions>
 				<configuration>
 					<instructions>
 						<Bundle-Name>${project.name}</Bundle-Name>
@@ -110,49 +89,6 @@
 						<Private-Package>org.universAAL.samples.lighting.uiclient</Private-Package>
 					</instructions>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.universAAL.support</groupId>
-				<artifactId>uaal-maven-plugin</artifactId>
-				<version>1.1.0</version>
-				<executions>
-					<execution>
-						<id>CompositeMojo</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>composite</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>TestMojo</id>
-						<phase>generate-resources</phase>
-						<goals>
-							<goal>test</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>1.7</version>
-				<executions>
-					<execution>
-						<id>attach-composite</id>
-						<phase>package</phase>
-						<goals>
-							<goal>attach-artifact</goal>
-						</goals>
-						<configuration>
-							<artifacts>
-								<artifact>
-									<file>target/artifact.composite</file>
-									<type>composite</type>
-								</artifact>
-							</artifacts>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -164,17 +100,17 @@
 				<dependency>
 					<groupId>org.universAAL.samples</groupId>
 					<artifactId>smp.lighting.server</artifactId>
-					<version>1.0.1-SNAPSHOT</version>
+					<version>1.1.0</version>
 				</dependency>
 				<dependency>
 					<groupId>org.universAAL.ui</groupId>
 					<artifactId>ui.handler.gui</artifactId>
-					<version>1.0.2-SNAPSHOT</version>
+					<version>1.1.0</version>
 				</dependency>
 				<dependency>
 					<groupId>org.universAAL.ui</groupId>
 					<artifactId>ui.dm</artifactId>
-					<version>1.0.2-SNAPSHOT</version>
+					<version>1.1.0</version>
 				</dependency>
 			</dependencies>
 		</profile>
