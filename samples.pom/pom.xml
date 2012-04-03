@@ -20,11 +20,11 @@
 		<!-- <module>../ui.form.tester</module>--><!-- version mess -->
 		<!-- <module>../ui.full.form.tester</module>--> <!-- using other parent -->
 		<!-- <module>../heating</module>--><!-- version mess -->
-		<module>../integration.tests/test.ctxt.bus</module>
+		<!-- <module>../integration.tests/test.ctxt.bus</module>
 		<module>../integration.tests/test.ctxt.bus.mobiledroid</module>
 		<module>../integration.tests/test.serv.bus</module>
 		<module>../integration.tests/test.serv.server</module>
-		<module>../integration.tests/test.ui.bus</module>
+		<module>../integration.tests/test.ui.bus</module>-->
 		<module>../lighting/server</module>
 		<module>../lighting/client</module>
 		<module>../lighting/uiclient</module>
