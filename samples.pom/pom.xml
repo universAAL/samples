@@ -17,9 +17,9 @@
 	<description>A set of components that use the universAAL middleware with different roles and serve as samples.</description>
 	
 	<modules>
-		<module>../ui.form.tester</module>
+		<!-- <module>../ui.form.tester</module>--><!-- version mess -->
 		<!-- <module>../ui.full.form.tester</module>--> <!-- using other parent -->
-		<module>../heating</module>
+		<!-- <module>../heating</module>--><!-- version mess -->
 		<module>../integration.tests/test.ctxt.bus</module>
 		<module>../integration.tests/test.ctxt.bus.mobiledroid</module>
 		<module>../integration.tests/test.serv.bus</module>
