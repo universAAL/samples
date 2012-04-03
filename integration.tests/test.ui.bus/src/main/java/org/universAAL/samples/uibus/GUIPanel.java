@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 
 import org.osgi.framework.BundleContext;
-import org.universAAL.middleware.input.InputEvent;
 
 public class GUIPanel extends javax.swing.JFrame {
 
@@ -14,13 +13,13 @@ public class GUIPanel extends javax.swing.JFrame {
     private javax.swing.JTabbedPane tabbedPane;
     private javax.swing.JLabel labelMain;
     private javax.swing.JButton button1p1;
-    private javax.swing.JButton button2p1;
+//    private javax.swing.JButton button2p1;
     private javax.swing.JPanel panel1;
     private javax.swing.JTextField text1p1;
     private javax.swing.JTextField text2p1;
     private javax.swing.JLabel label1p1;
     private javax.swing.JButton button1p2;
-    private javax.swing.JButton button2p2;
+//    private javax.swing.JButton button2p2;
     private javax.swing.JPanel panel2;
     private javax.swing.JTextField text1p2;
     private javax.swing.JLabel label1p2;
@@ -46,13 +45,13 @@ public class GUIPanel extends javax.swing.JFrame {
 	text2p1 = new javax.swing.JTextField();
 	label1p1 = new javax.swing.JLabel();
 	button1p1 = new javax.swing.JButton();
-	button2p1 = new javax.swing.JButton();
+//	button2p1 = new javax.swing.JButton();
 
 	panel2 = new javax.swing.JPanel();
 	text1p2 = new javax.swing.JTextField();
 	label1p2 = new javax.swing.JLabel();
 	button1p2 = new javax.swing.JButton();
-	button2p2 = new javax.swing.JButton();
+//	button2p2 = new javax.swing.JButton();
 
 	// WINDOW
 	setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -83,14 +82,14 @@ public class GUIPanel extends javax.swing.JFrame {
 	panel1.add(text2p1);
 	text2p1.setBounds(20, 80, 210, 23);
 
-	button2p1.setText("Publish (unique)");
-	button2p1.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		sendButton2ActionPerformed(evt);
-	    }
-	});
-	panel1.add(button2p1);
-	button2p1.setBounds(20, 105, 75, 29);
+//	button2p1.setText("Publish (unique)");
+//	button2p1.addActionListener(new java.awt.event.ActionListener() {
+//	    public void actionPerformed(java.awt.event.ActionEvent evt) {
+//		sendButton2ActionPerformed(evt);
+//	    }
+//	});
+//	panel1.add(button2p1);
+//	button2p1.setBounds(20, 105, 75, 29);
 
 	label1p1.setText("Delay");
 	panel1.add(label1p1);
@@ -118,14 +117,14 @@ public class GUIPanel extends javax.swing.JFrame {
 	panel2.add(label1p2);
 	label1p2.setBounds(20, 75, 150, 23);
 
-	button2p2.setText("Main");
-	button2p2.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		handlerButton2ActionPerformed(evt);
-	    }
-	});
-	panel2.add(button2p2);
-	button2p2.setBounds(20, 100, 75, 29);
+//	button2p2.setText("Main");
+//	button2p2.addActionListener(new java.awt.event.ActionListener() {
+//	    public void actionPerformed(java.awt.event.ActionEvent evt) {
+//		handlerButton2ActionPerformed(evt);
+//	    }
+//	});
+//	panel2.add(button2p2);
+//	button2p2.setBounds(20, 100, 75, 29);
 
 	tabbedPane.addTab("Handler", panel2);
 
@@ -152,23 +151,23 @@ public class GUIPanel extends javax.swing.JFrame {
 	this.label1p1.setText("Delay: " + del + " ms");
     }
 
-    private void sendButton2ActionPerformed(ActionEvent evt) {
-	int siz = 0;
-	try {
-	    siz = Integer.parseInt(this.text2p1.getText());
-	} catch (Exception e) {
-	    this.label1p1.setText("Invalid size of burst");
-	    return;
-	}
-	InputEvent ie = new InputEvent(Activator.sampleUser, null,
-		InputEvent.uAAL_MAIN_MENU_REQUEST);
-	long t0 = System.currentTimeMillis();
-	for (int i = 0; i < siz; i++) {
-	    Activator.uipub.publish(ie);
-	}
-	long t1 = System.currentTimeMillis();
-	this.label1p1.setText("Delay: " + (t1 - t0) + " ms");
-    }
+//    private void sendButton2ActionPerformed(ActionEvent evt) {
+//	int siz = 0;
+//	try {
+//	    siz = Integer.parseInt(this.text2p1.getText());
+//	} catch (Exception e) {
+//	    this.label1p1.setText("Invalid size of burst");
+//	    return;
+//	}
+//	InputEvent ie = new InputEvent(Activator.sampleUser, null,
+//		InputEvent.uAAL_MAIN_MENU_REQUEST);
+//	long t0 = System.currentTimeMillis();
+//	for (int i = 0; i < siz; i++) {
+//	    Activator.uipub.publish(ie);
+//	}
+//	long t1 = System.currentTimeMillis();
+//	this.label1p1.setText("Delay: " + (t1 - t0) + " ms");
+//    }
 
     private void handlerButton1ActionPerformed(ActionEvent evt) {
 	int siz = 0;
@@ -183,9 +182,9 @@ public class GUIPanel extends javax.swing.JFrame {
 	this.label1p2.setText("Delay: " + del + " ms");
     }
 
-    private void handlerButton2ActionPerformed(ActionEvent evt) {
-	Activator.uipub.publish(new InputEvent(Activator.sampleUser, null,
-		InputEvent.uAAL_MAIN_MENU_REQUEST));
-    }
+//    private void handlerButton2ActionPerformed(ActionEvent evt) {
+//	Activator.uipub.publish(new InputEvent(Activator.sampleUser, null,
+//		InputEvent.uAAL_MAIN_MENU_REQUEST));
+//    }
 
 }

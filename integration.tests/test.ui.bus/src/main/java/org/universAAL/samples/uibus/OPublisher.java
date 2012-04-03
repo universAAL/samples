@@ -6,16 +6,28 @@ import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.io.owl.PrivacyLevel;
-import org.universAAL.middleware.io.rdf.*;
-import org.universAAL.middleware.output.OutputEvent;
-import org.universAAL.middleware.output.OutputPublisher;
-import org.universAAL.middleware.owl.OrderingRestriction;
+import org.universAAL.middleware.owl.IntRestriction;
+import org.universAAL.middleware.owl.MergedRestriction;
 import org.universAAL.middleware.rdf.PropertyPath;
 import org.universAAL.middleware.rdf.Resource;
+import org.universAAL.middleware.ui.UICaller;
+import org.universAAL.middleware.ui.UIRequest;
+import org.universAAL.middleware.ui.UIResponse;
+import org.universAAL.middleware.ui.owl.PrivacyLevel;
+import org.universAAL.middleware.ui.rdf.Form;
+import org.universAAL.middleware.ui.rdf.Group;
+import org.universAAL.middleware.ui.rdf.InputField;
+import org.universAAL.middleware.ui.rdf.Label;
+import org.universAAL.middleware.ui.rdf.MediaObject;
+import org.universAAL.middleware.ui.rdf.Range;
+import org.universAAL.middleware.ui.rdf.Select;
+import org.universAAL.middleware.ui.rdf.Select1;
+import org.universAAL.middleware.ui.rdf.SimpleOutput;
+import org.universAAL.middleware.ui.rdf.Submit;
+import org.universAAL.middleware.ui.rdf.TextArea;
 import org.universAAL.ontology.profile.User;
 
-public class OPublisher extends OutputPublisher {
+public class OPublisher extends UICaller {
 
     private final static Logger log = LoggerFactory.getLogger(OPublisher.class);
     private static Form[] presetForms = new Form[] { getPresetForm(1),
@@ -38,11 +50,10 @@ public class OPublisher extends OutputPublisher {
 	log.debug("Show dialog from OPub");
 	Random rand = new Random();
 	Form f = presetForms[rand.nextInt(10)];
-	OutputEvent oe = new OutputEvent(user, f, null, Locale.ENGLISH,
+	UIRequest oe = new UIRequest(user, f, null, Locale.ENGLISH,
 		PrivacyLevel.insensible);
-	Activator.uinput.subscribe(f.getDialogID());
 	log.debug("Publish dialog from OPub");
-	publish(oe);
+	sendUIRequest(oe);
     }
 
     public long showRandomBurst(User user, int size) {
@@ -50,10 +61,9 @@ public class OPublisher extends OutputPublisher {
 	long t0 = System.currentTimeMillis();
 	for (int i = 0; i < size; i++) {
 	    Form f = presetForms[r.nextInt(10)];
-	    OutputEvent oe = new OutputEvent(user, f, null, Locale.ENGLISH,
+	    UIRequest oe = new UIRequest(user, f, null, Locale.ENGLISH,
 		    PrivacyLevel.insensible);
-	    Activator.uinput.subscribe(f.getDialogID());
-	    publish(oe);
+	    sendUIRequest(oe);
 	}
 	long t1 = System.currentTimeMillis();
 	return t1 - t0;
@@ -62,10 +72,9 @@ public class OPublisher extends OutputPublisher {
     public long showDynamicDialog(User user, int size) {
 	long t0 = System.currentTimeMillis();
 	Form f = getDynamicForm(size);
-	OutputEvent oe = new OutputEvent(user, f, null, Locale.ENGLISH,
+	UIRequest oe = new UIRequest(user, f, null, Locale.ENGLISH,
 		PrivacyLevel.insensible);
-	Activator.uinput.subscribe(f.getDialogID());
-	publish(oe);
+	sendUIRequest(oe);
 	long t1 = System.currentTimeMillis();
 	return t1 - t0;
     }
@@ -74,11 +83,10 @@ public class OPublisher extends OutputPublisher {
 	    String[] formsResults) {
 	log.debug("Show result from OPub");
 	Form f = getAllRespForm(formsNames, formsResults);
-	OutputEvent oe = new OutputEvent(user, f, null, Locale.ENGLISH,
+	UIRequest oe = new UIRequest(user, f, null, Locale.ENGLISH,
 		PrivacyLevel.insensible);
-	Activator.uinput.subscribe(f.getDialogID());
 	log.debug("Publish dialog from OPub");
-	publish(oe);
+	sendUIRequest(oe);
     }
 
     // FORMS_______________________________________________________
@@ -177,11 +185,9 @@ public class OPublisher extends OutputPublisher {
 			    null,
 			    false,
 			    new String[] { "http://ontology.aal-persona.org/Tests.owl#input12" }),
-		    OrderingRestriction.newOrderingRestriction(
-			    Integer.valueOf(12), Integer.valueOf(3), true,
-			    true,
-			    "http://ontology.aal-persona.org/Tests.owl#input12"),
-		    new Integer(5));
+		    MergedRestriction.getAllValuesRestrictionWithCardinality(
+			    Range.PROP_VALUE_RESTRICTION, new IntRestriction(3,
+				    true, 12, true), 1, 1), new Integer(5));
 	}
 	if (i++ <= size) {
 	    Group g1 = new Group(controls, new Label("Normal group with label",
@@ -273,11 +279,11 @@ public class OPublisher extends OutputPublisher {
 				null,
 				false,
 				new String[] { "http://ontology.aal-persona.org/Tests.owl#input12" }),
-			OrderingRestriction.newOrderingRestriction(
-				Integer.valueOf(12), Integer.valueOf(3), true,
-				true,
-				"http://ontology.aal-persona.org/Tests.owl#input12"),
-			new Integer(5));
+			MergedRestriction
+				.getAllValuesRestrictionWithCardinality(
+					Range.PROP_VALUE_RESTRICTION,
+					new IntRestriction(3, true, 12, true),
+					1, 1), new Integer(5));
 		break;
 	    case 9:
 		Group g1 = new Group(controls, new Label(
@@ -291,6 +297,47 @@ public class OPublisher extends OutputPublisher {
 	}
 	new Submit(submits, new Label("OK", (String) null), "testsubmit"); //$NON-NLS-1$ //$NON-NLS-2$
 	return f;
+    }
+
+    @Override
+    public void dialogAborted(String dialogID) {
+	// TODO Auto-generated method stub
+	
+    }
+
+    @Override
+    public void handleUIResponse(UIResponse input) {
+	User user = (User) input.getUser();
+	log.info("Received an Input Event from user {}", user.getURI());
+	String submit = input.getSubmissionID();
+	try {
+	    // if(submit.startsWith("testsubmit")){
+	    // String[] formsNames=new
+	    // String[]{"Input 1","Input 2","Input 3","Select 1 1","Select 1 2","Select M 1","Select M 2","Area","Range"};
+	    // String[] formsResults=new String[9];
+	    // formsResults[0]=event.getUserInput(new
+	    // String[]{("http://ontology.aal-persona.org/Tests.owl#input1")}).toString();
+	    // formsResults[1]=event.getUserInput(new
+	    // String[]{("http://ontology.aal-persona.org/Tests.owl#input2")}).toString();
+	    // formsResults[2]=event.getUserInput(new
+	    // String[]{("http://ontology.aal-persona.org/Tests.owl#input3")}).toString();
+	    // formsResults[3]=event.getUserInput(new
+	    // String[]{("http://ontology.aal-persona.org/Tests.owl#input4")}).toString();
+	    // formsResults[4]=event.getUserInput(new
+	    // String[]{("http://ontology.aal-persona.org/Tests.owl#input5")}).toString();
+	    // formsResults[5]=event.getUserInput(new
+	    // String[]{("http://ontology.aal-persona.org/Tests.owl#input6")}).toString();
+	    // formsResults[6]=event.getUserInput(new
+	    // String[]{("http://ontology.aal-persona.org/Tests.owl#input7")}).toString();
+	    // formsResults[7]=event.getUserInput(new
+	    // String[]{("http://ontology.aal-persona.org/Tests.owl#input11")}).toString();
+	    // formsResults[8]=event.getUserInput(new
+	    // String[]{("http://ontology.aal-persona.org/Tests.owl#input12")}).toString();
+	    // Activator.uoutput.showAllRespDialog(user,formsNames,formsResults);
+	    // }
+	} catch (Exception e) {
+	    log.error("Error while processing the user input: {}", e);
+	}
     }
 
 }
