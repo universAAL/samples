@@ -7,7 +7,7 @@ import org.osgi.framework.ServiceListener;
 import org.osgi.framework.ServiceReference;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
-import org.universAAL.middleware.sodapop.msg.MessageContentSerializer;
+import org.universAAL.middleware.sodapop.msg.MessageContentSerializerEx;
 
 public class Activator implements BundleActivator, ServiceListener {
     public static BundleContext context = null;
@@ -16,16 +16,16 @@ public class Activator implements BundleActivator, ServiceListener {
     public static HistoryCaller hcaller = null;
     public static ProfileCaller pcaller = null;
     protected static GUIPanel panel;
-    protected static MessageContentSerializer ser;
+    protected static MessageContentSerializerEx ser;
     private static ModuleContext moduleContext = null;
-    public static MessageContentSerializer parser = null;
+    public static MessageContentSerializerEx parser = null;
 
     public void start(BundleContext context) throws Exception {
 	Activator.context = context;
 	Activator.moduleContext = uAALBundleContainer.THE_CONTAINER
 		.registerModule(new Object[] { context });
-	ser = (MessageContentSerializer) context.getService(context
-		.getServiceReference(MessageContentSerializer.class.getName()));
+	ser = (MessageContentSerializerEx) context.getService(context
+		.getServiceReference(MessageContentSerializerEx.class.getName()));
 	csubscriber = new CSubscriber(moduleContext);
 	cpublisher = new CPublisher(moduleContext);
 	hcaller = new HistoryCaller(moduleContext);
@@ -34,7 +34,7 @@ public class Activator implements BundleActivator, ServiceListener {
 	panel.setVisible(true);
 	// Look for MessageContentSerializer of mw.data.serialization
 	String filter = "(objectclass="
-		+ MessageContentSerializer.class.getName() + ")";
+		+ MessageContentSerializerEx.class.getName() + ")";
 	context.addServiceListener(this, filter);
 	ServiceReference references[] = context.getServiceReferences(null,
 		filter);
@@ -54,7 +54,7 @@ public class Activator implements BundleActivator, ServiceListener {
 	switch (event.getType()) {
 	case ServiceEvent.REGISTERED:
 	case ServiceEvent.MODIFIED:
-	    this.parser = ((MessageContentSerializer) context.getService(event
+	    this.parser = ((MessageContentSerializerEx) context.getService(event
 		    .getServiceReference()));
 	    break;
 	case ServiceEvent.UNREGISTERING:
