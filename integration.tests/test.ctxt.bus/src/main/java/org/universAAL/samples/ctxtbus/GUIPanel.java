@@ -104,10 +104,10 @@ public class GUIPanel extends javax.swing.JFrame {
 	
 	panel5 = new javax.swing.JPanel();
 	combo1p5 = new javax.swing.JComboBox(new Object[] {
-		"Get (profilable)",
-		"Add (profilable)",
-		"Change (profilable)", 
-		"Remove (profilable)",
+		"Get (user)",
+		"Add (user)",
+		"Change (user)", 
+		"Remove (user)",
 		"Get (profile)",
 		"Add (profile)",
 		"Change (profile)", 
@@ -116,11 +116,13 @@ public class GUIPanel extends javax.swing.JFrame {
 		"Add (subprofile)",
 		"Change (subprofile)", 
 		"Remove (subprofile)",
-		"Get profile of (profilable)",
-		"Add to (profilable) a (profile)",
-		"Change from (profilable) its (profile)", 
 		"Get users", 
-		"Get subprofiles of (profile)"});
+		"Get profile of (user)",
+		"Get subprofiles of (user)",
+		"Get subprofiles of (profile)",
+		"Add to (user) a (profile)",
+		"Add to (user) a (subprofile)",
+		"Add to (profile) a (subprofile)"});
 	button1p5 = new javax.swing.JButton();
 	text1p5 = new javax.swing.JTextField();
 	text2p5 = new javax.swing.JTextField();
