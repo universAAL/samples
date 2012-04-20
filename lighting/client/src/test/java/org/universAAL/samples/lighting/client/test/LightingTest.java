@@ -33,6 +33,8 @@ public class LightingTest extends IntegrationTest {
     public LightingTest() {
 	//super("../../pom/launches/LightingExample_Complete_0_3_2.launch");
 	//setBundleConfLocation("../../../itests/rundir/confadmin");
+	setPaxArtifactUrls("file:artifact-test-1.1.2.composite");
+	setUseOnlyLocalRepo(true);
     }
     
     /**
