@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.universAAL.samples</groupId>
+	<artifactId>simple.ui.run</artifactId>
+	<packaging>jar</packaging>
+	<version>0.1.0-SNAPSHOT</version>
+	<!-- version is here equal to the level of version of the middleware -->
+	<name>Runner Folder</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.ops4j</groupId>
+				<artifactId>maven-pax-plugin</artifactId>
+				<version>1.4</version>
+				<configuration>
+					<args>pax.configuration</args>
+					<provision>
+						<!-- MW -->
+							<provision>scan-composite:mvn:org.universAAL.middleware/mw.composite/1.1.0/composite</provision>
+						<!-- Ontologies -->
+							<provision>scan-composite:mvn:org.universAAL.ontology/ont.composite/1.1.0/composite</provision>
+						<!-- Platform -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che/1.1.0/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che.mobile/1.1.0/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.dm/1.1.0/composite</provision> -->
+							<provision>scan-composite:mvn:org.universAAL.ui/ui.dm.mobile/1.1.0/composite</provision>
+							<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui/1.1.0/composite</provision>
+							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.handler.web/1.1.0/composite</provision> -->
+<!-- 							<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing/1.1.0/composite</provision> -->
+
+						<!-- Services -->
+							<provision>mvn:org.universAAL.samples/simple.ui/0.1.0-SNAPSHOT</provision>
+							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.lighting.server/1.1.0/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.lighting.client/1.1.0/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.heating/1.1.0/composite</provision> -->
+						<!-- Whatever you want, like: -->
+							<!-- <provision>{opt:wrap}:mvn:{groupId}/{artifactId}/{version}@{opt:#level | nostart | noupdate}</provision> -->
+
+	  				</provision>
+				</configuration>	
+			</plugin>    	
+		</plugins>
+	</build>
+	<pluginRepositories>
+  	  <pluginRepository>
+    	  <id>ops4j.releases</id>
+     	 <url>http://repository.ops4j.org/maven2</url>
+     	 <snapshots>
+      	  <enabled>false</enabled>
+      	</snapshots>
+    	</pluginRepository>
+  </pluginRepositories>
+</project>
