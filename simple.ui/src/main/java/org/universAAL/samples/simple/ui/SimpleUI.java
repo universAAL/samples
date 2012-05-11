@@ -13,7 +13,6 @@ import org.universAAL.middleware.ui.rdf.Form;
 import org.universAAL.middleware.ui.rdf.Label;
 import org.universAAL.middleware.ui.rdf.SimpleOutput;
 import org.universAAL.middleware.ui.rdf.Submit;
-import org.universAAL.ontology.profile.AssistedPerson;
 
 public class SimpleUI extends UICaller {
 
@@ -32,7 +31,7 @@ public class SimpleUI extends UICaller {
 		// TODO Auto-generated method stub
 	}
 	
-	public void showDialog(AssistedPerson inputUser){
+	public void showDialog(Resource inputUser){
 		Form f = Form.newDialog("simple UI", new Resource());
 		//start of the form model
 		new SimpleOutput(f.getIOControls(), null, null, "Hello world!");

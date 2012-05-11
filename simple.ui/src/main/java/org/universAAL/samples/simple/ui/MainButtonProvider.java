@@ -1,6 +1,7 @@
 package org.universAAL.samples.simple.ui;
 
 import org.universAAL.middleware.container.ModuleContext;
+import org.universAAL.middleware.rdf.Resource;
 import org.universAAL.middleware.service.CallStatus;
 import org.universAAL.middleware.service.ServiceCall;
 import org.universAAL.middleware.service.ServiceCallee;
@@ -8,7 +9,6 @@ import org.universAAL.middleware.service.ServiceRequest;
 import org.universAAL.middleware.service.ServiceResponse;
 import org.universAAL.middleware.service.owl.InitialServiceDialog;
 import org.universAAL.middleware.service.owls.profile.ServiceProfile;
-import org.universAAL.ontology.profile.AssistedPerson;
 
 public class MainButtonProvider extends ServiceCallee {
 
@@ -47,7 +47,7 @@ public class MainButtonProvider extends ServiceCallee {
 	@Override
 	public ServiceResponse handleCall(ServiceCall call) {
 		Object inputUser = call.getProperty(ServiceRequest.PROP_uAAL_INVOLVED_HUMAN_USER);
-		new SimpleUI(this.ctxt).showDialog((AssistedPerson) inputUser);
+		new SimpleUI(this.ctxt).showDialog((Resource) inputUser);
 		return new ServiceResponse(CallStatus.succeeded);
 	}
 

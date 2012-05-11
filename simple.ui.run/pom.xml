@@ -27,9 +27,9 @@
 							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che.mobile/1.1.0/composite</provision> -->
 							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.dm/1.1.0/composite</provision> -->
 							<provision>scan-composite:mvn:org.universAAL.ui/ui.dm.mobile/1.1.0/composite</provision>
-							<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui/1.1.0/composite</provision>
+<!-- 							<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui/1.1.0/composite</provision> -->
 							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.handler.web/1.1.0/composite</provision> -->
-<!-- 							<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing/1.1.0/composite</provision> -->
+ 							<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing/1.1.0/composite</provision>
 
 						<!-- Services -->
 							<provision>mvn:org.universAAL.samples/simple.ui/0.1.0-SNAPSHOT</provision>
