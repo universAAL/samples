@@ -43,11 +43,11 @@ public class Activator implements BundleActivator {
     public void start(final BundleContext context) throws Exception {
 	mc = uAALBundleContainer.THE_CONTAINER
 		.registerModule(new Object[] { context });
-	new Thread() {
-	    public void run() {
+//	new Thread() {
+//	    public void run() {
 		provider = new LightingProvider(mc);
-	    }
-	}.start();
+//	    }
+//	}.start();
     }
 
     /*
