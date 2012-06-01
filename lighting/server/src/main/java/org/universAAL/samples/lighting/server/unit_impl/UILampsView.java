@@ -40,6 +40,10 @@ public class UILampsView extends javax.swing.JPanel {
 	/**
 	 * 
 	 */
+	private static final Color LAMP_BORDER_COLOR = Color.black;
+	/**
+	 * 
+	 */
 	private static final int LAMP_SIZE = 70;
 	private static final int LAMP_OFFSET = 70;
 	private static final int VIEW_WIDTH = 400;
@@ -118,8 +122,8 @@ public class UILampsView extends javax.swing.JPanel {
 		lampPanel.add(lampLabel);
 		lampLabel.setEnabled(true);
 		lampPanel.setSize(LAMP_SIZE,LAMP_SIZE);
+		lampPanel.setBorder(BorderFactory.createLineBorder(LAMP_BORDER_COLOR));		
 		
-		lampPanel.setBorder(BorderFactory.createLineBorder(Color.black));		
 		Component lampComponent = frame.getContentPane().add(lampPanel);
 		lampComponents.put(Integer.valueOf(lampID),lampComponent);
 		setLampState(lampID, false);
