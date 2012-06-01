@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.universAAL.support.samples</groupId>
-		<artifactId>samples.pom.osgi</artifactId>
+		<artifactId>samples.pom</artifactId>
 		<version>1.1.2-SNAPSHOT</version>
 		<relativePath>../../samples.pom/pom.xml</relativePath>
 	</parent>
