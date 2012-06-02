@@ -18,5 +18,5 @@ scan-bundle:wrap:mvn:java3d/j3d-core/1.3.1
 scan-bundle:wrap:mvn:jp.go.ipa/jgcl/1.0
 scan-bundle:mvn:org.universAAL.ontology/ont.phWorld.osgi/1.1.2-SNAPSHOT
 scan-bundle:mvn:org.universAAL.ontology/ont.lighting.osgi/1.1.2-SNAPSHOT
-scan-bundle:mvn:org.universAAL.samples/smp.lighting.server/1.1.2-SNAPSHOT
-scan-bundle:mvn:org.universAAL.samples/smp.lighting.client/1.1.2-SNAPSHOT
+scan-bundle:mvn:org.universAAL.samples/smp.lighting.server.osgi/1.1.2-SNAPSHOT
+scan-bundle:mvn:org.universAAL.samples/smp.lighting.client.osgi/1.1.2-SNAPSHOT
