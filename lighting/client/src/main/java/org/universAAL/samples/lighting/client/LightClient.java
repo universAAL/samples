@@ -1,9 +1,12 @@
 package org.universAAL.samples.lighting.client;
 
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
+import java.util.Arrays;
 
 import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -33,6 +36,7 @@ public class LightClient extends javax.swing.JPanel {
 	static private JButton onButton;
 	private JTextField percent;
 	private JButton scaleButton;
+	private JButton getLampsButton;
 	static private JList jList1;
 	static private JButton offButton;
 	
@@ -40,6 +44,7 @@ public class LightClient extends javax.swing.JPanel {
 	private AbstractAction Scale;
 	private AbstractAction Off;
 	private AbstractAction On;
+	private AbstractAction GetLamps;
 	
 	static {
 		// Vadim - turn off the logging 
@@ -49,12 +54,12 @@ public class LightClient extends javax.swing.JPanel {
 	}
 	
 	// create the GUI 
-	public void start(Device[] d){
+	public void start(){
 
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		frame.pack();
-		frame.setSize(400, 400);
+		frame.setSize(500, 400);
 		frame.setVisible(true);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Lamp Controller");
@@ -63,14 +68,14 @@ public class LightClient extends javax.swing.JPanel {
 			onButton = new JButton();
 			frame.getContentPane().add(onButton);
 			onButton.setText("On");
-			onButton.setBounds(103, 12, 80, 35);
+			onButton.setBounds(50, 12, 80, 35);
 			onButton.setAction(getOn());
 		}
 		{
 			offButton = new JButton();
 			frame.getContentPane().add(offButton);
 			offButton.setText("Off");
-			offButton.setBounds(210, 12, 80, 35);
+			offButton.setBounds(160, 12, 80, 35);
 			offButton.setAction(getOff());
 		}
 		{
@@ -80,6 +85,7 @@ public class LightClient extends javax.swing.JPanel {
 			scaleButton.setBounds(210, 62, 80, 35);
 			scaleButton.setAction(getScale());
 		}
+		
 		{
 			percent = new JTextField();
 			frame.getContentPane().add(percent);
@@ -87,32 +93,70 @@ public class LightClient extends javax.swing.JPanel {
 			percent.setBounds(103, 69, 80, 21);
 		}
 		{
-			//Device[] d = LightingConsumer.getControlledLamps();
-			String[] lamps = new String[d.length];
-			
-			for(int i =0; i < d.length; i++){
-				lamps[i] = d[i].getURI();
-			}
-			
+			getLampsButton = new JButton();
+			frame.getContentPane().add(getLampsButton);
+			getLampsButton.setText("Get Lamps");
+			getLampsButton.setBounds(25, 120, 160, 35);
+			getLampsButton.setAction(getGetLampsAction());
+		}
+		{
 			ListModel jList1Model = 
-				new DefaultComboBoxModel(
-						lamps);
+				new DefaultComboBoxModel();
 			jList1 = new JList();
 			frame.getContentPane().add(jList1);
 //			frame.getContentPane().add(getScaleButton());
 //			frame.getContentPane().add(getPercent());
 			jList1.setModel(jList1Model);
-			jList1.setBounds(25, 120, 343, 170);
+			jList1.setBounds(25, 170, 400, 170);
 			
 		}
+	}
+
+
+
+	/**
+	 * @return
+	 */
+	private ListModel getLampsListModel() {
+		Device[] d = LightingConsumer.getControlledLamps();
+	
+		String[] lamps = new String[d != null ? d.length:0];
+		for(int i =0; i < lamps.length; i++){
+			lamps[i] = d[i].getURI();
+		}
+		
+		// Sort the list
+		Arrays.sort(lamps);
+		
+		ListModel jList1Model = 
+			new DefaultComboBoxModel(
+					lamps);
+		return jList1Model;
 	}
 	
 
 	
-	public LightClient(Device[] d) {
+	/**
+	 * @return
+	 */
+	private Action getGetLampsAction() {
+		if(GetLamps == null) {
+			GetLamps = new AbstractAction("Get Lamps", null) {
+				public void actionPerformed(ActionEvent evt) {
+					ListModel jList1Model = getLampsListModel();
+					jList1.setModel(jList1Model);
+				}
+			};
+		}
+		return GetLamps;
+	}
+
+
+
+	public LightClient() {
 		super();	
 		initGUI();
-		start(d);
+		start();
 	}
 	
 	private void initGUI() {
