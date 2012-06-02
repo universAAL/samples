@@ -43,9 +43,7 @@ public class ProvidedLightingService extends Lighting {
 
     // All the static Strings are used to unique identify special functions and
     // objects
-    public static final String LIGHTING_SERVER_NAMESPACE = 
-    	System.getProperty("org.universAAL.middleware.samples.lighting.server.namespace",
-    	"http://ontology.igd.fhg.de/LightingServer.owl#");
+    public static final String LIGHTING_SERVER_NAMESPACE = "http://ontology.igd.fhg.de/LightingServer.owl#";
     public static final String MY_URI = LIGHTING_SERVER_NAMESPACE
 	    + "LightingService";
 
@@ -76,6 +74,7 @@ public class ProvidedLightingService extends Lighting {
 	OntologyManagement.getInstance().register(
 		new SimpleOntology(MY_URI, Lighting.MY_URI,
 			new ResourceFactoryImpl() {
+			    @Override
 			    public Resource createInstance(String classURI,
 				    String instanceURI, int factoryIndex) {
 				return new ProvidedLightingService(instanceURI);

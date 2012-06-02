@@ -43,8 +43,6 @@ import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.location.indoor.Room;
 import org.universAAL.samples.lighting.server.unit_impl.LampStateListener;
 import org.universAAL.samples.lighting.server.unit_impl.MyLighting;
-import org.universAAL.samples.lighting.server.unit_impl.UILampsController;
-import org.universAAL.samples.lighting.server.unit_impl.UILampsView;
 
 /**
  * @author mtazari
@@ -217,13 +215,6 @@ public class LightingProvider extends ServiceCallee implements
 	// provide to the universAAL-based AAL Space
 	super(context, ProvidedLightingService.profiles);
 
-	LogUtils.logInfo(
-		Activator.mc,
-		LightingProvider.class,
-		"LightingProvider constructor",
-		new Object[] { "called" },
-		null);
-	
 	// this is just an example that wraps a faked "original server"
 	theServer = new MyLighting();
 
@@ -237,10 +228,6 @@ public class LightingProvider extends ServiceCallee implements
 
 	// now we are ready to listen to the changes on the server side
 	theServer.addListener(this);
-	
-	// create a Lamps View 
-	UILampsView view = new UILampsView(theServer.getLampIDs());
-    theServer.addListener(new UILampsController(view));
     }
 
     /*

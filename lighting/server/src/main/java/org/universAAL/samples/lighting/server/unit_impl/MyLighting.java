@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.universAAL.middleware.container.utils.LogUtils;
-
+import org.universAAL.samples.lighting.server.Activator;
 
 /**
  * @author mtazari
@@ -77,8 +77,9 @@ public class MyLighting {
     public void turnOff(int lampID) {
 	if (myLampDB[lampID].isOn) {
 	    myLampDB[lampID].isOn = false;
-	    System.out.println("Lamp in " +  myLampDB[lampID].loc +
-			    " turned off!");
+	    LogUtils.logInfo(Activator.mc, MyLighting.class, "turnOff",
+		    new Object[] { "Lamp in ", myLampDB[lampID].loc,
+			    " turned off!" }, null);
 	    for (Iterator i = listeners.iterator(); i.hasNext();)
 		((LampStateListener) i.next()).lampStateChanged(lampID,
 			myLampDB[lampID].loc, false);
@@ -88,8 +89,9 @@ public class MyLighting {
     public void turnOn(int lampID) {
 	if (!myLampDB[lampID].isOn) {
 	    myLampDB[lampID].isOn = true;
-	    System.out.println("Lamp in " +  myLampDB[lampID].loc +
-	    " turned on!");
+	    LogUtils.logInfo(Activator.mc, MyLighting.class, "turnOn",
+		    new Object[] { "Lamp in ", myLampDB[lampID].loc,
+			    " turned on!" }, null);
 	    for (Iterator i = listeners.iterator(); i.hasNext();)
 		((LampStateListener) i.next()).lampStateChanged(lampID,
 			myLampDB[lampID].loc, true);
