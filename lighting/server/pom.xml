@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.universAAL.support.samples</groupId>
@@ -9,11 +10,11 @@
 	</parent>
 	<groupId>org.universAAL.samples</groupId>
 	<packaging>bundle</packaging>
-	<artifactId>smp.lighting.server</artifactId>  
+	<artifactId>smp.lighting.server.osgi</artifactId>
 	<version>1.1.2-SNAPSHOT</version>
-	<name>Lighting Server</name>
+	<name>Lighting Server (OSGi)</name>
 	<description>A server based on the domain ontology of lighting services</description>
-	<url/>
+	<url />
 
 	<dependencies>
 		<dependency>
@@ -54,6 +55,12 @@
 		</dependency>
 	</dependencies>
 
+	<!-- Temporary disable running uaal-maven-plugin -->
+	<properties>
+		<maven.test.skip>true</maven.test.skip>
+	</properties>
+	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -71,4 +78,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 </project>
