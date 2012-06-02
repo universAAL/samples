@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>org.universAAL.samples</groupId>
 	<packaging>bundle</packaging>
-	<artifactId>smp.lighting.client</artifactId>
+	<artifactId>smp.lighting.client.osgi</artifactId>
 	<version>1.1.2-SNAPSHOT</version>
-	<name>Lighting Client</name>
+	<name>Lighting Client (OSGi)</name>
 	<description>A client using lighting services based on the corresponding domain ontology</description>
 	<url />
 
