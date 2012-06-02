@@ -49,7 +49,7 @@ public class LightingConsumer extends ContextSubscriber {
 	// (surprise ;-) )
 	caller = new DefaultServiceCaller(context);
 
-	new LightClient(getControlledLamps());
+	new LightClient();
     }
 
     // *****************************************************************
