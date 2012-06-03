@@ -55,12 +55,6 @@
 		</dependency>
 	</dependencies>
 
-	<!-- Temporary disable running uaal-maven-plugin -->
-	<properties>
-		<maven.test.skip>true</maven.test.skip>
-	</properties>
-	
-
 	<build>
 		<plugins>
 			<plugin>
