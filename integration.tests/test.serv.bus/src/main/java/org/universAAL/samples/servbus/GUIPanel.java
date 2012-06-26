@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 
 import org.osgi.framework.BundleContext;
-import org.universAAL.middleware.owl.Restriction;
+import org.universAAL.middleware.owl.MergedRestriction;
 import org.universAAL.middleware.rdf.PropertyPath;
 import org.universAAL.middleware.service.CallStatus;
 import org.universAAL.middleware.service.ServiceRequest;
@@ -203,7 +203,7 @@ public class GUIPanel extends javax.swing.JFrame {
 
     private ServiceRequest getGETLAMPSrequest() {
 	ServiceRequest listLamps = new ServiceRequest(
-		LightSource.LIGHTING_NAMESPACE + "requestURI", new Lighting(
+		Lighting.OWLS_NAMESPACE_PREFIX + "requestURI", new Lighting(
 			null), null);
 	listLamps.addSimpleOutputBinding(
 		new ProcessOutput(OUTPUT_LIST_OF_LAMPS), new PropertyPath(null,
@@ -216,7 +216,7 @@ public class GUIPanel extends javax.swing.JFrame {
 	ServiceRequest getLampLocation = new ServiceRequest(new Lighting(),
 		null);
 	getLampLocation.getRequestedService().addInstanceLevelRestriction(
-		Restriction.getFixedValueRestriction(Lighting.PROP_CONTROLS,
+		MergedRestriction.getFixedValueRestriction(Lighting.PROP_CONTROLS,
 			new LightSource(SAMPLE_LAMP_URI)),
 		new String[] { Lighting.PROP_CONTROLS });
 	getLampLocation.addSimpleOutputBinding(new ProcessOutput(
@@ -230,7 +230,7 @@ public class GUIPanel extends javax.swing.JFrame {
 	ServiceRequest setLampBrightness = new ServiceRequest(new Lighting(),
 		null);
 	setLampBrightness.getRequestedService().addInstanceLevelRestriction(
-		Restriction.getFixedValueRestriction(Lighting.PROP_CONTROLS,
+		MergedRestriction.getFixedValueRestriction(Lighting.PROP_CONTROLS,
 			new LightSource(SAMPLE_LAMP_URI)),
 		new String[] { Lighting.PROP_CONTROLS });
 	setLampBrightness.addChangeEffect(new PropertyPath(null, true,

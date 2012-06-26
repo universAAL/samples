@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.context.ContextEvent;
+import org.universAAL.middleware.context.ContextEventPattern;
 import org.universAAL.middleware.context.ContextPublisher;
 import org.universAAL.middleware.context.owl.ContextProvider;
 import org.universAAL.middleware.context.owl.ContextProviderType;
@@ -41,6 +42,7 @@ public class CPublisher extends ContextPublisher {
 	ContextProvider cpinfo = new ContextProvider(URIROOT
 		+ "TestMassContextProvider");
 	cpinfo.setType(ContextProviderType.gauge);
+	cpinfo.setProvidedEvents(new ContextEventPattern[] { new ContextEventPattern() });
 	return cpinfo;
     }
 

@@ -1,8 +1,12 @@
 package org.universAAL.samples.servserver;
 
 import org.universAAL.middleware.owl.Enumeration;
-import org.universAAL.middleware.owl.Restriction;
+import org.universAAL.middleware.owl.MergedRestriction;
+import org.universAAL.middleware.owl.OntologyManagement;
+import org.universAAL.middleware.owl.SimpleOntology;
+import org.universAAL.middleware.rdf.Resource;
 import org.universAAL.middleware.rdf.TypeMapper;
+import org.universAAL.middleware.rdf.impl.ResourceFactoryImpl;
 import org.universAAL.middleware.service.owls.profile.ServiceProfile;
 import org.universAAL.ontology.lighting.ElectricLight;
 import org.universAAL.ontology.lighting.LightSource;
@@ -41,7 +45,15 @@ public class ProvidedService extends Lighting {
     static {
 	// we need to register all classes in the ontology for the serialization
 	// of the object
-	register(ProvidedService.class);
+	OntologyManagement.getInstance().register(
+		new SimpleOntology(MY_URI, Lighting.MY_URI,
+			new ResourceFactoryImpl() {
+			    @Override
+			    public Resource createInstance(String classURI,
+				    String instanceURI, int factoryIndex) {
+				return new ProvidedService(instanceURI);
+			    }
+			}));
 
 	// Help structures to define property paths used more than once below
 	String[] ppControls = new String[] { Lighting.PROP_CONTROLS };
@@ -59,18 +71,18 @@ public class ProvidedService extends Lighting {
 	// 1. it controls lamps
 	// 2. that can only be switched on and off
 
-	// Before adding our own restrictions, we first "inherit" the
-	// restrictions defined by the superclass
-	addRestriction(
-		(Restriction) Lighting.getClassRestrictionsOnProperty(
-			Lighting.PROP_CONTROLS).copy(), ppControls,
-		serverLightingRestrictions);
+//	// Before adding our own restrictions, we first "inherit" the
+//	// restrictions defined by the superclass
+//	addRestriction(
+//		(MergedRestriction) Lighting.getClassRestrictionsOnProperty(
+//			Lighting.PROP_CONTROLS).copy(), ppControls,
+//		serverLightingRestrictions);
 
 	// then, we add a restriction stating that the type of controlled light
 	// sources is ElectricLight.lightBulb
 	// meaning that light sources controlled by this class of services are
 	// all light bulbs
-	addRestriction(Restriction.getFixedValueRestriction(
+	addRestriction(MergedRestriction.getFixedValueRestriction(
 		LightSource.PROP_HAS_TYPE, ElectricLight.lightBulb),
 		new String[] { Lighting.PROP_CONTROLS,
 			LightSource.PROP_HAS_TYPE }, serverLightingRestrictions);
@@ -78,7 +90,7 @@ public class ProvidedService extends Lighting {
 	// finally, we restrict the values for the brightness of the lights to
 	// only 0 and 100
 	// meaning that the controlled light bulbs do not support dimming
-	addRestriction(Restriction.getAllValuesRestrictionWithCardinality(
+	addRestriction(MergedRestriction.getAllValuesRestrictionWithCardinality(
 		LightSource.PROP_SOURCE_BRIGHTNESS, new Enumeration(
 			new Integer[] { new Integer(0), new Integer(100) }), 1,
 		1), ppBrightness, serverLightingRestrictions);

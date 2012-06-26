@@ -68,32 +68,33 @@ public class ProfileCaller {
     }
 
     public boolean checkPWD(String user, String PWD) {
-	User userreceived=null;
-	UserProfile profilereceived=null;
-	UserIDProfile idreceived=null;
-	ServiceResponse resp = caller.call(SimpleEditor.requestGet(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).path,
-		Arg.in(new User(user)), Arg.out(OUTPUT_GETPROFILABLE)));
-	if (resp.getCallStatus() == CallStatus.succeeded) {
-	     userreceived = (User)getReturnValue(resp.getOutputs(), OUTPUT_GETPROFILABLE);
-	}
-	resp = caller.call(SimpleEditor.requestGet(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
-		Arg.in(new UserProfile(userreceived.getProfile().getURI())), Arg.out(OUTPUT_GETPROFILE)));
-	if (resp.getCallStatus() == CallStatus.succeeded) {
-	    profilereceived=(UserProfile)getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
-	}
-	resp = caller.call(SimpleEditor.requestGet(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
-		Arg.in(new UserIDProfile(profilereceived.getSubProfile().getURI())), Arg.out(OUTPUT_GETPROFILE)));
-	if (resp.getCallStatus() == CallStatus.succeeded) {
-	    idreceived=(UserIDProfile)getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
-	}
-	String storedpwd=idreceived.getPASSWORD();
-	return storedpwd.equals(PWD);
+//	User userreceived=null;
+//	UserProfile profilereceived=null;
+//	UserIDProfile idreceived=null;
+//	ServiceResponse resp = caller.call(SimpleEditor.requestGet(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).path,
+//		Arg.in(new User(user)), Arg.out(OUTPUT_GETPROFILABLE)));
+//	if (resp.getCallStatus() == CallStatus.succeeded) {
+//	     userreceived = (User)getReturnValue(resp.getOutputs(), OUTPUT_GETPROFILABLE);
+//	}
+//	resp = caller.call(SimpleEditor.requestGet(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
+//		Arg.in(new UserProfile(userreceived.getUserProfile().getURI())), Arg.out(OUTPUT_GETPROFILE)));
+//	if (resp.getCallStatus() == CallStatus.succeeded) {
+//	    profilereceived=(UserProfile)getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
+//	}
+//	resp = caller.call(SimpleEditor.requestGet(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
+//		Arg.in(new UserIDProfile(profilereceived.getSubProfile().getURI())), Arg.out(OUTPUT_GETPROFILE)));
+//	if (resp.getCallStatus() == CallStatus.succeeded) {
+//	    idreceived=(UserIDProfile)getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
+//	}
+//	String storedpwd=idreceived.getPASSWORD();
+//	return storedpwd.equals(PWD);
+	return false;
     }
 
     public String callProfile(int selectedIndex, String arg1, String arg2) {
@@ -334,6 +335,7 @@ public class ProfileCaller {
 	log.info("Profile Client: getSubprofiles1");
 	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
 	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(user));
+	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.type(HealthProfile.MY_URI));
 	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.out(OUTPUT_GETSUBPROFILES));
 	ServiceResponse resp=caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
