@@ -1,24 +1,22 @@
 package org.universAAL.ontology;
 
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
+import org.universAAL.middleware.container.ModuleContext;
+import org.universAAL.middleware.container.uAALModuleActivator;
 import org.universAAL.middleware.owl.Ontology;
 import org.universAAL.middleware.owl.OntologyManagement;
 
 //You need an Activator in your ontology bundle because it must be started...
-public class Activator implements BundleActivator {
+public class Activator implements uAALModuleActivator {
 
-    static BundleContext context = null;
     private Ontology tutorialOntology=new TutorialOntology();
 
-    public void start(BundleContext context) throws Exception {
-	Activator.context = context;
+    public void start(ModuleContext context) throws Exception {
 	OntologyManagement om = OntologyManagement.getInstance();
 	// For every general Ontology class included in your ontology bundle you must register it here
 	om.register(tutorialOntology);
     }
 
-    public void stop(BundleContext arg0) throws Exception {
+    public void stop(ModuleContext arg0) throws Exception {
 	// Unload the ontologies
 	OntologyManagement om = OntologyManagement.getInstance();
 	om.unregister(tutorialOntology);

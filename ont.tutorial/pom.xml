@@ -3,22 +3,18 @@
     <parent>
 		<groupId>org.universAAL.ontology</groupId>
 		<artifactId>ont.pom</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.1.4-SNAPSHOT</version>
 	</parent>
   <artifactId>ont.tutorial</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.4-SNAPSHOT</version>
   <name>Ontology Tutorial Example</name>
   <description>This example shows how to convert an ontology concept into its java representation for uAAL</description>
   <packaging>bundle</packaging>
   
   <dependencies>
 		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.osgi.core</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.data.representation</artifactId>
+			<artifactId>mw.data.representation.osgi</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
