@@ -1,0 +1,143 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 	<parent>
+		<groupId>org.universAAL.support.samples</groupId>
+		<artifactId>samples.pom</artifactId>
+		<version>1.1.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.universAAL.lddi</groupId>
+	<artifactId>smp.activityhub.client</artifactId>
+	<packaging>bundle</packaging>
+	<version>0.0.4-SNAPSHOT</version>
+	<name>Activity Hub Client</name>
+	<description>This is a client app listening on the uAAL context bus for events based on the activity hub ontology (ISO 11073-10471)</description>
+  
+	<developers>
+		<developer>
+			<id>foex</id>
+			<name>Thomas Fuxreiter</name>
+			<email>thomas.fuxreiter@ait.ac.at</email>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>CEST/CET</timezone>
+		</developer>
+	</developers>
+	
+	<dependencies>
+			<!-- itest should be 1. dependency in list -->
+		<dependency>
+			<groupId>org.universAAL.support</groupId>
+			<artifactId>itests</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+		</dependency>
+		
+		<!-- uAAL dependencies -->
+		<dependency>
+			<groupId>org.universAAL.middleware</groupId>
+			<artifactId>mw.data.representation</artifactId>
+			<!--<version>1.1.0</version>-->
+		</dependency>
+<!-- 		<dependency>
+			<groupId>org.universAAL.middleware</groupId>
+			<artifactId>mw.data.serialization</artifactId>
+		</dependency>
+ -->		<dependency>
+			<groupId>org.universAAL.middleware</groupId>
+			<artifactId>mw.bus.model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.universAAL.middleware</groupId>
+			<artifactId>mw.bus.context</artifactId>
+			<!--<version>1.1.0</version>-->
+		</dependency>
+		<dependency>
+			<groupId>org.universAAL.middleware</groupId>
+			<artifactId>mw.bus.service</artifactId>
+			<!--<version>1.1.0</version>-->
+		</dependency>
+		<dependency>
+			<groupId>org.universAAL.ontology</groupId>
+			<artifactId>ont.phWorld</artifactId>
+			<!--<version>1.1.0</version>-->
+		</dependency>
+
+		<dependency>
+			<groupId>org.universAAL.lddi</groupId>
+			<artifactId>iso11073.library</artifactId>
+			<version>0.0.4-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.universAAL.ontology</groupId>
+			<artifactId>ont.activityhub</artifactId>
+			<version>0.0.5-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.6</version>
+				<extensions>true</extensions>
+<!-- 				<executions>
+					<execution>
+						<id>bundle-manifest</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>manifest</goal>
+						</goals>
+					</execution>
+				</executions> -->
+				<configuration>
+					<instructions>
+						<Bundle-Name>${project.name}</Bundle-Name>
+						<Bundle-Activator>org.universAAL.lddi.samples.activityhub.client.Activator</Bundle-Activator>
+						<Bundle-Description>${project.description}</Bundle-Description>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Private-Package>org.universAAL.lddi.samples.activityhub.client.*</Private-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+			</plugin>			
+		</plugins>
+	</build>
+	
+		<!-- Instructions for uaal-maven-plugin for which dependencies should be used in the composite -->
+	<profiles>
+		<profile>
+			<id>uAAL-Runtime</id>
+			<dependencies>
+				<!--				<dependency>-->
+				<!--					<groupId>org.osgi</groupId>-->
+				<!--					<artifactId>org.osgi.compendium</artifactId>-->
+				<!--					<version>4.2.0</version>-->
+				<!--				</dependency>-->
+				
+				<dependency>
+					<groupId>org.universAAL.middleware</groupId>
+					<artifactId>mw.data.serialization</artifactId>
+				</dependency>
+
+				<dependency>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>org.apache.felix.http.jetty</artifactId>
+					<version>2.2.0</version>		
+				</dependency>	
+				<dependency>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>org.apache.felix.webconsole</artifactId>
+					<version>3.1.8</version>		
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+
+</project>
