@@ -1,37 +1,23 @@
 package org.universAAL.samples.lighting.client;
 
-import org.osgi.framework.BundleActivator;
-import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.uAALModuleActivator;
 
-public class Activator implements BundleActivator {
+public class Activator implements uAALModuleActivator {
 
     public static ModuleContext mc;
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext
-     * )
-     */
-    public void start(final BundleContext context) throws Exception {
-	mc = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { context });
+    public void start(final ModuleContext mc) throws Exception {
+	Activator.mc = mc;
 	new Thread() {
 	    public void run() {
 		new LightingConsumer(mc);
 	    }
 	}.start();
+	
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
-     */
-    public void stop(BundleContext context) throws Exception {
+    public void stop(ModuleContext mc) throws Exception {
+	
     }
 }
