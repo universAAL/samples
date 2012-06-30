@@ -1,0 +1,4 @@
+scan-composite:mvn:org.universAAL.samples/smp.lighting.client.osgi//deps@10
+# append @nostart to the lighting client if you want it not to start automatically
+# scan-bundle:mvn:org.universAAL.samples/smp.lighting.client.osgi/@27@nostart
+scan-bundle:mvn:org.universAAL.samples/smp.lighting.client.osgi/@27
