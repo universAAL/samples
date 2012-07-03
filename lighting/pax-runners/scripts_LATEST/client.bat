@@ -1,1 +1,1 @@
-pax-run --platform=felix --version=1.4.0 --startLevel=30 --dir=../runner_client ../LightingExample_Distributed_ClientCoordinator_osgi.pax_provision scan-composite:file:client.composite
+pax-run --platform=felix --version=1.4.0 --startLevel=30 --dir=../runner_client --org.ops4j.pax.url.mvn.repositories=+http://depot.universaal.org/nexus/content/groups/public,http://depot.universaal.org/nexus/content/repositories/snapshots@snapshots@noreleases ../LightingExample_Distributed_ClientCoordinator_osgi.pax_provision scan-composite:file:client.composite

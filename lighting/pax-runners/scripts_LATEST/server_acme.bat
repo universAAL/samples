@@ -1,1 +1,1 @@
-pax-run --platform=felix --version=1.4.0 --startLevel=30 --dir=../runner_server_acme ../LightingExample_Distributed_ServerNotCoordinator_osgi_acme.pax_provision scan-composite:file:server.composite
+pax-run --platform=felix --version=1.4.0 --startLevel=30 --dir=../runner_server_acme --org.ops4j.pax.url.mvn.repositories=+http://depot.universaal.org/nexus/content/groups/public,http://depot.universaal.org/nexus/content/repositories/snapshots@snapshots@noreleases  ../LightingExample_Distributed_ServerNotCoordinator_osgi_acme.pax_provision scan-composite:file:server.composite
