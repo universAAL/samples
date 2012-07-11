@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.universAAL.support.samples</groupId>
 		<artifactId>samples.pom</artifactId>
-		<version>1.1.1-SNAPSHOT</version>
+		<version>1.1.3-SNAPSHOT</version>
 		<relativePath>../../samples.pom/pom.xml</relativePath>
 	</parent>
 
@@ -14,7 +14,7 @@
 	
 	<groupId>org.universAAL.samples</groupId>
 	<artifactId>smp.lighting.uiclient</artifactId>
-	<version>1.1.1-SNAPSHOT</version>
+	<version>1.1.3-SNAPSHOT</version>
 	<name>Lighting UI Client</name>
 	<description>A client using lighting services based on the corresponding domain ontology and interaction based on the dialog package</description>
 	<url />
@@ -33,19 +33,19 @@
 
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.data.representation</artifactId>
+			<artifactId>mw.data.representation.osgi</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.bus.context</artifactId>
+			<artifactId>mw.bus.context.osgi</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.bus.ui</artifactId>
+			<artifactId>mw.bus.ui.osgi</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.bus.service</artifactId>
+			<artifactId>mw.bus.service.osgi</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.ontology</groupId>
@@ -61,7 +61,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.container.xfaces</artifactId>
+			<artifactId>mw.container.xfaces.osgi</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
@@ -93,8 +93,8 @@
 			<dependencies>
 				<dependency>
 					<groupId>org.universAAL.samples</groupId>
-					<artifactId>smp.lighting.server</artifactId>
-					<version>1.1.1-SNAPSHOT</version>
+					<artifactId>smp.lighting.server.osgi</artifactId>
+					<version>1.1.3-SNAPSHOT</version>
 				</dependency>
 				<dependency>
 					<groupId>org.universAAL.ui</groupId>
