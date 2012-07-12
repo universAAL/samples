@@ -24,7 +24,6 @@ import org.universAAL.samples.service.utils.Arg;
 import org.universAAL.samples.service.utils.Path;
 import org.universAAL.samples.service.utils.low.SimpleRequest;
 import org.universAAL.samples.service.utils.mid.SimpleEditor;
-import org.universaal.ontology.useridprofileontology.owl.UserIDProfile;
 
 public class ProfileCaller {
     private static final String PROFILE_CLIENT_NAMESPACE = "http://ontology.itaca.es/ProfileClient.owl#";

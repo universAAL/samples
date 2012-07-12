@@ -404,14 +404,14 @@ public class GUIPanel extends javax.swing.JFrame {
 	this.label1p3.setText(text);
     }
 
-    private org.universAAL.context.che.ontology.ContextEvent getSample(
+    private org.universAAL.ontology.che.ContextEvent getSample(
 	    int sample) {
 	switch (sample) {
 	case 0:
 	    // 1 User is awake
 	    User u1 = new User(CPublisher.URIROOT + "user1");
 	    u1.setProperty(Profilable.PROP_HAS_PROFILE,new UserProfile(CPublisher.URIROOT + "user1Profile"));
-	    return new org.universAAL.context.che.ontology.ContextEvent(u1,
+	    return new org.universAAL.ontology.che.ContextEvent(u1,
 		    Profilable.PROP_HAS_PROFILE);
 	    // case 1:
 	    // //2 Building has address
@@ -437,39 +437,39 @@ public class GUIPanel extends javax.swing.JFrame {
 	    // 4 Blind is open
 	    BlindActuator b4 = new BlindActuator(CPublisher.URIROOT + "blind4");
 	    b4.setProperty(BlindActuator.PROP_PHYSICAL_LOCATION, new Integer(100));
-	    return new org.universAAL.context.che.ontology.ContextEvent(b4,
+	    return new org.universAAL.ontology.che.ContextEvent(b4,
 		    BlindActuator.PROP_PHYSICAL_LOCATION);
 	case 4:
 	    // 5 chair is in place
 	    Furniture f5 = new Furniture(CPublisher.URIROOT + "furniture5");
 	    f5.setFurnitureType(FurnitureType.Chair);
 	    f5.setLocation(new Location(CPublisher.URIROOT + "location5"));
-	    return new org.universAAL.context.che.ontology.ContextEvent(f5,
+	    return new org.universAAL.ontology.che.ContextEvent(f5,
 		    Furniture.PROP_PHYSICAL_LOCATION);
 	case 5:
 	    // 6 light is on
 	    LightSource ls6 = new LightSource(CPublisher.URIROOT + "light6");
 	    ls6.setBrightness(100);
-	    return new org.universAAL.context.che.ontology.ContextEvent(ls6,
+	    return new org.universAAL.ontology.che.ContextEvent(ls6,
 		    LightSource.PROP_SOURCE_BRIGHTNESS);
 	case 6:
 	    // 7 socket at 50%
 	    Powersocket ss7 = new Powersocket(CPublisher.URIROOT + "socket7");
 	    ss7.setValue(50);
-	    return new org.universAAL.context.che.ontology.ContextEvent(ss7,
+	    return new org.universAAL.ontology.che.ContextEvent(ss7,
 		    Powersocket.PROP_SOCKET_VALUE);
 	case 7:
 	    // 8 temperature measured
 	    TempSensor ts8 = new TempSensor(CPublisher.URIROOT + "tempsensor8");
 	    ts8.setMeasuredValue(27.5f);
-	    return new org.universAAL.context.che.ontology.ContextEvent(ts8,
+	    return new org.universAAL.ontology.che.ContextEvent(ts8,
 		    TempSensor.PROP_MEASURED_VALUE);
 	case 8:
 	    // 9 window closed
 	    WindowActuator w9 = new WindowActuator(CPublisher.URIROOT
 		    + "window9");
 	    w9.setProperty(WindowActuator.PROP_WINDOW_STATUS, new Integer(0));
-	    return new org.universAAL.context.che.ontology.ContextEvent(w9,
+	    return new org.universAAL.ontology.che.ContextEvent(w9,
 		    WindowActuator.PROP_WINDOW_STATUS);
 	default:
 	    // 10 situation
@@ -478,7 +478,7 @@ public class GUIPanel extends javax.swing.JFrame {
 		    CPublisher.URIROOT + "user1"));
 	    p10.setProperty(PhysicalThing.PROP_IS_PORTABLE, new Boolean(true));
 	    p10.setLocation(new Location(CPublisher.URIROOT + "location10"));
-	    return new org.universAAL.context.che.ontology.ContextEvent(p10,
+	    return new org.universAAL.ontology.che.ContextEvent(p10,
 		    PhysicalThing.PROP_PHYSICAL_LOCATION);
 	}
     }

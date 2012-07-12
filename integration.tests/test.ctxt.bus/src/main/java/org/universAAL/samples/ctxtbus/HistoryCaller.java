@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.universAAL.context.che.ontology.ContextHistoryService;
 import org.universAAL.middleware.owl.MergedRestriction;
 import org.universAAL.middleware.rdf.PropertyPath;
 import org.universAAL.middleware.rdf.Resource;
@@ -17,6 +16,7 @@ import org.universAAL.middleware.service.ServiceResponse;
 import org.universAAL.middleware.service.owls.process.ProcessOutput;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.context.ContextEvent;
+import org.universAAL.ontology.che.ContextHistoryService;
 
 public class HistoryCaller {
     private static final String HISTORY_CLIENT_NAMESPACE = "http://ontology.itaca.es/HistoryClient.owl#";
@@ -54,7 +54,7 @@ public class HistoryCaller {
     }
 
     public int callGetEvents(
-	    org.universAAL.context.che.ontology.ContextEvent matchEvent,
+	    org.universAAL.ontology.che.ContextEvent matchEvent,
 	    long tstFrom, long tstTo) {
 	int count = 0;
 	ServiceResponse response = caller.call(getGetEventsRequest(matchEvent,
@@ -96,7 +96,7 @@ public class HistoryCaller {
     }
 
     private ServiceRequest getGetEventsRequest(
-	    org.universAAL.context.che.ontology.ContextEvent matchEvent,
+	    org.universAAL.ontology.che.ContextEvent matchEvent,
 	    long tstFrom, long tstTo) {
 	ServiceRequest getEvents = new ServiceRequest(
 		new ContextHistoryService(null), null);
