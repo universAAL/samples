@@ -5,7 +5,7 @@
   <parent>
   	<groupId>org.universAAL.support</groupId>
   	<artifactId>support.pom</artifactId>
-  	<version>1.1.0</version>
+  	<version>1.2.0</version>
   </parent>
   
   <groupId>org.universAAL.samples</groupId>
@@ -17,15 +17,15 @@
   <dependencies>
   	<dependency>
   		<groupId>org.universAAL.middleware</groupId>
-  		<artifactId>mw.bus.context</artifactId>
+  		<artifactId>mw.bus.context.core</artifactId>
   	</dependency>   	
   	<dependency>
   		<groupId>org.universAAL.middleware</groupId>
-  		<artifactId>mw.bus.service</artifactId>
+  		<artifactId>mw.bus.service.core</artifactId>
   	</dependency>  	
   	<dependency>
   		<groupId>org.universAAL.middleware</groupId>
-  		<artifactId>mw.bus.ui</artifactId>
+  		<artifactId>mw.bus.ui.core</artifactId>
   	</dependency> 
   	<dependency>
   		<groupId>org.universAAL.ontology</groupId>
