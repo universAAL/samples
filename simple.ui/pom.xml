@@ -1,72 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-    
   <parent>
-  	<groupId>org.universAAL.support.samples</groupId>
-	<artifactId>samples.pom</artifactId>
-	<version>1.1.3-SNAPSHOT</version>
-	<relativePath>../samples.pom</relativePath>
+    <groupId>org.universAAL.support.samples</groupId>
+    <artifactId>samples.pom</artifactId>
+    <version>1.2.0</version>
+    <relativePath>../samples.pom</relativePath>
   </parent>
-  
   <groupId>org.universAAL.samples</groupId>
   <artifactId>simple.ui</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>1.2.0</version>
   <packaging>bundle</packaging>
-
-  
   <dependencies>
-  	<dependency>
-  		<groupId>org.universAAL.middleware</groupId>
-  		<artifactId>mw.bus.context.core</artifactId>
-  	</dependency>   	
-  	<dependency>
-  		<groupId>org.universAAL.middleware</groupId>
-  		<artifactId>mw.bus.service.core</artifactId>
-  	</dependency>  	
-  	<dependency>
-  		<groupId>org.universAAL.middleware</groupId>
-  		<artifactId>mw.bus.ui.core</artifactId>
-  	</dependency> 
-  	<dependency>
-  		<groupId>org.universAAL.ontology</groupId>
-  		<artifactId>ont.phWorld</artifactId>
-  	</dependency>  	 
-  	<dependency>
-  		<groupId>org.universAAL.ontology</groupId>
-  		<artifactId>ont.profile</artifactId>
-  	</dependency>  	 	
-  	<dependency>
-  		<groupId>org.universAAL.middleware</groupId>
-  		<artifactId>mw.container.osgi</artifactId>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.apache.felix</groupId>
-  		<artifactId>org.osgi.core</artifactId>
-  	</dependency>
+    <dependency>
+      <groupId>org.universAAL.middleware</groupId>
+      <artifactId>mw.bus.context.core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.middleware</groupId>
+      <artifactId>mw.bus.service.core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.middleware</groupId>
+      <artifactId>mw.bus.ui.core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.ontology</groupId>
+      <artifactId>ont.phWorld</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.ontology</groupId>
+      <artifactId>ont.profile</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.middleware</groupId>
+      <artifactId>mw.container.osgi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.osgi.core</artifactId>
+    </dependency>
   </dependencies>
-  
-  	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Bundle-Activator>org.universAAL.samples.simple.ui.ProjectActivator</Bundle-Activator>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-	<repositories> 
-		<repository> 
-			<id>uaal</id>
-			<name>universAAL Repositories</name>
-			<url>http://depot.universaal.org/maven-repo/releases/</url> 
-			<snapshots> <enabled>false</enabled> </snapshots> 
-		</repository>
-	</repositories>
-  
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>uaal</id>
+      <name>universAAL Repositories</name>
+      <url>http://depot.universaal.org/maven-repo/releases/</url>
+    </repository>
+  </repositories>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-Activator>org.universAAL.samples.simple.ui.ProjectActivator</Bundle-Activator>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

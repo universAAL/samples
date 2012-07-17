@@ -13,14 +13,14 @@ public class ProjectActivator implements BundleActivator {
 	public void start(BundleContext arg0) throws Exception {	
 		context = uAALBundleContainer.THE_CONTAINER
                 .registerModule(new Object[] {arg0});	
-		context.logDebug("Initialising Project", null);
+		context.logDebug("simple.ui","Initialising Project", null);
 
 		/*
 		 * uAAL stuff
 		 */
 		service = new MainButtonProvider(context);
 		
-		context.logInfo("Project started", null);
+		context.logInfo("simple.ui","Project started", null);
 	}
 
 
