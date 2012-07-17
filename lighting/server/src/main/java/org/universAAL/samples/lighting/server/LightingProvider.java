@@ -217,7 +217,6 @@ public class LightingProvider extends ServiceCallee implements
 	// provide to the universAAL-based AAL Space
 	super(context, ProvidedLightingService.profiles);
 
-	
 	// this is just an example that wraps a faked "original server"
 	theServer = new MyLighting();
 
@@ -231,10 +230,20 @@ public class LightingProvider extends ServiceCallee implements
 
 	// now we are ready to listen to the changes on the server side
 	theServer.addListener(this);
-	
-	// create a Lamps View 
-	UILampsView view = new UILampsView(theServer.getLampIDs());
-	theServer.addListener(new UILampsController(view));
+
+	// create a Lamps View
+	try {
+	    UILampsView view = new UILampsView(theServer.getLampIDs());
+	    theServer.addListener(new UILampsController(view));
+	} catch (java.awt.HeadlessException ex) {
+	    LogUtils
+		    .logInfo(
+			    Activator.mc,
+			    LightingProvider.class,
+			    "LightingProvider",
+			    new Object[] { "server activates GUI-off mode because of no screen access" },
+			    null);
+	}
     }
 
     /*

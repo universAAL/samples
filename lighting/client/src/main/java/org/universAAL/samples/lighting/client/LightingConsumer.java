@@ -49,7 +49,17 @@ public class LightingConsumer extends ContextSubscriber {
 	// (surprise ;-) )
 	caller = new DefaultServiceCaller(context);
 
-	new LightClient();
+	try {
+	    new LightClient();
+	} catch (java.awt.HeadlessException ex) {
+	    LogUtils
+	    .logInfo(
+		    Activator.mc,
+		    LightingConsumer.class,
+		    "LightingConsumer",
+		    new Object[] { "client activates GUI-off mode because of no screen access" },
+		    null);
+	}
     }
 
     // *****************************************************************
