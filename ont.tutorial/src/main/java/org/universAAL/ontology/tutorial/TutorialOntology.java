@@ -1,4 +1,4 @@
-package org.universAAL.ontology;
+package org.universAAL.ontology.tutorial;
 
 import org.universAAL.middleware.owl.DataRepOntology;
 import org.universAAL.middleware.owl.ManagedIndividual;
@@ -7,11 +7,10 @@ import org.universAAL.middleware.owl.OntClassInfoSetup;
 import org.universAAL.middleware.owl.Ontology;
 import org.universAAL.middleware.rdf.Resource;
 import org.universAAL.middleware.rdf.TypeMapper;
+import org.universAAL.ontology.TutorialFactory;
 import org.universAAL.ontology.phThing.Device;
 import org.universAAL.ontology.phThing.PhThingOntology;
 import org.universAAL.ontology.phThing.Sensor;
-import org.universAAL.ontology.tutorial.MyConcept;
-import org.universAAL.ontology.tutorial.MyEnumeration;
 
 //This is the main central class where you actually define the restrictions and
 //relations between your concepts. It´s like a representation of an OWL file.

@@ -1,7 +1,6 @@
 package org.universAAL.ontology.tutorial;
 
 import org.universAAL.middleware.owl.ManagedIndividual;
-import org.universAAL.ontology.TutorialOntology;
 
 // Enumerations can be used for giving value to a property that must have one 
 // of a specific set of individual values.

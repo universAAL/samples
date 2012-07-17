@@ -4,11 +4,12 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.uAALModuleActivator;
 import org.universAAL.middleware.owl.Ontology;
 import org.universAAL.middleware.owl.OntologyManagement;
+import org.universAAL.ontology.tutorial.TutorialOntology;
 
 //You need an Activator in your ontology bundle because it must be started...
-public class Activator implements uAALModuleActivator {
+public class TutorialActivator implements uAALModuleActivator {
 
-    private Ontology tutorialOntology=new TutorialOntology();
+    private Ontology tutorialOntology = new TutorialOntology();
 
     public void start(ModuleContext context) throws Exception {
 	OntologyManagement om = OntologyManagement.getInstance();
