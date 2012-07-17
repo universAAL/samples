@@ -3,10 +3,10 @@
     <parent>
 		<groupId>org.universAAL.ontology</groupId>
 		<artifactId>ont.pom</artifactId>
-		<version>1.1.4-SNAPSHOT</version>
+		<version>1.2.0</version>
 	</parent>
   <artifactId>ont.tutorial</artifactId>
-  <version>1.1.4-SNAPSHOT</version>
+  <version>1.2.0</version>
   <name>Ontology Tutorial Example</name>
   <description>This example shows how to convert an ontology concept into its java representation for uAAL</description>
   <packaging>bundle</packaging>
