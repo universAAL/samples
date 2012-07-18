@@ -6,10 +6,12 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.universAAL.middleware.container.ModuleContext;
+import org.universAAL.middleware.owl.MergedRestriction;
 import org.universAAL.middleware.rdf.Resource;
 import org.universAAL.middleware.service.CallStatus;
 import org.universAAL.middleware.service.DefaultServiceCaller;
 import org.universAAL.middleware.service.ServiceCaller;
+import org.universAAL.middleware.service.ServiceRequest;
 import org.universAAL.middleware.service.ServiceResponse;
 import org.universAAL.middleware.service.owls.process.ProcessOutput;
 import org.universAAL.ontology.profile.AssistedPerson;
@@ -20,10 +22,10 @@ import org.universAAL.ontology.profile.User;
 import org.universAAL.ontology.profile.UserProfile;
 import org.universAAL.ontology.profile.health.HealthProfile;
 import org.universAAL.ontology.profile.service.ProfilingService;
-import org.universAAL.samples.service.utils.Arg;
-import org.universAAL.samples.service.utils.Path;
-import org.universAAL.samples.service.utils.low.SimpleRequest;
-import org.universAAL.samples.service.utils.mid.SimpleEditor;
+//import org.universAAL.samples.service.utils.Arg;
+//import org.universAAL.samples.service.utils.Path;
+//import org.universAAL.samples.service.utils.low.SimpleRequest;
+//import org.universAAL.samples.service.utils.mid.SimpleEditor;
 
 public class ProfileCaller {
     private static final String PROFILE_CLIENT_NAMESPACE = "http://ontology.itaca.es/ProfileClient.owl#";
@@ -149,37 +151,53 @@ public class ProfileCaller {
     //:::::::::::::PROFILABLE GET/ADD/CHANGE/REMOVE:::::::::::::::::
     private String removeProfilable(Resource profilable) {
 	log.info("Profile Client: RemoveProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestRemove(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).path,
-		Arg.remove(profilable)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestRemove(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).path,
+//		Arg.remove(profilable)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	MergedRestriction r1 = MergedRestriction.getFixedValueRestriction(
+		ProfilingService.PROP_CONTROLS, profilable);
+	req.getRequestedService().addInstanceLevelRestriction(r1, new String[]{ProfilingService.PROP_CONTROLS});
+	req.addRemoveEffect(new String[]{ProfilingService.PROP_CONTROLS});
+	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String changeProfilable(Resource profilable) {
 	log.info("Profile Client: changeProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestChange(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).path,
-		Arg.change(profilable)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestChange(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).path,
+//		Arg.change(profilable)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS}, profilable);
+	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String addProfilable(Resource profilable) {
 	log.info("Profile Client: addProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestAdd(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).path,
-		Arg.add(profilable)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestAdd(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).path,
+//		Arg.add(profilable)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS}, profilable);
+	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String getProfilable(Resource assistedPerson) {
 	log.info("Profile Client: callGetProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestGet(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).path,
-		Arg.in(assistedPerson), Arg.out(OUTPUT_GETPROFILABLE)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestGet(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).path,
+//		Arg.in(assistedPerson), Arg.out(OUTPUT_GETPROFILABLE)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, assistedPerson);
+	req.addRequiredOutput(OUTPUT_GETPROFILABLE, new String[]{ProfilingService.PROP_CONTROLS});
+	ServiceResponse resp = caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILABLE);
 	    if (out != null) {
@@ -197,37 +215,53 @@ public class ProfileCaller {
     //:::::::::::::PROFILE GET/ADD/CHANGE/REMOVE:::::::::::::::::
     private String removeProfile(UserProfile profile) {
 	log.info("Profile Client: RemoveProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestRemove(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
-		Arg.remove(profile)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestRemove(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
+//		Arg.remove(profile)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	MergedRestriction r1 = MergedRestriction.getFixedValueRestriction(
+		Profilable.PROP_HAS_PROFILE, profile);
+	req.getRequestedService().addInstanceLevelRestriction(r1, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
+	req.addRemoveEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
+	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String changeProfile(UserProfile profile) {
 	log.info("Profile Client: changeProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestChange(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
-		Arg.change(profile)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestChange(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
+//		Arg.change(profile)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS,ProfilingService.PROP_CONTROLS}, profile);
+	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String addProfile(UserProfile profile) {
 	log.info("Profile Client: addProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestAdd(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
-		Arg.add(profile)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestAdd(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
+//		Arg.add(profile)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
+	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String getProfile(UserProfile profile) {
 	log.info("Profile Client: callGetProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestGet(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
-		Arg.in(profile), Arg.out(OUTPUT_GETPROFILE)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestGet(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
+//		Arg.in(profile), Arg.out(OUTPUT_GETPROFILE)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
+	req.addRequiredOutput(OUTPUT_GETPROFILABLE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
+	ServiceResponse resp = caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
 	    if (out != null) {
@@ -245,37 +279,53 @@ public class ProfileCaller {
     //:::::::::::::SUBPROFILE GET/ADD/CHANGE/REMOVE:::::::::::::::::
     private String removeSubProfile(SubProfile profile) {
 	log.info("Profile Client: RemoveProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestRemove(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
-		Arg.remove(profile)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestRemove(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
+//		Arg.remove(profile)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	MergedRestriction r1 = MergedRestriction.getFixedValueRestriction(
+		Profile.PROP_HAS_SUB_PROFILE, profile);
+	req.getRequestedService().addInstanceLevelRestriction(r1, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
+	req.addRemoveEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
+	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String changeSubProfile(SubProfile profile) {
 	log.info("Profile Client: changeProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestChange(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
-		Arg.change(profile)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestChange(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
+//		Arg.change(profile)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS,ProfilingService.PROP_CONTROLS,Profile.PROP_HAS_SUB_PROFILE}, profile);
+	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String addSubProfile(SubProfile profile) {
 	log.info("Profile Client: addProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestAdd(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
-		Arg.add(profile)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestAdd(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
+//		Arg.add(profile)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, profile);
+	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String getSubProfile(SubProfile profile) {
 	log.info("Profile Client: callGetProfilable");
-	ServiceResponse resp = caller.call(SimpleEditor.requestGet(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
-		Arg.in(profile), Arg.out(OUTPUT_GETSUBPROFILE)));
+//	ServiceResponse resp = caller.call(SimpleEditor.requestGet(
+//		ProfilingService.MY_URI,
+//		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
+//		Arg.in(profile), Arg.out(OUTPUT_GETSUBPROFILE)));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
+	req.addRequiredOutput(OUTPUT_GETPROFILABLE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
+	ServiceResponse resp = caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILE);
 	    if (out != null) {
@@ -293,8 +343,10 @@ public class ProfileCaller {
     //:::::::::::::OTHER GETS:::::::::::::::::
     private String getUsers() {
 	log.info("Profile Client: getUsers");
-	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.out(OUTPUT_GETUSERS));
+//	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.out(OUTPUT_GETUSERS));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addRequiredOutput(OUTPUT_GETUSERS, new String[]{ProfilingService.PROP_CONTROLS});
 	ServiceResponse resp=caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETUSERS);
@@ -312,9 +364,12 @@ public class ProfileCaller {
     
     private String getProfile(User profilable) {
  	log.info("Profile Client: getProfile1");
- 	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
- 	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(profilable));
- 	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.out(OUTPUT_GETPROFILE));
+// 	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
+// 	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(profilable));
+// 	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.out(OUTPUT_GETPROFILE));
+ 	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+ 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, profilable);
+	req.addRequiredOutput(OUTPUT_GETPROFILE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
  	ServiceResponse resp=caller.call(req);
  	if (resp.getCallStatus() == CallStatus.succeeded) {
  	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
@@ -332,10 +387,14 @@ public class ProfileCaller {
     
     private String getSubprofiles(User user) {
 	log.info("Profile Client: getSubprofiles1");
-	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(user));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.type(HealthProfile.MY_URI));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.out(OUTPUT_GETSUBPROFILES));
+//	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(user));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.type(HealthProfile.MY_URI));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.out(OUTPUT_GETSUBPROFILES));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, user);
+	req.addTypeFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, HealthProfile.MY_URI);
+	req.addRequiredOutput(OUTPUT_GETSUBPROFILES, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
 	ServiceResponse resp=caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
@@ -353,9 +412,12 @@ public class ProfileCaller {
     
     private String getSubprofiles(UserProfile profile) {
 	log.info("Profile Client: getSubprofiles2");
-	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.in(profile));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.out(OUTPUT_GETSUBPROFILES));
+//	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.in(profile));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.out(OUTPUT_GETSUBPROFILES));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+ 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
+	req.addRequiredOutput(OUTPUT_GETPROFILE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
 	ServiceResponse resp=caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
@@ -374,27 +436,36 @@ public class ProfileCaller {
     //:::::::::::::OTHER ADDS:::::::::::::::::
     private String addProfile(User profilable, UserProfile profile) {
 	log.info("Profile Client: addProfile");
-	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(profilable));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.add(profile));
+//	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(profilable));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.add(profile));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+ 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, profilable);
+ 	req.addAddEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
 	ServiceResponse resp=caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String addSubprofile(User profilable, SubProfile subProfile) {
 	log.info("Profile Client: addProfile2");
-	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(profilable));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.add(subProfile));
+//	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(profilable));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.add(subProfile));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+ 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, profilable);
+ 	req.addAddEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, subProfile);
 	ServiceResponse resp=caller.call(req);
 	return resp.getCallStatus().name();
     }
 
     private String addSubprofile(UserProfile userProfile, SubProfile subProfile) {
 	log.info("Profile Client: addProfile3");
-	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.in(userProfile));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.add(subProfile));
+//	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.in(userProfile));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.add(subProfile));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+ 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, userProfile);
+ 	req.addAddEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, subProfile);
 	ServiceResponse resp=caller.call(req);
 	return resp.getCallStatus().name();
     }
