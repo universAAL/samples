@@ -10,16 +10,16 @@
   </parent>
   <groupId>org.universAAL.support.samples</groupId>
   <artifactId>samples.pom</artifactId>
-  <version>1.2.0</version>
+  <version>1.2.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>universAAL Samples</name>
   <description>A set of components that use the universAAL middleware with different roles and serve as samples.</description>
   <modules>
-<!--     <module>../integration.tests/test.ctxt.bus</module> -->
-<!--     <module>../integration.tests/test.ctxt.bus.mobiledroid</module> -->
-<!--     <module>../integration.tests/test.serv.bus</module> -->
-<!--     <module>../integration.tests/test.serv.server</module> -->
-<!--     <module>../integration.tests/test.ui.bus</module> -->
+    <module>../integration.tests/test.ctxt.bus</module>
+    <module>../integration.tests/test.ctxt.bus.mobiledroid</module>
+    <module>../integration.tests/test.serv.bus</module>
+    <module>../integration.tests/test.serv.server</module>
+    <module>../integration.tests/test.ui.bus</module>
     <module>../lighting/server</module>
     <module>../lighting/client</module>
     <module>../lighting/uiclient</module>
@@ -28,44 +28,44 @@
     <module>../smp.activityhub.client</module>
   </modules>
   <dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.universAAL.middleware</groupId>
-				<artifactId>mw.pom</artifactId>
-				<version>1.2.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.universAAL.middleware</groupId>
-				<artifactId>mw.pom.osgi</artifactId>
-				<version>1.2.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>			
-			<dependency>
-				<groupId>org.universAAL.ontology</groupId>
-				<artifactId>ont.pom</artifactId>
-				<version>1.2.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.universAAL.ui</groupId>
-				<artifactId>ui.pom</artifactId>
-				<version>1.2.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.universAAL.lddi</groupId>
-				<artifactId>lddi.pom</artifactId>
-				<version>1.2.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.universAAL.middleware</groupId>
+        <artifactId>mw.pom</artifactId>
+        <version>1.2.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.middleware</groupId>
+        <artifactId>mw.pom.osgi</artifactId>
+        <version>1.2.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.ontology</groupId>
+        <artifactId>ont.pom</artifactId>
+        <version>1.2.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.ui</groupId>
+        <artifactId>ui.pom</artifactId>
+        <version>1.2.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.lddi</groupId>
+        <artifactId>lddi.pom</artifactId>
+        <version>1.2.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <build>
     <plugins>
       <plugin>
