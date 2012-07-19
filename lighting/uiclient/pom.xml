@@ -60,7 +60,7 @@
   </build>
   <profiles>
     <profile>
-      <id>uAAL-Runtime</id>
+      <id>uAAL-Test-Runtime</id>
       <dependencies>
         <dependency>
           <groupId>org.universAAL.samples</groupId>
