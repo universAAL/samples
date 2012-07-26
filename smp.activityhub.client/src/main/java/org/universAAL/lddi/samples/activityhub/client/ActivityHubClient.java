@@ -1,6 +1,7 @@
 package org.universAAL.lddi.samples.activityhub.client;
 
 import java.awt.Dimension;
+import java.awt.Scrollbar;
 import java.awt.event.ActionEvent;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -42,9 +43,12 @@ public class ActivityHubClient extends javax.swing.JPanel {
 	
 	private Activator myParent;
 	private static JFrame frame;
-	static private JList jList1;
-	private static JTextArea deviceArea = new JTextArea();
-	private static JScrollPane jsp1 = new JScrollPane(deviceArea);
+	private static ListModel jListModel = new DefaultComboBoxModel(new Object[] { "Init..." });
+	static private JList jList1 = new JList(jListModel);
+	private static JScrollPane jsp0 = new JScrollPane(jList1);
+//	private static JTextArea deviceArea = new JTextArea();
+	private static JTextArea deviceInfoArea = new JTextArea();
+	private static JScrollPane jsp1 = new JScrollPane(deviceInfoArea);
 	private static JTextArea contextArea = new JTextArea();
 	private static JScrollPane jsp2 = new JScrollPane(contextArea);
 	private static JTextArea logArea = new JTextArea();
@@ -93,16 +97,18 @@ public class ActivityHubClient extends javax.swing.JPanel {
 	}
 	
 	private void initComponents() {
-		ListModel jListModel = new DefaultComboBoxModel(new Object[] { "Init..." });
 		{
 			label1 = new JLabel("Devices");
 			frame.getContentPane().add(label1);
 			label1.setBounds(20, 20, 200, 20);
 			
-			jList1 = new JList();
-			frame.getContentPane().add(jList1);
-			jList1.setModel(jListModel);
-			jList1.setBounds(20, 40, 680, 100);
+			frame.getContentPane().add(jsp0);
+			jsp0.setBounds(20, 40, 680, 100);
+
+//			jList1 = new JList();
+//			jList1.add(new Scrollbar(Scrollbar.VERTICAL));
+//			frame.getContentPane().add(jList1);
+//			jList1.setBounds(20, 40, 680, 100);
 		}
 
 		{
@@ -231,14 +237,14 @@ public class ActivityHubClient extends javax.swing.JPanel {
 	}
 
 	/**
-	 * Helper class that displays the given text on the deviceArea on the GUI
+	 * Helper class that displays the given text on the deviceInfoArea on the GUI
 	 * adding a line break
 	 * and set focus always to the bottom of the textArea
 	 * @param text
 	 */
 	public void addTextToDeviceArea(String text) {
-		deviceArea.setText(deviceArea.getText() + text + "\n");
-	    deviceArea.setCaretPosition(deviceArea.getDocument().getLength());
+		deviceInfoArea.setText(deviceInfoArea.getText() + text + "\n");
+	    deviceInfoArea.setCaretPosition(deviceInfoArea.getDocument().getLength());
 	}
 	
 	

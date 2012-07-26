@@ -286,7 +286,7 @@ public class MyActivityHubServiceConsumer {
 				
 				
 				// is GUI active?
-				if (this.ahc != null)
+				if (this.ahc != null && singleAHS != null)
 					// add sensors to client
 					this.ahc.addActivityHubSensor(singleAHS.getURI(),singleAHS.getSensorType());
 				
