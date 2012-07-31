@@ -9,7 +9,7 @@
     <relativePath>../../samples.pom</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
-  <artifactId>smp.lighting.uiclient</artifactId>
+  <artifactId>smp.lighting.uiclient.osgi</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Lighting UI Client</name>
