@@ -77,5 +77,19 @@
         </dependency>
       </dependencies>
     </profile>
+    <profile>
+       <id>uAAL-Runtime</id>
+        <dependencies>       
+        <dependency>
+          <groupId>org.universAAL.ui</groupId>
+          <artifactId>ui.handler.gui.swing</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.universAAL.ui</groupId>
+          <artifactId>ui.dm.mobile</artifactId>
+        </dependency>
+      </dependencies>
+     </profile>
+     
   </profiles>
 </project>
