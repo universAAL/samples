@@ -26,6 +26,10 @@
     <module>../ont.tutorial</module>
     <module>../simple.ui</module>
     <module>../smp.activityhub.client</module>
+    <module>../smp.utils.server</module>
+    <module>../smp.utils.client</module>
+    <module>../smp.utils.app</module>
+    <module>../smp.utils.mini</module>
   </modules>
   <dependencyManagement>
     <dependencies>

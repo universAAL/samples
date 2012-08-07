@@ -8,6 +8,7 @@
     <relativePath>../../samples.pom</relativePath>
   </parent>
   
+  <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.utils.mini</artifactId>
   <version>0.2.0-SNAPSHOT</version>
   <name>Utilities example Mini-App</name>

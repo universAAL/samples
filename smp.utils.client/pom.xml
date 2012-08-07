@@ -8,6 +8,7 @@
     <relativePath>../../samples.pom</relativePath>
   </parent>
   
+  <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.utils.client</artifactId>
   <version>0.4.0-SNAPSHOT</version>
   <name>Utilities Example Client</name>
