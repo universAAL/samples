@@ -13,7 +13,7 @@
   <version>1.2.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>Activity Hub Client</name>
-  <description>This is a client app listening on the uAAL context bus for events based on the activity hub ontology (ISO 11073-10471)</description>
+  <description>This is a client app listening on the uAAL context bus for events based on the activity hub ontology (ISO 11073-10471) and invoking services related to activity hub sensors on the service bus.</description>
   <developers>
     <developer>
       <id>foex</id>
@@ -101,6 +101,38 @@
         <dependency>
           <groupId>org.universAAL.middleware</groupId>
           <artifactId>mw.data.serialization.osgi</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>org.apache.felix.dependencymanager.lddi</artifactId>
+          <version>3.0.0</version>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>org.apache.felix.devicemanager</artifactId>
+          <version>0.9.0-SNAPSHOT</version>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.universAAL.lddi</groupId>
+          <artifactId>lddi.knx.library</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.universAAL.lddi</groupId>
+          <artifactId>lddi.knx.networkdriver</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.universAAL.lddi</groupId>
+          <artifactId>lddi.knx.dpt1refinementdriver.iso11073</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.universAAL.lddi</groupId>
+          <artifactId>lddi.hw.exporter.activityhub</artifactId>
+        </dependency>
+        <dependency>
+          <groupId>org.universAAL.lddi</groupId>
+          <artifactId>lddi.knx.devicemanager</artifactId>
         </dependency>
         <dependency>
           <groupId>org.apache.felix</groupId>

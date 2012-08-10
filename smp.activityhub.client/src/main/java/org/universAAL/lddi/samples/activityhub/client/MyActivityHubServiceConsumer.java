@@ -71,7 +71,7 @@ public class MyActivityHubServiceConsumer {
      *
      * @return ArrayList with ActivityHubSensors (Ontology Resource objects)
      */
-	private static ArrayList getControlledActivityHubSensors() {
+	public static ArrayList getControlledActivityHubSensors() {
 
 		// Make a call for the sensors and get the response
 		ServiceResponse sr = caller.call(getAllActivityHubSensorsRequest());
@@ -170,7 +170,7 @@ public class MyActivityHubServiceConsumer {
      *
      * @return List with ? (Ontology Resource objects)
      */
-	private static List getActivityHubSensorInfo(ActivityHubSensor ahs) {
+	public static List getActivityHubSensorInfo(ActivityHubSensor ahs) {
 
 		ServiceResponse sr = caller.call(getSensorInfoRequest(ahs));
 		
