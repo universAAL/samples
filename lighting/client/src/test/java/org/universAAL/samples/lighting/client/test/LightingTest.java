@@ -31,12 +31,12 @@ public class LightingTest extends IntegrationTest {
      * needed for the TestCase have to be included in the launch configuration.
      */
     public LightingTest() {
-	//super("../../pom/launches/LightingExample_Complete_0_3_2.launch");
-	//setBundleConfLocation("../../../itests/rundir/confadmin");
-	//setPaxArtifactUrls("file:artifact-test-1.1.2.composite");
-	//setUseOnlyLocalRepo(true);
+	// super("../../pom/launches/LightingExample_Complete_0_3_2.launch");
+	// setBundleConfLocation("../../../itests/rundir/confadmin");
+	// setPaxArtifactUrls("file:artifact-test-1.1.2.composite");
+	// setUseOnlyLocalRepo(true);
     }
-    
+
     /**
      * Helper method for logging.
      * 
@@ -60,12 +60,29 @@ public class LightingTest extends IntegrationTest {
 		.getStackTrace()[2];
 	LogUtils.logError(Activator.mc, getClass(), callingMethod
 		.getMethodName(), new Object[] { formatMsg(format, args) }, t);
-    }    
+    }
+
+    /**
+     * Helper method: waits until client is set up (this is needed because the
+     * client starts in a separate thread).
+     */
+    protected void waitForClient() {
+	for (int i = 0; i < 20; i++) {
+	    if (LightingConsumer.caller != null)
+		break;
+	    try {
+		Thread.sleep(500);
+	    } catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    }
+	}
+    }
 
     public void testComposite() {
 	logAllBundles();
     }
-    
+
     /**
      * Verifies that runtime platform has correctly started. It prints basic
      * information about framework (vendor, version) and lists installed
@@ -97,6 +114,8 @@ public class LightingTest extends IntegrationTest {
     public void testLightingClient() throws Exception {
 	logInfo("!!!!!!! Testing Lighting Client !!!!!!!");
 	logInfo("!!!!!!! Getting controlled lamps and checking their amount !!!!!!!");
+	
+	waitForClient();
 
 	/* There should be four lamps available. */
 	Device[] controlledLamps = LightingConsumer.getControlledLamps();
@@ -138,5 +157,5 @@ public class LightingTest extends IntegrationTest {
 	    i++;
 	}
     }
-    
+
 }

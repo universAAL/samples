@@ -26,7 +26,7 @@ import org.universAAL.ontology.phThing.Device;
  */
 public class LightingConsumer extends ContextSubscriber {
 
-    private static ServiceCaller caller;
+    public static ServiceCaller caller;
 
     private static final String LIGHTING_CONSUMER_NAMESPACE = "http://ontology.igd.fhg.de/LightingConsumer.owl#";
 
