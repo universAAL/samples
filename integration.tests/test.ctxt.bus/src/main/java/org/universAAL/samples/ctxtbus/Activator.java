@@ -12,6 +12,7 @@ import org.universAAL.middleware.sodapop.msg.MessageContentSerializerEx;
 public class Activator implements BundleActivator, ServiceListener {
     public static BundleContext context = null;
     public static CSubscriber csubscriber = null;
+    public static CSubscriber2 csubscriber2 = null;
     public static CPublisher cpublisher = null;
     public static HistoryCaller hcaller = null;
     public static ProfileCaller pcaller = null;
@@ -32,6 +33,8 @@ public class Activator implements BundleActivator, ServiceListener {
 	pcaller = new ProfileCaller(moduleContext);
 	panel = new GUIPanel();
 	panel.setVisible(true);
+	csubscriber2 = new CSubscriber2(moduleContext);
+	csubscriber2.disable();
 	// Look for MessageContentSerializer of mw.data.serialization
 	String filter = "(objectclass="
 		+ MessageContentSerializerEx.class.getName() + ")";
@@ -45,6 +48,7 @@ public class Activator implements BundleActivator, ServiceListener {
 
     public void stop(BundleContext arg0) throws Exception {
 	csubscriber.close();
+	csubscriber2.close();
 	cpublisher.close();
 	panel.dispose();
     }

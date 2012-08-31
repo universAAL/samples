@@ -57,6 +57,10 @@ public class GUIPanel extends javax.swing.JFrame {
     private javax.swing.JTextField text1p5;
     private javax.swing.JTextField text2p5;
     private javax.swing.JLabel label1p5;
+    private javax.swing.JPanel panel6;
+    private javax.swing.JLabel label1p6;
+    private javax.swing.JButton button1p6;
+    private int eventsReceived=0;
     
     // End of variables declaration
 
@@ -127,6 +131,10 @@ public class GUIPanel extends javax.swing.JFrame {
 	text1p5 = new javax.swing.JTextField();
 	text2p5 = new javax.swing.JTextField();
 	label1p5 = new javax.swing.JLabel();
+	
+	panel6 = new javax.swing.JPanel();
+	label1p6 = new javax.swing.JLabel();
+	button1p6 = new javax.swing.JButton();
 
 	// WINDOW
 	setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -300,6 +308,24 @@ public class GUIPanel extends javax.swing.JFrame {
 
 	tabbedPane.addTab("Profile", panel5);
 
+	// TAB 6
+		panel6.setLayout(null);
+
+		label1p6.setText("Not Enabled: Nothing received");
+		panel6.add(label1p6);
+		label1p6.setBounds(20, 50, 210, 23);
+
+		button1p6.setText("Enable");
+		button1p6.addActionListener(new java.awt.event.ActionListener() {
+		    public void actionPerformed(java.awt.event.ActionEvent evt) {
+			subscribeButton1ActionPerformed(evt);
+		    }
+		});
+		panel6.add(button1p6);
+		button1p6.setBounds(20, 100, 75, 29);
+
+		tabbedPane.addTab("Subscriber", panel6);
+		
 	// MAIN
 	getContentPane().add(tabbedPane);
 	tabbedPane.setBounds(10, 40, 400, 260);
@@ -512,6 +538,26 @@ public class GUIPanel extends javax.swing.JFrame {
 			this.combo1p5.getSelectedIndex(), arg1, arg2) + " in "
 		+ (System.currentTimeMillis() - t0) + " ms");
 
+    }
+    
+    private void subscribeButton1ActionPerformed(ActionEvent evt) {
+	eventsReceived = 0;
+	if (this.button1p6.getText().equals("Enable")) {
+	    // Enable and set button to "Disable"
+	    this.button1p6.setText("Disable");
+	    this.label1p6.setText("Received: "+eventsReceived);
+	    Activator.csubscriber2.enable();
+	} else {
+	    // Disable and set button to "Enable"
+	    this.button1p6.setText("Enable");
+	    this.label1p6.setText("Not Enabled: Reset");
+	    Activator.csubscriber2.disable();
+	}
+    }
+    
+    public void subscribeReceived() {
+	eventsReceived++;
+	this.label1p6.setText("Received: "+eventsReceived);
     }
 
 }
