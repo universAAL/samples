@@ -56,7 +56,9 @@ public class GUIPanel extends javax.swing.JFrame {
     private javax.swing.JButton button1p5;
     private javax.swing.JTextField text1p5;
     private javax.swing.JTextField text2p5;
+    private javax.swing.JTextField text3p5;
     private javax.swing.JLabel label1p5;
+    private javax.swing.JLabel label2p5;
     private javax.swing.JPanel panel6;
     private javax.swing.JLabel label1p6;
     private javax.swing.JButton button1p6;
@@ -131,6 +133,8 @@ public class GUIPanel extends javax.swing.JFrame {
 	text1p5 = new javax.swing.JTextField();
 	text2p5 = new javax.swing.JTextField();
 	label1p5 = new javax.swing.JLabel();
+	label2p5 = new javax.swing.JLabel();
+	text3p5 = new javax.swing.JTextField();
 	
 	panel6 = new javax.swing.JPanel();
 	label1p6 = new javax.swing.JLabel();
@@ -292,6 +296,10 @@ public class GUIPanel extends javax.swing.JFrame {
 	text2p5.setText(CPublisher.URIROOT+"argument2");
 	panel5.add(text2p5);
 	text2p5.setBounds(20, 75, 250, 23);
+	
+	text3p5.setText("Repeats");
+	panel5.add(text3p5);
+	text3p5.setBounds(20, 100, 100, 23);
 
 	button1p5.setText("Call");
 	button1p5.addActionListener(new java.awt.event.ActionListener() {
@@ -305,6 +313,10 @@ public class GUIPanel extends javax.swing.JFrame {
 	label1p5.setText("Nothing received");
 	panel5.add(label1p5);
 	label1p5.setBounds(20, 155, 400, 29);
+	
+	label2p5.setText("Delay: ");
+	panel5.add(label2p5);
+	label2p5.setBounds(20, 180, 400, 29);
 
 	tabbedPane.addTab("Profile", panel5);
 
@@ -531,12 +543,16 @@ public class GUIPanel extends javax.swing.JFrame {
     private void profileButton1ActionPerformed(ActionEvent evt) {
 	String arg1 = this.text1p5.getText();
 	String arg2 = this.text2p5.getText();
-
+	Integer repeat;
+	try {
+	    repeat = Integer.parseInt(this.text3p5.getText());
+	} catch (Exception e) {
+	    repeat=Integer.valueOf(0);
+	}
 	long t0 = System.currentTimeMillis();
-	this.label1p5.setText("Returned "
-		+ Activator.pcaller.callProfile(
-			this.combo1p5.getSelectedIndex(), arg1, arg2) + " in "
-		+ (System.currentTimeMillis() - t0) + " ms");
+	this.label1p5.setText(Activator.pcaller.callProfile(
+		this.combo1p5.getSelectedIndex(), arg1, arg2, repeat));
+	this.label2p5.setText("Delay: " + (System.currentTimeMillis() - t0) + " ms");
 
     }
     

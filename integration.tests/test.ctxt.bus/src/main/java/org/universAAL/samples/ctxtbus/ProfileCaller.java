@@ -98,54 +98,77 @@ public class ProfileCaller {
 	return false;
     }
 
-    public String callProfile(int selectedIndex, String arg1, String arg2) {
-	switch (selectedIndex) {
-	case 0:
-	    return getProfilable(new AssistedPerson(arg1));
-	case 1:
-	    return addProfilable(new AssistedPerson(arg1));
-	case 2:
-	    return changeProfilable(new AssistedPerson(arg1));
-	case 3:
-	    return removeProfilable(new AssistedPerson(arg1));
-	    
-	case 4:
-	    return getProfile(new UserProfile(arg1));
-	case 5:
-	    return addProfile(new UserProfile(arg1));
-	case 6:
-	    return changeProfile(new UserProfile(arg1));
-	case 7:
-	    return removeProfile(new UserProfile(arg1));
-	    
-	case 8:
-	    return getSubProfile(new HealthProfile(arg1));
-	case 9:
-	    return addSubProfile(new HealthProfile(arg1));
-	case 10:
-	    return changeSubProfile(new HealthProfile(arg1));
-	case 11:
-	    return removeSubProfile(new HealthProfile(arg1));
-	case 12:
-	    return getUsers();
-	case 13:
-	    return getProfile(new User(arg1));
-	case 14:
-	    return getSubprofiles(new User(arg1));
-	case 15:
-	    return getSubprofiles(new UserProfile(arg1));
-	case 16:
-	     return addProfile(new User(arg1),new UserProfile(arg2));
-	case 17:
-	     return addSubprofile(new User(arg1),new HealthProfile(arg2));
-	case 18:
-	     return addSubprofile(new UserProfile(arg1),new HealthProfile(arg2));
-//	case 17:
-//	    return changeProfile(new User(arg1),new UserProfile(arg2));
-	default:
-	    break;
+    public String callProfile(int selectedIndex, String arg1, String arg2, Integer repeat) {
+	String ret=null;
+	for(int i=0; i<=repeat.intValue(); i++){
+	    switch (selectedIndex) {
+		case 0:
+		    ret = getProfilable(new AssistedPerson(arg1));
+		    break;
+		case 1:
+		    ret = addProfilable(new AssistedPerson(arg1));
+		    break;
+		case 2:
+		    ret = changeProfilable(new AssistedPerson(arg1));
+		    break;
+		case 3:
+		    ret = removeProfilable(new AssistedPerson(arg1));
+		    break;
+		    
+		case 4:
+		    ret = getProfile(new UserProfile(arg1));
+		    break;
+		case 5:
+		    ret = addProfile(new UserProfile(arg1));
+		    break;
+		case 6:
+		    ret = changeProfile(new UserProfile(arg1));
+		    break;
+		case 7:
+		    ret = removeProfile(new UserProfile(arg1));
+		    break;
+		    
+		case 8:
+		    ret = getSubProfile(new HealthProfile(arg1));
+		    break;
+		case 9:
+		    ret = addSubProfile(new HealthProfile(arg1));
+		    break;
+		case 10:
+		    ret = changeSubProfile(new HealthProfile(arg1));
+		    break;
+		case 11:
+		    ret = removeSubProfile(new HealthProfile(arg1));
+		    break;
+		case 12:
+		    ret = getUsers();
+		    break;
+		case 13:
+		    ret = getProfile(new User(arg1));
+		    break;
+		case 14:
+		    ret = getSubprofiles(new User(arg1));
+		    break;
+		case 15:
+		    ret = getSubprofiles(new UserProfile(arg1));
+		    break;
+		case 16:
+		    ret = addProfile(new User(arg1),new UserProfile(arg2));
+		    break;
+		case 17:
+		    ret = addSubprofile(new User(arg1),new HealthProfile(arg2));
+		    break;
+		case 18:
+		    ret = addSubprofile(new UserProfile(arg1),new HealthProfile(arg2));
+		    break;
+//		case 17:
+//		    ret = changeProfile(new User(arg1),new UserProfile(arg2));
+//		    break;
+		default:
+		    break;
+		}
 	}
-	return null;
+	return ret;
     }
 
     //:::::::::::::PROFILABLE GET/ADD/CHANGE/REMOVE:::::::::::::::::
@@ -183,7 +206,7 @@ public class ProfileCaller {
 //		Path.at(ProfilingService.PROP_CONTROLS).path,
 //		Arg.add(profilable)));
 	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
-	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS}, profilable);
+	req.addAddEffect(new String[]{ProfilingService.PROP_CONTROLS}, profilable);
 	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
@@ -247,7 +270,7 @@ public class ProfileCaller {
 //		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
 //		Arg.add(profile)));
 	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
-	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
+	req.addAddEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
 	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
@@ -311,7 +334,7 @@ public class ProfileCaller {
 //		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
 //		Arg.add(profile)));
 	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
-	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, profile);
+	req.addAddEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, profile);
 	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
