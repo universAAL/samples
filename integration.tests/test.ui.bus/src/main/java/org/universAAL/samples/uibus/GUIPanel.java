@@ -16,7 +16,7 @@ public class GUIPanel extends javax.swing.JFrame {
 //    private javax.swing.JButton button2p1;
     private javax.swing.JPanel panel1;
     private javax.swing.JTextField text1p1;
-    private javax.swing.JTextField text2p1;
+//    private javax.swing.JTextField text2p1;
     private javax.swing.JLabel label1p1;
     private javax.swing.JButton button1p2;
 //    private javax.swing.JButton button2p2;
@@ -42,7 +42,7 @@ public class GUIPanel extends javax.swing.JFrame {
 
 	panel1 = new javax.swing.JPanel();
 	text1p1 = new javax.swing.JTextField();
-	text2p1 = new javax.swing.JTextField();
+//	text2p1 = new javax.swing.JTextField();
 	label1p1 = new javax.swing.JLabel();
 	button1p1 = new javax.swing.JButton();
 //	button2p1 = new javax.swing.JButton();
@@ -78,9 +78,9 @@ public class GUIPanel extends javax.swing.JFrame {
 	panel1.add(button1p1);
 	button1p1.setBounds(20, 50, 75, 29);
 
-	text2p1.setText("Inputs burst");
-	panel1.add(text2p1);
-	text2p1.setBounds(20, 80, 210, 23);
+//	text2p1.setText("Inputs burst");
+//	panel1.add(text2p1);
+//	text2p1.setBounds(20, 80, 210, 23);
 
 //	button2p1.setText("Publish (unique)");
 //	button2p1.addActionListener(new java.awt.event.ActionListener() {
