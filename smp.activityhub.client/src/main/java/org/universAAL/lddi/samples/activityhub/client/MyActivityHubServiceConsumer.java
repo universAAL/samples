@@ -303,7 +303,8 @@ public class MyActivityHubServiceConsumer {
 		else {
 			LogUtils.logWarn(Activator.mc, MyActivityHubServiceConsumer.class, "constructor",
 					new Object[] { "No ActivityHubSensors found!" }, null);
-			this.ahc.addTextToLogArea("No ActivityHubSensors found!");
+			if (this.ahc != null)
+				this.ahc.addTextToLogArea("No ActivityHubSensors found!");
 		}
 	}
 	
@@ -322,7 +323,7 @@ public class MyActivityHubServiceConsumer {
 	 */
 	public void getDeviceInfo(String sensorURI, int deviceType) {
 		if ((sensorURI == null) || !(sensorURI instanceof String)) {
-			this.ahc.showDeviceInfo(new String[] {"No sensor selected!"});
+			if (this.ahc != null) this.ahc.showDeviceInfo(new String[] {"No sensor selected!"});
 		    LogUtils.logWarn(Activator.mc, MyActivityHubServiceConsumer.class, "getDeviceInfo",
 				    new Object[] { "No sensor selected!" }, null);
 			return;
@@ -360,7 +361,7 @@ public class MyActivityHubServiceConsumer {
 		else {
 		    LogUtils.logWarn(Activator.mc, MyActivityHubServiceConsumer.class, "getDeviceInfo",
 			    new Object[] { "No sensor details found!" }, null);
-			this.ahc.showDeviceInfo( new String[] { "No sensor details found!" } );
+		    if (this.ahc != null) this.ahc.showDeviceInfo( new String[] { "No sensor details found!" } );
 		}		
 	}
 	
@@ -441,7 +442,7 @@ public class MyActivityHubServiceConsumer {
 	 * close the GUI window, e.g. if the bundle is stopped; called by Activator 
 	 */
 	public void deleteGui() {
-		if (ahc != null) {
+		if (this.ahc != null) {
 			this.ahc.deleteGui();
 			this.ahc = null;
 		}

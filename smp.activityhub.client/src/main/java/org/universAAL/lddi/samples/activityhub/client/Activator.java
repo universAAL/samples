@@ -4,6 +4,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.utils.LogUtils;
 
 /**
  * Activator for ActivityHub Client demo bundle
@@ -22,7 +23,13 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext context) throws Exception {
 		mc = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
 
-		ahc = new ActivityHubClient(this);
+		try {
+			ahc = new ActivityHubClient(this);
+		} catch (java.awt.HeadlessException ex) {
+		    LogUtils.logInfo(mc,Activator.class,"Activator",
+			    new Object[] { "client activates GUI-off mode because of no screen access" },
+			    null);
+		}
 
 		// start uAAL bus consumer threads
 		MyThread runnable = new MyThread(); 
