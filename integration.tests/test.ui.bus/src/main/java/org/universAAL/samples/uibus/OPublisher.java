@@ -238,8 +238,8 @@ public class OPublisher extends UICaller {
 	    // String[]{"http://ontology.aal-persona.org/Tests.owl#input10"}),null);
 	}
 	if (i++ <= size) {
-	    new MediaObject(controls, new Label("Media", (String) null), "IMG",
-		    "android.handler/button.png");
+	    new MediaObject(controls, new Label("Media", (String) null), "image",
+		    "http://127.0.0.1:8080/resources/test.ui.bus/sample.png");
 	}
 	if (i++ <= size) {
 	    new TextArea(
@@ -345,7 +345,7 @@ public class OPublisher extends UICaller {
 		break;
 	    case 6:
 		new MediaObject(controls, new Label("Media", (String) null),
-			"IMG", "android.handler/button.png");
+			"image", "http://127.0.0.1:8080/resources/test.ui.bus/sample.png");
 		break;
 	    case 7:
 		new TextArea(
