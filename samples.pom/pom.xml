@@ -30,6 +30,11 @@
     <module>../smp.utils.client</module>
     <module>../smp.utils.app</module>
     <module>../smp.utils.mini</module>
+    <module>../aapi/client-regular</module>
+    <module>../aapi/server-regular</module>
+    <module>../aapi/server-simple</module>
+    <module>../aapi/client-simple</module>
+    <module>../aapi/ont-lighting-simple</module>
   </modules>
   <dependencyManagement>
     <dependencies>
