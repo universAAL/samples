@@ -66,13 +66,11 @@
 			<groupId>org.universAAL.samples</groupId>
 			<artifactId>smp.lighting.server-simple</artifactId>
 			<version>1.2.1-SNAPSHOT</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.samples</groupId>
 			<artifactId>smp.lighting.client-regular</artifactId>
 			<version>1.2.1-SNAPSHOT</version>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -97,7 +95,7 @@
 						<Bundle-Activator>org.universAAL.samples.lighting.client.Activator</Bundle-Activator>
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Export-Package>org.universAAL.samples.lighting.client</Export-Package>
+						<Export-Package>org.universAAL.samples.lighting.client.*</Export-Package>
 					</instructions>
 				</configuration>
 			</plugin>

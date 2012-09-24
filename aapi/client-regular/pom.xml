@@ -86,7 +86,7 @@
 						<Bundle-Activator>org.universAAL.samples.lighting.client_regular.Activator</Bundle-Activator>
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Export-Package>org.universAAL.samples.lighting.client_regular</Export-Package>
+						<Export-Package>org.universAAL.samples.lighting.client_regular.*</Export-Package>
 					</instructions>
 				</configuration>
 			</plugin>
