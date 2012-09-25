@@ -120,7 +120,7 @@ public class CPublisher extends ContextPublisher {
 
     // I cant have a preset collection of events because timestamp and URI are
     // set at construction
-    private ContextEvent getSample(int sample) {
+    public static ContextEvent getSample(int sample) {
 	switch (sample) {
 	case 0:
 	    // 1 User is awake
@@ -137,38 +137,38 @@ public class CPublisher extends ContextPublisher {
 	    // 3 chair is in place
 	    Furniture f3 = new Furniture(URIROOT + "furniture5");
 	    f3.setFurnitureType(FurnitureType.Chair);
-	    f3.setLocation(new Location(URIROOT + "location" + rand.nextInt(6)));
+	    f3.setLocation(new Location(URIROOT + "location" + new Integer(6)));
 	    return new ContextEvent(f3, Furniture.PROP_PHYSICAL_LOCATION);
 	case 3:
 	    // 4 light is on
 	    LightSource ls4 = new LightSource(URIROOT + "light6");
-	    ls4.setBrightness(rand.nextInt(101));
+	    ls4.setBrightness(new Integer(100));
 	    return new ContextEvent(ls4, LightSource.PROP_SOURCE_BRIGHTNESS);
 	case 4:
 	    // 7 socket at 50%
 	    Powersocket ss5 = new Powersocket(URIROOT + "socket7");
-	    ss5.setValue(rand.nextInt(101));
+	    ss5.setValue(new Integer(100));
 	    return new ContextEvent(ss5, Powersocket.PROP_SOCKET_VALUE);
 	case 5:
 	    // 6 temperature measured
 	    TempSensor ts6 = new TempSensor(URIROOT + "tempsensor8");
-	    ts6.setMeasuredValue(30 * rand.nextFloat());
+	    ts6.setMeasuredValue(30);
 	    return new ContextEvent(ts6, TempSensor.PROP_MEASURED_VALUE);
 	case 6:
 	    // 7 window closed
 	    WindowActuator w7 = new WindowActuator(URIROOT + "window9");
 	    w7.setProperty(WindowActuator.PROP_WINDOW_STATUS,
-		    new Integer(rand.nextInt(101)));
+		    new Integer(new Integer(100)));
 	    return new ContextEvent(w7, WindowActuator.PROP_WINDOW_STATUS);
 	default:
 	    // 10 situation
 	    PanicButton p10 = new PanicButton(URIROOT + "panic10");
 	    p10.setProperty(PhysicalThing.PROP_CARRIED_BY, new User(URIROOT
-		    + "user" + rand.nextInt(5)));
+		    + "user" + new Integer(5)));
 	    p10.setProperty(PhysicalThing.PROP_IS_PORTABLE,
-		    new Boolean(rand.nextBoolean()));
+		    new Boolean(true));
 	    p10.setLocation(new Location(URIROOT + "location"
-		    + rand.nextInt(11)));
+		    + new Integer(10)));
 	    return new ContextEvent(p10, PhysicalThing.PROP_PHYSICAL_LOCATION);
 	}
     }

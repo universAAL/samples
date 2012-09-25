@@ -21,7 +21,7 @@ import org.universAAL.middleware.ui.rdf.InputField;
 import org.universAAL.middleware.ui.rdf.Label;
 import org.universAAL.middleware.ui.rdf.MediaObject;
 import org.universAAL.middleware.ui.rdf.Range;
-import org.universAAL.middleware.ui.rdf.Repeat;
+//import org.universAAL.middleware.ui.rdf.Repeat;
 import org.universAAL.middleware.ui.rdf.Select;
 import org.universAAL.middleware.ui.rdf.Select1;
 import org.universAAL.middleware.ui.rdf.SimpleOutput;
@@ -210,17 +210,17 @@ public class OPublisher extends UICaller {
 	    ArrayList l = new ArrayList();
 	    l.add(u1);
 	    l.add(u2);
-	    Repeat r = new Repeat(controls,new Label("Repeat table", (String) null),
-		    new PropertyPath(null,false,
-			    new String[] { "http://ontology.aal-persona.org/Tests.owl#input8" }),
-		    null, l);
-	    Group g = new Group(r, null, null, null, null);
-	    new SimpleOutput(g, new Label("Label", (String) null),
-		    new PropertyPath(null, true,
-			    new String[] { User.PROP_RDFS_LABEL }), null);
-	    new SimpleOutput(g, new Label("Comment", (String) null),
-		    new PropertyPath(null, false,
-			    new String[] { User.PROP_RDFS_COMMENT }), null);
+//	    Repeat r = new Repeat(controls,new Label("Repeat table", (String) null),
+//		    new PropertyPath(null,false,
+//			    new String[] { "http://ontology.aal-persona.org/Tests.owl#input8" }),
+//		    null, l);
+//	    Group g = new Group(r, null, null, null, null);
+//	    new SimpleOutput(g, new Label("Label", (String) null),
+//		    new PropertyPath(null, true,
+//			    new String[] { User.PROP_RDFS_LABEL }), null);
+//	    new SimpleOutput(g, new Label("Comment", (String) null),
+//		    new PropertyPath(null, false,
+//			    new String[] { User.PROP_RDFS_COMMENT }), null);
 	    
 	    // Repeat table = new Repeat(controls,new
 	    // Label("Repeat table",(String)null),new

@@ -7,6 +7,7 @@ import javax.swing.UIManager;
 
 //import org.universAAL.ontology.device.home.GlassBreakSensor;
 //import org.universAAL.ontology.device.wearable.PanicButton;
+import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.ontology.furniture.Furniture;
 import org.universAAL.ontology.furniture.FurnitureType;
 import org.universAAL.ontology.lighting.LightSource;
@@ -63,6 +64,7 @@ public class GUIPanel extends javax.swing.JFrame {
     private javax.swing.JLabel label1p6;
     private javax.swing.JButton button1p6;
     private int eventsReceived=0;
+    private long starttime=0;
     
     // End of variables declaration
 
@@ -95,9 +97,9 @@ public class GUIPanel extends javax.swing.JFrame {
 	button2p2 = new javax.swing.JButton();
 	button3p2 = new javax.swing.JButton();
 	area1p2 = new javax.swing.JTextArea();
-	combo1p2 = new javax.swing.JComboBox(new Object[] { "Profile",
-		"Location", "Device", "Blind", "Furniture", "Lighting",
-		"Power socket", "Weather", "Window", "Situation" });
+	combo1p2 = new javax.swing.JComboBox(new Object[] { "User",
+		"Bilnd", "Chair", "Light", "Socket", "Temperature",
+		"Window", "Panic" });
 
 	panel3 = new javax.swing.JPanel();
 	label1p3 = new javax.swing.JLabel();
@@ -351,6 +353,7 @@ public class GUIPanel extends javax.swing.JFrame {
 
     private void sendButton1ActionPerformed(ActionEvent evt) {
 	int siz = 0;
+	long start=System.currentTimeMillis();
 	try {
 	    siz = Integer.parseInt(this.text1p1.getText());
 	} catch (Exception e) {
@@ -358,11 +361,12 @@ public class GUIPanel extends javax.swing.JFrame {
 	    return;
 	}
 	long del = Activator.cpublisher.sendBurst(siz);
-	this.label1p1.setText("Delay: " + del + " ms");
+	this.label1p1.setText("Delay: " + del + " ms ("+start+")");
     }
 
     private void sendButton2ActionPerformed(ActionEvent evt) {
 	int siz = 0;
+	long start=System.currentTimeMillis();
 	try {
 	    siz = Integer.parseInt(this.text1p1.getText());
 	} catch (Exception e) {
@@ -370,7 +374,7 @@ public class GUIPanel extends javax.swing.JFrame {
 	    return;
 	}
 	long del = Activator.cpublisher.sendUniqueBurst(siz);
-	this.label1p1.setText("Delay: " + del + " ms");
+	this.label1p1.setText("Delay: " + del + " ms ("+start+")");
     }
 
     private void cheButton1ActionPerformed(ActionEvent evt) {
@@ -448,77 +452,127 @@ public class GUIPanel extends javax.swing.JFrame {
 	case 0:
 	    // 1 User is awake
 	    User u1 = new User(CPublisher.URIROOT + "user1");
-	    u1.setProperty(Profilable.PROP_HAS_PROFILE,new UserProfile(CPublisher.URIROOT + "user1Profile"));
-	    return new org.universAAL.ontology.che.ContextEvent(u1,
-		    Profilable.PROP_HAS_PROFILE);
-	    // case 1:
-	    // //2 Building has address
-	    // BuildingPlace bp2=new
-	    // BuildingPlace(CPublisher.URIROOT+"buidlingplace2","Living_Lab");
-	    // PhysicalAddress pa2=new
-	    // PhysicalAddress(CPublisher.URIROOT+"address2", "Paterna",
-	    // "Ronda Auguste y Louis Lumiere", "TSB");
-	    // pa2.setCountryName(new String[]{"Spain"});
-	    // pa2.setPostalCode("46???");
-	    // pa2.setRegion("C.Valenciana");
-	    // bp2.setHasAddress(pa2);
-	    // return new
-	    // org.universAAL.context.che.ontology.ContextEvent(bp2,BuildingPlace.PROP_HAS_ADDRESS);
-	    // case 2:
-	    // //3 Glass broken
-	    // GlassBreakSensor gb3=new
-	    // GlassBreakSensor(CPublisher.URIROOT+"glassbreak3");
-	    // gb3.setMeasuredValue(true);
-	    // return new
-	    // org.universAAL.context.che.ontology.ContextEvent(gb3,GlassBreakSensor.PROP_MEASURED_VALUE);
+	    u1.setProperty(Profilable.PROP_HAS_PROFILE, new UserProfile(CPublisher.URIROOT
+		    + "user1Profile"));
+	    return new org.universAAL.ontology.che.ContextEvent(u1, Profilable.PROP_HAS_PROFILE);
+	case 1:
+	    // 2 Blind is open
+	    BlindActuator b2 = new BlindActuator(CPublisher.URIROOT + "blind4");
+	    b2.setProperty(BlindActuator.PROP_DIMMABLE_STATUS, new Integer(100));
+	    return new org.universAAL.ontology.che.ContextEvent(b2, BlindActuator.PROP_DIMMABLE_STATUS);
+	case 2:
+	    // 3 chair is in place
+	    Furniture f3 = new Furniture(CPublisher.URIROOT + "furniture5");
+	    f3.setFurnitureType(FurnitureType.Chair);
+	    f3.setLocation(new Location(CPublisher.URIROOT + "location" + new Integer(6)));
+	    return new org.universAAL.ontology.che.ContextEvent(f3, Furniture.PROP_PHYSICAL_LOCATION);
 	case 3:
-	    // 4 Blind is open
-	    BlindActuator b4 = new BlindActuator(CPublisher.URIROOT + "blind4");
-	    b4.setProperty(BlindActuator.PROP_PHYSICAL_LOCATION, new Integer(100));
-	    return new org.universAAL.ontology.che.ContextEvent(b4,
-		    BlindActuator.PROP_PHYSICAL_LOCATION);
+	    // 4 light is on
+	    LightSource ls4 = new LightSource(CPublisher.URIROOT + "light6");
+	    ls4.setBrightness(new Integer(100));
+	    return new org.universAAL.ontology.che.ContextEvent(ls4, LightSource.PROP_SOURCE_BRIGHTNESS);
 	case 4:
-	    // 5 chair is in place
-	    Furniture f5 = new Furniture(CPublisher.URIROOT + "furniture5");
-	    f5.setFurnitureType(FurnitureType.Chair);
-	    f5.setLocation(new Location(CPublisher.URIROOT + "location5"));
-	    return new org.universAAL.ontology.che.ContextEvent(f5,
-		    Furniture.PROP_PHYSICAL_LOCATION);
-	case 5:
-	    // 6 light is on
-	    LightSource ls6 = new LightSource(CPublisher.URIROOT + "light6");
-	    ls6.setBrightness(100);
-	    return new org.universAAL.ontology.che.ContextEvent(ls6,
-		    LightSource.PROP_SOURCE_BRIGHTNESS);
-	case 6:
 	    // 7 socket at 50%
-	    Powersocket ss7 = new Powersocket(CPublisher.URIROOT + "socket7");
-	    ss7.setValue(50);
-	    return new org.universAAL.ontology.che.ContextEvent(ss7,
-		    Powersocket.PROP_SOCKET_VALUE);
-	case 7:
-	    // 8 temperature measured
-	    TempSensor ts8 = new TempSensor(CPublisher.URIROOT + "tempsensor8");
-	    ts8.setMeasuredValue(27.5f);
-	    return new org.universAAL.ontology.che.ContextEvent(ts8,
-		    TempSensor.PROP_MEASURED_VALUE);
-	case 8:
-	    // 9 window closed
-	    WindowActuator w9 = new WindowActuator(CPublisher.URIROOT
-		    + "window9");
-	    w9.setProperty(WindowActuator.PROP_WINDOW_STATUS, new Integer(0));
-	    return new org.universAAL.ontology.che.ContextEvent(w9,
-		    WindowActuator.PROP_WINDOW_STATUS);
+	    Powersocket ss5 = new Powersocket(CPublisher.URIROOT + "socket7");
+	    ss5.setValue(new Integer(100));
+	    return new org.universAAL.ontology.che.ContextEvent(ss5, Powersocket.PROP_SOCKET_VALUE);
+	case 5:
+	    // 6 temperature measured
+	    TempSensor ts6 = new TempSensor(CPublisher.URIROOT + "tempsensor8");
+	    ts6.setMeasuredValue(30);
+	    return new org.universAAL.ontology.che.ContextEvent(ts6, TempSensor.PROP_MEASURED_VALUE);
+	case 6:
+	    // 7 window closed
+	    WindowActuator w7 = new WindowActuator(CPublisher.URIROOT + "window9");
+	    w7.setProperty(WindowActuator.PROP_WINDOW_STATUS,
+		    new Integer(new Integer(100)));
+	    return new org.universAAL.ontology.che.ContextEvent(w7, WindowActuator.PROP_WINDOW_STATUS);
 	default:
 	    // 10 situation
 	    PanicButton p10 = new PanicButton(CPublisher.URIROOT + "panic10");
-	    p10.setProperty(PhysicalThing.PROP_CARRIED_BY, new User(
-		    CPublisher.URIROOT + "user1"));
-	    p10.setProperty(PhysicalThing.PROP_IS_PORTABLE, new Boolean(true));
-	    p10.setLocation(new Location(CPublisher.URIROOT + "location10"));
-	    return new org.universAAL.ontology.che.ContextEvent(p10,
-		    PhysicalThing.PROP_PHYSICAL_LOCATION);
+	    p10.setProperty(PhysicalThing.PROP_CARRIED_BY, new User(CPublisher.URIROOT
+		    + "user" + new Integer(5)));
+	    p10.setProperty(PhysicalThing.PROP_IS_PORTABLE,
+		    new Boolean(true));
+	    p10.setLocation(new Location(CPublisher.URIROOT + "location"
+		    + new Integer(10)));
+	    return new org.universAAL.ontology.che.ContextEvent(p10, PhysicalThing.PROP_PHYSICAL_LOCATION);
 	}
+//	switch (sample) {
+//	case 0:
+//	    // 1 User is awake
+//	    User u1 = new User(CPublisher.URIROOT + "user1");
+//	    u1.setProperty(Profilable.PROP_HAS_PROFILE,new UserProfile(CPublisher.URIROOT + "user1Profile"));
+//	    return new org.universAAL.ontology.che.ContextEvent(u1,
+//		    Profilable.PROP_HAS_PROFILE);
+//	    // case 1:
+//	    // //2 Building has address
+//	    // BuildingPlace bp2=new
+//	    // BuildingPlace(CPublisher.URIROOT+"buidlingplace2","Living_Lab");
+//	    // PhysicalAddress pa2=new
+//	    // PhysicalAddress(CPublisher.URIROOT+"address2", "Paterna",
+//	    // "Ronda Auguste y Louis Lumiere", "TSB");
+//	    // pa2.setCountryName(new String[]{"Spain"});
+//	    // pa2.setPostalCode("46???");
+//	    // pa2.setRegion("C.Valenciana");
+//	    // bp2.setHasAddress(pa2);
+//	    // return new
+//	    // org.universAAL.context.che.ontology.ContextEvent(bp2,BuildingPlace.PROP_HAS_ADDRESS);
+//	    // case 2:
+//	    // //3 Glass broken
+//	    // GlassBreakSensor gb3=new
+//	    // GlassBreakSensor(CPublisher.URIROOT+"glassbreak3");
+//	    // gb3.setMeasuredValue(true);
+//	    // return new
+//	    // org.universAAL.context.che.ontology.ContextEvent(gb3,GlassBreakSensor.PROP_MEASURED_VALUE);
+//	case 3:
+//	    // 4 Blind is open
+//	    BlindActuator b4 = new BlindActuator(CPublisher.URIROOT + "blind4");
+//	    b4.setProperty(BlindActuator.PROP_PHYSICAL_LOCATION, new Integer(100));
+//	    return new org.universAAL.ontology.che.ContextEvent(b4,
+//		    BlindActuator.PROP_PHYSICAL_LOCATION);
+//	case 4:
+//	    // 5 chair is in place
+//	    Furniture f5 = new Furniture(CPublisher.URIROOT + "furniture5");
+//	    f5.setFurnitureType(FurnitureType.Chair);
+//	    f5.setLocation(new Location(CPublisher.URIROOT + "location5"));
+//	    return new org.universAAL.ontology.che.ContextEvent(f5,
+//		    Furniture.PROP_PHYSICAL_LOCATION);
+//	case 5:
+//	    // 6 light is on
+//	    LightSource ls6 = new LightSource(CPublisher.URIROOT + "light6");
+//	    ls6.setBrightness(100);
+//	    return new org.universAAL.ontology.che.ContextEvent(ls6,
+//		    LightSource.PROP_SOURCE_BRIGHTNESS);
+//	case 6:
+//	    // 7 socket at 50%
+//	    Powersocket ss7 = new Powersocket(CPublisher.URIROOT + "socket7");
+//	    ss7.setValue(50);
+//	    return new org.universAAL.ontology.che.ContextEvent(ss7,
+//		    Powersocket.PROP_SOCKET_VALUE);
+//	case 7:
+//	    // 8 temperature measured
+//	    TempSensor ts8 = new TempSensor(CPublisher.URIROOT + "tempsensor8");
+//	    ts8.setMeasuredValue(27.5f);
+//	    return new org.universAAL.ontology.che.ContextEvent(ts8,
+//		    TempSensor.PROP_MEASURED_VALUE);
+//	case 8:
+//	    // 9 window closed
+//	    WindowActuator w9 = new WindowActuator(CPublisher.URIROOT
+//		    + "window9");
+//	    w9.setProperty(WindowActuator.PROP_WINDOW_STATUS, new Integer(0));
+//	    return new org.universAAL.ontology.che.ContextEvent(w9,
+//		    WindowActuator.PROP_WINDOW_STATUS);
+//	default:
+//	    // 10 situation
+//	    PanicButton p10 = new PanicButton(CPublisher.URIROOT + "panic10");
+//	    p10.setProperty(PhysicalThing.PROP_CARRIED_BY, new User(
+//		    CPublisher.URIROOT + "user1"));
+//	    p10.setProperty(PhysicalThing.PROP_IS_PORTABLE, new Boolean(true));
+//	    p10.setLocation(new Location(CPublisher.URIROOT + "location10"));
+//	    return new org.universAAL.ontology.che.ContextEvent(p10,
+//		    PhysicalThing.PROP_PHYSICAL_LOCATION);
+//	}
     }
 
     private void dataButton1ActionPerformed(ActionEvent evt) {
@@ -573,7 +627,8 @@ public class GUIPanel extends javax.swing.JFrame {
     
     public void subscribeReceived() {
 	eventsReceived++;
-	this.label1p6.setText("Received: "+eventsReceived);
+	if (eventsReceived==1) starttime=System.currentTimeMillis();
+	this.label1p6.setText("Received: "+eventsReceived+ " ("+starttime+")");
     }
 
 }

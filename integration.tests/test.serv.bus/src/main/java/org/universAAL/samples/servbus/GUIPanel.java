@@ -161,7 +161,7 @@ public class GUIPanel extends javax.swing.JFrame {
 	    }
 	}
 	long t1 = System.currentTimeMillis();
-	this.label1p1.setText("Delay: " + (t1 - t0) + " ms");
+	this.label1p1.setText("Delay: " + (t1 - t0) + " ms ("+t0+")");
     }
 
     private void sendButton2ActionPerformed(ActionEvent evt) {
@@ -198,7 +198,7 @@ public class GUIPanel extends javax.swing.JFrame {
 	    Activator.scaller.sendRequest(srq);
 	}
 	long t1 = System.currentTimeMillis();
-	this.label1p1.setText("Delay: " + (t1 - t0) + " ms");
+	this.label1p1.setText("Delay: " + (t1 - t0) + " ms ("+t0+")");
     }
 
     private ServiceRequest getGETLAMPSrequest() {
