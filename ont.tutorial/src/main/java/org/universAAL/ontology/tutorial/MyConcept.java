@@ -37,6 +37,11 @@ public class MyConcept extends ManagedIndividual {
 	// This is the commonly used constructor. In general it is like this,
 	// just a call to super.
     }
+    
+    // This method is used in de/serialization and must always be the same.
+    public String getClassURI() {
+	return MY_URI;
+    }
 
     // This method is used for serialization purposes, to restrict the amount of
     // information to serialize when forwarding it among nodes.
