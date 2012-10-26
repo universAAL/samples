@@ -86,7 +86,7 @@
         </dependency>
         <dependency>
           <groupId>org.universAAL.ui</groupId>
-          <artifactId>ui.dm.mobile</artifactId>
+          <artifactId>ui.dm</artifactId>
         </dependency>
       </dependencies>
      </profile>
