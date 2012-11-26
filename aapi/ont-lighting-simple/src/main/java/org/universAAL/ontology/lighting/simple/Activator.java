@@ -1,9 +1,9 @@
 package org.universAAL.ontology.lighting.simple;
 
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.uAALModuleActivator;
+import org.universAAL.middleware.container.ModuleActivator;
 
-public class Activator implements uAALModuleActivator {
+public class Activator implements ModuleActivator {
 	
     public void start(ModuleContext context) throws Exception {
 	
