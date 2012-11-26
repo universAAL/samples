@@ -1,13 +1,13 @@
 package org.universAAL.ontology;
 
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.uAALModuleActivator;
+import org.universAAL.middleware.container.ModuleActivator;
 import org.universAAL.middleware.owl.Ontology;
 import org.universAAL.middleware.owl.OntologyManagement;
 import org.universAAL.ontology.tutorial.TutorialOntology;
 
 //You need an Activator in your ontology bundle because it must be started...
-public class TutorialActivator implements uAALModuleActivator {
+public class TutorialActivator implements ModuleActivator {
 
     private Ontology tutorialOntology = new TutorialOntology();
 
