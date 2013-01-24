@@ -10,7 +10,7 @@
 	<packaging>bundle</packaging>
 	<artifactId>ont.lighting.simple</artifactId>
 	<version>1.2.1-SNAPSHOT</version>
-	<name>Simplified Lighting Ontology</name>
+	<name>universAAL Samples AAPI Simplified Lighting Ontology</name>
 	<description>The simpligied ontology defining URIs for the most general concepts dealing with light sources and their control.</description>
 	<url />
 	<properties>
@@ -65,7 +65,7 @@
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Export-Package>org.universAAL.ontology.lighting.simple</Export-Package>
-						<Private-Package>org.universAAL.ontology</Private-Package>
+						<Private-Package>org.universAAL.ontology;-split-package:=first</Private-Package>
 					</instructions>
 				</configuration>
 			</plugin>

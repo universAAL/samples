@@ -7,7 +7,7 @@
 	<packaging>jar</packaging>
 	<version>0.1.0-SNAPSHOT</version>
 	<!-- version is here equal to the level of version of the middleware -->
-	<name>Runner Folder</name>
+	<name>universAAL Samples Runner Folder Simple UI</name>
 
 	<build>
 		<plugins>

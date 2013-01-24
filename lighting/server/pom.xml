@@ -11,9 +11,16 @@
   <artifactId>smp.lighting.server.osgi</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>Lighting Server (OSGi)</name>
+  <name>universAAL Samples Lighting Server (OSGi)</name>
   <description>A server based on the domain ontology of lighting services</description>
   <url></url>
+
+  <scm>
+    <connection>${svn.base}/samples/lighting/server</connection>
+    <developerConnection>${svn.base}/samples/lighting/server</developerConnection>
+    <url>${svn.base.url}samples/lighting/server</url>
+  </scm>
+
   <dependencies>
     <dependency>
       <groupId>org.universAAL.support</groupId>

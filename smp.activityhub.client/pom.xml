@@ -12,7 +12,7 @@
   <artifactId>smp.activityhub.client</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>Activity Hub Client</name>
+  <name>universAAL Samples Activity Hub Client</name>
   <description>This is a client app listening on the uAAL context bus for events based on the activity hub ontology (ISO 11073-10471) and invoking services related to activity hub sensors on the service bus.</description>
   <developers>
     <developer>

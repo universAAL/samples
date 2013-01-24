@@ -12,9 +12,15 @@
 	<groupId>org.universAAL.samples</groupId>
 	<artifactId>smp.lighting.client-regular</artifactId>
 	<version>1.2.1-SNAPSHOT</version>
-	<name>Regular Lighting Client</name>
+	<name>universAAL Samples AAPI Regular Lighting Client</name>
 	<description>Regular Lighting Client for tests with Simplified API</description>
 	<url />
+	
+  <scm>
+    <connection>${svn.base}/samples/aapi/client-regular</connection>
+    <developerConnection>${svn.base}/samples/aapi/client-regular</developerConnection>
+    <url>${svn.base.url}samples/aapi/client-regular</url>
+  </scm>
 
 	<dependencies>
 		<dependency>

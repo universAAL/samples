@@ -11,7 +11,7 @@
   <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.utils.client</artifactId>
   <version>0.4.0-SNAPSHOT</version>
-  <name>Utilities Example Client</name>
+  <name>universAAL Samples Utilities Example Client</name>
   <description>An example of how to use the utilities bundles</description>
   
   <packaging>bundle</packaging>

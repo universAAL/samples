@@ -12,7 +12,7 @@
   <artifactId>test.ui.bus</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>UI bus tester</name>
+  <name>universAAL Samples UI bus tester</name>
   <dependencies>
     <dependency>
       <groupId>org.apache.felix</groupId>

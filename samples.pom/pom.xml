@@ -12,8 +12,15 @@
   <artifactId>samples.pom</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>universAAL Samples</name>
+  <name>universAAL Samples Suite</name>
   <description>A set of components that use the universAAL middleware with different roles and serve as samples.</description>
+  
+  <scm>
+    <connection>${svn.base}/samples/${project.artifactId}</connection>
+    <developerConnection>${svn.base}/samples/${project.artifactId}</developerConnection>
+    <url>${svn.base.url}samples/${project.artifactId}</url>
+  </scm>
+
   <modules>
     <module>../integration.tests/test.ctxt.bus</module>
     <module>../integration.tests/test.ctxt.bus.mobiledroid</module>

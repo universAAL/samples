@@ -11,7 +11,7 @@
   <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.utils.mini</artifactId>
   <version>0.2.0-SNAPSHOT</version>
-  <name>Utilities example Mini-App</name>
+  <name>universAAL Samples Utilities Example Mini-App</name>
   <description>An example of how to use the utilities bundle simplest level</description>
   
 	<packaging>bundle</packaging>

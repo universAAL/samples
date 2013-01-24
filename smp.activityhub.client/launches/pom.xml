@@ -12,7 +12,7 @@
 	<artifactId>lddi.smp.activityhub.client</artifactId>
 	<packaging>jar</packaging>
 	<version>0.0.5-SNAPSHOT</version>
-	<name>Runner Folder</name>
+	<name>universAAL Samples Runner Folder Activity Hub Client</name>
 	<description>PaxRunner configuration for lddi.smp.activityhub.client artifact</description>
 
 	<properties>

@@ -12,7 +12,7 @@
   <artifactId>test.ctxt.bus.mobiledroid</artifactId>
   <version>1.2.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>Context bus tester for Android</name>
+  <name>universAAL Samples Context bus tester for Android</name>
   <dependencies>
     <dependency>
       <groupId>org.apache.felix</groupId>

@@ -12,9 +12,15 @@
 	<packaging>bundle</packaging>
 	<artifactId>smp.lighting.server-simple</artifactId>
 	<version>1.2.1-SNAPSHOT</version>
-	<name>Lighting Server Simplified</name>
+	<name>universAAL Samples AAPI Lighting Server Simplified</name>
 	<description>A server based on the domain ontology of lighting services</description>
 	<url />
+	
+  <scm>
+    <connection>${svn.base}/samples/aapi/server-simple</connection>
+    <developerConnection>${svn.base}/samples/aapi/server-simple</developerConnection>
+    <url>${svn.base.url}samples/aapi/server-simple</url>
+  </scm>
 
 	<dependencies>
 		<dependency>
