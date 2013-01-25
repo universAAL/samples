@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1-SNAPSHOT</version>
     <relativePath>../samples.pom</relativePath>
   </parent>
   <groupId>org.universAAL.lddi</groupId>
   <artifactId>smp.activityhub.client</artifactId>
-  <version>1.3.0</version>
+  <version>1.3.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples Activity Hub Client</name>
   <description>This is a client app listening on the uAAL context bus for events based on the activity hub ontology (ISO 11073-10471) and invoking services related to activity hub sensors on the service bus.</description>

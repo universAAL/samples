@@ -5,7 +5,7 @@
 	<groupId>org.universAAL.samples</groupId>
 	<artifactId>simple.ui.run</artifactId>
 	<packaging>jar</packaging>
-	<version>1.3.0</version>
+	<version>1.3.1-SNAPSHOT</version>
 	<!-- version is here equal to the level of version of the middleware -->
 	<name>universAAL Samples Runner Folder Simple UI</name>
 
@@ -19,22 +19,22 @@
 					<args>pax.configuration</args>
 					<provision>
 						<!-- MW -->
-							<provision>scan-composite:mvn:org.universAAL.middleware/mw.composite/1.3.0/composite</provision>
+							<provision>scan-composite:mvn:org.universAAL.middleware/mw.composite/1.3.1-SNAPSHOT/composite</provision>
 						<!-- Ontologies -->
-							<provision>scan-composite:mvn:org.universAAL.ontology/ont.composite/1.3.0/composite</provision>
+							<provision>scan-composite:mvn:org.universAAL.ontology/ont.composite/1.3.1-SNAPSHOT/composite</provision>
 						<!-- Platform -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che/1.3.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che.mobile/1.3.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.dm/1.3.0/composite</provision> -->
-							<provision>scan-composite:mvn:org.universAAL.ui/ui.dm.mobile/1.3.0/composite</provision>
-							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.handler.web/1.3.0/composite</provision> -->
- 							<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing/1.3.0/composite</provision>
+							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che/1.3.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che.mobile/1.3.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.dm/1.3.1-SNAPSHOT/composite</provision> -->
+							<provision>scan-composite:mvn:org.universAAL.ui/ui.dm.mobile/1.3.1-SNAPSHOT/composite</provision>
+							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.handler.web/1.3.1-SNAPSHOT/composite</provision> -->
+ 							<provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing/1.3.1-SNAPSHOT/composite</provision>
 
 						<!-- Services -->
-							<provision>mvn:org.universAAL.samples/simple.ui/1.3.0</provision>
-							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.lighting.server/1.3.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.lighting.client/1.3.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.heating/1.3.0/composite</provision> -->
+							<provision>mvn:org.universAAL.samples/simple.ui/1.3.1-SNAPSHOT</provision>
+							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.lighting.server/1.3.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.lighting.client/1.3.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.heating/1.3.1-SNAPSHOT/composite</provision> -->
 						<!-- Whatever you want, like: -->
 							<!-- <provision>{opt:wrap}:mvn:{groupId}/{artifactId}/{version}@{opt:#level | nostart | noupdate}</provision> -->
 
