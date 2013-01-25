@@ -5,22 +5,15 @@
   <parent>
     <groupId>org.universAAL.support</groupId>
     <artifactId>support.pom</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
+    <version>1.3.0</version>
     <relativePath>../../pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.support.samples</groupId>
   <artifactId>samples.pom</artifactId>
-  <version>1.2.1-SNAPSHOT</version>
+  <version>1.3.0</version>
   <packaging>pom</packaging>
   <name>universAAL Samples Suite</name>
   <description>A set of components that use the universAAL middleware with different roles and serve as samples.</description>
-  
-  <scm>
-    <connection>${svn.base}/samples/${project.artifactId}</connection>
-    <developerConnection>${svn.base}/samples/${project.artifactId}</developerConnection>
-    <url>${svn.base.url}samples/${project.artifactId}</url>
-  </scm>
-
   <modules>
     <module>../integration.tests/test.ctxt.bus</module>
     <module>../integration.tests/test.ctxt.bus.mobiledroid</module>
@@ -43,40 +36,45 @@
     <module>../aapi/client-simple</module>
     <module>../aapi/ont-lighting-simple</module>
   </modules>
+  <scm>
+    <connection>${svn.base}/samples/${project.artifactId}</connection>
+    <developerConnection>${svn.base}/samples/${project.artifactId}</developerConnection>
+    <url>${svn.base.url}samples/${project.artifactId}</url>
+  </scm>
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.universAAL.middleware</groupId>
         <artifactId>mw.pom</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.3.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.middleware</groupId>
         <artifactId>mw.pom.osgi</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.3.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.ontology</groupId>
         <artifactId>ont.pom</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.3.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.ui</groupId>
         <artifactId>ui.pom</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.3.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.lddi</groupId>
         <artifactId>lddi.pom</artifactId>
-        <version>1.2.1-SNAPSHOT</version>
+        <version>1.3.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

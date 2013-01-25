@@ -5,22 +5,21 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
+    <version>1.3.0</version>
+    <relativePath>../../samples.pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.lighting.client.osgi</artifactId>
-  <version>1.2.1-SNAPSHOT</version>
+  <version>1.3.0</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples Lighting Client (OSGi)</name>
   <description>A client using lighting services based on the corresponding domain ontology</description>
   <url></url>
-  
   <scm>
     <connection>${svn.base}/samples/lighting/client</connection>
     <developerConnection>${svn.base}/samples/lighting/client</developerConnection>
     <url>${svn.base.url}samples/lighting/client</url>
   </scm>
-
   <dependencies>
     <dependency>
       <groupId>org.universAAL.support</groupId>
@@ -39,24 +38,24 @@
       <artifactId>ont.lighting</artifactId>
     </dependency>
   </dependencies>
-	<repositories>
-		<repository>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>uaal</id>
-			<name>universAAL Repositories</name>
-			<url>http://depot.universaal.org/nexus/content/repositories/releases</url>
-		</repository>
-		<repository>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<id>uaal-snapshots</id>
-			<name>universAAL Snapshot Repositories</name>
-			<url>http://depot.universaal.org/nexus/content/repositories/snapshots/</url>
-		</repository>
-	</repositories>
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>uaal</id>
+      <name>universAAL Repositories</name>
+      <url>http://depot.universaal.org/nexus/content/repositories/releases</url>
+    </repository>
+    <repository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <id>uaal-snapshots</id>
+      <name>universAAL Snapshot Repositories</name>
+      <url>http://depot.universaal.org/nexus/content/repositories/snapshots/</url>
+    </repository>
+  </repositories>
   <build>
     <plugins>
       <plugin>
@@ -81,7 +80,7 @@
         <dependency>
           <groupId>org.universAAL.samples</groupId>
           <artifactId>smp.lighting.server.osgi</artifactId>
-          <version>1.2.0</version>
+          <version>1.3.0</version>
         </dependency>
       </dependencies>
     </profile>

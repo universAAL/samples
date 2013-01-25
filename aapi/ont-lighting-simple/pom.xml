@@ -1,82 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.universAAL.ontology</groupId>
-		<artifactId>ont.pom</artifactId>
-		<version>1.2.1-SNAPSHOT</version>
-	</parent>
-	<packaging>bundle</packaging>
-	<artifactId>ont.lighting.simple</artifactId>
-	<version>1.2.1-SNAPSHOT</version>
-	<name>universAAL Samples AAPI Simplified Lighting Ontology</name>
-	<description>The simpligied ontology defining URIs for the most general concepts dealing with light sources and their control.</description>
-	<url />
-	<properties>
-		<!-- Default configuration for compiler source and target JVM -->
-		<maven.compile.source>1.5</maven.compile.source>
-		<maven.compile.target>1.5</maven.compile.target>
-	</properties>
-	
-  <!-- manually declare scm since the parent pom is in ontology repo and this interferes with the artifact being in support repo -->
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.universAAL.ontology</groupId>
+    <artifactId>ont.pom</artifactId>
+    <version>1.3.0</version>
+  </parent>
+  <artifactId>ont.lighting.simple</artifactId>
+  <version>1.3.0</version>
+  <packaging>bundle</packaging>
+  <name>universAAL Samples AAPI Simplified Lighting Ontology</name>
+  <description>The simpligied ontology defining URIs for the most general concepts dealing with light sources and their control.</description>
+  <url></url>
   <scm>
     <connection>scm:svn:http://forge.universaal.org/svn/support/trunk/samples/aapi/ont-lighting-simple</connection>
     <developerConnection>scm:svn:http://forge.universaal.org/svn/support/trunk/samples/aapi/ont-lighting-simple</developerConnection>
     <url>http://forge.universaal.org/gf/project/support/scmsvn/?path=%2Ftrunk%2Fsamples/aapi/ont-lighting-simple</url>
   </scm>
-	
-	<dependencies>
-		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.osgi.core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.data.representation.osgi</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.bus.service.osgi</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.universAAL.ontology</groupId>
-			<artifactId>ont.phWorld</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.container.xfaces.osgi</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.container.osgi</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.universAAL.ontology</groupId>
-			<artifactId>ont.lighting</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.universAAL.middleware</groupId>
-			<artifactId>mw.bus.service.aapi.osgi</artifactId>
-		</dependency>		
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Bundle-Name>${project.name}</Bundle-Name>
-						<Bundle-Description>${project.description}</Bundle-Description>
-						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Export-Package>org.universAAL.ontology.lighting.simple</Export-Package>
-						<Private-Package>org.universAAL.ontology;-split-package:=first</Private-Package>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+  <properties>
+    <maven.compile.source>1.5</maven.compile.source>
+    <maven.compile.target>1.5</maven.compile.target>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.osgi.core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.middleware</groupId>
+      <artifactId>mw.data.representation.osgi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.middleware</groupId>
+      <artifactId>mw.bus.service.osgi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.ontology</groupId>
+      <artifactId>ont.phWorld</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.middleware</groupId>
+      <artifactId>mw.container.xfaces.osgi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.middleware</groupId>
+      <artifactId>mw.container.osgi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.ontology</groupId>
+      <artifactId>ont.lighting</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.middleware</groupId>
+      <artifactId>mw.bus.service.aapi.osgi</artifactId>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-Name>${project.name}</Bundle-Name>
+            <Bundle-Description>${project.description}</Bundle-Description>
+            <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+            <Export-Package>org.universAAL.ontology.lighting.simple</Export-Package>
+            <Private-Package>org.universAAL.ontology;-split-package:=first</Private-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
