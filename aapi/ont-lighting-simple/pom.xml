@@ -18,6 +18,14 @@
 		<maven.compile.source>1.5</maven.compile.source>
 		<maven.compile.target>1.5</maven.compile.target>
 	</properties>
+	
+  <!-- manually declare scm since the parent pom is in ontology repo and this interferes with the artifact being in support repo -->
+  <scm>
+    <connection>scm:svn:http://forge.universaal.org/svn/support/trunk/samples/aapi/ont-lighting-simple</connection>
+    <developerConnection>scm:svn:http://forge.universaal.org/svn/support/trunk/samples/aapi/ont-lighting-simple</developerConnection>
+    <url>http://forge.universaal.org/gf/project/support/scmsvn/?path=%2Ftrunk%2Fsamples/aapi/ont-lighting-simple</url>
+  </scm>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.felix</groupId>
@@ -71,12 +79,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-    <!--
-	<scm>
-		<connection>${svn.base}/lighting</connection>
-		<developerConnection>${svn.base}/lighting</developerConnection>
-		<url>${svn.base.url}</url>
-	</scm>
-    -->
 </project>
