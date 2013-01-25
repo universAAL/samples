@@ -1,0 +1,18 @@
+CXF Server
+
+Copyright 2013 CERTH, http://www.certh.gr
+
+
+I. Included Software
+
+universAAL CXF Server 
+
+II. Used Software
+
+This product uses software developed at
+The Apache Software Foundation (http://www.apache.org/).
+Licensed under the Apache License 2.0.
+
+III. License Summary
+- Apache License 2.0
+- MIT License

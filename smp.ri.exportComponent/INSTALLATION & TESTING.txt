@@ -1,0 +1,76 @@
+
+INSTALLATION & TESTING
+-------------
+
+1. Add (import) the following projects: ri.soap.client, 
+   ri.soap.server and ri.soap.service to your workspace.
+
+2. Fix the path of the "cxf-dosgi-ri-singlebundle-distribution-1.0.jar" and 
+   the"org.eclipse.osgi.services_3.2.0.v20090520-1800.jar" of the cxf LightingService.launch (direct to the /libs folder of the example)  
+ 
+3. Execute "Maven Install" for 
+   each project.
+
+4. Run the cxf LightingService.launch file ("launches" folder) 
+   
+5. Run the SOAP client from the console in order to execute one (select one and uncomment it from the client's Activator.java file) 
+   of the remote service requests getAllLamps, turnOn, turnOff. Each of them uses different type of arguments in order to demonstrate
+   the different types of Service Requests.
+  
+	OR
+	
+   Use an external SOAP Client (e.g. http://www.soapclient.com/soaptest.html or JAVA SOAPClient) fill the url: 
+   http://[your IP]:8080/uAALRemoteService?wsdl and get the 3 available webservices
+	a) getAllLamps works without arguments (it should return a list with 4 lamps from the lighting server)
+	b) getTurtleServiceReq works with Turtle Strings 
+	   e.g. for turning On a lamp use this:
+
+			@prefix owl: <http://www.w3.org/2002/07/owl#> .
+			@prefix ns: <http://ontology.igd.fhg.de/LightingServer.owl#> .
+			@prefix ns1: <http://ontology.universaal.org/Lighting.owl#> .
+			@prefix psn: <http://ontology.universAAL.org/Service.owl#> .
+			@prefix ns2: <http://www.daml.org/services/owl-s/1.1/Process.owl#> .
+			@prefix : <http://ontology.universAAL.org/uAAL.owl#> .
+			_:BN000000 a :ServiceRequest ;
+			  :theServiceCaller <urn:org.universAAL.aal_space:test_environment#13b84e18dc9@joe-PC+4e5fd99c_5> ;
+			  :requiredResult [
+				a ns2:Result ;
+				ns2:hasEffect (
+				  [
+					psn:affectedProperty [
+					  a psn:PropertyPath ;
+					  psn:thePath (
+						ns1:controls
+						ns1:srcBrightness
+					  )
+					] ;
+					a psn:ChangeEffect ;
+					psn:propertyValue 100
+				  ]
+				)
+			  ] ;
+			  :requestedService [
+				a ns1:Lighting ;
+				:instanceLevelRestrictions (
+				  [
+					owl:hasValue ns:controlledLamp0 ;
+					a owl:Restriction ;
+					owl:onProperty ns1:controls
+				  ]
+				) ;
+				:numberOfValueRestrictions 1
+			  ] .
+			ns:controlledLamp0 a ns1:LightSource ,
+				<http://ontology.universAAL.org/Device.owl#Device> ,
+				:PhysicalThing .
+
+
+	c) turnOffLamp works with a simple URI (e.g. http://ontology.igd.fhg.de/LightingServer.owl#controlledLamp0)
+	   
+
+
+ 
+
+
+   
+
