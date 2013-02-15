@@ -1,6 +1,7 @@
 package org.universAAL.samples.uibus;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
@@ -21,6 +22,7 @@ import org.universAAL.middleware.ui.rdf.InputField;
 import org.universAAL.middleware.ui.rdf.Label;
 import org.universAAL.middleware.ui.rdf.MediaObject;
 import org.universAAL.middleware.ui.rdf.Range;
+import org.universAAL.middleware.ui.rdf.Repeat;
 //import org.universAAL.middleware.ui.rdf.Repeat;
 import org.universAAL.middleware.ui.rdf.Select;
 import org.universAAL.middleware.ui.rdf.Select1;
@@ -221,6 +223,41 @@ public class OPublisher extends UICaller {
 //	    new SimpleOutput(g, new Label("Comment", (String) null),
 //		    new PropertyPath(null, false,
 //			    new String[] { User.PROP_RDFS_COMMENT }), null);
+	    String PROP_TABLE = "http://ontology.aal-persona.org/Tests.owl#table";
+	    String PROP_COL = "http://ontology.aal-persona.org/Tests.owl#column";
+	    List rows = new ArrayList();
+	      Resource cell = new Resource();
+	      cell.setProperty(PROP_COL + "1", new Integer(1));
+	      cell.setProperty(PROP_COL + "2", "two");
+	      cell.setProperty(PROP_COL + "3", new Float(3));
+	      rows.add(cell);
+	      //...
+	      cell = new Resource();
+	      cell.setProperty(PROP_COL + "1", new Integer(2));
+	      cell.setProperty(PROP_COL + "2", "three");
+	      cell.setProperty(PROP_COL + "3", new Float(4));
+	      rows.add(cell);
+	      //...
+	      cell = new Resource();
+	      cell.setProperty(PROP_COL + "1", new Integer(3));
+	      cell.setProperty(PROP_COL + "2", "four");
+	      cell.setProperty(PROP_COL + "3", new Float(5));
+	      rows.add(cell);
+	      Resource dataRoot = new Resource();
+	      dataRoot.setProperty(PROP_TABLE, rows);
+//	      f = Form.newDialog("test", dataRoot);
+//	      controls = f.getIOControls();
+//	      submits = f.getSubmits();
+//	      Repeat repeat = new Repeat(f.getIOControls(),new Label("table", null),
+//		      new PropertyPath(null, false, new String[]{PROP_TABLE}),
+//		      null,null);
+//	      Group row = new Group(repeat, null, null, null, null);
+//	      new SimpleOutput(row, new Label("col1", null), 
+//		      new PropertyPath(null, false, new String[]{PROP_COL + "1"}), null);
+//	      new SimpleOutput(row, new Label("col2", null), 
+//			      new PropertyPath(null, false, new String[]{PROP_COL + "2"}), null);
+//	      new SimpleOutput(row, new Label("col3", null), 
+//		      new PropertyPath(null, false, new String[]{PROP_COL + "3"}), null);
 	    
 	    // Repeat table = new Repeat(controls,new
 	    // Label("Repeat table",(String)null),new
@@ -328,20 +365,56 @@ public class OPublisher extends UICaller {
 		ms1.generateChoices(new String[] { "OptA", "OptB", "OptC" });
 		break;
 	    case 5:
-		// Repeat table = new Repeat(controls,new
-		// Label("Repeat table",(String)null),new
-		// PropertyPath(null,false,new
-		// String[]{"http://ontology.aal-persona.org/Tests.owl#input8"}),null,
-		// null);
-		// Group tableGroup = new Group(table, null, null, null,
-		// (Resource)null);
-		// new SimpleOutput(tableGroup,new
-		// Label("Name",(String)null),new PropertyPath(null, true, new
-		// String[]{"http://ontology.aal-persona.org/Tests.owl#input9"}),null);
-		// new SimpleOutput(tableGroup,new
-		// Label("Measurement",(String)null),new PropertyPath(null,
-		// false, new
-		// String[]{"http://ontology.aal-persona.org/Tests.owl#input10"}),null);
+		String PROP_TABLE = "http://ontology.aal-persona.org/Tests.owl#table";
+		    String PROP_COL = "http://ontology.aal-persona.org/Tests.owl#column";
+		    List rows = new ArrayList();
+		      Resource cell = new Resource();
+		      cell.setProperty(PROP_COL + "1", new Integer(1));
+		      cell.setProperty(PROP_COL + "2", "two");
+		      cell.setProperty(PROP_COL + "3", new Float(3));
+		      rows.add(cell);
+		      //...
+		      cell = new Resource();
+		      cell.setProperty(PROP_COL + "1", new Integer(2));
+		      cell.setProperty(PROP_COL + "2", "three");
+		      cell.setProperty(PROP_COL + "3", new Float(4));
+		      rows.add(cell);
+		      //...
+		      cell = new Resource();
+		      cell.setProperty(PROP_COL + "1", new Integer(3));
+		      cell.setProperty(PROP_COL + "2", "four");
+		      cell.setProperty(PROP_COL + "3", new Float(5));
+		      rows.add(cell);
+		      Resource dataRoot = new Resource();
+		      dataRoot.setProperty(PROP_TABLE, rows);
+//		      f = Form.newDialog("test", dataRoot);
+//		      controls = f.getIOControls();
+//		      submits = f.getSubmits();
+//		      Repeat repeat = new Repeat(f.getIOControls(),new Label("table", null),
+//			      new PropertyPath(null, false, new String[]{PROP_TABLE}),
+//			      null,null);
+//		      Group row = new Group(repeat, null, null, null, null);
+//		      new SimpleOutput(row, new Label("col1", null), 
+//			      new PropertyPath(null, false, new String[]{PROP_COL + "1"}), null);
+//		      new SimpleOutput(row, new Label("col2", null), 
+//				      new PropertyPath(null, false, new String[]{PROP_COL + "2"}), null);
+//		      new SimpleOutput(row, new Label("col3", null), 
+//			      new PropertyPath(null, false, new String[]{PROP_COL + "3"}), null);
+		      
+//		 Repeat table = new Repeat(controls,new
+//		 Label("Repeat table",(String)null),new
+//		 PropertyPath(null,false,new
+//		 String[]{"http://ontology.aal-persona.org/Tests.owl#input8"}),null,
+//		 null);
+//		 Group tableGroup = new Group(table, null, null, null,
+//		 (Resource)null);
+//		 new SimpleOutput(tableGroup,new
+//		 Label("Name",(String)null),new PropertyPath(null, true, new
+//		 String[]{"http://ontology.aal-persona.org/Tests.owl#input9"}),null);
+//		 new SimpleOutput(tableGroup,new
+//		 Label("Measurement",(String)null),new PropertyPath(null,
+//		 false, new
+//		 String[]{"http://ontology.aal-persona.org/Tests.owl#input10"}),null);
 		break;
 	    case 6:
 		new MediaObject(controls, new Label("Media", (String) null),
@@ -358,18 +431,18 @@ public class OPublisher extends UICaller {
 			null, null);
 		break;
 	    case 8:
-//		new Range(
-//			controls,
-//			new Label("Range", (String) null),
-//			new PropertyPath(
-//				null,
-//				false,
-//				new String[] { "http://ontology.aal-persona.org/Tests.owl#input12" }),
-//			MergedRestriction
-//				.getAllValuesRestrictionWithCardinality(
-//					Range.PROP_VALUE_RESTRICTION,
-//					new IntRestriction(3, true, 12, true),
-//					1, 1), new Integer(5));
+		new Range(
+			controls,
+			new Label("Range", (String) null),
+			new PropertyPath(
+				null,
+				false,
+				new String[] { "http://ontology.aal-persona.org/Tests.owl#input12" }),
+			MergedRestriction
+				.getAllValuesRestrictionWithCardinality(
+					/*Range.PROP_VALUE_RESTRICTION*/"http://ontology.aal-persona.org/Tests.owl#input12",
+					new IntRestriction(3, true, 12, true),
+					1, 1), new Integer(5));
 		break;
 	    case 9:
 		Group g1 = new Group(controls, new Label(
