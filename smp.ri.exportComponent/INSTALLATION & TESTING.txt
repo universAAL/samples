@@ -6,7 +6,8 @@ INSTALLATION & TESTING
    ri.soap.server and ri.soap.service to your workspace.
 
 2. Fix the path of the "cxf-dosgi-ri-singlebundle-distribution-1.0.jar" and 
-   the"org.eclipse.osgi.services_3.2.0.v20090520-1800.jar" of the cxf LightingService.launch (direct their paths to the /libs folder of the example)  
+   the"org.eclipse.osgi.services_3.2.0.v20090520-1800.jar" non-universAAL(external) bundles 
+   in the cxf LightingService.launch (direct their paths to the /libs folder of the example).  
  
 3. Execute "Maven Install" for 
    each project.
