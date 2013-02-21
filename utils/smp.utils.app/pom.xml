@@ -6,14 +6,14 @@
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
     <version>1.3.1-SNAPSHOT</version>
-    <relativePath>../samples.pom/pom.xml</relativePath>
+    <relativePath>../../samples.pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
-  <artifactId>smp.utils.mini</artifactId>
+  <artifactId>smp.utils.app</artifactId>
   <version>1.3.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>universAAL Samples Utilities Example Mini-App</name>
-  <description>An example of how to use the utilities bundle simplest level</description>
+  <name>universAAL Samples Utilities Example App</name>
+  <description>An example of how to use the utilities bundles</description>
   <dependencies>
     <dependency>
       <groupId>org.apache.felix</groupId>
@@ -36,16 +36,12 @@
       <artifactId>mw.container.osgi</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.universAAL.ontology</groupId>
-      <artifactId>ont.phWorld</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.universAAL.ontology</groupId>
-      <artifactId>ont.profile</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.universAAL.support</groupId>
       <artifactId>uAAL.utils</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.universAAL.ontology</groupId>
+      <artifactId>ont.weather</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -57,7 +53,7 @@
         <configuration>
           <instructions>
             <Bundle-Name>${project.name}</Bundle-Name>
-            <Bundle-Activator>org.universAAL.samples.util.mini.Activator</Bundle-Activator>
+            <Bundle-Activator>org.universAAL.samples.utils.app.Activator</Bundle-Activator>
             <Bundle-Description>${project.description}</Bundle-Description>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
           </instructions>
