@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+  <name>SOAP Service</name>
+  <developer>Ioannis Moulos,Vassilis Kilinzis, CERTH</developer>
+  <date>20.02.13</date>
+  <url>http://www.certh.gr</url>
+  <svnurl>http://forge.universaal.org/svn/support/trunk/samples/smp.ri.exportComponent/ri.soap.service</svnurl>
+  <license>Apache License, Version 2.0, The MIT License (MIT) </license>
+  <licenseurl>http://www.apache.org/licenses/LICENSE-2.0.html, http://opensource.org/licenses/MIT</licenseurl>
+  <subprojects>true</subprojects>
+  <description>This example demonstrates a simple implementation of a SOAP service interface.</description>
+  <tags>
+    <tag>SOAP</tag>
+    <tag>service</tag>
+    <tag>Apache CXF</tag>
+    <tag>WebService</tag>
+    <tag>interface</tag>
+  </tags>
+</project>

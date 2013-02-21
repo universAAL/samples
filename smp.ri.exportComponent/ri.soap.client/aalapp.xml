@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+  <name>SOAP Client</name>
+  <developer>Ioannis Moulos,Vassilis Kilinzis, CERTH</developer>
+  <date>20.02.13</date>
+  <url>http://www.certh.gr</url>
+  <svnurl>http://forge.universaal.org/svn/support/trunk/samples/smp.ri.exportComponent/ri.soap.client</svnurl>
+  <license>Apache License, Version 2.0, The MIT License (MIT) </license>
+  <licenseurl>http://www.apache.org/licenses/LICENSE-2.0.html, http://opensource.org/licenses/MIT</licenseurl>
+  <subprojects>true</subprojects>
+  <description>This example demonstrates a SOAP client that makes a turnOff Lamp call as Turtle String, using web services.</description>
+  <tags>
+    <tag>SOAP</tag>
+    <tag>client</tag>
+    <tag>Apache CXF</tag>
+    <tag>WebService</tag>
+    <tag>Turtle String</tag>
+    <tag>Sevice</tag>
+    <tag>call</tag>
+    <tag>example</tag>
+  </tags>
+</project>
