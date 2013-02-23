@@ -26,10 +26,10 @@
     <module>../ont.tutorial</module>
     <module>../simple.ui</module>
     <module>../smp.activityhub.client</module>
-    <module>../smp.utils.server</module>
-    <module>../smp.utils.client</module>
-    <module>../smp.utils.app</module>
-    <module>../smp.utils.mini</module>
+    <module>../utils/smp.utils.server</module>
+    <module>../utils/smp.utils.client</module>
+    <module>../utils/smp.utils.app</module>
+    <module>../utils/smp.utils.mini</module>
     <module>../aapi/client-regular</module>
     <module>../aapi/server-regular</module>
     <module>../aapi/server-simple</module>
