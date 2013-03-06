@@ -1,6 +1,6 @@
 
 INSTALLATION & TESTING
--------------
+----------------------
 
 1. Add (import) the following projects: ri.soap.client, 
    ri.soap.server and ri.soap.service to your workspace.
@@ -20,8 +20,14 @@ INSTALLATION & TESTING
   
 	OR
 	
-   Use an external SOAP Client (e.g. http://www.soapclient.com/soaptest.html or JAVA SOAPClient) fill the url: 
-   http://[your IP]:8080/uAALRemoteService?wsdl and get the 3 available webservices
+   Use an external SOAP Client (e.g. http://www.soapclient.com/soaptest.html or JAVA SOAPClient) and fill in the webservice url: 
+   http://[your IP]:[port]/uAALRemoteService?wsdl 
+   and get the 3 available webservices.
+   For example: http://192.168.1.1:8080/uAALRemoteService?wsdl
+   NOTICE: If port 8080 is not available, another port is used automatically and it can be found in the fisrt 
+   lines of the Console (e.g. -> Setting HttpService port to: 51707) when launching the application.
+   
+   Available webservices:
 	a) getAllLamps works without arguments (it should return a list with 4 lamps from the lighting server)
 	b) getTurtleServiceReq works with Turtle Strings 
 	   e.g. for turning On a lamp use this:
