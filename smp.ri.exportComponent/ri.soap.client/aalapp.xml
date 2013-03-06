@@ -8,10 +8,13 @@
   <license>Apache License, Version 2.0, The MIT License (MIT) </license>
   <licenseurl>http://www.apache.org/licenses/LICENSE-2.0.html, http://opensource.org/licenses/MIT</licenseurl>
   <subprojects>true</subprojects>
-  <description>This example demonstrates a SOAP client that makes a turnOff Lamp call as Turtle String, using web services.</description>
+  <description>This example demonstrates a SOAP client that makes a turnOff Lamp Service call as a Turtle String, through webservices to the "classic" Lighting server. &#13;
+This project consists of SOAP server, a SOAP service, and a SOAP client in sub-projects. &#13;
+</description>
   <tags>
     <tag>SOAP</tag>
     <tag>client</tag>
+    <tag>server</tag>
     <tag>Apache CXF</tag>
     <tag>WebService</tag>
     <tag>Turtle String</tag>

@@ -1,10 +1,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.universAAL.support.samples</groupId>
+		<artifactId>samples.pom</artifactId>
+		<version>1.3.1-SNAPSHOT</version>
+		<relativePath>../samples.pom/pom.xml</relativePath>
+	</parent>
 
 	<groupId>org.universAAL.soap</groupId>
 	<version>0.1.0-SNAPSHOT</version>
-
+	<artifactId>cxf.client</artifactId>
 	<name>SOAP Client</name>
 
 	<build>
@@ -44,8 +50,7 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
+
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -78,6 +83,25 @@
 		</pluginManagement>
 	</build>
 
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>uaal</id>
+			<name>universAAL Repositories</name>
+			<url>http://depot.universaal.org/nexus/content/repositories/releases</url>
+		</repository>
+		<repository>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<id>uaal-snapshots</id>
+			<name>universAAL Snapshot Repositories</name>
+			<url>http://depot.universaal.org/nexus/content/repositories/snapshots/</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.felix</groupId>
@@ -94,10 +118,4 @@
 			<version>0.1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-	<artifactId>cxf.client</artifactId>
-	<parent>
-		<groupId>org.universAAL.support.samples</groupId>
-		<artifactId>samples.pom</artifactId>
-		<version>1.2.1-SNAPSHOT</version>
-	</parent>
 </project>
