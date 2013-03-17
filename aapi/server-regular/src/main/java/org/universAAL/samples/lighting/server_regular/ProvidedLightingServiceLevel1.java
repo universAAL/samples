@@ -69,7 +69,7 @@ public class ProvidedLightingServiceLevel1 extends Lighting {
     static final ServiceProfile[] profiles = new ServiceProfile[4];
     private static Hashtable serverLightingRestrictions = new Hashtable();
     static {
-	OntologyManagement.getInstance().register(
+	OntologyManagement.getInstance().register(Activator.mc,
 		new SimpleOntology(MY_URI, Lighting.MY_URI,
 			new ResourceFactoryImpl() {
 			    @Override

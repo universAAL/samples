@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>1.3.1-SNAPSHOT</version>
+    <version>1.3.2-SNAPSHOT</version>
     <relativePath>../../samples.pom</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.lighting.client-simple</artifactId>
-  <version>1.3.1-SNAPSHOT</version>
+  <version>1.3.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples AAPI Lighting Client Simplified</name>
   <description>A client using simple api lighting services based on the corresponding domain ontology</description>
@@ -64,17 +64,14 @@
     <dependency>
       <groupId>org.universAAL.ontology</groupId>
       <artifactId>ont.lighting.simple</artifactId>
-      <version>1.3.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.universAAL.samples</groupId>
       <artifactId>smp.lighting.server-simple</artifactId>
-      <version>1.3.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.universAAL.samples</groupId>
       <artifactId>smp.lighting.client-regular</artifactId>
-      <version>1.3.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <build>

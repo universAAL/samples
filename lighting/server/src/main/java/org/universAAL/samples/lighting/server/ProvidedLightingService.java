@@ -73,7 +73,7 @@ public class ProvidedLightingService extends Lighting {
 	// of the object
 	// OntologyManagement.getInstance().register(new SimpleOntology(MY_URI,
 	// Lighting.MY_URI));
-	OntologyManagement.getInstance().register(
+	OntologyManagement.getInstance().register(Activator.mc,
 		new SimpleOntology(MY_URI, Lighting.MY_URI,
 			new ResourceFactoryImpl() {
 			    public Resource createInstance(String classURI,

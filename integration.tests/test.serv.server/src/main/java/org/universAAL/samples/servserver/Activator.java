@@ -30,7 +30,7 @@ public class Activator implements BundleActivator {
     public static BundleContext context = null;
     public static SCallee callee = null;
 
-    private static ModuleContext moduleContext = null;
+    public static ModuleContext moduleContext = null;
 
     public void start(BundleContext context) throws Exception {
 	Activator.context = context;

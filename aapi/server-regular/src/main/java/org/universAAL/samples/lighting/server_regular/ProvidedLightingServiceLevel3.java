@@ -41,7 +41,7 @@ public class ProvidedLightingServiceLevel3 extends LightingSimplified {
     static {
 	// we need to register all classes in the ontology for the serialization
 	// of the object
-	OntologyManagement.getInstance().register(
+	OntologyManagement.getInstance().register(Activator.mc,
 		new SimpleOntology(MY_URI, LightingSimplified.MY_URI,
 			new ResourceFactoryImpl() {
 			    @Override

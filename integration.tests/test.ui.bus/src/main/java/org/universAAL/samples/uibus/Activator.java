@@ -27,7 +27,7 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
 //import org.universAAL.middleware.input.DefaultInputPublisher;
 //import org.universAAL.middleware.input.InputPublisher;
-import org.universAAL.middleware.sodapop.msg.MessageContentSerializer;
+import org.universAAL.middleware.serialization.MessageContentSerializer;
 import org.universAAL.middleware.util.Constants;
 import org.universAAL.ontology.profile.User;
 
