@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.universAAL.middleware</groupId>
+	<artifactId>smp.mw.runner</artifactId>
+	<packaging>jar</packaging>
+	<version>1.3.2-SNAPSHOT</version>
+	<name>Run project for MW2.0 based OSGi</name>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.ops4j</groupId>
+				<artifactId>maven-pax-plugin</artifactId>
+				<version>1.4</version>
+				<configuration>
+					<args>pax.configuration</args>
+					<provision>
+						<!-- MW -->
+
+
+						<provision>mvn:org.apache.felix/org.apache.felix.configadmin/1.2.8@2</provision>
+						<provision>mvn:org.ops4j.pax.confman/pax-confman-propsloader/0.2.2@3</provision>
+						<provision>mvn:ch.ethz.iks.slp/jslp-osgi/1.0.2.RC5@2</provision>
+						<provision>mvn:org.jgroups/jgroups/3.3.0.Alpha1@2</provision>
+						<provision>mvn:org.apache.felix/org.osgi.core/1.4.0@2</provision>
+						<provision>mvn:org.apache.felix/org.osgi.compendium/1.4.0@2</provision>
+						<provision>mvn:org.universAAL.middleware/mw.container.xfaces.osgi/1.3.1-SNAPSHOT@2</provision>
+
+
+
+
+						<provision>mvn:org.universAAL.middleware/mw.interfaces.osgi/1.3.2-SNAPSHOT@2</provision>
+						<provision>mvn:org.universAAL.middleware/mw.connectors.api.osgi/1.3.2-SNAPSHOT@2</provision>
+						<provision>mvn:org.universAAL.middleware/mw.managers.api.osgi/1.3.2-SNAPSHOT@2</provision>
+
+						<provision>mvn:org.universAAL.middleware/mw.modules.api.osgi/1.3.2-SNAPSHOT@2</provision>
+
+						<provision>mvn:org.universAAL.middleware/mw.brokers.api.osgi/1.3.2-SNAPSHOT@2</provision>
+
+						<!-- <provision>mvn:org.universAAL.middleware/mw.karaf.shell.universAAL.osgi/1.3.2-SNAPSHOT</provision> -->
+
+
+						<provision>mvn:commons-lang/commons-lang/2.6@2</provision>
+
+<!-- 
+						 <provision>mvn:org.universAAL.middleware/mw.commons.osgi/1.3.1-SNAPSHOT@2</provision>
+						  --> 
+
+						<provision>mvn:org.universAAL.middleware/mw.container.osgi/1.3.1-SNAPSHOT@82</provision>
+
+						<!-- Connectors -->
+						<provision>mvn:org.universAAL.middleware/mw.connectors.communication.jgroups.osgi/1.3.2-SNAPSHOT@83</provision>
+
+						<provision>mvn:org.universAAL.middleware/mw.connectors.discovery.slp.osgi/1.3.2-SNAPSHOT@83</provision>
+
+						<!-- <provision>mvn:org.universAAL.middleware/mw.connectors.deploy.karaf.osgi/1.3.2-SNAPSHOT@83</provision> -->
+
+
+						<!-- Modules -->
+						<provision>mvn:org.universAAL.middleware/mw.modules.communication.osgi/1.3.2-SNAPSHOT@84</provision>
+
+						<provision>mvn:org.universAAL.middleware/mw.modules.aalspace.osgi/1.3.2-SNAPSHOT@85</provision>
+
+
+						<!-- Brokers -->
+						<provision>mvn:org.universAAL.middleware/mw.brokers.control.osgi/1.3.2-SNAPSHOT@86</provision>
+
+
+						<!-- Managers -->
+						<provision>mvn:org.universAAL.middleware/mw.managers.aalspace.osgi/1.3.2-SNAPSHOT@87</provision>
+
+						<provision>mvn:org.universAAL.middleware/mw.managers.deploy.osgi/1.3.2-SNAPSHOT@88</provision>
+
+						<provision>mvn:org.universAAL.middleware/mw.managers.deploy.client.osgi/1.3.2-SNAPSHOT@88@nostart</provision>
+
+
+						<!-- Busses 
+						<provision>mvn:org.universAAL.middleware/mw.bus.model.osgi/1.3.2-SNAPSHOT@89</provision> 
+							<provision>mvn:org.universAAL.middleware/mw.data.representation.osgi/1.3.1-SNAPSHOT@89</provision> 
+							<provision>mvn:org.universAAL.middleware/mw.bus.context.osgi/1.3.2-SNAPSHOT@89</provision> --> 
+
+					</provision>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>ops4j.releases</id>
+			<url>http://repository.ops4j.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+</project>

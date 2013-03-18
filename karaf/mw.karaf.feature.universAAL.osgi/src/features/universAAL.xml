@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+
+	<feature name="universAAL2.0"
+		description="The universAAL runtime based on the Middleware 2.0"
+		version="0.0.3" resolver='(obr)'>
+
+		<!-- APIs -->
+		<bundle>mvn:ch.ethz.iks.slp/jslp-osgi/1.0.2.RC5</bundle>
+		<bundle>mvn:org.jgroups/jgroups/3.3.0.Alpha1</bundle>
+		<bundle>mvn:org.apache.felix/org.osgi.core/1.4.0</bundle>
+		<bundle>mvn:org.apache.felix/org.osgi.compendium/1.4.0</bundle>
+		<bundle>mvn:org.universAAL.middleware/mw.container.xfaces.osgi/1.3.1-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.middleware/mw.interfaces.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.middleware/mw.connectors.api.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.middleware/mw.managers.api.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.middleware/mw.modules.api.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.middleware/mw.brokers.api.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.middleware/mw.karaf.shell.universAAL.osgi/1.3.2-SNAPSHOT
+		</bundle>
+
+		<bundle>mvn:commons-lang/commons-lang/2.6
+		</bundle>
+		<!-- <bundle>mvn:org.universAAL.middleware/mw.commons.osgi/1.3.1-SNAPSHOT 
+			</bundle> -->
+
+
+		<bundle start-level='82' start='true'>mvn:org.universAAL.middleware/mw.container.osgi/1.3.1-SNAPSHOT
+		</bundle>
+
+		<!-- Connectors -->
+		<bundle start-level='83' start='true'>mvn:org.universAAL.middleware/mw.connectors.communication.jgroups.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle start-level='83' start='true'>mvn:org.universAAL.middleware/mw.connectors.discovery.slp.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle start-level='83' start='true'>mvn:org.universAAL.middleware/mw.connectors.deploy.karaf.osgi/1.3.2-SNAPSHOT
+		</bundle>
+
+		<!-- Modules -->
+		<bundle start-level='84' start='true'>mvn:org.universAAL.middleware/mw.modules.communication.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle start-level='85' start='true'>mvn:org.universAAL.middleware/mw.modules.aalspace.osgi/1.3.2-SNAPSHOT
+		</bundle>
+
+		<!-- Brokers -->
+		<bundle start-level='86' start='true'>mvn:org.universAAL.middleware/mw.brokers.control.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle start-level='86' start='false'>mvn:org.universAAL.middleware/mw.broker.client.osgi/1.3.2-SNAPSHOT
+		</bundle>
+
+
+		<!-- Managers -->
+		<bundle start-level='87' start='true'>mvn:org.universAAL.middleware/mw.managers.aalspace.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle start-level='88' start='true'>mvn:org.universAAL.middleware/mw.managers.deploy.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle start-level='88' start='false'>mvn:org.universAAL.middleware/mw.managers.deploy.client.osgi/1.3.2-SNAPSHOT
+		</bundle>
+
+		<!-- Busses -->
+		<bundle start-level='88' start='true'>mvn:org.universAAL.middleware/mw.data.serialization.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle start-level='89' start='true'>mvn:org.universAAL.middleware/mw.bus.model.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle start-level='89' start='true'>mvn:org.universAAL.middleware/mw.data.representation.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle start-level='89' start='true'>mvn:org.universAAL.middleware/mw.bus.context.osgi/1.3.2-SNAPSHOT
+		</bundle>
+			
+		<bundle start-level='89' start='true'>mvn:org.universAAL.middleware/mw.bus.service.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle start-level='89' start='true'>mvn:org.universAAL.middleware/mw.bus.ui.osgi/1.3.2-SNAPSHOT
+		</bundle>
+		
+
+		
+		
+		
+
+		<!-- Configuration file section -->
+
+		<!-- AAL Space Manager -->
+		<configfile finalname="/etc/mw.managers.aalspace.core.cfg">mvn:org.universAAL.middleware/mw.managers.aalspace.core.config/1.3.2-SNAPSHOT/cfg
+		</configfile>
+		<configfile finalname="/etc/Home.space">mvn:org.universAAL.middleware/mw.managers.aalspace.core.config/1.3.2-SNAPSHOT/space
+		</configfile>
+
+		<!-- jGroups Communication Connector -->
+		<configfile finalname="/etc/mw.connectors.communication.jgroups.core.cfg">mvn:org.universAAL.middleware/mw.connectors.communication.jgroups.core.config/1.3.2-SNAPSHOT/cfg
+		</configfile>
+
+		<!-- SLP Discovery Connector -->
+		<configfile finalname="/etc/mw.connectors.discovery.slp.core.cfg">mvn:org.universAAL.middleware/mw.connectors.discovery.slp.core.config/1.3.2-SNAPSHOT/cfg
+		</configfile>
+
+		<!-- Deploy Manager -->
+		<configfile finalname="/etc/mw.managers.deploy.core.cfg">mvn:org.universAAL.middleware/mw.managers.deploy.core.config/1.3.2-SNAPSHOT/cfg
+		</configfile>
+
+		<!-- AAL Spacde Module -->
+		<configfile finalname="/etc/mw.modules.aalspace.core.cfg">mvn:org.universAAL.middleware/mw.modules.aalspace.core.config/1.3.2-SNAPSHOT/cfg
+		</configfile>
+
+
+	</feature>
+</features>

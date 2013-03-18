@@ -26,10 +26,16 @@
     <module>../ont.tutorial</module>
     <module>../simple.ui</module>
     <module>../smp.activityhub.client</module>
+    <module>../smp.mw.broker.client</module>
+    <module>../smp.mw.deploymanager.client</module>
     <module>../utils/smp.utils.server</module>
     <module>../utils/smp.utils.client</module>
     <module>../utils/smp.utils.app</module>
     <module>../utils/smp.utils.mini</module>
+    <module>../karaf/mw.karaf.feature.universAAL.osgi</module>
+    <module>../karaf/mw.karaf.feature.lighting-uAAL.osgi</module>
+    <module>../karaf/mw.karaf.feature.ping-pong.osgi</module>
+    <module>../smp.mw.runner</module>
 <!--    <module>../aapi/client-regular</module>
     <module>../aapi/server-regular</module>
     <module>../aapi/server-simple</module>
