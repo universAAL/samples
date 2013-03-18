@@ -31,6 +31,9 @@ public class LightingTest extends IntegrationTest {
      * needed for the TestCase have to be included in the launch configuration.
      */
     public LightingTest() {
+	setRunArguments("net.slp.multicastTimeouts", "500,750");
+	setRunArguments("java.net.preferIPv4Stack", "true");
+	setRunArguments("net.slp.port", "7000");
 	// super("../../pom/launches/LightingExample_Complete_0_3_2.launch");
 	// setBundleConfLocation("../../../itests/rundir/confadmin");
 	// setPaxArtifactUrls("file:artifact-test-1.1.2.composite");
