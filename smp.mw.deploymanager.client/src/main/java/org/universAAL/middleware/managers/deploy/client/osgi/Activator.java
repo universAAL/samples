@@ -40,7 +40,6 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 import org.osgi.service.log.LogService;
-import org.universAAL.middleware.interfaces.mpa.model.*;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
 import org.universAAL.middleware.container.osgi.run.uAALBundleExtender;
@@ -49,6 +48,10 @@ import org.universAAL.middleware.managers.api.AALSpaceManager;
 import org.universAAL.middleware.managers.api.DeployManager;
 import org.universAAL.middleware.managers.api.InstallationResults;
 import org.universAAL.middleware.managers.api.UAPPPackage;
+
+import org.universAAL.middleware.deploymaneger.uapp.model.AalUapp;
+import org.universAAL.middleware.deploymaneger.uapp.model.ObjectFactory;
+import org.universAAL.middleware.deploymaneger.uapp.model.Part;
 
 /**
  * Activator for the Deploymanager client
@@ -81,17 +84,17 @@ public class Activator implements BundleActivator {
 	if (refs != null && refs1 != null) {
 	    deployManager = (DeployManager) refs;
 	    aalSpaceManager = (AALSpaceManager) refs1;
-	    URI mpaUri = null;
-	    URI mpaFolder = null;
+	    URI uAAPUri = null;
+	    URI uAPPFolder = null;
 	    try {
 
-		mpaFolder = new URI(
+		uAPPFolder = new URI(
 			"file",
-			"///C:/Users/michele/Documents/Documentazione/OSGi/apache-karaf-2.2.4 MW2.0/apache-karaf-2.2.7/data/ping-pong",
+			"///C:/Users/michele/Desktop/HWO Service",
 			null);
-		mpaUri = new URI(
+		uAAPUri = new URI(
 			"file",
-			"///C:/Users/michele/Documents/Documentazione/OSGi/apache-karaf-2.2.4 MW2.0/apache-karaf-2.2.7/data/ping-pong/Ping-Pong-mpa.xml",
+			"///C:/Users/michele/Desktop/HWO Service/config/HWO Service.xml",
 			null);
 
 	    } catch (URISyntaxException e) {
@@ -108,24 +111,24 @@ public class Activator implements BundleActivator {
 		System.out.println(e);
 	    }
 
-	    AalMpa mpa = null;
+	    AalUapp uAAP = null;
 	    try {
-		mpa = (AalMpa) unmarshaller.unmarshal(new File(mpaUri));
+		uAAP = (AalUapp)unmarshaller.unmarshal(new File(uAAPUri));
 	    } catch (JAXBException e) {
 		System.out.println(e);
 	    }
 	    int i = 0;
-	    if (mpa != null && mpa.getApp().isDistributed()) {
+	    if (uAAP != null ) {
 		for (String peerKey : peers.keySet()) {
-		    layout.put(peers.get(peerKey), mpa.getApplicationPart()
+		    layout.put(peers.get(peerKey), uAAP.getApplicationPart()
 			    .getPart().get(i));
 		    i++;
 		}
 
 	    }
 
-	    deployManager.requestToInstall(new UAPPPackage("111", "pingpong",
-		    mpaFolder, layout));
+	    deployManager.requestToInstall(new UAPPPackage("111", "prova",
+		    uAPPFolder, layout));
 	}
     }
 
