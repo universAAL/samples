@@ -90,11 +90,11 @@ public class Activator implements BundleActivator {
 
 		uAPPFolder = new URI(
 			"file",
-			"///C:/Users/michele/Desktop/HWO Service",
+			"///home/michele/Scrivania/HWOService.usrv_FILES/bin/HWOApp.uapp_FILES",
 			null);
 		uAAPUri = new URI(
 			"file",
-			"///C:/Users/michele/Desktop/HWO Service/config/HWO Service.xml",
+			"///home/michele/Scrivania/HWOService.usrv_FILES/bin/HWOApp.uapp_FILES/config/hwo.uapp.xml",
 			null);
 
 	    } catch (URISyntaxException e) {
