@@ -28,7 +28,7 @@ import org.universAAL.ontology.location.indoor.RoomFunction;
 
 /**
  * @author eandgrg
- *
+ * 
  */
 public class LocationPublisherGUI extends JFrame {
 
@@ -36,17 +36,16 @@ public class LocationPublisherGUI extends JFrame {
     private JPanel contentPane;
     private LocationContextPublisher lp;
 
-
     /**
      * Create the frame.
      */
     public LocationPublisherGUI(LocationContextPublisher lp) {
-	this.lp=lp;
+	this.lp = lp;
 	initGUI();
     }
 
     private void initGUI() {
-	setTitle("universAAL - LocationPublisherGUI");
+	setTitle("universAAL - Location Publisher GUI");
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setBounds(100, 100, 589, 411);
 	contentPane = new JPanel();
@@ -61,16 +60,18 @@ public class LocationPublisherGUI extends JFrame {
 
 	JButton sleepingButton = new JButton("Sleeping Room");
 	sleepingButton.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		    lp.publishLocation(LocationContextPublisher.SLEEPING_ROOM, RoomFunction.SleepingRoom);
-		}
+	    public void actionPerformed(ActionEvent e) {
+		lp.publishLocation(LocationContextPublisher.SLEEPING_ROOM,
+			RoomFunction.SleepingRoom);
+	    }
 	});
 	panel.add(sleepingButton);
 
 	JButton livingRoomButton = new JButton("Living Room");
 	livingRoomButton.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
-		lp.publishLocation(LocationContextPublisher.LIVING_ROOM, RoomFunction.LivingRoom);
+		lp.publishLocation(LocationContextPublisher.LIVING_ROOM,
+			RoomFunction.LivingRoom);
 	    }
 	});
 	panel.add(livingRoomButton);
@@ -81,25 +82,28 @@ public class LocationPublisherGUI extends JFrame {
 
 	JButton bathroomButton = new JButton("Bathroom");
 	bathroomButton.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		    lp.publishLocation(LocationContextPublisher.BATHROOM, RoomFunction.BathRoom);
-		}
+	    public void actionPerformed(ActionEvent e) {
+		lp.publishLocation(LocationContextPublisher.BATHROOM,
+			RoomFunction.BathRoom);
+	    }
 	});
 	panel_1.add(bathroomButton);
 
 	JButton kitchenButton = new JButton("Kitchen");
 	kitchenButton.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		    lp.publishLocation(LocationContextPublisher.KITCHEN, RoomFunction.Kitchen);
-		}
+	    public void actionPerformed(ActionEvent e) {
+		lp.publishLocation(LocationContextPublisher.KITCHEN,
+			RoomFunction.Kitchen);
+	    }
 	});
 	panel_1.add(kitchenButton);
 
 	JButton hobbyRoomButton = new JButton("Hobby Room");
 	hobbyRoomButton.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-		    lp.publishLocation(LocationContextPublisher.HOBBY_ROOM, RoomFunction.HobbyRoom);
-		}
+	    public void actionPerformed(ActionEvent e) {
+		lp.publishLocation(LocationContextPublisher.HOBBY_ROOM,
+			RoomFunction.HobbyRoom);
+	    }
 	});
 	panel_1.add(hobbyRoomButton);
     }
