@@ -25,6 +25,7 @@
     <module>../lighting/uiclient</module>
     <module>../ont.tutorial</module>
     <module>../simple.ui</module>
+    <module>../smp.location.publisher.gui</module>
     <module>../smp.activityhub.client</module>
     <module>../smp.mw.broker.client</module>
     <module>../smp.mw.deploymanager.client</module>
