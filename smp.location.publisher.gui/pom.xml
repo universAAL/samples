@@ -9,13 +9,14 @@
 	</parent>
 	<artifactId>smp.location.publisher.gui</artifactId>
 	<version>1.3.2-SNAPSHOT</version>
+	<packaging>bundle</packaging>
+	<name>universAAL Samples Location Publisher GUI</name>
 	<description>Context Event publisher with Swing GUI for simulating user location (for testing UI Fw)</description>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.osgi.core</artifactId>
-			<version>1.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
