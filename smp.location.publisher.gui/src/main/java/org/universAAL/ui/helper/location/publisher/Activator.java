@@ -59,9 +59,13 @@ public class Activator implements BundleActivator {
 	    }
 	});
 
-	LogUtils.logInfo(mcontext, this.getClass(), "start",
-		new Object[] { "ui.location.publisher bundle has started." },
-		null);
+	LogUtils
+		.logInfo(
+			mcontext,
+			this.getClass(),
+			"start",
+			new Object[] { "smp.location.publisher.gui bundle has started." },
+			null);
     }
 
     /*
@@ -71,9 +75,13 @@ public class Activator implements BundleActivator {
      * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
      */
     public void stop(BundleContext context) throws Exception {
-	LogUtils.logInfo(mcontext, this.getClass(), "stop",
-		new Object[] { "ui.location.publisher bundle has stopped." },
-		null);
+	LogUtils
+		.logInfo(
+			mcontext,
+			this.getClass(),
+			"stop",
+			new Object[] { "smp.location.publisher.gui bundle has stopped." },
+			null);
 	mcontext = null;
 	lp = null;
 	frame = null;
