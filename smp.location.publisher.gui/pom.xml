@@ -5,9 +5,9 @@
 		<groupId>org.universAAL.support.samples</groupId>
 		<artifactId>samples.pom</artifactId>
 		<version>1.3.2-SNAPSHOT</version>
-<!--		<relativePath>../samples.pom/pom.xml</relativePath>-->
+		<relativePath>../samples.pom/pom.xml</relativePath>
 	</parent>
-	<artifactId>location.publisher.gui</artifactId>
+	<artifactId>smp.location.publisher.gui</artifactId>
 	<version>1.3.2-SNAPSHOT</version>
 	<description>Context Event publisher with Swing GUI for simulating user location (for testing UI Fw)</description>
 
