@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>org.universAAL.support.samples</groupId>
-    <artifactId>samples.pom</artifactId>
-    <version>1.3.2-SNAPSHOT</version>
-    <relativePath>../samples.pom/pom.xml</relativePath>
-  </parent>
+	<parent>
+		<groupId>org.universAAL.support.samples</groupId>
+		<artifactId>samples.pom</artifactId>
+		<version>1.3.2-SNAPSHOT</version>
+		<relativePath>../samples.pom/pom.xml</relativePath>
+	</parent>
 	<groupId>org.universAAL.middleware</groupId>
 	<artifactId>smp.mw.broker.client</artifactId>
 	<packaging>bundle</packaging>
@@ -16,9 +16,9 @@
 
 	<dependencies>
 		<dependency>
-		  <groupId>org.universAAL.support</groupId>
-		  <artifactId>itests</artifactId>
-		  <version>1.3.1-SNAPSHOT</version>
+			<groupId>org.universAAL.support</groupId>
+			<artifactId>itests</artifactId>
+			<version>1.3.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.universAAL.middleware</groupId>
@@ -48,10 +48,34 @@
 			<groupId>org.universAAL.middleware</groupId>
 			<artifactId>mw.container.osgi</artifactId>
 		</dependency>
+
+		<!-- FAKE -->
+		<dependency>
+			<groupId>java3d</groupId>
+			<artifactId>vecmath</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
 	</dependencies>
-	
+
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.karaf.tooling</groupId>
+				<artifactId>features-maven-plugin</artifactId>
+				<version>2.2.5</version>
+				<executions>
+					<execution>
+						<id>create-kar</id>
+						<goals>
+							<goal>create-kar</goal>
+						</goals>
+						<configuration>
+							<featuresFile>${project.basedir}/src/main/resources/features.xml</featuresFile>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
