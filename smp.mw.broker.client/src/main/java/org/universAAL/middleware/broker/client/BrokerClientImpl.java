@@ -169,7 +169,7 @@ public class BrokerClientImpl implements Broker, MessageListener {
 		null);
 
 	// first discover the other peer
-	if (aalSpaceManager.getmyPeerCard().isCoordinator()) {
+	if (aalSpaceManager.getMyPeerCard().isCoordinator()) {
 
 	    LogUtils.logInfo(context, BrokerClientImpl.class,
 		    "startBrokerClient",
@@ -186,7 +186,7 @@ public class BrokerClientImpl implements Broker, MessageListener {
 	    List<String> channelName = new ArrayList<String>();
 	    channelName.add(getBrokerName());
 	    ChannelMessage channelMessage = new ChannelMessage(
-		    aalSpaceManager.getmyPeerCard(), ping.toString(),
+		    aalSpaceManager.getMyPeerCard(), ping.toString(),
 		    channelName);
 	    communicationModule.send(channelMessage, this, dstCard);
 	}
@@ -229,7 +229,7 @@ public class BrokerClientImpl implements Broker, MessageListener {
 		List<String> channelName = new ArrayList<String>();
 		channelName.add(getBrokerName());
 		ChannelMessage channelMessage = new ChannelMessage(
-			aalSpaceManager.getmyPeerCard(), ping.toString(),
+			aalSpaceManager.getMyPeerCard(), ping.toString(),
 			channelName);
 
 		communicationModule.send(channelMessage, this,
@@ -245,7 +245,7 @@ public class BrokerClientImpl implements Broker, MessageListener {
 		List<String> channelName = new ArrayList<String>();
 		channelName.add(getBrokerName());
 		ChannelMessage channelMessage = new ChannelMessage(
-			aalSpaceManager.getmyPeerCard(), ping.toString(),
+			aalSpaceManager.getMyPeerCard(), ping.toString(),
 			channelName);
 		communicationModule.send(channelMessage, this,
 			message.getSender());
