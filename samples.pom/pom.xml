@@ -27,7 +27,7 @@
     <module>../simple.ui</module>
     <module>../smp.location.publisher.gui</module>
     <module>../smp.activityhub.client</module>
-    <module>../smp.mw.broker.client</module>
+    <!-- <module>../smp.mw.broker.client</module> -->
     <module>../smp.mw.deploymanager.client</module>
     <module>../utils/smp.utils.server</module>
     <module>../utils/smp.utils.client</module>
@@ -37,11 +37,11 @@
     <module>../karaf/mw.karaf.feature.lighting-uAAL.osgi</module>
     <module>../karaf/mw.karaf.feature.ping-pong.osgi</module>
     <module>../smp.mw.runner</module>
-<!--    <module>../aapi/client-regular</module>
+    <module>../aapi/ont-lighting-simple</module>
     <module>../aapi/server-regular</module>
+    <module>../aapi/client-regular</module>
     <module>../aapi/server-simple</module>
     <module>../aapi/client-simple</module>
-    <module>../aapi/ont-lighting-simple</module>-->
   </modules>
   <scm>
     <connection>${svn.base}/samples/${project.artifactId}</connection>
