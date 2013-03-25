@@ -61,22 +61,6 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.karaf.tooling</groupId>
-				<artifactId>features-maven-plugin</artifactId>
-				<version>2.2.5</version>
-				<executions>
-					<execution>
-						<id>create-kar</id>
-						<goals>
-							<goal>create-kar</goal>
-						</goals>
-						<configuration>
-							<featuresFile>${project.basedir}/src/main/resources/features.xml</featuresFile>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<extensions>true</extensions>
