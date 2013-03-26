@@ -30,6 +30,7 @@ import org.universAAL.ontology.device.BlindController;
 import org.universAAL.ontology.device.DimmerController;
 import org.universAAL.ontology.device.LightController;
 import org.universAAL.ontology.device.PanicButtonSensor;
+import org.universAAL.ontology.device.StatusValue;
 import org.universAAL.ontology.device.TemperatureSensor;
 import org.universAAL.ontology.device.WindowController;
 import org.universAAL.ontology.furniture.Furniture;
@@ -553,8 +554,7 @@ public class GUIPanel extends javax.swing.JFrame {
 	case 6:
 	    // 7 window closed
 	    WindowController w7 = new WindowController(CPublisher.URIROOT + "window9");
-	    w7.setProperty(WindowController.PROP_HAS_VALUE,
-		    new Integer(new Integer(100)));
+	    w7.setValue(StatusValue.Activated);
 	    return new org.universAAL.ontology.che.ContextEvent(w7, WindowController.PROP_HAS_VALUE);
 	default:
 	    // 10 situation
