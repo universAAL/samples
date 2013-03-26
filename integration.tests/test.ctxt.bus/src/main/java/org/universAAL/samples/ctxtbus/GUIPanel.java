@@ -1,3 +1,24 @@
+/*
+	Copyright 2008-2014 ITACA-TSB, http://www.tsb.upv.es
+	Instituto Tecnologico de Aplicaciones de Comunicacion 
+	Avanzadas - Grupo Tecnologias para la Salud y el 
+	Bienestar (TSB)
+	
+	See the NOTICE file distributed with this work for additional 
+	information regarding copyright ownership
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	  http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+ */
 package org.universAAL.samples.ctxtbus;
 
 import java.awt.Dimension;
@@ -5,25 +26,20 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.UIManager;
 
-//import org.universAAL.ontology.device.home.GlassBreakSensor;
-//import org.universAAL.ontology.device.wearable.PanicButton;
-import org.universAAL.middleware.context.ContextEvent;
+import org.universAAL.ontology.device.BlindController;
+import org.universAAL.ontology.device.DimmerController;
+import org.universAAL.ontology.device.LightController;
+import org.universAAL.ontology.device.PanicButtonSensor;
+import org.universAAL.ontology.device.TemperatureSensor;
+import org.universAAL.ontology.device.WindowController;
 import org.universAAL.ontology.furniture.Furniture;
 import org.universAAL.ontology.furniture.FurnitureType;
-import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.location.Location;
 import org.universAAL.ontology.location.address.PhysicalAddress;
-//import org.universAAL.ontology.location.extra.BuildingPlace;
-//import org.universAAL.ontology.location.extra.PhysicalAddress;
 import org.universAAL.ontology.phThing.PhysicalThing;
-import org.universAAL.ontology.powersocket.Powersocket;
 import org.universAAL.ontology.profile.Profilable;
 import org.universAAL.ontology.profile.User;
 import org.universAAL.ontology.profile.UserProfile;
-import org.universAAL.ontology.risk.PanicButton;
-import org.universAAL.ontology.weather.TempSensor;
-import org.universAAL.ontology.window.BlindActuator;
-import org.universAAL.ontology.window.WindowActuator;
 
 public class GUIPanel extends javax.swing.JFrame {
 
@@ -63,6 +79,13 @@ public class GUIPanel extends javax.swing.JFrame {
     private javax.swing.JPanel panel6;
     private javax.swing.JLabel label1p6;
     private javax.swing.JButton button1p6;
+    private javax.swing.JPanel panel7;
+    private javax.swing.JComboBox combo1p7;
+    private javax.swing.JComboBox combo2p7;
+    private javax.swing.JComboBox combo3p7;
+    private javax.swing.JTextField text1p7;
+    private javax.swing.JLabel label1p7;
+    private javax.swing.JButton button1p7;
     private int eventsReceived=0;
     private long starttime=0;
     
@@ -141,6 +164,18 @@ public class GUIPanel extends javax.swing.JFrame {
 	panel6 = new javax.swing.JPanel();
 	label1p6 = new javax.swing.JLabel();
 	button1p6 = new javax.swing.JButton();
+	
+	panel7 = new javax.swing.JPanel();
+	combo1p7 = new javax.swing.JComboBox(new Object[] { "Get", "Add",
+		"Change", "Remove" });
+	combo2p7 = new javax.swing.JComboBox(new Object[] { "AALSpace",
+		"AALSpaceProfile", "AALService", "AALServiceProfile", "Device",
+		"Ontology", "HRProfile", "HWProfile", "AppProfile" });
+	combo3p7 = new javax.swing.JComboBox(new Object[] { "Specific",
+		"All of them", "Of/To an AALSpace", "Of/To an AALService" });
+	text1p7 = new javax.swing.JTextField();
+	label1p7 = new javax.swing.JLabel();
+	button1p7 = new javax.swing.JButton();
 
 	// WINDOW
 	setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -323,22 +358,56 @@ public class GUIPanel extends javax.swing.JFrame {
 	tabbedPane.addTab("Profile", panel5);
 
 	// TAB 6
-		panel6.setLayout(null);
+	panel6.setLayout(null);
 
-		label1p6.setText("Not Enabled: Nothing received");
-		panel6.add(label1p6);
-		label1p6.setBounds(20, 50, 210, 23);
+	label1p6.setText("Not Enabled: Nothing received");
+	panel6.add(label1p6);
+	label1p6.setBounds(20, 50, 210, 23);
 
-		button1p6.setText("Enable");
-		button1p6.addActionListener(new java.awt.event.ActionListener() {
-		    public void actionPerformed(java.awt.event.ActionEvent evt) {
-			subscribeButton1ActionPerformed(evt);
-		    }
-		});
-		panel6.add(button1p6);
-		button1p6.setBounds(20, 100, 75, 29);
+	button1p6.setText("Enable");
+	button1p6.addActionListener(new java.awt.event.ActionListener() {
+	    public void actionPerformed(java.awt.event.ActionEvent evt) {
+		subscribeButton1ActionPerformed(evt);
+	    }
+	});
+	panel6.add(button1p6);
+	button1p6.setBounds(20, 100, 75, 29);
 
-		tabbedPane.addTab("Subscriber", panel6);
+	tabbedPane.addTab("Subscriber", panel6);
+	
+	// TAB 7
+	panel7.setLayout(null);
+	
+	combo1p7.setEditable(false);
+	panel7.add(combo1p7);
+	combo1p7.setBounds(20, 25, 210, 23);
+	
+	combo2p7.setEditable(false);
+	panel7.add(combo2p7);
+	combo2p7.setBounds(20, 50, 210, 23);
+	
+	combo3p7.setEditable(false);
+	panel7.add(combo3p7);
+	combo3p7.setBounds(20, 75, 210, 23);
+	
+	text1p7.setText(CPublisher.URIROOT+"argument1");
+	panel7.add(text1p7);
+	text1p7.setBounds(20, 100, 250, 23);
+
+	label1p7.setText("Select a valid combination");
+	panel7.add(label1p7);
+	label1p7.setBounds(20, 130, 310, 23);
+
+	button1p7.setText("Call");
+	button1p7.addActionListener(new java.awt.event.ActionListener() {
+	    public void actionPerformed(java.awt.event.ActionEvent evt) {
+		spaceButton1ActionPerformed(evt);
+	    }
+	});
+	panel7.add(button1p7);
+	button1p7.setBounds(20, 160, 75, 29);
+
+	tabbedPane.addTab("Space", panel7);
 		
 	// MAIN
 	getContentPane().add(tabbedPane);
@@ -457,9 +526,9 @@ public class GUIPanel extends javax.swing.JFrame {
 	    return new org.universAAL.ontology.che.ContextEvent(u1, Profilable.PROP_HAS_PROFILE);
 	case 1:
 	    // 2 Blind is open
-	    BlindActuator b2 = new BlindActuator(CPublisher.URIROOT + "blind4");
-	    b2.setProperty(BlindActuator.PROP_DIMMABLE_STATUS, new Integer(100));
-	    return new org.universAAL.ontology.che.ContextEvent(b2, BlindActuator.PROP_DIMMABLE_STATUS);
+	    BlindController b2 = new BlindController(CPublisher.URIROOT + "blind4");
+	    b2.setProperty(BlindController.PROP_HAS_VALUE, new Integer(100));
+	    return new org.universAAL.ontology.che.ContextEvent(b2, BlindController.PROP_HAS_VALUE);
 	case 2:
 	    // 3 chair is in place
 	    Furniture f3 = new Furniture(CPublisher.URIROOT + "furniture5");
@@ -468,28 +537,28 @@ public class GUIPanel extends javax.swing.JFrame {
 	    return new org.universAAL.ontology.che.ContextEvent(f3, Furniture.PROP_PHYSICAL_LOCATION);
 	case 3:
 	    // 4 light is on
-	    LightSource ls4 = new LightSource(CPublisher.URIROOT + "light6");
-	    ls4.setBrightness(new Integer(100));
-	    return new org.universAAL.ontology.che.ContextEvent(ls4, LightSource.PROP_SOURCE_BRIGHTNESS);
+	    LightController ls4 = new LightController(CPublisher.URIROOT + "light6");
+	    ls4.setHasValue(new Integer(100));
+	    return new org.universAAL.ontology.che.ContextEvent(ls4, LightController.PROP_HAS_VALUE);
 	case 4:
 	    // 7 socket at 50%
-	    Powersocket ss5 = new Powersocket(CPublisher.URIROOT + "socket7");
-	    ss5.setValue(new Integer(100));
-	    return new org.universAAL.ontology.che.ContextEvent(ss5, Powersocket.PROP_SOCKET_VALUE);
+	    DimmerController ss5 = new DimmerController(CPublisher.URIROOT + "socket7");
+	    ss5.setHasValue(new Integer(100));
+	    return new org.universAAL.ontology.che.ContextEvent(ss5, DimmerController.PROP_HAS_VALUE);
 	case 5:
 	    // 6 temperature measured
-	    TempSensor ts6 = new TempSensor(CPublisher.URIROOT + "tempsensor8");
-	    ts6.setMeasuredValue(30);
-	    return new org.universAAL.ontology.che.ContextEvent(ts6, TempSensor.PROP_MEASURED_VALUE);
+	    TemperatureSensor ts6 = new TemperatureSensor(CPublisher.URIROOT + "tempsensor8");
+	    ts6.setHasValue(30);
+	    return new org.universAAL.ontology.che.ContextEvent(ts6, TemperatureSensor.PROP_HAS_VALUE);
 	case 6:
 	    // 7 window closed
-	    WindowActuator w7 = new WindowActuator(CPublisher.URIROOT + "window9");
-	    w7.setProperty(WindowActuator.PROP_WINDOW_STATUS,
+	    WindowController w7 = new WindowController(CPublisher.URIROOT + "window9");
+	    w7.setProperty(WindowController.PROP_HAS_VALUE,
 		    new Integer(new Integer(100)));
-	    return new org.universAAL.ontology.che.ContextEvent(w7, WindowActuator.PROP_WINDOW_STATUS);
+	    return new org.universAAL.ontology.che.ContextEvent(w7, WindowController.PROP_HAS_VALUE);
 	default:
 	    // 10 situation
-	    PanicButton p10 = new PanicButton(CPublisher.URIROOT + "panic10");
+	    PanicButtonSensor p10 = new PanicButtonSensor(CPublisher.URIROOT + "panic10");
 	    p10.setProperty(PhysicalThing.PROP_CARRIED_BY, new User(CPublisher.URIROOT
 		    + "user" + new Integer(5)));
 	    p10.setProperty(PhysicalThing.PROP_IS_PORTABLE,
@@ -629,6 +698,84 @@ public class GUIPanel extends javax.swing.JFrame {
 	eventsReceived++;
 	if (eventsReceived==1) starttime=System.currentTimeMillis();
 	this.label1p6.setText("Received: "+eventsReceived+ " ("+starttime+")");
+    }
+    
+    private void spaceButton1ActionPerformed(ActionEvent evt) {
+	int first=0, second=0, third=0;
+	switch (combo1p7.getSelectedIndex()) {
+	case 0:
+	    first=SpaceCaller._GET;
+	    break;
+	case 1:
+	    first=SpaceCaller._ADD;
+	    break;
+	case 2:
+	    first=SpaceCaller._CHANGE;
+	    break;
+	case 3:
+	    first=SpaceCaller._REMOVE;
+	    break;
+	default:
+	    label1p7.setText("You must select a valid operation form the 1st combo!");
+	    return;
+	}
+	switch (combo2p7.getSelectedIndex()) {
+	case 0:
+	    second=SpaceCaller.__SPACE;
+	    break;
+	case 1:
+	    second=SpaceCaller.__SPACEPROF;
+	    break;
+	case 2:
+	    second=SpaceCaller.__SERV;
+	    break;
+	case 3:
+	    second=SpaceCaller.__SERVPROF;
+	    break;
+	case 4:
+	    second=SpaceCaller.__DEV;
+	    break;
+	case 5:
+	    second=SpaceCaller.__ONT;
+	    break;
+	case 6:
+	    second=SpaceCaller.__HR;
+	    break;
+	case 7:
+	    second=SpaceCaller.__HW;
+	    break;
+	case 8:
+	    second=SpaceCaller.__APP;
+	    break;
+	default:
+	    label1p7.setText("You must select a valid operation form the 2nd combo!");
+	    return;
+	} 
+	switch (combo3p7.getSelectedIndex()) {
+	case 0:
+	    third=SpaceCaller.___SPEC;
+	    break;
+	case 1:
+	    third=SpaceCaller.___ALL;
+	    break;
+	case 2:
+	    third=SpaceCaller.___OFTOSPACE;
+	    break;
+	case 3:
+	    third=SpaceCaller.___OFTOSERV;
+	    break;
+	default:
+	    label1p7.setText("You must select a valid operation form the 3rd combo!");
+	    return;
+	}
+	String result = Activator.scaller.callSpace(first | second | third,
+		this.text1p7.getText(),
+		this.text1p7.getText() + System.currentTimeMillis()); //Random added Ont/Dev/Serv for 2-valued ADD services
+	if (result.equals(SpaceCaller.NONE)) {
+	    label1p7.setText("That combination is not available");
+	} else {
+	    label1p7.setText(result);
+	}
     }
 
 }
