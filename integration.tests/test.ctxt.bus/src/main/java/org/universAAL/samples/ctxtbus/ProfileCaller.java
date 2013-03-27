@@ -280,7 +280,7 @@ public class ProfileCaller {
 //		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).path,
 //		Arg.change(profile)));
 	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
-	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS,ProfilingService.PROP_CONTROLS}, profile);
+	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
 	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
@@ -305,7 +305,7 @@ public class ProfileCaller {
 //		Arg.in(profile), Arg.out(OUTPUT_GETPROFILE)));
 	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
-	req.addRequiredOutput(OUTPUT_GETPROFILABLE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
+	req.addRequiredOutput(OUTPUT_GETPROFILE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
 	ServiceResponse resp = caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
@@ -344,7 +344,7 @@ public class ProfileCaller {
 //		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
 //		Arg.change(profile)));
 	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
-	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS,ProfilingService.PROP_CONTROLS,Profile.PROP_HAS_SUB_PROFILE}, profile);
+	req.addChangeEffect(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, profile);
 	ServiceResponse resp = caller.call(req);
 	return resp.getCallStatus().name();
     }
@@ -368,8 +368,8 @@ public class ProfileCaller {
 //		Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE).path,
 //		Arg.in(profile), Arg.out(OUTPUT_GETSUBPROFILE)));
 	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
-	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
-	req.addRequiredOutput(OUTPUT_GETPROFILABLE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
+	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, profile);
+	req.addRequiredOutput(OUTPUT_GETSUBPROFILE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
 	ServiceResponse resp = caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILE);
