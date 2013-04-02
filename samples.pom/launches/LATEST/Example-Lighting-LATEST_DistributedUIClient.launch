@@ -6,7 +6,7 @@
 <stringAttribute key="bootstrap" value=""/>
 <stringAttribute key="checked" value="[NONE]"/>
 <booleanAttribute key="clearConfig" value="false"/>
-<stringAttribute key="configLocation" value="${workspace_loc}/rundir/smp.lighting.distributed.server"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/rundir/smp.lighting.distributed.uiclient"/>
 <booleanAttribute key="default_auto_start" value="true"/>
 <intAttribute key="default_start_level" value="35"/>
 <stringAttribute key="deselected_workspace_plugins" value="org.universAAL.continua*1.0.0,org.universAAL.continua*1.0.0,org.universAAL.continua*1.0.0,org.universAAL.continua*1.0.0,org.universAAL.continua*1.0.0"/>
@@ -16,8 +16,8 @@
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-console --obrRepositories=http://a1gforge.igd.fraunhofer.de/nexus/content/repositories/snapshots/repository.xml,http://a1gforge.igd.fraunhofer.de/nexus/content/repositories/releases/repository.xml,http://bundles.osgi.org/obr/browse?_xml=1&amp;amp;cmd=repository --org.ops4j.pax.url.mvn.repositories=+http://a1gforge.igd.fraunhofer.de/nexus/content/groups/public,http://a1gforge.igd.fraunhofer.de/nexus/content/repositories/snapshots@snapshots@noreleases --log=DEBUG"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.noShutdown=true -Dorg.universAAL.middleware.peer.is_coordinator=true -Dorg.universAAL.middleware.peer.member_of=urn:org.universAAL.aal_space:test_env -Dbundles.configuration.location=${workspace_loc}/rundir/confadmin -Dorg.universAAL.middleware.samples.lighting.server.namespace=&quot;http://lighting.acme.org#&quot;  -Djava.net.preferIPv4Stack=true"/>
-<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc}/rundir/smp.lighting.distributed.server"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dosgi.noShutdown=true -Dorg.universAAL.middleware.peer.is_coordinator=false -Dorg.universAAL.middleware.peer.member_of=urn:org.universAAL.aal_space:test_env -Dbundles.configuration.location=${workspace_loc}/rundir/confadmin  -Djava.net.preferIPv4Stack=true -DpeerRole=PEER"/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc}/rundir/smp.lighting.distributed.uiclient"/>
 <stringAttribute key="org.ops4j.pax.cursor.logLevel" value="DEBUG"/>
 <booleanAttribute key="org.ops4j.pax.cursor.overwrite" value="false"/>
 <booleanAttribute key="org.ops4j.pax.cursor.overwriteSystemBundles" value="false"/>
@@ -26,8 +26,8 @@
 <listEntry value="obr"/>
 </listAttribute>
 <mapAttribute key="org.ops4j.pax.cursor.provisionItems">
-<mapEntry key="scan-bundle:mvn:org.universAAL.samples/smp.lighting.server.osgi" value="true@false@null@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//deps" value="true@true@null@true"/>
+<mapEntry key="scan-bundle:mvn:org.universAAL.samples/smp.lighting.uiclient.osgi" value="true@false@null@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.uiclient.osgi//deps" value="true@true@null@true"/>
 </mapAttribute>
 <listAttribute key="org.ops4j.pax.cursor.runArguments">
 <listEntry value="--overwrite=false"/>
@@ -35,8 +35,8 @@
 <listEntry value="--overwriteSystemBundles=false"/>
 <listEntry value="--log=DEBUG"/>
 <listEntry value="--profiles=obr"/>
-<listEntry value="scan-bundle:mvn:org.universAAL.samples/smp.lighting.server.osgi@nostart@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//deps@update"/>
+<listEntry value="scan-bundle:mvn:org.universAAL.samples/smp.lighting.uiclient.osgi@nostart@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.samples/smp.lighting.uiclient.osgi//deps@update"/>
 </listAttribute>
 <stringAttribute key="osgi_framework_id" value="--platform=felix --version=1.4.0"/>
 <stringAttribute key="pde.version" value="3.3"/>
