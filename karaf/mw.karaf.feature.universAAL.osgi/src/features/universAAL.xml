@@ -55,8 +55,8 @@
 		<!-- Brokers -->
 		<bundle start-level='86' start='true'>mvn:org.universAAL.middleware/mw.brokers.control.osgi/1.3.2-SNAPSHOT
 		</bundle>
-		<bundle start-level='86' start='false'>mvn:org.universAAL.middleware/smp.mw.broker.client/1.3.2-SNAPSHOT
-		</bundle>
+		<!-- <bundle start-level='86' start='false'>mvn:org.universAAL.middleware/smp.mw.broker.client/1.3.2-SNAPSHOT
+		</bundle>  -->
 
 
 		<!-- Managers -->
