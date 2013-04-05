@@ -29,6 +29,7 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.xml.bind.JAXBContext;
@@ -47,6 +48,7 @@ import org.universAAL.middleware.interfaces.PeerCard;
 import org.universAAL.middleware.managers.api.AALSpaceManager;
 import org.universAAL.middleware.managers.api.DeployManager;
 import org.universAAL.middleware.managers.api.InstallationResults;
+import org.universAAL.middleware.managers.api.InstallationResultsDetails;
 import org.universAAL.middleware.managers.api.UAPPPackage;
 
 import org.universAAL.middleware.deploymaneger.uapp.model.AalUapp;
