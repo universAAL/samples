@@ -8,7 +8,6 @@
 		<relativePath>../samples.pom/pom.xml</relativePath>
 	</parent>
 
-	<groupId>org.universAAL.soap</groupId>
 	<artifactId>smp.cxf.client</artifactId>
 	<name>SOAP Client</name>
 

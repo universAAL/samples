@@ -10,7 +10,6 @@
 		<relativePath>../samples.pom/pom.xml</relativePath>
 	</parent>
 
-	<groupId>org.universAAL.soap</groupId>
 	<artifactId>smp.cxf.server</artifactId>
 	<packaging>bundle</packaging>
 	<name>SOAP Server</name>
