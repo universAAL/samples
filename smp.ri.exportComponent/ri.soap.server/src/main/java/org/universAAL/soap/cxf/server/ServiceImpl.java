@@ -2,7 +2,6 @@ package org.universAAL.soap.cxf.server;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Hashtable;
 import java.util.List;
 
 import org.universAAL.middleware.container.utils.LogUtils;
