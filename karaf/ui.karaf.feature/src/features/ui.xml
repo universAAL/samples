@@ -5,7 +5,7 @@
 		version="1.3.2-SNAPSHOT" resolver='(obr)'>
 
 		<!-- test <feature>mvn:org.universAAL.middleware/mw.karaf.feature.universAAL.osgi/1.3.2-SNAPSHOT/xml/features</feature> -->
-		<feature>universAAL2.0</feature>
+		<feature>uAAL-MW</feature>
 
 		<!--Third party -->
 		<bundle>mvn:org.apache.felix/org.apache.felix.configadmin/1.2.4
