@@ -71,7 +71,7 @@
 						<configuration>
 							<artifacts>
 								<artifact>
-									<file>src/features/universAAL.xml</file>
+									<file>src/features/mw.xml</file>
 									<type>xml</type>
 									<classifier>features</classifier>
 								</artifact>
