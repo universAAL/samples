@@ -4,7 +4,7 @@
 	<feature name="Lighting-uAAL"
 		description="The universAAL Lighing example for based on the Middleware 2.0"
 		version="0.0.1" resolver='(obr)'>
-		<feature>universAAL2.0</feature>
+		<feature>uAAL-MW</feature>
 
 		<bundle start-level='90' start='true'>wrap:mvn:java3d/vecmath/1.3.1
 		</bundle>
