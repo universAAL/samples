@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="universAAL-1.3.2-S" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+
+	<feature name="UI" description="The UI FW based on the Middleware 2.0"
+		version="1.3.2-SNAPSHOT" resolver='(obr)'>
+
+		<!-- test <feature>mvn:org.universAAL.middleware/mw.karaf.feature.universAAL.osgi/1.3.2-SNAPSHOT/xml/features</feature> -->
+		<feature>universAAL2.0</feature>
+
+		<!--Third party -->
+		<bundle>mvn:org.apache.felix/org.apache.felix.configadmin/1.2.4
+		</bundle>
+		<bundle>mvn:org.apache.felix/org.apache.felix.log/1.0.1</bundle>
+		<bundle>mvn:org.apache.felix/org.apache.felix.fileinstall/3.1.10
+		</bundle>
+		<bundle>mvn:org.apache.felix/org.apache.felix.bundlerepository/1.4.2
+		</bundle>
+		<bundle>mvn:org.openrdf.sesame/sesame-runtime-osgi/2.6.0</bundle>
+
+		<!-- Pax runner -->
+		<bundle>mvn:org.ops4j.pax.logging/pax-logging-api/1.6.2</bundle>
+		<bundle>mvn:org.ops4j.pax.logging/pax-logging-service/1.6.2</bundle>
+		<bundle>wrap:mvn:org.ops4j.pax.confman/pax-confman-propsloader/0.2.2
+		</bundle>
+
+		<!-- UIFW -->
+		<bundle>mvn:org.ops4j.pax.web/pax-web-jetty-bundle/1.0.5</bundle>
+		<bundle>mvn:org.ops4j.pax.web/pax-web-spi/1.0.5</bundle>
+		<bundle>mvn:org.ops4j.pax.web/pax-web-api/1.0.5</bundle>
+		<bundle>mvn:org.ufacekit.osgi/swingx.osgi/0.9.2</bundle>
+
+		<!-- Ontologies -->
+		<bundle>wrap:mvn:jp.go.ipa/jgcl/1.0</bundle>
+		<bundle>wrap:mvn:java3d/j3d-core/1.3.1</bundle>
+		<bundle>wrap:mvn:java3d/vecmath/1.3.1</bundle>
+		<!-- Ontologies -->
+		<!-- Platform -->
+		<bundle>mvn:org.universAAL.ontology/ont.phWorld/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.profile/1.3.3-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.che/1.3.2-SNAPSHOT</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.impairment/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.furniture/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.health.measurement/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.health.disease/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.profile.health/1.3.3-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.device/1.3.2-SNAPSHOT</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.profile.ui.preferences/1.3.4-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.profile.userid/1.3.2-SNAPSHOT
+		</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.profile.ui.mainmenu/1.3.2-SNAPSHOT
+		</bundle>
+
+		<!-- Context -->
+		<bundle>mvn:org.universAAL.context/ctxt.che/1.3.3-SNAPSHOT</bundle>
+		<!-- <bundle>mvn:org.universAAL.context/ctxt.che.mobile/1.3.2-SNAPSHOT@nostart</bundle> -->
+		<bundle>mvn:org.universAAL.context/ctxt.prof.server/1.3.2-SNAPSHOT
+		</bundle>
+		<!-- Security -->
+		<bundle>mvn:org.universAAL.security/security.authorizator/1.3.2-SNAPSHOT
+		</bundle>
+		<!-- RI -->
+		<bundle>mvn:org.universAAL.remote/ri.servicegateway/1.3.2-SNAPSHOT
+		</bundle>
+
+
+
+		<!-- UIFW -->
+		<bundle>mvn:org.universAAL.ui/ui.dm/1.3.3-SNAPSHOT</bundle>
+		<!-- fragments like ui.handler.gui.swing.bluesteelLAF cannot be started 
+			so leaving them in resolved state is enough -->
+		<bundle>wrap:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/1.3.2-SNAPSHOT@nostart
+		</bundle>
+		<bundle>mvn:org.universAAL.ui/ui.handler.gui.swing/1.3.2-SNAPSHOT
+		</bundle>
+
+
+
+	</feature>
+</features>
