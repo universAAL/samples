@@ -76,7 +76,7 @@
 		<bundle>mvn:org.universAAL.ui/ui.dm/1.3.3-SNAPSHOT</bundle>
 		<!-- fragments like ui.handler.gui.swing.bluesteelLAF cannot be started 
 			so leaving them in resolved state is enough -->
-		<bundle>wrap:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/1.3.2-SNAPSHOT@nostart
+		<bundle start='false'>wrap:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/1.3.2-SNAPSHOT
 		</bundle>
 		<bundle>mvn:org.universAAL.ui/ui.handler.gui.swing/1.3.2-SNAPSHOT
 		</bundle>
