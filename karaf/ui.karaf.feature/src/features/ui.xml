@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <features name="universAAL-1.3.2-S" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
 
-	<feature name="UI" description="The UI FW based on the Middleware 2.0"
+	<feature name="uAAL-UI" description="The UI FW based on the Middleware 2.0"
 		version="1.3.2-SNAPSHOT" resolver='(obr)'>
 
 		<!-- test <feature>mvn:org.universAAL.middleware/mw.karaf.feature.universAAL.osgi/1.3.2-SNAPSHOT/xml/features</feature> -->
