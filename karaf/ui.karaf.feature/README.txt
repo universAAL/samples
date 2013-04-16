@@ -5,7 +5,7 @@ This file should be removed in the future:
 3)add and install the MW2.0 featue: 
 
 --> features:addurl mvn:org.universAAL.middleware/mw.karaf.feature.universAAL.osgi/1.3.2-SNAPSHOT/xml/features
---> features:install universAA2.0
+--> features:install universAAL2.0
 
 4)Add the UI feature:
 
