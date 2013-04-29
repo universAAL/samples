@@ -34,6 +34,7 @@ import org.universAAL.middleware.service.ServiceCaller;
 import org.universAAL.middleware.service.ServiceRequest;
 import org.universAAL.middleware.service.ServiceResponse;
 import org.universAAL.middleware.service.owls.process.ProcessOutput;
+import org.universAAL.ontology.device.GasSensor;
 import org.universAAL.ontology.phThing.Device;
 import org.universAAL.ontology.profile.AALAppSubProfile;
 import org.universAAL.ontology.profile.AALService;
@@ -44,11 +45,13 @@ import org.universAAL.ontology.profile.HRSubProfile;
 import org.universAAL.ontology.profile.HWSubProfile;
 import org.universAAL.ontology.profile.OntologyEntry;
 import org.universAAL.ontology.profile.Profilable;
+import org.universAAL.ontology.profile.Profile;
 import org.universAAL.ontology.profile.service.ProfilingService;
 import org.universAAL.support.utils.service.Arg;
 import org.universAAL.support.utils.service.Path;
 import org.universAAL.support.utils.service.low.Request;
 import org.universAAL.support.utils.service.mid.UtilEditor;
+import org.universaal.ontology.health.owl.HealthProfile;
 
 public class SpaceCaller {
     public static final int _GET=0x000;
@@ -154,16 +157,16 @@ public class SpaceCaller {
 	    break;
 
 	case (_GET | __DEV | ___SPEC):
-	    ret = getDevice(new Device(arg1));
+	    ret = getDevice(new GasSensor(arg1));
 	    break;
 	case (_ADD | __DEV | ___SPEC):
-	    ret = addDevice(new Device(arg1));
+	    ret = addDevice(new GasSensor(arg1));
 	    break;
 	case (_CHANGE | __DEV | ___SPEC):
-	    ret = changeDevice(new Device(arg1));
+	    ret = changeDevice(new GasSensor(arg1));
 	    break;
 	case (_REMOVE | __DEV | ___SPEC):
-	    ret = removeDevice(new Device(arg1));
+	    ret = removeDevice(new GasSensor(arg1));
 	    break;
 
 	case (_GET | __ONT | ___SPEC):
@@ -210,10 +213,23 @@ public class SpaceCaller {
 	    ret = addServicesToSpace(new AALSpace(arg1), new AALService(arg2));
 	    break;
 	case (_ADD | __DEV | ___OFTOSPACE):
-	    ret = addDevicesToSpace(new AALSpace(arg1), new Device(arg2));
+	    ret = addDevicesToSpace(new AALSpace(arg1), new GasSensor(arg2));
 	    break;
 	case (_ADD | __ONT | ___OFTOSPACE):
 	    ret = addOntsToSpace(new AALSpace(arg1), new OntologyEntry(arg2));
+	    break;
+	    
+	case (_ADD | __SPACEPROF | ___OFTOSPACE):
+	    ret = addSpaceprofToSpace(new AALSpace(arg1), new AALSpaceProfile(arg1+"prof"));
+	    break;
+	case (_GET | __SPACEPROF | ___OFTOSPACE):
+	    ret = getSpaceprofOfSpace(new AALSpace(arg1));
+	    break;
+	case (_ADD | __SERVPROF | ___OFTOSERV):
+	    ret = addServprofToServ(new AALService(arg1), new AALServiceProfile(arg1+"prof"));
+	    break;
+	case (_GET | __SERVPROF | ___OFTOSERV):
+	    ret = getServprofOfServ(new AALService(arg1));
 	    break;
 
 	default:
@@ -398,10 +414,19 @@ public class SpaceCaller {
     }
     
     private String getDevicesOfSpace(AALSpace aalSpace) {
-	Request req=new Request(new ProfilingService(null));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(aalSpace));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.type(AALSpace.MY_URI));
-	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(AALSpaceProfile.PROP_INSTALLED_HARDWARE), Arg.out(OUTPUT));
+//	Request req=new Request(new ProfilingService(null));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(aalSpace));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.type(AALSpace.MY_URI));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(AALSpaceProfile.PROP_INSTALLED_HARDWARE), Arg.out(OUTPUT));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(AALSpaceProfile.PROP_INSTALLED_HARDWARE), Arg.type(GasSensor.MY_URI));
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, aalSpace);
+	req.addTypeFilter(new String[]{ProfilingService.PROP_CONTROLS}, AALSpace.MY_URI);
+	req.addRequiredOutput(OUTPUT, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,AALSpaceProfile.PROP_INSTALLED_HARDWARE});
+	req.addTypeFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,AALSpaceProfile.PROP_INSTALLED_HARDWARE}, Device.MY_URI);
+	
+	
+	
 	ServiceResponse resp=caller.call(req);
 	return getListOfResults(resp);
     }
@@ -469,6 +494,78 @@ public class SpaceCaller {
 	return resp.getCallStatus().name();
     }
 
+    private String getServprofOfServ(AALService aalService) {
+//	Request req=new Request(new ProfilingService(null));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(aalService));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.type(AALService.MY_URI));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.out(OUTPUT));
+//	ServiceResponse resp=caller.call(req);
+//	return getListOfResults(resp);
+	
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+ 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, aalService);
+	req.addRequiredOutput(OUTPUT, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
+ 	ServiceResponse resp=caller.call(req);
+ 	if (resp.getCallStatus() == CallStatus.succeeded) {
+ 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT);
+ 	    if (out != null) {
+ 		log.debug(out.toString());
+ 		return out.toString();
+ 	    } else {
+ 		log.debug("NOTHING!");
+ 		return "nothing";
+ 	    }
+ 	}else{
+ 	    return resp.getCallStatus().name();
+ 	}
+    }
+
+    private String addServprofToServ(AALService aalService,
+	    AALServiceProfile aalServiceProfile) {
+	Request req=new Request(new ProfilingService(null));
+	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(aalService));
+	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.type(AALService.MY_URI));
+	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.add(aalServiceProfile));
+	ServiceResponse resp=caller.call(req);
+	return resp.getCallStatus().name();
+    }
+
+    private String getSpaceprofOfSpace(AALSpace aalSpace) {
+//	Request req=new Request(new ProfilingService(null));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(aalSpace));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.type(AALSpace.MY_URI));
+//	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.out(OUTPUT));
+//	ServiceResponse resp=caller.call(req);
+//	return getListOfResults(resp);
+	
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+ 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, aalSpace);
+	req.addRequiredOutput(OUTPUT, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
+ 	ServiceResponse resp=caller.call(req);
+ 	if (resp.getCallStatus() == CallStatus.succeeded) {
+ 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT);
+ 	    if (out != null) {
+ 		log.debug(out.toString());
+ 		return out.toString();
+ 	    } else {
+ 		log.debug("NOTHING!");
+ 		return "nothing";
+ 	    }
+ 	}else{
+ 	    return resp.getCallStatus().name();
+ 	}
+    }
+
+    private String addSpaceprofToSpace(AALSpace aalSpace,
+	    AALSpaceProfile aalSpaceProfile) {
+	Request req=new Request(new ProfilingService(null));
+	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(aalSpace));
+	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.type(AALSpace.MY_URI));
+	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE), Arg.add(aalSpaceProfile));
+	ServiceResponse resp=caller.call(req);
+	return resp.getCallStatus().name();
+    }
+    
     //:::::::::::::UTILITIES:::::::::::::::::
     
     private static String getListOfResults(ServiceResponse resp){

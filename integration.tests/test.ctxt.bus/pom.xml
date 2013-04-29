@@ -6,7 +6,6 @@
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
     <version>1.3.2-SNAPSHOT</version>
-    <relativePath>../../samples.pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>test.ctxt.bus</artifactId>
@@ -15,10 +14,27 @@
   <name>universAAL Samples Context bus tester</name>
   <description>Context bus tester</description>
   <dependencies>
+  <dependency>
+			<groupId>org.ops4j.pax.logging</groupId>
+			<artifactId>pax-logging-api</artifactId>
+			<version>1.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.ops4j.pax.logging</groupId>
+			<artifactId>pax-logging-service</artifactId>
+			<version>1.4</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>log4j</artifactId>
+					<groupId>log4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
     <dependency>
       <groupId>org.universAAL.support</groupId>
       <artifactId>uAAL.utils</artifactId>
-      <version>1.3.1-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.apache.felix</groupId>
