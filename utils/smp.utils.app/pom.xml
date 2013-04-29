@@ -6,7 +6,6 @@
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
     <version>1.3.2-SNAPSHOT</version>
-    <relativePath>../../samples.pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.utils.app</artifactId>
