@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://universaal.cas.de" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:universaal="http://universaal.cas.de">
+
+
+    <complexType name="Category">
+    	<sequence minOccurs="1" maxOccurs="unbounded">
+    		<element name="SPARQLConfigItem"
+    			type="universaal:SPARQLConfigItem" minOccurs="0"
+    			maxOccurs="unbounded">
+    		</element>
+    		<element name="MapConfigItem"
+    			type="universaal:MapConfigItem" minOccurs="0"
+    			maxOccurs="unbounded">
+    		</element>
+    		<element name="SimpleConfigItem"
+    			type="universaal:SimpleConfigItem" minOccurs="0"
+    			maxOccurs="unbounded">
+    		</element>
+            <element name="Dependencies" type="universaal:Dependency"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    	
+    	<attribute name="id" type="ID" use="required"></attribute>
+    	<attribute name="label" type="string" use="required"></attribute>
+    	<attribute name="description" type="string"></attribute>
+    </complexType>
+
+    <element name="configuration" type="universaal:Configuration"></element>
+
+    <complexType name="SPARQLConfigItem">
+    	<complexContent>
+    		<extension base="universaal:ConfigItem">
+    			<sequence>
+    				<element name="query" type="string"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="MapConfigItem">
+    	<complexContent>
+    		<extension base="universaal:ConfigItem">
+    			<sequence>
+    				<element name="options" type="universaal:Options" minOccurs="1" maxOccurs="1"></element>
+    			</sequence>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="SimpleConfigItem">
+    	<complexContent>
+    		<extension base="universaal:ConfigItem">
+    			<sequence>
+    				<element name="defaultValue" type="string" minOccurs="0"></element>
+    			</sequence>
+    			<attribute name="type" use="required">
+    				<simpleType>
+    					<restriction base="string">
+    						<pattern value="(string|int|double)"></pattern>
+    					</restriction>
+    				</simpleType>
+    			</attribute>
+    		</extension>
+    	</complexContent>
+    </complexType>
+
+    <complexType name="ConfigItem">
+    	<sequence>
+    		<element name="label" type="string"></element>
+    		<element name="description" type="string"></element>
+    		<element name="dependencies" type="universaal:Dependency"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="validators" type="universaal:Validators"
+    			minOccurs="0">
+    		</element>
+    		<element name="onConfigurationModelChangedListener" type="universaal:OnConfigurationModelChangedListener" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    	<attribute name="id" type="ID" use="required"></attribute>
+    	<attribute name="active" type="boolean" use="optional"
+    		default="true">
+    	</attribute>
+    	<attribute name="cardinality" use="optional" default="0..1">
+    		<simpleType>
+    			<restriction base="string">
+    				<pattern value="[0-9]+..[0-9*]+"></pattern>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+    <complexType name="Validator">
+    	<sequence>
+    		<element name="attribute" type="string" minOccurs="0"
+    			maxOccurs="unbounded">
+    		</element>
+    	</sequence>
+    	<attribute name="class" use="required">
+    		<simpleType>
+    			<restriction base="string">
+    				<pattern value="[a-zA-Z.]*"></pattern>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+
+
+
+    <complexType name="Configuration">
+    	<sequence>
+    		<element name="category" type="universaal:Category"
+    			maxOccurs="unbounded">
+    		</element>
+    	</sequence>
+    	<attribute name="id" type="ID" use="required"></attribute>
+    	<attribute name="bundlename" type="string" use="required"></attribute>
+    	<attribute name="version" use="required">
+    		<simpleType>
+    			<restriction base="string">
+    				<pattern value="([0-9]+.{0,1})+[0-9]+"></pattern>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    	<attribute name="author" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="Dependency">
+    	<sequence minOccurs="1" maxOccurs="unbounded">
+    		<element name="item" type="universaal:Item"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Item">
+    	<attribute name="id" use="required" type="IDREF">
+    	</attribute>
+    </complexType>
+
+
+
+
+
+    <complexType name="Options">
+    	<sequence>
+    		<element name="option" type="universaal:Option" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Option">
+    	<simpleContent>
+    		<extension base="string">
+    			<attribute name="key" type="int" use="required"></attribute>
+    		</extension>
+    	</simpleContent>
+    </complexType>
+
+    <complexType name="Validators">
+    	<sequence>
+    		<element name="validator" type="universaal:Validator" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+
+
+    <simpleType name="SimpleType">
+    	<restriction base="string"></restriction>
+    </simpleType>
+
+    <simpleType name="Type">
+    	<restriction base="string"></restriction>
+    </simpleType>
+
+    <complexType name="OnConfigurationModelChangedListener">
+    	<attribute name="class">
+    		<simpleType>
+    			<restriction base="string">
+    				<pattern value="[a-zA-Z.]*"></pattern>
+    			</restriction>
+    		</simpleType>
+    	</attribute>
+    </complexType>
+</schema>

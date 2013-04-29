@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<universaal:configuration author="melnikov" id="de.fzi.ipe.usrv.infoframe.configuration.first" bundlename="de.fzi.ipe.usrv.infoframe" version="1.0.0" xmlns:universaal="http://universaal.cas.de" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://universaal.cas.de universaalconfiguration.xsd ">
+  	<universaal:category id="MainParameters" label="Main Parameters">
+		<universaal:SimpleConfigItem cardinality="1..1" id="RSSUpdateTime" type="int">
+			<universaal:label>RSS update time</universaal:label>
+			<universaal:description>Please insert the RSS update time in seconds.</universaal:description>
+			<universaal:validators>
+				<universaal:validator class="org.universAAL.ucc.configuration.model.validators.RegExpValidator">
+					<universaal:attribute>[0-9]*</universaal:attribute>
+				</universaal:validator>
+			</universaal:validators>
+			<universaal:defaultValue>10</universaal:defaultValue>
+		</universaal:SimpleConfigItem>
+		<universaal:SimpleConfigItem cardinality="1..1" id="ImageWidth" type="int">
+			<universaal:label>Image width</universaal:label>
+			<universaal:description>Please insert the with of the image</universaal:description>
+			<universaal:validators>
+				<universaal:validator class="org.universAAL.ucc.configuration.model.validators.IntMinMaxValidator">
+					<universaal:attribute>100</universaal:attribute>
+					<universaal:attribute>1400</universaal:attribute>
+				</universaal:validator>
+			</universaal:validators>
+			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.factories.SizeDependencyListenerFactory"/>
+			<universaal:defaultValue>1200</universaal:defaultValue>
+		</universaal:SimpleConfigItem>
+		<universaal:SimpleConfigItem cardinality="1..1" id="ImageHeight" type="int">
+			<universaal:label>Image height</universaal:label>
+			<universaal:description>Please insert the height of the image</universaal:description>
+			<universaal:validators>
+				<universaal:validator class="org.universAAL.ucc.configuration.model.validators.IntMinMaxValidator">
+					<universaal:attribute>100</universaal:attribute>
+					<universaal:attribute>1920</universaal:attribute>
+				</universaal:validator>
+			</universaal:validators>
+			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.factories.SizeDependencyListenerFactory"/>
+			<universaal:defaultValue>1080</universaal:defaultValue>
+		</universaal:SimpleConfigItem>
+		<universaal:MapConfigItem cardinality="1..1" id="InfoFont">
+			<universaal:label>The font</universaal:label>
+			<universaal:description>Please choose your font.</universaal:description>
+			<universaal:options>
+				<universaal:option key="1">Arial</universaal:option>
+				<universaal:option key="2">Tahoma</universaal:option>
+				<universaal:option key="3">Calibri</universaal:option>
+			</universaal:options>
+		</universaal:MapConfigItem>
+		<universaal:SimpleConfigItem cardinality="1..1" id="FontScale" type="double">
+			<universaal:label>The font scale</universaal:label>
+			<universaal:description>Please insert the font scale.</universaal:description>
+			<universaal:validators>
+				<universaal:validator class="org.universAAL.ucc.configuration.model.validators.DoubleMinMaxValidator">
+					<universaal:attribute>0.5</universaal:attribute>
+					<universaal:attribute>1.5</universaal:attribute>
+				</universaal:validator>
+			</universaal:validators>
+			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.factories.SizeDependencyListenerFactory"/>
+			<universaal:defaultValue>1</universaal:defaultValue>
+		</universaal:SimpleConfigItem>
+  	</universaal:category>
+  	
+  	<universaal:category label="Mail plugin" id="mailPlugin">
+  		<universaal:SimpleConfigItem id="addMailPlugin" cardinality="1..1" type="int">
+  			<universaal:label>On\\Off switch</universaal:label>
+  			<universaal:description>Switch the mail plugin on or off.</universaal:description>
+  			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.AddMailPluginListener"/>
+  			<universaal:defaultValue>1</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem id="mailProtocol" cardinality="1..1" active="false" type="string">
+  			<universaal:label>Mail protocol</universaal:label>
+  			<universaal:description>Enter the mail protocol (like imap or pop3)</universaal:description>
+  			<universaal:defaultValue>imaps</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem id="mailServer" cardinality="1..1" type="string" active="false">
+  			<universaal:label>Mail server</universaal:label>
+  			<universaal:description>Enter the mail server url</universaal:description>
+  			<universaal:defaultValue>imap.gmail.com</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem id="mailUsername" cardinality="1..1" type="string" active="false">
+  			<universaal:label>E-Mail username</universaal:label>
+  			<universaal:description>Enter the username of your e-mail account.</universaal:description>
+  			<universaal:defaultValue>nick</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem id="mailPassword" cardinality="1..1" type="string" active="false">
+  			<universaal:label>E-Mail password</universaal:label>
+  			<universaal:description>Enter the password of your e-mail account.</universaal:description>
+  			<universaal:defaultValue>passwd123</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem id="mailMsgCount" cardinality="1..1" type="int" active="false">
+  			<universaal:label>Display meassage count.</universaal:label>
+  			<universaal:description>Enter the maximum amount of displayed messages.</universaal:description>
+  			<universaal:validators>
+				<universaal:validator class="org.universAAL.ucc.configuration.model.validators.IntMinMaxValidator">
+					<universaal:attribute>1</universaal:attribute>
+					<universaal:attribute>10</universaal:attribute>
+				</universaal:validator>
+				<universaal:validator class="de.fzi.ipe.uapp.infoframe.validation.factories.RowValidatorFactory">
+					<universaal:attribute>10</universaal:attribute>
+				</universaal:validator>
+			</universaal:validators>
+			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.factories.SizeDependencyListenerFactory"/>
+  			<universaal:defaultValue>3</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  	</universaal:category>
+  	
+  	<universaal:category label="Calendar plugin" id="calendarPlugin">
+  		<universaal:SimpleConfigItem id="addCalendarPlugin" cardinality="1..1" type="int">
+  			<universaal:label>On\\Off switch</universaal:label>
+  			<universaal:description>Switch the calendar plugin on or off.</universaal:description>
+   			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.AddCalendarPluginListener"/>
+   			<universaal:defaultValue>0</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem id="calendarUsername" cardinality="1..1" type="string" active="false">
+  			<universaal:label>Calendar username</universaal:label>
+  			<universaal:description>Enter the username of your google calendar account.</universaal:description>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem id="calendarPassword" cardinality="1..1" type="string" active="false">
+  			<universaal:label>Calendar password</universaal:label>
+  			<universaal:description>Enter the password of your google calendar account.</universaal:description>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem id="calendarMsgCount" cardinality="1..1" type="int" active="false">
+  			<universaal:label>Display event count.</universaal:label>
+  			<universaal:description>Enter the maximum amount of displayed events.</universaal:description>
+  			<universaal:validators>
+				<universaal:validator class="org.universAAL.ucc.configuration.model.validators.IntMinMaxValidator">
+					<universaal:attribute>1</universaal:attribute>
+					<universaal:attribute>10</universaal:attribute>
+				</universaal:validator>
+				<universaal:validator class="de.fzi.ipe.uapp.infoframe.validation.factories.RowValidatorFactory">
+					<universaal:attribute>10</universaal:attribute>
+				</universaal:validator>
+			</universaal:validators>
+			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.factories.SizeDependencyListenerFactory"/>
+  			<universaal:defaultValue>3</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  	</universaal:category>
+  	
+  	<universaal:category label="Weather Plugin" id="weatherPlugin">
+  		<universaal:SimpleConfigItem cardinality="1..1" id="addWeatherPlugin" type="int">
+  			<universaal:label>On\\Off switch</universaal:label>
+  			<universaal:description>Switches plugin on\\off</universaal:description>
+  			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.AddWeatherPluginListener"/>
+  			<universaal:defaultValue>1</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem cardinality="1..1" id="WeatherStationLocation" type="string" active="false">
+  			<universaal:label>Location:</universaal:label>
+  			<universaal:description>Please insert the location of the weather station of your choice</universaal:description>
+<!--   			<universaal:validators> -->
+<!--   				<universaal:validator class="de.cas.merlin.aal.configuration.model.validators.URLValidator"> -->
+<!--   				</universaal:validator> -->
+<!--   			</universaal:validators> -->
+  			<universaal:defaultValue>zmw:00000.1.10702</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem cardinality="1..1" id="Language" type="string" active="false">
+  			<universaal:label>Language</universaal:label>
+  			<universaal:description>Language of your choice</universaal:description>
+			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.factories.SizeDependencyListenerFactory"/>
+  			<universaal:defaultValue>de</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  	</universaal:category>
+  	<universaal:category label="Feed Plugin" id="FeedPlugin">
+  		<universaal:SimpleConfigItem cardinality="1..1" id="AddFeedPlugin" type="int">
+  			<universaal:label>On\\Off switch</universaal:label>
+  			<universaal:description>Switches plugin on\\off</universaal:description>
+  			<universaal:validators>
+  				<universaal:validator class="">
+  					<universaal:attribute>0</universaal:attribute>
+  					<universaal:attribute>1</universaal:attribute>
+  				</universaal:validator>
+  			</universaal:validators>
+  			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.ModListener"/>
+  			<universaal:defaultValue>1</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem cardinality="0..1" id="FeedURL1" type="string" active="false">
+  			<universaal:label>The first feed url</universaal:label>
+  			<universaal:description>Please insert the first feed url.</universaal:description>
+<!--   			<universaal:validators> -->
+<!--   				<universaal:validator class="de.cas.merlin.aal.configuration.model.validators.URLValidator"> -->
+<!--   				</universaal:validator> -->
+<!--   			</universaal:validators> -->
+  			<universaal:defaultValue>http://www.heise.de/newsticker/heise-top-atom.xml</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem cardinality="0..1" id="MaxDispItems1" type="int" active="false">
+  			<universaal:label>Count of displayed feed items</universaal:label>
+  			<universaal:description>Maximum numbers of entries to display</universaal:description>
+  			<universaal:dependencies>
+  				<universaal:item id="FeedURL1"/>
+  			</universaal:dependencies>
+  			<universaal:validators>
+				<universaal:validator class="org.universAAL.ucc.configuration.model.validators.IntMinMaxValidator">
+					<universaal:attribute>1</universaal:attribute>
+					<universaal:attribute>10</universaal:attribute>
+				</universaal:validator>
+				<universaal:validator class="de.fzi.ipe.uapp.infoframe.validation.factories.RowValidatorFactory">
+					<universaal:attribute>10</universaal:attribute>
+				</universaal:validator>
+			</universaal:validators>
+			<universaal:onConfigurationModelChangedListener class="de.fzi.ipe.uapp.infoframe.listeners.factories.SizeDependencyListenerFactory"/>
+  			<universaal:defaultValue>5</universaal:defaultValue>
+  		</universaal:SimpleConfigItem>
+  		<universaal:SimpleConfigItem cardinality="0..1" id="RegExp1" type="string" active="false">
+  			<universaal:label>The regular expression</universaal:label>
+  			<universaal:description>Regular expression for feed 1</universaal:description>
+  			<universaal:dependencies>
+  				<universaal:item id="FeedURL1"/>
+  			</universaal:dependencies>
+  		</universaal:SimpleConfigItem>
+  	</universaal:category>
+</universaal:configuration>

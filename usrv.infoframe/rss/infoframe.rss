@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+<title>UC: Infoframe</title>
+<link>http://www.fzi.de</link>
+<description>Infoframe</description>
+<ttl>1</ttl>
+<item>
+<guid isPermaLink="false">1343046678707</guid>
+<title>InfoFrame Image</title>
+<link>10.6.13.125/rss/rssimg.jpeg</link>
+<description>IF Image</description>
+<media:content url="http://10.6.13.125/rss/rssimg.jpeg" type="image/jpeg"> </media:content>
+</item>
+</channel>
+</rss>
