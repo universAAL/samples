@@ -8,10 +8,10 @@
 <xs:schema attributeFormDefault="unqualified" 
 elementFormDefault="qualified" 
 jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0" 
-targetNamespace="http://forge.universaal.org/svn/support/trunk/samples/deploy-lifecycle/aal-uapp/v1.0.0" 
+targetNamespace="http://forge.universaal.org/svn/support/trunk/samples/deploy-lifecycle/schemas/aal-uapp/v1.0.0" 
 xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
 xmlns:krf="http://karaf.apache.org/xmlns/features/v1.0.0" 
-xmlns:uapp="http://forge.universaal.org/svn/support/trunk/samples/deploy-lifecycle/aal-uapp/v1.0.0" 
+xmlns:uapp="http://forge.universaal.org/svn/support/trunk/samples/deploy-lifecycle/schemas/aal-uapp/v1.0.0" 
 xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 				<xs:import namespace="http://karaf.apache.org/xmlns/features/v1.0.0" schemaLocation="karaf-provvisioning-v1.0.0.xsd"/>
 				<xs:annotation>
