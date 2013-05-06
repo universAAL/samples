@@ -6,11 +6,11 @@
 <xs:schema attributeFormDefault="unqualified" 
 				elementFormDefault="qualified" 
 				jaxb:extensionBindingPrefixes="xjc" jaxb:version="1.0" 
-				targetNamespace="http://forge.universaal.org/svn/support/trunk/samples/deploy-lifecycle/schemas/uaal-usrv/v1.0.0" 
+				targetNamespace="http://www.universaal.org/uaal-usrv/v1.0.0" 
 				uapp:schemaLocation="AAL-UAPP.xsd"
 				xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
-				xmlns:uapp="http://forge.universaal.org/svn/support/trunk/samples/deploy-lifecycle/schemas/aal-uapp/v1.0.0" 
-				xmlns:usrv="http://forge.universaal.org/svn/support/trunk/samples/deploy-lifecycle/schemas/aal-usrv/v1.0.0" 
+				xmlns:uapp="http://www.universaal.org/aal-uapp/v1.0.0" 
+				xmlns:usrv="http://www.universaal.org/aal-usrv/v1.0.0" 
 				xmlns:v="http://www.w3.org/2006/vcard/ns#" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 				<xs:annotation>
 								<xs:appinfo>
