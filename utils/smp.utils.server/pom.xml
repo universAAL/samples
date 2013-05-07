@@ -13,6 +13,21 @@
   <packaging>bundle</packaging>
   <name>universAAL Samples Utilities Example Server</name>
   <description>An example of how to use the utilities bundles</description>
+<scm>
+    <connection>scm:svn:http://forge.universaal.org/svn/support/trunk/samples/utils/${project.artifactId}</connection>
+    <developerConnection>scm:svn:http://forge.universaal.org/svn/support/trunk/samples/utils/${project.artifactId}</developerConnection>
+    <url>http://forge.universaal.org/gf/project/support/scmsvn/?path=%2Ftrunk%2Fsamples/%2Futils${project.artifactId}</url>
+  </scm>
+  <repositories>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>uaal</id>
+      <name>universAAL Repositories</name>
+      <url>http://depot.universaal.org/maven-repo/releases/</url>
+    </repository>
+  </repositories>
   <dependencies>
     <dependency>
       <groupId>org.apache.felix</groupId>
