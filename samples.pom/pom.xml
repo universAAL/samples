@@ -42,6 +42,8 @@
     <module>../aapi/client-regular</module>
     <module>../aapi/server-simple</module>
     <module>../aapi/client-simple</module>
+	<module>../smp.ri.gateway.communicator/ri.gateway.samples.android</module>
+	<module>../smp.ri.gateway.communicator/ri.gateway.samples.home</module>
   </modules>
   <scm>
     <connection>${svn.base}/samples/${project.artifactId}</connection>
