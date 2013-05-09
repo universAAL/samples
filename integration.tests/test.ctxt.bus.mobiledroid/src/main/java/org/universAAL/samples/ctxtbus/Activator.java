@@ -36,7 +36,7 @@ public class Activator implements BundleActivator {
 	Activator.moduleContext = uAALBundleContainer.THE_CONTAINER
 		.registerModule(new Object[] { context });
 	cpublisher = new CPublisher(moduleContext);
-	cpublisher.sendUniqueBurst(1000);
+	cpublisher.sendUniqueBurst(100);
     }
 
     public void stop(BundleContext arg0) throws Exception {

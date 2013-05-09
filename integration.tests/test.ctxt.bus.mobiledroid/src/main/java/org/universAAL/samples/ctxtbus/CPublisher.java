@@ -29,19 +29,20 @@ import org.universAAL.middleware.context.ContextEventPattern;
 import org.universAAL.middleware.context.ContextPublisher;
 import org.universAAL.middleware.context.owl.ContextProvider;
 import org.universAAL.middleware.context.owl.ContextProviderType;
+import org.universAAL.ontology.device.BlindActuator;
+import org.universAAL.ontology.device.LightActuator;
+import org.universAAL.ontology.device.PanicButtonSensor;
+import org.universAAL.ontology.device.StatusValue;
+import org.universAAL.ontology.device.SwitchActuator;
+import org.universAAL.ontology.device.TemperatureSensor;
+import org.universAAL.ontology.device.WindowActuator;
 import org.universAAL.ontology.furniture.Furniture;
 import org.universAAL.ontology.furniture.FurnitureType;
-import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.location.Location;
 import org.universAAL.ontology.phThing.PhysicalThing;
-import org.universAAL.ontology.powersocket.Powersocket;
 import org.universAAL.ontology.profile.Profilable;
 import org.universAAL.ontology.profile.User;
 import org.universAAL.ontology.profile.UserProfile;
-import org.universAAL.ontology.risk.PanicButton;
-import org.universAAL.ontology.weather.TempSensor;
-import org.universAAL.ontology.window.BlindActuator;
-import org.universAAL.ontology.window.WindowActuator;
 
 public class CPublisher extends ContextPublisher {
     protected static final int samples=7;
@@ -61,7 +62,7 @@ public class CPublisher extends ContextPublisher {
 
     private static ContextProvider getProviderInfo() {
 	ContextProvider cpinfo = new ContextProvider(URIROOT
-		+ "TestMassContextProvider");
+		+ "TestMassAndContextProvider");
 	cpinfo.setType(ContextProviderType.gauge);
 	cpinfo.setProvidedEvents(new ContextEventPattern[] { new ContextEventPattern() });
 	return cpinfo;
@@ -103,32 +104,32 @@ public class CPublisher extends ContextPublisher {
 	sampleEvents[0] = new ContextEvent(u1, Profilable.PROP_HAS_PROFILE);
 	// 2 Blind is open
 	BlindActuator b2 = new BlindActuator(URIROOT + "blind4");
-	b2.setProperty(BlindActuator.PROP_DIMMABLE_STATUS, new Integer(100));
+	b2.setProperty(BlindActuator.PROP_HAS_VALUE, new Integer(100));
 	sampleEvents[1] = new ContextEvent(b2,
-		BlindActuator.PROP_DIMMABLE_STATUS);
+		BlindActuator.PROP_HAS_VALUE);
 	// 3 chair is in place
 	Furniture f3 = new Furniture(URIROOT + "furniture5");
 	f3.setFurnitureType(FurnitureType.Chair);
 	f3.setLocation(new Location(URIROOT + "location5"));
 	sampleEvents[2] = new ContextEvent(f3, Furniture.PROP_PHYSICAL_LOCATION);
 	// 4 light is on
-	LightSource ls4 = new LightSource(URIROOT + "light6");
-	ls4.setBrightness(100);
+	LightActuator ls4 = new LightActuator(URIROOT + "light6");
+	ls4.setHasValue(100);
 	sampleEvents[3] = new ContextEvent(ls4,
-		LightSource.PROP_SOURCE_BRIGHTNESS);
+		LightActuator.PROP_HAS_VALUE);
 	// 5 socket at 50%
-	Powersocket ss5 = new Powersocket(URIROOT + "socket7");
-	ss5.setValue(50);
-	sampleEvents[4] = new ContextEvent(ss5, Powersocket.PROP_SOCKET_VALUE);
+	SwitchActuator ss5 = new SwitchActuator(URIROOT + "socket7");
+	ss5.setValue(StatusValue.Activated);
+	sampleEvents[4] = new ContextEvent(ss5, SwitchActuator.PROP_HAS_VALUE);
 	// 6 temperature measured
-	TempSensor ts6 = new TempSensor(URIROOT + "tempsensor8");
-	ts6.setMeasuredValue(27.5f);
-	sampleEvents[5] = new ContextEvent(ts6, TempSensor.PROP_MEASURED_VALUE);
+	TemperatureSensor ts6 = new TemperatureSensor(URIROOT + "tempsensor8");
+	ts6.setHasValue(27.5f);
+	sampleEvents[5] = new ContextEvent(ts6, TemperatureSensor.PROP_HAS_VALUE);
 	// 7 window closed
 	WindowActuator w7 = new WindowActuator(URIROOT + "window9");
-	w7.setProperty(WindowActuator.PROP_WINDOW_STATUS, new Integer(0));
+	w7.setValue(StatusValue.Activated);
 	sampleEvents[6] = new ContextEvent(w7,
-		WindowActuator.PROP_WINDOW_STATUS);
+		WindowActuator.PROP_HAS_VALUE);
     }
 
     // I cant have a preset collection of events because timestamp and URI are
@@ -144,8 +145,8 @@ public class CPublisher extends ContextPublisher {
 	case 1:
 	    // 2 Blind is open
 	    BlindActuator b2 = new BlindActuator(URIROOT + "blind4");
-	    b2.setProperty(BlindActuator.PROP_DIMMABLE_STATUS, new Integer(100));
-	    return new ContextEvent(b2, BlindActuator.PROP_DIMMABLE_STATUS);
+	    b2.setProperty(BlindActuator.PROP_HAS_VALUE, new Integer(100));
+	    return new ContextEvent(b2, BlindActuator.PROP_HAS_VALUE);
 	case 2:
 	    // 3 chair is in place
 	    Furniture f3 = new Furniture(URIROOT + "furniture5");
@@ -154,28 +155,27 @@ public class CPublisher extends ContextPublisher {
 	    return new ContextEvent(f3, Furniture.PROP_PHYSICAL_LOCATION);
 	case 3:
 	    // 4 light is on
-	    LightSource ls4 = new LightSource(URIROOT + "light6");
-	    ls4.setBrightness(rand.nextInt(101));
-	    return new ContextEvent(ls4, LightSource.PROP_SOURCE_BRIGHTNESS);
+	    LightActuator ls4 = new LightActuator(URIROOT + "light6");
+	    ls4.setHasValue(rand.nextInt(101));
+	    return new ContextEvent(ls4, LightActuator.PROP_HAS_VALUE);
 	case 4:
 	    // 7 socket at 50%
-	    Powersocket ss5 = new Powersocket(URIROOT + "socket7");
-	    ss5.setValue(rand.nextInt(101));
-	    return new ContextEvent(ss5, Powersocket.PROP_SOCKET_VALUE);
+	    SwitchActuator ss5 = new SwitchActuator(URIROOT + "socket7");
+	    ss5.setValue(StatusValue.Activated);
+	    return new ContextEvent(ss5, SwitchActuator.PROP_HAS_VALUE);
 	case 5:
 	    // 6 temperature measured
-	    TempSensor ts6 = new TempSensor(URIROOT + "tempsensor8");
-	    ts6.setMeasuredValue(30 * rand.nextFloat());
-	    return new ContextEvent(ts6, TempSensor.PROP_MEASURED_VALUE);
+	    TemperatureSensor ts6 = new TemperatureSensor(URIROOT + "tempsensor8");
+	    ts6.setHasValue(30 * rand.nextFloat());
+	    return new ContextEvent(ts6, TemperatureSensor.PROP_HAS_VALUE);
 	case 6:
 	    // 7 window closed
 	    WindowActuator w7 = new WindowActuator(URIROOT + "window9");
-	    w7.setProperty(WindowActuator.PROP_WINDOW_STATUS,
-		    new Integer(rand.nextInt(101)));
-	    return new ContextEvent(w7, WindowActuator.PROP_WINDOW_STATUS);
+	    w7.setValue(StatusValue.Activated);
+	    return new ContextEvent(w7, WindowActuator.PROP_HAS_VALUE);
 	default:
 	    // 10 situation
-	    PanicButton p10 = new PanicButton(URIROOT + "panic10");
+	    PanicButtonSensor p10 = new PanicButtonSensor(URIROOT + "panic10");
 	    p10.setProperty(PhysicalThing.PROP_CARRIED_BY, new User(URIROOT
 		    + "user" + rand.nextInt(5)));
 	    p10.setProperty(PhysicalThing.PROP_IS_PORTABLE,
