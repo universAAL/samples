@@ -21,6 +21,7 @@
 package org.universAAL.middleware.managers.deploy.client.osgi;
 
 import java.io.File;
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -49,6 +50,7 @@ import org.universAAL.middleware.managers.api.AALSpaceManager;
 import org.universAAL.middleware.managers.api.DeployManager;
 import org.universAAL.middleware.managers.api.InstallationResults;
 import org.universAAL.middleware.managers.api.InstallationResultsDetails;
+import org.universAAL.middleware.managers.api.MatchingResult;
 import org.universAAL.middleware.managers.api.UAPPPackage;
 
 import org.universAAL.middleware.deploymaneger.uapp.model.AalUapp;
@@ -113,8 +115,14 @@ public class Activator implements BundleActivator {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        Map<PeerCard, Part> layout = new HashMap<PeerCard, Part>();
-        Map<String, PeerCard> peers = aalSpaceManager.getPeers();
+        Map<PeerCard, List<Part>> layout = new HashMap<PeerCard, List<Part> >();
+        ArrayList<PeerCard> peerList = new ArrayList<PeerCard>( aalSpaceManager.getPeers().values() );
+        peerList.add(aalSpaceManager.getMyPeerCard());
+        PeerCard[] peers = peerList.toArray(new PeerCard[]{});
+        HashMap<String, Serializable> peersFilter = new HashMap<String, Serializable>();
+        peersFilter.put("karaf.version", null);
+        MatchingResult matchingPeers = aalSpaceManager.getMatchingPeers(peersFilter);
+        peers = matchingPeers.getPeers();
         try {
             jc = JAXBContext.newInstance(ObjectFactory.class);
             unmarshaller = jc.createUnmarshaller();
@@ -129,6 +137,7 @@ public class Activator implements BundleActivator {
             uAAP = (AalUapp)unmarshaller.unmarshal(new File(uAAPUri));
         } catch (JAXBException e) {
             System.out.println("Issue with XML parsing: "+e.getErrorCode() );
+            e.printStackTrace();
             e.getLinkedException().printStackTrace();
             e.printStackTrace();
         }
@@ -136,66 +145,29 @@ public class Activator implements BundleActivator {
         if (uAAP == null ) {
             throw new IllegalStateException("Unable to parse or find the uAAP xml");
         }
-        for (String peerKey : peers.keySet()) {
+
+
+
+        for (PeerCard peer : peers) {
             if ( i >=  uAAP.getApplicationPart().getPart().size() ) {
                 System.out.println("All the parts of the application have been assigned to all the peers");
                 break;
             } else {
-                System.out.println("Assigned "+uAAP.getApplicationPart().getPart().get(i).getPartId()+" to peer "+peerKey);
-                layout.put(peers.get(peerKey), uAAP.getApplicationPart().getPart().get(i));
+                System.out.println("Assigned "+uAAP.getApplicationPart().getPart().get(i).getPartId()+" to peer "+peer);
+                ArrayList<Part> list = new ArrayList<Part>();
+                list.add(uAAP.getApplicationPart().getPart().get(i));
+                layout.put(peer, list);
             }
             i++;
         }
         UAPPPackage pkg = new UAPPPackage(USRV_ID, UAAP_ID, uAPPFolder, layout);
-        InstallationResults result = deployManager.requestToInstall( pkg );
-        if ( result != InstallationResults.SUCCESS ) {
+        InstallationResultsDetails result = deployManager.requestToInstall( pkg );
+        if ( result.getGlobalResult() != InstallationResults.SUCCESS ) {
             throw new IllegalStateException("Failed to installe the uAAP with "+result);
         }
     }
 
     public void stop(BundleContext context) throws Exception {
-        URI uAAPUri = null;
-        URI uAPPFolder = null;
-        try {
-            uAPPFolder = new URI( "file", UAAP_FOLDER, null);
-            uAAPUri = new URI( "file", UAAP_URI, null);
-        } catch (URISyntaxException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        Map<PeerCard, Part> layout = new HashMap<PeerCard, Part>();
-        Map<String, PeerCard> peers = aalSpaceManager.getPeers();
-        try {
-            jc = JAXBContext.newInstance(ObjectFactory.class);
-            unmarshaller = jc.createUnmarshaller();
-            marshaller = jc.createMarshaller();
-        } catch (JAXBException e) {
-            System.out.println(e);
-        }
-
-
-        AalUapp uAAP = null;
-        try {
-            uAAP = (AalUapp)unmarshaller.unmarshal(new File(uAAPUri));
-        } catch (JAXBException e) {
-            System.out.println("Issue with XML parsing: "+e.getErrorCode() );
-            e.getLinkedException().printStackTrace();
-            e.printStackTrace();
-        }
-        int i = 0;
-        if (uAAP != null ) {
-            for (String peerKey : peers.keySet()) {
-                if ( i >=  uAAP.getApplicationPart().getPart().size() ) {
-                    System.out.println("All the parts of the application have been assigned to all the peers");
-                    break;
-                } else {
-                    System.out.println("Assigned "+uAAP.getApplicationPart().getPart().get(i).getPartId()+" to peer "+peerKey);
-                    layout.put(peers.get(peerKey), uAAP.getApplicationPart().getPart().get(i));
-                }
-                i++;
-            }
-        }
-
         deployManager.requestToUninstall(USRV_ID, UAAP_ID);
     }
 
