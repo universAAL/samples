@@ -14,6 +14,24 @@
   <packaging>bundle</packaging>
   <name>universAAL Samples UI bus tester</name>
   <dependencies>
+ 	<dependency>
+		<groupId>org.ops4j.pax.logging</groupId>
+		<artifactId>pax-logging-api</artifactId>
+		<version>1.4</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.ops4j.pax.logging</groupId>
+		<artifactId>pax-logging-service</artifactId>
+		<version>1.4</version>
+		<scope>provided</scope>
+		<exclusions>
+			<exclusion>
+				<artifactId>log4j</artifactId>
+				<groupId>log4j</groupId>
+			</exclusion>
+		</exclusions>
+	</dependency>
     <dependency>
       <groupId>org.apache.felix</groupId>
       <artifactId>org.osgi.core</artifactId>
