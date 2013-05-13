@@ -11,7 +11,7 @@ import org.universAAL.middleware.service.DefaultServiceCaller;
 import org.universAAL.middleware.service.ServiceCaller;
 import org.universAAL.middleware.service.ServiceRequest;
 import org.universAAL.middleware.service.ServiceResponse;
-import org.universAAL.middleware.serialization.MessageContentSerializer;
+import org.universAAL.middleware.sodapop.msg.MessageContentSerializer;
 import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.lighting.Lighting;
 import org.universAAL.ontology.phThing.Device;
@@ -40,7 +40,7 @@ public class ServiceImpl implements ServiceInterface {
 		}
 		Object[] contentSerializerParams = new Object[] { MessageContentSerializer.class
 				.getName() };
-		MessageContentSerializer s = (MessageContentSerializer) Activator.mc
+		MessageContentSerializer s = (org.universAAL.middleware.sodapop.msg.MessageContentSerializer) Activator.mc
 				.getContainer().fetchSharedObject(Activator.mc,
 						contentSerializerParams);
 		String sGetLamps = s.serialize(sr);
@@ -68,7 +68,7 @@ public class ServiceImpl implements ServiceInterface {
 		sr = caller.call(turtleStr);
 		Object[] contentSerializerParams = new Object[] { MessageContentSerializer.class
 				.getName() };
-		MessageContentSerializer s = (MessageContentSerializer) Activator.mc
+		MessageContentSerializer s = (org.universAAL.middleware.sodapop.msg.MessageContentSerializer) Activator.mc
 				.getContainer().fetchSharedObject(Activator.mc,
 						contentSerializerParams);
 		String serializedStr = s.serialize(sr);
