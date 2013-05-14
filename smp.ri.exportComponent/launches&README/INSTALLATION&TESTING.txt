@@ -5,16 +5,12 @@ INSTALLATION & TESTING
 1. Add (import) the following projects: ri.soap.client, 
    ri.soap.server and ri.soap.service to your workspace.
 
-2. Fix the path of the "cxf-dosgi-ri-singlebundle-distribution-1.0.jar" and 
-   the"org.eclipse.osgi.services_3.2.0.v20090520-1800.jar" non-universAAL(external) bundles 
-   in the cxf LightingService.launch (direct their paths to the /libs folder of the example).  
- 
-3. Execute "Maven Install" for 
+2. Execute "Maven Install" for 
    each project.
 
-4. Run the cxf LightingService.launch file ("launches" folder) 
+3. Run the cxf LightingService_1.3.0.launch file ("launches&MANUAL" folder) 
    
-5. Run the SOAP client from the console in order to execute one (select one and uncomment it from the client's Activator.java file) 
+4. Run the SOAP client from the console in order to execute one (select one and uncomment it from the client's Activator.java file) 
    of the remote service requests getAllLamps, turnOn, turnOff. Each of them uses different type of arguments in order to demonstrate
    the different types of Service Requests.
   
