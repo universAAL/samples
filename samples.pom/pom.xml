@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support</groupId>
     <artifactId>support.pom</artifactId>
-    <version>1.3.2-SNAPSHOT</version>
+    <version>1.3.3-SNAPSHOT</version>
     <relativePath>../../pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.support.samples</groupId>
   <artifactId>samples.pom</artifactId>
-  <version>1.3.2-SNAPSHOT</version>
+  <version>1.3.3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>universAAL Samples Suite</name>
   <description>A set of components that use the universAAL middleware with different roles and serve as samples.</description>
@@ -43,8 +43,8 @@
     <module>../aapi/client-regular</module>
     <module>../aapi/server-simple</module>
     <module>../aapi/client-simple</module>
-	<module>../smp.ri.gateway.communicator/ri.gateway.samples.android</module>
-	<module>../smp.ri.gateway.communicator/ri.gateway.samples.home</module>
+    <module>../smp.ri.gateway.communicator/ri.gateway.samples.android</module>
+    <module>../smp.ri.gateway.communicator/ri.gateway.samples.home</module>
   </modules>
   <scm>
     <connection>${svn.base}/samples/${project.artifactId}</connection>
@@ -56,9 +56,9 @@
       <dependency>
         <groupId>org.universAAL.support</groupId>
         <artifactId>itests</artifactId>
-        <version>1.3.2-SNAPSHOT</version>
+        <version>1.3.3-SNAPSHOT</version>
         <scope>test</scope>
-     </dependency>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <build>
