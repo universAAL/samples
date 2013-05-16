@@ -51,9 +51,6 @@
 		<bundle start-level='89' start='true'>mvn:org.universAAL.middleware/mw.bus.service.osgi/1.3.2-SNAPSHOT</bundle>
 		<bundle start-level='89' start='true'>mvn:org.universAAL.middleware/mw.bus.ui.osgi/1.3.2-SNAPSHOT</bundle>
 		
-
-		
-		
 		
 
 		<!-- Configuration file section -->
@@ -71,7 +68,7 @@
 		<!-- Deploy Manager -->
 		<configfile finalname="/etc/mw.managers.deploy.core.cfg">mvn:org.universAAL.middleware/mw.managers.deploy.core.config/1.3.2-SNAPSHOT/cfg</configfile>
 
-		<!-- AAL Spacde Module -->
+		<!-- AAL Space Module -->
 		<configfile finalname="/etc/mw.modules.aalspace.core.cfg">mvn:org.universAAL.middleware/mw.modules.aalspace.core.config/1.3.2-SNAPSHOT/cfg</configfile>
 
 	</feature>
