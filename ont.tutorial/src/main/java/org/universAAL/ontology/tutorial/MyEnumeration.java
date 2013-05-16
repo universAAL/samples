@@ -6,7 +6,7 @@ import org.universAAL.middleware.owl.ManagedIndividual;
 // of a specific set of individual values.
 // Currently only Enumerations "without meaning" are accepted, that is, 
 // they are only represented by their type URI and individual URI. 
-// They don´t have properties. Nevertheless, in theory it should be possible 
+// They donï¿½t have properties. Nevertheless, in theory it should be possible 
 // to declare properties into enumerations, by merging them with the required 
 // code of normal concepts (see MyConcept). However I have not checked it.
 public class MyEnumeration extends ManagedIndividual {
@@ -69,7 +69,7 @@ public class MyEnumeration extends ManagedIndividual {
 	return PROP_SERIALIZATION_OPTIONAL;
     }
 
-    // You don´t really need this for enumerations, but it won´t hurt if it
+    // You donï¿½t really need this for enumerations, but it wonï¿½t hurt if it
     // always returns true...
     public boolean isWellFormed() {
 	return true;
@@ -132,8 +132,9 @@ public class MyEnumeration extends ManagedIndividual {
     // As commented above, currently enumerations do not support properties in
     // our code (I have to check this later). This method prevents anyone from
     // adding properties manually later to individuals.
-    public void setProperty(String propURI, Object o) {
+    public boolean setProperty(String propURI, Object o) {
 	// do nothing
+	return false;
     }
 
 }

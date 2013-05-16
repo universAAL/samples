@@ -22,12 +22,8 @@ package org.universAAL.middleware.managers.deploy.client.osgi;
 
 import java.io.File;
 import java.io.Serializable;
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,11 +36,8 @@ import javax.xml.bind.Unmarshaller;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
-import org.osgi.service.log.LogService;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
-import org.universAAL.middleware.container.osgi.run.uAALBundleExtender;
 import org.universAAL.middleware.interfaces.PeerCard;
 import org.universAAL.middleware.managers.api.AALSpaceManager;
 import org.universAAL.middleware.managers.api.DeployManager;
@@ -53,9 +46,9 @@ import org.universAAL.middleware.managers.api.InstallationResultsDetails;
 import org.universAAL.middleware.managers.api.MatchingResult;
 import org.universAAL.middleware.managers.api.UAPPPackage;
 
-import org.universAAL.middleware.deploymaneger.uapp.model.AalUapp;
-import org.universAAL.middleware.deploymaneger.uapp.model.ObjectFactory;
-import org.universAAL.middleware.deploymaneger.uapp.model.Part;
+import org.universAAL.middleware.deploymanager.uapp.model.AalUapp;
+import org.universAAL.middleware.deploymanager.uapp.model.ObjectFactory;
+import org.universAAL.middleware.deploymanager.uapp.model.Part;
 
 /**
  * Activator for the Deploymanager client

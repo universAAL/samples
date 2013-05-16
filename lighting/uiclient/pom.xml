@@ -24,6 +24,7 @@
     <dependency>
       <groupId>org.universAAL.support</groupId>
       <artifactId>itests</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.felix</groupId>

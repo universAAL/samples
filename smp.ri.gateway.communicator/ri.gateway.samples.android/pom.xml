@@ -11,7 +11,7 @@
 	<packaging>bundle</packaging>
 	<groupId>org.universAAL.samples</groupId>
 	<artifactId>ri.gateway.samples.android</artifactId>
-	<name>AALSpace Gateway Communicator :: Android Node</name>
+	<name>universAAL Samples AALSpace Gateway Communicator :: Android Node</name>
 	<description>Android node using the AALSpace Gateway</description>
 
 	<dependencies>

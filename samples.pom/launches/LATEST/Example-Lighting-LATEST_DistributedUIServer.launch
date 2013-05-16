@@ -25,12 +25,12 @@
 <listEntry value="obr"/>
 </listAttribute>
 <mapAttribute key="org.ops4j.pax.cursor.provisionItems">
-<mapEntry key="mvn:org.universAAL.samples/smp.lighting.server.osgi" value="true@true@5@true"/>
+<mapEntry key="mvn:org.universAAL.samples/smp.lighting.server.osgi" value="false@false@5@true"/>
 <mapEntry key="scan-composite:mvn:org.universAAL.middleware/mw.composite//composite" value="true@true@1@true"/>
 <mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.dm//composite" value="true@true@2@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.ontology/ont.lighting//composite" value="true@true@4@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing//composite" value="true@true@3@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//deps" value="false@false@5@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.ontology/ont.lighting//composite" value="false@false@4@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing//composite" value="false@false@3@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//deps" value="false@false@null@true"/>
 </mapAttribute>
 <listAttribute key="org.ops4j.pax.cursor.runArguments">
 <listEntry value="--overwrite=false"/>
@@ -40,9 +40,6 @@
 <listEntry value="--profiles=obr"/>
 <listEntry value="scan-composite:mvn:org.universAAL.middleware/mw.composite//composite@1@update"/>
 <listEntry value="scan-composite:mvn:org.universAAL.ui/ui.dm//composite@2@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing//composite@3@update"/>
-<listEntry value="mvn:org.universAAL.samples/smp.lighting.server.osgi@5@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.ontology/ont.lighting//composite@4@update"/>
 </listAttribute>
 <stringAttribute key="osgi_framework_id" value="--platform=felix --version=1.4.0"/>
 <stringAttribute key="pde.version" value="3.3"/>

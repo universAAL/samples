@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><launchConfiguration type="org.eclipse.pde.ui.EquinoxLauncher">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.EquinoxLauncher">
 <booleanAttribute key="append.args" value="true"/>
 <booleanAttribute key="automaticAdd" value="true"/>
 <booleanAttribute key="automaticValidate" value="false"/>
@@ -24,8 +25,8 @@
 <listEntry value="obr"/>
 </listAttribute>
 <mapAttribute key="org.ops4j.pax.cursor.provisionItems">
-<mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.uiclient.osgi/1.2.1-SNAPSHOT/deps" value="true@true@null@true"/>
 <mapEntry key="scan-bundle:mvn:org.universAAL.samples/smp.lighting.uiclient.osgi/1.2.1-SNAPSHOT" value="true@false@null@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.uiclient.osgi/1.2.1-SNAPSHOT/deps" value="true@true@null@true"/>
 </mapAttribute>
 <listAttribute key="org.ops4j.pax.cursor.runArguments">
 <listEntry value="--overwrite=false"/>
@@ -33,8 +34,8 @@
 <listEntry value="--overwriteSystemBundles=false"/>
 <listEntry value="--log=DEBUG"/>
 <listEntry value="--profiles=obr"/>
-<listEntry value="scan-bundle:mvn:org.universAAL.samples/smp.lighting.uiclient.osgi/1.2.1-SNAPSHOT@nostart@update"/>
 <listEntry value="scan-composite:mvn:org.universAAL.samples/smp.lighting.uiclient.osgi/1.2.1-SNAPSHOT/deps@update"/>
+<listEntry value="scan-bundle:mvn:org.universAAL.samples/smp.lighting.uiclient.osgi/1.2.1-SNAPSHOT@nostart@update"/>
 </listAttribute>
 <stringAttribute key="osgi_framework_id" value="--platform=felix --version=1.4.0"/>
 <stringAttribute key="pde.version" value="3.3"/>

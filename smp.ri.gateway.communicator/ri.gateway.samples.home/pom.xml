@@ -10,7 +10,7 @@
 	<packaging>bundle</packaging>
 	<groupId>org.universAAL.samples</groupId>
 	<artifactId>ri.gateway.samples.home</artifactId>
-	<name>AALSpace Gateway Communicator :: Home Node</name>
+	<name>universAAL Samples AALSpace Gateway Communicator :: Home Node</name>
 	<description>Home node using the AALSpace Gateway</description>
 
 	<dependencies>

@@ -14,12 +14,12 @@ public class TutorialActivator implements ModuleActivator {
     public void start(ModuleContext context) throws Exception {
 	OntologyManagement om = OntologyManagement.getInstance();
 	// For every general Ontology class included in your ontology bundle you must register it here
-	om.register(tutorialOntology);
+	om.register(context, tutorialOntology);
     }
 
-    public void stop(ModuleContext arg0) throws Exception {
+    public void stop(ModuleContext context) throws Exception {
 	// Unload the ontologies
 	OntologyManagement om = OntologyManagement.getInstance();
-	om.unregister(tutorialOntology);
+	om.unregister(context, tutorialOntology);
     }
 }

@@ -5,7 +5,7 @@
 	<artifactId>smp.mw.runner</artifactId>
 	<packaging>jar</packaging>
 	<version>1.3.2-SNAPSHOT</version>
-	<name>Run project for MW2.0 based OSGi</name>
+	<name>universAAL Samples Middleware Run project</name>
 	<build>
 		<plugins>
 			<plugin>

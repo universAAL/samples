@@ -11,7 +11,7 @@
 	<artifactId>smp.mw.broker.client</artifactId>
 	<packaging>bundle</packaging>
 	<version>1.3.2-SNAPSHOT</version>
-	<name>universAAL Middleware Broker Client (OSGi)</name>
+	<name>universAAL Samples Middleware Broker Client</name>
 	<description>Simple broker acting as a client</description>
 
 	<dependencies>
@@ -71,22 +71,7 @@
 						<Bundle-Description>${project.description}</Bundle-Description>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Provider>ISTI-CNR</Bundle-Provider>
-						<Import-Package>org.osgi.framework,
-							org.osgi.service.log,
-							org.universAAL.middleware.brokers,
-							org.universAAL.middleware.connectors.exception,
-							org.universAAL.middleware.container,
-							org.universAAL.middleware.container.osgi,
-							org.universAAL.middleware.interfaces,
-							org.universAAL.middleware.interfaces.aalspace,
-							org.universAAL.middleware.managers.api,
-							org.universAAL.middleware.modules,
-							org.universAAL.middleware.modules.listener,
-							org.universAAL.middleware.container.utils,
-							org.universAAL.middleware.connectors.util,
-							org.universAAL.middleware.brokers.message,
-							org.universAAL.middleware.brokers.message.aalspace,
-							org.json</Import-Package>
+						<Import-Package>org.osgi.framework;version="[1,2)",*</Import-Package>
 						<Bundle-Activator>org.universAAL.middleware.broker.client.osgi.Activator</Bundle-Activator>
 						<Private-Package />
 					</instructions>

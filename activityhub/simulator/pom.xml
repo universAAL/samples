@@ -12,7 +12,7 @@
   <artifactId>smp.activityhub.simulator</artifactId>
   <version>1.3.4-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>universAAL LDDI - Simulator of ActivityHub events (ISO 11073-10471)</name>
+  <name>universAAL Samples LDDI Simulator of ActivityHub events (ISO 11073-10471)</name>
   <description>Simulator of events coming from ActivityHub Sensors (ISO 11073-10471); The events are sent to the universAAL context bus using the ActivityHub Ontology.</description>
   <inceptionYear>2013</inceptionYear>
   <organization>

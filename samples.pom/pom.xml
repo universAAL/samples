@@ -28,7 +28,7 @@
     <module>../smp.location.publisher.gui</module>
     <module>../activityhub/client</module>
     <module>../activityhub/simulator</module>
-    <!-- <module>../smp.mw.broker.client</module> -->
+    <module>../smp.mw.broker.client</module>
     <module>../smp.mw.deploymanager.client</module>
     <module>../utils/smp.utils.server</module>
     <module>../utils/smp.utils.client</module>
