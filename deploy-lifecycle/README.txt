@@ -17,6 +17,13 @@ Moreover there is the schemas folder which should contains the official XSD ( Ve
 
 For more information please ask to ( Gema Ibaez Sanchez ) which is coordinating the integration effort
 
+------------
+* EXAMPLES *
+------------
+Example-A contains a uSrv with a single application that has a single part
+Example-B contains a uSrv with a single applciation that has a multiple part 
+Example-C contains a uSrv with a multiple applciation each of them with multiple parts and one of the parts should be installed on multiple peers
+
 -----------------------
 * CONTACT INFORMATION *
 -----------------------
@@ -24,7 +31,7 @@ Stefano Lenzi		stefano.lenzi@isti.cnr.it		kismet-sl
 Manlio Bacco		manlio.bacco@isti.cnr.it		manlio.bacco
 Gema Ibaez Sanchez	geibsan@itaca.upv.es			geibsan
 Shanshan Jiang		shanshan.jiang@sintef.no		shanshantrd2008
-Nicole Merkle		merkle@fzi.de
+Nicole Merkle		merkle@fzi.de				g00phy007
 Tom Zentek		zentek@fzi.de				tom.zentek
 Venelin Arnaudov	v.arnaudov@prosyst.com			venstar1
 
