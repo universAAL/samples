@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 	<!--
-		Author: 	Venelin Arnaudov v.arnaudov@prosyst.com
+		Author(s): 	Venelin Arnaudov v.arnaudov@prosyst.com
+					Stefano Lenzi stefano.lenzi@isti.cnr.it
+		
 		XML Schema describing the usrv descriptor
 	-->
 <xs:schema attributeFormDefault="unqualified" 

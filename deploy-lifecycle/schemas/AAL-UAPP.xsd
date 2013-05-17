@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 	<!--
-		Authors: Michele Girolami michele.girolami@isti.cnr.it, Francesco
-		Furfari furfari@isti.cnr.it, Filippo Palumbo palumbo.isti.cnr.it
-, 
+		Author(s):	Michele Girolami michele.girolami@isti.cnr.it
+					Francesco Furfari furfari@isti.cnr.it
+					Filippo Palumbo palumbo@isti.cnr.it
+					Stefano Lenzi stefano.lenzi@isti.cnr.it
 		Venelin Arnaudov v.arnaudov@prosyst.com
 	-->
 <xs:schema attributeFormDefault="unqualified" 
