@@ -11,7 +11,7 @@
 	<groupId>org.universAAL.ui</groupId>
 	<artifactId>ui.karaf.feature</artifactId>
 	<packaging>jar</packaging>
-	<version>1.3.2-SNAPSHOT</version>
+	<version>1.3.3-SNAPSHOT</version>
 	<name>universAAL UI</name>
 
 	<properties>

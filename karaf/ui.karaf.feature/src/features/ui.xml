@@ -2,9 +2,9 @@
 <features name="universAAL-1.3.2-S" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
 
 	<feature name="uAAL-UI" description="The UI FW based on the Middleware 2.0"
-		version="1.3.2-SNAPSHOT" resolver='(obr)'>
+		version="1.3.3-SNAPSHOT" resolver='(obr)'>
 
-		<!-- test <feature>mvn:org.universAAL.middleware/mw.karaf.feature.universAAL.osgi/1.3.2-SNAPSHOT/xml/features</feature>-->
+		<!-- test <feature>mvn:org.universAAL.middleware/mw.karaf.feature.universAAL.osgi/1.3.3-SNAPSHOT/xml/features</feature>-->
 		<feature>uAAL-MW</feature>
 
 		<!--Third party -->
@@ -35,52 +35,52 @@
 		<bundle>wrap:mvn:java3d/vecmath/1.3.1</bundle>
 		<!-- Ontologies -->
 		<!-- Platform -->
-		<bundle>mvn:org.universAAL.ontology/ont.phWorld/1.3.2-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.phWorld/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.profile/1.3.3-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.che/1.3.2-SNAPSHOT</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.impairment/1.3.2-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.che/1.3.3-SNAPSHOT</bundle>
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.impairment/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.furniture/1.3.2-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.furniture/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.health.measurement/1.3.2-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.health.measurement/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.health.disease/1.3.2-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.health.disease/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.profile.health/1.3.3-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile.health/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.device/1.3.2-SNAPSHOT</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.languages/1.3.2-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.device/1.3.3-SNAPSHOT</bundle>
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.languages/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.profile.ui.preferences/1.3.6-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile.ui.preferences/1.3.7-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.profile.userid/1.3.2-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile.userid/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.profile.ui.mainmenu/1.3.2-SNAPSHOT
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile.ui.mainmenu/1.3.3-SNAPSHOT
 		</bundle>
 
 		<!-- Context -->
-		<bundle>mvn:org.universAAL.context/ctxt.che/1.3.3-SNAPSHOT</bundle>
-		<!-- <bundle>mvn:org.universAAL.context/ctxt.che.mobile/1.3.2-SNAPSHOT@nostart</bundle>-->
-		<bundle>mvn:org.universAAL.context/ctxt.prof.server/1.3.2-SNAPSHOT
+		<bundle start-level='91' start='true'>mvn:org.universAAL.context/ctxt.che/1.3.3-SNAPSHOT</bundle>
+		<!-- <bundle>mvn:org.universAAL.context/ctxt.che.mobile/1.3.3-SNAPSHOT@nostart</bundle>-->
+		<bundle start-level='91' start='true'>mvn:org.universAAL.context/ctxt.prof.server/1.3.3-SNAPSHOT
 		</bundle>
 		<!-- Security -->
-		<bundle>mvn:org.universAAL.security/security.authorizator/1.3.2-SNAPSHOT
+		<bundle start-level='92' start='true'>mvn:org.universAAL.security/security.authorizator/1.3.3-SNAPSHOT
 		</bundle>
 		<!-- RI -->
-		<bundle>mvn:org.universAAL.remote/ri.servicegateway/1.3.2-SNAPSHOT
+		<bundle start-level='93' start='true'>mvn:org.universAAL.remote/ri.servicegateway/1.3.3-SNAPSHOT
 		</bundle>
 
 
 
 		<!-- UIFW -->
-		<bundle>mvn:org.universAAL.ui/ui.dm/1.3.4-SNAPSHOT</bundle>
+		<bundle start-level='95' start='true'>mvn:org.universAAL.ui/ui.dm/1.3.5-SNAPSHOT</bundle>
 		<!-- fragments like ui.handler.gui.swing.bluesteelLAF cannot be started 
 			so leaving them in resolved state is enough-->
-		<bundle start='false'>wrap:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/1.3.2-SNAPSHOT
+		<bundle start='false'>wrap:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.ui/ui.handler.gui.swing/1.3.2-SNAPSHOT
+		<bundle start-level='96' start='true'>mvn:org.universAAL.ui/ui.handler.gui.swing/1.3.3-SNAPSHOT
 		</bundle>
 
 
