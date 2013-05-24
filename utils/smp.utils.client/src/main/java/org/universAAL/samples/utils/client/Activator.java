@@ -27,7 +27,7 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
 import org.universAAL.middleware.service.DefaultServiceCaller;
 import org.universAAL.middleware.service.ServiceCaller;
-import org.universAAL.ontology.lighting.LightSource;
+import org.universAAL.ontology.device.LightController;
 
 public class Activator implements BundleActivator {
     // Declare constants
@@ -54,7 +54,7 @@ public class Activator implements BundleActivator {
 	// Register the UI Caller and add its button to Main Menu
 	ui = new UIExample(context, CLIENT_NAMESPACE, CLIENT_URL, CLIENT_APPNAME);
 	// Register the Context Subscriber to receive events about light brightness
-	subscriber = new SubscriberExample(context, LightSource.MY_URI, LightSource.PROP_SOURCE_BRIGHTNESS, null);
+	subscriber = new SubscriberExample(context, LightController.MY_URI, LightController.PROP_HAS_VALUE, null);
     }
 
     // Stop the wrapping to uAAL

@@ -23,7 +23,7 @@ package org.universAAL.samples.utils.client;
 
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.context.ContextEvent;
-import org.universAAL.ontology.lighting.LightSource;
+import org.universAAL.ontology.device.LightController;
 import org.universAAL.support.utils.context.mid.UtilSubscriber;
 
 // Context Subscriber uAAL wrapper
@@ -46,7 +46,7 @@ public class SubscriberExample extends UtilSubscriber{
 			event.getRDFObject());
 	// Display the event to user. DO NOT USE WITH SWING HANDLER YET-> COMMENT
 	Activator.ui.showMessage(event.getSubjectURI(),
-		((LightSource) event.getRDFSubject()).getLocation().toString(),
+		((LightController) event.getRDFSubject()).getLocation().toString(),
 		Integer.valueOf((Integer) event.getRDFObject()));
     }
     

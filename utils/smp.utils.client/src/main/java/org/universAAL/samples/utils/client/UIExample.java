@@ -25,8 +25,8 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.rdf.Resource;
 import org.universAAL.middleware.service.ServiceResponse;
 import org.universAAL.middleware.ui.UIResponse;
-import org.universAAL.ontology.lighting.LightSource;
-import org.universAAL.ontology.lighting.Lighting;
+import org.universAAL.ontology.device.LightController;
+import org.universAAL.ontology.phThing.DeviceService;
 import org.universAAL.ontology.profile.User;
 import org.universAAL.support.utils.service.Arg;
 import org.universAAL.support.utils.service.Path;
@@ -65,8 +65,8 @@ public class UIExample extends UtilUICaller{
     @Override
     public void executeStartUI(Resource user) {
 	// Call the GET LAMPS service
-	Request req=new Request(new Lighting());
-	req.put(Path.at(Lighting.PROP_CONTROLS), Arg.out(OUTPUT_LIST_OF_LAMPS));
+	Request req=new Request(new DeviceService());
+	req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.out(OUTPUT_LIST_OF_LAMPS));
 	ServiceResponse resp=Activator.caller.call(req);
 	Object[] lights= Request.recoverOutputs(resp, OUTPUT_LIST_OF_LAMPS);
 	
@@ -81,7 +81,7 @@ public class UIExample extends UtilUICaller{
 	Dialog d=new Dialog(sampleUser,Activator.CLIENT_APPNAME);
 	SelectOne one=new SelectOne(PROP_PATH_SELECTED_LAMP, "Lamps");
 	for(int i=0; i<lights.length;i++){
-	    one.addOption(((LightSource)lights[i]).getURI());
+	    one.addOption(((LightController)lights[i]).getURI());
 	}
 	d.add(one);
 	SelectRange range=new SelectRange(PROP_PATH_DIM,"Dimmer",0,100,50);
@@ -121,9 +121,9 @@ public class UIExample extends UtilUICaller{
 	    Integer val=Integer.valueOf(submit.contains(REF_ON)?100:0);
 	    String selected = (String) input.getUserInput(Path.at(PROP_PATH_SELECTED_LAMP).path);
 	    // Call TURN ON or TURN OFF
-	    Request req = new Request(new Lighting());
-	    req.put(Path.at(Lighting.PROP_CONTROLS), Arg.in(new LightSource(selected)));
-	    req.put(Path.at(Lighting.PROP_CONTROLS).to(LightSource.PROP_SOURCE_BRIGHTNESS),Arg.change(val));
+	    Request req = new Request(new DeviceService());
+	    req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(new LightController(selected)));
+	    req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE),Arg.change(val));
 	    Activator.caller.call(req);
 	}
 	if (submit.contains(REF_DIM)) {
@@ -131,19 +131,19 @@ public class UIExample extends UtilUICaller{
 	    Integer val=(Integer)input.getUserInput(Path.at(PROP_PATH_DIM).path);
 	    String selected = (String) input.getUserInput(Path.at(PROP_PATH_SELECTED_LAMP).path);
 	    // Call DIM
-	    Request req = new Request(new Lighting());
-	    req.put(Path.at(Lighting.PROP_CONTROLS), Arg.in(new LightSource(selected)));
-	    req.put(Path.at(Lighting.PROP_CONTROLS).to(LightSource.PROP_SOURCE_BRIGHTNESS),Arg.change(val));
+	    Request req = new Request(new DeviceService());
+	    req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(new LightController(selected)));
+	    req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE),Arg.change(val));
 	    Activator.caller.call(req);
 	}
 	if (submit.contains(REF_GET)) {
 	    // Get the status of the light selected in SelectOne
 	    String selected = (String) input.getUserInput(Path.at(PROP_PATH_SELECTED_LAMP).path);
 	    // Call GET LAMP INFO
-	    Request req = new Request(new Lighting());
-	    req.put(Path.at(Lighting.PROP_CONTROLS), Arg.in(new LightSource(selected)));
-	    req.put(Path.at(Lighting.PROP_CONTROLS).to(LightSource.PROP_SOURCE_BRIGHTNESS),Arg.out(OUTPUT_BR));
-	    req.put(Path.at(Lighting.PROP_CONTROLS).to(LightSource.PROP_PHYSICAL_LOCATION),Arg.out(OUTPUT_LOC));
+	    Request req = new Request(new DeviceService());
+	    req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(new LightController(selected)));
+	    req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE),Arg.out(OUTPUT_BR));
+	    req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_PHYSICAL_LOCATION),Arg.out(OUTPUT_LOC));
 	    ServiceResponse resp=Activator.caller.call(req);
 	    // Display pop up message with light status
 	    showMessage(selected, resp.getOutput(OUTPUT_LOC, true).get(0).toString(),
