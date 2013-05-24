@@ -31,10 +31,6 @@
       <artifactId>mw.data.serialization.osgi</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.universAAL.context</groupId>
-      <artifactId>ctxt.che</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.universAAL.ontology</groupId>
       <artifactId>ont.phWorld</artifactId>
     </dependency>
