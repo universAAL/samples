@@ -24,6 +24,7 @@ package org.universAAL.samples.utils.app;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.rdf.Resource;
 import org.universAAL.middleware.ui.UIResponse;
+import org.universAAL.ontology.device.StatusValue;
 import org.universAAL.ontology.profile.User;
 import org.universAAL.support.utils.ui.Forms;
 import org.universAAL.support.utils.ui.low.Dialog;
@@ -53,7 +54,7 @@ public class UIExample extends UtilUICaller{
 	}else{
 	    sampleUser=new User(user.getURI());
 	}
-	boolean status=Activator.heater.getStatus();
+	boolean status=Activator.heater.getValue().equals(StatusValue.Activated);
 	// Create Dialog
 	Dialog d=new Dialog(sampleUser,Activator.APP_NAME);
 	d.add(Forms.out("", "Control the status of the Heater"));
@@ -69,7 +70,7 @@ public class UIExample extends UtilUICaller{
     
     // Display a pop up message describing status
     public void showMessage(){
-	boolean status=Activator.heater.getStatus();
+	boolean status=Activator.heater.getValue().equals(StatusValue.Activated);
 	if(sampleUser!=null){
 	    Message m=new Message(sampleUser, Activator.APP_NAME, 
 		    "The Heater is now switched "+(status?"on":"off"));

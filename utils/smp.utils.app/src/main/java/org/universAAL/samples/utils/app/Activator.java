@@ -29,9 +29,10 @@ import org.universAAL.middleware.context.owl.ContextProviderType;
 import org.universAAL.middleware.rdf.TypeMapper;
 import org.universAAL.middleware.service.DefaultServiceCaller;
 import org.universAAL.middleware.service.ServiceCaller;
+import org.universAAL.ontology.device.HeaterActuator;
+import org.universAAL.ontology.device.StatusValue;
+import org.universAAL.ontology.device.TemperatureSensor;
 import org.universAAL.ontology.location.Location;
-import org.universAAL.ontology.weather.HeaterActuator;
-import org.universAAL.ontology.weather.TempSensor;
 import org.universAAL.support.utils.context.mid.UtilPublisher;
 
 public class Activator implements BundleActivator {
@@ -59,7 +60,7 @@ public class Activator implements BundleActivator {
     static{
 	heater=new HeaterActuator(HEATER_URI);
 	heater.setLocation(new Location(LOCATION_URI));
-	heater.setStatus(false);
+	heater.setValue(StatusValue.NotActivated);
     }
 
     // Start the wrapping to uAAL
@@ -72,7 +73,7 @@ public class Activator implements BundleActivator {
 	// Register the Context Publisher as controller and to send events
 	publisher = new UtilPublisher(context, PROVIDER_URI,
 		ContextProviderType.controller, HeaterActuator.MY_URI,
-		HeaterActuator.PROP_STATUS,
+		HeaterActuator.PROP_HAS_VALUE,
 		TypeMapper.getDatatypeURI(Boolean.class));
 	// Create a default Service Caller. Not used yet, though
 	caller = new DefaultServiceCaller(context);
@@ -81,8 +82,8 @@ public class Activator implements BundleActivator {
 	// Register the UI Caller and add its button to Main Menu
 	ui = new UIExample(context, APP_NAMESPACE, APP_URL, APP_NAME);
 	// Register the Context Subscriber to receive temperature events
-	subscriber = new SubscriberExample(context, TempSensor.MY_URI,
-		TempSensor.PROP_MEASURED_VALUE, null);
+	subscriber = new SubscriberExample(context, TemperatureSensor.MY_URI,
+		TemperatureSensor.PROP_HAS_VALUE, null);
     }
 
     // Stop the wrapping to uAAL

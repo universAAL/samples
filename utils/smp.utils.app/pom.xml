@@ -46,7 +46,7 @@
     </dependency>
     <dependency>
       <groupId>org.universAAL.ontology</groupId>
-      <artifactId>ont.weather</artifactId>
+      <artifactId>ont.device</artifactId>
     </dependency>
   </dependencies>
   <repositories>
