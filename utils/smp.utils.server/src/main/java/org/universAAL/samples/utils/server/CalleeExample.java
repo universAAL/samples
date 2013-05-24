@@ -30,9 +30,9 @@ import org.universAAL.middleware.service.ServiceCallee;
 import org.universAAL.middleware.service.ServiceResponse;
 import org.universAAL.middleware.service.owls.process.ProcessOutput;
 import org.universAAL.middleware.service.owls.profile.ServiceProfile;
-import org.universAAL.ontology.lighting.LightSource;
-import org.universAAL.ontology.lighting.Lighting;
+import org.universAAL.ontology.device.LightController;
 import org.universAAL.ontology.location.Location;
+import org.universAAL.ontology.phThing.DeviceService;
 import org.universAAL.support.utils.service.Arg;
 import org.universAAL.support.utils.service.Path;
 import org.universAAL.support.utils.service.low.Profile;
@@ -63,33 +63,33 @@ public class CalleeExample extends ServiceCallee{
 	ServiceProfile[] profiles = new ServiceProfile[5];
 	
 	// GET LAMPS profile: Output<lights>
-	Profile prof0=new Profile(new Lighting(SERVICE_GET_CONTROLLED_LAMPS));
-	prof0.put(Path.at(Lighting.PROP_CONTROLS), Arg.out(LightSource.MY_URI), OUTPUT_CONTROLLED_LAMPS);
+	Profile prof0=new Profile(new DeviceService(SERVICE_GET_CONTROLLED_LAMPS));
+	prof0.put(Path.at(DeviceService.PROP_CONTROLS), Arg.out(LightController.MY_URI), OUTPUT_CONTROLLED_LAMPS);
 	profiles[0]=prof0.getTheProfile();
 	
 	// GET LAMP INFO profile: Input<light:?> Output<Brightness> Output<Location>
-	Profile prof1=new Profile(new Lighting(SERVICE_GET_LAMP_INFO));
-	prof1.put(Path.at(Lighting.PROP_CONTROLS), Arg.in(LightSource.MY_URI), INPUT_LAMP_URI);
-	prof1.put(Path.at(Lighting.PROP_CONTROLS).to(LightSource.PROP_SOURCE_BRIGHTNESS), Arg.out(TypeMapper.getDatatypeURI(Integer.class)), OUTPUT_LAMP_BRIGHTNESS);
-	prof1.put(Path.at(Lighting.PROP_CONTROLS).to(LightSource.PROP_PHYSICAL_LOCATION), Arg.out(Location.MY_URI), OUTPUT_LAMP_LOCATION);
+	Profile prof1=new Profile(new DeviceService(SERVICE_GET_LAMP_INFO));
+	prof1.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(LightController.MY_URI), INPUT_LAMP_URI);
+	prof1.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE), Arg.out(TypeMapper.getDatatypeURI(Integer.class)), OUTPUT_LAMP_BRIGHTNESS);
+	prof1.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_PHYSICAL_LOCATION), Arg.out(Location.MY_URI), OUTPUT_LAMP_LOCATION);
 	profiles[1]=prof1.getTheProfile();
 	
 	// DIM LAMP profile: Input<light:?> Change<Brightness:?>
-	Profile prof2=new Profile(new Lighting(SERVICE_TURN_DIM));
-	prof2.put(Path.at(Lighting.PROP_CONTROLS), Arg.in(LightSource.MY_URI), INPUT_LAMP_URI);
-	prof2.put(Path.at(Lighting.PROP_CONTROLS).to(LightSource.PROP_SOURCE_BRIGHTNESS), Arg.change(TypeMapper.getDatatypeURI(Integer.class)), INPUT_BRIGHTNESS);
+	Profile prof2=new Profile(new DeviceService(SERVICE_TURN_DIM));
+	prof2.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(LightController.MY_URI), INPUT_LAMP_URI);
+	prof2.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE), Arg.change(TypeMapper.getDatatypeURI(Integer.class)), INPUT_BRIGHTNESS);
 	profiles[2]=prof2.getTheProfile();
 	
 	// TURN ON LAMP profile: Input<light:?> Change<Brightness:100>
-	Profile prof3=new Profile(new Lighting(SERVICE_TURN_ON));
-	prof3.put(Path.at(Lighting.PROP_CONTROLS), Arg.in(LightSource.MY_URI), INPUT_LAMP_URI);
-	prof3.put(Path.at(Lighting.PROP_CONTROLS).to(LightSource.PROP_SOURCE_BRIGHTNESS), Arg.change(Integer.valueOf(100)), null);
+	Profile prof3=new Profile(new DeviceService(SERVICE_TURN_ON));
+	prof3.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(LightController.MY_URI), INPUT_LAMP_URI);
+	prof3.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE), Arg.change(Integer.valueOf(100)), null);
 	profiles[3]=prof3.getTheProfile();
 	
 	// TURN OFF LAMP profile: Input<light:?> Change<Brightness:0>
-	Profile prof4=new Profile(new Lighting(SERVICE_TURN_OFF));
-	prof4.put(Path.at(Lighting.PROP_CONTROLS), Arg.in(LightSource.MY_URI), INPUT_LAMP_URI);
-	prof4.put(Path.at(Lighting.PROP_CONTROLS).to(LightSource.PROP_SOURCE_BRIGHTNESS), Arg.change(Integer.valueOf(0)), null);
+	Profile prof4=new Profile(new DeviceService(SERVICE_TURN_OFF));
+	prof4.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(LightController.MY_URI), INPUT_LAMP_URI);
+	prof4.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE), Arg.change(Integer.valueOf(0)), null);
 	profiles[4]=prof4.getTheProfile();
 
 	return profiles;
@@ -122,7 +122,7 @@ public class CalleeExample extends ServiceCallee{
 	if (operation.startsWith(SERVICE_GET_LAMP_INFO)){
 	    // Return brightness and location of light
 	    ServiceResponse sr = new ServiceResponse(CallStatus.succeeded);
-	    sr.addOutput(new ProcessOutput(OUTPUT_LAMP_BRIGHTNESS, Integer.valueOf(Activator.myLights.get(index).getBrightness())));
+	    sr.addOutput(new ProcessOutput(OUTPUT_LAMP_BRIGHTNESS, Integer.valueOf(Activator.myLights.get(index).getHasValue())));
 	    sr.addOutput(new ProcessOutput(OUTPUT_LAMP_LOCATION, Activator.myLights.get(index).getLocation()));
 	    return sr;
 	}
@@ -130,30 +130,30 @@ public class CalleeExample extends ServiceCallee{
 	if (operation.startsWith(SERVICE_TURN_DIM)) {
 	    // Set light to input brightness and send event (if new value)
 	    Integer bright = (Integer) call.getInputValue(INPUT_BRIGHTNESS);
-	    if (Activator.myLights.get(index).getBrightness() != bright) {
-		Activator.myLights.get(index).setBrightness(bright);
+	    if (Activator.myLights.get(index).getHasValue() != bright) {
+		Activator.myLights.get(index).setHasValue(bright);
 		Activator.publisher.publish(new ContextEvent(Activator.myLights
-			.get(index), LightSource.PROP_SOURCE_BRIGHTNESS));
+			.get(index), LightController.PROP_HAS_VALUE));
 	    }
 	    return new ServiceResponse(CallStatus.succeeded);
 	}
 
 	if (operation.startsWith(SERVICE_TURN_ON)) {
 	    // Set light to 100 brightness and send event (if not ON before)
-	    if (Activator.myLights.get(index).getBrightness() != 100) {
-		Activator.myLights.get(index).setBrightness(100);
+	    if (Activator.myLights.get(index).getHasValue() != 100) {
+		Activator.myLights.get(index).setHasValue(100);
 		Activator.publisher.publish(new ContextEvent(Activator.myLights
-			.get(index), LightSource.PROP_SOURCE_BRIGHTNESS));
+			.get(index), LightController.PROP_HAS_VALUE));
 	    }
 	    return new ServiceResponse(CallStatus.succeeded);
 	}
 	
 	if (operation.startsWith(SERVICE_TURN_OFF)) {
 	    // Set light to 0 brightness and send event (if not OFF before)
-	    if (Activator.myLights.get(index).getBrightness() != 0) {
-		Activator.myLights.get(index).setBrightness(0);
+	    if (Activator.myLights.get(index).getHasValue() != 0) {
+		Activator.myLights.get(index).setHasValue(0);
 		Activator.publisher.publish(new ContextEvent(Activator.myLights
-			.get(index), LightSource.PROP_SOURCE_BRIGHTNESS));
+			.get(index), LightController.PROP_HAS_VALUE));
 	    }
 	    return new ServiceResponse(CallStatus.succeeded);
 	}

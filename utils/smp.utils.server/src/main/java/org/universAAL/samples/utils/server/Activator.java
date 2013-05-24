@@ -29,8 +29,7 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
 import org.universAAL.middleware.context.owl.ContextProviderType;
 import org.universAAL.middleware.rdf.TypeMapper;
-import org.universAAL.ontology.lighting.ElectricLight;
-import org.universAAL.ontology.lighting.LightSource;
+import org.universAAL.ontology.device.LightController;
 import org.universAAL.ontology.location.indoor.Room;
 import org.universAAL.support.utils.context.mid.UtilPublisher;
 
@@ -47,15 +46,14 @@ public class Activator implements BundleActivator {
     protected static UtilPublisher publisher;
     protected static CalleeExample callee;
     // The lights the app controls. It uses the ontology model directly but it could be any imaginable model.
-    protected static ArrayList<LightSource> myLights=new ArrayList<LightSource>(4);
+    protected static ArrayList<LightController> myLights=new ArrayList<LightController>(4);
     
     // Initialize the lights the app controls.
     static {
 	for (int i = 0; i < 4; i++) {
-	    LightSource light = new LightSource(LIGHT_URI_PREFIX + i);
+	    LightController light = new LightController(LIGHT_URI_PREFIX + i);
 	    light.setLocation(new Room(LIGHT_LOC_PREFIX + i));
-	    light.setBrightness(0);
-	    light.setLightType(ElectricLight.lightBulb);
+	    light.setHasValue(0);
 	    myLights.add(light);
 	}
     }
@@ -70,8 +68,8 @@ public class Activator implements BundleActivator {
 	// Register the Context Publisher as controller and to send events about light brightness
 	publisher = new UtilPublisher(context, PROVIDER_URI,
 		ContextProviderType.controller, 
-		LightSource.MY_URI, 
-		LightSource.PROP_SOURCE_BRIGHTNESS,
+		LightController.MY_URI, 
+		LightController.PROP_HAS_VALUE,
 		TypeMapper.getDatatypeURI(Integer.class));
 	// Register the Service Callee. The provided services are defined therein.
 	callee = new CalleeExample(context);
