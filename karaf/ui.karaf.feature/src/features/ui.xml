@@ -71,7 +71,7 @@
 		
 		<bundle start-level='96' start='true'>mvn:org.universAAL.ui/ui.handler.gui.swing/1.3.3-SNAPSHOT
 		</bundle>
-		<bundle start-level='97' start='false'>mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/1.3.3-SNAPSHOT
+		<bundle start='false'>mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/1.3.3-SNAPSHOT
 		</bundle>
 
 
