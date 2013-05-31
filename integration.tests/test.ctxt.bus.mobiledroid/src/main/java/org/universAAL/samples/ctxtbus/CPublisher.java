@@ -114,7 +114,7 @@ public class CPublisher extends ContextPublisher {
 	sampleEvents[2] = new ContextEvent(f3, Furniture.PROP_PHYSICAL_LOCATION);
 	// 4 light is on
 	LightActuator ls4 = new LightActuator(URIROOT + "light6");
-	ls4.setHasValue(100);
+	ls4.setValue(100);
 	sampleEvents[3] = new ContextEvent(ls4,
 		LightActuator.PROP_HAS_VALUE);
 	// 5 socket at 50%
@@ -123,7 +123,7 @@ public class CPublisher extends ContextPublisher {
 	sampleEvents[4] = new ContextEvent(ss5, SwitchActuator.PROP_HAS_VALUE);
 	// 6 temperature measured
 	TemperatureSensor ts6 = new TemperatureSensor(URIROOT + "tempsensor8");
-	ts6.setHasValue(27.5f);
+	ts6.setValue(27.5f);
 	sampleEvents[5] = new ContextEvent(ts6, TemperatureSensor.PROP_HAS_VALUE);
 	// 7 window closed
 	WindowActuator w7 = new WindowActuator(URIROOT + "window9");
@@ -156,7 +156,7 @@ public class CPublisher extends ContextPublisher {
 	case 3:
 	    // 4 light is on
 	    LightActuator ls4 = new LightActuator(URIROOT + "light6");
-	    ls4.setHasValue(rand.nextInt(101));
+	    ls4.setValue(rand.nextInt(101));
 	    return new ContextEvent(ls4, LightActuator.PROP_HAS_VALUE);
 	case 4:
 	    // 7 socket at 50%
@@ -166,7 +166,7 @@ public class CPublisher extends ContextPublisher {
 	case 5:
 	    // 6 temperature measured
 	    TemperatureSensor ts6 = new TemperatureSensor(URIROOT + "tempsensor8");
-	    ts6.setHasValue(30 * rand.nextFloat());
+	    ts6.setValue(30 * rand.nextFloat());
 	    return new ContextEvent(ts6, TemperatureSensor.PROP_HAS_VALUE);
 	case 6:
 	    // 7 window closed

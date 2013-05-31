@@ -539,17 +539,17 @@ public class GUIPanel extends javax.swing.JFrame {
 	case 3:
 	    // 4 light is on
 	    LightController ls4 = new LightController(CPublisher.URIROOT + "light6");
-	    ls4.setHasValue(new Integer(100));
+	    ls4.setValue(new Integer(100));
 	    return new org.universAAL.ontology.che.ContextEvent(ls4, LightController.PROP_HAS_VALUE);
 	case 4:
 	    // 7 socket at 50%
 	    DimmerController ss5 = new DimmerController(CPublisher.URIROOT + "socket7");
-	    ss5.setHasValue(new Integer(100));
+	    ss5.setValue(new Integer(100));
 	    return new org.universAAL.ontology.che.ContextEvent(ss5, DimmerController.PROP_HAS_VALUE);
 	case 5:
 	    // 6 temperature measured
 	    TemperatureSensor ts6 = new TemperatureSensor(CPublisher.URIROOT + "tempsensor8");
-	    ts6.setHasValue(30);
+	    ts6.setValue(30);
 	    return new org.universAAL.ontology.che.ContextEvent(ts6, TemperatureSensor.PROP_HAS_VALUE);
 	case 6:
 	    // 7 window closed

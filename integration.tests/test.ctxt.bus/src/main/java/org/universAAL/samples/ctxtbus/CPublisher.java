@@ -118,16 +118,16 @@ public class CPublisher extends ContextPublisher {
 	sampleEvents[2] = new ContextEvent(f3, Furniture.PROP_PHYSICAL_LOCATION);
 	// 4 light is on
 	LightController ls4 = new LightController(URIROOT + "light6");
-	ls4.setHasValue(100);
+	ls4.setValue(100);
 	sampleEvents[3] = new ContextEvent(ls4,
 		LightController.PROP_HAS_VALUE);
 	// 5 socket at 50%
 	DimmerController ss5 = new DimmerController(URIROOT + "socket7");
-	ss5.setHasValue(50);
+	ss5.setValue(50);
 	sampleEvents[4] = new ContextEvent(ss5, DimmerController.PROP_HAS_VALUE);
 	// 6 temperature measured
 	TemperatureSensor ts6 = new TemperatureSensor(URIROOT + "tempsensor8");
-	ts6.setHasValue(27.5f);
+	ts6.setValue(27.5f);
 	sampleEvents[5] = new ContextEvent(ts6, TemperatureSensor.PROP_HAS_VALUE);
 	// 7 window closed
 	WindowController w7 = new WindowController(URIROOT + "window9");
@@ -160,17 +160,17 @@ public class CPublisher extends ContextPublisher {
 	case 3:
 	    // 4 light is on
 	    LightController ls4 = new LightController(URIROOT + "light6");
-	    ls4.setHasValue(new Integer(100));
+	    ls4.setValue(new Integer(100));
 	    return new ContextEvent(ls4, LightController.PROP_HAS_VALUE);
 	case 4:
 	    // 7 socket at 50%
 	    DimmerController ss5 = new DimmerController(URIROOT + "socket7");
-	    ss5.setHasValue(new Integer(100));
+	    ss5.setValue(new Integer(100));
 	    return new ContextEvent(ss5, DimmerController.PROP_HAS_VALUE);
 	case 5:
 	    // 6 temperature measured
 	    TemperatureSensor ts6 = new TemperatureSensor(URIROOT + "tempsensor8");
-	    ts6.setHasValue(30);
+	    ts6.setValue(30);
 	    return new ContextEvent(ts6, TemperatureSensor.PROP_HAS_VALUE);
 	case 6:
 	    // 7 window closed
