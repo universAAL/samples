@@ -37,6 +37,7 @@ import org.universAAL.middleware.service.ServiceRequest;
 import org.universAAL.middleware.service.ServiceResponse;
 import org.universAAL.middleware.service.owls.process.ProcessOutput;
 import org.universAAL.ontology.profile.AssistedPerson;
+import org.universAAL.ontology.profile.PersonalInformationSubprofile;
 import org.universAAL.ontology.profile.Profilable;
 import org.universAAL.ontology.profile.Profile;
 import org.universAAL.ontology.profile.SubProfile;
@@ -47,7 +48,7 @@ import org.universAAL.ontology.profile.service.ProfilingService;
 //import org.universAAL.samples.service.utils.Path;
 //import org.universAAL.samples.service.utils.low.SimpleRequest;
 //import org.universAAL.samples.service.utils.mid.SimpleEditor;
-import org.universaal.ontology.health.owl.HealthProfile;
+//import org.universaal.ontology.health.owl.HealthProfile;
 
 public class ProfileCaller {
     private static final String PROFILE_CLIENT_NAMESPACE = "http://ontology.itaca.es/ProfileClient.owl#";
@@ -151,16 +152,16 @@ public class ProfileCaller {
 		    break;
 		    
 		case 8:
-		    ret = getSubProfile(new HealthProfile(arg1));
+		    ret = getSubProfile(new PersonalInformationSubprofile(arg1));
 		    break;
 		case 9:
-		    ret = addSubProfile(new HealthProfile(arg1));
+		    ret = addSubProfile(new PersonalInformationSubprofile(arg1));
 		    break;
 		case 10:
-		    ret = changeSubProfile(new HealthProfile(arg1));
+		    ret = changeSubProfile(new PersonalInformationSubprofile(arg1));
 		    break;
 		case 11:
-		    ret = removeSubProfile(new HealthProfile(arg1));
+		    ret = removeSubProfile(new PersonalInformationSubprofile(arg1));
 		    break;
 		case 12:
 		    ret = getUsers();
@@ -178,10 +179,10 @@ public class ProfileCaller {
 		    ret = addProfile(new User(arg1),new UserProfile(arg2));
 		    break;
 		case 17:
-		    ret = addSubprofile(new User(arg1),new HealthProfile(arg2));
+		    ret = addSubprofile(new User(arg1),new PersonalInformationSubprofile(arg2));
 		    break;
 		case 18:
-		    ret = addSubprofile(new UserProfile(arg1),new HealthProfile(arg2));
+		    ret = addSubprofile(new UserProfile(arg1),new PersonalInformationSubprofile(arg2));
 		    break;
 //		case 17:
 //		    ret = changeProfile(new User(arg1),new UserProfile(arg2));
@@ -438,7 +439,7 @@ public class ProfileCaller {
 //	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.out(OUTPUT_GETSUBPROFILES));
 	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, user);
-	req.addTypeFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, HealthProfile.MY_URI);
+	req.addTypeFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, PersonalInformationSubprofile.MY_URI);
 	req.addRequiredOutput(OUTPUT_GETSUBPROFILES, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
 	ServiceResponse resp=caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {

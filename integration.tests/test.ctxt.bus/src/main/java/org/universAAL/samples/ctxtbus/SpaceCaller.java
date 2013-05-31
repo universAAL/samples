@@ -45,13 +45,11 @@ import org.universAAL.ontology.profile.HRSubProfile;
 import org.universAAL.ontology.profile.HWSubProfile;
 import org.universAAL.ontology.profile.OntologyEntry;
 import org.universAAL.ontology.profile.Profilable;
-import org.universAAL.ontology.profile.Profile;
 import org.universAAL.ontology.profile.service.ProfilingService;
 import org.universAAL.support.utils.service.Arg;
 import org.universAAL.support.utils.service.Path;
 import org.universAAL.support.utils.service.low.Request;
 import org.universAAL.support.utils.service.mid.UtilEditor;
-import org.universaal.ontology.health.owl.HealthProfile;
 
 public class SpaceCaller {
     public static final int _GET=0x000;
