@@ -91,7 +91,7 @@
       <name>Central Maven Repository</name>
       <url>http://repo1.maven.org/maven2</url>
     </repository>
-    <repository>
+    <!-- <repository>
       <releases>
         <enabled>false</enabled>
       </releases>
@@ -101,7 +101,7 @@
       <id>apache-snapshots</id>
       <name>Apache Snapshots</name>
       <url>http://people.apache.org/repo/m2-snapshot-repository</url>
-    </repository>
+    </repository>-->
     <repository>
       <snapshots>
         <enabled>false</enabled>
