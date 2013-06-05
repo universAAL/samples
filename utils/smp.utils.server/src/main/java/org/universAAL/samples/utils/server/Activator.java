@@ -53,7 +53,7 @@ public class Activator implements BundleActivator {
 	for (int i = 0; i < 4; i++) {
 	    LightController light = new LightController(LIGHT_URI_PREFIX + i);
 	    light.setLocation(new Room(LIGHT_LOC_PREFIX + i));
-	    light.setHasValue(0);
+	    light.setValue(0);
 	    myLights.add(light);
 	}
     }

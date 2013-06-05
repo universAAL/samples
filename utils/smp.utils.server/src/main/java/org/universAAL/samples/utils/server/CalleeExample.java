@@ -122,7 +122,7 @@ public class CalleeExample extends ServiceCallee{
 	if (operation.startsWith(SERVICE_GET_LAMP_INFO)){
 	    // Return brightness and location of light
 	    ServiceResponse sr = new ServiceResponse(CallStatus.succeeded);
-	    sr.addOutput(new ProcessOutput(OUTPUT_LAMP_BRIGHTNESS, Integer.valueOf(Activator.myLights.get(index).getHasValue())));
+	    sr.addOutput(new ProcessOutput(OUTPUT_LAMP_BRIGHTNESS, Integer.valueOf(Activator.myLights.get(index).getValue())));
 	    sr.addOutput(new ProcessOutput(OUTPUT_LAMP_LOCATION, Activator.myLights.get(index).getLocation()));
 	    return sr;
 	}
@@ -130,8 +130,8 @@ public class CalleeExample extends ServiceCallee{
 	if (operation.startsWith(SERVICE_TURN_DIM)) {
 	    // Set light to input brightness and send event (if new value)
 	    Integer bright = (Integer) call.getInputValue(INPUT_BRIGHTNESS);
-	    if (Activator.myLights.get(index).getHasValue() != bright) {
-		Activator.myLights.get(index).setHasValue(bright);
+	    if (Activator.myLights.get(index).getValue() != bright) {
+		Activator.myLights.get(index).setValue(bright);
 		Activator.publisher.publish(new ContextEvent(Activator.myLights
 			.get(index), LightController.PROP_HAS_VALUE));
 	    }
@@ -140,8 +140,8 @@ public class CalleeExample extends ServiceCallee{
 
 	if (operation.startsWith(SERVICE_TURN_ON)) {
 	    // Set light to 100 brightness and send event (if not ON before)
-	    if (Activator.myLights.get(index).getHasValue() != 100) {
-		Activator.myLights.get(index).setHasValue(100);
+	    if (Activator.myLights.get(index).getValue() != 100) {
+		Activator.myLights.get(index).setValue(100);
 		Activator.publisher.publish(new ContextEvent(Activator.myLights
 			.get(index), LightController.PROP_HAS_VALUE));
 	    }
@@ -150,8 +150,8 @@ public class CalleeExample extends ServiceCallee{
 	
 	if (operation.startsWith(SERVICE_TURN_OFF)) {
 	    // Set light to 0 brightness and send event (if not OFF before)
-	    if (Activator.myLights.get(index).getHasValue() != 0) {
-		Activator.myLights.get(index).setHasValue(0);
+	    if (Activator.myLights.get(index).getValue() != 0) {
+		Activator.myLights.get(index).setValue(0);
 		Activator.publisher.publish(new ContextEvent(Activator.myLights
 			.get(index), LightController.PROP_HAS_VALUE));
 	    }
