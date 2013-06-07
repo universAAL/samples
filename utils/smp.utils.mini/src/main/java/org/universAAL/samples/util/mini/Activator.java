@@ -72,7 +72,7 @@ public class Activator implements BundleActivator {
 	});
 	
 	// Send event [Subject: user1, Predicate: hasLocation, Object: loc1]
-	User user1 = new User(NAMESPACE + "user1");
+	User user1 = new User(Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX + "saied");
 	user1.setLocation(new Location(NAMESPACE + "loc1"));
 	ContextEvent e = new ContextEvent(user1, User.PROP_PHYSICAL_LOCATION);
 	u.sendC(e);
@@ -95,7 +95,7 @@ public class Activator implements BundleActivator {
 	System.out.println(">>> Received Service Response: "+ r.getCallStatus());
 	
 	// Request UI [Output: "Successfully reached UI test", Submit:"OK"]
-	Dialog d = new Dialog(new User(Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX + "saied"),"UI example");
+	Dialog d = new Dialog(user1,"UI example");
 	d.add(Forms.out("Result:", "Successfully reached UI test"));
 	d.addSubmit(Forms.submit(NAMESPACE + "button1", "OK"));
 	u.requestUI(d, new IUIListener() {
