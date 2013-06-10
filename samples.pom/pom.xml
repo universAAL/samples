@@ -35,6 +35,8 @@
     <module>../utils/smp.utils.app</module>
     <module>../utils/smp.utils.mini</module>
     <module>../karaf/mw.karaf.feature</module>
+    <module>../karaf/lddi.karaf.feature</module>
+    <module>../karaf/ui.karaf.feature</module>
     <module>../karaf/mw.karaf.feature.lighting-uAAL.osgi</module>
     <module>../karaf/mw.karaf.feature.ping-pong.osgi</module>
     <module>../smp.mw.runner</module>

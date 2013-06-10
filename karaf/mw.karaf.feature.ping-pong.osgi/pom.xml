@@ -8,7 +8,7 @@
     <version>1.3.3-SNAPSHOT</version>
     <relativePath>../../samples.pom/pom.xml</relativePath>
   </parent>
-  <groupId>org.universAAL.middleware</groupId>
+  <groupId>org.universAAL.samples</groupId>
   <artifactId>mw.karaf.feature.ping-pong.osgi</artifactId>
   <version>1.3.3-SNAPSHOT</version>
   <name>universAAL Samples Middleware Karaf Feature Ping-Pong</name>
