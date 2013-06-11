@@ -1,5 +1,21 @@
-/**
- * 
+/*
+	Copyright 2008-2014 Fraunhofer IGD, http://www.igd.fraunhofer.de
+	Fraunhofer Gesellschaft - Institut fuer Graphische Datenverarbeitung 
+	
+	See the NOTICE file distributed with this work for additional 
+	information regarding copyright ownership
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	  http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
  */
 package org.universAAL.samples.lighting.client_regular;
 
@@ -23,10 +39,6 @@ import org.universAAL.ontology.lighting.simple.LightingSimplified;
 import org.universAAL.ontology.phThing.Device;
 import org.universAAL.ontology.phThing.PhysicalThing;
 
-/**
- * @author amarinc
- * 
- */
 public class LightingConsumerLevel1 {
 
     private static ServiceCaller caller;
@@ -43,8 +55,6 @@ public class LightingConsumerLevel1 {
 	    + "brightness";
 
     LightingConsumerLevel1(ModuleContext context) {
-	// the DefaultServiceCaller will be used to make ServiceRequest
-	// (surprise ;-) )
 	caller = new DefaultServiceCaller(context);
     }
 
@@ -53,8 +63,6 @@ public class LightingConsumerLevel1 {
     // *****************************************************************
 
     public static List<LightSource> getControlledLamps() {
-	// The URI of service does no longer need to be provided. Now the
-	// service will be matched through required output.		
 	ServiceRequest getAllLampsRequest = new ServiceRequest(new Lighting(),
 		null);
 	getAllLampsRequest.addRequiredOutput(OUTPUT_LIST_OF_LAMPS,
@@ -69,8 +77,6 @@ public class LightingConsumerLevel1 {
     }
 
     public static Object[] getLampInfo(String lampURI) {
-	// The URI of service does no longer need to be provided. Now the
-	// service will be matched through the value filter and required output.	
 	ServiceRequest getLampInfo = new ServiceRequest(new Lighting(), null);
 	getLampInfo.addValueFilter(new String[] { Lighting.PROP_CONTROLS },
 		new LightSource(lampURI));
@@ -93,8 +99,6 @@ public class LightingConsumerLevel1 {
     }
 
     public static boolean turnOn(String lampURI) {
-	// The URI of service does no longer need to be provided. Now the
-	// service will be matched through the change effect and value filter.
 	ServiceRequest turnOnRequest = new ServiceRequest(new Lighting(), null);
 	turnOnRequest.addValueFilter(new String[] { Lighting.PROP_CONTROLS },
 		new LightSource(lampURI));
@@ -111,8 +115,6 @@ public class LightingConsumerLevel1 {
     }
 
     public static boolean turnOff(String lampURI) {
-	// The URI of service does no longer need to be provided. Now the
-	// service will be matched through the change effect and value filter.	
 	ServiceRequest turnOffRequest = new ServiceRequest(new Lighting(), null);
 	turnOffRequest.addValueFilter(new String[] { Lighting.PROP_CONTROLS },
 		new LightSource(lampURI));
@@ -129,8 +131,6 @@ public class LightingConsumerLevel1 {
     }
 
     public static boolean dimToValue(String lampURI, Integer percent) {
-	// The URI of service does no longer need to be provided. Now the
-	// service will be matched through the change effect and value filter.		
 	ServiceRequest dimRequest = new ServiceRequest(new Lighting(), null);
 	dimRequest.addValueFilter(new String[] { Lighting.PROP_CONTROLS },
 		new LightSource(lampURI));
@@ -147,8 +147,6 @@ public class LightingConsumerLevel1 {
     }
 
     public void communicationChannelBroken() {
-	// TODO Auto-generated method stub
-
     }
 
 }

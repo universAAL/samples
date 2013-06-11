@@ -33,11 +33,6 @@ import org.universAAL.middleware.service.owls.process.ProcessOutput;
 import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.lighting.simple.LightingServerURIs;
 
-/**
- * @author mtazari
- * @author mpsiuk
- * 
- */
 public class LightingProviderLevel1 extends ServiceCallee {
 
     // this is just to prepare a standard error message for later use
@@ -48,7 +43,6 @@ public class LightingProviderLevel1 extends ServiceCallee {
 		ServiceResponse.PROP_SERVICE_SPECIFIC_ERROR, "Invalid input!"));
     }
 
-    // the ontologified server
     private MyLightingOntologified ontologifiedServer;
 
     public LightingProviderLevel1(ModuleContext context) {
@@ -91,8 +85,7 @@ public class LightingProviderLevel1 extends ServiceCallee {
 	List al = new ArrayList(Arrays.asList(ontologifiedServer.getControlledLamps()));
 	// allow output even if not specified in service profile
 	sr.allowUnboundOutput();
-	// create and add a ProcessOutput-Event that binds the output URI to the
-	// created list of lamps
+
 	sr.addOutput(new ProcessOutput(
 		LightingServerURIs.GetControlledLamps.Output.CONTROLLED_LAMPS,
 		al));

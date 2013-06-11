@@ -32,12 +32,10 @@ import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.lighting.Lighting;
 import org.universAAL.ontology.location.Location;
 
-@UniversAALService(namespace = LightingInterfaceLevel1.namespace, name = "LightingService")
-@OntologyClasses(value = { Lighting.class })
-public interface LightingInterfaceLevel1 {
-
-    public final static String namespace = "http://ontology.igd.fhg.de/LightingServer.owl#";
-    
+@UniversAALService(namespace = "LightingNamespace", name = "LightingService")
+@OntologyClasses(value = { })
+public interface LightingInterface {
+	
     @ServiceOperation(value = "getControlledLamps")
     @Output(name = "controlledLamps", propertyPaths = { Lighting.PROP_CONTROLS })
     public LightSource[] getControlledLamps();
@@ -62,5 +60,4 @@ public interface LightingInterfaceLevel1 {
 	    value = "100", valueType = Integer.class)
     public void turnOn(
 	    @Input(name = "lampURI", propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
-    
 }

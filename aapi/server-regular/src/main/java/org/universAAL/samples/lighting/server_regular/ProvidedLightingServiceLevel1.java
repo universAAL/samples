@@ -1,24 +1,23 @@
-package org.universAAL.samples.lighting.server_regular;
-
 /*
- Copyright 2008-2010 Fraunhofer IGD, http://www.igd.fraunhofer.de
- Fraunhofer-Gesellschaft - Institute of Computer Graphics Research 
-
- See the NOTICE file distributed with this work for additional 
- information regarding copyright ownership
-
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
+	Copyright 2008-2010 Fraunhofer IGD, http://www.igd.fraunhofer.de
+	Fraunhofer-Gesellschaft - Institute of Computer Graphics Research 
+	
+	See the NOTICE file distributed with this work for additional 
+	information regarding copyright ownership
+	
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+	
+	  http://www.apache.org/licenses/LICENSE-2.0
+	
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
  */
+package org.universAAL.samples.lighting.server_regular;
 
 import java.util.Hashtable;
 
@@ -37,34 +36,11 @@ import org.universAAL.ontology.lighting.simple.LightingServerURIs;
 import org.universAAL.ontology.location.Location;
 import org.universAAL.ontology.phThing.PhysicalThing;
 
-/**
- * @author mtazari
- * 
- */
 public class ProvidedLightingServiceLevel1 extends Lighting {
 
-    // All the static Strings are used to unique identify special functions and
-    // objects
     public static final String LIGHTING_SERVER_NAMESPACE = "http://ontology.igd.fhg.de/LightingServer.owl#";
     public static final String MY_URI = LIGHTING_SERVER_NAMESPACE
 	    + "LightingService";
-
-//    static final String SERVICE_GET_CONTROLLED_LAMPS = LIGHTING_SERVER_NAMESPACE
-//	    + "getControlledLamps";
-//    static final String SERVICE_GET_LAMP_INFO = LIGHTING_SERVER_NAMESPACE
-//	    + "getLampInfo";
-//    static final String SERVICE_TURN_OFF = LIGHTING_SERVER_NAMESPACE
-//	    + "turnOff";
-//    static final String SERVICE_TURN_ON = LIGHTING_SERVER_NAMESPACE + "turnOn";
-//
-//    static final String INPUT_LAMP_URI = LIGHTING_SERVER_NAMESPACE + "lampURI";
-//
-//    static final String OUTPUT_CONTROLLED_LAMPS = LIGHTING_SERVER_NAMESPACE
-//	    + "controlledLamps";
-//    static final String OUTPUT_LAMP_BRIGHTNESS = LIGHTING_SERVER_NAMESPACE
-//	    + "brightness";
-//    static final String OUTPUT_LAMP_LOCATION = LIGHTING_SERVER_NAMESPACE
-//	    + "location";
 
     static final ServiceProfile[] profiles = new ServiceProfile[4];
     private static Hashtable serverLightingRestrictions = new Hashtable();
