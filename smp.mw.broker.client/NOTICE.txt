@@ -1,4 +1,4 @@
-SODAPOP OSGI Bundle
+Sample Broker Client
 
 Copyright 
 
