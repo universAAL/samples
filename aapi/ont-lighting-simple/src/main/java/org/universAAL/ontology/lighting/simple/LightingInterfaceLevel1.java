@@ -27,10 +27,10 @@ import org.universAAL.middleware.api.annotation.Output;
 import org.universAAL.middleware.api.annotation.Outputs;
 import org.universAAL.middleware.api.annotation.ServiceOperation;
 import org.universAAL.middleware.api.annotation.UniversAALService;
-import org.universAAL.middleware.rdf.Resource;
 import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.lighting.Lighting;
 import org.universAAL.ontology.location.Location;
+import org.universAAL.ontology.phThing.PhysicalThing;
 
 @UniversAALService(namespace = LightingInterfaceLevel1.namespace, name = "LightingService")
 @OntologyClasses(value = { Lighting.class })
@@ -47,7 +47,7 @@ public interface LightingInterfaceLevel1 {
 	    @Output(name = "brightness", filteringClass = Integer.class, propertyPaths = {
 		    Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS }),
 	    @Output(name = "location", filteringClass = Location.class, propertyPaths = {
-		    Lighting.PROP_CONTROLS, Resource.uAAL_VOCABULARY_NAMESPACE + "hasLocation" }) })
+		    Lighting.PROP_CONTROLS, PhysicalThing.PROP_PHYSICAL_LOCATION }) })
     public Object[] getLampInfo(
 	    @Input(name = "lampURI", propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
 
