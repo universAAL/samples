@@ -28,7 +28,6 @@ import org.universAAL.middleware.owl.SimpleOntology;
 import org.universAAL.middleware.rdf.Resource;
 import org.universAAL.middleware.rdf.ResourceFactory;
 import org.universAAL.middleware.rdf.TypeMapper;
-import org.universAAL.middleware.rdf.impl.ResourceFactoryImpl;
 import org.universAAL.middleware.service.owls.profile.ServiceProfile;
 import org.universAAL.ontology.lighting.ElectricLight;
 import org.universAAL.ontology.lighting.LightSource;
