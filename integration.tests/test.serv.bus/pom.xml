@@ -50,10 +50,6 @@
       <groupId>org.universAAL.ontology</groupId>
       <artifactId>ont.lighting</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.universAAL.ontology</groupId>
-      <artifactId>ont.powersocket</artifactId>
-    </dependency>
   </dependencies>
   <repositories>
     <repository>
