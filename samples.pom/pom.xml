@@ -47,6 +47,7 @@
     <module>../aapi/client-simple</module>
     <module>../smp.ri.gateway.communicator/ri.gateway.samples.android</module>
     <module>../smp.ri.gateway.communicator/ri.gateway.samples.home</module>
+	<module>../smp.ctxt.situation.reasoner.client</module>
   </modules>
   <scm>
     <connection>${svn.base}/samples/${project.artifactId}</connection>
