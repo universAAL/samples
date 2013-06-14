@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="universAAL-1.3.2-S" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+
+	<feature name="uAAL-ONT" description="The uAAL Ontologies based on the Middleware 2.0"
+		version="1.3.3-SNAPSHOT" resolver='(obr)'>
+
+		<!--Third party -->
+		<bundle>wrap:mvn:jp.go.ipa/jgcl/1.0</bundle>
+		
+	<!--  	<bundle>wrap:mvn:java3d/j3d-core/1.3.1</bundle> 
+		<bundle>wrap:mvn:java3d/vecmath/1.3.1</bundle> -->
+		
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.phWorld/1.3.3-SNAPSHOT
+		</bundle>
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.unit/1.3.3-SNAPSHOT
+		</bundle>
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.measurement/1.3.3-SNAPSHOT
+		</bundle>
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile/1.3.4-SNAPSHOT
+		</bundle>
+	</feature>
+</features>
