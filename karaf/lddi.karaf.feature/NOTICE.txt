@@ -1,4 +1,4 @@
-SODAPOP OSGI Bundle
+LDDI Karaf Feature
 
 Copyright 
 

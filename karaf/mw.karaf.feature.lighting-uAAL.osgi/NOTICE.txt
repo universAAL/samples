@@ -1,4 +1,4 @@
-SODAPOP OSGI Bundle
+Lighting Sample Karaf Feature
 
 Copyright 
 
