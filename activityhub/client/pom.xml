@@ -26,9 +26,9 @@
     </developer>
   </developers>
   <scm>
-    <connection>${svn.base}/samples/activityhub/client/${project.artifactId}</connection>
-    <developerConnection>${svn.base}/samples/activityhub/client/${project.artifactId}</developerConnection>
-    <url>${svn.base.url}samples/activityhub/client/${project.artifactId}</url>
+    <connection>${svn.base}/samples/activityhub/client</connection>
+    <developerConnection>${svn.base}/samples/activityhub/client</developerConnection>
+    <url>${svn.base.url}samples/activityhub/client</url>
   </scm>
   <dependencies>
     <dependency>

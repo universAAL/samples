@@ -19,13 +19,6 @@
     <name>Austrian Institute of Technology (AIT)</name>
     <url>http://www.ait.ac.at/</url>
   </organization>
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
   <developers>
     <developer>
       <id>foex</id>
@@ -38,9 +31,9 @@
     </developer>
   </developers>
   <scm>
-    <connection>${svn.base}/samples/activityhub/simulator/${project.artifactId}</connection>
-    <developerConnection>${svn.base}/samples/activityhub/simulator/${project.artifactId}</developerConnection>
-    <url>${svn.base.url}samples/activityhub/simulator/${project.artifactId}</url>
+    <connection>${svn.base}/samples/activityhub/simulator</connection>
+    <developerConnection>${svn.base}/samples/activityhub/simulator</developerConnection>
+    <url>${svn.base.url}samples/activityhub/simulator</url>
   </scm>
   <dependencies>
     <dependency>
