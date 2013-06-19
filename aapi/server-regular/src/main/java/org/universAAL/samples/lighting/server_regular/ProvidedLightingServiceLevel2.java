@@ -19,17 +19,14 @@
  */
 package org.universAAL.samples.lighting.server_regular;
 
-import java.util.Hashtable;
-
 import org.universAAL.middleware.owl.OntologyManagement;
 import org.universAAL.middleware.owl.SimpleOntology;
 import org.universAAL.middleware.rdf.Resource;
-import org.universAAL.middleware.rdf.impl.ResourceFactoryImpl;
+import org.universAAL.middleware.rdf.ResourceFactory;
 import org.universAAL.middleware.service.owls.profile.ServiceProfile;
 import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.lighting.Lighting;
 import org.universAAL.ontology.lighting.simple.LightingServerURIs;
-import org.universAAL.ontology.lighting.simple.LightingSimplified;
 
 /**
  * @author mtazari
@@ -45,8 +42,7 @@ public class ProvidedLightingServiceLevel2 extends Lighting {
 	// of the object
 	OntologyManagement.getInstance().register(Activator.mc,
 		new SimpleOntology(MY_URI, Lighting.MY_URI,
-			new ResourceFactoryImpl() {
-			    @Override
+			new ResourceFactory() {
 			    public Resource createInstance(String classURI,
 				    String instanceURI, int factoryIndex) {
 				return new ProvidedLightingServiceLevel2(

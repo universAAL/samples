@@ -26,8 +26,8 @@ import org.universAAL.middleware.owl.MergedRestriction;
 import org.universAAL.middleware.owl.OntologyManagement;
 import org.universAAL.middleware.owl.SimpleOntology;
 import org.universAAL.middleware.rdf.Resource;
+import org.universAAL.middleware.rdf.ResourceFactory;
 import org.universAAL.middleware.rdf.TypeMapper;
-import org.universAAL.middleware.rdf.impl.ResourceFactoryImpl;
 import org.universAAL.middleware.service.owls.profile.ServiceProfile;
 import org.universAAL.ontology.lighting.ElectricLight;
 import org.universAAL.ontology.lighting.LightSource;
@@ -75,8 +75,7 @@ public class LightingService1 extends Lighting {
 	// Lighting.MY_URI));
 	OntologyManagement.getInstance().register(Activator.mc,
 		new SimpleOntology(MY_URI, Lighting.MY_URI,
-			new ResourceFactoryImpl() {
-			    @Override
+			new ResourceFactory() {
 			    public Resource createInstance(final String classURI,
 				    final String instanceURI, final int factoryIndex) {
 				return new LightingService1(instanceURI);
