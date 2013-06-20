@@ -27,14 +27,14 @@
 </listAttribute>
 <mapAttribute key="org.ops4j.pax.cursor.provisionItems">
 <mapEntry key="mvn:org.universAAL.samples/smp.lighting.uiclient.osgi" value="true@true@6@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.context/ctxt.che/1.3.4-SNAPSHOT/composite" value="true@true@2@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.context/ctxt.prof.server/1.3.3-SNAPSHOT/composite" value="true@true@3@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.middleware/mw.composite/1.3.3-SNAPSHOT/composite" value="true@true@1@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.context/ctxt.che//composite" value="true@true@2@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.context/ctxt.prof.server//composite" value="true@true@3@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.middleware/mw.composite//composite" value="true@true@1@true"/>
 <mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//composite" value="true@true@5@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.security/security.authorizator/1.3.3-SNAPSHOT/composite" value="true@true@3@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.dm/1.3.5-SNAPSHOT/composite" value="true@true@3@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/1.3.3-SNAPSHOT/composite" value="true@true@5@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing/1.3.3-SNAPSHOT/composite" value="true@true@4@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.security/security.authorizator//composite" value="true@true@3@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.dm//composite" value="true@true@3@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF//composite" value="true@true@5@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing//composite" value="true@true@4@true"/>
 </mapAttribute>
 <listAttribute key="org.ops4j.pax.cursor.runArguments">
 <listEntry value="--overwrite=false"/>
@@ -42,13 +42,13 @@
 <listEntry value="--overwriteSystemBundles=false"/>
 <listEntry value="--log=DEBUG"/>
 <listEntry value="--profiles=obr"/>
-<listEntry value="scan-composite:mvn:org.universAAL.middleware/mw.composite/1.3.3-SNAPSHOT/composite@1@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.context/ctxt.che/1.3.4-SNAPSHOT/composite@2@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.context/ctxt.prof.server/1.3.3-SNAPSHOT/composite@3@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.security/security.authorizator/1.3.3-SNAPSHOT/composite@3@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.dm/1.3.5-SNAPSHOT/composite@3@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing/1.3.3-SNAPSHOT/composite@4@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/1.3.3-SNAPSHOT/composite@5@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.middleware/mw.composite//composite@1@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.context/ctxt.che//composite@2@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.context/ctxt.prof.server//composite@3@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.security/security.authorizator//composite@3@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.dm//composite@3@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing//composite@4@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF//composite@5@update"/>
 <listEntry value="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//composite@5@update"/>
 <listEntry value="mvn:org.universAAL.samples/smp.lighting.uiclient.osgi@6@update"/>
 </listAttribute>
