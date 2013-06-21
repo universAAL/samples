@@ -26,7 +26,7 @@ import java.util.List;
 
 import org.universAAL.middleware.owl.ManagedIndividual;
 import org.universAAL.ontology.phThing.Device;
-import org.universAAL.ontology.phThing.Sensor;
+import org.universAAL.ontology.device.Sensor;
 
 //If you are making a concept that does not inherit from any other you just 
 //extend ManagedIndividual. Otherwise you extend the concept class you inherit from

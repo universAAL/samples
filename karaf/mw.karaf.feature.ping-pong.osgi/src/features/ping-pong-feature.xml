@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
 	<feature name="Ping-pong" description="Ping Pong feature"
-		version="0.1" resolver='(obr)'>
+		version="2.0.0" resolver='(obr)'>
 		<feature>universAAL2.0</feature>
-		<bundle start-level='85' start='false'>mvn:org.universAAL.middleware/mw.broker.client/1.0.0-SNAPSHOT
+		<bundle start-level='85' start='false'>mvn:org.universAAL.middleware/mw.broker.client/2.0.0
 		</bundle>
-
 	</feature>
 </features>

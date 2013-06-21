@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<features name="universAAL-1.3.2-S" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+<features name="universAAL-2.0.0" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
 
 	<feature name="uAAL-LDDI" description="The LDDI FW based on the uAAL-MW"
-		version="1.3.2-SNAPSHOT" resolver='(obr)'>
+		version="2.0.0" resolver='(obr)'>
 
 
 		<!-- LDDI need uAAL-MW -->
@@ -53,52 +53,54 @@
 
 		<!-- Ontologies -->
 		<bundle>wrap:mvn:jp.go.ipa/jgcl/1.0</bundle>
-		<bundle>wrap:mvn:java3d/j3d-core/1.3.1</bundle>
-		<bundle>wrap:mvn:java3d/vecmath/1.3.1</bundle>
 
 		<!-- Databases -->
 		<!-- <bundle>wrap:mvn:mysql/mysql-connector-java/5.1.18</bundle> -->
 		<!-- <bundle>mvn:org.apache.derby/derby/10.7.1.1</bundle> -->
 
 		<!-- MW configs - delete from here?? -->
-		<!-- <bundle>wrap:mvn:org.universAAL.middleware/mw.managers.deploy.core.config/1.3.2-SNAPSHOT</bundle> -->
-		<!-- <bundle>wrap:mvn:org.universAAL.middleware/mw.modules.aalspace.core.config/1.3.2-SNAPSHOT</bundle> -->
-		<!-- <bundle>wrap:mvn:org.universAAL.middleware/mw.connectors.communication.jgroups.core.config/1.3.2-SNAPSHOT</bundle> -->
-		<!-- <bundle>wrap:mvn:org.universAAL.middleware/mw.connectors.discovery.slp.core.config/1.3.2-SNAPSHOT</bundle> -->
-		<!-- <bundle>wrap:mvn:org.universAAL.middleware/mw.managers.aalspace.core.config/1.3.2-SNAPSHOT</bundle> -->
+		<!-- <bundle>wrap:mvn:org.universAAL.middleware/mw.managers.deploy.core.config/2.0.0</bundle> -->
+		<!-- <bundle>wrap:mvn:org.universAAL.middleware/mw.modules.aalspace.core.config/2.0.0</bundle> -->
+		<!-- <bundle>wrap:mvn:org.universAAL.middleware/mw.connectors.communication.jgroups.core.config/2.0.0</bundle> -->
+		<!-- <bundle>wrap:mvn:org.universAAL.middleware/mw.connectors.discovery.slp.core.config/2.0.0</bundle> -->
+		<!-- <bundle>wrap:mvn:org.universAAL.middleware/mw.managers.aalspace.core.config/2.0.0</bundle> -->
 
 	
 		
-		<!-- <bundle>mvn:org.universAAL.middleware/mw.karaf.shell.universAAL.osgi/1.3.2-SNAPSHOT</bundle> -->
+		<!-- <bundle>mvn:org.universAAL.middleware/mw.karaf.shell.universAAL.osgi/2.0.0</bundle> -->
 		<!-- Ontologies -->
 		<!-- Platform -->
-		<bundle>mvn:org.universAAL.ontology/ont.phWorld/1.3.2-SNAPSHOT
+		<bundle>mvn:org.universAAL.ontology/ont.phWorld/2.0.0
 		</bundle>
-		<bundle>mvn:org.universAAL.ontology/ont.profile/1.3.3-SNAPSHOT
+		<bundle>mvn:org.universAAL.ontology/ont.profile/2.0.0
 		</bundle>
-		<!-- <bundle>mvn:org.universAAL.ontology/ont.che/1.3.2-SNAPSHOT</bundle> 
-			<bundle>mvn:org.universAAL.ontology/ont.impairment/1.3.2-SNAPSHOT</bundle> 
-			<bundle>mvn:org.universAAL.ontology/ont.profile.health/1.3.3-SNAPSHOT</bundle> 
-			<bundle>mvn:org.universAAL.ontology/ont.profile.ui.preferences/1.3.4-SNAPSHOT</bundle> 
-			<bundle>mvn:org.universAAL.ontology/ont.profile.userid/1.3.2-SNAPSHOT</bundle> 
-			<bundle>mvn:org.universAAL.ontology/ont.profile.ui.mainmenu/1.3.2-SNAPSHOT</bundle> -->
+		<!-- <bundle>mvn:org.universAAL.ontology/ont.che/2.0.0</bundle> 
+			<bundle>mvn:org.universAAL.ontology/ont.impairment/2.0.0</bundle> 
+			<bundle>mvn:org.universAAL.ontology/ont.profile.health/2.0.0</bundle> 
+			<bundle>mvn:org.universAAL.ontology/ont.profile.ui.preferences/2.0.0</bundle> 
+			<bundle>mvn:org.universAAL.ontology/ont.profile.userid/2.0.0</bundle> 
+			<bundle>mvn:org.universAAL.ontology/ont.profile.ui.mainmenu/2.0.0</bundle> -->
 		<!-- Context -->
-		<!-- <bundle>mvn:org.universAAL.context/ctxt.che/1.3.3-SNAPSHOT</bundle> --><!-- <bundle>mvn:org.universAAL.context/ctxt.che.mobile/1.3.2-SNAPSHOT@nostart</bundle> -->
-		<!-- <bundle>mvn:org.universAAL.context/ctxt.prof.server/1.3.2-SNAPSHOT</bundle> -->					<!-- Security -->
-		<!-- <bundle>mvn:org.universAAL.security/security.authorizator/1.3.2-SNAPSHOT</bundle> -->					<!-- RI -->
-		<!-- <bundle>mvn:org.universAAL.remote/ri.servicegateway/1.3.2-SNAPSHOT</bundle> -->
+		<!-- <bundle>mvn:org.universAAL.context/ctxt.che/2.0.0</bundle> -->
+		<!-- <bundle>mvn:org.universAAL.context/ctxt.che.mobile/2.0.0@nostart</bundle> -->
+		<!-- <bundle>mvn:org.universAAL.context/ctxt.prof.server/2.0.0</bundle> -->
+		<!-- Security -->
+		<!-- <bundle>mvn:org.universAAL.security/security.authorizator/2.0.0</bundle> -->
+		<!-- RI -->
+		<!-- <bundle>mvn:org.universAAL.remote/ri.servicegateway/2.0.0</bundle> -->
 
 		<!-- UIFW -->
-		<!-- <bundle>mvn:org.universAAL.samples/ui.preferences.test/1.3.2-SNAPSHOT</bundle> 
-			<bundle>mvn:org.universAAL.ui/ui.dm/1.3.3-SNAPSHOT</bundle> <bundle>wrap:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/1.3.2-SNAPSHOT</bundle> 
-			<bundle>mvn:org.universAAL.ui/ui.handler.gui.swing/1.3.2-SNAPSHOT</bundle> 
-			<bundle>mvn:org.universAAL.ui/ui.handler.web/1.3.2-SNAPSHOT</bundle> -->
+		<!-- <bundle>mvn:org.universAAL.samples/ui.preferences.test/2.0.0</bundle> 
+			<bundle>mvn:org.universAAL.ui/ui.dm/2.0.0</bundle>
+			<bundle>wrap:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF/2.0.0</bundle> 
+			<bundle>mvn:org.universAAL.ui/ui.handler.gui.swing/2.0.0</bundle> 
+			<bundle>mvn:org.universAAL.ui/ui.handler.web/2.0.0</bundle> -->
 
-		<!-- <bundle>mvn:org.universAAL.support.samples/smp.location.publisher.gui/1.3.2-SNAPSHOT</bundle> -->
+		<!-- <bundle>mvn:org.universAAL.support.samples/smp.location.publisher.gui/2.0.0</bundle> -->
 
 
 		<!-- LDDI -->
-		<bundle>mvn:org.universAAL.ontology/ont.device/1.3.2-SNAPSHOT</bundle>
+		<bundle>mvn:org.universAAL.ontology/ont.device/2.0.0</bundle>
 
 
 		<bundle>mvn:org.apache.felix/org.apache.felix.dependencymanager.lddi/3.0.0
@@ -120,13 +122,13 @@
 		<bundle>wrap:mvn:org.jdom/jdom/1.1.3</bundle>
 		<bundle>wrap:mvn:jaxen/jaxen/1.1.3</bundle>
 
-		<bundle>mvn:org.universAAL.lddi/lddi.knx.library/1.3.5-SNAPSHOT
+		<bundle>mvn:org.universAAL.lddi/lddi.knx.library/2.0.0
 		</bundle>
-		<bundle>mvn:org.universAAL.lddi/lddi.knx.networkdriver/1.3.5-SNAPSHOT
+		<bundle>mvn:org.universAAL.lddi/lddi.knx.networkdriver/2.0.0
 		</bundle>
-		<bundle start='false'>mvn:org.universAAL.lddi/lddi.knx.devicemanager/1.3.5-SNAPSHOT
+		<bundle start='false'>mvn:org.universAAL.lddi/lddi.knx.devicemanager/2.0.0
 		</bundle>
-		<bundle>mvn:org.universAAL.lddi/lddi.knx.exporter/1.3.5-SNAPSHOT
+		<bundle>mvn:org.universAAL.lddi/lddi.knx.exporter/2.0.0
 		</bundle>
 
 

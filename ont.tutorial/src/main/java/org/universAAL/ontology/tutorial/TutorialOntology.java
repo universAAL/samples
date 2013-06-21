@@ -31,7 +31,7 @@ import org.universAAL.middleware.rdf.TypeMapper;
 import org.universAAL.ontology.TutorialFactory;
 import org.universAAL.ontology.phThing.Device;
 import org.universAAL.ontology.phThing.PhThingOntology;
-import org.universAAL.ontology.phThing.Sensor;
+import org.universAAL.ontology.device.Sensor;
 
 //This is the main central class where you actually define the restrictions and
 //relations between your concepts. It�s like a representation of an OWL file.
