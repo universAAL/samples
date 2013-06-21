@@ -14,9 +14,9 @@
   <name>universAAL Samples AALSpace Gateway Communicator :: Home Node</name>
   <description>Home node using the AALSpace Gateway</description>
   <scm>
-    <connection>${svn.base}/samples/smp.ri.gateway.communicator/${project.artifactId}</connection>
-    <developerConnection>${svn.base}/samples/smp.ri.gateway.communicator/${project.artifactId}</developerConnection>
-    <url>${svn.base.url}samples/smp.ri.gateway.communicator/${project.artifactId}</url>
+    <connection>scm:svn:http://forge.universaal.org/svn/support/trunk/samples/smp.ri.gateway.communicator/${project.artifactId}</connection>
+    <developerConnection>scm:svn:http://forge.universaal.org/svn/support/trunk/samples/smp.ri.gateway.communicator/${project.artifactId}</developerConnection>
+    <url>http://forge.universaal.org/gf/project/support/scmsvn/?path=%2Ftrunk%2Fsamples/smp.ri.gateway.communicator/${project.artifactId}</url>
   </scm>
   <dependencies>
     <dependency>
