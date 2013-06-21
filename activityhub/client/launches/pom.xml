@@ -5,19 +5,19 @@
 	<parent>
 		<groupId>org.universAAL.support</groupId>
 		<artifactId>support.pom</artifactId>
-		<version>2.0.0</version>
+		<version>2.0.1-SNAPSHOT</version>
 	</parent>
 	
 	<groupId>org.universAAL.runners</groupId>
 	<artifactId>lddi.smp.activityhub.client</artifactId>
 	<packaging>jar</packaging>
-	<version>2.0.0</version>
+	<version>2.0.1-SNAPSHOT</version>
 	<name>universAAL Samples Runner Folder Activity Hub Client</name>
 	<description>PaxRunner configuration for lddi.smp.activityhub.client artifact</description>
 
 	<properties>
-		<mw.release.version>2.0.0</mw.release.version>
-		<lddi.snapshot.version>2.0.0</lddi.snapshot.version>
+		<mw.release.version>2.0.1-SNAPSHOT</mw.release.version>
+		<lddi.snapshot.version>2.0.1-SNAPSHOT</lddi.snapshot.version>
 	</properties>
 	
 	<build>
@@ -30,29 +30,29 @@
 					<args>pax.configuration</args>
 					<provision>
 						<!-- MW -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.middleware/mw.composite/2.0.0/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.middleware/mw.composite/2.0.1-SNAPSHOT/composite</provision> -->
 						<!-- Ontologies -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.ontology/ont.composite/2.0.0/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.ontology/ont.composite/2.0.1-SNAPSHOT/composite</provision> -->
 						<!-- Platform -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che/2.0.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che.mobile/2.0.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.dm/2.0.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.dm.mobile/2.0.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui/2.0.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.handler.web/2.0.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing/2.0.0/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che/2.0.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.context/ctxt.che.mobile/2.0.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.dm/2.0.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.dm.mobile/2.0.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui/2.0.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.handler.web/2.0.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing/2.0.1-SNAPSHOT/composite</provision> -->
 
 						<!-- Services -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.lighting.server/2.0.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.lighting.client/2.0.0/composite</provision> -->
-							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.heating/2.0.0/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.lighting.server/2.0.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.lighting.client/2.0.1-SNAPSHOT/composite</provision> -->
+							<!-- <provision>scan-composite:mvn:org.universAAL.samples/smp.heating/2.0.1-SNAPSHOT/composite</provision> -->
 						<!-- Whatever you want, like: -->
 							<!-- <provision>{opt:wrap}:mvn:{groupId}/{artifactId}/{version}@{opt:#level | nostart | noupdate}</provision> -->
 							
    							 <provision>scan-composite:file:../target/artifact.composite</provision>
 
-							<!-- <provision>scan-bundle:mvn:org.universAAL.ontology/ont.profile/2.0.0</provision> -->
-							<!-- <provision>scan-bundle:mvn:org.universAAL.ontology/org.universAAL.ontology.x73/2.0.0</provision> -->
+							<!-- <provision>scan-bundle:mvn:org.universAAL.ontology/ont.profile/2.0.1-SNAPSHOT</provision> -->
+							<!-- <provision>scan-bundle:mvn:org.universAAL.ontology/org.universAAL.ontology.x73/2.0.1-SNAPSHOT</provision> -->
 
 						<!-- config from composite; changed versions of mw-bundles as in my lddi testing frameworks -->
 <!--   							<provision>scan-bundle:wrap:mvn:org.bouncycastle/jce.jdk13/144</provision>
@@ -85,7 +85,7 @@
 							<provision>scan-bundle:wrap:mvn:org.osgi/osgi_R4_compendium/1.0</provision>
 
 							<provision>scan-bundle:mvn:org.universAAL.lddi/iso11073.library/${lddi.snapshot.version}@nostart</provision>
-							<provision>scan-bundle:mvn:org.universAAL.ontology/ont.activityhub/2.0.0</provision>
+							<provision>scan-bundle:mvn:org.universAAL.ontology/ont.activityhub/2.0.1-SNAPSHOT</provision>
 							<provision>scan-bundle:mvn:org.universAAL.lddi/smp.activityhub.client/${lddi.snapshot.version}</provision>
 
  							<provision>scan-bundle:wrap:mvn:javax.servlet/servlet-api/2.5</provision>

@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.universAAL.support</groupId>
 		<artifactId>support.pom</artifactId>
-		<version>2.0.0</version>
+		<version>2.0.1-SNAPSHOT</version>
 	</parent>
 	
 	<groupId>org.universAAL.runners</groupId>
 	<artifactId>lddi.hw.simulator.activityhub</artifactId>
 	<packaging>jar</packaging>
-	<version>2.0.0</version>
+	<version>2.0.1-SNAPSHOT</version>
 	<name>Runner Folder</name>
 	<description>PaxRunner configuration for lddi.hw.simulator.activityhub artifact</description>
 
