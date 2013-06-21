@@ -12,7 +12,7 @@
   <artifactId>smp.ctxt.situation.reasoner.client</artifactId>
   <version>1.3.4-SNAPSHOT</version>
   <packaging>bundle</packaging>
-  <name>universAAL Context Situation Reasoner Test Client</name>
+  <name>universAAL Samples Context Situation Reasoner Test Client</name>
   <description>A client for testing the universAAL reasoner</description>
   <properties>
     <remoteOBR></remoteOBR>
