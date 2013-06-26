@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <features name="universAAL-2.0.0" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
 
-	<feature name="uAAL-LDDI" description="The LDDI FW based on the uAAL-MW"
+	<feature start-level="90" name="uAAL-LDDI" description="The LDDI FW based on the uAAL-MW"
 		version="2.0.0" resolver='(obr)'>
 
 
@@ -14,11 +14,10 @@
 		<!--provision>mvn:org.osgi/org.osgi.compendium/4.3.1</provision -->
 		<bundle>wrap:mvn:org.osgi/osgi_R4_compendium/1.0</bundle>
 
-		<bundle>mvn:org.apache.felix/org.apache.felix.gogo.runtime/0.10.0
-		</bundle>
+		<!-- <bundle>mvn:org.apache.felix/org.apache.felix.gogo.runtime/0.10.0</bundle> -->
 
 		<!-- Pax runner -->
-		<bundle>mvn:org.ops4j.pax.logging/pax-logging-api/1.6.3</bundle>
+<!-- 		<bundle>mvn:org.ops4j.pax.logging/pax-logging-api/1.6.3</bundle>
 		<bundle>mvn:org.ops4j.pax.logging/pax-logging-service/1.6.3</bundle>
 		<bundle>mvn:org.apache.felix/org.osgi.compendium/1.4.0</bundle>
 
@@ -31,7 +30,7 @@
 		</bundle>
 		<bundle>mvn:org.apache.felix/org.apache.felix.bundlerepository/1.4.2
 		</bundle>
-
+ -->
 		<!-- changes order of bundles until here to make LDDI-KNX logging work 
 			again on console! -->
 
@@ -108,6 +107,8 @@
 		<bundle>mvn:org.apache.felix/org.apache.felix.devicemanager/0.9.0-SNAPSHOT
 		</bundle>
 
+		<bundle>wrap:mvn:at.ac.tuwien.auto/calimero/2.0a4</bundle>
+
 		<bundle>wrap:mvn:javax.servlet/servlet-api/2.5</bundle>
 		<bundle>mvn:org.mortbay.jetty/jetty-util/6.1.24</bundle>
 		<bundle>mvn:org.mortbay.jetty/servlet-api/2.5-20081211</bundle>
@@ -122,13 +123,13 @@
 		<bundle>wrap:mvn:org.jdom/jdom/1.1.3</bundle>
 		<bundle>wrap:mvn:jaxen/jaxen/1.1.3</bundle>
 
-		<bundle>mvn:org.universAAL.lddi/lddi.knx.library/2.0.0
+		<bundle>mvn:org.universAAL.lddi/lddi.knx.library/2.0.1-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.lddi/lddi.knx.networkdriver/2.0.0
+		<bundle>mvn:org.universAAL.lddi/lddi.knx.networkdriver/2.0.1-SNAPSHOT
 		</bundle>
-		<bundle start='false'>mvn:org.universAAL.lddi/lddi.knx.devicemanager/2.0.0
+		<bundle start-level='93'>mvn:org.universAAL.lddi/lddi.knx.devicemanager/2.0.1-SNAPSHOT
 		</bundle>
-		<bundle>mvn:org.universAAL.lddi/lddi.knx.exporter/2.0.0
+		<bundle start-level='92'>mvn:org.universAAL.lddi/lddi.knx.exporter/2.0.1-SNAPSHOT
 		</bundle>
 
 

@@ -1,18 +1,10 @@
-This file should be removed in the future:
+Configuration files are needed for knx.devicemanager and knx.networkdriver:
+- etc/lddi.knx.devicemanager.cfg
+- etc/lddi.knx.networkdriver.cfg
 
-1) install this bundle
-2)run Karaf
-3)add and install the MW2.0 featue: 
+You need a KNX project file to import (specified in the first cfg file above) in etc/uAAL/lddi folder.
 
---> features:addurl mvn:org.universAAL.middleware/mw.karaf.feature.universAAL.osgi/1.3.2-SNAPSHOT/xml/features
---> features:install universAA2.0
-
-4)Add the LDDI feature:
-
---> features:addurl mvn:org.universAAL.lddi/lddi.karaf.feature/1.3.2-SNAPSHOT/xml/features
---> features:install UI
-
-
-
-Soon an official guide. Now you can check http://forge.universaal.org/wiki/middleware:MW2.0_Building_Block#Run_the_MW2.0
-
+See documentation of knx components here: 
+http://forge.universaal.org/wiki/lddi:KNX_Integration
+http://forge.universaal.org/wiki/lddi:KNX_Networkdriver
+http://forge.universaal.org/wiki/lddi:KNX_Devicemanager
