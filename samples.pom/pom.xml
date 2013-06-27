@@ -50,6 +50,8 @@
     <module>../smp.ri.gateway.communicator/ri.gateway.samples.home</module>
     <module>../smp.ctxt.situation.reasoner.client</module>
 	<module>../lddi.bluetooth/weighingScalePublisher</module>
+	<module>../lddi.bluetooth/continuaManager/unix</module>
+	<module>../lddi.bluetooth/continuaManager/windows</module>
   </modules>
   <scm>
     <connection>${svn.base}/samples/${project.artifactId}</connection>
