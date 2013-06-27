@@ -17,7 +17,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
  */
-package org.universAAL.continua.weighingscale.publisher;
+package org.universAAL.lddi.weighingscale.publisher;
 /**
  *  Interface that should be necessary implemented by the HDP manager in order to attend "connection", 
  *	"disconnection" and "received data" agents (Continua sources) events

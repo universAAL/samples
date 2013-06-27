@@ -27,7 +27,7 @@
  */
 
 // Package
-package org.universAAL.continua.manager.publisher;
+package org.universAAL.lddi.manager.publisher;
 
 // Imports
 import org.osgi.framework.BundleContext;

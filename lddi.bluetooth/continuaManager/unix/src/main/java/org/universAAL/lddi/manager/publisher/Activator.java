@@ -27,7 +27,7 @@
  */
 
 // Package
-package org.universAAL.continua.manager.publisher;
+package org.universAAL.lddi.manager.publisher;
 
 // Imports
 import java.awt.event.WindowAdapter;
@@ -36,7 +36,7 @@ import javax.swing.JDialog;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
-import org.universAAL.continua.manager.gui.GUI;;
+import org.universAAL.lddi.manager.gui.GUI;;
 
 // Main class
 public class Activator implements BundleActivator {

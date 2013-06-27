@@ -30,7 +30,7 @@
  */
 
 // Package
-package org.universAAL.continua.manager.publisher;
+package org.universAAL.lddi.manager.publisher;
 
 //Imports
 import manager.Manager;
@@ -39,7 +39,7 @@ import manager.apdu.APDUProcessor;
 import measurements.Measurement;
 import x73.p20601.fsm.StateMachine20601;
 import events.EventIEEEManager;
-import org.universAAL.continua.manager.gui.GUI;
+import org.universAAL.lddi.manager.gui.GUI;
 
 // Class
 public class hdpManager implements hdpManagerListener {

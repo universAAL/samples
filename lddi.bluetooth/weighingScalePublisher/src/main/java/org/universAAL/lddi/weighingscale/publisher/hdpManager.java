@@ -29,7 +29,7 @@
 
  */
 
-package org.universAAL.continua.weighingscale.publisher;
+package org.universAAL.lddi.weighingscale.publisher;
 
 import manager.Manager;
 import manager.apdu.APDUGenerator;

@@ -30,12 +30,12 @@
  */
 
 // Package
-package org.universAAL.continua.manager.publisher;
+package org.universAAL.lddi.manager.publisher;
 
 //Imports
 import java.math.BigDecimal;
 
-import org.universAAL.continua.manager.gui.GUI;
+import org.universAAL.lddi.manager.gui.GUI;
 
 // Class
 public class hdpManager implements hdpManagerListener {

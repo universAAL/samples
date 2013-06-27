@@ -17,7 +17,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
  */
-package org.universAAL.continua.weighingscale.publisher;
+package org.universAAL.lddi.weighingscale.publisher;
 /**
  * x073 Continua agent publisher (agent events will be published over uAAL bus)
  * 
@@ -32,14 +32,12 @@ package org.universAAL.continua.weighingscale.publisher;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
-import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.middleware.context.ContextEventPattern;
 import org.universAAL.middleware.context.ContextPublisher;
 import org.universAAL.middleware.context.DefaultContextPublisher;
 import org.universAAL.middleware.context.owl.ContextProvider;
 import org.universAAL.middleware.context.owl.ContextProviderType;
-import org.universAAL.ontology.x73.MDS;
-import org.universAAL.ontology.x73.WeighingScale;
+
 
 // Main class
 public class Publisher {

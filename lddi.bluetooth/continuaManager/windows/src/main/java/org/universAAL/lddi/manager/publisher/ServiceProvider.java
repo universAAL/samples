@@ -27,10 +27,10 @@
  */
 
 // Package
-package org.universAAL.continua.manager.publisher;
+package org.universAAL.lddi.manager.publisher;
 
 // Imports
-import org.universAAL.continua.manager.gui.GUI;
+import org.universAAL.lddi.manager.gui.GUI;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.service.CallStatus;
 import org.universAAL.middleware.service.ServiceCall;
