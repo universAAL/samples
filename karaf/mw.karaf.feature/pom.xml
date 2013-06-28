@@ -13,23 +13,12 @@
   <version>2.0.1-SNAPSHOT</version>
   <name>universAAL Karaf Feature Middleware</name>
   <properties>
+    <mw.version>${project.version}</mw.version>
     <felix-version>2.0.1</felix-version>
     <commons-codec-version>1.4</commons-codec-version>
     <commons-beanutils-version>1.8.3</commons-beanutils-version>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>commons-beanutils</groupId>
-      <artifactId>commons-beanutils-core</artifactId>
-      <version>${commons-beanutils-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-codec</groupId>
-      <artifactId>commons-codec</artifactId>
-      <version>${commons-codec-version}</version>
-    </dependency>
-  </dependencies>
   <build>
     <plugins>
       <plugin>
@@ -66,7 +55,7 @@
             <configuration>
               <artifacts>
                 <artifact>
-                  <file>src/features/mw.xml</file>
+                  <file>target/features/mw.xml</file>
                   <type>xml</type>
                   <classifier>features</classifier>
                 </artifact>
