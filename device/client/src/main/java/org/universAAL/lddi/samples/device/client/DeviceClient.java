@@ -20,7 +20,7 @@ import javax.swing.WindowConstants;
 import org.universAAL.ontology.phThing.Device;
 
 /**
- * This is the connector class to the uAAL related ontology classes, mainly MyActivityHubServiceConsumer.java
+ * This is the connector class to the uAAL related ontology classes, mainly DeviceContextListener.java
  * This class knows nothing about Ontologies!
  * It could be part of a Java application.
  * Here, it is a single class application with a simple GUI.
@@ -33,12 +33,12 @@ public class DeviceClient extends javax.swing.JPanel {
 
 	private static final long serialVersionUID = 885696167607678920L;
 
-	/** 
-	 * key is the instanceURI of the device, from the ontology, but is just a String
-	 * value is an ActivityHubSensor object from the iso11073 library; not from the ontology model!
-	 */
-	private Map<String,Device> devices = new LinkedHashMap<String,Device>();
-	
+//	/** 
+//	 * key is the instanceURI of the device, from the ontology, but is just a String
+//	 * value is an ActivityHubSensor object from the iso11073 library; not from the ontology model!
+//	 */
+//	private Map<String,Device> devices = new LinkedHashMap<String,Device>();
+//	
 	private Activator myParent;
 	private static JFrame frame;
 	private static ListModel jListModel = new DefaultComboBoxModel(new Object[] { "Init..." });
@@ -89,7 +89,7 @@ public class DeviceClient extends javax.swing.JPanel {
 		frame.setSize(1000, 800);
 		frame.setVisible(true);
 		frame.getContentPane().setLayout(null);
-		frame.setTitle("ActivityHub Client Example");
+		frame.setTitle("Device Client Example");
 		initComponents();
 		frame.setEnabled(true);
 	}
@@ -214,14 +214,14 @@ public class DeviceClient extends javax.swing.JPanel {
 //				" deviceId: " + ahs.getDeviceId());
 //	}
 
-	/**
-	 * just display the sensors that are already in the datastore this.activityHubSensors
-	 * in the first list on the GUI
-	 * Should be called after all sensors are stored through multiple calls of addActivityHubSensor
-	 */
-	public void showSensorList() {
-		jList1.setListData(this.devices.keySet().toArray());
-	}
+//	/**
+//	 * just display the sensors that are already in the datastore this.activityHubSensors
+//	 * in the first list on the GUI
+//	 * Should be called after all sensors are stored through multiple calls of addActivityHubSensor
+//	 */
+//	public void showSensorList() {
+//		jList1.setListData(this.devices.keySet().toArray());
+//	}
 
 	
 	/**
