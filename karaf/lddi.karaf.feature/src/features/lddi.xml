@@ -2,7 +2,7 @@
 <features name="universAAL-2.0.0" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
 
 	<feature start-level="90" name="uAAL-LDDI" description="The LDDI FW based on the uAAL-MW"
-		version="2.0.0" resolver='(obr)'>
+		version="2.0.1-SNAPSHOT" resolver='(obr)'>
 
 
 		<!-- LDDI need uAAL-MW -->
