@@ -66,7 +66,7 @@
             <configuration>
               <artifacts>
                 <artifact>
-                  <file>src/features/lddi.xml</file>
+                  <file>src/features/lddi.knx.xml</file>
                   <type>xml</type>
                   <classifier>features</classifier>
                 </artifact>
