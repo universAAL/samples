@@ -5,7 +5,8 @@
 		description="The universAAL runtime based on the Middleware 2.0"
 		version="${mw.version}" resolver='(obr)'>
 
-		<!-- APIs -->
+		<!-- APIs -->	
+		<bundle>wrap:mvn:org.json/json/20090211</bundle>		
 		<bundle>wrap:mvn:org.bouncycastle/jce.jdk13/144</bundle>
 		<bundle>mvn:org.universAAL.thirdparty/jslp.osgi/${mw.version}</bundle>
 		<bundle>mvn:org.jgroups/jgroups/3.3.0.Alpha1</bundle>
