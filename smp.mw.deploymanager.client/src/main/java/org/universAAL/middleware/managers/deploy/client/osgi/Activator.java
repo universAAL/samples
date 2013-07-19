@@ -38,6 +38,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.utils.LogUtils;
 import org.universAAL.middleware.interfaces.PeerCard;
 import org.universAAL.middleware.managers.api.AALSpaceManager;
 import org.universAAL.middleware.managers.api.DeployManager;
@@ -68,8 +69,8 @@ public class Activator implements BundleActivator {
     private Unmarshaller unmarshaller;
     private Marshaller marshaller;
 
-    private final static String UAAP_FOLDER = "///C:/Users/root/Programmi/uAAL-coordinator/distro/HWOService.usrv_FILES/bin/HWOApp.uapp_FILES";
-    private final static String UAAP_URI ="///C:/Users/root/Programmi/uAAL-coordinator/distro/HWOService.usrv_FILES/bin/HWOApp.uapp_FILES/config/hwo.uapp.xml";
+    private static String UAAP_FOLDER = "/home/pulz/distro/example-A/packager";
+    private static String UAAP_URI ="/home/pulz/distro/example-A/packager/config/Single Part App.uapp.xml";
 
     private final static String USRV_ID = "111";
     private final static String UAAP_ID = "prova";
@@ -101,8 +102,18 @@ public class Activator implements BundleActivator {
         initClient(mc);
         URI uAAPUri = null;
         URI uAPPFolder = null;
+        String x = context.getProperty("uAAL.deploymanager.test.folder");
+        if ( x != null ){
+        	UAAP_FOLDER = x;
+        } 
+        context.getProperty("uAAL.deploymanager.test.uri");
+        if ( x != null ){
+        	UAAP_URI = x;
+        } 
         try {
+            LogUtils.logInfo(mc, Activator.class, "start", "Using upacked folder"+UAAP_FOLDER);
             uAPPFolder = new URI( "file", UAAP_FOLDER, null);
+            LogUtils.logInfo(mc, Activator.class, "start", "uApp XML file"+UAAP_URI);
             uAAPUri = new URI( "file", UAAP_URI, null);
         } catch (URISyntaxException e) {
             // TODO Auto-generated catch block
@@ -116,43 +127,7 @@ public class Activator implements BundleActivator {
         peersFilter.put("karaf.version", null);
         MatchingResult matchingPeers = aalSpaceManager.getMatchingPeers(peersFilter);
         peers = matchingPeers.getPeers();
-        try {
-            jc = JAXBContext.newInstance(ObjectFactory.class);
-            unmarshaller = jc.createUnmarshaller();
-            marshaller = jc.createMarshaller();
-        } catch (JAXBException e) {
-            System.out.println(e);
-        }
-
-
-        AalUapp uAAP = null;
-        try {
-            uAAP = (AalUapp)unmarshaller.unmarshal(new File(uAAPUri));
-        } catch (JAXBException e) {
-            System.out.println("Issue with XML parsing: "+e.getErrorCode() );
-            e.printStackTrace();
-            e.getLinkedException().printStackTrace();
-            e.printStackTrace();
-        }
-        int i = 0;
-        if (uAAP == null ) {
-            throw new IllegalStateException("Unable to parse or find the uAAP xml");
-        }
-
-
-
-        for (PeerCard peer : peers) {
-            if ( i >=  uAAP.getApplicationPart().getPart().size() ) {
-                System.out.println("All the parts of the application have been assigned to all the peers");
-                break;
-            } else {
-                System.out.println("Assigned "+uAAP.getApplicationPart().getPart().get(i).getPartId()+" to peer "+peer);
-                ArrayList<Part> list = new ArrayList<Part>();
-                list.add(uAAP.getApplicationPart().getPart().get(i));
-                layout.put(peer, list);
-            }
-            i++;
-        }
+       
         UAPPPackage pkg = new UAPPPackage(USRV_ID, UAAP_ID, uAPPFolder, layout);
         InstallationResultsDetails result = deployManager.requestToInstall( pkg );
         if ( result.getGlobalResult() != InstallationResults.SUCCESS ) {
