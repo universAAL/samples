@@ -9,9 +9,8 @@
 		<bundle>wrap:mvn:org.json/json/20090211</bundle>		
 		<bundle>wrap:mvn:org.bouncycastle/jce.jdk13/144</bundle>
 		<bundle>mvn:org.universAAL.thirdparty/jslp.osgi/${mw.version}</bundle>
-		<bundle>mvn:org.jgroups/jgroups/3.3.0.Alpha1</bundle>
-		<bundle>mvn:com.google.code.gson/gson/2.2.4</bundle>
-		<bundle>mvn:com.google.code.gson/gson/2.2.3</bundle>
+		<bundle>mvn:org.jgroups/jgroups/3.3.3.Final</bundle>
+		<bundle>mvn:com.google.code.gson/gson/2.2.4</bundle>	
 		<bundle>mvn:org.apache.felix/org.osgi.core/1.4.0</bundle>
 		<bundle>mvn:org.apache.felix/org.osgi.compendium/1.4.0</bundle>
 		<bundle>mvn:org.universAAL.middleware/mw.schemas/${mw.version}</bundle>
