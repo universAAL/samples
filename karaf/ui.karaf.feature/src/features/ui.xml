@@ -36,7 +36,7 @@
 		<bundle>wrap:mvn:org.universAAL.ui/ui.handler.gui.swing.classicLAF/2.0.0</bundle>
 	</feature>
 	
-	<feature name="uAAL-UI.respurce.server" description="The UI Resource Server."
+	<feature name="uAAL-UI.resource.server" description="The UI Resource Server."
 		version="${pom.version}" resolver='(obr)'>
 		<feature>uAAL-MW</feature>
 		<!-- Dependencies of resource server? Jetty? -->
