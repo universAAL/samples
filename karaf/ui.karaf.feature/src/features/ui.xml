@@ -8,7 +8,7 @@
 		version="${pom.version}" resolver='(obr)'>
 		<!-- Load all features -->
 		<feature>uAAL-UI.DM</feature>
-		<feature>uAAL-UI.respurce.server</feature>
+		<feature>uAAL-UI.resource.server</feature>
 		<feature>uAAL-UI.handler.web</feature>
 		<feature>uAAL-UI.handler.gui.swing</feature>
 		<feature>uAAL-UI.handler.gui.swing.BluesteelLAF</feature>
