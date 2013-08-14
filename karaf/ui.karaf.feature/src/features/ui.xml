@@ -90,13 +90,13 @@
 	
 	<feature name="uAAL-ONT.profile.ui.preferences" description="The UI preferences ont"
 		version="${pom.version}" resolver='(obr)'>
-		<feature>uAAL-ONT.Profile</feature>
+		<feature>uAAL-ONT.profile</feature>
 		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile.ui.preferences/2.0.0</bundle>
 	</feature>
 	
 	<feature name="uAAL-CTXT.prof.server" description="The Context history entrepot + profiling server"
 		version="${pom.version}" resolver='(obr)'>
-		<feature>uAAL-ONT.Profile</feature>
+		<feature>uAAL-ONT.profile</feature>
 		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.che/2.0.0</bundle>
 		<!--Third party -->
 		<bundle>mvn:org.openrdf.sesame/sesame-runtime-osgi/2.6.0</bundle>
