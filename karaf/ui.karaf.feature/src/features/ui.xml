@@ -68,7 +68,6 @@
 <!-- 		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.health.disease/2.0.0</bundle> -->
 <!-- 		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile.health/2.0.0</bundle> -->
 <!-- 		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.device/2.0.0</bundle> -->
-		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.languages/2.0.0</bundle>
 		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile.userid/2.0.0</bundle>
 		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile.ui.mainmenu/2.0.0</bundle>
 		<feature>uAAL-CTXT.prof.server</feature>
@@ -90,6 +89,7 @@
 	
 	<feature name="uAAL-ONT.profile.ui.preferences" description="The UI preferences ont"
 		version="${pom.version}" resolver='(obr)'>
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.languages/2.0.0</bundle>
 		<feature>uAAL-ONT.profile</feature>
 		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.profile.ui.preferences/2.0.0</bundle>
 	</feature>
