@@ -154,7 +154,8 @@ public class GUIPanel extends javax.swing.JFrame {
 		"Get subprofiles of (profile)",
 		"Add to (user) a (profile)",
 		"Add to (user) a (subprofile)",
-		"Add to (profile) a (subprofile)"});
+		"Add to (profile) a (subprofile)",
+		"Get one subprofile from (user)"});
 	button1p5 = new javax.swing.JButton();
 	text1p5 = new javax.swing.JTextField();
 	text2p5 = new javax.swing.JTextField();

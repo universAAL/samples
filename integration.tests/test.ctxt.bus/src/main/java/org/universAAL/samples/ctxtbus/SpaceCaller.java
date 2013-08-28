@@ -419,7 +419,7 @@ public class SpaceCaller {
 //	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(AALSpaceProfile.PROP_INSTALLED_HARDWARE), Arg.type(GasSensor.MY_URI));
 	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, aalSpace);
-	req.addTypeFilter(new String[]{ProfilingService.PROP_CONTROLS}, AALSpace.MY_URI);
+//	req.addTypeFilter(new String[]{ProfilingService.PROP_CONTROLS}, AALSpace.MY_URI);//removed to try bug 298
 	req.addRequiredOutput(OUTPUT, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,AALSpaceProfile.PROP_INSTALLED_HARDWARE});
 	req.addTypeFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,AALSpaceProfile.PROP_INSTALLED_HARDWARE}, Device.MY_URI);
 	

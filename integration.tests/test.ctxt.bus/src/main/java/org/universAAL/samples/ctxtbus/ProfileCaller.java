@@ -22,6 +22,8 @@
 
 package org.universAAL.samples.ctxtbus;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -44,6 +46,8 @@ import org.universAAL.ontology.profile.SubProfile;
 import org.universAAL.ontology.profile.User;
 import org.universAAL.ontology.profile.UserProfile;
 import org.universAAL.ontology.profile.service.ProfilingService;
+import org.universAAL.ontology.vcard.Cell;
+import org.universAAL.ontology.vcard.Tel;
 //import org.universAAL.samples.service.utils.Arg;
 //import org.universAAL.samples.service.utils.Path;
 //import org.universAAL.samples.service.utils.low.SimpleRequest;
@@ -187,11 +191,37 @@ public class ProfileCaller {
 //		case 17:
 //		    ret = changeProfile(new User(arg1),new UserProfile(arg2));
 //		    break;
+		case 19:
+		    ret = getSubprofile(new User(arg1));
+		    break;
 		default:
 		    break;
 		}
 	}
 	return ret;
+    }
+
+    private String getSubprofile(User user) {
+	log.info("Profile Client: getSubprofileX");
+	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+ 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, user);
+ 	ProcessOutput po=new ProcessOutput(OUTPUT_GETSUBPROFILES);
+ 	po.setCardinality(1, 1);
+// 	po.setParameterType(PersonalInformationSubprofile.MY_URI);
+	req.addSimpleOutputBinding(po, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
+	ServiceResponse resp=caller.call(req);
+	if (resp.getCallStatus() == CallStatus.succeeded) {
+	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
+	    if (out != null) {
+		log.debug(out.toString());
+		return out.toString();
+	    } else {
+		log.debug("NOTHING!");
+		return "nothing";
+	    }
+	}else{
+	    return resp.getCallStatus().name();
+	}
     }
 
     //:::::::::::::PROFILABLE GET/ADD/CHANGE/REMOVE:::::::::::::::::
@@ -494,6 +524,7 @@ public class ProfileCaller {
 
     private String addSubprofile(User profilable, SubProfile subProfile) {
 	log.info("Profile Client: addProfile2");
+	subProfile.setProperty(PersonalInformationSubprofile.PROP_TEL, Arrays.asList(new Cell(subProfile.getURI()+"A"), new Cell(subProfile.getURI()+"B")));
 //	SimpleRequest req=new SimpleRequest(new ProfilingService(null));
 //	req.put(Path.at(ProfilingService.PROP_CONTROLS), Arg.in(profilable));
 //	req.put(Path.at(ProfilingService.PROP_CONTROLS).to(Profilable.PROP_HAS_PROFILE).to(Profile.PROP_HAS_SUB_PROFILE), Arg.add(subProfile));
