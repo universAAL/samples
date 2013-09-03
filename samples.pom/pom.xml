@@ -25,7 +25,7 @@
     <module>../lighting/uiclient</module>
     <module>../ont.tutorial</module>
     <module>../simple.ui</module>
-    <module>../smp.location.publisher.gui</module>
+    <module>../smp.sensor.simulator.gui</module>
     <module>../activityhub/client</module>
     <module>../activityhub/simulator</module>
     <module>../device/client</module>
@@ -169,7 +169,7 @@
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
-        <artifactId>smp.location.publisher.gui</artifactId>
+        <artifactId>smp.sensor.simulator.gui</artifactId>
         <version>2.0.1-SNAPSHOT</version>
       </dependency>
       <dependency>
