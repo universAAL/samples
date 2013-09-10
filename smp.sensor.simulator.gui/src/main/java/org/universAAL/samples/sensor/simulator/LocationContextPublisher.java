@@ -28,8 +28,7 @@ import org.universAAL.middleware.context.DefaultContextPublisher;
 import org.universAAL.middleware.context.owl.ContextProvider;
 import org.universAAL.middleware.context.owl.ContextProviderType;
 import org.universAAL.middleware.owl.MergedRestriction;
-import org.universAAL.ontology.location.indoor.Room;
-import org.universAAL.ontology.location.indoor.RoomFunction;
+import org.universAAL.ontology.location.Location;
 import org.universAAL.ontology.profile.AssistedPerson;
 import org.universAAL.ontology.profile.Caregiver;
 import org.universAAL.ontology.profile.User;
@@ -53,10 +52,10 @@ public class LocationContextPublisher {
 	ContextEventPattern contextEventPattern = new ContextEventPattern();
 	contextEventPattern.addRestriction(MergedRestriction
 		.getAllValuesRestriction(ContextEvent.PROP_RDF_SUBJECT,
-			Room.MY_URI));
+			User.MY_URI));
 	contextEventPattern.addRestriction(MergedRestriction
 		.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-			Room.PROP_ROOM_FUNCTION));
+			User.PROP_PHYSICAL_LOCATION));
 	return new ContextEventPattern[] { contextEventPattern };
     }
 
@@ -81,7 +80,7 @@ public class LocationContextPublisher {
      * @param roomFunction
      */
     public void publishLocation(TypeOfUser typeOfUser, String userUri,
-	    RoomFunction roomFunction) {
+	    String locationUri) {
 
 	User user = null;
 
@@ -97,9 +96,9 @@ public class LocationContextPublisher {
 	    break;
 	}
 
-	Room room = new Room(roomFunction);
+	Location location = new Location(locationUri);
 
-	user.setLocation(room);
+	user.setLocation(location);
 
 	cp.publish(new ContextEvent(user, User.PROP_PHYSICAL_LOCATION));
 
