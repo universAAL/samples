@@ -131,7 +131,7 @@ public class SensorSimulatorGUI extends JFrame {
     }
 
     private void initGUI() {
-	setTitle(Messages.getString("SensorSimulatorGUI.universAAL-SensorSimulator")); //$NON-NLS-1$
+	setTitle("universAAL - Sensor Simulator GUI");
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setBounds(100, 100, 829, 573);
 	contentPane = new JPanel();
@@ -151,17 +151,17 @@ public class SensorSimulatorGUI extends JFrame {
 	contentPane.add(tabbedPane, gbc_tabbedPane);
 
 	JPanel panel_2 = new JPanel();
-	tabbedPane.addTab(Messages.getString("SensorSimulatorGUI.LightingSensors"), null, panel_2, null); //$NON-NLS-1$
+	tabbedPane.addTab("Lighting Sensors", null, panel_2, null);
 	panel_2.setLayout(new GridLayout(5, 2, 0, 0));
 
-	final JButton sleepingRoomLightBtn = new JButton(Messages.getString("SensorSimulatorGUI.SleepingRoomLight")); //$NON-NLS-1$
+	final JButton sleepingRoomLightBtn = new JButton("Sleeping Room Light");
 
 	panel_2.add(sleepingRoomLightBtn);
 
-	final JButton livingRoomLightBtn = new JButton(Messages.getString("SensorSimulatorGUI.LivingRoomLight")); //$NON-NLS-1$
+	final JButton livingRoomLightBtn = new JButton("Living Room Light");
 
 	Image offImage = Toolkit.getDefaultToolkit().createImage(
-		this.getClass().getClassLoader().getResource("lightOff.jpg")); //$NON-NLS-1$
+		this.getClass().getClassLoader().getResource("lightOff.jpg"));
 	ImageIcon offImageIcon = new ImageIcon(offImage);
 
 	final JLabel lblSleepingRoomLight = new JLabel(offImageIcon);
@@ -186,7 +186,7 @@ public class SensorSimulatorGUI extends JFrame {
 
 	panel_2.add(livingRoomLightBtn);
 
-	final JButton bathroomLightBtn = new JButton(Messages.getString("SensorSimulatorGUI.BathroomLight")); //$NON-NLS-1$
+	final JButton bathroomLightBtn = new JButton("Bathroom Light");
 
 	final JLabel lblLivingRoomLight = new JLabel(offImageIcon);
 	lblSleepingRoomLight.setBackground(new Color(255, 255, 255));
@@ -236,10 +236,10 @@ public class SensorSimulatorGUI extends JFrame {
 	});
 	panel_2.add(lblBathroomLight);
 
-	final JButton kitchenLightBtn = new JButton(Messages.getString("SensorSimulatorGUI.KitchenLight")); //$NON-NLS-1$
+	final JButton kitchenLightBtn = new JButton("Kitchen Light");
 	panel_2.add(kitchenLightBtn);
 
-	final JButton hobbyRoomLightBtn = new JButton(Messages.getString("SensorSimulatorGUI.HobbyRoomLight")); //$NON-NLS-1$
+	final JButton hobbyRoomLightBtn = new JButton("Hobby Room Light");
 
 	final JLabel lblKitchenLight = new JLabel(offImageIcon);
 	lblKitchenLight.setBackground(new Color(255, 255, 255));
@@ -278,12 +278,12 @@ public class SensorSimulatorGUI extends JFrame {
 	panel_2.add(lblHobbyRoomLight);
 
 	JPanel panel_5 = new JPanel();
-	tabbedPane.addTab(Messages.getString("SensorSimulatorGUI.TemperatureSensors"), null, panel_5, null); //$NON-NLS-1$
+	tabbedPane.addTab("Temperature Sensors", null, panel_5, null);
 	panel_5.setLayout(new GridLayout(5, 1, 0, 0));
 
 	JPanel panel_10 = new JPanel();
 	panel_10.setBorder(new TitledBorder(UIManager
-		.getBorder("TitledBorder.border"), Messages.getString("SensorSimulatorGUI.SleepingRoomSensor"), //$NON-NLS-1$ //$NON-NLS-2$
+		.getBorder("TitledBorder.border"), "Sleeping Room Sensor",
 		TitledBorder.LEADING, TitledBorder.TOP, null,
 		new Color(0, 0, 0)));
 	panel_5.add(panel_10);
@@ -300,7 +300,7 @@ public class SensorSimulatorGUI extends JFrame {
 
 	panel_9.add(sliderTemp1);
 
-	final JLabel labelTemp1 = new JLabel(Messages.getString("SensorSimulatorGUI.temperature")); //$NON-NLS-1$
+	final JLabel labelTemp1 = new JLabel("temperature");
 	labelTemp1.setHorizontalAlignment(SwingConstants.CENTER);
 	labelTemp1.setText(Integer.toString(sliderTemp1.getValue()));
 
@@ -314,13 +314,13 @@ public class SensorSimulatorGUI extends JFrame {
 	    }
 	});
 
-	JButton sendTemp1Btn = new JButton(Messages.getString("SensorSimulatorGUI.Send")); //$NON-NLS-1$
+	JButton sendTemp1Btn = new JButton("Send");
 	sendTemp1Btn.addActionListener(new ActionListener() {
 
 	    public void actionPerformed(ActionEvent e) {
 
 		TemperatureSensor temperatureSensor = new TemperatureSensor(
-			TemperatureSensor.MY_URI + Messages.getString("SensorSimulatorGUI.TemperatureSensor1")); //$NON-NLS-1$
+			TemperatureSensor.MY_URI + "TemperatureSensor1");
 
 		temperatureSensor.setValue((float) sliderTemp1.getValue());
 
@@ -331,7 +331,7 @@ public class SensorSimulatorGUI extends JFrame {
 
 	JPanel panel_11 = new JPanel();
 	panel_11.setBorder(new TitledBorder(UIManager
-		.getBorder("TitledBorder.border"), Messages.getString("SensorSimulatorGUI.LivingRoomSensor"), //$NON-NLS-1$ //$NON-NLS-2$
+		.getBorder("TitledBorder.border"), "Living Room Sensor",
 		TitledBorder.LEADING, TitledBorder.TOP, null,
 		new Color(0, 0, 0)));
 	panel_5.add(panel_11);
@@ -342,13 +342,13 @@ public class SensorSimulatorGUI extends JFrame {
 
 	final JSlider sliderTemp2 = new JSlider();
 
-	sliderTemp2.setToolTipText(""); //$NON-NLS-1$
+	sliderTemp2.setToolTipText("");
 	sliderTemp2.setValue(24);
 	sliderTemp2.setMinimum(-20);
 	sliderTemp2.setMaximum(55);
 	panel_12.add(sliderTemp2);
 
-	final JLabel labelTemp2 = new JLabel(Messages.getString("SensorSimulatorGUI.temperature")); //$NON-NLS-1$
+	final JLabel labelTemp2 = new JLabel("temperature");
 	labelTemp2.setHorizontalAlignment(SwingConstants.CENTER);
 	labelTemp2.setText(Integer.toString(sliderTemp2.getValue()));
 
@@ -360,13 +360,13 @@ public class SensorSimulatorGUI extends JFrame {
 	    }
 	});
 
-	JButton sendTemp2Btn = new JButton(Messages.getString("SensorSimulatorGUI.Send")); //$NON-NLS-1$
+	JButton sendTemp2Btn = new JButton("Send");
 	sendTemp2Btn.addActionListener(new ActionListener() {
 
 	    public void actionPerformed(ActionEvent e) {
 
 		TemperatureSensor temperatureSensor = new TemperatureSensor(
-			TemperatureSensor.MY_URI + Messages.getString("SensorSimulatorGUI.TemperatureSensor2")); //$NON-NLS-1$
+			TemperatureSensor.MY_URI + "TemperatureSensor2");
 
 		temperatureSensor.setValue((float) sliderTemp2.getValue());
 
@@ -377,7 +377,7 @@ public class SensorSimulatorGUI extends JFrame {
 
 	JPanel panel_13 = new JPanel();
 	panel_13.setBorder(new TitledBorder(UIManager
-		.getBorder("TitledBorder.border"), Messages.getString("SensorSimulatorGUI.BathroomSensor"), //$NON-NLS-1$ //$NON-NLS-2$
+		.getBorder("TitledBorder.border"), "Bathroom Sensor",
 		TitledBorder.LEADING, TitledBorder.TOP, null,
 		new Color(0, 0, 0)));
 	panel_5.add(panel_13);
@@ -389,7 +389,7 @@ public class SensorSimulatorGUI extends JFrame {
 	final JSlider sliderTemp3 = new JSlider();
 
 	sliderTemp3.setValue(24);
-	sliderTemp3.setToolTipText(""); //$NON-NLS-1$
+	sliderTemp3.setToolTipText("");
 	sliderTemp3.setMinimum(-20);
 	sliderTemp3.setMaximum(55);
 	panel_14.add(sliderTemp3);
@@ -405,13 +405,13 @@ public class SensorSimulatorGUI extends JFrame {
 	    }
 	});
 
-	JButton sendTemp3Btn = new JButton(Messages.getString("SensorSimulatorGUI.Send")); //$NON-NLS-1$
+	JButton sendTemp3Btn = new JButton("Send");
 	sendTemp3Btn.addActionListener(new ActionListener() {
 
 	    public void actionPerformed(ActionEvent e) {
 
 		TemperatureSensor temperatureSensor = new TemperatureSensor(
-			TemperatureSensor.MY_URI + Messages.getString("SensorSimulatorGUI.TemperatureSensor3")); //$NON-NLS-1$
+			TemperatureSensor.MY_URI + "TemperatureSensor3");
 
 		temperatureSensor.setValue((float) sliderTemp3.getValue());
 
@@ -422,7 +422,7 @@ public class SensorSimulatorGUI extends JFrame {
 
 	JPanel panel_15 = new JPanel();
 	panel_15.setBorder(new TitledBorder(UIManager
-		.getBorder("TitledBorder.border"), Messages.getString("SensorSimulatorGUI.KitchenSensor"), //$NON-NLS-1$ //$NON-NLS-2$
+		.getBorder("TitledBorder.border"), "Kitchen Sensor",
 		TitledBorder.LEADING, TitledBorder.TOP, null,
 		new Color(0, 0, 0)));
 	panel_5.add(panel_15);
@@ -433,12 +433,12 @@ public class SensorSimulatorGUI extends JFrame {
 
 	final JSlider sliderTemp4 = new JSlider();
 	sliderTemp4.setValue(24);
-	sliderTemp4.setToolTipText(""); //$NON-NLS-1$
+	sliderTemp4.setToolTipText("");
 	sliderTemp4.setMinimum(-20);
 	sliderTemp4.setMaximum(55);
 	panel_16.add(sliderTemp4);
 
-	final JLabel labelTemp4 = new JLabel(Messages.getString("SensorSimulatorGUI.24")); //$NON-NLS-1$
+	final JLabel labelTemp4 = new JLabel("24");
 	labelTemp4.setHorizontalAlignment(SwingConstants.CENTER);
 	panel_16.add(labelTemp4);
 
@@ -448,13 +448,13 @@ public class SensorSimulatorGUI extends JFrame {
 	    }
 	});
 
-	JButton sendTemp4Btn = new JButton(Messages.getString("SensorSimulatorGUI.Send")); //$NON-NLS-1$
+	JButton sendTemp4Btn = new JButton("Send");
 	sendTemp4Btn.addActionListener(new ActionListener() {
 
 	    public void actionPerformed(ActionEvent e) {
 
 		TemperatureSensor temperatureSensor = new TemperatureSensor(
-			TemperatureSensor.MY_URI + Messages.getString("SensorSimulatorGUI.TemperatureSensor4")); //$NON-NLS-1$
+			TemperatureSensor.MY_URI + "TemperatureSensor4");
 
 		temperatureSensor.setValue((float) sliderTemp4.getValue());
 
@@ -465,7 +465,7 @@ public class SensorSimulatorGUI extends JFrame {
 
 	JPanel panel_17 = new JPanel();
 	panel_17.setBorder(new TitledBorder(UIManager
-		.getBorder("TitledBorder.border"), Messages.getString("SensorSimulatorGUI.HobbyRoomSensor"), //$NON-NLS-1$ //$NON-NLS-2$
+		.getBorder("TitledBorder.border"), "Hobby Room Sensor",
 		TitledBorder.LEADING, TitledBorder.TOP, null,
 		new Color(0, 0, 0)));
 	panel_5.add(panel_17);
@@ -476,12 +476,12 @@ public class SensorSimulatorGUI extends JFrame {
 
 	final JSlider sliderTemp5 = new JSlider();
 	sliderTemp5.setValue(24);
-	sliderTemp5.setToolTipText(""); //$NON-NLS-1$
+	sliderTemp5.setToolTipText("");
 	sliderTemp5.setMinimum(-20);
 	sliderTemp5.setMaximum(55);
 	panel_18.add(sliderTemp5);
 
-	final JLabel labelTemp5 = new JLabel(Messages.getString("SensorSimulatorGUI.24")); //$NON-NLS-1$
+	final JLabel labelTemp5 = new JLabel("24");
 	labelTemp5.setHorizontalAlignment(SwingConstants.CENTER);
 	panel_18.add(labelTemp5);
 
@@ -491,13 +491,13 @@ public class SensorSimulatorGUI extends JFrame {
 	    }
 	});
 
-	JButton sendTemp5Btn = new JButton(Messages.getString("SensorSimulatorGUI.Send")); //$NON-NLS-1$
+	JButton sendTemp5Btn = new JButton("Send");
 	sendTemp5Btn.addActionListener(new ActionListener() {
 
 	    public void actionPerformed(ActionEvent e) {
 
 		TemperatureSensor temperatureSensor = new TemperatureSensor(
-			TemperatureSensor.MY_URI + Messages.getString("SensorSimulatorGUI.TemperatureSensor5")); //$NON-NLS-1$
+			TemperatureSensor.MY_URI + "TemperatureSensor5");
 
 		temperatureSensor.setValue((float) sliderTemp5.getValue());
 
@@ -507,13 +507,13 @@ public class SensorSimulatorGUI extends JFrame {
 	panel_18.add(sendTemp5Btn);
 
 	JPanel panel_8 = new JPanel();
-	tabbedPane.addTab(Messages.getString("SensorSimulatorGUI.HumiditySensors"), null, panel_8, null); //$NON-NLS-1$
+	tabbedPane.addTab("Humidity Sensors", null, panel_8, null);
 	panel_8.setBorder(null);
 	panel_8.setLayout(new GridLayout(0, 1, 0, 0));
 
 	JPanel panel_7 = new JPanel();
 	panel_7.setBorder(new TitledBorder(UIManager
-		.getBorder("TitledBorder.border"), Messages.getString("SensorSimulatorGUI.HumiditySensor1"), //$NON-NLS-1$ //$NON-NLS-2$
+		.getBorder("TitledBorder.border"), "Humidity Sensor 1",
 		TitledBorder.LEADING, TitledBorder.TOP, null,
 		new Color(0, 0, 0)));
 	panel_8.add(panel_7);
@@ -540,12 +540,12 @@ public class SensorSimulatorGUI extends JFrame {
 
 	panel_6.add(labelHumidity1);
 
-	JButton sendHumidity1Btn = new JButton(Messages.getString("SensorSimulatorGUI.Send")); //$NON-NLS-1$
+	JButton sendHumidity1Btn = new JButton("Send");
 
 	sendHumidity1Btn.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		HumiditySensor humiditySensor = new HumiditySensor(
-			HumiditySensor.MY_URI + Messages.getString("SensorSimulatorGUI.humiditySensor1")); //$NON-NLS-1$
+			HumiditySensor.MY_URI + "humiditySensor1");
 
 		humiditySensor.setValue((float) sliderHumidity1.getValue());
 
@@ -556,7 +556,7 @@ public class SensorSimulatorGUI extends JFrame {
 	panel_6.add(sendHumidity1Btn);
 
 	JPanel panel_19 = new JPanel();
-	panel_19.setBorder(new TitledBorder(null, Messages.getString("SensorSimulatorGUI.HumiditySensor2"), //$NON-NLS-1$
+	panel_19.setBorder(new TitledBorder(null, "Humidity Sensor 2",
 		TitledBorder.LEADING, TitledBorder.TOP, null, null));
 	panel_8.add(panel_19);
 
@@ -582,12 +582,12 @@ public class SensorSimulatorGUI extends JFrame {
 
 	panel_20.add(labelHumidity2);
 
-	JButton sendHumidity2Btn = new JButton(Messages.getString("SensorSimulatorGUI.Send")); //$NON-NLS-1$
+	JButton sendHumidity2Btn = new JButton("Send");
 
 	sendHumidity2Btn.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		HumiditySensor humiditySensor = new HumiditySensor(
-			HumiditySensor.MY_URI + Messages.getString("SensorSimulatorGUI.humiditySensor2")); //$NON-NLS-1$
+			HumiditySensor.MY_URI + "humiditySensor2");
 
 		humiditySensor.setValue((float) sliderHumidity2.getValue());
 
@@ -598,7 +598,7 @@ public class SensorSimulatorGUI extends JFrame {
 	panel_20.add(sendHumidity2Btn);
 
 	JPanel panel = new JPanel();
-	tabbedPane.addTab(Messages.getString("SensorSimulatorGUI.LocationSensors"), null, panel, null); //$NON-NLS-1$
+	tabbedPane.addTab("Location Sensors", null, panel, null);
 	panel.setLayout(new GridLayout(3, 1, 0, 0));
 
 	JPanel panel_1 = new JPanel();
@@ -612,10 +612,10 @@ public class SensorSimulatorGUI extends JFrame {
 		Double.MIN_VALUE };
 	panel_1.setLayout(gbl_panel_1);
 
-	JRadioButton rdbtnDefaultUser = new JRadioButton(Messages.getString("SensorSimulatorGUI.DefaultUser")); //$NON-NLS-1$
+	JRadioButton rdbtnDefaultUser = new JRadioButton("Default User");
 	rdbtnDefaultUser.setName(TypeOfUser.DEFAULT_USER.name());
 	System.out.println(rdbtnDefaultUser.getName()
-		+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"); //$NON-NLS-1$
+		+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	buttonGroup.add(rdbtnDefaultUser);
 	rdbtnDefaultUser.setSelected(true);
 	GridBagConstraints gbc_rdbtnDefaultUser = new GridBagConstraints();
@@ -625,7 +625,7 @@ public class SensorSimulatorGUI extends JFrame {
 	gbc_rdbtnDefaultUser.gridy = 0;
 	panel_1.add(rdbtnDefaultUser, gbc_rdbtnDefaultUser);
 
-	JLabel lbljustName = new JLabel(Messages.getString("SensorSimulatorGUI.UserName")); //$NON-NLS-1$
+	JLabel lbljustName = new JLabel("User Name");
 	GridBagConstraints gbc_lbljustName = new GridBagConstraints();
 	gbc_lbljustName.fill = GridBagConstraints.VERTICAL;
 	gbc_lbljustName.insets = new Insets(0, 0, 5, 5);
@@ -642,7 +642,7 @@ public class SensorSimulatorGUI extends JFrame {
 	gbc_formattedTextField.gridy = 1;
 	panel_1.add(userNameTextField, gbc_formattedTextField);
 
-	JRadioButton rdbtnAssistedPerson = new JRadioButton(Messages.getString("SensorSimulatorGUI.AssistedPerson")); //$NON-NLS-1$
+	JRadioButton rdbtnAssistedPerson = new JRadioButton("Assisted Person");
 	rdbtnAssistedPerson.setName(TypeOfUser.ASSISTED_PERSON.name());
 	buttonGroup.add(rdbtnAssistedPerson);
 	GridBagConstraints gbc_rdbtnAssistedPerson = new GridBagConstraints();
@@ -652,7 +652,7 @@ public class SensorSimulatorGUI extends JFrame {
 	gbc_rdbtnAssistedPerson.gridy = 1;
 	panel_1.add(rdbtnAssistedPerson, gbc_rdbtnAssistedPerson);
 
-	JRadioButton rdbtnCaregiver = new JRadioButton(Messages.getString("SensorSimulatorGUI.Caregiver")); //$NON-NLS-1$
+	JRadioButton rdbtnCaregiver = new JRadioButton("Caregiver");
 	rdbtnCaregiver.setName(TypeOfUser.CAREGIVER.name());
 	buttonGroup.add(rdbtnCaregiver);
 	GridBagConstraints gbc_rdbtnCaregiver = new GridBagConstraints();
@@ -662,9 +662,9 @@ public class SensorSimulatorGUI extends JFrame {
 	gbc_rdbtnCaregiver.gridy = 2;
 	panel_1.add(rdbtnCaregiver, gbc_rdbtnCaregiver);
 
-	final JLabel labelCreatedUser = new JLabel("New label"); //$NON-NLS-1$
+	final JLabel labelCreatedUser = new JLabel("New label");
 
-	labelCreatedUser.setText(Messages.getString("SensorSimulatorGUI.Userfollowinguri") //$NON-NLS-1$
+	labelCreatedUser.setText("User will be created with following uri: "
 		+ USER_NAMESPACE);
 	GridBagConstraints gbc_labelCreatedUser = new GridBagConstraints();
 	gbc_labelCreatedUser.gridwidth = 2;
@@ -681,7 +681,7 @@ public class SensorSimulatorGUI extends JFrame {
 
 	    public void keyReleased(KeyEvent e) {
 		labelCreatedUser
-			.setText(Messages.getString("SensorSimulatorGUI.Userfollowinguri") //$NON-NLS-1$
+			.setText("User will be created with following uri: "
 				+ USER_NAMESPACE + userNameTextField.getText());
 
 	    }
@@ -692,10 +692,10 @@ public class SensorSimulatorGUI extends JFrame {
 	});
 
 	JPanel panel_3 = new JPanel();
-	panel_3.setToolTipText(""); //$NON-NLS-1$
+	panel_3.setToolTipText("");
 	panel_3.setBorder(new TitledBorder(UIManager
 
-	.getBorder("TitledBorder.border"), Messages.getString("SensorSimulatorGUI.Location"), //$NON-NLS-1$ //$NON-NLS-2$
+	.getBorder("TitledBorder.border"), "Location",
 
 	TitledBorder.LEADING, TitledBorder.TOP, null,
 
@@ -710,7 +710,7 @@ public class SensorSimulatorGUI extends JFrame {
 	panel_3.setLayout(gbl_panel_3);
 
 	JLabel lblNewLabel = new JLabel(
-		Messages.getString("SensorSimulatorGUI.Selectpredefinedlocation")); //$NON-NLS-1$
+		"Select predefined location or type in your own.");
 	lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 	GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 	gbc_lblNewLabel.gridwidth = 2;
@@ -729,7 +729,7 @@ public class SensorSimulatorGUI extends JFrame {
 	panel_3.add(panel_4, gbc_panel_4);
 	panel_4.setLayout(new GridLayout(0, 1, 0, 0));
 
-	JButton button = new JButton(Messages.getString("SensorSimulatorGUI.SleepingRoom")); //$NON-NLS-1$
+	JButton button = new JButton("Sleeping Room");
 	button.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		lp.publishLocation(getSelectedUserType(), USER_NAMESPACE
@@ -740,7 +740,7 @@ public class SensorSimulatorGUI extends JFrame {
 	});
 	panel_4.add(button);
 
-	JButton button_1 = new JButton(Messages.getString("SensorSimulatorGUI.LivingRoom")); //$NON-NLS-1$
+	JButton button_1 = new JButton("Living Room");
 	button_1.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		lp.publishLocation(getSelectedUserType(), USER_NAMESPACE
@@ -758,7 +758,7 @@ public class SensorSimulatorGUI extends JFrame {
 	panel_3.add(panel_21, gbc_panel_21);
 	panel_21.setLayout(new GridLayout(3, 1, 0, 0));
 
-	JButton button_2 = new JButton(Messages.getString("SensorSimulatorGUI.Bathroom")); //$NON-NLS-1$
+	JButton button_2 = new JButton("Bathroom");
 	button_2.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		lp.publishLocation(getSelectedUserType(), USER_NAMESPACE
@@ -768,7 +768,7 @@ public class SensorSimulatorGUI extends JFrame {
 	});
 	panel_21.add(button_2);
 
-	JButton button_3 = new JButton(Messages.getString("SensorSimulatorGUI.Kitchen")); //$NON-NLS-1$
+	JButton button_3 = new JButton("Kitchen");
 	button_3.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		lp.publishLocation(getSelectedUserType(), USER_NAMESPACE
@@ -778,7 +778,7 @@ public class SensorSimulatorGUI extends JFrame {
 	});
 	panel_21.add(button_3);
 
-	JButton button_4 = new JButton(Messages.getString("SensorSimulatorGUI.HobbyRoom")); //$NON-NLS-1$
+	JButton button_4 = new JButton("Hobby Room");
 	button_4.addActionListener(new ActionListener() {
 	    public void actionPerformed(ActionEvent e) {
 		lp.publishLocation(getSelectedUserType(), USER_NAMESPACE
@@ -798,7 +798,7 @@ public class SensorSimulatorGUI extends JFrame {
 	gbl_panel_22.rowWeights = new double[] { 0.0, 0.0, Double.MIN_VALUE };
 	panel_22.setLayout(gbl_panel_22);
 
-	JLabel lblUserLocation = new JLabel(Messages.getString("SensorSimulatorGUI.UserLocation")); //$NON-NLS-1$
+	JLabel lblUserLocation = new JLabel("User Location:");
 	lblUserLocation.setHorizontalAlignment(SwingConstants.CENTER);
 	GridBagConstraints gbc_lblUserLocation = new GridBagConstraints();
 	gbc_lblUserLocation.fill = GridBagConstraints.BOTH;
@@ -817,7 +817,7 @@ public class SensorSimulatorGUI extends JFrame {
 	panel_22.add(textFieldUserLocation, gbc_textFieldUserLocation);
 	textFieldUserLocation.setColumns(10);
 
-	final JButton btnSendLocation = new JButton(Messages.getString("SensorSimulatorGUI.SendLocation")); //$NON-NLS-1$
+	final JButton btnSendLocation = new JButton("Send Location");
 	btnSendLocation.setEnabled(false);
 
 	GridBagConstraints gbc_btnSendLocation = new GridBagConstraints();
@@ -827,7 +827,7 @@ public class SensorSimulatorGUI extends JFrame {
 	gbc_btnSendLocation.gridy = 0;
 	panel_22.add(btnSendLocation, gbc_btnSendLocation);
 
-	final JLabel lblLocationUri = new JLabel(Messages.getString("SensorSimulatorGUI.Locationuri")); //$NON-NLS-1$
+	final JLabel lblLocationUri = new JLabel("Location uri: ");
 
 	textFieldUserLocation.addKeyListener(new KeyListener() {
 
@@ -836,7 +836,7 @@ public class SensorSimulatorGUI extends JFrame {
 	    }
 
 	    public void keyReleased(KeyEvent e) {
-		lblLocationUri.setText(Messages.getString("SensorSimulatorGUI.Locationuri") + LOCATION_NAMESPACE //$NON-NLS-1$
+		lblLocationUri.setText("Location uri: " + LOCATION_NAMESPACE
 			+ textFieldUserLocation.getText());
 
 		if (textFieldUserLocation.getText().length() > 0) {
