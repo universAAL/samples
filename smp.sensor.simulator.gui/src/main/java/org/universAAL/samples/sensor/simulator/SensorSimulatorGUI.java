@@ -306,8 +306,6 @@ public class SensorSimulatorGUI extends JFrame {
 
 	panel_9.add(labelTemp1);
 
-	// TEEEEEEST
-
 	sliderTemp1.addChangeListener(new ChangeListener() {
 	    public void stateChanged(ChangeEvent e) {
 		labelTemp1.setText(Integer.toString(sliderTemp1.getValue()));
@@ -614,10 +612,8 @@ public class SensorSimulatorGUI extends JFrame {
 
 	JRadioButton rdbtnDefaultUser = new JRadioButton("Default User");
 	rdbtnDefaultUser.setName(TypeOfUser.DEFAULT_USER.name());
-	System.out.println(rdbtnDefaultUser.getName()
-		+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	buttonGroup.add(rdbtnDefaultUser);
-	rdbtnDefaultUser.setSelected(true);
+	//rdbtnDefaultUser.setSelected(true);
 	GridBagConstraints gbc_rdbtnDefaultUser = new GridBagConstraints();
 	gbc_rdbtnDefaultUser.anchor = GridBagConstraints.WEST;
 	gbc_rdbtnDefaultUser.insets = new Insets(0, 0, 5, 0);
@@ -645,6 +641,7 @@ public class SensorSimulatorGUI extends JFrame {
 	JRadioButton rdbtnAssistedPerson = new JRadioButton("Assisted Person");
 	rdbtnAssistedPerson.setName(TypeOfUser.ASSISTED_PERSON.name());
 	buttonGroup.add(rdbtnAssistedPerson);
+	rdbtnAssistedPerson.setSelected(true);
 	GridBagConstraints gbc_rdbtnAssistedPerson = new GridBagConstraints();
 	gbc_rdbtnAssistedPerson.anchor = GridBagConstraints.WEST;
 	gbc_rdbtnAssistedPerson.insets = new Insets(0, 0, 5, 0);
@@ -709,8 +706,7 @@ public class SensorSimulatorGUI extends JFrame {
 	gbl_panel_3.rowWeights = new double[] { 0.0, 0.0, Double.MIN_VALUE };
 	panel_3.setLayout(gbl_panel_3);
 
-	JLabel lblNewLabel = new JLabel(
-		"Select predefined location or type in your own.");
+	JLabel lblNewLabel = new JLabel("Select predefined location for user:");
 	lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 	GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
 	gbc_lblNewLabel.gridwidth = 2;
@@ -734,7 +730,6 @@ public class SensorSimulatorGUI extends JFrame {
 	    public void actionPerformed(ActionEvent e) {
 		lp.publishLocation(getSelectedUserType(), USER_NAMESPACE
 			+ userNameTextField.getText(), LOCATION_NAMESPACE
-
 		+ SLEEPING_ROOM);
 	    }
 	});
