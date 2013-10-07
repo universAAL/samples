@@ -35,10 +35,7 @@
     <module>../utils/smp.utils.client</module>
     <module>../utils/smp.utils.app</module>
     <module>../utils/smp.utils.mini</module>
-    <module>../karaf/mw.karaf.feature</module>
     <module>../karaf/lddi.knx.karaf.feature</module>
-    <module>../karaf/ui.karaf.feature</module>
-    <module>../karaf/ont.karaf.feature</module>
     <module>../karaf/mw.karaf.feature.lighting-uAAL.osgi</module>
     <module>../karaf/mw.karaf.feature.ping-pong.osgi</module>
     <module>../smp.mw.runner</module>
@@ -80,16 +77,6 @@
       <dependency>
         <groupId>org.universAAL.lddi</groupId>
         <artifactId>smp.activityhub.simulator</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.universAAL.middleware</groupId>
-        <artifactId>mw.karaf.feature</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
-      </dependency>
-      <dependency>
-        <groupId>org.universAAL.ontology</groupId>
-        <artifactId>ont.karaf.feature</artifactId>
         <version>2.0.1-SNAPSHOT</version>
       </dependency>
       <dependency>
@@ -232,16 +219,6 @@
         <artifactId>test.ui.bus</artifactId>
         <version>2.0.1-SNAPSHOT</version>
       </dependency>
-      <dependency>
-        <groupId>org.universAAL.ui</groupId>
-        <artifactId>ui.karaf.feature</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
-      </dependency>
-	  <dependency>
-		<groupId>org.universAAL.ontology</groupId>
-		<artifactId>ieee.x73.std</artifactId>
-		<version>1.3.1-SNAPSHOT</version>
-	   </dependency>
     </dependencies>
   </dependencyManagement>
   <build>

@@ -61,7 +61,7 @@
     </dependency>
     <dependency>
       <groupId>org.universAAL.lddi</groupId>
-      <artifactId>lddi.iso11073.library</artifactId>
+      <artifactId>lddi.lib.activityhub</artifactId>
     </dependency>
     <dependency>
       <groupId>org.universAAL.ontology</groupId>

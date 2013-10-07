@@ -37,9 +37,9 @@ import javax.swing.JTextArea;
 import javax.swing.ListModel;
 import javax.swing.WindowConstants;
 
-import org.universAAL.lddi.iso11073.activityhub.devicecategory.ActivityHubDeviceCategoryUtil.ActivityHubDeviceCategory;
-import org.universAAL.lddi.iso11073.activityhub.devicemodel.ActivityHubFactory;
-import org.universAAL.lddi.iso11073.activityhub.devicemodel.ActivityHubSensor;
+import org.universAAL.lddi.lib.activityhub.devicecategory.ActivityHubDeviceCategoryUtil.ActivityHubDeviceCategory;
+import org.universAAL.lddi.lib.activityhub.devicemodel.ActivityHubFactory;
+import org.universAAL.lddi.lib.activityhub.devicemodel.ActivityHubSensor;
 
 /**
  * This is the connector class to the uAAL related ontology classes, mainly MyActivityHubServiceConsumer.java
