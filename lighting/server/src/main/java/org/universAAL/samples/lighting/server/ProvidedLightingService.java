@@ -66,7 +66,7 @@ public class ProvidedLightingService extends Lighting {
     static final String OUTPUT_LAMP_LOCATION = LIGHTING_SERVER_NAMESPACE
 	    + "location";
 
-    static final ServiceProfile[] profiles = new ServiceProfile[4];
+    public static final ServiceProfile[] profiles = new ServiceProfile[4];
     private static Hashtable serverLightingRestrictions = new Hashtable();
     static {
 	// we need to register all classes in the ontology for the serialization

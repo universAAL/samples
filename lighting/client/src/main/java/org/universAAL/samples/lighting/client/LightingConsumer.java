@@ -49,7 +49,7 @@ public class LightingConsumer extends ContextSubscriber {
     private static final String OUTPUT_LIST_OF_LAMPS = LIGHTING_CONSUMER_NAMESPACE
 	    + "controlledLamps";
 
-    private static ContextEventPattern[] getContextSubscriptionParams() {
+    public static ContextEventPattern[] getContextSubscriptionParams() {
 	// I am interested in all events with a light source as subject
 	ContextEventPattern cep = new ContextEventPattern();
 	cep.addRestriction(MergedRestriction.getAllValuesRestriction(
@@ -57,7 +57,7 @@ public class LightingConsumer extends ContextSubscriber {
 	return new ContextEventPattern[] { cep };
     }
 
-    LightingConsumer(ModuleContext context) {
+    public LightingConsumer(ModuleContext context) {
 	// the constructor register us to the bus
 	super(context, getContextSubscriptionParams());
 
@@ -84,7 +84,7 @@ public class LightingConsumer extends ContextSubscriber {
 
     // This method create a ServiceRequest to shut-off a light-source with the
     // given URI
-    private static ServiceRequest turnOffRequest(String lampURI) {
+    public static ServiceRequest turnOffRequest(String lampURI) {
 	// At first create a ServiceRequest by passing a appropriate
 	// service-object
 	// Additional an involved user can be passed to create user-profiles or
@@ -103,7 +103,7 @@ public class LightingConsumer extends ContextSubscriber {
     }
 
     // see turnOffRequest
-    private static ServiceRequest turnOnRequest(String lampURI) {
+    public static ServiceRequest turnOnRequest(String lampURI) {
 	ServiceRequest turnOn = new ServiceRequest(new Lighting(), null);
 
 	// we are interested in only those realizations of 'Lighting'
@@ -117,7 +117,7 @@ public class LightingConsumer extends ContextSubscriber {
     }
 
     // see turnOffRequest
-    private static ServiceRequest dimRequest(String lampURI, Integer percent) {
+    public static ServiceRequest dimRequest(String lampURI, Integer percent) {
 	ServiceRequest dim = new ServiceRequest(new Lighting(), null);
 
 	// we are interested in only those realizations of 'Lighting'

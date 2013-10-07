@@ -111,7 +111,7 @@ public class LightingProvider extends ServiceCallee implements
      * Helper method to construct the ontological declaration of context events
      * published by LightingProvider.
      */
-    private static ContextEventPattern[] providedEvents(MyLighting theServer) {
+    public static ContextEventPattern[] providedEvents(MyLighting theServer) {
 	// the LightingProvioder publishes its context events only from within
 	// "lampStateChanged()" below
 
