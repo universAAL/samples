@@ -2,7 +2,7 @@
 <features name="universAAL-2.0.0" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
 
 	<feature start-level="90" name="uAAL-LDDI-KNX" description="The LDDI FW for KNX based on the uAAL-MW"
-		version="2.0.2-SNAPSHOT" resolver='(obr)'>
+		version="${lddi.knx.version}" resolver='(obr)'>
 
 
 		<!-- LDDI need uAAL-MW -->
@@ -134,6 +134,13 @@
 		<bundle start-level='92'>mvn:org.universAAL.lddi/lddi.knx.exporter/2.0.2-SNAPSHOT
 		</bundle>
 
+		<!-- Configuration file section -->
 
+		<!-- KNX networkdriver -->
+		<configfile finalname="/etc/lddi.knx.networkdriver.cfg">mvn:org.universAAL.lddi/lddi.knx.networkdriver.config/2.0.3-SNAPSHOT/cfg</configfile>
+		<!-- KNX devicemanager -->
+		<configfile finalname="/etc/lddi.knx.devicemanager.cfg">mvn:org.universAAL.lddi/lddi.knx.devicemanager.config/2.0.3-SNAPSHOT/cfg</configfile>
+		<configfile finalname="/etc/KNX_Demowand-uAAL-MW20-Test-3.knxproj">mvn:org.universAAL.lddi/lddi.knx.devicemanager.config/2.0.3-SNAPSHOT/knxproj</configfile>
+				
 	</feature>
 </features>
