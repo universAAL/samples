@@ -21,7 +21,7 @@ import org.universAAL.samples.lighting.client.LightingConsumer;
  * @author rotgier
  * 
  */
-public class LightingTest extends IntegrationTest {
+public class LightingIT extends IntegrationTest {
 
     /**
      * Constructor of each integration TestCase has to call constructor of upper
@@ -30,7 +30,7 @@ public class LightingTest extends IntegrationTest {
      * used to setup uAAL runtime for the purpose of TestCase. All bundles
      * needed for the TestCase have to be included in the launch configuration.
      */
-    public LightingTest() {
+    public LightingIT() {
 	setRunArguments("net.slp.multicastTimeouts", "500,750");
 	setRunArguments("java.net.preferIPv4Stack", "true");
 	setRunArguments("net.slp.port", "7000");

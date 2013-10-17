@@ -40,7 +40,7 @@
     </dependency>
     <dependency>
       <groupId>org.universAAL.middleware</groupId>
-      <artifactId>mw.container.junit</artifactId>
+      <artifactId>mw.bus.junit</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
