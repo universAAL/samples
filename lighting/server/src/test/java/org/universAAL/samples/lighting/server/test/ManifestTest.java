@@ -61,7 +61,7 @@ public class ManifestTest extends ManifestTestCase {
 		.providedEvents(new MyLighting());
 	add("Light source brightness", "Changes in the brightness of a light source.", cep[0],
 		true);
-	add("Light source brightness",
+	add("Light source brightness (only lightbulbs)",
 		"Changes in the brightness of a light source, but only for lightbulbs that are in rooms.",
 		cep[0], true);
 	
