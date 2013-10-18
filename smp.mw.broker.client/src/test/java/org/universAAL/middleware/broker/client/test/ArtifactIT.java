@@ -8,9 +8,9 @@ import org.universAAL.itests.IntegrationTest;
  * @author rotgier
  * 
  */
-public class ArtifactIntegrationTest extends IntegrationTest {
+public class ArtifactIT extends IntegrationTest {
 
-    public ArtifactIntegrationTest() {
+    public ArtifactIT() {
 
 	// // Arguments for MW2.0
 	setRunArguments("net.slp.multicastTimeouts", "500,750");

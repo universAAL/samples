@@ -57,7 +57,7 @@ import org.universAAL.samples.lighting.server_regular.LightingProviderLevel3;
  * @author rotgier
  * 
  */
-public class LightingSimpleTest extends IntegrationTest {
+public class LightingSimpleIT extends IntegrationTest {
 
     private SimpleServiceRegistrator ssr;
 
@@ -72,7 +72,7 @@ public class LightingSimpleTest extends IntegrationTest {
      * used to setup uAAL runtime for the purpose of TestCase. All bundles
      * needed for the TestCase have to be included in the launch configuration.
      */
-    public LightingSimpleTest() {
+    public LightingSimpleIT() {
 	// super("../../pom/launches/LightingExample_Complete_0_3_2.launch");
 	// setBundleConfLocation("../../../itests/rundir/confadmin");
     }

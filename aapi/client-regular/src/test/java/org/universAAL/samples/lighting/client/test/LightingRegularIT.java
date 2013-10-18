@@ -49,7 +49,7 @@ import org.universAAL.samples.lighting.server_regular.LightingProviderLevel3;
  * @author rotgier
  * 
  */
-public class LightingRegularTest extends IntegrationTest {
+public class LightingRegularIT extends IntegrationTest {
 
     /**
      * Constructor of each integration TestCase has to call constructor of upper
@@ -58,7 +58,7 @@ public class LightingRegularTest extends IntegrationTest {
      * used to setup uAAL runtime for the purpose of TestCase. All bundles
      * needed for the TestCase have to be included in the launch configuration.
      */
-    public LightingRegularTest() {
+    public LightingRegularIT() {
 	// super("../../pom/launches/LightingExample_Complete_0_3_2.launch");
 	// setBundleConfLocation("../../../itests/rundir/confadmin");
     }

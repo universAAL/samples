@@ -1,3 +1,4 @@
+package org.universAAL.lddi.samples.activityhub.client.test;
 /*
      Copyright 2010-2014 AIT Austrian Institute of Technology GmbH
 	 http://www.ait.ac.at
