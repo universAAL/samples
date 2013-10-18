@@ -129,11 +129,11 @@
         </dependency>
         <dependency>
           <groupId>org.universAAL.lddi</groupId>
-          <artifactId>lddi.knx.dpt1refinementdriver.iso11073</artifactId>
+          <artifactId>lddi.knx.refinementdriver.dpt1.activityhub</artifactId>
         </dependency>
         <dependency>
           <groupId>org.universAAL.lddi</groupId>
-          <artifactId>lddi.hw.exporter.activityhub</artifactId>
+          <artifactId>lddi.exporter.activityhub</artifactId>
         </dependency>
         <dependency>
           <groupId>org.universAAL.lddi</groupId>
