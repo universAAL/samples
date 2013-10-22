@@ -44,11 +44,11 @@ public class ManifestTest extends ManifestTestCase {
 	add("Get all light sources", "Get a list of all light sources.",
 		LightingConsumer.getAllLampsRequest(), true);
 	add("Turn light source on", "Turn on a specific light source.",
-		LightingConsumer.turnOnRequest(""), true);
+		LightingConsumer.turnOnRequest("testLampUri"), true);
 	add("Turn light source off", "Turn off a specific light source.",
-		LightingConsumer.turnOffRequest(""), true);
+		LightingConsumer.turnOffRequest("testLampUri"), true);
 	add("Dim light source", "Dim a specific light source to a given value.",
-		LightingConsumer.dimRequest("", 50), true);
+		LightingConsumer.dimRequest("testLampUri", 50), true);
 
 	// context event patterns
 	add("light sources", "All changes for light sources.",
