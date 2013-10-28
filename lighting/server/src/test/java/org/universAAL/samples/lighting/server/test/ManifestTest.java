@@ -43,7 +43,6 @@ public class ManifestTest extends ManifestTestCase {
     }
 
     public void testCreateManifest() {
-	System.out.println("-- testCreateManifest");
 	// service profiles
 	add("Get controlled lamps",
 		"get the identifiers of all lamps that are controlled by this component.",
@@ -59,12 +58,12 @@ public class ManifestTest extends ManifestTestCase {
 	// context event patterns
 	ContextEventPattern[] cep = LightingProvider
 		.providedEvents(new MyLighting());
-	add("Light source brightness", "Changes in the brightness of a light source.", cep[0],
-		true);
+	add("Light source brightness",
+		"Changes in the brightness of a light source.", cep[0], true);
 	add("Light source brightness (only lightbulbs)",
 		"Changes in the brightness of a light source, but only for lightbulbs that are in rooms.",
 		cep[0], true);
-	
+
 	writeManifest();
     }
 }

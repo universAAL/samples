@@ -21,6 +21,8 @@ package org.universAAL.samples.lighting.client.test;
 
 import org.universAAL.middleware.bus.junit.ManifestTestCase;
 import org.universAAL.middleware.owl.OntologyManagement;
+import org.universAAL.middleware.service.ServiceRequest;
+import org.universAAL.middleware.service.impl.ServiceRealization;
 import org.universAAL.ontology.lighting.LightingOntology;
 import org.universAAL.ontology.location.LocationOntology;
 import org.universAAL.ontology.phThing.PhThingOntology;
@@ -41,14 +43,23 @@ public class ManifestTest extends ManifestTestCase {
 
     public void testCreateManifest() {
 	// service requests
-	add("Get all light sources", "Get a list of all light sources.",
+	ServiceRequest req;
+	req = add("Get all light sources", "Get a list of all light sources.",
 		LightingConsumer.getAllLampsRequest(), true);
-	add("Turn light source on", "Turn on a specific light source.",
+	
+	req = add("Turn light source on", "Turn on a specific light source.",
 		LightingConsumer.turnOnRequest("testLampUri"), true);
-	add("Turn light source off", "Turn off a specific light source.",
+	assertTrue(req.matches(LightingConsumer.turnOnRequest("someOtherUri")));
+	
+	req = add("Turn light source off", "Turn off a specific light source.",
 		LightingConsumer.turnOffRequest("testLampUri"), true);
-	add("Dim light source", "Dim a specific light source to a given value.",
+	assertTrue(req.matches(LightingConsumer.turnOffRequest("someOtherUri")));
+	
+	req = add("Dim light source", "Dim a specific light source to a given value.",
 		LightingConsumer.dimRequest("testLampUri", 50), true);
+	assertTrue(req.matches(LightingConsumer.dimRequest("someOtherUri", 0)));
+	assertTrue(req.matches(LightingConsumer.dimRequest("someOtherUri", 50)));
+	assertTrue(req.matches(LightingConsumer.dimRequest("someOtherUri", 100)));
 
 	// context event patterns
 	add("light sources", "All changes for light sources.",
