@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="universAAL-CTXT.tests" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+
+	<!-- Change version of repository accordingly -->
+	<repository>mvn:org.universAAL.middleware/mw.karaf.feature/2.0.2-SNAPSHOT/xml/features</repository>
+	<repository>mvn:org.universAAL.ontology/ont.karaf.feature/2.0.2-SNAPSHOT/xml/features</repository>
+	<repository>mvn:org.universAAL.context/ctxt.karaf.feature/2.0.2-SNAPSHOT/xml/features</repository>
+
+
+	<feature name="ctxt.tester" description="Feature collection typical of coordinator node."
+		version="2.0.2-SNAPSHOT" resolver='(obr)'>
+		<feature>uAAL-ctxt.CHe</feature>
+		<feature>uAAL-ctxt.Profiling.Server</feature>
+		<feature>uAAL-Ont.Profile.userId</feature>
+		<feature>uAAL-Ont.Device</feature>
+		<feature>uAAL-Ont.Furniture</feature>
+		<bundle>wrap:mvn:org.universAAL.support/uAAL.utils/2.0.1-SNAPSHOT</bundle>
+		<bundle>mvn:org.universAAL.samples/test.ctxt.bus/2.0.1-SNAPSHOT</bundle>
+	</feature>
+</features>

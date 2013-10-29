@@ -41,6 +41,18 @@ import org.universAAL.ontology.phThing.PhysicalThing;
 import org.universAAL.ontology.profile.Profilable;
 import org.universAAL.ontology.profile.User;
 import org.universAAL.ontology.profile.UserProfile;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import javax.swing.BoxLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.SwingConstants;
+import java.awt.Component;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JScrollPane;
+import javax.swing.Box;
+import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
 
 public class GUIPanel extends javax.swing.JFrame {
 
@@ -89,10 +101,18 @@ public class GUIPanel extends javax.swing.JFrame {
     private javax.swing.JButton button1p7;
     private int eventsReceived=0;
     private long starttime=0;
+    private Component horizontalGlue;
+    private JPanel p4submits;
+    private JPanel p5info;
+    private JPanel p5submits;
+    private JPanel p5results;
+    private Component horizontalGlue_1;
+    private JTextArea sparqlResults;
     
     // End of variables declaration
 
     public GUIPanel() {
+    	setTitle("Test Utility");
 	try {
 	    UIManager
 		    .setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -113,17 +133,6 @@ public class GUIPanel extends javax.swing.JFrame {
 	button2p1 = new javax.swing.JButton();
 
 	panel2 = new javax.swing.JPanel();
-	text1p2 = new javax.swing.JTextField();
-	text2p2 = new javax.swing.JTextField();
-	label1p2 = new javax.swing.JLabel();
-	label2p2 = new javax.swing.JLabel();
-	button1p2 = new javax.swing.JButton();
-	button2p2 = new javax.swing.JButton();
-	button3p2 = new javax.swing.JButton();
-	area1p2 = new javax.swing.JTextArea();
-	combo1p2 = new javax.swing.JComboBox(new Object[] { "User",
-		"Bilnd", "Chair", "Light", "Socket", "Temperature",
-		"Window", "Panic" });
 
 	panel3 = new javax.swing.JPanel();
 	label1p3 = new javax.swing.JLabel();
@@ -131,10 +140,252 @@ public class GUIPanel extends javax.swing.JFrame {
 
 	panel4 = new javax.swing.JPanel();
 	label1p4 = new javax.swing.JLabel();
-	button1p4 = new javax.swing.JButton();
-	button2p4 = new javax.swing.JButton();
 	
 	panel5 = new javax.swing.JPanel();
+	
+	panel6 = new javax.swing.JPanel();
+	label1p6 = new javax.swing.JLabel();
+	button1p6 = new javax.swing.JButton();
+	
+	panel7 = new javax.swing.JPanel();
+	combo1p7 = new javax.swing.JComboBox(new Object[] { "Get", "Add",
+		"Change", "Remove" });
+	combo2p7 = new javax.swing.JComboBox(new Object[] { "AALSpace",
+		"AALSpaceProfile", "AALService", "AALServiceProfile", "Device",
+		"Ontology", "HRProfile", "HWProfile", "AppProfile" });
+	combo3p7 = new javax.swing.JComboBox(new Object[] { "Specific",
+		"All of them", "Of/To an AALSpace", "Of/To an AALService" });
+	text1p7 = new javax.swing.JTextField();
+	label1p7 = new javax.swing.JLabel();
+	button1p7 = new javax.swing.JButton();
+
+	// WINDOW
+	setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+	this.setBounds(800, 660, 714, 492);
+	this.setMinimumSize(new Dimension(420, 330));
+	this.setPreferredSize(new Dimension(420, 330));
+	setResizable(true);
+
+	// TAB 1
+	panel1.setLayout(null);
+
+	text1p1.setText("Size of burst");
+	panel1.add(text1p1);
+	text1p1.setBounds(20, 50, 210, 23);
+
+	label1p1.setText("Delay");
+	panel1.add(label1p1);
+	label1p1.setBounds(20, 75, 210, 23);
+
+	button1p1.setText("Publish");
+	button1p1.addActionListener(new java.awt.event.ActionListener() {
+	    public void actionPerformed(java.awt.event.ActionEvent evt) {
+		sendButton1ActionPerformed(evt);
+	    }
+	});
+	panel1.add(button1p1);
+	button1p1.setBounds(20, 125, 210, 29);
+
+	button2p1.setText("Publish (unique)");
+	button2p1.addActionListener(new java.awt.event.ActionListener() {
+	    public void actionPerformed(java.awt.event.ActionEvent evt) {
+		sendButton2ActionPerformed(evt);
+	    }
+	});
+	panel1.add(button2p1);
+	button2p1.setBounds(20, 175, 210, 29);
+
+	tabbedPane.addTab("Context", panel1);
+
+	tabbedPane.addTab("CHE", panel2);
+	panel2.setLayout(new BorderLayout(0, 0));
+	
+	JPanel p2info = new JPanel();
+	panel2.add(p2info, BorderLayout.CENTER);
+	combo1p2 = new javax.swing.JComboBox(new Object[] { "User",
+		"Bilnd", "Chair", "Light", "Socket", "Temperature",
+		"Window", "Panic" });
+	
+		combo1p2.setEditable(false);
+		text1p2 = new javax.swing.JTextField();
+		
+			text1p2.setText("From Timestamp (UNIX ms)");
+			text2p2 = new javax.swing.JTextField();
+			
+				text2p2.setText("To Timestamp (UNIX ms)");
+					
+					JSplitPane splitPane = new JSplitPane();
+					splitPane.setResizeWeight(0.5);
+					splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+					GroupLayout gl_p2info = new GroupLayout(p2info);
+					gl_p2info.setHorizontalGroup(
+						gl_p2info.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_p2info.createSequentialGroup()
+								.addGap(17)
+								.addGroup(gl_p2info.createParallelGroup(Alignment.LEADING)
+									.addComponent(splitPane, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+									.addGroup(gl_p2info.createParallelGroup(Alignment.TRAILING)
+										.addComponent(combo1p2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(text2p2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+										.addComponent(text1p2, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 208, GroupLayout.PREFERRED_SIZE)))
+								.addContainerGap())
+					);
+					gl_p2info.setVerticalGroup(
+						gl_p2info.createParallelGroup(Alignment.LEADING)
+							.addGroup(gl_p2info.createSequentialGroup()
+								.addGap(5)
+								.addComponent(combo1p2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGap(5)
+								.addComponent(text1p2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addGap(5)
+								.addComponent(text2p2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED)
+								.addComponent(splitPane, GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
+								.addContainerGap())
+					);
+					gl_p2info.linkSize(SwingConstants.HORIZONTAL, new Component[] {combo1p2, text1p2, text2p2});
+					area1p2 = new javax.swing.JTextArea();
+					area1p2.setRows(20);
+					
+						area1p2.setText("SPARQL Query");
+						area1p2.setLineWrap(false);
+						JScrollPane sparea1p2 = new JScrollPane(area1p2);
+						splitPane.setLeftComponent(sparea1p2);
+						
+						JScrollPane scrollPane = new JScrollPane();
+						splitPane.setRightComponent(scrollPane);
+						
+						sparqlResults = new JTextArea();
+						sparqlResults.setEditable(false);
+						sparqlResults.setText("Results");
+						sparqlResults.setRows(20);
+						scrollPane.setViewportView(sparqlResults);
+					gl_p2info.setAutoCreateGaps(true);
+					gl_p2info.setAutoCreateContainerGaps(true);
+					p2info.setLayout(gl_p2info);
+					
+					JPanel p2submits = new JPanel();
+					panel2.add(p2submits, BorderLayout.EAST);
+					button1p2 = new javax.swing.JButton();
+					
+						button1p2.setText("GET");
+						button2p2 = new javax.swing.JButton();
+						
+							button2p2.setText("SPARQL");
+							button3p2 = new javax.swing.JButton();
+							
+								button3p2.setText("SPARQL(e)");
+								GroupLayout gl_p2submits = new GroupLayout(p2submits);
+								gl_p2submits.setHorizontalGroup(
+									gl_p2submits.createParallelGroup(Alignment.LEADING)
+										.addComponent(button1p2)
+										.addComponent(button2p2)
+										.addComponent(button3p2)
+								);
+								gl_p2submits.setVerticalGroup(
+									gl_p2submits.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_p2submits.createSequentialGroup()
+											.addComponent(button1p2)
+											.addComponent(button2p2)
+											.addComponent(button3p2))
+								);
+								gl_p2submits.linkSize(SwingConstants.HORIZONTAL, new Component[] {button1p2, button2p2, button3p2});
+								gl_p2submits.setAutoCreateGaps(true);
+								gl_p2submits.setAutoCreateContainerGaps(true);
+								p2submits.setLayout(gl_p2submits);
+								
+								JPanel p1results = new JPanel();
+								panel2.add(p1results, BorderLayout.SOUTH);
+								p1results.setLayout(new BoxLayout(p1results, BoxLayout.X_AXIS));
+								label1p2 = new javax.swing.JLabel();
+								p1results.add(label1p2);
+								
+									label1p2.setText("Returned events: ");
+									
+									horizontalGlue = Box.createHorizontalGlue();
+									p1results.add(horizontalGlue);
+									label2p2 = new javax.swing.JLabel();
+									p1results.add(label2p2);
+									
+										label2p2.setText("Delay: ");
+								button3p2.addActionListener(new java.awt.event.ActionListener() {
+								    public void actionPerformed(java.awt.event.ActionEvent evt) {
+									cheButton3ActionPerformed(evt);
+								    }
+								});
+							button2p2.addActionListener(new java.awt.event.ActionListener() {
+							    public void actionPerformed(java.awt.event.ActionEvent evt) {
+								cheButton2ActionPerformed(evt);
+							    }
+							});
+						button1p2.addActionListener(new java.awt.event.ActionListener() {
+						    public void actionPerformed(java.awt.event.ActionEvent evt) {
+							cheButton1ActionPerformed(evt);
+						    }
+						});
+
+	// TAB 3
+	panel3.setLayout(null);
+
+	label1p3.setText("Nothing received");
+	panel3.add(label1p3);
+	label1p3.setBounds(20, 50, 210, 23);
+
+	button1p3.setText("Publish");
+	button1p3.addActionListener(new java.awt.event.ActionListener() {
+	    public void actionPerformed(java.awt.event.ActionEvent evt) {
+		srButton1ActionPerformed(evt);
+	    }
+	});
+	panel3.add(button1p3);
+	button1p3.setBounds(20, 100, 160, 29);
+
+	tabbedPane.addTab("Reasoner", panel3);
+	panel4.setLayout(new BorderLayout(0, 0));
+	
+	p4submits = new JPanel();
+	panel4.add(p4submits, BorderLayout.EAST);
+	button1p4 = new javax.swing.JButton();
+	
+		button1p4.setText("Publish Data");
+		button2p4 = new javax.swing.JButton();
+		
+			button2p4.setText("Request Data");
+			GroupLayout gl_p4submits = new GroupLayout(p4submits);
+			gl_p4submits.setHorizontalGroup(
+				gl_p4submits.createParallelGroup(Alignment.LEADING)
+					.addComponent(button1p4)
+					.addComponent(button2p4)
+			);
+			gl_p4submits.setVerticalGroup(
+				gl_p4submits.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_p4submits.createSequentialGroup()
+						.addComponent(button1p4)
+						.addComponent(button2p4))
+			);
+			gl_p4submits.linkSize(SwingConstants.HORIZONTAL, new Component[] {button1p4, button2p4});
+			gl_p4submits.setAutoCreateGaps(true);
+			gl_p4submits.setAutoCreateContainerGaps(true);
+			p4submits.setLayout(gl_p4submits);
+			button2p4.addActionListener(new java.awt.event.ActionListener() {
+			    public void actionPerformed(java.awt.event.ActionEvent evt) {
+				dataButton2ActionPerformed(evt);
+			    }
+			});
+		button1p4.addActionListener(new java.awt.event.ActionListener() {
+		    public void actionPerformed(java.awt.event.ActionEvent evt) {
+			dataButton1ActionPerformed(evt);
+		    }
+		});
+
+	label1p4.setText("Nothing received");
+	panel4.add(label1p4);
+
+	tabbedPane.addTab("Data", panel4);
+	panel5.setLayout(new BorderLayout(0, 0));
+	
+	p5info = new JPanel();
+	panel5.add(p5info, BorderLayout.CENTER);
 	combo1p5 = new javax.swing.JComboBox(new Object[] {
 		"Get (user)",
 		"Add (user)",
@@ -156,208 +407,74 @@ public class GUIPanel extends javax.swing.JFrame {
 		"Add to (user) a (subprofile)",
 		"Add to (profile) a (subprofile)",
 		"Get one subprofile from (user)"});
-	button1p5 = new javax.swing.JButton();
-	text1p5 = new javax.swing.JTextField();
-	text2p5 = new javax.swing.JTextField();
-	label1p5 = new javax.swing.JLabel();
-	label2p5 = new javax.swing.JLabel();
-	text3p5 = new javax.swing.JTextField();
-	
-	panel6 = new javax.swing.JPanel();
-	label1p6 = new javax.swing.JLabel();
-	button1p6 = new javax.swing.JButton();
-	
-	panel7 = new javax.swing.JPanel();
-	combo1p7 = new javax.swing.JComboBox(new Object[] { "Get", "Add",
-		"Change", "Remove" });
-	combo2p7 = new javax.swing.JComboBox(new Object[] { "AALSpace",
-		"AALSpaceProfile", "AALService", "AALServiceProfile", "Device",
-		"Ontology", "HRProfile", "HWProfile", "AppProfile" });
-	combo3p7 = new javax.swing.JComboBox(new Object[] { "Specific",
-		"All of them", "Of/To an AALSpace", "Of/To an AALService" });
-	text1p7 = new javax.swing.JTextField();
-	label1p7 = new javax.swing.JLabel();
-	button1p7 = new javax.swing.JButton();
-
-	// WINDOW
-	setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-	this.setBounds(800, 660, 420, 330);
-	this.setMaximumSize(new Dimension(420, 330));
-	this.setMinimumSize(new Dimension(420, 330));
-	this.setPreferredSize(new Dimension(420, 330));
-	setResizable(true);
-	getContentPane().setLayout(null);
-
-	// TAB 1
-	panel1.setLayout(null);
-
-	text1p1.setText("Size of burst");
-	panel1.add(text1p1);
-	text1p1.setBounds(20, 50, 210, 23);
-
-	label1p1.setText("Delay");
-	panel1.add(label1p1);
-	label1p1.setBounds(20, 75, 210, 23);
-
-	button1p1.setText("Publish");
-	button1p1.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		sendButton1ActionPerformed(evt);
-	    }
-	});
-	panel1.add(button1p1);
-	button1p1.setBounds(20, 125, 75, 29);
-
-	button2p1.setText("Publish (unique)");
-	button2p1.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		sendButton2ActionPerformed(evt);
-	    }
-	});
-	panel1.add(button2p1);
-	button2p1.setBounds(20, 175, 75, 29);
-
-	tabbedPane.addTab("Context", panel1);
-
-	// TAB 2
-	panel2.setLayout(null);
-
-	combo1p2.setEditable(false);
-	panel2.add(combo1p2);
-	combo1p2.setBounds(20, 25, 210, 23);
-
-	text1p2.setText("From Timestamp (UNIX ms)");
-	panel2.add(text1p2);
-	text1p2.setBounds(20, 50, 210, 23);
-
-	text2p2.setText("To Timestamp (UNIX ms)");
-	panel2.add(text2p2);
-	text2p2.setBounds(20, 75, 210, 23);
-
-	button1p2.setText("GET");
-	button1p2.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		cheButton1ActionPerformed(evt);
-	    }
-	});
-	panel2.add(button1p2);
-	button1p2.setBounds(250, 25, 75, 29);
-
-	area1p2.setText("SPARQL Query");
-	area1p2.setLineWrap(false);
-	panel2.add(area1p2);
-	area1p2.setBounds(20, 100, 210, 75);
-
-	button2p2.setText("SPARQL");
-	button2p2.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		cheButton2ActionPerformed(evt);
-	    }
-	});
-	panel2.add(button2p2);
-	button2p2.setBounds(250, 100, 75, 29);
-
-	button3p2.setText("SPARQL(e)");
-	button3p2.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		cheButton3ActionPerformed(evt);
-	    }
-	});
-	panel2.add(button3p2);
-	button3p2.setBounds(250, 150, 75, 29);
-
-	label1p2.setText("Returned events: ");
-	panel2.add(label1p2);
-	label1p2.setBounds(20, 200, 210, 23);
-
-	label2p2.setText("Delay: ");
-	panel2.add(label2p2);
-	label2p2.setBounds(250, 200, 150, 23);
-
-	tabbedPane.addTab("CHE", panel2);
-
-	// TAB 3
-	panel3.setLayout(null);
-
-	label1p3.setText("Nothing received");
-	panel3.add(label1p3);
-	label1p3.setBounds(20, 50, 210, 23);
-
-	button1p3.setText("Publish");
-	button1p3.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		srButton1ActionPerformed(evt);
-	    }
-	});
-	panel3.add(button1p3);
-	button1p3.setBounds(20, 100, 75, 29);
-
-	tabbedPane.addTab("Reasoner", panel3);
-
-	// TAB 4
-	panel4.setLayout(null);
-
-	label1p4.setText("Nothing received");
-	panel4.add(label1p4);
-	label1p4.setBounds(20, 50, 210, 23);
-
-	button1p4.setText("Publish Data");
-	button1p4.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		dataButton1ActionPerformed(evt);
-	    }
-	});
-	panel4.add(button1p4);
-	button1p4.setBounds(20, 100, 75, 29);
-
-	button2p4.setText("Request Data");
-	button2p4.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		dataButton2ActionPerformed(evt);
-	    }
-	});
-	panel4.add(button2p4);
-	button2p4.setBounds(20, 130, 75, 29);
-
-	tabbedPane.addTab("Data", panel4);
-	
-	// TAB 5
-	panel5.setLayout(null);
 	
 	combo1p5.setEditable(false);
-	panel5.add(combo1p5);
-	combo1p5.setBounds(20, 25, 210, 23);
+	text1p5 = new javax.swing.JTextField();
 
 	text1p5.setText(CPublisher.URIROOT+"argument1");
-	panel5.add(text1p5);
-	text1p5.setBounds(20, 50, 250, 23);
+	text2p5 = new javax.swing.JTextField();
 
 	text2p5.setText(CPublisher.URIROOT+"argument2");
-	panel5.add(text2p5);
-	text2p5.setBounds(20, 75, 250, 23);
+	text3p5 = new javax.swing.JTextField();
 	
 	text3p5.setText("Repeats");
-	panel5.add(text3p5);
-	text3p5.setBounds(20, 100, 100, 23);
-
-	button1p5.setText("Call");
-	button1p5.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		profileButton1ActionPerformed(evt);
-	    }
-	});
-	panel5.add(button1p5);
-	button1p5.setBounds(20, 130, 75, 29);
+	GroupLayout gl_p5info = new GroupLayout(p5info);
+	gl_p5info.setHorizontalGroup(
+		gl_p5info.createParallelGroup(Alignment.LEADING)
+			.addGroup(gl_p5info.createSequentialGroup()
+				.addContainerGap()
+				.addGroup(gl_p5info.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_p5info.createSequentialGroup()
+						.addComponent(text2p5)
+						.addContainerGap())
+					.addGroup(gl_p5info.createSequentialGroup()
+						.addComponent(text1p5, GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+						.addContainerGap())
+					.addComponent(combo1p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addComponent(text3p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+	);
+	gl_p5info.setVerticalGroup(
+		gl_p5info.createParallelGroup(Alignment.LEADING)
+			.addGroup(gl_p5info.createSequentialGroup()
+				.addGap(5)
+				.addComponent(combo1p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addGap(5)
+				.addComponent(text1p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addGap(5)
+				.addComponent(text2p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addGap(5)
+				.addComponent(text3p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+	);
+	p5info.setLayout(gl_p5info);
 	
-	label1p5.setText("Nothing received");
-	panel5.add(label1p5);
-	label1p5.setBounds(20, 155, 400, 29);
+	p5submits = new JPanel();
+	panel5.add(p5submits, BorderLayout.EAST);
+	button1p5 = new javax.swing.JButton();
+	p5submits.add(button1p5);
 	
-	label2p5.setText("Delay: ");
-	panel5.add(label2p5);
-	label2p5.setBounds(20, 180, 400, 29);
+		button1p5.setText("Call");
+		button1p5.addActionListener(new java.awt.event.ActionListener() {
+		    public void actionPerformed(java.awt.event.ActionEvent evt) {
+			profileButton1ActionPerformed(evt);
+		    }
+		});
 
 	tabbedPane.addTab("Profile", panel5);
+	
+	p5results = new JPanel();
+	panel5.add(p5results, BorderLayout.SOUTH);
+	p5results.setLayout(new BoxLayout(p5results, BoxLayout.X_AXIS));
+	label1p5 = new javax.swing.JLabel();
+	p5results.add(label1p5);
+	
+	label1p5.setText("Nothing received");
+	
+	horizontalGlue_1 = Box.createHorizontalGlue();
+	p5results.add(horizontalGlue_1);
+	label2p5 = new javax.swing.JLabel();
+	p5results.add(label2p5);
+	
+	label2p5.setText("Delay: ");
 
 	// TAB 6
 	panel6.setLayout(null);
@@ -373,32 +490,19 @@ public class GUIPanel extends javax.swing.JFrame {
 	    }
 	});
 	panel6.add(button1p6);
-	button1p6.setBounds(20, 100, 75, 29);
+	button1p6.setBounds(20, 100, 152, 29);
 
 	tabbedPane.addTab("Subscriber", panel6);
 	
-	// TAB 7
-	panel7.setLayout(null);
-	
 	combo1p7.setEditable(false);
-	panel7.add(combo1p7);
-	combo1p7.setBounds(20, 25, 210, 23);
 	
 	combo2p7.setEditable(false);
-	panel7.add(combo2p7);
-	combo2p7.setBounds(20, 50, 210, 23);
 	
 	combo3p7.setEditable(false);
-	panel7.add(combo3p7);
-	combo3p7.setBounds(20, 75, 210, 23);
 	
 	text1p7.setText(CPublisher.URIROOT+"argument1");
-	panel7.add(text1p7);
-	text1p7.setBounds(20, 100, 250, 23);
 
 	label1p7.setText("Select a valid combination");
-	panel7.add(label1p7);
-	label1p7.setBounds(20, 130, 310, 23);
 
 	button1p7.setText("Call");
 	button1p7.addActionListener(new java.awt.event.ActionListener() {
@@ -406,18 +510,47 @@ public class GUIPanel extends javax.swing.JFrame {
 		spaceButton1ActionPerformed(evt);
 	    }
 	});
-	panel7.add(button1p7);
-	button1p7.setBounds(20, 160, 75, 29);
+	getContentPane().setLayout(new BorderLayout(0, 0));
 
 	tabbedPane.addTab("Space", panel7);
+	GroupLayout gl_panel7 = new GroupLayout(panel7);
+	gl_panel7.setHorizontalGroup(
+		gl_panel7.createParallelGroup(Alignment.LEADING)
+			.addGroup(gl_panel7.createSequentialGroup()
+				.addContainerGap()
+				.addGroup(gl_panel7.createParallelGroup(Alignment.LEADING)
+					.addComponent(text1p7, GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
+					.addComponent(combo1p7, GroupLayout.PREFERRED_SIZE, 210, GroupLayout.PREFERRED_SIZE)
+					.addComponent(combo2p7, GroupLayout.PREFERRED_SIZE, 210, GroupLayout.PREFERRED_SIZE)
+					.addComponent(combo3p7, GroupLayout.PREFERRED_SIZE, 210, GroupLayout.PREFERRED_SIZE)
+					.addComponent(label1p7, GroupLayout.PREFERRED_SIZE, 310, GroupLayout.PREFERRED_SIZE)
+					.addComponent(button1p7, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE))
+				.addContainerGap())
+	);
+	gl_panel7.setVerticalGroup(
+		gl_panel7.createParallelGroup(Alignment.LEADING)
+			.addGroup(gl_panel7.createSequentialGroup()
+				.addContainerGap()
+				.addComponent(combo1p7, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+				.addGap(2)
+				.addComponent(combo2p7, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+				.addGap(2)
+				.addComponent(combo3p7, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+				.addGap(2)
+				.addComponent(text1p7, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+				.addGap(7)
+				.addComponent(label1p7, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+				.addGap(7)
+				.addComponent(button1p7, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+				.addContainerGap(63, Short.MAX_VALUE))
+	);
+	panel7.setLayout(gl_panel7);
 		
 	// MAIN
-	getContentPane().add(tabbedPane);
-	tabbedPane.setBounds(10, 40, 400, 260);
+	getContentPane().add(tabbedPane, BorderLayout.CENTER);
 	labelMain.setFont(new java.awt.Font("Verdana", 1, 14));
 	labelMain.setText("Test utility");
-	getContentPane().add(labelMain);
-	labelMain.setBounds(10, 10, 360, 18);
+	getContentPane().add(labelMain, BorderLayout.NORTH);
 
 	pack();
     }
@@ -490,10 +623,11 @@ public class GUIPanel extends javax.swing.JFrame {
 	String text = this.area1p2.getText();
 	if (!text.isEmpty()) {
 	    long t0 = System.currentTimeMillis();
-	    Activator.hcaller.callDoSPARQL(text);
+	    String res = Activator.hcaller.callDoSPARQL(text);
 	    this.label1p2.setText("Returned events: N/A");
 	    this.label2p2.setText("Delay: " + (System.currentTimeMillis() - t0)
 		    + " ms");
+	    this.sparqlResults.setText(res);
 	}
     }
 
@@ -778,5 +912,4 @@ public class GUIPanel extends javax.swing.JFrame {
 	    label1p7.setText(result);
 	}
     }
-
 }
