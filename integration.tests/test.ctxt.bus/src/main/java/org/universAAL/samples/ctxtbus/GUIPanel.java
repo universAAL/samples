@@ -53,6 +53,8 @@ import javax.swing.JScrollPane;
 import javax.swing.Box;
 import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
 
 public class GUIPanel extends javax.swing.JFrame {
 
@@ -108,6 +110,10 @@ public class GUIPanel extends javax.swing.JFrame {
     private JPanel p5results;
     private Component horizontalGlue_1;
     private JTextArea sparqlResults;
+    private JScrollPane scrollPane_1;
+    private JTextArea p5callres;
+    private JScrollPane scrollPane_2;
+    JTextArea subscriberArea;
     
     // End of variables declaration
 
@@ -145,7 +151,6 @@ public class GUIPanel extends javax.swing.JFrame {
 	
 	panel6 = new javax.swing.JPanel();
 	label1p6 = new javax.swing.JLabel();
-	button1p6 = new javax.swing.JButton();
 	
 	panel7 = new javax.swing.JPanel();
 	combo1p7 = new javax.swing.JComboBox(new Object[] { "Get", "Add",
@@ -418,6 +423,8 @@ public class GUIPanel extends javax.swing.JFrame {
 	text3p5 = new javax.swing.JTextField();
 	
 	text3p5.setText("Repeats");
+	
+	scrollPane_1 = new JScrollPane();
 	GroupLayout gl_p5info = new GroupLayout(p5info);
 	gl_p5info.setHorizontalGroup(
 		gl_p5info.createParallelGroup(Alignment.LEADING)
@@ -425,13 +432,18 @@ public class GUIPanel extends javax.swing.JFrame {
 				.addContainerGap()
 				.addGroup(gl_p5info.createParallelGroup(Alignment.LEADING)
 					.addGroup(gl_p5info.createSequentialGroup()
-						.addComponent(text2p5)
+						.addComponent(scrollPane_1, GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
 						.addContainerGap())
 					.addGroup(gl_p5info.createSequentialGroup()
-						.addComponent(text1p5, GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+						.addComponent(text1p5, GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
 						.addContainerGap())
 					.addComponent(combo1p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addComponent(text3p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+					.addGroup(gl_p5info.createSequentialGroup()
+						.addComponent(text3p5, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap())
+					.addGroup(gl_p5info.createSequentialGroup()
+						.addComponent(text2p5, GroupLayout.PREFERRED_SIZE, 319, GroupLayout.PREFERRED_SIZE)
+						.addContainerGap())))
 	);
 	gl_p5info.setVerticalGroup(
 		gl_p5info.createParallelGroup(Alignment.LEADING)
@@ -443,8 +455,16 @@ public class GUIPanel extends javax.swing.JFrame {
 				.addGap(5)
 				.addComponent(text2p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 				.addGap(5)
-				.addComponent(text3p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+				.addComponent(text3p5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addPreferredGap(ComponentPlacement.RELATED)
+				.addComponent(scrollPane_1, GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+				.addContainerGap())
 	);
+	
+	p5callres = new JTextArea();
+	p5callres.setEditable(false);
+	p5callres.setText("Results");
+	scrollPane_1.setViewportView(p5callres);
 	p5info.setLayout(gl_p5info);
 	
 	p5submits = new JPanel();
@@ -475,24 +495,60 @@ public class GUIPanel extends javax.swing.JFrame {
 	p5results.add(label2p5);
 	
 	label2p5.setText("Delay: ");
-
-	// TAB 6
-	panel6.setLayout(null);
+	panel6.setLayout(new BorderLayout(0, 0));
+	
+	JPanel p6submits = new JPanel();
+	panel6.add(p6submits, BorderLayout.EAST);
+	button1p6 = new javax.swing.JButton();
+	
+		button1p6.setText("Enable");
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			    subscriberArea.setText("");
+			    label1p6.setText("Not Enabled: Nothing received");
+			}
+		});
+		GroupLayout gl_panel = new GroupLayout(p6submits);
+		gl_panel.setHorizontalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(button1p6, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(btnReset, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		gl_panel.setVerticalGroup(
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(button1p6)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnReset)
+					.addContainerGap(163, Short.MAX_VALUE))
+		);
+		p6submits.setLayout(gl_panel);
+		button1p6.addActionListener(new java.awt.event.ActionListener() {
+		    public void actionPerformed(java.awt.event.ActionEvent evt) {
+			subscribeButton1ActionPerformed(evt);
+		    }
+		});
 
 	label1p6.setText("Not Enabled: Nothing received");
-	panel6.add(label1p6);
-	label1p6.setBounds(20, 50, 210, 23);
-
-	button1p6.setText("Enable");
-	button1p6.addActionListener(new java.awt.event.ActionListener() {
-	    public void actionPerformed(java.awt.event.ActionEvent evt) {
-		subscribeButton1ActionPerformed(evt);
-	    }
-	});
-	panel6.add(button1p6);
-	button1p6.setBounds(20, 100, 152, 29);
+	panel6.add(label1p6, BorderLayout.SOUTH);
 
 	tabbedPane.addTab("Subscriber", panel6);
+	
+	scrollPane_2 = new JScrollPane();
+	panel6.add(scrollPane_2, BorderLayout.CENTER);
+	
+	subscriberArea = new JTextArea();
+	subscriberArea.setEditable(false);
+	scrollPane_2.setViewportView(subscriberArea);
 	
 	combo1p7.setEditable(false);
 	
@@ -808,8 +864,10 @@ public class GUIPanel extends javax.swing.JFrame {
 	    repeat=Integer.valueOf(0);
 	}
 	long t0 = System.currentTimeMillis();
-	this.label1p5.setText(Activator.pcaller.callProfile(
-		this.combo1p5.getSelectedIndex(), arg1, arg2, repeat));
+	String s = Activator.pcaller.callProfile(
+		this.combo1p5.getSelectedIndex(), arg1, arg2, repeat);
+	this.p5callres.setText(s);
+	//this.label1p5.setText();
 	this.label2p5.setText("Delay: " + (System.currentTimeMillis() - t0) + " ms");
 
     }

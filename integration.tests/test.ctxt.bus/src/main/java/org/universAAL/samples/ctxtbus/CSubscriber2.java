@@ -49,6 +49,7 @@ public class CSubscriber2 extends ContextSubscriber {
 
     public void handleContextEvent(ContextEvent event) {
 	Activator.panel.subscribeReceived();
+	Activator.panel.subscriberArea.append(Activator.ser.serialize(event) + "\n");
     }
 
     public void enable() {
