@@ -43,7 +43,7 @@ import org.universAAL.ontology.location.Location;
  * @author amarinc
  * 
  */
-class LightingConsumer extends ContextSubscriber {
+public class LightingConsumer extends ContextSubscriber {
 
     private static ServiceCaller caller;
     private static LightSource[] allLightSources = null;
@@ -55,7 +55,7 @@ class LightingConsumer extends ContextSubscriber {
     private static final String OUTPUT_LAMP_LOCATION = LIGHTING_CONSUMER_NAMESPACE
 	    + "lampLocation";
 
-    private static ContextEventPattern[] getContextSubscriptionParams() {
+    public static ContextEventPattern[] getContextSubscriptionParams() {
 	// I am interested in all events with a light source as subject
 	ContextEventPattern cep = new ContextEventPattern();
 	cep.addRestriction(MergedRestriction.getAllValuesRestriction(
@@ -81,7 +81,7 @@ class LightingConsumer extends ContextSubscriber {
 
     // This method create a ServiceRequest to shut-off a light-source with the
     // given URI
-    private static ServiceRequest turnOffRequest(String lampURI) {
+    public static ServiceRequest turnOffRequest(String lampURI) {
 	// At first create a ServiceRequest by passing a appropriate
 	// service-object
 	// Additional an involved user can be passed to create user-profiles or
@@ -102,7 +102,7 @@ class LightingConsumer extends ContextSubscriber {
     }
 
     // see turnOffRequest
-    private static ServiceRequest turnOnRequest(String lampURI) {
+    public static ServiceRequest turnOnRequest(String lampURI) {
 	ServiceRequest turnOn = new ServiceRequest(new Lighting(), null);
 
 	turnOn.getRequestedService().addInstanceLevelRestriction(
@@ -117,7 +117,7 @@ class LightingConsumer extends ContextSubscriber {
     }
 
     // see turnOffRequest
-    private static ServiceRequest dimRequest(String lampURI, Integer percent) {
+    public static ServiceRequest dimRequest(String lampURI, Integer percent) {
 	ServiceRequest dim = new ServiceRequest(new Lighting(), null);
 
 	dim.getRequestedService().addInstanceLevelRestriction(
@@ -132,7 +132,7 @@ class LightingConsumer extends ContextSubscriber {
 	return dim;
     }
 
-    private static ServiceRequest getGetLampsLocationRequest(String lampURI) {
+    public static ServiceRequest getGetLampsLocationRequest(String lampURI) {
 	ServiceRequest getLampLocation = new ServiceRequest(new Lighting(),
 		null);
 	getLampLocation.getRequestedService().addInstanceLevelRestriction(

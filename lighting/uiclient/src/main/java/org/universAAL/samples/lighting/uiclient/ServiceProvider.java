@@ -39,22 +39,24 @@ public class ServiceProvider extends ServiceCallee {
     public static final String START_URI = UI_LIGHTING_CLIENT_NAMESPACE
 	    + "MainDialog";
 
+    public static ServiceProfile myProfile = InitialServiceDialog
+	    .createInitialDialogProfile(Lighting.MY_URI,
+		    "http://www.igd.fraunhofer.de",
+		    "Sample Lighting UI Client", START_URI);
+
     ServiceProvider(ModuleContext mc) {
-	super(mc, new ServiceProfile[] { InitialServiceDialog
-		.createInitialDialogProfile(Lighting.MY_URI,
-			"http://www.igd.fraunhofer.de",
-			"Sample Lighting UI Client", START_URI) });
+	super(mc, new ServiceProfile[] { myProfile });
     }
 
     /**
-     * @see org.persona.middleware.service.ServiceCallee#communicationChannelBroken()
+     * @see ServiceCallee#communicationChannelBroken()
      */
     public void communicationChannelBroken() {
 	// TODO Auto-generated method stub
     }
 
     /**
-     * @see org.persona.middleware.service.ServiceCallee#handleCall(org.persona.middleware.service.ServiceCall)
+     * @see ServiceCallee#handleCall(org.persona.middleware.service.ServiceCall)
      */
     public ServiceResponse handleCall(ServiceCall call) {
 	if (call != null) {
