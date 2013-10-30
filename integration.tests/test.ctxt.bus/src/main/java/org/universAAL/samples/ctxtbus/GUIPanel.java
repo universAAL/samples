@@ -442,7 +442,7 @@ public class GUIPanel extends javax.swing.JFrame {
 						.addComponent(text3p5, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
 						.addContainerGap())
 					.addGroup(gl_p5info.createSequentialGroup()
-						.addComponent(text2p5, GroupLayout.PREFERRED_SIZE, 319, GroupLayout.PREFERRED_SIZE)
+						.addComponent(text2p5, GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
 						.addContainerGap())))
 	);
 	gl_p5info.setVerticalGroup(
