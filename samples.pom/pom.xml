@@ -59,10 +59,46 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.universAAL.support</groupId>
-        <artifactId>itests</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
-        <scope>test</scope>
+        <groupId>org.universAAL.middleware</groupId>
+        <artifactId>mw.pom</artifactId>
+        <version>2.0.3-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.middleware</groupId>
+        <artifactId>mw.pom.osgi</artifactId>
+        <version>2.0.3-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.ontology</groupId>
+        <artifactId>ont.pom</artifactId>
+        <version>2.0.3-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.ui</groupId>
+        <artifactId>ui.pom</artifactId>
+        <version>2.0.3-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.lddi</groupId>
+        <artifactId>lddi.pom</artifactId>
+        <version>2.0.4-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.lddi</groupId>
+        <artifactId>lddi.pom.knx</artifactId>
+        <version>2.0.4-SNAPSHOT</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.lddi</groupId>
