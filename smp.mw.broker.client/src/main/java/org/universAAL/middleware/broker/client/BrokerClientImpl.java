@@ -24,13 +24,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.universAAL.middleware.broker.client.SimpleMessage.SimpleMessageTypes;
 import org.universAAL.middleware.brokers.Broker;
 import org.universAAL.middleware.brokers.message.BrokerMessage;
-import org.universAAL.middleware.brokers.message.BrokerMessage.BrokerMessageTypes;
-import org.universAAL.middleware.brokers.message.BrokerMessageFields;
 import org.universAAL.middleware.connectors.exception.CommunicationConnectorException;
 import org.universAAL.middleware.connectors.util.ChannelMessage;
 import org.universAAL.middleware.container.ModuleContext;
@@ -42,11 +38,14 @@ import org.universAAL.middleware.managers.api.AALSpaceManager;
 import org.universAAL.middleware.modules.CommunicationModule;
 import org.universAAL.middleware.modules.listener.MessageListener;
 
+import com.google.gson.Gson;
+
 /**
  * Simple Broker showing how to access to an AALSpace and how to send messages
  * 
  * @author <a href="mailto:michele.girolami@isti.cnr.it">Michele Girolami</a>
  * @author <a href="mailto:francesco.furfari@isti.cnr.it">Francesco Furfari</a>
+ * @author <a href="mailto:stefano.lenzi@isti.cnr.it">Stefano Lenzi</a> 
  */
 public class BrokerClientImpl implements Broker, MessageListener {
 
@@ -269,26 +268,9 @@ public class BrokerClientImpl implements Broker, MessageListener {
     public BrokerMessage unmarshall(String message) {
 	try {
 
-	    JSONObject obj = new JSONObject(message);
+	    Gson gson = new Gson();
+	    return gson.fromJson(message, SimpleMessage.class);
 
-	    // check if the message can be serialized
-	    BrokerMessageTypes mtype = BrokerMessageTypes.valueOf(obj
-		    .getString(BrokerMessageFields.BROKER_MESSAGE_TYPE));
-	    if (!mtype.equals(BrokerMessageTypes.SimpleMessage)) {
-		System.out.println("Error of type");
-	    }
-
-	    // unmarshall message type
-	    SimpleMessageTypes type = SimpleMessageTypes.valueOf(obj
-		    .getString(SimpleMessageFields.Simple_Message_MTYPE));
-
-	    SimpleMessage simpleMessage = new SimpleMessage(type);
-
-	    return simpleMessage;
-
-	} catch (JSONException e) {
-	    System.err.println(e);
-	    return null;
 	} catch (Exception e) {
 	    System.err.println(e);
 	    return null;

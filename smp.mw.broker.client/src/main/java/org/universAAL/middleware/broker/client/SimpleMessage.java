@@ -20,18 +20,19 @@
  */
 package org.universAAL.middleware.broker.client;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.universAAL.middleware.brokers.message.BrokerMessage;
-import org.universAAL.middleware.brokers.message.BrokerMessageFields;
 import org.universAAL.middleware.brokers.message.aalspace.AALSpaceMessageException;
+import org.universAAL.middleware.brokers.message.gson.GsonParserBuilder;
 import org.universAAL.middleware.interfaces.PeerCard;
+
+import com.google.gson.Gson;
 
 /**
  * Simple Message type exchanged among AAL-aware nodes
  * 
  * @author <a href="mailto:michele.girolami@isti.cnr.it">Michele Girolami</a>
  * @author <a href="mailto:francesco.furfari@isti.cnr.it">Francesco Furfari</a>
+ * @author <a href="mailto:stefano.lenzi@isti.cnr.it">Stefano Lenzi</a>
  */
 public class SimpleMessage implements BrokerMessage {
 
@@ -56,26 +57,13 @@ public class SimpleMessage implements BrokerMessage {
     }
 
     public String toString() {
-	JSONObject obj = new JSONObject();
 	try {
+	    Gson gson = GsonParserBuilder.getInstance().buildGson();
+	    return gson.toJson(this);
 
-	    // marshall the broker message type
-	    obj.put(BrokerMessageFields.BROKER_MESSAGE_TYPE, mtype.toString());
-
-	    // marshall the aal space message type
-	    obj.put(SimpleMessageFields.Simple_Message_MTYPE, type.toString());
-
-	    return obj.toString();
-
-	} catch (JSONException e) {
-
-	    throw new AALSpaceMessageException(
-		    "Unable to unmashall AALSpaceMessage. Full Stack: "
-			    + e.toString());
 	} catch (Exception e) {
 	    throw new AALSpaceMessageException(
-		    "Unable to unmashall AALSpaceMessage. Full Stack: "
-			    + e.toString());
+		    "Unable to mashall BrokerMessage. Details: " + e);
 	}
     }
 
