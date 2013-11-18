@@ -46,6 +46,7 @@ import org.universAAL.ontology.profile.SubProfile;
 import org.universAAL.ontology.profile.User;
 import org.universAAL.ontology.profile.UserProfile;
 import org.universAAL.ontology.profile.service.ProfilingService;
+//import org.universAAL.ontology.profile.userid.UserIDProfile;
 import org.universAAL.ontology.vcard.Cell;
 import org.universAAL.ontology.vcard.Tel;
 //import org.universAAL.samples.service.utils.Arg;
@@ -194,12 +195,39 @@ public class ProfileCaller {
 		case 19:
 		    ret = getSubprofile(new User(arg1));
 		    break;
+//		case 20:
+//		    ret = getSecSubprofile(new User(arg1));
+//		    break;
 		default:
 		    break;
 		}
 	}
 	return ret;
     }
+
+//    private String getSecSubprofile(User user) {
+//	log.info("Profile Client: getSubprofileX");
+//	ServiceRequest req=new ServiceRequest(new ProfilingService(),null);
+// 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, user);
+// 	ProcessOutput po=new ProcessOutput(OUTPUT_GETSUBPROFILES);
+// 	po.setCardinality(1, 1);
+// 	po.setParameterType(UserIDProfile.MY_URI);
+//// 	po.setParameterType(PersonalInformationSubprofile.MY_URI);
+//	req.addSimpleOutputBinding(po, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
+//	ServiceResponse resp=caller.call(req);
+//	if (resp.getCallStatus() == CallStatus.succeeded) {
+//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
+//	    if (out != null) {
+//		log.debug(out.toString());
+//		return out.toString();
+//	    } else {
+//		log.debug("NOTHING!");
+//		return "nothing";
+//	    }
+//	}else{
+//	    return resp.getCallStatus().name();
+//	}
+//    }
 
     private String getSubprofile(User user) {
 	log.info("Profile Client: getSubprofileX");

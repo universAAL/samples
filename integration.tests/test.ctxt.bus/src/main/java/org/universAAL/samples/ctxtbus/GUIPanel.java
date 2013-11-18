@@ -411,7 +411,8 @@ public class GUIPanel extends javax.swing.JFrame {
 		"Add to (user) a (profile)",
 		"Add to (user) a (subprofile)",
 		"Add to (profile) a (subprofile)",
-		"Get one subprofile from (user)"});
+		"Get one subprofile from (user)"/*,
+		"Get authentication from (user)"*/});
 	
 	combo1p5.setEditable(false);
 	text1p5 = new javax.swing.JTextField();
