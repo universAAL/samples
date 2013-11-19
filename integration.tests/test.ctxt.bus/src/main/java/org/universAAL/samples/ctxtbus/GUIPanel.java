@@ -23,6 +23,8 @@ package org.universAAL.samples.ctxtbus;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 
 import javax.swing.UIManager;
 
@@ -55,6 +57,7 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextArea;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import javax.swing.JTabbedPane;
 
 public class GUIPanel extends javax.swing.JFrame {
 
@@ -114,7 +117,10 @@ public class GUIPanel extends javax.swing.JFrame {
     private JTextArea p5callres;
     private JScrollPane scrollPane_2;
     JTextArea subscriberArea;
-    
+    private JPanel panel8;
+    private JButton btnQuery;
+    private JTabbedPane sparqlQueries;
+    static private int tabcount = 2;
     // End of variables declaration
 
     public GUIPanel() {
@@ -605,6 +611,48 @@ public class GUIPanel extends javax.swing.JFrame {
 		
 	// MAIN
 	getContentPane().add(tabbedPane, BorderLayout.CENTER);
+	
+	panel8 = new JPanel();
+	tabbedPane.addTab("SPARQL", null, panel8, null);
+	panel8.setLayout(new BorderLayout(0, 0));
+	
+	JPanel panel = new JPanel();
+	panel8.add(panel, BorderLayout.EAST);
+	
+	btnQuery = new JButton("Query");
+	btnQuery.setMnemonic('q');
+	btnQuery.addActionListener(new ActionListener() {
+	    
+	    public void actionPerformed(ActionEvent e) {
+		Component c = sparqlQueries.getSelectedComponent();
+		if (c instanceof SparQLQueryPanel){
+		    ((SparQLQueryPanel)c).query();
+		}
+	    }
+	});
+	panel.add(btnQuery);
+	
+	sparqlQueries = new JTabbedPane(JTabbedPane.LEFT);
+	panel8.add(sparqlQueries, BorderLayout.CENTER);
+	
+	sparqlQueries.addTab("1", null, new SparQLQueryPanel(), null);
+	
+	JPanel add = new JPanel();
+	add.addComponentListener(new ComponentListener() {
+
+	    public void componentShown(ComponentEvent e) {
+		int lastIndex = sparqlQueries.getComponentCount() -1;
+		sparqlQueries.insertTab(Integer.toString(tabcount ++), null, new SparQLQueryPanel(), null, lastIndex);
+		sparqlQueries.setSelectedIndex(lastIndex);
+	    }
+	    
+	    public void componentResized(ComponentEvent e) {   }
+	    
+	    public void componentMoved(ComponentEvent e) {   }
+	    
+	    public void componentHidden(ComponentEvent e) {  }
+	});
+	sparqlQueries.addTab("+", null, add, null);
 	labelMain.setFont(new java.awt.Font("Verdana", 1, 14));
 	labelMain.setText("Test utility");
 	getContentPane().add(labelMain, BorderLayout.NORTH);
