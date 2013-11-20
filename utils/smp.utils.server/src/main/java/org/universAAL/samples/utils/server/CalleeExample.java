@@ -114,7 +114,7 @@ public class CalleeExample extends ServiceCallee{
 
 	Object input = call.getInputValue(INPUT_LAMP_URI);
 	if (input == null){
-	    // The rest of profiles use a light input. If it´s not there, failure!
+	    // The rest of profiles use a light input. If it's not there, failure!
 	    return new ServiceResponse(CallStatus.serviceSpecificFailure);
 	}
 	int index=Integer.parseInt(input.toString().substring(Activator.LIGHT_URI_PREFIX.length()));
