@@ -10,7 +10,7 @@
   </parent>
   <groupId>org.universAAL.support.samples</groupId>
   <artifactId>samples.pom</artifactId>
-  <version>2.0.1-SNAPSHOT</version>
+  <version>2.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>universAAL Samples Suite</name>
   <description>A set of components that use the universAAL middleware with different roles and serve as samples.</description>
@@ -47,9 +47,9 @@
     <module>../smp.ri.gateway.communicator/ri.gateway.samples.android</module>
     <module>../smp.ri.gateway.communicator/ri.gateway.samples.home</module>
     <module>../smp.ctxt.situation.reasoner.client</module>
-	<module>../lddi.bluetooth/weighingScalePublisher</module>
-	<module>../lddi.bluetooth/continuaManager/unix</module>
-	<module>../lddi.bluetooth/continuaManager/windows</module>
+    <module>../lddi.bluetooth/weighingScalePublisher</module>
+    <module>../lddi.bluetooth/continuaManager/unix</module>
+    <module>../lddi.bluetooth/continuaManager/windows</module>
   </modules>
   <scm>
     <connection>${svn.base}/samples/${project.artifactId}</connection>
@@ -61,199 +61,219 @@
       <dependency>
         <groupId>org.universAAL.middleware</groupId>
         <artifactId>mw.pom</artifactId>
-        <version>2.0.3-SNAPSHOT</version>
+        <version>2.0.4-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.middleware</groupId>
         <artifactId>mw.pom.osgi</artifactId>
-        <version>2.0.3-SNAPSHOT</version>
+        <version>2.0.4-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.ontology</groupId>
         <artifactId>ont.pom</artifactId>
-        <version>2.0.3-SNAPSHOT</version>
+        <version>2.0.4-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.ui</groupId>
         <artifactId>ui.pom</artifactId>
-        <version>2.0.3-SNAPSHOT</version>
+        <version>2.0.4-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.lddi</groupId>
         <artifactId>lddi.pom</artifactId>
-        <version>2.0.4-SNAPSHOT</version>
+        <version>2.0.5-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.lddi</groupId>
         <artifactId>lddi.pom.knx</artifactId>
-        <version>2.0.4-SNAPSHOT</version>
+        <version>2.0.5-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.universAAL.lddi</groupId>
         <artifactId>lddi.knx.karaf.feature</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.4-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.lddi</groupId>
         <artifactId>smp.activityhub.client</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.lddi</groupId>
         <artifactId>smp.activityhub.simulator</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.ontology</groupId>
         <artifactId>ont.lighting.simple</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.ontology</groupId>
         <artifactId>ont.tutorial</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>mw.karaf.feature.lighting-uAAL.osgi</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>mw.karaf.feature.ping-pong.osgi</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>ri.gateway.samples.android</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>ri.gateway.samples.home</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>simple.ui</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.ctxt.situation.reasoner.client</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.lighting.client-regular</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.lighting.client-simple</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.lighting.client.osgi</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.lighting.server-regular</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.lighting.server-simple</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.lighting.server.osgi</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.lighting.uiclient.osgi</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.sensor.simulator.gui</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.mw.broker.client</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.mw.deploymanager.client</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.mw.runner</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.utils.app</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.utils.client</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.utils.mini</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.utils.server</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>test.ctxt.bus</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.3-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>test.ctxt.bus.mobiledroid</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>test.serv.bus</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>test.serv.server</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>test.ui.bus</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.0.2-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.lddi</groupId>
+        <artifactId>smp.device.client</artifactId>
+        <version>2.0.2-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.samples</groupId>
+        <artifactId>smp.lddi.ContinuaManagerClient.unix</artifactId>
+        <version>2.0.2-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.samples</groupId>
+        <artifactId>smp.lddi.ContinuaManagerClient.windows</artifactId>
+        <version>2.0.2-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.samples</groupId>
+        <artifactId>smp.lddi.weighingScalePublisher</artifactId>
+        <version>2.0.2-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

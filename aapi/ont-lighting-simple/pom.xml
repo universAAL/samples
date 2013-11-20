@@ -8,7 +8,7 @@
     <version>2.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>ont.lighting.simple</artifactId>
-  <version>2.0.1-SNAPSHOT</version>
+  <version>2.0.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples AAPI Simplified Lighting Ontology</name>
   <description>The simpligied ontology defining URIs for the most general concepts dealing with light sources and their control.</description>
