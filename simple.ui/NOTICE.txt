@@ -1,11 +1,11 @@
 universAAL Simple UI Sample
 
 Copyright 2012-2014 UPM, http://www.upm.es
-Universidad Politécnica de Madrid 
+Universidad PolitÃ©cnica de Madrid 
 
 
 I. Included Software
-first version of artifact by Universidad Politécnica de Madrid within the universAAL project.
+first version of artifact by Universidad PolitÃ©cnica de Madrid within the universAAL project.
 
 II. Used Software
 
