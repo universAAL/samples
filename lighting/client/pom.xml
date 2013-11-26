@@ -74,6 +74,7 @@
             <Bundle-Description>${project.description}</Bundle-Description>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Export-Package>org.universAAL.samples.lighting.client</Export-Package>
+            <Import-Package>org.osgi.framework;version="[1,2)",*</Import-Package>
           </instructions>
         </configuration>
       </plugin>
