@@ -568,10 +568,14 @@ public class SpaceCaller {
     
     private static String getListOfResults(ServiceResponse resp){
 	if (resp.getCallStatus() == CallStatus.succeeded) {
-	    Object out=getReturnValue(resp.getOutputs(),OUTPUT);
+	    List out = resp.getOutput(OUTPUT, true);
+	    //Object out=getReturnValue(resp.getOutputs(),OUTPUT);
 	    if (out != null) {
-		log.debug(out.toString());
-		return out.toString();
+		String s = "";
+		for (Object o : out)
+		    s += o.toString() + "\r\n";
+		log.debug(s);
+		return s;
 	    } else {
 		log.debug("NOTHING!");
 		return "nothing";
