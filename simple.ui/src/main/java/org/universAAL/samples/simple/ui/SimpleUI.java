@@ -39,7 +39,7 @@ public class SimpleUI extends UICaller {
 	public void communicationChannelBroken() {	}
 
 	@Override
-	public void dialogAborted(String dialogID) {	}
+	public void dialogAborted(String dialogID, Resource data) {	}
 
 	@Override
 	public void handleUIResponse(UIResponse input) {
