@@ -480,7 +480,7 @@ public class OPublisher extends UICaller {
     }
 
     @Override
-    public void dialogAborted(String dialogID) {
+    public void dialogAborted(String dialogID, Resource data) {
 	// TODO Auto-generated method stub
 	
     }

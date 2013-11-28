@@ -194,7 +194,7 @@ public class UIProvider extends UICaller {
      * org.universAAL.middleware.ui.UICaller#dialogAborted(java.lang.String)
      */
     @Override
-    public void dialogAborted(String dialogID) {
+    public void dialogAborted(String dialogID, Resource data) {
 	// TODO Auto-generated method stub
 
     }
