@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.universAAL.ontology</groupId>
-    <artifactId>ont.pom</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <groupId>org.universAAL.support.samples</groupId>
+    <artifactId>samples.pom</artifactId>
+    <version>2.0.2-SNAPSHOT</version>
   </parent>
   <artifactId>ont.lighting.simple</artifactId>
   <version>2.0.2-SNAPSHOT</version>
@@ -24,16 +24,12 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.osgi.core</artifactId>
+      <groupId>org.universAAL.middleware</groupId>
+      <artifactId>mw.data.representation.core</artifactId>
     </dependency>
     <dependency>
       <groupId>org.universAAL.middleware</groupId>
-      <artifactId>mw.data.representation.osgi</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.universAAL.middleware</groupId>
-      <artifactId>mw.bus.service.osgi</artifactId>
+      <artifactId>mw.bus.service.core</artifactId>
     </dependency>
     <dependency>
       <groupId>org.universAAL.ontology</groupId>
@@ -41,11 +37,7 @@
     </dependency>
     <dependency>
       <groupId>org.universAAL.middleware</groupId>
-      <artifactId>mw.container.xfaces.osgi</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.universAAL.middleware</groupId>
-      <artifactId>mw.container.osgi</artifactId>
+      <artifactId>mw.container.xfaces.core</artifactId>
     </dependency>
     <dependency>
       <groupId>org.universAAL.ontology</groupId>
@@ -53,7 +45,7 @@
     </dependency>
     <dependency>
       <groupId>org.universAAL.middleware</groupId>
-      <artifactId>mw.bus.service.aapi.osgi</artifactId>
+      <artifactId>mw.bus.service.aapi.core</artifactId>
     </dependency>
   </dependencies>
   <build>

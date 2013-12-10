@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.universAAL.remote</groupId>
-    <artifactId>ri.pom</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <groupId>org.universAAL.support.samples</groupId>
+    <artifactId>samples.pom</artifactId>
+    <version>2.0.2-SNAPSHOT</version>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>ri.gateway.samples.home</artifactId>
@@ -24,7 +24,7 @@
       <artifactId>ri.gateway.communicator</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.felix</groupId>
+      <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
     </dependency>
     <dependency>

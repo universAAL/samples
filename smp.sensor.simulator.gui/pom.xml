@@ -16,7 +16,7 @@
   <description>Context Event publisher with Swing GUI for simulating sensors. Simulates user location sensor, temperature and humidity sensors and lighting controller</description>
   <dependencies>
     <dependency>
-      <groupId>org.apache.felix</groupId>
+      <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
     </dependency>
     <dependency>
