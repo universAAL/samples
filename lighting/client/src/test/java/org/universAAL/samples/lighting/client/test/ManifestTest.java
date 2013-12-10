@@ -59,10 +59,10 @@ public class ManifestTest extends ManifestTestCase {
 	req = add("Dim light source",
 		"Dim a specific light source to a given value.",
 		LightingConsumer.dimRequest("testLampUri", 50), true);
-	assertTrue(req.matches(LightingConsumer.dimRequest("someOtherUri", 0)));
-	assertTrue(req.matches(LightingConsumer.dimRequest("someOtherUri", 50)));
-	assertTrue(req
-		.matches(LightingConsumer.dimRequest("someOtherUri", 100)));
+	assertTrue(LightingConsumer.dimRequest("someOtherUri", 0).matches(req));
+	assertTrue(LightingConsumer.dimRequest("someOtherUri", 50).matches(req));
+	assertTrue(LightingConsumer.dimRequest("someOtherUri", 100)
+		.matches(req));
 
 	// context event patterns
 	add("light sources", "All changes for light sources.",
