@@ -35,7 +35,6 @@ import org.universAAL.ontology.phThing.PhThingOntology;
 import org.universAAL.ontology.shape.ShapeOntology;
 import org.universAAL.samples.lighting.uiclient.LightingConsumer;
 import org.universAAL.samples.lighting.uiclient.ServiceProvider;
-import org.universAAL.samples.lighting.uiclient.SharedResources;
 
 public class ManifestTest extends ManifestTestCase {
 
@@ -72,10 +71,10 @@ public class ManifestTest extends ManifestTestCase {
 	req = add("Dim light source",
 		"Dim a specific light source to a given value.",
 		LightingConsumer.dimRequest("testLampUri", 50), true);
-	assertTrue(req.matches(LightingConsumer.dimRequest("someOtherUri", 0)));
-	assertTrue(req.matches(LightingConsumer.dimRequest("someOtherUri", 50)));
-	assertTrue(req
-		.matches(LightingConsumer.dimRequest("someOtherUri", 100)));
+	assertTrue(LightingConsumer.dimRequest("someOtherUri", 0).matches(req));
+	assertTrue(LightingConsumer.dimRequest("someOtherUri", 50).matches(req));
+	assertTrue(LightingConsumer.dimRequest("someOtherUri", 100)
+		.matches(req));
 
 	// service profiles
 	add("Main menu callee",
