@@ -37,6 +37,7 @@
     <module>../utils/smp.utils.mini</module>
     <module>../karaf/mw.karaf.feature.lighting-uAAL.osgi</module>
     <module>../karaf/mw.karaf.feature.ping-pong.osgi</module>
+    <module>../karaf/uAAL.karaf.feature</module>
     <module>../smp.mw.runner</module>
     <module>../aapi/ont-lighting-simple</module>
     <module>../aapi/server-regular</module>
