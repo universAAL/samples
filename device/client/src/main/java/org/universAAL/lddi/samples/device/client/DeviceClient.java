@@ -21,10 +21,7 @@
 package org.universAAL.lddi.samples.device.client;
 
 import java.awt.Dimension;
-import java.awt.Scrollbar;
 import java.awt.event.ActionEvent;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import javax.swing.AbstractAction;
 import javax.swing.DefaultComboBoxModel;
@@ -37,7 +34,6 @@ import javax.swing.JTextArea;
 import javax.swing.ListModel;
 import javax.swing.WindowConstants;
 
-import org.universAAL.ontology.phThing.Device;
 
 /**
  * This is the connector class to the uAAL related ontology classes, mainly DeviceContextListener.java
@@ -76,7 +72,7 @@ public class DeviceClient extends javax.swing.JPanel {
 	private static JLabel label3;
 	private static JLabel label4;
 	private JButton infoButton;
-	private JButton sensorButton;
+	private JButton devicesButton;
 	private AbstractAction Info1;
 	private AbstractAction Info2;
 
@@ -129,13 +125,13 @@ public class DeviceClient extends javax.swing.JPanel {
 //			jList1.setBounds(20, 40, 680, 100);
 		}
 
-//		{
-//			sensorButton = new JButton();
-//			frame.getContentPane().add(sensorButton);
-//			sensorButton.setText("Sensors");
-//			sensorButton.setBounds(720, 40, 250, 35);
-//			sensorButton.setAction(getSensors());
-//		}
+		{
+			devicesButton = new JButton();
+			frame.getContentPane().add(devicesButton);
+			devicesButton.setText("getAllDevices");
+			devicesButton.setBounds(720, 40, 250, 35);
+			devicesButton.setAction(getAllDevices());
+		}
 
 //		{
 //			infoButton = new JButton();
@@ -173,21 +169,28 @@ public class DeviceClient extends javax.swing.JPanel {
 		}
 	}
 	
-//	/**
-//	 * AbstractAction for button getSensors
-//	 * initiates service call to parent
-//	 * @return
-//	 */
-//	private AbstractAction getSensors() {
-//		if(Info1 == null) {
-//			Info1 = new AbstractAction("get all Devices", null) {
-//				public void actionPerformed(ActionEvent evt) {
-//					myParent.serviceConsumer.getSensors();
-//				}
-//			};
-//		}
-//		return Info1;
-//	}
+	/**
+	 * AbstractAction for button getSensors
+	 * initiates service call to parent
+	 * @return
+	 */
+	private AbstractAction getAllDevices() {
+		if(Info1 == null) {
+			Info1 = new AbstractAction("get all Devices", null) {
+				public void actionPerformed(ActionEvent evt) {
+					String[] devices = myParent.serviceCaller.getControlledDevices();
+					if (devices != null) {
+						for (String device : devices)
+							addTextToDeviceArea(device);
+					} else {
+						addTextToLogArea("No devices available!");
+					}
+					
+				}
+			};
+		}
+		return Info1;
+	}
 	
 //	/**
 //	 * AbstractAction for button getInfo

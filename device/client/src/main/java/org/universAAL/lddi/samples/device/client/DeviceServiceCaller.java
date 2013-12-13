@@ -1,3 +1,4 @@
+package org.universAAL.lddi.samples.device.client;
 /*
      Copyright 2010-2014 AIT Austrian Institute of Technology GmbH
 	 http://www.ait.ac.at
@@ -18,30 +19,76 @@
      limitations under the License.
 */
 
-//package org.universAAL.lddi.samples.device.client;
-//
-//import java.util.ArrayList;
-//import java.util.Iterator;
-//import java.util.List;
-//
-//import org.universAAL.middleware.container.ModuleContext;
-//import org.universAAL.middleware.container.utils.LogUtils;
-//import org.universAAL.middleware.rdf.Resource;
-//import org.universAAL.middleware.service.CallStatus;
-//import org.universAAL.middleware.service.DefaultServiceCaller;
-//import org.universAAL.middleware.service.ServiceCaller;
-//import org.universAAL.middleware.service.ServiceRequest;
-//import org.universAAL.middleware.service.ServiceResponse;
-//import org.universAAL.middleware.service.owls.process.ProcessOutput;
-//
-///**
-// * This class provides ontological service requests and processes the service responses
-// * This class is stateless; no objects (sensors) are stored here
-// * LogUtil from uAAL-Middleware is used here
-// * 
-// * @author Thomas Fuxreiter (foex@gmx.at)
-// */
-//public class DeviceServiceConsumer {
+import java.util.List;
+
+import org.universAAL.middleware.container.ModuleContext;
+import org.universAAL.middleware.service.CallStatus;
+import org.universAAL.middleware.service.DefaultServiceCaller;
+import org.universAAL.middleware.service.ServiceCaller;
+import org.universAAL.middleware.service.ServiceRequest;
+import org.universAAL.middleware.service.ServiceResponse;
+import org.universAAL.ontology.device.LightController;
+import org.universAAL.ontology.phThing.Device;
+import org.universAAL.ontology.phThing.DeviceService;
+
+/**
+ * This class provides ontological service requests and processes the service responses
+ * This class is stateless; no objects (sensors) are stored here
+ * LogUtil from uAAL-Middleware is used here
+ * 
+ * @author Thomas Fuxreiter (foex@gmx.at)
+ */
+public class DeviceServiceCaller {
+
+	private static ServiceCaller caller;
+	private static final String DEVICE_CONSUMER_NAMESPACE
+	= "http://ontology.universAAL.org/DeviceConsumer.owl#";
+	private static final String OUTPUT_LIST_OF_DEVICES
+	= DEVICE_CONSUMER_NAMESPACE + "controlledDevices";
+	
+	protected DeviceServiceCaller(ModuleContext context) {
+		caller = new DefaultServiceCaller(context);
+	}
+	
+	public ServiceRequest getAllDevicesRequest() {
+		ServiceRequest getAllDevices = new ServiceRequest(new DeviceService(), null);
+		getAllDevices.addRequiredOutput(OUTPUT_LIST_OF_DEVICES, new String[] { DeviceService.PROP_CONTROLS});
+		return getAllDevices;
+	}
+	
+	public String[] getControlledDevices() {
+		ServiceResponse sr = caller.call(getAllDevicesRequest());
+		if (sr.getCallStatus() == CallStatus.succeeded){
+			List<Device> deviceList = sr.getOutput(OUTPUT_LIST_OF_DEVICES, true);
+			
+			System.out.println("deviceList.size():" + deviceList.size());
+			
+			String[] devices = new String[deviceList.size()];
+			for (int i=0; i<devices.length; i++)
+				devices[i] = ((Device)deviceList.get(i)).getURI();
+			return devices;
+		}
+		return null;
+	}	
+	
+	private ServiceRequest getLightValueRequest(String lampURI, int value) {
+		ServiceRequest request = new ServiceRequest( new DeviceService(), null);
+		request.addValueFilter(new String[] { LightController.PROP_HAS_VALUE }, new LightController(lampURI));
+		request.addChangeEffect(
+				new String[] {DeviceService.PROP_CONTROLS, LightController.PROP_HAS_VALUE},
+				new Integer(value)
+		);
+		return request;
+	}
+
+	public boolean switchLight(String lampURI, boolean on){
+		ServiceResponse sr = caller.call(getLightValueRequest(lampURI, on ? 100 : 0));
+		return sr.getCallStatus() == CallStatus.succeeded;
+	}
+
+	
+}
+
 //
 //	// DefaultServiceCaller
 //    private static ServiceCaller caller;

@@ -36,7 +36,7 @@ public class Activator implements BundleActivator {
 
     public static ModuleContext mc;
 	private static DeviceClient dc;
-//    public DeviceServiceConsumer serviceConsumer;
+    public DeviceServiceCaller serviceCaller;
     private DeviceContextListener contextListener;
     private Thread thread;
 
@@ -64,8 +64,8 @@ public class Activator implements BundleActivator {
 	}
 
 	public void stop(BundleContext context) throws Exception {
-//		if (serviceConsumer != null)
-//			serviceConsumer.deleteGui();
+//		if (serviceCaller != null)
+//			serviceCaller.deleteGui();
 		thread.interrupt();
 		// uninstall myself from uAALBundleContainer ??
 		//uAALBundleContainer.THE_CONTAINER.unregister...
@@ -89,7 +89,7 @@ public class Activator implements BundleActivator {
 		public MyThread() {
 		}
 		public void run() {
-//			serviceConsumer = new DeviceServiceConsumer(mc,dc);
+			serviceCaller = new DeviceServiceCaller(mc);
 			contextListener = new DeviceContextListener(mc,dc);
 		}
 	}
