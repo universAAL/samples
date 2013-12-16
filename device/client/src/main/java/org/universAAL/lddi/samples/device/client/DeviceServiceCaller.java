@@ -28,6 +28,10 @@ import org.universAAL.middleware.service.ServiceCaller;
 import org.universAAL.middleware.service.ServiceRequest;
 import org.universAAL.middleware.service.ServiceResponse;
 import org.universAAL.ontology.device.LightController;
+import org.universAAL.ontology.device.StatusValue;
+import org.universAAL.ontology.device.SwitchActuator;
+import org.universAAL.ontology.device.SwitchController;
+import org.universAAL.ontology.device.ValueDevice;
 import org.universAAL.ontology.phThing.Device;
 import org.universAAL.ontology.phThing.DeviceService;
 
@@ -61,17 +65,40 @@ public class DeviceServiceCaller {
 		if (sr.getCallStatus() == CallStatus.succeeded){
 			List<Device> deviceList = sr.getOutput(OUTPUT_LIST_OF_DEVICES, true);
 			
-			System.out.println("deviceList.size():" + deviceList.size());
-			
-			String[] devices = new String[deviceList.size()];
-			for (int i=0; i<devices.length; i++)
-				devices[i] = ((Device)deviceList.get(i)).getURI();
-			return devices;
+			if (deviceList.size() != 0) {
+				String[] devices = new String[deviceList.size()];
+				for (int i=0; i<devices.length; i++)
+					devices[i] = ((Device)deviceList.get(i)).getURI();
+				return devices;
+			} else {
+				System.out.println("no devices returned!");
+				return null;
+			}
 		}
 		return null;
 	}	
+
 	
-	private ServiceRequest getLightValueRequest(String lampURI, int value) {
+	private ServiceRequest switchDeviceRequest(String deviceURI, boolean value) {
+		ServiceRequest request = new ServiceRequest( new DeviceService(), null);
+		request.addValueFilter(new String[] { SwitchController.PROP_HAS_VALUE }, new SwitchController(deviceURI));
+		request.addChangeEffect(
+				new String[] {DeviceService.PROP_CONTROLS, SwitchController.PROP_HAS_VALUE},
+				value ? StatusValue.ACTIVATED : StatusValue.NOT_ACTIVATED
+				//new Integer(value)
+		);
+		
+		return request;
+	}
+	
+	public boolean switchDevice(String deviceURI, boolean on) {
+		ServiceResponse sr = caller.call(switchDeviceRequest(deviceURI, on));
+		return sr.getCallStatus() == CallStatus.succeeded;
+	}
+	
+
+
+	private ServiceRequest setLightValueRequest(String lampURI, int value) {
 		ServiceRequest request = new ServiceRequest( new DeviceService(), null);
 		request.addValueFilter(new String[] { LightController.PROP_HAS_VALUE }, new LightController(lampURI));
 		request.addChangeEffect(
@@ -81,8 +108,8 @@ public class DeviceServiceCaller {
 		return request;
 	}
 
-	public boolean switchLight(String lampURI, boolean on){
-		ServiceResponse sr = caller.call(getLightValueRequest(lampURI, on ? 100 : 0));
+	public boolean switchdevice(String deviceURI, boolean on){
+		ServiceResponse sr = caller.call(setLightValueRequest(deviceURI, on ? 100 : 0));
 		return sr.getCallStatus() == CallStatus.succeeded;
 	}
 

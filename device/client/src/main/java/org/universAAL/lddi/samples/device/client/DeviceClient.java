@@ -24,6 +24,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,6 +32,7 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.ListModel;
 import javax.swing.WindowConstants;
 
@@ -71,10 +73,15 @@ public class DeviceClient extends javax.swing.JPanel {
 	private static JLabel label2;
 	private static JLabel label3;
 	private static JLabel label4;
-	private JButton infoButton;
+	private JButton switchOnButton;
+	private JButton switchOffButton;
 	private JButton devicesButton;
 	private AbstractAction Info1;
 	private AbstractAction Info2;
+	private AbstractAction Info3;
+
+	private JTextField field1;
+
 
 	/**
 	 * Constructor
@@ -133,13 +140,28 @@ public class DeviceClient extends javax.swing.JPanel {
 			devicesButton.setAction(getAllDevices());
 		}
 
+		{
+			switchOnButton = new JButton();
+			frame.getContentPane().add(switchOnButton);
+//			switchOnButton.setText("Switch ON");
+			switchOnButton.setBounds(720, 105, 110, 35);
+			switchOnButton.setAction(switchDeviceOn());
+		}
+		
 //		{
-//			infoButton = new JButton();
-//			frame.getContentPane().add(infoButton);
-//			infoButton.setText("Device Info");
-//			infoButton.setBounds(720, 105, 250, 35);
-//			infoButton.setAction(getInfo());
+//			field1 = new JTextField(20);
+//			frame.getContentPane().add(field1);
+//			field1.setText("");
+//			field1.setBounds(940, 105, 20, 20);
 //		}
+		
+		{
+			switchOffButton = new JButton();
+			frame.getContentPane().add(switchOffButton);
+//			switchOffButton.setText("Switch OFF");
+			switchOffButton.setBounds(860, 105, 110, 35);
+			switchOffButton.setAction(switchDeviceOff());
+		}
 
 		{
 			label2 = new JLabel("Device Info");
@@ -169,6 +191,41 @@ public class DeviceClient extends javax.swing.JPanel {
 		}
 	}
 	
+	
+//	private AbstractAction setDeviceValue() {
+//		if(Info3 == null) {
+//			Info2 = new AbstractAction("set device value", null) {
+//				public void actionPerformed(ActionEvent evt) {
+//					myParent.serviceCaller.switchActuator((String)jList1.getSelectedValue(), 
+//							Integer.parseInt(field1.getText()));
+//				}
+//			};
+//		}
+//		return Info3;
+//	}
+
+	private AbstractAction switchDeviceOn() {
+		if(Info2 == null) {
+			Info2 = new AbstractAction("Switch ON", null) {
+				public void actionPerformed(ActionEvent evt) {
+					myParent.serviceCaller.switchdevice((String)jList1.getSelectedValue(), true);
+				}
+			};
+		}
+		return Info2;
+	}
+
+	private AbstractAction switchDeviceOff() {
+		if(Info3 == null) {
+			Info3 = new AbstractAction("Switch OFF", null) {
+				public void actionPerformed(ActionEvent evt) {
+					myParent.serviceCaller.switchdevice((String)jList1.getSelectedValue(), false);
+				}
+			};
+		}
+		return Info3;
+	}
+	
 	/**
 	 * AbstractAction for button getSensors
 	 * initiates service call to parent
@@ -180,8 +237,9 @@ public class DeviceClient extends javax.swing.JPanel {
 				public void actionPerformed(ActionEvent evt) {
 					String[] devices = myParent.serviceCaller.getControlledDevices();
 					if (devices != null) {
-						for (String device : devices)
-							addTextToDeviceArea(device);
+						jList1.setListData(devices);
+//						for (String device : devices)
+//							addTextToDeviceArea(device);
 					} else {
 						addTextToLogArea("No devices available!");
 					}
