@@ -81,7 +81,7 @@ public class DeviceServiceCaller {
 	
 	private ServiceRequest switchDeviceRequest(String deviceURI, boolean value) {
 		ServiceRequest request = new ServiceRequest( new DeviceService(), null);
-		request.addValueFilter(new String[] { SwitchController.PROP_HAS_VALUE }, new SwitchController(deviceURI));
+		request.addValueFilter(new String[] { DeviceService.PROP_CONTROLS }, new SwitchController(deviceURI));
 		request.addChangeEffect(
 				new String[] {DeviceService.PROP_CONTROLS, SwitchController.PROP_HAS_VALUE},
 				value ? StatusValue.ACTIVATED : StatusValue.NOT_ACTIVATED
@@ -100,7 +100,7 @@ public class DeviceServiceCaller {
 
 	private ServiceRequest setLightValueRequest(String lampURI, int value) {
 		ServiceRequest request = new ServiceRequest( new DeviceService(), null);
-		request.addValueFilter(new String[] { LightController.PROP_HAS_VALUE }, new LightController(lampURI));
+		request.addValueFilter(new String[] { DeviceService.PROP_CONTROLS }, new LightController(lampURI));
 		request.addChangeEffect(
 				new String[] {DeviceService.PROP_CONTROLS, LightController.PROP_HAS_VALUE},
 				new Integer(value)
@@ -109,7 +109,8 @@ public class DeviceServiceCaller {
 	}
 
 	public boolean switchdevice(String deviceURI, boolean on){
-		ServiceResponse sr = caller.call(setLightValueRequest(deviceURI, on ? 100 : 0));
+//		ServiceResponse sr = caller.call(setLightValueRequest(deviceURI, on ? 100 : 0));
+		ServiceResponse sr = caller.call(switchDeviceRequest(deviceURI, on));
 		return sr.getCallStatus() == CallStatus.succeeded;
 	}
 
