@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Continua manager</string>
+    <string name="title_activity_main">Continua manager</string>
+    <string name="toast_msg_bluetooth_not_available">Bluetooth not available</string>
+    <string name="imageviewContentDescriptionMainActivityLayout">uAAL logo</string>
+    <string name="textviewMainActivityLayout">Continua agents successfully paired:</string>
+    <string name="toast_msg_hdp_profile_not_supported">Bluetooth HDP profile not supported</string>
+    <string name="toast_msg_hdp_not_paired_devices">HDP devices not paired</string>
+
+    <color name="app_background_color">#FFFFFFFF</color>
+    <color name="button_background_color">#00000000</color>
+
+    <string name="toast_msg_unable_to_register_hdp_app">Unable to register HDP application</string>
+    <string name="toast_msg_unable_to_get_valid_file_descriptor">Unable to create HDP channel</string>
+    <string name="text_View_Sys_Blood_Pressure_Layout">Sys (mmHg)</string>
+    <string name="text_View_Dia_Blood_Pressure_Layout">Dia (mmHg)</string>
+    <string name="text_View_Bpm_Blood_Pressure_Layout">Bpm</string>
+    <string name="text_View_Weight_Weighing_Scale_Layout">Weight (kg)</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_blood_pressure_monitor">Blood pressure monitor</string>
+    <string name="title_activity_weighing_scale">Weighing scale</string>
+	<string name="title_activity_personal_health_panel">Personal health panel</string>
+	<string name="sys_parameter_personal_health_panel">Sys (mmHg)</string>
+	<string name="dia_parameter_personal_health_panel">Dia (mmHg)</string>
+	<string name="pulse_parameter_personal_health_panel"> Pulse (min)</string>
+	<string name="weight_parameter_personal_health_panel"> Weight (kg)</string>
+	<string name="off_button_personal_health_panel"> Start a new measurement</string>
+	<string name="on_button_personal_health_panel"> Stop a new measurement</string>
+	
+	
+</resources>

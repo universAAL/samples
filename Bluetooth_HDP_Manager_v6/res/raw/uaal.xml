@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<application>
+   <permissions>
+      <mw.bus.context>
+         <advertisement>
+            <title>Measured weight</title>
+            <description>CONTEXT PUBLISHER EVENT: New measured weight</description>
+            <action>en.tsb.uaal.continua.manager.ACTION_WEIGHT_EVENT</action>
+            <category>android.intent.category.DEFAULT</category>
+            <input>
+                <key>var1</key>
+                <value>weight_value</value>
+            </input>
+            <serialization>
+               <![CDATA[
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns: <http://ontology.universaal.org/Measurement.owl#> .
+@prefix ns1: <http://ontology.universaal.org/PhThing.owl#> .
+@prefix ns2: <http://ontology.universAAL.org/Context.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix tst: <http://http://ontology.itaca.upv.es/Test.owl#> .
+@prefix ns3: <http://ontology.universAAL.org/PersonalHealthDevice.owl#> .
+@prefix : <http://ontology.universAAL.org/PersonalHealtDeviceSimulator.owl#> .
+<urn:org.universAAL.middleware.context.rdf:ContextEvent#_:928cde1c229cdbc8:94c>
+a ns2:ContextEvent ;
+  rdf:subject :WeighingScale ;
+  ns2:hasTimestamp "1386858836556"^^xsd:long ;
+  rdf:predicate ns3:hasMeasuredWeight ;
+  rdf:object :Measurement_Weight ;
+  ns2:hasProvider tst:HDPContextProvider .
+:WeighingScale a ns3:WeighingScale ,
+    ns1:Device ,
+    ns1:PhysicalThing ;
+  ns3:hasMeasuredWeight :Measurement_Weight .
+:Measurement_Weight a ns:Measurement ;
+  ns:value "&var1;75&var1;"^^xsd:string .
+ns2:gauge a ns2:ContextProviderType .
+tst:HDPContextProvider a ns2:ContextProvider ;
+  ns2:hasType ns2:gauge ;
+  ns2:myClassesOfEvents [
+      a ns2:ContextEventPattern ;
+      <http://www.w3.org/2000/01/rdf-schema#subClassOf> [
+          a owl:Restriction ;
+          owl:allValuesFrom ns3:WeighingScale ;
+          owl:onProperty rdf:subject
+        ]
+    ] .
+]]>
+            </serialization>
+         </advertisement>
+         <advertisement>
+            <title>Measured blood pressure</title>
+            <description>CONTEXT PUBLISHER EVENT: New measured blood pressure</description>
+            <action>en.tsb.uaal.continua.manager.ACTION_BLOODP_EVENT</action>
+            <category>android.intent.category.DEFAULT</category>
+            <input>
+                <key>var1</key>
+                <value>heartrate_value</value>
+            </input>
+            <input>
+                <key>var2</key>
+                <value>systolic_value</value>
+            </input>
+            <input>
+                <key>var3</key>
+                <value>diastolic_value</value>
+            </input>
+            <serialization>
+               <![CDATA[
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns: <http://ontology.universaal.org/Measurement.owl#> .
+@prefix ns1: <http://ontology.universaal.org/PhThing.owl#> .
+@prefix ns2: <http://ontology.universAAL.org/Context.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix tst: <http://http://ontology.itaca.upv.es/Test.owl#> .
+@prefix ns3: <http://ontology.universAAL.org/PersonalHealthDevice.owl#> .
+@prefix : <http://ontology.universAAL.org/PersonalHealtDeviceSimulator.owl#> .
+<urn:org.universAAL.middleware.context.rdf:ContextEvent#_:928cde1c320522ac:969>
+a ns2:ContextEvent ;
+  rdf:subject :BloodPressureMonitor ;
+  ns2:hasTimestamp "1386860954536"^^xsd:long ;
+  rdf:predicate ns3:hasMeasurement ;
+  rdf:object :BloodPressureMeasurement ;
+  ns2:hasProvider tst:HDPContextProvider .
+:Measurement_Heartrate a ns:Measurement ;
+  ns:value "&var1;33&var1;"^^xsd:string .
+:BloodPressureMonitor ns3:hasMeasurement :BloodPressureMeasurement ;
+  a ns3:BloodPressureMonitor ,
+    ns1:Device ,
+    ns1:PhysicalThing .
+:Measurement_Systolic a ns:Measurement ;
+  ns:value "&var2;11&var2;"^^xsd:string .
+:BloodPressureMeasurement ns3:hasMeasuredBPSys :Measurement_Systolic ;
+  a ns3:BloodPressureMeasurement ,
+    ns1:Device ,
+    ns1:PhysicalThing ;
+  ns3:hasMeasuredBPDia :Measurement_Diastolic ;
+  ns3:hasMeasuredHeartRate :Measurement_Heartrate .
+:Measurement_Diastolic a ns:Measurement ;
+  ns:value "&var3;22&var3;"^^xsd:string .
+ns2:gauge a ns2:ContextProviderType .
+tst:HDPContextProvider a ns2:ContextProvider ;
+  ns2:hasType ns2:gauge ;
+  ns2:myClassesOfEvents [
+      a ns2:ContextEventPattern ;
+      <http://www.w3.org/2000/01/rdf-schema#subClassOf> [
+          a owl:Restriction ;
+          owl:allValuesFrom ns3:BloodPressureMonitor ;
+          owl:onProperty rdf:subject
+        ]
+    ] .
+]]>
+            </serialization>
+         </advertisement>
+      </mw.bus.context>
+   </permissions>
+</application>
