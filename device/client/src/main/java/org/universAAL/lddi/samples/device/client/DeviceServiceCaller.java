@@ -64,14 +64,16 @@ public class DeviceServiceCaller {
 		ServiceResponse sr = caller.call(getAllDevicesRequest());
 		if (sr.getCallStatus() == CallStatus.succeeded){
 			List<Device> deviceList = sr.getOutput(OUTPUT_LIST_OF_DEVICES, true);
-			
-			if (deviceList.size() != 0) {
-				String[] devices = new String[deviceList.size()];
-				for (int i=0; i<devices.length; i++)
-					devices[i] = ((Device)deviceList.get(i)).getURI();
-				return devices;
+			if (deviceList != null) {
+				if (deviceList.size() != 0) {
+					String[] devices = new String[deviceList.size()];
+					for (int i=0; i<devices.length; i++)
+						devices[i] = ((Device)deviceList.get(i)).getURI();
+					return devices;
+				} else {
+					return null;
+				}
 			} else {
-				System.out.println("no devices returned!");
 				return null;
 			}
 		}
