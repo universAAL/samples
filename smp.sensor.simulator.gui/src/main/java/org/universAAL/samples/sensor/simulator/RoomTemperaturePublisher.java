@@ -68,7 +68,7 @@ public class RoomTemperaturePublisher {
 	ContextEventPattern myContextEventPattern = new ContextEventPattern();
 
 	myContextEventPattern.addRestriction(MergedRestriction
-		.getAllValuesRestriction(ContextEvent.PROP_RDF_PREDICATE,
+		.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
 			TemperatureSensor.PROP_HAS_VALUE));
 
 	myContextEventPattern.addRestriction(MergedRestriction
