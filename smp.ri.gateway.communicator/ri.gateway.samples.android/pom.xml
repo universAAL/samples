@@ -5,11 +5,11 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>2.0.2-SNAPSHOT</version>
+    <version>3.0.0</version>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>ri.gateway.samples.android</artifactId>
-  <version>2.0.2-SNAPSHOT</version>
+  <version>3.0.0</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples AALSpace Gateway Communicator :: Android Node</name>
   <description>Android node using the AALSpace Gateway</description>

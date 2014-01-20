@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>2.0.2-SNAPSHOT</version>
+    <version>3.0.0</version>
     <relativePath>../../samples.pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>mw.karaf.feature.ping-pong.osgi</artifactId>
-  <version>2.0.2-SNAPSHOT</version>
+  <version>3.0.0</version>
   <name>universAAL Samples Middleware Karaf Feature Ping-Pong</name>
   <properties>
     <commons-codec-version>1.4</commons-codec-version>
