@@ -76,25 +76,25 @@ public class ProfileCaller {
 	caller = new DefaultServiceCaller(context);
     }
 
-    private Object getReturnValue(List outputs, String expectedOutput) {
-	Object returnValue = null;
-	if (outputs == null)
-	    log.info("Profile Client: No results found!");
-	else
-	    for (Iterator i = outputs.iterator(); i.hasNext();) {
-		ProcessOutput output = (ProcessOutput) i.next();
-		if (output.getURI().equals(expectedOutput))
-		    if (returnValue == null)
-			returnValue = output.getParameterValue();
-		    else
-			log.info("Profile Client: redundant return value!");
-		else
-		    log.info("Profile Client - output ignored: "
-			    + output.getURI());
-	    }
-
-	return returnValue;
-    }
+//    private Object getReturnValue(List outputs, String expectedOutput) {
+//	Object returnValue = null;
+//	if (outputs == null)
+//	    log.info("Profile Client: No results found!");
+//	else
+//	    for (Iterator i = outputs.iterator(); i.hasNext();) {
+//		ProcessOutput output = (ProcessOutput) i.next();
+//		if (output.getURI().equals(expectedOutput))
+//		    if (returnValue == null)
+//			returnValue = output.getParameterValue();
+//		    else
+//			log.info("Profile Client: redundant return value!");
+//		else
+//		    log.info("Profile Client - output ignored: "
+//			    + output.getURI());
+//	    }
+//
+//	return returnValue;
+//    }
 
     public boolean checkPWD(String user, String PWD) {
 //	User userreceived=null;
@@ -239,7 +239,8 @@ public class ProfileCaller {
 	req.addSimpleOutputBinding(po, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
 	ServiceResponse resp=caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
-	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
+//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
+	    Object out=resp.getOutput(OUTPUT_GETSUBPROFILES,true);
 	    if (out != null) {
 		log.debug(out.toString());
 		return out.toString();
@@ -303,7 +304,8 @@ public class ProfileCaller {
 	req.addRequiredOutput(OUTPUT_GETPROFILABLE, new String[]{ProfilingService.PROP_CONTROLS});
 	ServiceResponse resp = caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
-	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILABLE);
+//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILABLE);
+	    Object out=resp.getOutput(OUTPUT_GETPROFILABLE,true);
 	    if (out != null) {
 		log.debug(out.toString());
 		return out.toString();
@@ -367,7 +369,8 @@ public class ProfileCaller {
 	req.addRequiredOutput(OUTPUT_GETPROFILE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
 	ServiceResponse resp = caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
-	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
+//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
+	    Object out=resp.getOutput(OUTPUT_GETPROFILE,true);
 	    if (out != null) {
 		log.debug(out.toString());
 		return out.toString();
@@ -431,7 +434,8 @@ public class ProfileCaller {
 	req.addRequiredOutput(OUTPUT_GETSUBPROFILE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
 	ServiceResponse resp = caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
-	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILE);
+//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILE);
+	    Object out=resp.getOutput(OUTPUT_GETSUBPROFILE,true);
 	    if (out != null) {
 		log.debug(out.toString());
 		return out.toString();
@@ -453,7 +457,8 @@ public class ProfileCaller {
 	req.addRequiredOutput(OUTPUT_GETUSERS, new String[]{ProfilingService.PROP_CONTROLS});
 	ServiceResponse resp=caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
-	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETUSERS);
+//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETUSERS);
+	    Object out=resp.getOutput(OUTPUT_GETUSERS,true);
 	    if (out != null) {
 		log.debug(out.toString());
 		return out.toString();
@@ -476,7 +481,8 @@ public class ProfileCaller {
 	req.addRequiredOutput(OUTPUT_GETPROFILE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
  	ServiceResponse resp=caller.call(req);
  	if (resp.getCallStatus() == CallStatus.succeeded) {
- 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
+// 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
+ 	   Object out=resp.getOutput(OUTPUT_GETPROFILE,true);
  	    if (out != null) {
  		log.debug(out.toString());
  		return out.toString();
@@ -501,7 +507,8 @@ public class ProfileCaller {
 	req.addRequiredOutput(OUTPUT_GETSUBPROFILES, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
 	ServiceResponse resp=caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
-	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
+//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
+	    Object out=resp.getOutput(OUTPUT_GETSUBPROFILES,true);
 	    if (out != null) {
 		log.debug(out.toString());
 		return out.toString();
@@ -524,7 +531,8 @@ public class ProfileCaller {
 	req.addRequiredOutput(OUTPUT_GETSUBPROFILES, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
 	ServiceResponse resp=caller.call(req);
 	if (resp.getCallStatus() == CallStatus.succeeded) {
-	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
+//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
+	    Object out=resp.getOutput(OUTPUT_GETSUBPROFILES,true);
 	    if (out != null) {
 		log.debug(out.toString());
 		return out.toString();

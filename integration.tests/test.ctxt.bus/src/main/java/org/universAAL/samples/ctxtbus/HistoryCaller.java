@@ -54,25 +54,25 @@ public class HistoryCaller {
 	caller = new DefaultServiceCaller(context);
     }
 
-    private Object getReturnValue(List outputs, String expectedOutput) {
-	Object returnValue = null;
-	if (outputs == null)
-	    log.info("History Client: No events found!");
-	else
-	    for (Iterator i = outputs.iterator(); i.hasNext();) {
-		ProcessOutput output = (ProcessOutput) i.next();
-		if (output.getURI().equals(expectedOutput))
-		    if (returnValue == null)
-			returnValue = output.getParameterValue();
-		    else
-			log.info("History Client: redundant return value!");
-		else
-		    log.info("History Client - output ignored: "
-			    + output.getURI());
-	    }
-
-	return returnValue;
-    }
+//    private Object getReturnValue(List outputs, String expectedOutput) {
+//	Object returnValue = null;
+//	if (outputs == null)
+//	    log.info("History Client: No events found!");
+//	else
+//	    for (Iterator i = outputs.iterator(); i.hasNext();) {
+//		ProcessOutput output = (ProcessOutput) i.next();
+//		if (output.getURI().equals(expectedOutput))
+//		    if (returnValue == null)
+//			returnValue = output.getParameterValue();
+//		    else
+//			log.info("History Client: redundant return value!");
+//		else
+//		    log.info("History Client - output ignored: "
+//			    + output.getURI());
+//	    }
+//
+//	return returnValue;
+//    }
 
     public int callGetEvents(
 	    org.universAAL.ontology.che.ContextEvent matchEvent,
@@ -81,8 +81,9 @@ public class HistoryCaller {
 	ServiceResponse response = caller.call(getGetEventsRequest(matchEvent,
 		tstFrom, tstTo));
 	if (response.getCallStatus() == CallStatus.succeeded) {
-	    Object value = getReturnValue(response.getOutputs(),
-		    OUTPUT_LIST_OF_EVENTS);
+//	    Object value = getReturnValue(response.getOutputs(),
+//		    OUTPUT_LIST_OF_EVENTS);
+	    Object value=response.getOutput(OUTPUT_LIST_OF_EVENTS,true);
 	    if (value instanceof Resource) {
 		if (((Resource) value).getURI().contains("#nil")) {
 		    log.info("History Client - result is empty");
@@ -153,12 +154,13 @@ public class HistoryCaller {
 
 	if (response.getCallStatus() == CallStatus.succeeded) {
 	    try {
-		String results = (String) getReturnValue(response.getOutputs(),
-			OUTPUT_RESULT_STRING);
+//		String results = (String) getReturnValue(response.getOutputs(),
+//			OUTPUT_RESULT_STRING);
+		Object results=response.getOutput(OUTPUT_RESULT_STRING,true);
 		// Uncomment this line if you want to show the raw results. Do
 		// this for CONSTRUCT, ASK or DESCRIBE
 		log.info("Result of SPARQL query was:\n" + results);
-		return results;
+		return results.toString();
 	    } catch (Exception e) {
 		log.error("History Client: Result corrupt!", e);
 		return "";
@@ -191,8 +193,9 @@ public class HistoryCaller {
 	ServiceResponse response = caller
 		.call(getGetEventsSPARQLRequest(query));
 	if (response.getCallStatus() == CallStatus.succeeded) {
-	    Object value = getReturnValue(response.getOutputs(),
-		    OUTPUT_LIST_OF_EVENTS);
+//	    Object value = getReturnValue(response.getOutputs(),
+//		    OUTPUT_LIST_OF_EVENTS);
+	    Object value=response.getOutput(OUTPUT_LIST_OF_EVENTS,true);
 	    if (value instanceof Resource) {
 		if (((Resource) value).getURI().contains("#nil")) {
 		    log.info("History Client - result is empty");

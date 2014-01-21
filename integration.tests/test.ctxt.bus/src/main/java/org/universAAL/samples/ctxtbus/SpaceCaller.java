@@ -505,7 +505,8 @@ public class SpaceCaller {
 	req.addRequiredOutput(OUTPUT, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
  	ServiceResponse resp=caller.call(req);
  	if (resp.getCallStatus() == CallStatus.succeeded) {
- 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT);
+// 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT);
+ 	   Object out=resp.getOutput(OUTPUT,true);
  	    if (out != null) {
  		log.debug(out.toString());
  		return out.toString();
@@ -541,7 +542,8 @@ public class SpaceCaller {
 	req.addRequiredOutput(OUTPUT, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
  	ServiceResponse resp=caller.call(req);
  	if (resp.getCallStatus() == CallStatus.succeeded) {
- 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT);
+// 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT);
+ 	   Object out=resp.getOutput(OUTPUT,true);
  	    if (out != null) {
  		log.debug(out.toString());
  		return out.toString();
@@ -585,23 +587,23 @@ public class SpaceCaller {
 	}
     }
     
-    private static Object getReturnValue(List outputs, String expectedOutput) {
-	Object returnValue = null;
-	if (outputs == null)
-	    log.info("Profile Client: No results found!");
-	else
-	    for (Iterator i = outputs.iterator(); i.hasNext();) {
-		ProcessOutput output = (ProcessOutput) i.next();
-		if (output.getURI().equals(expectedOutput))
-		    if (returnValue == null)
-			returnValue = output.getParameterValue();
-		    else
-			log.info("Profile Client: redundant return value!");
-		else
-		    log.info("Profile Client - output ignored: "
-			    + output.getURI());
-	    }
-
-	return returnValue;
-    }
+//    private static Object getReturnValue(List outputs, String expectedOutput) {
+//	Object returnValue = null;
+//	if (outputs == null)
+//	    log.info("Profile Client: No results found!");
+//	else
+//	    for (Iterator i = outputs.iterator(); i.hasNext();) {
+//		ProcessOutput output = (ProcessOutput) i.next();
+//		if (output.getURI().equals(expectedOutput))
+//		    if (returnValue == null)
+//			returnValue = output.getParameterValue();
+//		    else
+//			log.info("Profile Client: redundant return value!");
+//		else
+//		    log.info("Profile Client - output ignored: "
+//			    + output.getURI());
+//	    }
+//
+//	return returnValue;
+//    }
 }
