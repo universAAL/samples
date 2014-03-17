@@ -105,7 +105,7 @@ public class ConfigurationCentral implements ConfigurableModule{
 	
 	/** {@inheritDoc} */
 	public boolean configurationChanged(Scope param, Object value) {
-		System.out.println(param.getId() + "changed to: " + value);
+		System.out.println(param.getId() + " changed to: " + value);
 		//in this example always accepted...
 		return true;
 	}
