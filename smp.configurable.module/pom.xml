@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+	  <groupId>org.universAAL.support.samples</groupId>
+	  <artifactId>samples.pom</artifactId>
+	  <version>3.0.1-SNAPSHOT</version>
+  </parent>
+
+  <groupId>org.universAAL.samples</groupId>
+  <artifactId>smp.configurable.module</artifactId>
+  <version>3.0.1-SNAPSHOT</version>
+  <packaging>bundle</packaging>
+
+  <properties>
+    <separatedGroupIds>org.universAAL.middleware</separatedGroupIds>
+  </properties>
+
+  <dependencies>	 	
+  	<dependency>
+  		<groupId>org.universAAL.middleware</groupId>
+  		<artifactId>mw.container.xfaces.core</artifactId>
+  	</dependency> 	
+  	<dependency>
+  		<groupId>org.universAAL.middleware</groupId>
+  		<artifactId>mw.interfaces.core</artifactId>
+  	</dependency> 
+  	<dependency>
+  		<groupId>org.universAAL.middleware</groupId>
+  		<artifactId>mw.managers.api.core</artifactId>
+  	</dependency> 
+  </dependencies>
+
+  <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>maven-bundle-plugin</artifactId>
+			<extensions>true</extensions>
+			<configuration>
+				<instructions>
+					<Export-Package>org.universAAL.configurable.module</Export-Package>
+				</instructions>
+			</configuration>
+		</plugin>
+	</plugins>
+  </build>
+  
+</project>
