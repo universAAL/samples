@@ -19,7 +19,7 @@ public class ProjectActivator implements ModuleActivator {
 		//create and initialize the configurableModule
 		module = new ConfigurationCentral();
 		//get the configuration manager
-		ConfigurationManager configM = (ConfigurationManager) context.getContainer().fetchSharedObject(context, new Object[]{ConfigurationManager.class});
+		ConfigurationManager configM = (ConfigurationManager) context.getContainer().fetchSharedObject(context, new Object[]{ConfigurationManager.class.getName()});
 		//register the ConfigurableModule
 		configM.register(ConfigurationCentral.configurations, module);
 		LogUtils.logDebug(context, getClass(), "start", "Started.");
@@ -32,7 +32,7 @@ public class ProjectActivator implements ModuleActivator {
 		 * close uAAL stuff
 		 */
 		//get the configuration manager
-		ConfigurationManager configM = (ConfigurationManager) context.getContainer().fetchSharedObject(context, new Object[]{ConfigurationManager.class});
+		ConfigurationManager configM = (ConfigurationManager) context.getContainer().fetchSharedObject(context, new Object[]{ConfigurationManager.class.getName()});
 		//unregister the configurableModule
 		configM.unregister(module);
 		
