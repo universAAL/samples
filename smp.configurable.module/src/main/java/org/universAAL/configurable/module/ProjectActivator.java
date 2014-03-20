@@ -32,7 +32,7 @@ public class ProjectActivator implements ModuleActivator {
 		 * close uAAL stuff
 		 */
 		//get the configuration manager
-		ConfigurationManager configM = (ConfigurationManager) context.getContainer().fetchSharedObject(context, new Object[]{ConfigurationManager.class.getName()});
+		ConfigurationManager configM = (ConfigurationManager) context.getContainer().fetchSharedObject(context, new String[]{ConfigurationManager.class.getName()});
 		//unregister the configurableModule
 		configM.unregister(module);
 		
