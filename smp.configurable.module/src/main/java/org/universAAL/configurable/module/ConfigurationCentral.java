@@ -74,8 +74,8 @@ public class ConfigurationCentral implements ConfigurableModule{
 		    public MergedRestriction getType() {
 			MergedRestriction mr = MergedRestriction
 				.getAllValuesRestrictionWithCardinality(ConfigurationParameter.PROP_CONFIG_VALUE, 
-					TypeMapper.getDatatypeURI(Integer.class), 1, 1);
-			mr.addType(new IntRestriction(0, true, 10, true));
+					new IntRestriction(0, true, 10, true), 1, 1);
+//			mr.addType();
 			return mr;
 		    }
 		    
