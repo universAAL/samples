@@ -28,6 +28,7 @@
     <module>../smp.sensor.simulator.gui</module>
     <module>../activityhub/client</module>
     <module>../activityhub/simulator</module>
+    <module>../activityhub/simulator/launches</module>
     <module>../device/client</module>
     <module>../smp.mw.broker.client</module>
     <module>../smp.mw.deploymanager.client</module>
