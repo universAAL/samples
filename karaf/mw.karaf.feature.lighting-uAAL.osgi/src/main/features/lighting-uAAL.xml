@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
+
+	<feature name="Lighting-uAAL"
+		description="The universAAL Lighing example for based on the Middleware 2.0"
+		version="${project.version}" resolver='(obr)'>
+		<feature>uAAL-MW</feature>
+
+		<bundle start-level='90' start='true'>wrap:mvn:jp.go.ipa/jgcl/1.0
+		</bundle>
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.phWorld/${project.version}
+		</bundle>
+		<bundle start-level='90' start='true'>mvn:org.universAAL.ontology/ont.lighting/${project.version}
+		</bundle>
+		<bundle start-level='91' start='false'>mvn:org.universAAL.samples/smp.lighting.server.osgi/${project.version}
+		</bundle>
+		<bundle start-level='91' start='false'>mvn:org.universAAL.samples/smp.lighting.client.osgi/${project.version}
+		</bundle>
+	</feature>
+</features>
