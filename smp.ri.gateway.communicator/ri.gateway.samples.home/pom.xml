@@ -5,11 +5,11 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>3.1.0</version>
+    <version>3.1.1-SNAPSHOT</version>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>ri.gateway.samples.home</artifactId>
-  <version>3.1.0</version>
+  <version>3.1.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples AALSpace Gateway Communicator :: Home Node</name>
   <description>Home node using the AALSpace Gateway</description>

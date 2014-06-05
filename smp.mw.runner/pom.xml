@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>3.1.0</version>
+    <version>3.1.1-SNAPSHOT</version>
     <relativePath>../samples.pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.mw.runner</artifactId>
-  <version>3.1.0</version>
+  <version>3.1.1-SNAPSHOT</version>
   <name>universAAL Samples Middleware Run project</name>
   <pluginRepositories>
     <pluginRepository>
