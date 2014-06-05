@@ -58,7 +58,7 @@ public class SimpleMessage implements BrokerMessage {
 
     public String toString() {
 	try {
-	    Gson gson = GsonParserBuilder.getInstance().buildGson();
+	    Gson gson = GsonParserBuilder.getInstance();
 	    return gson.toJson(this);
 
 	} catch (Exception e) {
