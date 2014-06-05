@@ -36,30 +36,30 @@
             <provision>mvn:org.jgroups/jgroups/3.3.0.Alpha1@2</provision>
             <provision>mvn:org.apache.felix/org.osgi.core/1.4.0@2</provision>
             <provision>mvn:org.apache.felix/org.osgi.compendium/1.4.0@2</provision>
-            <provision>mvn:org.universAAL.middleware/mw.schemas/2.0.1-SNAPSHOT@2</provision>
+            <provision>mvn:org.universAAL.middleware/mw.schemas/${project.version}@2</provision>
             <provision>mvn:org.ops4j.pax.logging/pax-logging-api/1.6.3@2</provision>
             <provision>mvn:org.ops4j.pax.logging/pax-logging-service/1.6.3@2</provision>
-            <provision>mvn:org.universAAL.middleware/mw.container.xfaces.osgi/2.0.1-SNAPSHOT@2</provision>
-            <provision>mvn:org.universAAL.middleware/mw.interfaces.osgi/2.0.1-SNAPSHOT@2</provision>
-            <provision>mvn:org.universAAL.middleware/mw.connectors.api.osgi/2.0.1-SNAPSHOT@2</provision>
-            <provision>mvn:org.universAAL.middleware/mw.managers.api.osgi/2.0.1-SNAPSHOT@2</provision>
-            <provision>mvn:org.universAAL.middleware/mw.modules.api.osgi/2.0.1-SNAPSHOT@2</provision>
-            <provision>mvn:org.universAAL.middleware/mw.brokers.api.osgi/2.0.1-SNAPSHOT@2</provision>
+            <provision>mvn:org.universAAL.middleware/mw.container.xfaces.osgi/${project.version}@2</provision>
+            <provision>mvn:org.universAAL.middleware/mw.interfaces.osgi/${project.version}@2</provision>
+            <provision>mvn:org.universAAL.middleware/mw.connectors.api.osgi/${project.version}@2</provision>
+            <provision>mvn:org.universAAL.middleware/mw.managers.api.osgi/${project.version}@2</provision>
+            <provision>mvn:org.universAAL.middleware/mw.modules.api.osgi/${project.version}@2</provision>
+            <provision>mvn:org.universAAL.middleware/mw.brokers.api.osgi/${project.version}@2</provision>
             <provision>mvn:commons-lang/commons-lang/2.6@2</provision>
-            <provision>mvn:org.universAAL.middleware/mw.container.osgi/2.0.1-SNAPSHOT@82</provision>
-            <provision>mvn:org.universAAL.middleware/mw.connectors.communication.jgroups.osgi/2.0.1-SNAPSHOT@83</provision>
-            <provision>mvn:org.universAAL.middleware/mw.connectors.discovery.slp.osgi/2.0.1-SNAPSHOT@83</provision>
-            <provision>mvn:org.universAAL.middleware/mw.modules.communication.osgi/2.0.1-SNAPSHOT@84</provision>
-            <provision>mvn:org.universAAL.middleware/mw.modules.aalspace.osgi/2.0.1-SNAPSHOT@85</provision>
-            <provision>mvn:org.universAAL.middleware/mw.brokers.control.osgi/2.0.1-SNAPSHOT@86</provision>
-            <provision>mvn:org.universAAL.middleware/mw.managers.aalspace.osgi/2.0.1-SNAPSHOT@87</provision>
-            <provision>mvn:org.universAAL.middleware/mw.managers.deploy.osgi/2.0.1-SNAPSHOT@88</provision>
-            <provision>mvn:org.universAAL.middleware/mw.data.serialization.osgi/2.0.1-SNAPSHOT@89</provision>
-            <provision>mvn:org.universAAL.middleware/mw.bus.model.osgi/2.0.1-SNAPSHOT@89</provision>
-            <provision>mvn:org.universAAL.middleware/mw.data.representation.osgi/2.0.1-SNAPSHOT@89</provision>
-            <provision>mvn:org.universAAL.middleware/mw.bus.context.osgi/2.0.1-SNAPSHOT@89</provision>
-            <provision>mvn:org.universAAL.middleware/mw.bus.service.osgi/2.0.1-SNAPSHOT@89</provision>
-            <provision>mvn:org.universAAL.middleware/mw.bus.ui.osgi/2.0.1-SNAPSHOT@89</provision>
+            <provision>mvn:org.universAAL.middleware/mw.container.osgi/${project.version}@82</provision>
+            <provision>mvn:org.universAAL.middleware/mw.connectors.communication.jgroups.osgi/${project.version}@83</provision>
+            <provision>mvn:org.universAAL.middleware/mw.connectors.discovery.slp.osgi/${project.version}@83</provision>
+            <provision>mvn:org.universAAL.middleware/mw.modules.communication.osgi/${project.version}@84</provision>
+            <provision>mvn:org.universAAL.middleware/mw.modules.aalspace.osgi/${project.version}@85</provision>
+            <provision>mvn:org.universAAL.middleware/mw.brokers.control.osgi/${project.version}@86</provision>
+            <provision>mvn:org.universAAL.middleware/mw.managers.aalspace.osgi/${project.version}@87</provision>
+            <provision>mvn:org.universAAL.middleware/mw.managers.deploy.osgi/${project.version}@88</provision>
+            <provision>mvn:org.universAAL.middleware/mw.data.serialization.osgi/${project.version}@89</provision>
+            <provision>mvn:org.universAAL.middleware/mw.bus.model.osgi/${project.version}@89</provision>
+            <provision>mvn:org.universAAL.middleware/mw.data.representation.osgi/${project.version}@89</provision>
+            <provision>mvn:org.universAAL.middleware/mw.bus.context.osgi/${project.version}@89</provision>
+            <provision>mvn:org.universAAL.middleware/mw.bus.service.osgi/${project.version}@89</provision>
+            <provision>mvn:org.universAAL.middleware/mw.bus.ui.osgi/${project.version}@89</provision>
           </provision>
         </configuration>
       </plugin>
