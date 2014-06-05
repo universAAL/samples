@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>3.0.1-SNAPSHOT</version>
+    <version>3.1.0</version>
     <relativePath>../../samples.pom</relativePath>
   </parent>
   <groupId>org.universAAL.lddi</groupId>
   <artifactId>smp.device.client</artifactId>
-  <version>3.0.1-SNAPSHOT</version>
+  <version>3.1.0</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples Device Client</name>
   <description>This is a client app listening on the uAAL context bus for events based on the device ontology and invoking device services on the service bus.</description>
