@@ -2,9 +2,9 @@
 <features name="universAAL-CTXT.tests" xmlns="http://karaf.apache.org/xmlns/features/v1.0.0">
 
 	<!-- Change version of repository accordingly -->
-	<repository>mvn:org.universAAL.middleware/mw.karaf.feature/2.0.2-SNAPSHOT/xml/features</repository>
-	<repository>mvn:org.universAAL.ontology/ont.karaf.feature/2.0.2-SNAPSHOT/xml/features</repository>
-	<repository>mvn:org.universAAL.context/ctxt.karaf.feature/2.0.2-SNAPSHOT/xml/features</repository>
+	<repository>mvn:org.universAAL.middleware/mw.karaf.feature/${platform.version}/xml/features</repository>
+	<repository>mvn:org.universAAL.ontology/ont.karaf.feature/${platform.version}/xml/features</repository>
+	<repository>mvn:org.universAAL.context/ctxt.karaf.feature/${platform.version}/xml/features</repository>
 
 
 	<feature name="ctxt.tester" description="Feature collection typical of coordinator node."
@@ -14,7 +14,7 @@
 		<feature>uAAL-Ont.Profile.userId</feature>
 		<feature>uAAL-Ont.Device</feature>
 		<feature>uAAL-Ont.Furniture</feature>
-		<bundle>wrap:mvn:org.universAAL.support/uAAL.utils/2.0.1-SNAPSHOT</bundle>
-		<bundle>mvn:org.universAAL.samples/test.ctxt.bus/2.0.1-SNAPSHOT</bundle>
+		<bundle>wrap:mvn:org.universAAL.support/uAAL.utils/${platform.version}</bundle>
+		<bundle>mvn:org.universAAL.samples/test.ctxt.bus/${project.version}</bundle>
 	</feature>
 </features>
