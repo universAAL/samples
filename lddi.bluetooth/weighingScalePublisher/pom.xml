@@ -18,6 +18,11 @@
     <name>TSB Technologies for Health and Well-being</name>
     <url>www.tsbtecnologias.es</url>
   </organization>
+  <scm>
+    <connection>${svn.base}/samples/lddi.bluetooth/weighingScalePublisher</connection>
+    <developerConnection>${svn.base}/samples/lddi.bluetooth/weighingScalePublisher</developerConnection>
+    <url>${svn.base.url}samples/lddi.bluetooth/weighingScalePublisher</url>
+  </scm>
   <dependencies>
     <dependency>
       <groupId>org.universAAL.lddi</groupId>
