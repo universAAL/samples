@@ -21,6 +21,11 @@
       <url>http://repository.ops4j.org/maven2</url>
     </pluginRepository>
   </pluginRepositories>
+  <scm>
+    <connection>${svn.base}/samples/activityhub/simulator/launches</connection>
+    <developerConnection>${svn.base}/samples/activityhub/simulator/launches</developerConnection>
+    <url>${svn.base.url}samples/activityhub/simulator/launches</url>
+  </scm>
   <build>
     <plugins>
       <plugin>
