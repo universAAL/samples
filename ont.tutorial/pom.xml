@@ -8,7 +8,7 @@
     <version>3.1.1-SNAPSHOT</version>
   </parent>
   <artifactId>ont.tutorial</artifactId>
-  <version>3.1.1-SNAPSHOT</version>
+  <version>3.2.0</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples Ontology Tutorial Example</name>
   <description>This example shows how to convert an ontology concept into its java representation for uAAL</description>

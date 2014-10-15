@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>3.1.1-SNAPSHOT</version>
+    <version>3.2.0</version>
     <relativePath>../samples.pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.mw.deploymanager.client</artifactId>
-  <version>3.1.1-SNAPSHOT</version>
+  <version>3.2.0</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples Middleware Deploy Client</name>
   <description>Request the installation of an artefact on</description>
