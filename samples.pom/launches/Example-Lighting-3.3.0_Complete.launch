@@ -29,9 +29,9 @@
 <listEntry value="obr"/>
 </listAttribute>
 <mapAttribute key="org.ops4j.pax.cursor.provisionItems">
-<mapEntry key="mvn:org.universAAL.samples/smp.lighting.client.osgi/2.0.0" value="true@true@2@true"/>
-<mapEntry key="mvn:org.universAAL.tools/tools.log_mon/2.0.0" value="true@true@3@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi/2.0.0/composite" value="true@true@1@true"/>
+<mapEntry key="mvn:org.universAAL.samples/smp.lighting.client.osgi/3.3.0" value="true@true@2@true"/>
+<mapEntry key="mvn:org.universAAL.tools/tools.log_mon/3.3.0" value="true@true@3@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi/3.3.0/composite" value="true@true@1@true"/>
 </mapAttribute>
 <listAttribute key="org.ops4j.pax.cursor.runArguments">
 <listEntry value="--overwrite=false"/>
@@ -39,11 +39,11 @@
 <listEntry value="--overwriteSystemBundles=false"/>
 <listEntry value="--log=DEBUG"/>
 <listEntry value="--profiles=obr"/>
-<listEntry value="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi/2.0.0/composite@1@update"/>
-<listEntry value="mvn:org.universAAL.samples/smp.lighting.client.osgi/2.0.0@2@update"/>
-<listEntry value="mvn:org.universAAL.tools/tools.log_mon/2.0.0@3@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi/3.3.0/composite@1@update"/>
+<listEntry value="mvn:org.universAAL.samples/smp.lighting.client.osgi/3.3.0@2@update"/>
+<listEntry value="mvn:org.universAAL.tools/tools.log_mon/3.3.0@3@update"/>
 </listAttribute>
-<stringAttribute key="osgi_framework_id" value="--platform=felix --version=2.0.1"/>
+<stringAttribute key="osgi_framework_id" value="--platform=felix --version=2.0.3"/>
 <stringAttribute key="pde.version" value="3.3"/>
 <setAttribute key="selected_features">
 <setEntry value="org.eclipse.amalgam.discovery:default"/>
