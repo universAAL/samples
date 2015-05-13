@@ -14,12 +14,6 @@
   <packaging>bundle</packaging>
   <name>universAAL Samples Lighting UI Client</name>
   <description>A client using lighting services based on the corresponding domain ontology and interaction based on the dialog package</description>
-  <url></url>
-  <scm>
-    <connection>${svn.base}/samples/lighting/uiclient</connection>
-    <developerConnection>${svn.base}/samples/lighting/uiclient</developerConnection>
-    <url>${svn.base.url}samples/lighting/uiclient</url>
-  </scm>
   <dependencies>
     <dependency>
       <groupId>org.universAAL.support</groupId>

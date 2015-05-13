@@ -14,12 +14,6 @@
   <packaging>bundle</packaging>
   <name>universAAL Samples Lighting Client (OSGi)</name>
   <description>A client using lighting services based on the corresponding domain ontology</description>
-  <url></url>
-  <scm>
-    <connection>${svn.base}/samples/lighting/client</connection>
-    <developerConnection>${svn.base}/samples/lighting/client</developerConnection>
-    <url>${svn.base.url}samples/lighting/client</url>
-  </scm>
   <dependencies>
     <dependency>
       <groupId>org.universAAL.support</groupId>

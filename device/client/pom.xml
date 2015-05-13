@@ -25,11 +25,6 @@
       <timezone>CEST/CET</timezone>
     </developer>
   </developers>
-  <scm>
-    <connection>${svn.base}/samples/device/client</connection>
-    <developerConnection>${svn.base}/samples/device/client</developerConnection>
-    <url>${svn.base.url}samples/device/client</url>
-  </scm>
   <dependencies>
     <dependency>
       <groupId>org.osgi</groupId>

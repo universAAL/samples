@@ -50,11 +50,6 @@
     <module>../lddi.bluetooth/continuaManager/unix</module>
     <module>../lddi.bluetooth/continuaManager/windows</module>
   </modules>
-  <scm>
-    <connection>${svn.base}/samples/${project.artifactId}</connection>
-    <developerConnection>${svn.base}/samples/${project.artifactId}</developerConnection>
-    <url>${svn.base.url}samples/${project.artifactId}</url>
-  </scm>
   <dependencyManagement>
     <dependencies>
       <dependency>

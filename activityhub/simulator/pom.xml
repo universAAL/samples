@@ -30,11 +30,6 @@
       <timezone>CEST/CET</timezone>
     </developer>
   </developers>
-  <scm>
-    <connection>${svn.base}/samples/activityhub/simulator</connection>
-    <developerConnection>${svn.base}/samples/activityhub/simulator</developerConnection>
-    <url>${svn.base.url}samples/activityhub/simulator</url>
-  </scm>
   <dependencies>
     <dependency>
       <groupId>org.universAAL.support</groupId>

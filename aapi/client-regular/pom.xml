@@ -14,12 +14,6 @@
   <packaging>bundle</packaging>
   <name>universAAL Samples AAPI Regular Lighting Client</name>
   <description>Regular Lighting Client for tests with Simplified API</description>
-  <url></url>
-  <scm>
-    <connection>${svn.base}/samples/aapi/client-regular</connection>
-    <developerConnection>${svn.base}/samples/aapi/client-regular</developerConnection>
-    <url>${svn.base.url}samples/aapi/client-regular</url>
-  </scm>
   <dependencies>
     <dependency>
       <groupId>org.universAAL.support</groupId>

@@ -18,11 +18,6 @@
     <name>TSB Technologies for Health and Well-being</name>
     <url>www.tsbtecnologias.es</url>
   </organization>
-  <scm>
-    <connection>${svn.base}/samples/lddi.bluetooth/continuaManager/windows</connection>
-    <developerConnection>${svn.base}/samples/lddi.bluetooth/continuaManager/windows</developerConnection>
-    <url>${svn.base.url}samples/lddi.bluetooth/continuaManager/windows</url>
-  </scm>
   <dependencies>
     <dependency>
       <groupId>org.universAAL.lddi</groupId>

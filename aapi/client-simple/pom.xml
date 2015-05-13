@@ -15,11 +15,6 @@
   <name>universAAL Samples AAPI Lighting Client Simplified</name>
   <description>A client using simple api lighting services based on the corresponding domain ontology</description>
   <url></url>
-  <scm>
-    <connection>${svn.base}/samples/aapi/client-simple</connection>
-    <developerConnection>${svn.base}/samples/aapi/client-simple</developerConnection>
-    <url>${svn.base.url}samples/aapi/client-simple</url>
-  </scm>
   <dependencies>
     <dependency>
       <groupId>org.universAAL.support</groupId>

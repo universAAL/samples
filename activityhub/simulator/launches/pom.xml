@@ -12,11 +12,6 @@
   <version>3.3.1-SNAPSHOT</version>
   <name>Runner Folder</name>
   <description>PaxRunner configuration for lddi.hw.simulator.activityhub artifact</description>
-  <scm>
-    <connection>${svn.base}/samples/activityhub/simulator/launches</connection>
-    <developerConnection>${svn.base}/samples/activityhub/simulator/launches</developerConnection>
-    <url>${svn.base.url}samples/activityhub/simulator/launches</url>
-  </scm>
   <pluginRepositories>
     <pluginRepository>
       <snapshots>
