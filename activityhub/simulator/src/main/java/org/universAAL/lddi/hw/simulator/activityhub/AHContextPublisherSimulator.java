@@ -101,7 +101,7 @@ public class AHContextPublisherSimulator {
 		// the event is always about the change of measured value
 		MergedRestriction predicateRestriction = MergedRestriction
 				.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-						ActivityHubSensor.PROP_MEASURED_VALUE);
+						ActivityHubSensor.PROP_HAS_VALUE);
 
 		// the reported value will always be of type ActivityHubSensorEvent
 		// MergedRestriction objectRestriction = MergedRestriction
@@ -122,7 +122,7 @@ public class AHContextPublisherSimulator {
 						MotionSensor.MY_URI, false), 1, 1);
 		
 		predicateRestriction = MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-				MotionSensor.PROP_MEASURED_VALUE);
+				MotionSensor.PROP_HAS_VALUE);
 
 		ContextEventPattern cep2 = new ContextEventPattern();
 		cep2.addRestriction(subjectRestriction);
@@ -134,7 +134,7 @@ public class AHContextPublisherSimulator {
 						ContactClosureSensor.MY_URI, false), 1, 1);
 		
 		predicateRestriction = MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-				ContactClosureSensor.PROP_MEASURED_VALUE);
+				ContactClosureSensor.PROP_HAS_VALUE);
 
 		ContextEventPattern cep3 = new ContextEventPattern();
 		cep3.addRestriction(subjectRestriction);
@@ -147,7 +147,7 @@ public class AHContextPublisherSimulator {
 						UsageSensor.MY_URI, false), 1, 1);
 		
 		predicateRestriction = MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-				UsageSensor.PROP_MEASURED_VALUE);
+				UsageSensor.PROP_HAS_VALUE);
 
 		ContextEventPattern cep4 = new ContextEventPattern();
 		cep4.addRestriction(subjectRestriction);
@@ -160,7 +160,7 @@ public class AHContextPublisherSimulator {
 						SwitchSensor.MY_URI, false), 1, 1);
 		
 		predicateRestriction = MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-				SwitchSensor.PROP_MEASURED_VALUE);
+				SwitchSensor.PROP_HAS_VALUE);
 
 		ContextEventPattern cep5 = new ContextEventPattern();
 		cep5.addRestriction(subjectRestriction);
@@ -172,7 +172,7 @@ public class AHContextPublisherSimulator {
 						TemperatureSensor.MY_URI, false), 1, 1);
 		
 		predicateRestriction = MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-				TemperatureSensor.PROP_MEASURED_VALUE);
+				TemperatureSensor.PROP_HAS_VALUE);
 
 		ContextEventPattern cep6 = new ContextEventPattern();
 		cep6.addRestriction(subjectRestriction);
@@ -219,7 +219,7 @@ public class AHContextPublisherSimulator {
 									null);
 					// publish event
 					cp.publish(new ContextEvent(ms,
-							MotionSensor.PROP_MEASURED_VALUE));
+							MotionSensor.PROP_HAS_VALUE));
 				} else {
 					LogUtils.logError(Activator.mc,
 							AHContextPublisherSimulator.class,
@@ -257,7 +257,7 @@ public class AHContextPublisherSimulator {
 									null);
 					// publish event
 					cp.publish(new ContextEvent(ccs,
-							ContactClosureSensor.PROP_MEASURED_VALUE));
+							ContactClosureSensor.PROP_HAS_VALUE));
 				} else {
 					LogUtils.logError(Activator.mc,
 							AHContextPublisherSimulator.class,
@@ -295,7 +295,7 @@ public class AHContextPublisherSimulator {
 									null);
 					// publish event
 					cp.publish(new ContextEvent(us,
-							UsageSensor.PROP_MEASURED_VALUE));
+							UsageSensor.PROP_HAS_VALUE));
 				} else {
 					LogUtils.logError(Activator.mc,
 							AHContextPublisherSimulator.class,
@@ -333,7 +333,7 @@ public class AHContextPublisherSimulator {
 									null);
 					// publish event
 					cp.publish(new ContextEvent(ss,
-							SwitchSensor.PROP_MEASURED_VALUE));
+							SwitchSensor.PROP_HAS_VALUE));
 				} else {
 					LogUtils.logError(Activator.mc,
 							AHContextPublisherSimulator.class,
@@ -371,7 +371,7 @@ public class AHContextPublisherSimulator {
 									null);
 					// publish event
 					cp.publish(new ContextEvent(ts,
-							TemperatureSensor.PROP_MEASURED_VALUE));
+							TemperatureSensor.PROP_HAS_VALUE));
 				} else {
 					LogUtils.logError(Activator.mc,
 							AHContextPublisherSimulator.class,
