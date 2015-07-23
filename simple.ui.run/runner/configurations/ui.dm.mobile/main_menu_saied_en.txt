@@ -1,1 +1,0 @@
-/Simple UI|http://depot.universAAL.com|http://ontologies.universAAL.com/MyService.owl#MainButtonService
