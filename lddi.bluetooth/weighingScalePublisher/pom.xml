@@ -31,9 +31,13 @@
       <groupId>org.universAAL.middleware</groupId>
       <artifactId>mw.bus.context.osgi</artifactId>
     </dependency>
+<!--     <dependency> -->
+<!--       <groupId>org.universAAL.ontology</groupId> -->
+<!--       <artifactId>ont.X73</artifactId> -->
+<!--     </dependency> -->
     <dependency>
       <groupId>org.universAAL.ontology</groupId>
-      <artifactId>ont.X73</artifactId>
+      <artifactId>ont.personalhealthdevice</artifactId>
     </dependency>
   </dependencies>
   <build>

@@ -32,11 +32,16 @@ package org.universAAL.lddi.weighingscale.publisher;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.middleware.context.ContextEventPattern;
 import org.universAAL.middleware.context.ContextPublisher;
 import org.universAAL.middleware.context.DefaultContextPublisher;
 import org.universAAL.middleware.context.owl.ContextProvider;
 import org.universAAL.middleware.context.owl.ContextProviderType;
+import org.universAAL.ontology.healthmeasurement.owl.PersonWeight;
+import org.universAAL.ontology.location.Location;
+import org.universAAL.ontology.measurement.Measurement;
+import org.universAAL.ontology.personalhealthdevice.WeighingScale;
 
 
 // Main class
@@ -73,11 +78,13 @@ public class Publisher {
 	 * */
 	public void publishEvent(String weight) {	
 		System.out.println("[TEST] WS event published to uaal context bus");
-//		WeighingScale ws = new WeighingScale("http://www.tsbtecnologias.es/WeighingScale.owl#WeighingScale");		
-//		ws.setLocation(new Location("http://www.tsbtecnologias.es/location.owl#TSBlocation","TSB"));		
-//		ws.setProperty(WeighingScale.PROP_HAS_MEASURED_WEIGHT,weight);
-//		System.out.println("I'm alive - 1");
-//		cp.publish(new ContextEvent(ws,WeighingScale.PROP_HAS_MEASURED_WEIGHT));
-//		System.out.println("I'm alive - 2");
+		PersonWeight w=new PersonWeight();
+		w.setProperty(Measurement.PROP_VALUE, Float.parseFloat(weight));
+		WeighingScale ws = new WeighingScale("http://www.tsbtecnologias.es/WeighingScale.owl#WeighingScale");		
+		ws.setLocation(new Location("http://www.tsbtecnologias.es/location.owl#TSBlocation","TSB"));		
+		ws.setValue(w);
+		System.out.println("Sending weight");
+		cp.publish(new ContextEvent(ws,WeighingScale.PROP_HAS_VALUE));
+		System.out.println("Sent weight");
 	}	
 }
