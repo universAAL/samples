@@ -102,8 +102,9 @@ public class LightingProvider extends ServiceCallee implements
 		    // second param: light type
 		    ElectricLight.lightBulb,
 		    // thrid param: light location
-		    new Room(constructLocationURIfromLocalID(theServer
-			    .getLampLocation(lamps[i]))));
+		    new Room(
+			    constructLocationURIfromLocalID(theServer
+				    .getLampLocation(lamps[i]))));
 	return result;
     }
 
@@ -210,6 +211,9 @@ public class LightingProvider extends ServiceCallee implements
     // AAL SPace, you have to publish that info as a context event
     private ContextPublisher cp;
 
+    // the gui
+    private UILampsView view;
+
     LightingProvider(ModuleContext context) {
 	// as a service providing component, we have to extend ServiceCallee
 	// this in turn requires that we introduce which services we would like
@@ -233,16 +237,15 @@ public class LightingProvider extends ServiceCallee implements
 
 	// create a Lamps View
 	try {
-	    UILampsView view = new UILampsView(theServer.getLampIDs());
+	    view = new UILampsView(theServer.getLampIDs());
 	    theServer.addListener(new UILampsController(view));
 	} catch (java.awt.HeadlessException ex) {
-	    LogUtils
-		    .logInfo(
-			    Activator.mc,
-			    LightingProvider.class,
-			    "LightingProvider",
-			    new Object[] { "server activates GUI-off mode because of no screen access" },
-			    null);
+	    LogUtils.logInfo(
+		    Activator.mc,
+		    LightingProvider.class,
+		    "LightingProvider",
+		    new Object[] { "server activates GUI-off mode because of no screen access" },
+		    null);
 	}
     }
 
@@ -254,7 +257,6 @@ public class LightingProvider extends ServiceCallee implements
      * ()
      */
     public void communicationChannelBroken() {
-	// TODO Auto-generated method stub
     }
 
     // create a service response that including all available light sources
@@ -264,7 +266,7 @@ public class LightingProvider extends ServiceCallee implements
 	ServiceResponse sr = new ServiceResponse(CallStatus.succeeded);
 	// create a list including the available lights
 	int[] lamps = theServer.getLampIDs();
-	ArrayList al = new ArrayList(lamps.length);
+	ArrayList<LightSource> al = new ArrayList<LightSource>(lamps.length);
 	for (int i = 0; i < lamps.length; i++) {
 	    LightSource ls = new LightSource(
 		    constructLampURIfromLocalID(lamps[i]));
@@ -360,13 +362,12 @@ public class LightingProvider extends ServiceCallee implements
 	// Set the properties of the light (location and brightness)
 	ls.setLocation(new Room(constructLocationURIfromLocalID(loc)));
 	ls.setBrightness(isOn ? 100 : 0);
-	LogUtils
-		.logInfo(
-			Activator.mc,
-			LightingProvider.class,
-			"lampStateChanged",
-			new Object[] { "publishing a context event on the state of a lamp!" },
-			null);
+	LogUtils.logInfo(
+		Activator.mc,
+		LightingProvider.class,
+		"lampStateChanged",
+		new Object[] { "publishing a context event on the state of a lamp!" },
+		null);
 	// finally create an context event and publish it with the light source
 	// as subject and the property that changed as predicate
 	cp.publish(new ContextEvent(ls, LightSource.PROP_SOURCE_BRIGHTNESS));
@@ -390,5 +391,12 @@ public class LightingProvider extends ServiceCallee implements
 	} catch (Exception e) {
 	    return invalidInput;
 	}
+    }
+
+    @Override
+    public void close() {
+	super.close();
+	cp.close();
+	view.close();
     }
 }
