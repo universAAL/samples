@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>3.3.1-SNAPSHOT</version>
+    <version>3.4.0</version>
     <relativePath>../../samples.pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.lddi.weighingScalePublisher</artifactId>
-  <version>3.3.1-SNAPSHOT</version>
+  <version>3.4.0</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples LDDI Weighing scale agent publisher</name>
   <description>Continua Health Alliance agent event publisher</description>
@@ -31,10 +31,6 @@
       <groupId>org.universAAL.middleware</groupId>
       <artifactId>mw.bus.context.osgi</artifactId>
     </dependency>
-<!--     <dependency> -->
-<!--       <groupId>org.universAAL.ontology</groupId> -->
-<!--       <artifactId>ont.X73</artifactId> -->
-<!--     </dependency> -->
     <dependency>
       <groupId>org.universAAL.ontology</groupId>
       <artifactId>ont.personalhealthdevice</artifactId>
