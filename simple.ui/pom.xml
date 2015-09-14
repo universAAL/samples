@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>3.4.0</version>
+    <version>3.4.1-SNAPSHOT</version>
     <relativePath>../samples.pom/pom.xml</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>simple.ui</artifactId>
-  <version>3.4.0</version>
+  <version>3.4.1-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples Simple UI</name>
   <dependencies>
