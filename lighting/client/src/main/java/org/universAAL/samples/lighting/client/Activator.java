@@ -27,6 +27,7 @@ import org.universAAL.middleware.container.osgi.uAALBundleContainer;
 public class Activator implements BundleActivator {
 
     public static ModuleContext mc;
+    private LightingConsumer c = null;
 
     /*
      * (non-Javadoc)
@@ -40,7 +41,7 @@ public class Activator implements BundleActivator {
 		.registerModule(new Object[] { context });
 	new Thread() {
 	    public void run() {
-		new LightingConsumer(mc);
+		c = new LightingConsumer(mc);
 	    }
 	}.start();
     }
@@ -52,5 +53,9 @@ public class Activator implements BundleActivator {
      * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
      */
     public void stop(BundleContext context) throws Exception {
+	if (c != null) {
+	    c.close();
+	    c = null;
+	}
     }
 }

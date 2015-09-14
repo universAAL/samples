@@ -42,6 +42,8 @@ import org.universAAL.ontology.phThing.Device;
  */
 public class LightingConsumer extends ContextSubscriber {
 
+    private LightClient lightClient;
+
     public static ServiceCaller caller;
 
     private static final String LIGHTING_CONSUMER_NAMESPACE = "http://ontology.igd.fhg.de/LightingConsumer.owl#";
@@ -66,10 +68,9 @@ public class LightingConsumer extends ContextSubscriber {
 	caller = new DefaultServiceCaller(context);
 
 	try {
-	    new LightClient();
+	    lightClient = new LightClient();
 	} catch (java.awt.HeadlessException ex) {
-	    LogUtils
-	    .logInfo(
+	    LogUtils.logInfo(
 		    Activator.mc,
 		    LightingConsumer.class,
 		    "LightingConsumer",
@@ -139,7 +140,7 @@ public class LightingConsumer extends ContextSubscriber {
 	// some info
 	getAllLamps.addRequiredOutput(
 	// this is OUR unique ID with which we can later retrieve the returned
-		// value
+	// value
 		OUTPUT_LIST_OF_LAMPS,
 		// Specify the meaning of the required output
 		// by pointing to the property in whose value you are interested
@@ -164,7 +165,7 @@ public class LightingConsumer extends ContextSubscriber {
 
 	if (sr.getCallStatus() == CallStatus.succeeded) {
 	    try {
-		List lampList = sr.getOutput(OUTPUT_LIST_OF_LAMPS, true);
+		List lampList = sr.getOutput(OUTPUT_LIST_OF_LAMPS);
 
 		if (lampList == null || lampList.size() == 0) {
 		    LogUtils.logInfo(Activator.mc, LightingConsumer.class,
@@ -182,8 +183,8 @@ public class LightingConsumer extends ContextSubscriber {
 
 	    } catch (Exception e) {
 		LogUtils.logError(Activator.mc, LightingConsumer.class,
-			"getControlledLamps", new Object[] { "got exception",
-				e.getMessage() }, e);
+			"getControlledLamps",
+			new Object[] { "got exception", e.getMessage() }, e);
 		return null;
 	    }
 	} else {
@@ -262,13 +263,12 @@ public class LightingConsumer extends ContextSubscriber {
 	if (sr.getCallStatus() == CallStatus.succeeded)
 	    return true;
 	else {
-	    LogUtils
-		    .logWarn(
-			    Activator.mc,
-			    LightingConsumer.class,
-			    "dimToValue",
-			    new Object[] { "the lamp couldn't be dimmed to the given value" },
-			    null);
+	    LogUtils.logWarn(
+		    Activator.mc,
+		    LightingConsumer.class,
+		    "dimToValue",
+		    new Object[] { "the lamp couldn't be dimmed to the given value" },
+		    null);
 	    return false;
 	}
     }
@@ -294,8 +294,14 @@ public class LightingConsumer extends ContextSubscriber {
      * @see ContextSubscriber#communicationChannelBroken()
      */
     public void communicationChannelBroken() {
-	// TODO Auto-generated method stub
-
     }
 
+    @Override
+    public void close() {
+	super.close();
+	caller.close();
+	// Destroy the JFrame object
+	lightClient.frame.setVisible(false);
+	lightClient.frame.dispose();
+    }
 }
