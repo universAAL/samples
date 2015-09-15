@@ -1,2 +1,0 @@
-scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi/1.1.3-SNAPSHOT/deps@10
-scan-bundle:mvn:org.universAAL.samples/smp.lighting.server.osgi/1.1.3-SNAPSHOT@27@nostart
