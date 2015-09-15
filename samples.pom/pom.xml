@@ -280,11 +280,6 @@
         <version>3.4.1-SNAPSHOT</version>
       </dependency>
       <dependency>
-        <groupId>org.universAAL</groupId>
-        <artifactId>uAAL.karaf.feature</artifactId>
-        <version>3.4.0</version>
-      </dependency>
-      <dependency>
         <groupId>org.universAAL.support.samples</groupId>
         <artifactId>ont.lighting.simple</artifactId>
         <version>3.4.1-SNAPSHOT</version>
