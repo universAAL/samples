@@ -6,6 +6,7 @@
     <groupId>org.universAAL.ontology</groupId>
     <artifactId>ont.pom</artifactId>
     <version>3.4.1-SNAPSHOT</version>
+	<relativePath>../../../ontology/ont.pom</relativePath>
   </parent>
   <artifactId>ont.tutorial</artifactId>
   <version>3.4.1-SNAPSHOT</version>
