@@ -6,7 +6,6 @@
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
     <version>3.4.1-SNAPSHOT</version>
-    <relativePath>../../samples.pom/pom.xml</relativePath>
     <relativePath>../../samples.pom</relativePath>
   </parent>
   <artifactId>ont.lighting.simple</artifactId>
