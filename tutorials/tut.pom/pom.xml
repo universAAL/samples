@@ -19,6 +19,7 @@
     <module>../tut.context.bus.subscriber</module>
     <module>../tut.service.bus.caller</module>
     <module>../tut.service.bus.callee</module>
+    <module>../tut.service.bus.tryout</module>
   </modules>
   <dependencyManagement>
     <dependencies>
