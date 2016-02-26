@@ -26,15 +26,18 @@
 <listEntry value="obr"/>
 </listAttribute>
 <mapAttribute key="org.ops4j.pax.cursor.provisionItems">
-<mapEntry key="mvn:org.universAAL.samples/smp.lighting.uiclient.osgi" value="true@true@6@true"/>
+<mapEntry key="mvn:org.universAAL.samples/smp.lighting.uiclient.osgi" value="true@true@9@true"/>
+<mapEntry key="mvn:org.universAAL.security/security.authenticator.dummy" value="true@true@5@true"/>
+<mapEntry key="mvn:org.universAAL.security/security.authenticator.profile" value="false@true@5@true"/>
 <mapEntry key="scan-composite:mvn:org.universAAL.context/ctxt.che//composite" value="true@true@2@true"/>
 <mapEntry key="scan-composite:mvn:org.universAAL.context/ctxt.prof.server//composite" value="true@true@3@true"/>
 <mapEntry key="scan-composite:mvn:org.universAAL.middleware/mw.composite//composite" value="true@true@1@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//composite" value="true@true@5@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.security/security.authorizator//composite" value="true@true@3@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.dm//composite" value="true@true@3@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF//composite" value="true@true@5@true"/>
-<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing//composite" value="true@true@4@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//composite" value="true@true@8@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.security/security.session.manager//composite" value="true@true@3@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.dm//composite" value="true@true@6@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF//composite" value="true@false@8@true"/>
+<mapEntry key="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing//composite" value="true@true@7@true"/>
+<mapEntry key="wrap:mvn:org.universAAL.security/security.authenticator.userPassword.client" value="true@true@4@true"/>
 </mapAttribute>
 <listAttribute key="org.ops4j.pax.cursor.runArguments">
 <listEntry value="--overwrite=false"/>
@@ -45,16 +48,18 @@
 <listEntry value="scan-composite:mvn:org.universAAL.middleware/mw.composite//composite@1@update"/>
 <listEntry value="scan-composite:mvn:org.universAAL.context/ctxt.che//composite@2@update"/>
 <listEntry value="scan-composite:mvn:org.universAAL.context/ctxt.prof.server//composite@3@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.security/security.authorizator//composite@3@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.dm//composite@3@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing//composite@4@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF//composite@5@update"/>
-<listEntry value="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//composite@5@update"/>
-<listEntry value="mvn:org.universAAL.samples/smp.lighting.uiclient.osgi@6@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.security/security.session.manager//composite@3@update"/>
+<listEntry value="wrap:mvn:org.universAAL.security/security.authenticator.userPassword.client@4@update"/>
+<listEntry value="mvn:org.universAAL.security/security.authenticator.dummy@5@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.dm//composite@6@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing//composite@7@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//composite@8@update"/>
+<listEntry value="scan-composite:mvn:org.universAAL.ui/ui.handler.gui.swing.bluesteelLAF//composite@8@nostart@update"/>
+<listEntry value="mvn:org.universAAL.samples/smp.lighting.uiclient.osgi@9@update"/>
 </listAttribute>
 <stringAttribute key="osgi_framework_id" value="--platform=felix --version=2.0.1"/>
 <stringAttribute key="pde.version" value="3.3"/>
-<booleanAttribute key="show_selected_only" value="false"/>
+<booleanAttribute key="show_selected_only" value="true"/>
 <booleanAttribute key="tracing" value="false"/>
 <booleanAttribute key="useCustomFeatures" value="false"/>
 <booleanAttribute key="useDefaultConfigArea" value="false"/>
