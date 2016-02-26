@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.universAAL.support.samples</groupId>
+    <artifactId>samples.pom</artifactId>
+    <version>3.4.1-SNAPSHOT</version>
+    <relativePath>../../samples.pom</relativePath>
+  </parent>
+  <groupId>org.universAAL.tutorials</groupId>
+  <artifactId>tut.pom</artifactId>
+  <version>3.4.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>universAAL Tutorials Suite</name>
+  <description>A set of small tutorials showing the use of specific parts of the platform.</description>
+  <modules>
+    <module>../tut.context.bus.publisher</module>
+    <module>../tut.context.bus.subscriber</module>
+  </modules>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.universAAL.tutorials</groupId>
+        <artifactId>tut.context.bus.publisher</artifactId>
+        <version>3.4.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.tutorials</groupId>
+        <artifactId>tut.context.bus.subscriber</artifactId>
+        <version>3.4.1-SNAPSHOT</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
