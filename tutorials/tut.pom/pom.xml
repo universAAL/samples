@@ -33,6 +33,11 @@
         <artifactId>tut.context.bus.subscriber</artifactId>
         <version>3.4.1-SNAPSHOT</version>
       </dependency>
+      <dependency>
+        <groupId>org.universAAL.middleware</groupId>
+        <artifactId>mw.junit</artifactId>
+        <version>3.4.1-SNAPSHOT</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 </project>

@@ -46,6 +46,7 @@
     <module>../lddi.bluetooth/weighingScalePublisher</module>
     <module>../lddi.bluetooth/continuaManager/unix</module>
     <module>../lddi.bluetooth/continuaManager/windows</module>
+    <module>../tutorials/tut.pom</module>
   </modules>
   <dependencyManagement>
     <dependencies>
