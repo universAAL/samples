@@ -36,6 +36,7 @@ import org.universAAL.middleware.owl.ManagedIndividual;
 import org.universAAL.middleware.owl.MergedRestriction;
 import org.universAAL.middleware.rdf.TypeMapper;
 import org.universAAL.ontology.reasoner.util.ElementModel;
+import org.universAAL.samples.context.reasoner.client.osgi.Activator;
 import org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator;
 
 /**
@@ -65,18 +66,8 @@ public class ContextEventRecorder extends ContextSubscriber {
     private static final String TYPE_URI_FILENAME = "ContextRecorderTypeURIs.txt";
     private static final String PREDICATE_FILENAME = "PredicateURIs.txt";
 
-    public static final String configHome = new BundleConfigHome(
-	    "ctxt.situation.reasoner.client").getAbsolutePath();
-    private static final File reasonerClientHome = new File(
-	    new BundleConfigHome("ctxt.situation.reasoner.client")
-		    .getAbsolutePath());
-
-    static {
-	reasonerClientHome.mkdirs();
-    }
-
     private ElementModel<ContextEvent> recordedEvents = new ElementModel(
-	    ContextEvent.class, UAALInterfaceActivator.serializer, configHome);
+	    ContextEvent.class, UAALInterfaceActivator.serializer, Activator.dataHome.getAbsolutePath());
     /**
      * List of recorded instance URI's
      */
@@ -92,6 +83,7 @@ public class ContextEventRecorder extends ContextSubscriber {
 
     ContextEventRecorder(ModuleContext context) {
 	super(context, createInitialSubscription());
+	Activator.dataHome.mkdirs();
 	recordedEvents.loadElements();
     }
 
@@ -185,7 +177,7 @@ public class ContextEventRecorder extends ContextSubscriber {
     private <O extends Object> boolean saveArray(String filename,
 	    ArrayList<O> list) {
 	try {
-	    File file = new File(reasonerClientHome, filename);
+	    File file = new File(Activator.dataHome, filename);
 	    if (!file.exists() && !file.createNewFile())
 		return false;
 
@@ -214,7 +206,7 @@ public class ContextEventRecorder extends ContextSubscriber {
     private ArrayList<String> loadArray(String filename) {
 	ArrayList<String> result = new ArrayList<String>();
 	try {
-	    File file = new File(reasonerClientHome, filename);
+	    File file = new File(Activator.dataHome, filename);
 	    if (!file.exists())
 		return result;
 

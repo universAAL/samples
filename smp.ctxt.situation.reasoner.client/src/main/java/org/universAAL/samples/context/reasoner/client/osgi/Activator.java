@@ -19,6 +19,8 @@
  */
 package org.universAAL.samples.context.reasoner.client.osgi;
 
+import java.io.File;
+
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
@@ -42,11 +44,15 @@ import org.universAAL.middleware.container.osgi.uAALBundleContainer;
 public class Activator implements BundleActivator {
     public static ModuleContext context = null;
     private GUIActivator gui = null;
+    
+    public static File dataHome;
 
     public void start(BundleContext bcontext) throws Exception {
 	Activator.context = uAALBundleContainer.THE_CONTAINER
 		.registerModule(new Object[] { bcontext });
 
+	dataHome = context.getDataFolder();
+	
 	new UAALInterfaceActivator(bcontext, context);
 	gui = new GUIActivator(bcontext, context);
     }
