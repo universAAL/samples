@@ -28,7 +28,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.osgi.util.BundleConfigHome;
 import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.middleware.context.ContextEventPattern;
 import org.universAAL.middleware.context.ContextSubscriber;
