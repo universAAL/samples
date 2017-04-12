@@ -13,11 +13,6 @@
   <packaging>bundle</packaging>
   <name>universAAL Samples Ontology Tutorial Example</name>
   <description>This example shows how to convert an ontology concept into its java representation for uAAL</description>
-  <scm>
-    <connection>scm:svn:http://forge.universaal.org/svn/support/trunk/samples/${project.artifactId}</connection>
-    <developerConnection>scm:svn:http://forge.universaal.org/svn/support/trunk/samples/${project.artifactId}</developerConnection>
-    <url>http://forge.universaal.org/gf/project/support/scmsvn/?path=%2Ftrunk%2Fsamples/${project.artifactId}</url>
-  </scm>
   <dependencies>
     <dependency>
       <groupId>org.universAAL.middleware</groupId>
