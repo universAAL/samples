@@ -18,19 +18,18 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package org.universAAL.samples.lighting.server;
+package org.universAAL.samples.lighting.server_simple;
 
-import org.universAAL.ontology.lighting.simple.LightingInterfaceLevel2;
+import org.universAAL.ontology.lighting.simple.LightingInterfaceLevel3;
+import org.universAAL.samples.lighting.server_simple.unit_impl.MyLighting;
 
 /**
- * Simplified API in Level 2. Implementation of the server side.
+ * Simplified API in Level 3. Implementation of the server side.
  * 
  * @author dzmuda
  * @author mpsiuk
  */
-public class LightingSimplifiedServiceLevel2 extends MyLightingOntologified
-	implements LightingInterfaceLevel2 {
-    public LightingSimplifiedServiceLevel2() {
-	super(namespace);
-    }
+public class LightingSimplifiedServiceLevel3 extends MyLighting implements
+	LightingInterfaceLevel3 {
+
 }

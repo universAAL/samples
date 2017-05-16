@@ -18,14 +18,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-package org.universAAL.samples.lighting.server;
+package org.universAAL.samples.lighting.server_simple;
 
 import java.util.ArrayList;
 
 import org.universAAL.ontology.lighting.ElectricLight;
 import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.location.indoor.Room;
-import org.universAAL.samples.lighting.server.unit_impl.MyLighting;
+import org.universAAL.samples.lighting.server_simple.unit_impl.MyLighting;
 
 public class MyLightingOntologified {
     /**

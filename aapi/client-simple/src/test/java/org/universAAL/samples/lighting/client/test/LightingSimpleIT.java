@@ -37,12 +37,12 @@ import org.universAAL.samples.lighting.client_regular.Activator;
 import org.universAAL.samples.lighting.client_regular.LightingConsumerLevel1;
 import org.universAAL.samples.lighting.client_regular.LightingConsumerLevel2;
 import org.universAAL.samples.lighting.client_regular.LightingConsumerLevel3;
-import org.universAAL.samples.lighting.server.LightingSimplifiedServiceLevel1;
-import org.universAAL.samples.lighting.server.LightingSimplifiedServiceLevel2;
-import org.universAAL.samples.lighting.server.LightingSimplifiedServiceLevel3;
 import org.universAAL.samples.lighting.server_regular.LightingProviderLevel1;
 import org.universAAL.samples.lighting.server_regular.LightingProviderLevel2;
 import org.universAAL.samples.lighting.server_regular.LightingProviderLevel3;
+import org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel1;
+import org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel2;
+import org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel3;
 
 /**
  * LightingTest is an example of JUnit OSGi integration test. The TestCase uses
