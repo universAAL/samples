@@ -27,10 +27,9 @@
  */
 
 // Package
-package org.universAAL.lddi.manager.publisher;
+package org.universAAL.lddi.manager.win.publisher;
 
-// Imports
-import org.universAAL.lddi.manager.gui.GUI;
+import org.universAAL.lddi.manager.win.gui.GUI;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.service.CallStatus;
 import org.universAAL.middleware.service.ServiceCall;

@@ -27,7 +27,7 @@
  */
 
 // Package 
-package org.universAAL.lddi.manager.gui;
+package org.universAAL.lddi.manager.win.gui;
 
 // Imports
 import java.awt.BorderLayout;
@@ -51,8 +51,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import org.osgi.framework.BundleContext;
-import org.universAAL.lddi.manager.publisher.Publisher;
-import org.universAAL.lddi.manager.publisher.hdpManager;
+import org.universAAL.lddi.manager.win.publisher.Publisher;
+import org.universAAL.lddi.manager.win.publisher.hdpManager;
 
 //Main class
 public class GUI extends JDialog implements ActionListener {

@@ -27,7 +27,7 @@
  */
 
 // Package
-package org.universAAL.lddi.manager.publisher;
+package org.universAAL.lddi.manager.win.publisher;
 
 // Imports
 import java.awt.event.WindowAdapter;
@@ -39,7 +39,7 @@ import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
-import org.universAAL.lddi.manager.gui.GUI;
+import org.universAAL.lddi.manager.win.gui.GUI;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
 
