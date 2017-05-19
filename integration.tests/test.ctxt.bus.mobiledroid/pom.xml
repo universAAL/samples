@@ -71,14 +71,6 @@
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-      <id>sesame</id>
-      <name>Open RDF Sesame Repository</name>
-      <url>http://repo.aduna-software.org/maven2/releases/</url>
-    </repository>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
       <id>uaal</id>
       <name>universAAL Repositories</name>
       <url>http://depot.universaal.org/maven-repo/releases/</url>
