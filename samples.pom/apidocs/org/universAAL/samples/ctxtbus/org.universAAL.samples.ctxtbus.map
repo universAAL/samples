@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" id="c0" href="./SparQLQueryPanel.html" title="org.universAAL.samples.ctxtbus.SparQLQueryPanel" alt="" coords="16,17,149,42"/>
+<area shape="rect" id="node1" href="./SparQLQueryPanel.html" title="&lt;TABLE&gt;" alt="" coords="5,5,160,53"/>
+<area shape="rect" id="c1" href="./GUIPanel.html" title="org.universAAL.samples.ctxtbus.GUIPanel" alt="" coords="195,17,272,42"/>
+<area shape="rect" id="node2" href="./GUIPanel.html" title="&lt;TABLE&gt;" alt="" coords="184,5,283,53"/>
+<area shape="rect" id="c2" href="./SpaceCaller.html" title="org.universAAL.samples.ctxtbus.SpaceCaller" alt="" coords="317,17,409,42"/>
+<area shape="rect" id="node3" href="./SpaceCaller.html" title="&lt;TABLE&gt;" alt="" coords="307,5,419,53"/>
+<area shape="rect" id="c3" href="./ProfileCaller.html" title="org.universAAL.samples.ctxtbus.ProfileCaller" alt="" coords="453,17,545,42"/>
+<area shape="rect" id="node4" href="./ProfileCaller.html" title="&lt;TABLE&gt;" alt="" coords="443,5,555,53"/>
+<area shape="rect" id="c4" href="./CSubscriber.html" title="org.universAAL.samples.ctxtbus.CSubscriber" alt="" coords="589,17,683,42"/>
+<area shape="rect" id="node5" href="./CSubscriber.html" title="&lt;TABLE&gt;" alt="" coords="579,5,693,53"/>
+<area shape="rect" id="c5" href="./Activator.html" title="org.universAAL.samples.ctxtbus.Activator" alt="" coords="727,17,801,42"/>
+<area shape="rect" id="node6" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="717,5,811,53"/>
+<area shape="rect" id="c6" href="./HistoryCaller.html" title="org.universAAL.samples.ctxtbus.HistoryCaller" alt="" coords="845,17,942,42"/>
+<area shape="rect" id="node7" href="./HistoryCaller.html" title="&lt;TABLE&gt;" alt="" coords="835,5,952,53"/>
+<area shape="rect" id="c7" href="./CPublisher.html" title="org.universAAL.samples.ctxtbus.CPublisher" alt="" coords="987,17,1072,42"/>
+<area shape="rect" id="node8" href="./CPublisher.html" title="&lt;TABLE&gt;" alt="" coords="976,5,1083,53"/>
+<area shape="rect" id="c8" href="./CSubscriber2.html" title="org.universAAL.samples.ctxtbus.CSubscriber2" alt="" coords="1117,17,1217,42"/>
+<area shape="rect" id="node9" href="./CSubscriber2.html" title="&lt;TABLE&gt;" alt="" coords="1107,5,1227,53"/>
+</map>

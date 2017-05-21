@@ -1,0 +1,36 @@
+<map id="G" name="G">
+<area shape="rect" id="c3652" href="./LightingInterfaceLevel1.html" title="org.universAAL.ontology.lighting.simple.LightingInterfaceLevel1" alt="" coords="16,11,171,53"/>
+<area shape="rect" id="node1" href="./LightingInterfaceLevel1.html" title="&lt;TABLE&gt;" alt="" coords="5,6,181,58"/>
+<area shape="rect" id="c3653" href="./LightingOntologySimplified.html" title="org.universAAL.ontology.lighting.simple.LightingOntologySimplified" alt="" coords="215,19,390,45"/>
+<area shape="rect" id="node2" href="./LightingOntologySimplified.html" title="&lt;TABLE&gt;" alt="" coords="205,8,400,56"/>
+<area shape="rect" id="c3654" href="./LightingSimplified.html" title="org.universAAL.ontology.lighting.simple.LightingSimplified" alt="" coords="435,19,557,45"/>
+<area shape="rect" id="node3" href="./LightingSimplified.html" title="&lt;TABLE&gt;" alt="" coords="424,8,568,56"/>
+<area shape="rect" id="c3655" href="./LightingInterfaceLevel2.html" title="org.universAAL.ontology.lighting.simple.LightingInterfaceLevel2" alt="" coords="603,11,757,53"/>
+<area shape="rect" id="node4" href="./LightingInterfaceLevel2.html" title="&lt;TABLE&gt;" alt="" coords="592,6,768,58"/>
+<area shape="rect" id="c3656" href="./LightingInterfaceLevel3.html" title="org.universAAL.ontology.lighting.simple.LightingInterfaceLevel3" alt="" coords="803,11,957,53"/>
+<area shape="rect" id="node5" href="./LightingInterfaceLevel3.html" title="&lt;TABLE&gt;" alt="" coords="792,6,968,58"/>
+<area shape="rect" id="c3657" href="./LightingInterface.html" title="org.universAAL.ontology.lighting.simple.LightingInterface" alt="" coords="1003,11,1120,53"/>
+<area shape="rect" id="node6" href="./LightingInterface.html" title="&lt;TABLE&gt;" alt="" coords="992,6,1131,58"/>
+<area shape="rect" id="c3658" href="./Activator.html" title="org.universAAL.ontology.lighting.simple.Activator" alt="" coords="1165,19,1238,45"/>
+<area shape="rect" id="node7" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="1155,8,1248,56"/>
+<area shape="rect" id="c3659" href="./LightingServerURIs.html" title="org.universAAL.ontology.lighting.simple.LightingServerURIs" alt="" coords="1282,11,1417,53"/>
+<area shape="rect" id="node8" href="./LightingServerURIs.html" title="&lt;TABLE&gt;" alt="" coords="1272,6,1427,58"/>
+<area shape="rect" id="c3660" href="./LightingServerURIs.GetControlledLamps.html" title="org.universAAL.ontology.lighting.simple.LightingServerURIs.GetControlledLamps" alt="" coords="1461,11,1601,53"/>
+<area shape="rect" id="node9" href="./LightingServerURIs.GetControlledLamps.html" title="&lt;TABLE&gt;" alt="" coords="1451,6,1611,58"/>
+<area shape="rect" id="c3661" href="./LightingServerURIs.GetControlledLamps.Output.html" title="org.universAAL.ontology.lighting.simple.LightingServerURIs.GetControlledLamps.Output" alt="" coords="1645,11,1731,53"/>
+<area shape="rect" id="node10" href="./LightingServerURIs.GetControlledLamps.Output.html" title="&lt;TABLE&gt;" alt="" coords="1635,6,1741,58"/>
+<area shape="rect" id="c3662" href="./LightingServerURIs.GetLampInfo.html" title="org.universAAL.ontology.lighting.simple.LightingServerURIs.GetLampInfo" alt="" coords="1776,11,1872,53"/>
+<area shape="rect" id="node11" href="./LightingServerURIs.GetLampInfo.html" title="&lt;TABLE&gt;" alt="" coords="1765,6,1883,58"/>
+<area shape="rect" id="c3663" href="./LightingServerURIs.GetLampInfo.Input.html" title="org.universAAL.ontology.lighting.simple.LightingServerURIs.GetLampInfo.Input" alt="" coords="1917,11,2003,53"/>
+<area shape="rect" id="node12" href="./LightingServerURIs.GetLampInfo.Input.html" title="&lt;TABLE&gt;" alt="" coords="1907,6,2013,58"/>
+<area shape="rect" id="c3664" href="./LightingServerURIs.GetLampInfo.Output.html" title="org.universAAL.ontology.lighting.simple.LightingServerURIs.GetLampInfo.Output" alt="" coords="2048,11,2133,53"/>
+<area shape="rect" id="node13" href="./LightingServerURIs.GetLampInfo.Output.html" title="&lt;TABLE&gt;" alt="" coords="2037,6,2144,58"/>
+<area shape="rect" id="c3665" href="./LightingServerURIs.TurnOn.html" title="org.universAAL.ontology.lighting.simple.LightingServerURIs.TurnOn" alt="" coords="2179,11,2264,53"/>
+<area shape="rect" id="node14" href="./LightingServerURIs.TurnOn.html" title="&lt;TABLE&gt;" alt="" coords="2168,6,2275,58"/>
+<area shape="rect" id="c3666" href="./LightingServerURIs.TurnOn.Input.html" title="org.universAAL.ontology.lighting.simple.LightingServerURIs.TurnOn.Input" alt="" coords="2309,11,2395,53"/>
+<area shape="rect" id="node15" href="./LightingServerURIs.TurnOn.Input.html" title="&lt;TABLE&gt;" alt="" coords="2299,6,2405,58"/>
+<area shape="rect" id="c3667" href="./LightingServerURIs.TurnOff.html" title="org.universAAL.ontology.lighting.simple.LightingServerURIs.TurnOff" alt="" coords="2440,11,2525,53"/>
+<area shape="rect" id="node16" href="./LightingServerURIs.TurnOff.html" title="&lt;TABLE&gt;" alt="" coords="2429,6,2536,58"/>
+<area shape="rect" id="c3668" href="./LightingServerURIs.TurnOff.Input.html" title="org.universAAL.ontology.lighting.simple.LightingServerURIs.TurnOff.Input" alt="" coords="2571,11,2656,53"/>
+<area shape="rect" id="node17" href="./LightingServerURIs.TurnOff.Input.html" title="&lt;TABLE&gt;" alt="" coords="2560,6,2667,58"/>
+</map>

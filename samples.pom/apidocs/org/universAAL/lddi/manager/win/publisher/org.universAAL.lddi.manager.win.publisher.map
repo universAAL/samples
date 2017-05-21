@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="c5948" href="./Activator.html" title="org.universAAL.lddi.manager.win.publisher.Activator" alt="" coords="15,19,89,45"/>
+<area shape="rect" id="node1" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="5,8,99,56"/>
+<area shape="rect" id="c5949" href="./ServiceProvider.html" title="org.universAAL.lddi.manager.win.publisher.ServiceProvider" alt="" coords="133,19,246,45"/>
+<area shape="rect" id="node2" href="./ServiceProvider.html" title="&lt;TABLE&gt;" alt="" coords="123,8,256,56"/>
+<area shape="rect" id="c5950" href="./hdpManager.html" title="org.universAAL.lddi.manager.win.publisher.hdpManager" alt="" coords="313,118,405,143"/>
+<area shape="rect" id="node3" href="./hdpManager.html" title="&lt;TABLE&gt;" alt="" coords="303,107,415,155"/>
+<area shape="rect" id="c5951" href="./hdpManagerListener.html" title="org.universAAL.lddi.manager.win.publisher.hdpManagerListener" alt="" coords="290,11,427,53"/>
+<area shape="rect" id="node4" href="./hdpManagerListener.html" title="&lt;TABLE&gt;" alt="" coords="280,6,437,58"/>
+<area shape="rect" id="c5952" href="./Publisher.html" title="org.universAAL.lddi.manager.win.publisher.Publisher" alt="" coords="472,19,547,45"/>
+<area shape="rect" id="node5" href="./Publisher.html" title="&lt;TABLE&gt;" alt="" coords="461,8,557,56"/>
+</map>

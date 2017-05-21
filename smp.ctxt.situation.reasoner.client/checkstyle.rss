@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<rss version="0.91">
+  <channel>
+    <title>universAAL Samples Context Situation Reasoner Test Client - Checkstyle report</title>
+    <link>http://xtras/samples/smp.ctxt.situation.reasoner.client/</link>
+    <description>universAAL Samples Context Situation Reasoner Test Client - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2017 universAAL Consortium</copyright>
+    <item>
+      <title>File: 10,
+             Errors: 199,
+             Warnings: 159,
+             Infos: 250
+      </title>
+            <link>http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html</link>
+      <description>
+        <p>Click <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.RuleCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/RuleCreatorFrame.java</a>
+                </td>
+                <td>
+                  17
+                </td>
+                <td>
+                  22
+                </td>
+                <td>
+                  14
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/QueryCreatorFrame.java</a>
+                </td>
+                <td>
+                  21
+                </td>
+                <td>
+                  51
+                </td>
+                <td>
+                  16
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder.java">org/universAAL/samples/context/reasoner/client/uaalinterface/ContextEventRecorder.java</a>
+                </td>
+                <td>
+                  17
+                </td>
+                <td>
+                  10
+                </td>
+                <td>
+                  26
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.SituationCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame.java</a>
+                </td>
+                <td>
+                  11
+                </td>
+                <td>
+                  24
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator.java">org/universAAL/samples/context/reasoner/client/osgi/UAALInterfaceActivator.java</a>
+                </td>
+                <td>
+                  11
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI.java">org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java</a>
+                </td>
+                <td>
+                  34
+                </td>
+                <td>
+                  30
+                </td>
+                <td>
+                  58
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller.java">org/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller.java</a>
+                </td>
+                <td>
+                  77
+                </td>
+                <td>
+                  11
+                </td>
+                <td>
+                  37
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.Activator.java">org/universAAL/samples/context/reasoner/client/osgi/Activator.java</a>
+                </td>
+                <td>
+                  16
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  9
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.GUIActivator.java">org/universAAL/samples/context/reasoner/client/osgi/GUIActivator.java</a>
+                </td>
+                <td>
+                  11
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller.java">org/universAAL/samples/context/reasoner/client/uaalinterface/CHECaller.java</a>
+                </td>
+                <td>
+                  35
+                </td>
+                <td>
+                  8
+                </td>
+                <td>
+                  12
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+

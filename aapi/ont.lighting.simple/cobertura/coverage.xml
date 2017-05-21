@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.0" branch-rate="1.0" lines-covered="0" lines-valid="9" branches-covered="0" branches-valid="0" complexity="1.0" version="2.1.1" timestamp="1495343002253">
+	<sources>
+		<source>/home/travis/build/universAAL/samples/aapi/ont-lighting-simple/src/main/java</source>
+		<source>--source</source>
+	</sources>
+	<packages>
+		<package name="org.universAAL.ontology.lighting.simple" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="org.universAAL.ontology.lighting.simple.Activator" filename="org/universAAL/ontology/lighting/simple/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="26" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="start" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="30" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="stop" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="34" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="26" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingInterface" filename="org/universAAL/ontology/lighting/simple/LightingInterface.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingInterfaceLevel1" filename="org/universAAL/ontology/lighting/simple/LightingInterfaceLevel1.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingInterfaceLevel2" filename="org/universAAL/ontology/lighting/simple/LightingInterfaceLevel2.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingInterfaceLevel3" filename="org/universAAL/ontology/lighting/simple/LightingInterfaceLevel3.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingOntologySimplified" filename="org/universAAL/ontology/lighting/simple/LightingOntologySimplified.java" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="23" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="23" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingServerURIs" filename="org/universAAL/ontology/lighting/simple/LightingServerURIs.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingServerURIs$GetControlledLamps" filename="org/universAAL/ontology/lighting/simple/LightingServerURIs.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingServerURIs$GetControlledLamps$Output" filename="org/universAAL/ontology/lighting/simple/LightingServerURIs.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingServerURIs$GetLampInfo" filename="org/universAAL/ontology/lighting/simple/LightingServerURIs.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingServerURIs$GetLampInfo$Input" filename="org/universAAL/ontology/lighting/simple/LightingServerURIs.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingServerURIs$GetLampInfo$Output" filename="org/universAAL/ontology/lighting/simple/LightingServerURIs.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingServerURIs$TurnOff" filename="org/universAAL/ontology/lighting/simple/LightingServerURIs.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingServerURIs$TurnOff$Input" filename="org/universAAL/ontology/lighting/simple/LightingServerURIs.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingServerURIs$TurnOn" filename="org/universAAL/ontology/lighting/simple/LightingServerURIs.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingServerURIs$TurnOn$Input" filename="org/universAAL/ontology/lighting/simple/LightingServerURIs.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+					</methods>
+					<lines>
+					</lines>
+				</class>
+				<class name="org.universAAL.ontology.lighting.simple.LightingSimplified" filename="org/universAAL/ontology/lighting/simple/LightingSimplified.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="36" hits="0" branch="false"/>
+								<line number="37" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getClassURI" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="36" hits="0" branch="false"/>
+						<line number="37" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>
