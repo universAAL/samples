@@ -47,6 +47,9 @@
     <module>../lddi.bluetooth/continuaManager/unix</module>
     <module>../lddi.bluetooth/continuaManager/windows</module>
     <module>../tutorials/tut.pom</module>
+    <module>../smp.ri.exportComponent/ri.soap.client</module>
+    <module>../smp.ri.exportComponent/ri.soap.server</module>
+    <module>../smp.ri.exportComponent/ri.soap.service</module>
   </modules>
   <dependencyManagement>
     <dependencies>
@@ -291,6 +294,11 @@
       <dependency>
         <groupId>org.universAAL.samples</groupId>
         <artifactId>smp.configurable.module</artifactId>
+        <version>3.4.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.support.samples</groupId>
+        <artifactId>smp.cxf.service</artifactId>
         <version>3.4.1-SNAPSHOT</version>
       </dependency>
     </dependencies>
