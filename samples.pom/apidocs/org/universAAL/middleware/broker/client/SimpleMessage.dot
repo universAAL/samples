@@ -10,15 +10,15 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.universAAL.middleware.broker.client.SimpleMessage
-	c18923 [label=<<table title="org.universAAL.middleware.broker.client.SimpleMessage" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SimpleMessage.html">
+	c20323 [label=<<table title="org.universAAL.middleware.broker.client.SimpleMessage" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SimpleMessage.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> SimpleMessage </td></tr>
 		</table></td></tr>
 		</table>>, URL="./SimpleMessage.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.universAAL.middleware.broker.client.SimpleMessage implements org.universAAL.middleware.brokers.message.BrokerMessage
-	c19010:p -> c18923:p [dir=back,arrowtail=empty,style=dashed];
+	c20415:p -> c20323:p [dir=back,arrowtail=empty,style=dashed];
 	// org.universAAL.middleware.brokers.message.BrokerMessage
-	c19010 [label=<<table title="org.universAAL.middleware.brokers.message.BrokerMessage" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/middleware/brokers/message/BrokerMessage.html">
+	c20415 [label=<<table title="org.universAAL.middleware.brokers.message.BrokerMessage" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/middleware/brokers/message/BrokerMessage.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> BrokerMessage </td></tr>

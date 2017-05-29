@@ -1,10 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="c1985" href="./MyActivityHubContextListener.html" title="org.universAAL.lddi.samples.activityhub.client.MyActivityHubContextListener" alt="" coords="15,17,214,42"/>
+<area shape="rect" id="c2050" href="./MyActivityHubContextListener.html" title="org.universAAL.lddi.samples.activityhub.client.MyActivityHubContextListener" alt="" coords="15,17,214,42"/>
 <area shape="rect" id="node1" href="./MyActivityHubContextListener.html" title="&lt;TABLE&gt;" alt="" coords="5,5,224,53"/>
-<area shape="rect" id="c1986" href="./Activator.html" title="org.universAAL.lddi.samples.activityhub.client.Activator" alt="" coords="258,17,331,42"/>
+<area shape="rect" id="c2051" href="./Activator.html" title="org.universAAL.lddi.samples.activityhub.client.Activator" alt="" coords="258,17,331,42"/>
 <area shape="rect" id="node2" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="248,5,341,53"/>
-<area shape="rect" id="c1987" href="./ActivityHubClient.html" title="org.universAAL.lddi.samples.activityhub.client.ActivityHubClient" alt="" coords="376,17,499,42"/>
+<area shape="rect" id="c2052" href="./ActivityHubClient.html" title="org.universAAL.lddi.samples.activityhub.client.ActivityHubClient" alt="" coords="376,17,499,42"/>
 <area shape="rect" id="node3" href="./ActivityHubClient.html" title="&lt;TABLE&gt;" alt="" coords="365,5,509,53"/>
-<area shape="rect" id="c1988" href="./MyActivityHubServiceConsumer.html" title="org.universAAL.lddi.samples.activityhub.client.MyActivityHubServiceConsumer" alt="" coords="544,17,755,42"/>
+<area shape="rect" id="c2053" href="./MyActivityHubServiceConsumer.html" title="org.universAAL.lddi.samples.activityhub.client.MyActivityHubServiceConsumer" alt="" coords="544,17,755,42"/>
 <area shape="rect" id="node4" href="./MyActivityHubServiceConsumer.html" title="&lt;TABLE&gt;" alt="" coords="533,5,765,53"/>
 </map>

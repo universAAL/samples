@@ -10,49 +10,49 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.universAAL.samples.lighting.server_regular.LightingProviderLevel2
-	c3818 [label=<<table title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel2" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LightingProviderLevel2.html">
+	c3943 [label=<<table title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel2" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LightingProviderLevel2.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> LightingProviderLevel2 </td></tr>
 		</table></td></tr>
 		</table>>, URL="./LightingProviderLevel2.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel3
-	c3819 [label=<<table title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel3" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ProvidedLightingServiceLevel3.html">
+	c3944 [label=<<table title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel3" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ProvidedLightingServiceLevel3.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> ProvidedLightingServiceLevel3 </td></tr>
 		</table></td></tr>
 		</table>>, URL="./ProvidedLightingServiceLevel3.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.universAAL.samples.lighting.server_regular.Activator
-	c3820 [label=<<table title="org.universAAL.samples.lighting.server_regular.Activator" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Activator.html">
+	c3945 [label=<<table title="org.universAAL.samples.lighting.server_regular.Activator" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./Activator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> Activator </td></tr>
 		</table></td></tr>
 		</table>>, URL="./Activator.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel1
-	c3821 [label=<<table title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel1" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ProvidedLightingServiceLevel1.html">
+	c3946 [label=<<table title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel1" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ProvidedLightingServiceLevel1.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> ProvidedLightingServiceLevel1 </td></tr>
 		</table></td></tr>
 		</table>>, URL="./ProvidedLightingServiceLevel1.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.universAAL.samples.lighting.server_regular.LightingProviderLevel3
-	c3822 [label=<<table title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel3" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LightingProviderLevel3.html">
+	c3947 [label=<<table title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel3" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LightingProviderLevel3.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> LightingProviderLevel3 </td></tr>
 		</table></td></tr>
 		</table>>, URL="./LightingProviderLevel3.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.universAAL.samples.lighting.server_regular.MyLightingOntologified
-	c3823 [label=<<table title="org.universAAL.samples.lighting.server_regular.MyLightingOntologified" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MyLightingOntologified.html">
+	c3948 [label=<<table title="org.universAAL.samples.lighting.server_regular.MyLightingOntologified" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./MyLightingOntologified.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> MyLightingOntologified </td></tr>
 		</table></td></tr>
 		</table>>, URL="./MyLightingOntologified.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.universAAL.samples.lighting.server_regular.LightingProviderLevel1
-	c3824 [label=<<table title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel1" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LightingProviderLevel1.html">
+	c3949 [label=<<table title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel1" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./LightingProviderLevel1.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> LightingProviderLevel1 </td></tr>
 		</table></td></tr>
 		</table>>, URL="./LightingProviderLevel1.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel2
-	c3825 [label=<<table title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel2" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ProvidedLightingServiceLevel2.html">
+	c3950 [label=<<table title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel2" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./ProvidedLightingServiceLevel2.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> ProvidedLightingServiceLevel2 </td></tr>
 		</table></td></tr>

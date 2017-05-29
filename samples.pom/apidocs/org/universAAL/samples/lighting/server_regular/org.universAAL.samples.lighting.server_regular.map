@@ -1,18 +1,18 @@
 <map id="G" name="G">
-<area shape="rect" id="c3818" href="./LightingProviderLevel2.html" title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel2" alt="" coords="16,17,168,42"/>
+<area shape="rect" id="c3943" href="./LightingProviderLevel2.html" title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel2" alt="" coords="16,17,168,42"/>
 <area shape="rect" id="node1" href="./LightingProviderLevel2.html" title="&lt;TABLE&gt;" alt="" coords="5,5,179,53"/>
-<area shape="rect" id="c3819" href="./ProvidedLightingServiceLevel3.html" title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel3" alt="" coords="213,17,411,42"/>
+<area shape="rect" id="c3944" href="./ProvidedLightingServiceLevel3.html" title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel3" alt="" coords="213,17,411,42"/>
 <area shape="rect" id="node2" href="./ProvidedLightingServiceLevel3.html" title="&lt;TABLE&gt;" alt="" coords="203,5,421,53"/>
-<area shape="rect" id="c3820" href="./Activator.html" title="org.universAAL.samples.lighting.server_regular.Activator" alt="" coords="455,17,529,42"/>
+<area shape="rect" id="c3945" href="./Activator.html" title="org.universAAL.samples.lighting.server_regular.Activator" alt="" coords="455,17,529,42"/>
 <area shape="rect" id="node3" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="445,5,539,53"/>
-<area shape="rect" id="c3821" href="./ProvidedLightingServiceLevel1.html" title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel1" alt="" coords="573,17,771,42"/>
+<area shape="rect" id="c3946" href="./ProvidedLightingServiceLevel1.html" title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel1" alt="" coords="573,17,771,42"/>
 <area shape="rect" id="node4" href="./ProvidedLightingServiceLevel1.html" title="&lt;TABLE&gt;" alt="" coords="563,5,781,53"/>
-<area shape="rect" id="c3822" href="./LightingProviderLevel3.html" title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel3" alt="" coords="816,17,968,42"/>
+<area shape="rect" id="c3947" href="./LightingProviderLevel3.html" title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel3" alt="" coords="816,17,968,42"/>
 <area shape="rect" id="node5" href="./LightingProviderLevel3.html" title="&lt;TABLE&gt;" alt="" coords="805,5,979,53"/>
-<area shape="rect" id="c3823" href="./MyLightingOntologified.html" title="org.universAAL.samples.lighting.server_regular.MyLightingOntologified" alt="" coords="1013,17,1166,42"/>
+<area shape="rect" id="c3948" href="./MyLightingOntologified.html" title="org.universAAL.samples.lighting.server_regular.MyLightingOntologified" alt="" coords="1013,17,1166,42"/>
 <area shape="rect" id="node6" href="./MyLightingOntologified.html" title="&lt;TABLE&gt;" alt="" coords="1003,5,1176,53"/>
-<area shape="rect" id="c3824" href="./LightingProviderLevel1.html" title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel1" alt="" coords="1211,17,1363,42"/>
+<area shape="rect" id="c3949" href="./LightingProviderLevel1.html" title="org.universAAL.samples.lighting.server_regular.LightingProviderLevel1" alt="" coords="1211,17,1363,42"/>
 <area shape="rect" id="node7" href="./LightingProviderLevel1.html" title="&lt;TABLE&gt;" alt="" coords="1200,5,1373,53"/>
-<area shape="rect" id="c3825" href="./ProvidedLightingServiceLevel2.html" title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel2" alt="" coords="1407,17,1606,42"/>
+<area shape="rect" id="c3950" href="./ProvidedLightingServiceLevel2.html" title="org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel2" alt="" coords="1407,17,1606,42"/>
 <area shape="rect" id="node8" href="./ProvidedLightingServiceLevel2.html" title="&lt;TABLE&gt;" alt="" coords="1397,5,1616,53"/>
 </map>

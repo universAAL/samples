@@ -1,10 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="c3349" href="./UIExample.html" title="org.universAAL.samples.utils.app.UIExample" alt="" coords="16,17,101,42"/>
+<area shape="rect" id="c3459" href="./UIExample.html" title="org.universAAL.samples.utils.app.UIExample" alt="" coords="16,17,101,42"/>
 <area shape="rect" id="node1" href="./UIExample.html" title="&lt;TABLE&gt;" alt="" coords="5,5,112,53"/>
-<area shape="rect" id="c3350" href="./CalleeExample.html" title="org.universAAL.samples.utils.app.CalleeExample" alt="" coords="147,17,256,42"/>
+<area shape="rect" id="c3460" href="./CalleeExample.html" title="org.universAAL.samples.utils.app.CalleeExample" alt="" coords="147,17,256,42"/>
 <area shape="rect" id="node2" href="./CalleeExample.html" title="&lt;TABLE&gt;" alt="" coords="136,5,267,53"/>
-<area shape="rect" id="c3351" href="./Activator.html" title="org.universAAL.samples.utils.app.Activator" alt="" coords="301,17,374,42"/>
+<area shape="rect" id="c3461" href="./Activator.html" title="org.universAAL.samples.utils.app.Activator" alt="" coords="301,17,374,42"/>
 <area shape="rect" id="node3" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="291,5,384,53"/>
-<area shape="rect" id="c3352" href="./SubscriberExample.html" title="org.universAAL.samples.utils.app.SubscriberExample" alt="" coords="419,17,552,42"/>
+<area shape="rect" id="c3462" href="./SubscriberExample.html" title="org.universAAL.samples.utils.app.SubscriberExample" alt="" coords="419,17,552,42"/>
 <area shape="rect" id="node4" href="./SubscriberExample.html" title="&lt;TABLE&gt;" alt="" coords="408,5,563,53"/>
 </map>

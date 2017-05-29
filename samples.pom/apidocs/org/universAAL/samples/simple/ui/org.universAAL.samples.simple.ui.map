@@ -1,8 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="c1676" href="./SimpleUI.html" title="org.universAAL.samples.simple.ui.SimpleUI" alt="" coords="16,17,91,42"/>
+<area shape="rect" id="c1731" href="./SimpleUI.html" title="org.universAAL.samples.simple.ui.SimpleUI" alt="" coords="16,17,91,42"/>
 <area shape="rect" id="node1" href="./SimpleUI.html" title="&lt;TABLE&gt;" alt="" coords="5,5,101,53"/>
-<area shape="rect" id="c1677" href="./MainButtonProvider.html" title="org.universAAL.samples.simple.ui.MainButtonProvider" alt="" coords="135,17,270,42"/>
+<area shape="rect" id="c1732" href="./MainButtonProvider.html" title="org.universAAL.samples.simple.ui.MainButtonProvider" alt="" coords="135,17,270,42"/>
 <area shape="rect" id="node2" href="./MainButtonProvider.html" title="&lt;TABLE&gt;" alt="" coords="125,5,280,53"/>
-<area shape="rect" id="c1678" href="./ProjectActivator.html" title="org.universAAL.samples.simple.ui.ProjectActivator" alt="" coords="314,17,427,42"/>
+<area shape="rect" id="c1733" href="./ProjectActivator.html" title="org.universAAL.samples.simple.ui.ProjectActivator" alt="" coords="314,17,427,42"/>
 <area shape="rect" id="node3" href="./ProjectActivator.html" title="&lt;TABLE&gt;" alt="" coords="304,5,437,53"/>
 </map>

@@ -25,10 +25,10 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017 universAAL Consortium</copyright>
     <item>
-      <title>File: 139,
-             Errors: 2298,
-             Warnings: 1415,
-             Infos: 6089
+      <title>File: 144,
+             Errors: 2341,
+             Warnings: 1422,
+             Infos: 6175
       </title>
             <link>http://xtras/samples/samples.pom//checkstyle.html</link>
       <description>
@@ -648,6 +648,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.soap.cxf.service.Activator.java">org/universAAL/soap/cxf/service/Activator.java</a>
+                </td>
+                <td>
+                  10
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  4
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.ctxtbus.SparQLQueryPanel.java">org/universAAL/samples/ctxtbus/SparQLQueryPanel.java</a>
                 </td>
                 <td>
@@ -770,6 +784,20 @@ under the License.
                 </td>
                 <td>
                   22
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.soap.cxf.client.Activator.java">org/universAAL/soap/cxf/client/Activator.java</a>
+                </td>
+                <td>
+                  24
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  7
                 </td>
               </tr>
                           <tr>
@@ -1162,6 +1190,20 @@ under the License.
                 </td>
                 <td>
                   29
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.soap.cxf.server.Activator.java">org/universAAL/soap/cxf/server/Activator.java</a>
+                </td>
+                <td>
+                  15
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  7
                 </td>
               </tr>
                           <tr>
@@ -1684,6 +1726,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.soap.cxf.server.ServiceImpl.java">org/universAAL/soap/cxf/server/ServiceImpl.java</a>
+                </td>
+                <td>
+                  30
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  21
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_simple.MyLightingOntologified.java">org/universAAL/samples/lighting/server_simple/MyLightingOntologified.java</a>
                 </td>
                 <td>
@@ -1890,6 +1946,20 @@ under the License.
                 </td>
                 <td>
                   16
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.soap.cxf.service.ServiceInterface.java">org/universAAL/soap/cxf/service/ServiceInterface.java</a>
+                </td>
+                <td>
+                  7
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
                 </td>
               </tr>
                           <tr>

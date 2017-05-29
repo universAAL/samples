@@ -1,6 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="c16356" href="./ProjectActivator.html" title="org.universAAL.samples.simple.ui.ProjectActivator" alt="" coords="15,118,129,143"/>
+<area shape="rect" id="c17363" href="./ProjectActivator.html" title="org.universAAL.samples.simple.ui.ProjectActivator" alt="" coords="15,118,129,143"/>
 <area shape="rect" id="node1" href="./ProjectActivator.html" title="&lt;TABLE&gt;" alt="" coords="5,107,139,155"/>
-<area shape="rect" id="c16466" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html" title="org.osgi.framework.BundleActivator" alt="" coords="15,11,129,53"/>
+<area shape="rect" id="c17478" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html" title="org.osgi.framework.BundleActivator" alt="" coords="15,11,129,53"/>
 <area shape="rect" id="node2" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/BundleActivator.html" title="&lt;TABLE&gt;" alt="" coords="5,6,139,58"/>
 </map>

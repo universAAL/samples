@@ -10,13 +10,13 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.universAAL.ontology.TutorialActivator
-	c1373 [label=<<table title="org.universAAL.ontology.TutorialActivator" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./TutorialActivator.html">
+	c1418 [label=<<table title="org.universAAL.ontology.TutorialActivator" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./TutorialActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> TutorialActivator </td></tr>
 		</table></td></tr>
 		</table>>, URL="./TutorialActivator.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.universAAL.ontology.TutorialFactory
-	c1374 [label=<<table title="org.universAAL.ontology.TutorialFactory" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./TutorialFactory.html">
+	c1419 [label=<<table title="org.universAAL.ontology.TutorialFactory" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="./TutorialFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> TutorialFactory </td></tr>
 		</table></td></tr>

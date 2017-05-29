@@ -38,6 +38,9 @@ org.universAAL.samples.util.mini
 org.universAAL.samples.utils.app
 org.universAAL.samples.utils.client
 org.universAAL.samples.utils.server
+org.universAAL.soap.cxf.client
+org.universAAL.soap.cxf.server
+org.universAAL.soap.cxf.service
 org.universAAL.tutorials.context.bus.publisher
 org.universAAL.tutorials.context.bus.subscriber
 org.universAAL.tutorials.service.bus.callee

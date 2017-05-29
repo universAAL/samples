@@ -10,15 +10,15 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.universAAL.samples.lighting.client.LightingConsumer
-	c10365 [label=<<table title="org.universAAL.samples.lighting.client.LightingConsumer" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LightingConsumer.html">
+	c11172 [label=<<table title="org.universAAL.samples.lighting.client.LightingConsumer" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LightingConsumer.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> LightingConsumer </td></tr>
 		</table></td></tr>
 		</table>>, URL="./LightingConsumer.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.universAAL.samples.lighting.client.LightingConsumer extends org.universAAL.middleware.context.ContextSubscriber
-	c10489:p -> c10365:p [dir=back,arrowtail=empty];
+	c11301:p -> c11172:p [dir=back,arrowtail=empty];
 	// org.universAAL.middleware.context.ContextSubscriber
-	c10489 [label=<<table title="org.universAAL.middleware.context.ContextSubscriber" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/middleware/context/ContextSubscriber.html">
+	c11301 [label=<<table title="org.universAAL.middleware.context.ContextSubscriber" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/middleware/context/ContextSubscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"><font face="Helvetica-Oblique"> ContextSubscriber </font></td></tr>
 		</table></td></tr>
