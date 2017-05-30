@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 2,
              Errors: 12,
-             Warnings: 2,
-             Infos: 10
+             Warnings: 1,
+             Infos: 3
       </title>
             <link>http://xtras/samples/tutorials/tut.context.bus.subscriber//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/tutorials/tut.context.bus.subscriber//checkstyle.html#org.universAAL.tutorials.context.bus.subscriber.Activator.java">org/universAAL/tutorials/context/bus/subscriber/Activator.java</a>
                 </td>
                 <td>
-                  4
+                  1
                 </td>
                 <td>
-                  2
+                  1
                 </td>
                 <td>
                   9
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/tutorials/tut.context.bus.subscriber//checkstyle.html#org.universAAL.tutorials.context.bus.subscriber.MyContextSubscriber.java">org/universAAL/tutorials/context/bus/subscriber/MyContextSubscriber.java</a>
                 </td>
                 <td>
-                  6
+                  2
                 </td>
                 <td>
                   0

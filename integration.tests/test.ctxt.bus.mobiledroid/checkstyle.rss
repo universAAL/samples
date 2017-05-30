@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 2,
              Errors: 25,
-             Warnings: 22,
-             Infos: 34
+             Warnings: 2,
+             Infos: 16
       </title>
             <link>http://xtras/samples/integration.tests/test.ctxt.bus.mobiledroid//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus.mobiledroid//checkstyle.html#org.universAAL.samples.ctxtbus.CPublisher.java">org/universAAL/samples/ctxtbus/CPublisher.java</a>
                 </td>
                 <td>
-                  23
+                  9
                 </td>
                 <td>
-                  19
+                  1
                 </td>
                 <td>
                   15
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus.mobiledroid//checkstyle.html#org.universAAL.samples.ctxtbus.Activator.java">org/universAAL/samples/ctxtbus/Activator.java</a>
                 </td>
                 <td>
-                  11
+                  7
                 </td>
                 <td>
-                  3
+                  1
                 </td>
                 <td>
                   10

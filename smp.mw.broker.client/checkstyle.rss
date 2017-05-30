@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 4,
              Errors: 47,
-             Warnings: 12,
-             Infos: 58
+             Warnings: 3,
+             Infos: 16
       </title>
             <link>http://xtras/samples/smp.mw.broker.client//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/smp.mw.broker.client//checkstyle.html#org.universAAL.middleware.broker.client.osgi.Activator.java">org/universAAL/middleware/broker/client/osgi/Activator.java</a>
                 </td>
                 <td>
-                  10
+                  4
                 </td>
                 <td>
                   1
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/smp.mw.broker.client//checkstyle.html#org.universAAL.middleware.broker.client.SimpleMessage.java">org/universAAL/middleware/broker/client/SimpleMessage.java</a>
                 </td>
                 <td>
-                  9
+                  6
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   15
@@ -91,10 +91,10 @@ under the License.
                   <a href="http://xtras/samples/smp.mw.broker.client//checkstyle.html#org.universAAL.middleware.broker.client.BrokerClientImpl.java">org/universAAL/middleware/broker/client/BrokerClientImpl.java</a>
                 </td>
                 <td>
-                  39
+                  6
                 </td>
                 <td>
-                  9
+                  1
                 </td>
                 <td>
                   22

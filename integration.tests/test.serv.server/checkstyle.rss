@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 3,
              Errors: 36,
-             Warnings: 16,
-             Infos: 46
+             Warnings: 2,
+             Infos: 21
       </title>
             <link>http://xtras/samples/integration.tests/test.serv.server//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.serv.server//checkstyle.html#org.universAAL.samples.servserver.Activator.java">org/universAAL/samples/servserver/Activator.java</a>
                 </td>
                 <td>
-                  11
+                  7
                 </td>
                 <td>
-                  2
+                  1
                 </td>
                 <td>
                   11
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.serv.server//checkstyle.html#org.universAAL.samples.servserver.SCallee.java">org/universAAL/samples/servserver/SCallee.java</a>
                 </td>
                 <td>
-                  15
+                  7
                 </td>
                 <td>
-                  9
+                  0
                 </td>
                 <td>
                   10
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.serv.server//checkstyle.html#org.universAAL.samples.servserver.ProvidedService.java">org/universAAL/samples/servserver/ProvidedService.java</a>
                 </td>
                 <td>
-                  20
+                  7
                 </td>
                 <td>
-                  5
+                  1
                 </td>
                 <td>
                   15

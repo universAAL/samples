@@ -26,9 +26,9 @@ under the License.
     <copyright>&#169;2017 universAAL Consortium</copyright>
     <item>
       <title>File: 2,
-             Errors: 34,
-             Warnings: 11,
-             Infos: 96
+             Errors: 31,
+             Warnings: 1,
+             Infos: 62
       </title>
             <link>http://xtras/samples/utils/smp.utils.server//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/utils/smp.utils.server//checkstyle.html#org.universAAL.samples.utils.server.CalleeExample.java">org/universAAL/samples/utils/server/CalleeExample.java</a>
                 </td>
                 <td>
-                  71
+                  47
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   15
@@ -63,13 +63,13 @@ under the License.
                   <a href="http://xtras/samples/utils/smp.utils.server//checkstyle.html#org.universAAL.samples.utils.server.Activator.java">org/universAAL/samples/utils/server/Activator.java</a>
                 </td>
                 <td>
-                  25
+                  15
                 </td>
                 <td>
-                  3
+                  1
                 </td>
                 <td>
-                  19
+                  16
                 </td>
               </tr>
                       </tbody>

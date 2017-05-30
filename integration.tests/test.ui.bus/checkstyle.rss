@@ -26,9 +26,9 @@ under the License.
     <copyright>&#169;2017 universAAL Consortium</copyright>
     <item>
       <title>File: 3,
-             Errors: 50,
-             Warnings: 93,
-             Infos: 163
+             Errors: 48,
+             Warnings: 7,
+             Infos: 47
       </title>
             <link>http://xtras/samples/integration.tests/test.ui.bus//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ui.bus//checkstyle.html#org.universAAL.samples.uibus.OPublisher.java">org/universAAL/samples/uibus/OPublisher.java</a>
                 </td>
                 <td>
-                  137
+                  33
                 </td>
                 <td>
-                  47
+                  5
                 </td>
                 <td>
                   18
@@ -63,13 +63,13 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ui.bus//checkstyle.html#org.universAAL.samples.uibus.Activator.java">org/universAAL/samples/uibus/Activator.java</a>
                 </td>
                 <td>
-                  12
+                  7
                 </td>
                 <td>
-                  3
+                  2
                 </td>
                 <td>
-                  17
+                  15
                 </td>
               </tr>
                           <tr>
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ui.bus//checkstyle.html#org.universAAL.samples.uibus.GUIPanel.java">org/universAAL/samples/uibus/GUIPanel.java</a>
                 </td>
                 <td>
-                  14
+                  7
                 </td>
                 <td>
-                  43
+                  0
                 </td>
                 <td>
                   15

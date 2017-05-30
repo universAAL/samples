@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 7,
              Errors: 95,
-             Warnings: 31,
-             Infos: 148
+             Warnings: 4,
+             Infos: 81
       </title>
             <link>http://xtras/samples/lighting/smp.lighting.server.osgi//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.server.osgi//checkstyle.html#org.universAAL.samples.lighting.server.Activator.java">org/universAAL/samples/lighting/server/Activator.java</a>
                 </td>
                 <td>
-                  12
+                  9
                 </td>
                 <td>
                   1
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.server.osgi//checkstyle.html#org.universAAL.samples.lighting.server.unit_impl.UILampsController.java">org/universAAL/samples/lighting/server/unit_impl/UILampsController.java</a>
                 </td>
                 <td>
-                  26
+                  20
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   4
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.server.osgi//checkstyle.html#org.universAAL.samples.lighting.server.ProvidedLightingService.java">org/universAAL/samples/lighting/server/ProvidedLightingService.java</a>
                 </td>
                 <td>
-                  21
+                  8
                 </td>
                 <td>
-                  5
+                  1
                 </td>
                 <td>
                   15
@@ -91,10 +91,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.server.osgi//checkstyle.html#org.universAAL.samples.lighting.server.unit_impl.MyLighting.java">org/universAAL/samples/lighting/server/unit_impl/MyLighting.java</a>
                 </td>
                 <td>
-                  20
+                  8
                 </td>
                 <td>
-                  5
+                  0
                 </td>
                 <td>
                   23
@@ -105,10 +105,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.server.osgi//checkstyle.html#org.universAAL.samples.lighting.server.LightingProvider.java">org/universAAL/samples/lighting/server/LightingProvider.java</a>
                 </td>
                 <td>
-                  35
+                  12
                 </td>
                 <td>
-                  14
+                  1
                 </td>
                 <td>
                   23
@@ -119,10 +119,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.server.osgi//checkstyle.html#org.universAAL.samples.lighting.server.unit_impl.UILampsView.java">org/universAAL/samples/lighting/server/unit_impl/UILampsView.java</a>
                 </td>
                 <td>
-                  25
+                  17
                 </td>
                 <td>
-                  4
+                  0
                 </td>
                 <td>
                   22
@@ -133,7 +133,7 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.server.osgi//checkstyle.html#org.universAAL.samples.lighting.server.unit_impl.LampStateListener.java">org/universAAL/samples/lighting/server/unit_impl/LampStateListener.java</a>
                 </td>
                 <td>
-                  9
+                  7
                 </td>
                 <td>
                   1

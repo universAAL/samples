@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 10,
              Errors: 199,
-             Warnings: 159,
-             Infos: 250
+             Warnings: 6,
+             Infos: 88
       </title>
             <link>http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.RuleCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/RuleCreatorFrame.java</a>
                 </td>
                 <td>
-                  17
+                  5
                 </td>
                 <td>
-                  22
+                  0
                 </td>
                 <td>
                   14
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/QueryCreatorFrame.java</a>
                 </td>
                 <td>
-                  21
+                  8
                 </td>
                 <td>
-                  51
+                  1
                 </td>
                 <td>
                   16
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder.java">org/universAAL/samples/context/reasoner/client/uaalinterface/ContextEventRecorder.java</a>
                 </td>
                 <td>
-                  17
+                  5
                 </td>
                 <td>
-                  10
+                  0
                 </td>
                 <td>
                   26
@@ -91,10 +91,10 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.SituationCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame.java</a>
                 </td>
                 <td>
-                  11
+                  2
                 </td>
                 <td>
-                  24
+                  0
                 </td>
                 <td>
                   10
@@ -105,10 +105,10 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator.java">org/universAAL/samples/context/reasoner/client/osgi/UAALInterfaceActivator.java</a>
                 </td>
                 <td>
-                  11
+                  7
                 </td>
                 <td>
-                  2
+                  1
                 </td>
                 <td>
                   7
@@ -119,10 +119,10 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI.java">org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java</a>
                 </td>
                 <td>
-                  34
+                  7
                 </td>
                 <td>
-                  30
+                  0
                 </td>
                 <td>
                   58
@@ -133,10 +133,10 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller.java">org/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller.java</a>
                 </td>
                 <td>
-                  77
+                  21
                 </td>
                 <td>
-                  11
+                  2
                 </td>
                 <td>
                   37
@@ -147,7 +147,7 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.Activator.java">org/universAAL/samples/context/reasoner/client/osgi/Activator.java</a>
                 </td>
                 <td>
-                  16
+                  12
                 </td>
                 <td>
                   1
@@ -161,7 +161,7 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.GUIActivator.java">org/universAAL/samples/context/reasoner/client/osgi/GUIActivator.java</a>
                 </td>
                 <td>
-                  11
+                  7
                 </td>
                 <td>
                   0
@@ -175,10 +175,10 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller.java">org/universAAL/samples/context/reasoner/client/uaalinterface/CHECaller.java</a>
                 </td>
                 <td>
-                  35
+                  14
                 </td>
                 <td>
-                  8
+                  1
                 </td>
                 <td>
                   12

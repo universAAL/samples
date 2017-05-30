@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 4,
              Errors: 98,
-             Warnings: 70,
-             Infos: 369
+             Warnings: 12,
+             Infos: 161
       </title>
             <link>http://xtras/samples/lighting/smp.activityhub.client//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.activityhub.client//checkstyle.html#org.universAAL.lddi.samples.activityhub.client.Activator.java">org/universAAL/lddi/samples/activityhub/client/Activator.java</a>
                 </td>
                 <td>
-                  30
+                  16
                 </td>
                 <td>
-                  4
+                  1
                 </td>
                 <td>
                   15
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.activityhub.client//checkstyle.html#org.universAAL.lddi.samples.activityhub.client.MyActivityHubContextListener.java">org/universAAL/lddi/samples/activityhub/client/MyActivityHubContextListener.java</a>
                 </td>
                 <td>
-                  27
+                  13
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   9
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.activityhub.client//checkstyle.html#org.universAAL.lddi.samples.activityhub.client.ActivityHubClient.java">org/universAAL/lddi/samples/activityhub/client/ActivityHubClient.java</a>
                 </td>
                 <td>
-                  77
+                  44
                 </td>
                 <td>
-                  52
+                  8
                 </td>
                 <td>
                   52
@@ -91,10 +91,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.activityhub.client//checkstyle.html#org.universAAL.lddi.samples.activityhub.client.MyActivityHubServiceConsumer.java">org/universAAL/lddi/samples/activityhub/client/MyActivityHubServiceConsumer.java</a>
                 </td>
                 <td>
-                  235
+                  88
                 </td>
                 <td>
-                  13
+                  3
                 </td>
                 <td>
                   22

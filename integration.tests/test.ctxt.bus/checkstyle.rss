@@ -26,9 +26,9 @@ under the License.
     <copyright>&#169;2017 universAAL Consortium</copyright>
     <item>
       <title>File: 9,
-             Errors: 272,
-             Warnings: 169,
-             Infos: 1065
+             Errors: 270,
+             Warnings: 34,
+             Infos: 658
       </title>
             <link>http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.CPublisher.java">org/universAAL/samples/ctxtbus/CPublisher.java</a>
                 </td>
                 <td>
-                  23
+                  8
                 </td>
                 <td>
-                  23
+                  1
                 </td>
                 <td>
                   19
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.CSubscriber2.java">org/universAAL/samples/ctxtbus/CSubscriber2.java</a>
                 </td>
                 <td>
-                  20
+                  13
                 </td>
                 <td>
                   0
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.SparQLQueryPanel.java">org/universAAL/samples/ctxtbus/SparQLQueryPanel.java</a>
                 </td>
                 <td>
-                  11
+                  9
                 </td>
                 <td>
-                  2
+                  1
                 </td>
                 <td>
                   6
@@ -91,10 +91,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.HistoryCaller.java">org/universAAL/samples/ctxtbus/HistoryCaller.java</a>
                 </td>
                 <td>
-                  41
+                  18
                 </td>
                 <td>
-                  4
+                  1
                 </td>
                 <td>
                   16
@@ -105,10 +105,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.GUIPanel.java">org/universAAL/samples/ctxtbus/GUIPanel.java</a>
                 </td>
                 <td>
-                  329
+                  161
                 </td>
                 <td>
-                  98
+                  9
                 </td>
                 <td>
                   79
@@ -119,10 +119,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.SpaceCaller.java">org/universAAL/samples/ctxtbus/SpaceCaller.java</a>
                 </td>
                 <td>
-                  306
+                  204
                 </td>
                 <td>
-                  19
+                  18
                 </td>
                 <td>
                   70
@@ -133,13 +133,13 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.Activator.java">org/universAAL/samples/ctxtbus/Activator.java</a>
                 </td>
                 <td>
-                  14
+                  8
                 </td>
                 <td>
-                  4
+                  2
                 </td>
                 <td>
-                  28
+                  26
                 </td>
               </tr>
                           <tr>
@@ -147,7 +147,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.CSubscriber.java">org/universAAL/samples/ctxtbus/CSubscriber.java</a>
                 </td>
                 <td>
-                  20
+                  14
                 </td>
                 <td>
                   0
@@ -161,10 +161,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.ProfileCaller.java">org/universAAL/samples/ctxtbus/ProfileCaller.java</a>
                 </td>
                 <td>
-                  301
+                  223
                 </td>
                 <td>
-                  19
+                  2
                 </td>
                 <td>
                   34

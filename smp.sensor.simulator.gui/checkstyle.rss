@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 8,
              Errors: 120,
-             Warnings: 157,
-             Infos: 161
+             Warnings: 52,
+             Infos: 60
       </title>
             <link>http://xtras/samples/smp.sensor.simulator.gui//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/smp.sensor.simulator.gui//checkstyle.html#org.universAAL.samples.sensor.simulator.RoomHumidityPublisher.java">org/universAAL/samples/sensor/simulator/RoomHumidityPublisher.java</a>
                 </td>
                 <td>
-                  14
+                  8
                 </td>
                 <td>
                   0
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/smp.sensor.simulator.gui//checkstyle.html#org.universAAL.samples.sensor.simulator.Activator.java">org/universAAL/samples/sensor/simulator/Activator.java</a>
                 </td>
                 <td>
-                  18
+                  7
                 </td>
                 <td>
-                  3
+                  1
                 </td>
                 <td>
                   9
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/smp.sensor.simulator.gui//checkstyle.html#org.universAAL.samples.sensor.simulator.SensorSimulatorGUI.java">org/universAAL/samples/sensor/simulator/SensorSimulatorGUI.java</a>
                 </td>
                 <td>
-                  63
+                  7
                 </td>
                 <td>
-                  145
+                  51
                 </td>
                 <td>
                   22
@@ -91,7 +91,7 @@ under the License.
                   <a href="http://xtras/samples/smp.sensor.simulator.gui//checkstyle.html#org.universAAL.samples.sensor.simulator.RoomTemperaturePublisher.java">org/universAAL/samples/sensor/simulator/RoomTemperaturePublisher.java</a>
                 </td>
                 <td>
-                  13
+                  8
                 </td>
                 <td>
                   0
@@ -105,7 +105,7 @@ under the License.
                   <a href="http://xtras/samples/smp.sensor.simulator.gui//checkstyle.html#org.universAAL.samples.sensor.simulator.LampMap.java">org/universAAL/samples/sensor/simulator/LampMap.java</a>
                 </td>
                 <td>
-                  13
+                  8
                 </td>
                 <td>
                   0
@@ -119,10 +119,10 @@ under the License.
                   <a href="http://xtras/samples/smp.sensor.simulator.gui//checkstyle.html#org.universAAL.samples.sensor.simulator.LampStatePublisher.java">org/universAAL/samples/sensor/simulator/LampStatePublisher.java</a>
                 </td>
                 <td>
-                  17
+                  10
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   27
@@ -133,7 +133,7 @@ under the License.
                   <a href="http://xtras/samples/smp.sensor.simulator.gui//checkstyle.html#org.universAAL.samples.sensor.simulator.LocationContextPublisher.java">org/universAAL/samples/sensor/simulator/LocationContextPublisher.java</a>
                 </td>
                 <td>
-                  15
+                  7
                 </td>
                 <td>
                   0
@@ -147,10 +147,10 @@ under the License.
                   <a href="http://xtras/samples/smp.sensor.simulator.gui//checkstyle.html#org.universAAL.samples.sensor.simulator.TypeOfUser.java">org/universAAL/samples/sensor/simulator/TypeOfUser.java</a>
                 </td>
                 <td>
-                  8
+                  5
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   6

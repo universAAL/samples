@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 5,
              Errors: 197,
-             Warnings: 149,
-             Infos: 819
+             Warnings: 21,
+             Infos: 564
       </title>
             <link>http://xtras/samples/lddi.bluetooth/continuaManager/smp.lddi.ContinuaManagerClient.unix//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/lddi.bluetooth/continuaManager/smp.lddi.ContinuaManagerClient.unix//checkstyle.html#org.universAAL.lddi.manager.publisher.Publisher.java">org/universAAL/lddi/manager/publisher/Publisher.java</a>
                 </td>
                 <td>
-                  56
+                  33
                 </td>
                 <td>
                   1
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/lddi.bluetooth/continuaManager/smp.lddi.ContinuaManagerClient.unix//checkstyle.html#org.universAAL.lddi.manager.publisher.hdpManager.java">org/universAAL/lddi/manager/publisher/hdpManager.java</a>
                 </td>
                 <td>
-                  317
+                  188
                 </td>
                 <td>
-                  31
+                  10
                 </td>
                 <td>
                   44
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/lddi.bluetooth/continuaManager/smp.lddi.ContinuaManagerClient.unix//checkstyle.html#org.universAAL.lddi.manager.gui.GUI.java">org/universAAL/lddi/manager/gui/GUI.java</a>
                 </td>
                 <td>
-                  384
+                  299
                 </td>
                 <td>
-                  115
+                  8
                 </td>
                 <td>
                   116
@@ -91,7 +91,7 @@ under the License.
                   <a href="http://xtras/samples/lddi.bluetooth/continuaManager/smp.lddi.ContinuaManagerClient.unix//checkstyle.html#org.universAAL.lddi.manager.publisher.Activator.java">org/universAAL/lddi/manager/publisher/Activator.java</a>
                 </td>
                 <td>
-                  26
+                  18
                 </td>
                 <td>
                   1
@@ -105,7 +105,7 @@ under the License.
                   <a href="http://xtras/samples/lddi.bluetooth/continuaManager/smp.lddi.ContinuaManagerClient.unix//checkstyle.html#org.universAAL.lddi.manager.publisher.hdpManagerListener.java">org/universAAL/lddi/manager/publisher/hdpManagerListener.java</a>
                 </td>
                 <td>
-                  36
+                  26
                 </td>
                 <td>
                   1

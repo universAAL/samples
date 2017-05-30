@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 5,
              Errors: 64,
-             Warnings: 18,
-             Infos: 95
+             Warnings: 3,
+             Infos: 33
       </title>
             <link>http://xtras/samples/lighting/smp.lighting.uiclient.osgi//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.uiclient.osgi//checkstyle.html#org.universAAL.samples.lighting.uiclient.UIProvider.java">org/universAAL/samples/lighting/uiclient/UIProvider.java</a>
                 </td>
                 <td>
-                  17
+                  8
                 </td>
                 <td>
-                  5
+                  0
                 </td>
                 <td>
                   19
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.uiclient.osgi//checkstyle.html#org.universAAL.samples.lighting.uiclient.osgi.Activator.java">org/universAAL/samples/lighting/uiclient/osgi/Activator.java</a>
                 </td>
                 <td>
-                  4
+                  0
                 </td>
                 <td>
                   1
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.uiclient.osgi//checkstyle.html#org.universAAL.samples.lighting.uiclient.LightingConsumer.java">org/universAAL/samples/lighting/uiclient/LightingConsumer.java</a>
                 </td>
                 <td>
-                  53
+                  11
                 </td>
                 <td>
-                  11
+                  1
                 </td>
                 <td>
                   20
@@ -91,7 +91,7 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.uiclient.osgi//checkstyle.html#org.universAAL.samples.lighting.uiclient.ServiceProvider.java">org/universAAL/samples/lighting/uiclient/ServiceProvider.java</a>
                 </td>
                 <td>
-                  12
+                  7
                 </td>
                 <td>
                   0
@@ -105,7 +105,7 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.uiclient.osgi//checkstyle.html#org.universAAL.samples.lighting.uiclient.SharedResources.java">org/universAAL/samples/lighting/uiclient/SharedResources.java</a>
                 </td>
                 <td>
-                  9
+                  7
                 </td>
                 <td>
                   1

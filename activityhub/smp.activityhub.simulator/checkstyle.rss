@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 4,
              Errors: 75,
-             Warnings: 31,
-             Infos: 187
+             Warnings: 3,
+             Infos: 37
       </title>
             <link>http://xtras/samples/activityhub/smp.activityhub.simulator//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/activityhub/smp.activityhub.simulator//checkstyle.html#org.universAAL.lddi.hw.simulator.activityhub.Activator.java">org/universAAL/lddi/hw/simulator/activityhub/Activator.java</a>
                 </td>
                 <td>
-                  6
+                  2
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   9
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/activityhub/smp.activityhub.simulator//checkstyle.html#org.universAAL.lddi.hw.simulator.activityhub.AHContextPublisherSimulator.java">org/universAAL/lddi/hw/simulator/activityhub/AHContextPublisherSimulator.java</a>
                 </td>
                 <td>
-                  112
+                  21
                 </td>
                 <td>
-                  19
+                  2
                 </td>
                 <td>
                   9
@@ -77,7 +77,7 @@ under the License.
                   <a href="http://xtras/samples/activityhub/smp.activityhub.simulator//checkstyle.html#org.universAAL.lddi.hw.simulator.activityhub.util.LogTracker.java">org/universAAL/lddi/hw/simulator/activityhub/util/LogTracker.java</a>
                 </td>
                 <td>
-                  25
+                  4
                 </td>
                 <td>
                   1
@@ -91,10 +91,10 @@ under the License.
                   <a href="http://xtras/samples/activityhub/smp.activityhub.simulator//checkstyle.html#org.universAAL.lddi.hw.simulator.activityhub.AHSimulator.java">org/universAAL/lddi/hw/simulator/activityhub/AHSimulator.java</a>
                 </td>
                 <td>
-                  44
+                  10
                 </td>
                 <td>
-                  10
+                  0
                 </td>
                 <td>
                   45

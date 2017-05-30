@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 3,
              Errors: 52,
-             Warnings: 46,
-             Infos: 55
+             Warnings: 11,
+             Infos: 9
       </title>
             <link>http://xtras/samples/lighting/smp.lighting.client.osgi//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.client.osgi//checkstyle.html#org.universAAL.samples.lighting.client.LightingConsumer.java">org/universAAL/samples/lighting/client/LightingConsumer.java</a>
                 </td>
                 <td>
-                  39
+                  3
                 </td>
                 <td>
-                  4
+                  0
                 </td>
                 <td>
                   19
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.client.osgi//checkstyle.html#org.universAAL.samples.lighting.client.Activator.java">org/universAAL/samples/lighting/client/Activator.java</a>
                 </td>
                 <td>
-                  5
+                  2
                 </td>
                 <td>
                   1
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.client.osgi//checkstyle.html#org.universAAL.samples.lighting.client.LightClient.java">org/universAAL/samples/lighting/client/LightClient.java</a>
                 </td>
                 <td>
-                  11
+                  4
                 </td>
                 <td>
-                  41
+                  10
                 </td>
                 <td>
                   25

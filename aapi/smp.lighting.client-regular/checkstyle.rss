@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 5,
              Errors: 52,
-             Warnings: 56,
-             Infos: 155
+             Warnings: 17,
+             Infos: 89
       </title>
             <link>http://xtras/samples/aapi/smp.lighting.client-regular//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.client-regular//checkstyle.html#org.universAAL.samples.lighting.client_regular.LightingConsumerLevel3.java">org/universAAL/samples/lighting/client_regular/LightingConsumerLevel3.java</a>
                 </td>
                 <td>
-                  15
+                  8
                 </td>
                 <td>
-                  5
+                  2
                 </td>
                 <td>
                   7
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.client-regular//checkstyle.html#org.universAAL.samples.lighting.client_regular.LightClient.java">org/universAAL/samples/lighting/client_regular/LightClient.java</a>
                 </td>
                 <td>
-                  60
+                  42
                 </td>
                 <td>
-                  34
+                  8
                 </td>
                 <td>
                   18
@@ -77,7 +77,7 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.client-regular//checkstyle.html#org.universAAL.samples.lighting.client_regular.Activator.java">org/universAAL/samples/lighting/client_regular/Activator.java</a>
                 </td>
                 <td>
-                  6
+                  3
                 </td>
                 <td>
                   1
@@ -91,10 +91,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.client-regular//checkstyle.html#org.universAAL.samples.lighting.client_regular.LightingConsumerLevel2.java">org/universAAL/samples/lighting/client_regular/LightingConsumerLevel2.java</a>
                 </td>
                 <td>
-                  42
+                  22
                 </td>
                 <td>
-                  8
+                  3
                 </td>
                 <td>
                   8
@@ -105,10 +105,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.client-regular//checkstyle.html#org.universAAL.samples.lighting.client_regular.LightingConsumerLevel1.java">org/universAAL/samples/lighting/client_regular/LightingConsumerLevel1.java</a>
                 </td>
                 <td>
-                  32
+                  14
                 </td>
                 <td>
-                  8
+                  3
                 </td>
                 <td>
                   13

@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 4,
              Errors: 93,
-             Warnings: 64,
-             Infos: 359
+             Warnings: 11,
+             Infos: 155
       </title>
             <link>http://xtras/samples/lighting/smp.device.client//checkstyle.html</link>
       <description>
@@ -49,10 +49,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.device.client//checkstyle.html#org.universAAL.lddi.samples.device.client.Activator.java">org/universAAL/lddi/samples/device/client/Activator.java</a>
                 </td>
                 <td>
-                  27
+                  15
                 </td>
                 <td>
-                  3
+                  1
                 </td>
                 <td>
                   15
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.device.client//checkstyle.html#org.universAAL.lddi.samples.device.client.DeviceClient.java">org/universAAL/lddi/samples/device/client/DeviceClient.java</a>
                 </td>
                 <td>
-                  80
+                  43
                 </td>
                 <td>
-                  58
+                  10
                 </td>
                 <td>
                   52
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.device.client//checkstyle.html#org.universAAL.lddi.samples.device.client.DeviceContextListener.java">org/universAAL/lddi/samples/device/client/DeviceContextListener.java</a>
                 </td>
                 <td>
-                  24
+                  13
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   11
@@ -91,10 +91,10 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.device.client//checkstyle.html#org.universAAL.lddi.samples.device.client.DeviceServiceCaller.java">org/universAAL/lddi/samples/device/client/DeviceServiceCaller.java</a>
                 </td>
                 <td>
-                  228
+                  84
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   15

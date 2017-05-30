@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 10,
              Errors: 93,
-             Warnings: 44,
-             Infos: 164
+             Warnings: 10,
+             Infos: 75
       </title>
             <link>http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html#org.universAAL.samples.lighting.server_regular.Activator.java">org/universAAL/samples/lighting/server_regular/Activator.java</a>
                 </td>
                 <td>
-                  16
+                  12
                 </td>
                 <td>
                   1
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html#org.universAAL.samples.lighting.server_regular.unit_impl.MyLighting.java">org/universAAL/samples/lighting/server_regular/unit_impl/MyLighting.java</a>
                 </td>
                 <td>
-                  17
+                  7
                 </td>
                 <td>
-                  5
+                  0
                 </td>
                 <td>
                   20
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html#org.universAAL.samples.lighting.server_regular.LightingProviderLevel1.java">org/universAAL/samples/lighting/server_regular/LightingProviderLevel1.java</a>
                 </td>
                 <td>
-                  16
+                  7
                 </td>
                 <td>
-                  8
+                  1
                 </td>
                 <td>
                   11
@@ -91,10 +91,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html#org.universAAL.samples.lighting.server_regular.LightingProviderLevel3.java">org/universAAL/samples/lighting/server_regular/LightingProviderLevel3.java</a>
                 </td>
                 <td>
-                  21
+                  11
                 </td>
                 <td>
-                  8
+                  1
                 </td>
                 <td>
                   13
@@ -105,7 +105,7 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html#org.universAAL.samples.lighting.server_regular.MyLightingOntologified.java">org/universAAL/samples/lighting/server_regular/MyLightingOntologified.java</a>
                 </td>
                 <td>
-                  12
+                  3
                 </td>
                 <td>
                   2
@@ -119,10 +119,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html#org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel3.java">org/universAAL/samples/lighting/server_regular/ProvidedLightingServiceLevel3.java</a>
                 </td>
                 <td>
-                  16
+                  7
                 </td>
                 <td>
-                  3
+                  1
                 </td>
                 <td>
                   4
@@ -133,10 +133,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html#org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel2.java">org/universAAL/samples/lighting/server_regular/ProvidedLightingServiceLevel2.java</a>
                 </td>
                 <td>
-                  17
+                  7
                 </td>
                 <td>
-                  4
+                  1
                 </td>
                 <td>
                   4
@@ -147,7 +147,7 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html#org.universAAL.samples.lighting.server_regular.unit_impl.LampStateListener.java">org/universAAL/samples/lighting/server_regular/unit_impl/LampStateListener.java</a>
                 </td>
                 <td>
-                  9
+                  7
                 </td>
                 <td>
                   1
@@ -161,10 +161,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html#org.universAAL.samples.lighting.server_regular.LightingProviderLevel2.java">org/universAAL/samples/lighting/server_regular/LightingProviderLevel2.java</a>
                 </td>
                 <td>
-                  15
+                  8
                 </td>
                 <td>
-                  8
+                  1
                 </td>
                 <td>
                   10
@@ -175,10 +175,10 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.server-regular//checkstyle.html#org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel1.java">org/universAAL/samples/lighting/server_regular/ProvidedLightingServiceLevel1.java</a>
                 </td>
                 <td>
-                  25
+                  6
                 </td>
                 <td>
-                  4
+                  1
                 </td>
                 <td>
                   8

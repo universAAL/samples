@@ -26,9 +26,9 @@ under the License.
     <copyright>&#169;2017 universAAL Consortium</copyright>
     <item>
       <title>File: 2,
-             Errors: 34,
-             Warnings: 49,
-             Infos: 45
+             Errors: 32,
+             Warnings: 1,
+             Infos: 22
       </title>
             <link>http://xtras/samples/integration.tests/test.serv.bus//checkstyle.html</link>
       <description>
@@ -49,13 +49,13 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.serv.bus//checkstyle.html#org.universAAL.samples.servbus.Activator.java">org/universAAL/samples/servbus/Activator.java</a>
                 </td>
                 <td>
-                  11
+                  7
                 </td>
                 <td>
-                  2
+                  1
                 </td>
                 <td>
-                  14
+                  12
                 </td>
               </tr>
                           <tr>
@@ -63,10 +63,10 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.serv.bus//checkstyle.html#org.universAAL.samples.servbus.GUIPanel.java">org/universAAL/samples/servbus/GUIPanel.java</a>
                 </td>
                 <td>
-                  34
+                  15
                 </td>
                 <td>
-                  47
+                  0
                 </td>
                 <td>
                   20
