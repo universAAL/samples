@@ -46,7 +46,7 @@
     </dependency>
 <!--     <dependency>
 		<groupId>org.universAAL.tools</groupId>
-		<artifactId>tools.log_mon</artifactId>  
+		<artifactId>tools.log-monitor</artifactId>  
 		<version>3.4.1-SNAPSHOT</version>
     </dependency> -->
   </dependencies>

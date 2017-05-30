@@ -61,17 +61,17 @@ public class MyTest extends MWTestCase {
 	// dependency to the pom file (adapt version number to latest):
 	// <dependency>
 	// <groupId>org.universAAL.tools</groupId>
-	// <artifactId>tools.log_mon</artifactId>
+	// <artifactId>tools.log-monitor</artifactId>
 	// <version>3.4.1-SNAPSHOT</version>
 	// </dependency>
 	// and start it by uncommenting the following lines:
-	
+
 	// org.universAAL.tools.logmonitor.Activator lm = new
 	// org.universAAL.tools.logmonitor.Activator();
 	// org.universAAL.tools.logmonitor.Activator.mc = mc;
 	// lm.start();
 	// ((JUnitContainer) mc.getContainer())
-	// .registerLogListeners(org.universAAL.tools.logmonitor.Activator.lm);
+	// .registerLogListener(org.universAAL.tools.logmonitor.Activator.lm);
 	// org.universAAL.tools.logmonitor.service_bus_matching.LogMonitor.checkModule
 	// = false;
 
