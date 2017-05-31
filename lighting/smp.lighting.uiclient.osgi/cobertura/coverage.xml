@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.1291866028708134" branch-rate="0.0" lines-covered="27" lines-valid="209" branches-covered="0" branches-valid="74" complexity="2.7142857142857144" version="2.1.1" timestamp="1496178889948">
+<coverage line-rate="0.1291866028708134" branch-rate="0.0" lines-covered="27" lines-valid="209" branches-covered="0" branches-valid="74" complexity="2.7142857142857144" version="2.1.1" timestamp="1496189750739">
 	<sources>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/lighting/uiclient/src/main/java</source>
