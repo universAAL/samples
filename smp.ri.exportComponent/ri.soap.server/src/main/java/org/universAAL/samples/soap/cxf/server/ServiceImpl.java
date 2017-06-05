@@ -1,4 +1,4 @@
-package org.universAAL.soap.cxf.server;
+package org.universAAL.samples.soap.cxf.server;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -15,7 +15,7 @@ import org.universAAL.middleware.serialization.MessageContentSerializer;
 import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.lighting.Lighting;
 import org.universAAL.ontology.phThing.Device;
-import org.universAAL.soap.cxf.service.ServiceInterface;
+import org.universAAL.samples.soap.cxf.service.ServiceInterface;
 
 public class ServiceImpl implements ServiceInterface {
 	public static ServiceResponse sr;
@@ -141,5 +141,4 @@ public class ServiceImpl implements ServiceInterface {
 				LightSource.PROP_SOURCE_BRIGHTNESS }, new Integer(0));
 		return turnOff;
 	}
-
 }
