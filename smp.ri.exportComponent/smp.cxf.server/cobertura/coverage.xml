@@ -1,79 +1,81 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="67" branches-covered="0" branches-valid="12" complexity="2.2222222222222223" version="2.1.1" timestamp="1496189990746">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="68" branches-covered="0" branches-valid="12" complexity="2.2222222222222223" version="2.1.1" timestamp="1496694576268">
 	<sources>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/smp.ri.exportComponent/ri.soap.server/src/main/java</source>
 	</sources>
 	<packages>
-		<package name="org.universAAL.soap.cxf.server" line-rate="0.0" branch-rate="0.0" complexity="2.2222222222222223">
+		<package name="org.universAAL.samples.soap.cxf.server" line-rate="0.0" branch-rate="0.0" complexity="2.2222222222222223">
 			<classes>
-				<class name="org.universAAL.soap.cxf.server.Activator" filename="org/universAAL/soap/cxf/server/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+				<class name="org.universAAL.samples.soap.cxf.server.Activator" filename="org/universAAL/samples/soap/cxf/server/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
 							</lines>
 						</method>
-						<method name="access$002" signature="(Lorg/universAAL/soap/cxf/server/Activator;Lorg/osgi/framework/ServiceRegistration;)Lorg/osgi/framework/ServiceRegistration;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="access$002" signature="(Lorg/universAAL/samples/soap/cxf/server/Activator;Lorg/osgi/framework/ServiceRegistration;)Lorg/osgi/framework/ServiceRegistration;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="31" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="start" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="45" hits="0" branch="false"/>
-								<line number="46" hits="0" branch="false"/>
-								<line number="47" hits="0" branch="false"/>
-								<line number="59" hits="0" branch="false"/>
-								<line number="60" hits="0" branch="false"/>
+								<line number="38" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+								<line number="53" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="stop" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="69" hits="0" branch="false"/>
+								<line number="56" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
 						<line number="31" hits="0" branch="false"/>
-						<line number="45" hits="0" branch="false"/>
-						<line number="46" hits="0" branch="false"/>
-						<line number="47" hits="0" branch="false"/>
-						<line number="59" hits="0" branch="false"/>
-						<line number="60" hits="0" branch="false"/>
-						<line number="69" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="53" hits="0" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.soap.cxf.server.Activator$1" filename="org/universAAL/soap/cxf/server/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+				<class name="org.universAAL.samples.soap.cxf.server.Activator$1" filename="org/universAAL/samples/soap/cxf/server/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
 					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/soap/cxf/server/Activator;Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/soap/cxf/server/Activator;Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="47" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="run" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="50" hits="0" branch="false"/>
+								<line number="43" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+								<line number="48" hits="0" branch="false"/>
 								<line number="51" hits="0" branch="false"/>
-								<line number="52" hits="0" branch="false"/>
-								<line number="53" hits="0" branch="false"/>
-								<line number="55" hits="0" branch="false"/>
-								<line number="58" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="47" hits="0" branch="false"/>
-						<line number="50" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
 						<line number="51" hits="0" branch="false"/>
-						<line number="52" hits="0" branch="false"/>
-						<line number="53" hits="0" branch="false"/>
-						<line number="55" hits="0" branch="false"/>
-						<line number="58" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.soap.cxf.server.ServiceImpl" filename="org/universAAL/soap/cxf/server/ServiceImpl.java" line-rate="0.0" branch-rate="0.0" complexity="2.8333333333333335">
+				<class name="org.universAAL.samples.soap.cxf.server.ServiceImpl" filename="org/universAAL/samples/soap/cxf/server/ServiceImpl.java" line-rate="0.0" branch-rate="0.0" complexity="2.8333333333333335">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>

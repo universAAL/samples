@@ -104,13 +104,13 @@
 <th>Class</th>
 <th>Bugs</th></tr>
 <tr class="b">
-<td><a href="#org.universAAL.soap.cxf.server.Activator">org.universAAL.soap.cxf.server.Activator</a></td>
+<td><a href="#org.universAAL.samples.soap.cxf.server.Activator">org.universAAL.samples.soap.cxf.server.Activator</a></td>
 <td>1</td></tr>
 <tr class="a">
-<td><a href="#org.universAAL.soap.cxf.server.ServiceImpl">org.universAAL.soap.cxf.server.ServiceImpl</a></td>
-<td>7</td></tr></table></div><a name="org.universAAL.soap.cxf.server.Activator"></a>
+<td><a href="#org.universAAL.samples.soap.cxf.server.ServiceImpl">org.universAAL.samples.soap.cxf.server.ServiceImpl</a></td>
+<td>7</td></tr></table></div><a name="org.universAAL.samples.soap.cxf.server.Activator"></a>
 <div class="section">
-<h3><a name="org.universAAL.soap.cxf.server.Activator"></a>org.universAAL.soap.cxf.server.Activator</h3>
+<h3><a name="org.universAAL.samples.soap.cxf.server.Activator"></a>org.universAAL.samples.soap.cxf.server.Activator</h3>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>Bug</th>
@@ -119,13 +119,13 @@
 <th>Line</th>
 <th>Priority</th></tr>
 <tr class="a">
-<td>org.universAAL.soap.cxf.server.Activator.mc should be package protected</td>
+<td>org.universAAL.samples.soap.cxf.server.Activator.mc should be package protected</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#MS_PKGPROTECT">MS_PKGPROTECT</a></td>
 <td></td>
-<td>Medium</td></tr></table></div><a name="org.universAAL.soap.cxf.server.ServiceImpl"></a>
+<td>Medium</td></tr></table></div><a name="org.universAAL.samples.soap.cxf.server.ServiceImpl"></a>
 <div class="section">
-<h3><a name="org.universAAL.soap.cxf.server.ServiceImpl"></a>org.universAAL.soap.cxf.server.ServiceImpl</h3>
+<h3><a name="org.universAAL.samples.soap.cxf.server.ServiceImpl"></a>org.universAAL.samples.soap.cxf.server.ServiceImpl</h3>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>Bug</th>
@@ -134,43 +134,43 @@
 <th>Line</th>
 <th>Priority</th></tr>
 <tr class="a">
-<td>Dead store to sGetLamps in org.universAAL.soap.cxf.server.ServiceImpl.getAllLamps()</td>
+<td>Dead store to sGetLamps in org.universAAL.samples.soap.cxf.server.ServiceImpl.getAllLamps()</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE</a></td>
 <td>46</td>
 <td>Medium</td></tr>
 <tr class="b">
-<td>Dead store to sr1 in org.universAAL.soap.cxf.server.ServiceImpl.turnOffLamp(String)</td>
+<td>Dead store to sr1 in org.universAAL.samples.soap.cxf.server.ServiceImpl.turnOffLamp(String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE</a></td>
 <td>123</td>
 <td>Medium</td></tr>
 <tr class="a">
-<td>org.universAAL.soap.cxf.server.ServiceImpl.turnOffRequest(String) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
+<td>org.universAAL.samples.soap.cxf.server.ServiceImpl.turnOffRequest(String) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
 <td>140</td>
 <td>Medium</td></tr>
 <tr class="b">
-<td>org.universAAL.soap.cxf.server.ServiceImpl.sr should be package protected</td>
+<td>org.universAAL.samples.soap.cxf.server.ServiceImpl.sr should be package protected</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#MS_PKGPROTECT">MS_PKGPROTECT</a></td>
 <td></td>
 <td>Medium</td></tr>
 <tr class="a">
-<td>Write to static field org.universAAL.soap.cxf.server.ServiceImpl.caller from instance method org.universAAL.soap.cxf.server.ServiceImpl.getTurtleServiceReq(String)</td>
+<td>Write to static field org.universAAL.samples.soap.cxf.server.ServiceImpl.caller from instance method org.universAAL.samples.soap.cxf.server.ServiceImpl.getTurtleServiceReq(String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
 <td>66</td>
 <td>Medium</td></tr>
 <tr class="b">
-<td>Write to static field org.universAAL.soap.cxf.server.ServiceImpl.sr from instance method org.universAAL.soap.cxf.server.ServiceImpl.getTurtleServiceReq(String)</td>
+<td>Write to static field org.universAAL.samples.soap.cxf.server.ServiceImpl.sr from instance method org.universAAL.samples.soap.cxf.server.ServiceImpl.getTurtleServiceReq(String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
 <td>68</td>
 <td>Medium</td></tr>
 <tr class="a">
-<td>Write to static field org.universAAL.soap.cxf.server.ServiceImpl.caller from instance method org.universAAL.soap.cxf.server.ServiceImpl.turnOffLamp(String)</td>
+<td>Write to static field org.universAAL.samples.soap.cxf.server.ServiceImpl.caller from instance method org.universAAL.samples.soap.cxf.server.ServiceImpl.turnOffLamp(String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
 <td>122</td>

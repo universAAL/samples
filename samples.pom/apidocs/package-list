@@ -33,14 +33,14 @@ org.universAAL.samples.sensor.simulator
 org.universAAL.samples.servbus
 org.universAAL.samples.servserver
 org.universAAL.samples.simple.ui
+org.universAAL.samples.soap.cxf.client
+org.universAAL.samples.soap.cxf.server
+org.universAAL.samples.soap.cxf.service
 org.universAAL.samples.uibus
 org.universAAL.samples.util.mini
 org.universAAL.samples.utils.app
 org.universAAL.samples.utils.client
 org.universAAL.samples.utils.server
-org.universAAL.soap.cxf.client
-org.universAAL.soap.cxf.server
-org.universAAL.soap.cxf.service
 org.universAAL.tutorials.context.bus.publisher
 org.universAAL.tutorials.context.bus.subscriber
 org.universAAL.tutorials.service.bus.callee
