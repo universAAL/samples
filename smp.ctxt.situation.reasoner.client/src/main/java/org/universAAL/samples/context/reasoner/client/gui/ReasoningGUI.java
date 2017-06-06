@@ -45,16 +45,16 @@ import org.universAAL.ontology.reasoner.Situation;
 import org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller;
 
 /**
- * 
+ *
  * This is the main-frame of the reasoner-client. It is basically used to
  * show/add/remove Situation, Query and Rule items to the Reasoner. For every of
  * the three types there is given on Panel. Since they differ not much from each
  * other (primary the events for add/delete/refresh) an internal class
  * (ElementBox) is used to enclose the redundant parts. Information about a
  * list-entry are given by using tool-tips.
- * 
+ *
  * @author amarinc
- * 
+ *
  */
 @SuppressWarnings("serial")
 public class ReasoningGUI extends javax.swing.JPanel {
@@ -79,9 +79,9 @@ public class ReasoningGUI extends javax.swing.JPanel {
     /**
      * This class enclosed the redundant parts to be visualized to manage an
      * object of the reasoners ontology.
-     * 
+     *
      * @author amarinc
-     * 
+     *
      * @param <P>
      *            Currently can be only one the following: Situation, Query and
      *            Rule
@@ -162,7 +162,7 @@ public class ReasoningGUI extends javax.swing.JPanel {
 	/**
 	 * Refresh the view of the list of currently available elements from the
 	 * type P.
-	 * 
+	 *
 	 * @param elements
 	 *            Available elements of the type P to be added to the JList.
 	 */
@@ -211,7 +211,7 @@ public class ReasoningGUI extends javax.swing.JPanel {
      * Creates the main-view of the reasoner-client. The "caller" is more or
      * less the controller and model of the project and needed to make
      * service-calls to the listener.
-     * 
+     *
      * @param caller
      */
     public ReasoningGUI(ReasoningCaller caller) {
@@ -237,8 +237,12 @@ public class ReasoningGUI extends javax.swing.JPanel {
     }
 
     public boolean removeSelectedSituation() {
-	String selItem = situationBox.elementsList.getSelectedValue()
-		.toString();
+	String selItem;
+	try {
+	    selItem = situationBox.elementsList.getSelectedValue().toString();
+	} catch (NullPointerException e) {
+	    return false;
+	}
 
 	if (selItem == null)
 	    return false;
@@ -253,7 +257,12 @@ public class ReasoningGUI extends javax.swing.JPanel {
     }
 
     public boolean removeSelectedQuery() {
-	String selItem = queryBox.elementsList.getSelectedValue().toString();
+	String selItem;
+	try {
+	    selItem = queryBox.elementsList.getSelectedValue().toString();
+	} catch (NullPointerException e) {
+	    return false;
+	}
 
 	if (selItem == null)
 	    return false;
