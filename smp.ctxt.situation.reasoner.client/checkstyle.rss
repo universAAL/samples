@@ -28,7 +28,7 @@ under the License.
       <title>File: 10,
              Errors: 199,
              Warnings: 6,
-             Infos: 88
+             Infos: 81
       </title>
             <link>http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html</link>
       <description>
@@ -119,7 +119,7 @@ under the License.
                   <a href="http://xtras/samples/smp.ctxt.situation.reasoner.client//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI.java">org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0

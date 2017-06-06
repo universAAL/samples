@@ -28,7 +28,7 @@ under the License.
       <title>File: 144,
              Errors: 2324,
              Warnings: 269,
-             Infos: 3373
+             Infos: 3359
       </title>
             <link>http://xtras/samples/samples.pom//checkstyle.html</link>
       <description>
@@ -287,7 +287,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI.java">org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -1309,7 +1309,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.uibus.GUIPanel.java">org/universAAL/samples/uibus/GUIPanel.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0

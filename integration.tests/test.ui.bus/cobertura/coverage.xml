@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="282" branches-covered="0" branches-valid="48" complexity="2.789473684210526" version="2.1.1" timestamp="1496694229510">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="282" branches-covered="0" branches-valid="48" complexity="2.789473684210526" version="2.1.1" timestamp="1496717762614">
 	<sources>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/integration.tests/test.ui.bus/src/main/java</source>

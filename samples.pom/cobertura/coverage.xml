@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.021696252465483234" branch-rate="0.004118616144975288" lines-covered="154" lines-valid="7098" branches-covered="5" branches-valid="1214" complexity="1.9816612729234089" version="2.1.1" timestamp="1496694578696">
+<coverage line-rate="0.02168097986766155" branch-rate="0.004118616144975288" lines-covered="154" lines-valid="7103" branches-covered="5" branches-valid="1214" complexity="1.9859762675296655" version="2.1.1" timestamp="1496718036440">
 	<sources>
 		<source>/home/travis/build/universAAL/samples/activityhub/client/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/smp.mw.broker.client/src/main/java</source>
@@ -6943,7 +6943,7 @@
 				</class>
 			</classes>
 		</package>
-		<package name="org.universAAL.samples.context.reasoner.client.gui" line-rate="0.0" branch-rate="0.0" complexity="2.087719298245614">
+		<package name="org.universAAL.samples.context.reasoner.client.gui" line-rate="0.0" branch-rate="0.0" complexity="2.1578947368421053">
 			<classes>
 				<class name="org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame" filename="org/universAAL/samples/context/reasoner/client/gui/QueryCreatorFrame.java" line-rate="0.0" branch-rate="0.0" complexity="3.4545454545454546">
 					<methods>
@@ -7691,7 +7691,7 @@
 						<line number="309" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.7666666666666666">
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.9">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
@@ -7760,42 +7760,42 @@
 						</method>
 						<method name="close" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="286" hits="0" branch="false"/>
-								<line number="287" hits="0" branch="false"/>
+								<line number="295" hits="0" branch="false"/>
+								<line number="296" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="closeQueryFrame" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="296" hits="0" branch="false"/>
-								<line number="297" hits="0" branch="false"/>
-								<line number="298" hits="0" branch="false"/>
-								<line number="299" hits="0" branch="false"/>
+								<line number="305" hits="0" branch="false"/>
+								<line number="306" hits="0" branch="false"/>
+								<line number="307" hits="0" branch="false"/>
+								<line number="308" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="closeRuleFrame" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="302" hits="0" branch="false"/>
-								<line number="303" hits="0" branch="false"/>
-								<line number="304" hits="0" branch="false"/>
-								<line number="305" hits="0" branch="false"/>
+								<line number="311" hits="0" branch="false"/>
+								<line number="312" hits="0" branch="false"/>
+								<line number="313" hits="0" branch="false"/>
+								<line number="314" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="closeSituationFrame" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="290" hits="0" branch="false"/>
-								<line number="291" hits="0" branch="false"/>
-								<line number="292" hits="0" branch="false"/>
-								<line number="293" hits="0" branch="false"/>
+								<line number="299" hits="0" branch="false"/>
+								<line number="300" hits="0" branch="false"/>
+								<line number="301" hits="0" branch="false"/>
+								<line number="302" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="initGUI" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="396" hits="0" branch="false"/>
-								<line number="397" hits="0" branch="false"/>
-								<line number="398" hits="0" branch="false"/>
-								<line number="399" hits="0" branch="false"/>
-								<line number="400" hits="0" branch="false"/>
-								<line number="401" hits="0" branch="false"/>
+								<line number="405" hits="0" branch="false"/>
+								<line number="406" hits="0" branch="false"/>
+								<line number="407" hits="0" branch="false"/>
+								<line number="408" hits="0" branch="false"/>
+								<line number="409" hits="0" branch="false"/>
+								<line number="410" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="refreshQueries" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
@@ -7818,89 +7818,94 @@
 						</method>
 						<method name="removeSelectedQuery" signature="()Z" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
-								<line number="256" hits="0" branch="false"/>
-								<line number="258" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="259" hits="0" branch="false"/>
-								<line number="261" hits="0" branch="false"/>
-								<line number="263" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
+								<line number="262" hits="0" branch="false"/>
+								<line number="263" hits="0" branch="false"/>
 								<line number="264" hits="0" branch="false"/>
-								<line number="266" hits="0" branch="false"/>
-								<line number="267" hits="0" branch="false"/>
+								<line number="265" hits="0" branch="false"/>
+								<line number="267" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="268" hits="0" branch="false"/>
+								<line number="270" hits="0" branch="false"/>
+								<line number="272" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="273" hits="0" branch="false"/>
+								<line number="275" hits="0" branch="false"/>
+								<line number="276" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="removeSelectedRule" signature="()Z" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
-								<line number="271" hits="0" branch="false"/>
-								<line number="273" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="280" hits="0" branch="false"/>
+								<line number="282" hits="0" branch="true" condition-coverage="0% (0/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="0%"/>
 									</conditions>
 								</line>
-								<line number="274" hits="0" branch="false"/>
-								<line number="276" hits="0" branch="false"/>
-								<line number="278" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="283" hits="0" branch="false"/>
+								<line number="285" hits="0" branch="false"/>
+								<line number="287" hits="0" branch="true" condition-coverage="0% (0/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="0%"/>
 									</conditions>
 								</line>
-								<line number="279" hits="0" branch="false"/>
-								<line number="281" hits="0" branch="false"/>
-								<line number="282" hits="0" branch="false"/>
+								<line number="288" hits="0" branch="false"/>
+								<line number="290" hits="0" branch="false"/>
+								<line number="291" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="removeSelectedSituation" signature="()Z" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
-								<line number="240" hits="0" branch="false"/>
-								<line number="241" hits="0" branch="false"/>
-								<line number="243" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
+								<line number="242" hits="0" branch="false"/>
+								<line number="243" hits="0" branch="false"/>
 								<line number="244" hits="0" branch="false"/>
-								<line number="246" hits="0" branch="false"/>
-								<line number="248" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="245" hits="0" branch="false"/>
+								<line number="247" hits="0" branch="true" condition-coverage="0% (0/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="0%"/>
 									</conditions>
 								</line>
-								<line number="249" hits="0" branch="false"/>
-								<line number="251" hits="0" branch="false"/>
-								<line number="252" hits="0" branch="false"/>
+								<line number="248" hits="0" branch="false"/>
+								<line number="250" hits="0" branch="false"/>
+								<line number="252" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="253" hits="0" branch="false"/>
+								<line number="255" hits="0" branch="false"/>
+								<line number="256" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="start" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="313" hits="0" branch="false"/>
-								<line number="314" hits="0" branch="false"/>
-								<line number="315" hits="0" branch="false"/>
-								<line number="316" hits="0" branch="false"/>
-								<line number="317" hits="0" branch="false"/>
-								<line number="318" hits="0" branch="false"/>
-								<line number="319" hits="0" branch="false"/>
-								<line number="320" hits="0" branch="false"/>
+								<line number="322" hits="0" branch="false"/>
 								<line number="323" hits="0" branch="false"/>
+								<line number="324" hits="0" branch="false"/>
 								<line number="325" hits="0" branch="false"/>
+								<line number="326" hits="0" branch="false"/>
+								<line number="327" hits="0" branch="false"/>
+								<line number="328" hits="0" branch="false"/>
+								<line number="329" hits="0" branch="false"/>
+								<line number="332" hits="0" branch="false"/>
 								<line number="334" hits="0" branch="false"/>
-								<line number="340" hits="0" branch="false"/>
-								<line number="347" hits="0" branch="false"/>
-								<line number="348" hits="0" branch="false"/>
+								<line number="343" hits="0" branch="false"/>
+								<line number="349" hits="0" branch="false"/>
+								<line number="356" hits="0" branch="false"/>
 								<line number="357" hits="0" branch="false"/>
-								<line number="363" hits="0" branch="false"/>
-								<line number="370" hits="0" branch="false"/>
-								<line number="371" hits="0" branch="false"/>
+								<line number="366" hits="0" branch="false"/>
+								<line number="372" hits="0" branch="false"/>
+								<line number="379" hits="0" branch="false"/>
 								<line number="380" hits="0" branch="false"/>
-								<line number="386" hits="0" branch="false"/>
-								<line number="391" hits="0" branch="false"/>
-								<line number="392" hits="0" branch="false"/>
+								<line number="389" hits="0" branch="false"/>
+								<line number="395" hits="0" branch="false"/>
+								<line number="400" hits="0" branch="false"/>
+								<line number="401" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -7936,322 +7941,327 @@
 						<line number="233" hits="0" branch="false"/>
 						<line number="236" hits="0" branch="false"/>
 						<line number="237" hits="0" branch="false"/>
-						<line number="240" hits="0" branch="false"/>
-						<line number="241" hits="0" branch="false"/>
-						<line number="243" hits="0" branch="true" condition-coverage="0% (0/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
+						<line number="242" hits="0" branch="false"/>
+						<line number="243" hits="0" branch="false"/>
 						<line number="244" hits="0" branch="false"/>
-						<line number="246" hits="0" branch="false"/>
-						<line number="248" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="245" hits="0" branch="false"/>
+						<line number="247" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
 							</conditions>
 						</line>
-						<line number="249" hits="0" branch="false"/>
-						<line number="251" hits="0" branch="false"/>
-						<line number="252" hits="0" branch="false"/>
+						<line number="248" hits="0" branch="false"/>
+						<line number="250" hits="0" branch="false"/>
+						<line number="252" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="253" hits="0" branch="false"/>
+						<line number="255" hits="0" branch="false"/>
 						<line number="256" hits="0" branch="false"/>
-						<line number="258" hits="0" branch="true" condition-coverage="0% (0/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="259" hits="0" branch="false"/>
-						<line number="261" hits="0" branch="false"/>
-						<line number="263" hits="0" branch="true" condition-coverage="0% (0/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
+						<line number="262" hits="0" branch="false"/>
+						<line number="263" hits="0" branch="false"/>
 						<line number="264" hits="0" branch="false"/>
-						<line number="266" hits="0" branch="false"/>
-						<line number="267" hits="0" branch="false"/>
-						<line number="271" hits="0" branch="false"/>
-						<line number="273" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="265" hits="0" branch="false"/>
+						<line number="267" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
 							</conditions>
 						</line>
-						<line number="274" hits="0" branch="false"/>
+						<line number="268" hits="0" branch="false"/>
+						<line number="270" hits="0" branch="false"/>
+						<line number="272" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="273" hits="0" branch="false"/>
+						<line number="275" hits="0" branch="false"/>
 						<line number="276" hits="0" branch="false"/>
-						<line number="278" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="280" hits="0" branch="false"/>
+						<line number="282" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
 							</conditions>
 						</line>
-						<line number="279" hits="0" branch="false"/>
-						<line number="281" hits="0" branch="false"/>
-						<line number="282" hits="0" branch="false"/>
-						<line number="286" hits="0" branch="false"/>
-						<line number="287" hits="0" branch="false"/>
+						<line number="283" hits="0" branch="false"/>
+						<line number="285" hits="0" branch="false"/>
+						<line number="287" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="288" hits="0" branch="false"/>
 						<line number="290" hits="0" branch="false"/>
 						<line number="291" hits="0" branch="false"/>
-						<line number="292" hits="0" branch="false"/>
-						<line number="293" hits="0" branch="false"/>
+						<line number="295" hits="0" branch="false"/>
 						<line number="296" hits="0" branch="false"/>
-						<line number="297" hits="0" branch="false"/>
-						<line number="298" hits="0" branch="false"/>
 						<line number="299" hits="0" branch="false"/>
+						<line number="300" hits="0" branch="false"/>
+						<line number="301" hits="0" branch="false"/>
 						<line number="302" hits="0" branch="false"/>
-						<line number="303" hits="0" branch="false"/>
-						<line number="304" hits="0" branch="false"/>
 						<line number="305" hits="0" branch="false"/>
+						<line number="306" hits="0" branch="false"/>
+						<line number="307" hits="0" branch="false"/>
+						<line number="308" hits="0" branch="false"/>
+						<line number="311" hits="0" branch="false"/>
+						<line number="312" hits="0" branch="false"/>
 						<line number="313" hits="0" branch="false"/>
 						<line number="314" hits="0" branch="false"/>
-						<line number="315" hits="0" branch="false"/>
-						<line number="316" hits="0" branch="false"/>
-						<line number="317" hits="0" branch="false"/>
-						<line number="318" hits="0" branch="false"/>
-						<line number="319" hits="0" branch="false"/>
-						<line number="320" hits="0" branch="false"/>
+						<line number="322" hits="0" branch="false"/>
 						<line number="323" hits="0" branch="false"/>
+						<line number="324" hits="0" branch="false"/>
 						<line number="325" hits="0" branch="false"/>
+						<line number="326" hits="0" branch="false"/>
+						<line number="327" hits="0" branch="false"/>
+						<line number="328" hits="0" branch="false"/>
+						<line number="329" hits="0" branch="false"/>
+						<line number="332" hits="0" branch="false"/>
 						<line number="334" hits="0" branch="false"/>
-						<line number="340" hits="0" branch="false"/>
-						<line number="347" hits="0" branch="false"/>
-						<line number="348" hits="0" branch="false"/>
+						<line number="343" hits="0" branch="false"/>
+						<line number="349" hits="0" branch="false"/>
+						<line number="356" hits="0" branch="false"/>
 						<line number="357" hits="0" branch="false"/>
-						<line number="363" hits="0" branch="false"/>
-						<line number="370" hits="0" branch="false"/>
-						<line number="371" hits="0" branch="false"/>
+						<line number="366" hits="0" branch="false"/>
+						<line number="372" hits="0" branch="false"/>
+						<line number="379" hits="0" branch="false"/>
 						<line number="380" hits="0" branch="false"/>
-						<line number="386" hits="0" branch="false"/>
-						<line number="391" hits="0" branch="false"/>
-						<line number="392" hits="0" branch="false"/>
-						<line number="396" hits="0" branch="false"/>
-						<line number="397" hits="0" branch="false"/>
-						<line number="398" hits="0" branch="false"/>
-						<line number="399" hits="0" branch="false"/>
+						<line number="389" hits="0" branch="false"/>
+						<line number="395" hits="0" branch="false"/>
 						<line number="400" hits="0" branch="false"/>
 						<line number="401" hits="0" branch="false"/>
+						<line number="405" hits="0" branch="false"/>
+						<line number="406" hits="0" branch="false"/>
+						<line number="407" hits="0" branch="false"/>
+						<line number="408" hits="0" branch="false"/>
+						<line number="409" hits="0" branch="false"/>
+						<line number="410" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$1" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.7666666666666666">
-					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="325" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
-							<lines>
-								<line number="327" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="328" hits="0" branch="false"/>
-								<line number="330" hits="0" branch="false"/>
-								<line number="332" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="325" hits="0" branch="false"/>
-						<line number="327" hits="0" branch="true" condition-coverage="0% (0/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="328" hits="0" branch="false"/>
-						<line number="330" hits="0" branch="false"/>
-						<line number="332" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$2" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.7666666666666666">
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$1" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.9">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="334" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
-								<line number="336" hits="0" branch="false"/>
+								<line number="336" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
 								<line number="337" hits="0" branch="false"/>
-								<line number="338" hits="0" branch="false"/>
+								<line number="339" hits="0" branch="false"/>
+								<line number="341" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
 						<line number="334" hits="0" branch="false"/>
-						<line number="336" hits="0" branch="false"/>
-						<line number="337" hits="0" branch="false"/>
-						<line number="338" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$3" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.7666666666666666">
-					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="340" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="342" hits="0" branch="false"/>
-								<line number="343" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="340" hits="0" branch="false"/>
-						<line number="342" hits="0" branch="false"/>
-						<line number="343" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$4" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.7666666666666666">
-					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="348" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
-							<lines>
-								<line number="350" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="351" hits="0" branch="false"/>
-								<line number="353" hits="0" branch="false"/>
-								<line number="355" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="348" hits="0" branch="false"/>
-						<line number="350" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="336" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
 							</conditions>
 						</line>
-						<line number="351" hits="0" branch="false"/>
-						<line number="353" hits="0" branch="false"/>
-						<line number="355" hits="0" branch="false"/>
+						<line number="337" hits="0" branch="false"/>
+						<line number="339" hits="0" branch="false"/>
+						<line number="341" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$5" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.7666666666666666">
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$2" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.9">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="343" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="345" hits="0" branch="false"/>
+								<line number="346" hits="0" branch="false"/>
+								<line number="347" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="343" hits="0" branch="false"/>
+						<line number="345" hits="0" branch="false"/>
+						<line number="346" hits="0" branch="false"/>
+						<line number="347" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$3" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.9">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="349" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="351" hits="0" branch="false"/>
+								<line number="352" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="349" hits="0" branch="false"/>
+						<line number="351" hits="0" branch="false"/>
+						<line number="352" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$4" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.9">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="357" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
-								<line number="359" hits="0" branch="false"/>
+								<line number="359" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
 								<line number="360" hits="0" branch="false"/>
-								<line number="361" hits="0" branch="false"/>
+								<line number="362" hits="0" branch="false"/>
+								<line number="364" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
 						<line number="357" hits="0" branch="false"/>
-						<line number="359" hits="0" branch="false"/>
-						<line number="360" hits="0" branch="false"/>
-						<line number="361" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$6" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.7666666666666666">
-					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="363" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="365" hits="0" branch="false"/>
-								<line number="366" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="363" hits="0" branch="false"/>
-						<line number="365" hits="0" branch="false"/>
-						<line number="366" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$7" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.7666666666666666">
-					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="371" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
-							<lines>
-								<line number="373" hits="0" branch="true" condition-coverage="0% (0/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="374" hits="0" branch="false"/>
-								<line number="376" hits="0" branch="false"/>
-								<line number="378" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="371" hits="0" branch="false"/>
-						<line number="373" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="359" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
 							</conditions>
 						</line>
-						<line number="374" hits="0" branch="false"/>
-						<line number="376" hits="0" branch="false"/>
-						<line number="378" hits="0" branch="false"/>
+						<line number="360" hits="0" branch="false"/>
+						<line number="362" hits="0" branch="false"/>
+						<line number="364" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$8" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.7666666666666666">
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$5" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.9">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="366" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="368" hits="0" branch="false"/>
+								<line number="369" hits="0" branch="false"/>
+								<line number="370" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="366" hits="0" branch="false"/>
+						<line number="368" hits="0" branch="false"/>
+						<line number="369" hits="0" branch="false"/>
+						<line number="370" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$6" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.9">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="372" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="374" hits="0" branch="false"/>
+								<line number="375" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="372" hits="0" branch="false"/>
+						<line number="374" hits="0" branch="false"/>
+						<line number="375" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$7" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.9">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="380" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
-								<line number="382" hits="0" branch="false"/>
+								<line number="382" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
 								<line number="383" hits="0" branch="false"/>
-								<line number="384" hits="0" branch="false"/>
+								<line number="385" hits="0" branch="false"/>
+								<line number="387" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
 						<line number="380" hits="0" branch="false"/>
-						<line number="382" hits="0" branch="false"/>
+						<line number="382" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
 						<line number="383" hits="0" branch="false"/>
-						<line number="384" hits="0" branch="false"/>
+						<line number="385" hits="0" branch="false"/>
+						<line number="387" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$9" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.7666666666666666">
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$8" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.9">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="386" hits="0" branch="false"/>
+								<line number="389" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="388" hits="0" branch="false"/>
-								<line number="389" hits="0" branch="false"/>
+								<line number="391" hits="0" branch="false"/>
+								<line number="392" hits="0" branch="false"/>
+								<line number="393" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="386" hits="0" branch="false"/>
-						<line number="388" hits="0" branch="false"/>
 						<line number="389" hits="0" branch="false"/>
+						<line number="391" hits="0" branch="false"/>
+						<line number="392" hits="0" branch="false"/>
+						<line number="393" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$ElementAction" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.7666666666666666">
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$9" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.9">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="395" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="actionPerformed" signature="(Ljava/awt/event/ActionEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="397" hits="0" branch="false"/>
+								<line number="398" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="395" hits="0" branch="false"/>
+						<line number="397" hits="0" branch="false"/>
+						<line number="398" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$ElementAction" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.9">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
@@ -8271,7 +8281,7 @@
 						<line number="76" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$ElementBox" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.7666666666666666">
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$ElementBox" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.9">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Ljavax/swing/JFrame;Ljava/lang/String;Ljava/util/HashMap;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
@@ -8455,7 +8465,7 @@
 						<line number="186" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$ElementBox$1" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.7666666666666666">
+				<class name="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$ElementBox$1" filename="org/universAAL/samples/context/reasoner/client/gui/ReasoningGUI.java" line-rate="0.0" branch-rate="0.0" complexity="1.9">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI$ElementBox;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>

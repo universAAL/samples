@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="1336" branches-covered="0" branches-valid="202" complexity="2.463235294117647" version="2.1.1" timestamp="1496694181090">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="1336" branches-covered="0" branches-valid="202" complexity="2.463235294117647" version="2.1.1" timestamp="1496717729226">
 	<sources>
 		<source>/home/travis/build/universAAL/samples/integration.tests/test.ctxt.bus/src/main/java</source>
 		<source>--source</source>
