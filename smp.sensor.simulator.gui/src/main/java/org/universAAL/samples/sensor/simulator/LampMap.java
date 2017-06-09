@@ -30,31 +30,31 @@ import org.universAAL.ontology.lighting.LightSource;
  */
 public class LampMap {
 
-    private HashMap<String, LightSource> lightSourceMap = new HashMap<String, LightSource>();
+	private HashMap<String, LightSource> lightSourceMap = new HashMap<String, LightSource>();
 
-    public LampMap() {
+	public LampMap() {
 
-    }
+	}
 
-    /**
-     * Inserts lightsource and its URI to the map
-     * 
-     * @param uri
-     * @param lightSource
-     */
-    public void insertLightSource(String uri, LightSource lightSource) {
-	lightSource.setBrightness(0);
-	this.lightSourceMap.put(uri, lightSource);
-    }
+	/**
+	 * Inserts lightsource and its URI to the map
+	 * 
+	 * @param uri
+	 * @param lightSource
+	 */
+	public void insertLightSource(String uri, LightSource lightSource) {
+		lightSource.setBrightness(0);
+		this.lightSourceMap.put(uri, lightSource);
+	}
 
-    /**
-     * Returns lightSource value that corresponds to a given URI
-     * 
-     * @param uri
-     * @return
-     */
-    public LightSource getLightSource(String uri) {
-	return this.lightSourceMap.get(uri);
-    }
+	/**
+	 * Returns lightSource value that corresponds to a given URI
+	 * 
+	 * @param uri
+	 * @return
+	 */
+	public LightSource getLightSource(String uri) {
+		return this.lightSourceMap.get(uri);
+	}
 
 }

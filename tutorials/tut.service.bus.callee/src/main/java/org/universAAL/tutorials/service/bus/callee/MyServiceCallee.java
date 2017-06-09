@@ -39,80 +39,77 @@ import org.universAAL.ontology.phThing.DeviceService;
  */
 public class MyServiceCallee extends ServiceCallee {
 
-    // URI for the service
-    public static String SERVICE_TURN_ON = "urn:org.universAAL.tutorial:tut.callee#srvTurnOn";
+	// URI for the service
+	public static String SERVICE_TURN_ON = "urn:org.universAAL.tutorial:tut.callee#srvTurnOn";
 
-    // URI for an input parameter: we expect the URI of a LightActuator as a
-    // parameter identified by this URI
-    public static String INPUT_LIGHT_URI = "urn:org.universAAL.tutorial:tut.callee#inLampURI";
+	// URI for an input parameter: we expect the URI of a LightActuator as a
+	// parameter identified by this URI
+	public static String INPUT_LIGHT_URI = "urn:org.universAAL.tutorial:tut.callee#inLampURI";
 
-    /**
-     * Create the service profile that describes what the service does.
-     * 
-     * @return an array of service profiles.
-     */
-    public static ServiceProfile[] getProfiles() {
-	// Create a device service. Subclasses of the class 'Service' are our
-	// 'entry points' in the ontology. Starting from this class we go along
-	// some property path and describe what we do, return, or expect at that
-	// path.
-	// A service can
-	// - do something: add, change, or remove a property
-	// - return something
-	// - expect something: an input parameter that the caller has to provide
+	/**
+	 * Create the service profile that describes what the service does.
+	 * 
+	 * @return an array of service profiles.
+	 */
+	public static ServiceProfile[] getProfiles() {
+		// Create a device service. Subclasses of the class 'Service' are our
+		// 'entry points' in the ontology. Starting from this class we go along
+		// some property path and describe what we do, return, or expect at that
+		// path.
+		// A service can
+		// - do something: add, change, or remove a property
+		// - return something
+		// - expect something: an input parameter that the caller has to provide
 
-	// In this tutorial, we create a service that can turn on a light
-	// source (= setting the value of a LightActuator to 100%)
-	Service turnOn = new DeviceService(SERVICE_TURN_ON);
+		// In this tutorial, we create a service that can turn on a light
+		// source (= setting the value of a LightActuator to 100%)
+		Service turnOn = new DeviceService(SERVICE_TURN_ON);
 
-	// We add a filtering input: at the path 'controls' we expect exactly
-	// one parameter of type LightActuator. When the service is called, we
-	// can query this parameter with the URI 'INPUT_LIGHT_URI'
-	turnOn.addFilteringInput(INPUT_LIGHT_URI, LightActuator.MY_URI, 1, 1,
-		new String[] { DeviceService.PROP_CONTROLS });
-	// We add a change effect: at the path 'controls-hasValue' the service
-	// can change the value to 100
-	turnOn.getProfile().addChangeEffect(
-		new String[] { DeviceService.PROP_CONTROLS,
-			ValueDevice.PROP_HAS_VALUE }, new Integer(100));
+		// We add a filtering input: at the path 'controls' we expect exactly
+		// one parameter of type LightActuator. When the service is called, we
+		// can query this parameter with the URI 'INPUT_LIGHT_URI'
+		turnOn.addFilteringInput(INPUT_LIGHT_URI, LightActuator.MY_URI, 1, 1,
+				new String[] { DeviceService.PROP_CONTROLS });
+		// We add a change effect: at the path 'controls-hasValue' the service
+		// can change the value to 100
+		turnOn.getProfile().addChangeEffect(new String[] { DeviceService.PROP_CONTROLS, ValueDevice.PROP_HAS_VALUE },
+				new Integer(100));
 
-	// We can create more profiles here and return everything in an array.
-	// Please note that there is a difference between
-	// - registering one calle with multiple profiles, and
-	// - registering multiple callees, each with one profile
-	// See also the section on service bus details in the Wiki
-	return new ServiceProfile[] { turnOn.getProfile() };
-    }
-
-    public MyServiceCallee(ModuleContext context) {
-	// The constructor register us to the service bus for some profiles
-	super(context, getProfiles());
-    }
-
-    /** @see ServiceCallee#handleCall(ServiceCall) */
-    public ServiceResponse handleCall(ServiceCall call) {
-	// If we have registered multiple profiles, we can distinguish the
-	// service by comparing the service URI with the process URI
-	String operation = call.getProcessURI();
-	if (operation.startsWith(SERVICE_TURN_ON)) {
-	    // Get the parameter
-	    Object input = call.getInputValue(INPUT_LIGHT_URI);
-
-	    // In this example, we simply log the call and its input parameter
-	    LogUtils.logDebug(Activator.mc, MyServiceCallee.class,
-		    "handleCall",
-		    "Received service call for service 'turn on' with parameter "
-			    + input);
-	    return new ServiceResponse(CallStatus.succeeded);
+		// We can create more profiles here and return everything in an array.
+		// Please note that there is a difference between
+		// - registering one calle with multiple profiles, and
+		// - registering multiple callees, each with one profile
+		// See also the section on service bus details in the Wiki
+		return new ServiceProfile[] { turnOn.getProfile() };
 	}
 
-	return new ServiceResponse(CallStatus.serviceSpecificFailure);
-    }
+	public MyServiceCallee(ModuleContext context) {
+		// The constructor register us to the service bus for some profiles
+		super(context, getProfiles());
+	}
 
-    /** @see ServiceCallee#communicationChannelBroken() */
-    public void communicationChannelBroken() {
-	// This method is called when the connection to the service bus is
-	// broken. We don't do anything here, but applications should handle
-	// this case.
-    }
+	/** @see ServiceCallee#handleCall(ServiceCall) */
+	public ServiceResponse handleCall(ServiceCall call) {
+		// If we have registered multiple profiles, we can distinguish the
+		// service by comparing the service URI with the process URI
+		String operation = call.getProcessURI();
+		if (operation.startsWith(SERVICE_TURN_ON)) {
+			// Get the parameter
+			Object input = call.getInputValue(INPUT_LIGHT_URI);
+
+			// In this example, we simply log the call and its input parameter
+			LogUtils.logDebug(Activator.mc, MyServiceCallee.class, "handleCall",
+					"Received service call for service 'turn on' with parameter " + input);
+			return new ServiceResponse(CallStatus.succeeded);
+		}
+
+		return new ServiceResponse(CallStatus.serviceSpecificFailure);
+	}
+
+	/** @see ServiceCallee#communicationChannelBroken() */
+	public void communicationChannelBroken() {
+		// This method is called when the connection to the service bus is
+		// broken. We don't do anything here, but applications should handle
+		// this case.
+	}
 }

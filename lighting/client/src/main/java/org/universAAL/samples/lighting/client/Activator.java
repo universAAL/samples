@@ -26,36 +26,35 @@ import org.universAAL.middleware.container.osgi.uAALBundleContainer;
 
 public class Activator implements BundleActivator {
 
-    public static ModuleContext mc;
-    private LightingConsumer c = null;
+	public static ModuleContext mc;
+	private LightingConsumer c = null;
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext
-     * )
-     */
-    public void start(final BundleContext context) throws Exception {
-	mc = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { context });
-	new Thread() {
-	    public void run() {
-		c = new LightingConsumer(mc);
-	    }
-	}.start();
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
-     */
-    public void stop(BundleContext context) throws Exception {
-	if (c != null) {
-	    c.close();
-	    c = null;
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext
+	 * )
+	 */
+	public void start(final BundleContext context) throws Exception {
+		mc = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
+		new Thread() {
+			public void run() {
+				c = new LightingConsumer(mc);
+			}
+		}.start();
 	}
-    }
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
+	 */
+	public void stop(BundleContext context) throws Exception {
+		if (c != null) {
+			c.close();
+			c = null;
+		}
+	}
 }

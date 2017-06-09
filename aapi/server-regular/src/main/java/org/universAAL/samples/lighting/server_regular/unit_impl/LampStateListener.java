@@ -24,5 +24,5 @@ package org.universAAL.samples.lighting.server_regular.unit_impl;
  * 
  */
 public interface LampStateListener {
-    public void lampStateChanged(int lampID, String loc, boolean isOn);
+	public void lampStateChanged(int lampID, String loc, boolean isOn);
 }

@@ -44,8 +44,7 @@ public class Activator implements BundleActivator {
 
 	public void start(BundleContext context) throws Exception {
 		Activator.context = context;
-		Activator.mc = uAALBundleContainer.THE_CONTAINER
-				.registerModule(new Object[] { context });
+		Activator.mc = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
 
 		// use a service Tracker for LogService
 		logTracker = new LogTracker(context);

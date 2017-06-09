@@ -22,20 +22,25 @@ package org.universAAL.samples.lighting.server.unit_impl;
 
 /**
  * 
- *  @author <a href="mailto:vadime@il.ibm.com"> vadime </a>
+ * @author <a href="mailto:vadime@il.ibm.com"> vadime </a>
  *
  */
 public class UILampsController implements LampStateListener {
-	
+
 	private UILampsView view;
+
 	public UILampsController(UILampsView view) {
 		this.view = view;
 	}
-	/* (non-Javadoc)
-	 * @see org.universAAL.samples.plainjava.lighting.server.unit_impl.LampStateListener#lampStateChanged(int, java.lang.String, boolean)
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.universAAL.samples.plainjava.lighting.server.unit_impl.
+	 * LampStateListener#lampStateChanged(int, java.lang.String, boolean)
 	 */
 	public void lampStateChanged(int lampID, String loc, boolean isOn) {
-		view.setLampState(lampID,isOn);
+		view.setLampState(lampID, isOn);
 	}
 
 }

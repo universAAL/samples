@@ -38,39 +38,39 @@ import org.universAAL.ontology.phThing.DeviceService;
  */
 public class Activator implements ModuleActivator {
 
-    public void start(ModuleContext mc) throws Exception {
-	// Create the service caller
-	ServiceCaller caller = new DefaultServiceCaller(mc);
+	public void start(ModuleContext mc) throws Exception {
+		// Create the service caller
+		ServiceCaller caller = new DefaultServiceCaller(mc);
 
-	// Create a service request to turn on a light source. The requested
-	// service (a subclass of 'Service', here: DeviceService) acts as 'entry
-	// point' in the ontology. Starting from this class we go along some
-	// property path and describe what the service should do/return and
-	// what input parameters we provide at that path.
+		// Create a service request to turn on a light source. The requested
+		// service (a subclass of 'Service', here: DeviceService) acts as 'entry
+		// point' in the ontology. Starting from this class we go along some
+		// property path and describe what the service should do/return and
+		// what input parameters we provide at that path.
 
-	// In this tutorial, we request a service that can turn on a light
-	// source (= setting the value of a LightActuator to 100%)
-	ServiceRequest turnOn = new ServiceRequest(new DeviceService(), null);
+		// In this tutorial, we request a service that can turn on a light
+		// source (= setting the value of a LightActuator to 100%)
+		ServiceRequest turnOn = new ServiceRequest(new DeviceService(), null);
 
-	// We add a value filter: at the path 'controls' the value must be a
-	// specific light actuator. All other operations (e.g. change effects or
-	// return values) only operate on those filtered instances.
-	turnOn.addValueFilter(new String[] { DeviceService.PROP_CONTROLS },
-		new LightActuator("urn:org.universAAL.aal_space:KitchenLight"));
+		// We add a value filter: at the path 'controls' the value must be a
+		// specific light actuator. All other operations (e.g. change effects or
+		// return values) only operate on those filtered instances.
+		turnOn.addValueFilter(new String[] { DeviceService.PROP_CONTROLS },
+				new LightActuator("urn:org.universAAL.aal_space:KitchenLight"));
 
-	// We add a change effect: at the path 'controls-hasValue' the service
-	// should change the value to 100
-	turnOn.addChangeEffect(new String[] { DeviceService.PROP_CONTROLS,
-		ValueDevice.PROP_HAS_VALUE }, new Integer(100));
+		// We add a change effect: at the path 'controls-hasValue' the service
+		// should change the value to 100
+		turnOn.addChangeEffect(new String[] { DeviceService.PROP_CONTROLS, ValueDevice.PROP_HAS_VALUE },
+				new Integer(100));
 
-	// Now call the service
-	caller.call(turnOn);
+		// Now call the service
+		caller.call(turnOn);
 
-	// Close our service caller and free all resources. The caller
-	// should be re-used if multiple calls need to be made.
-	caller.close();
-    }
+		// Close our service caller and free all resources. The caller
+		// should be re-used if multiple calls need to be made.
+		caller.close();
+	}
 
-    public void stop(ModuleContext arg0) throws Exception {
-    }
+	public void stop(ModuleContext arg0) throws Exception {
+	}
 }

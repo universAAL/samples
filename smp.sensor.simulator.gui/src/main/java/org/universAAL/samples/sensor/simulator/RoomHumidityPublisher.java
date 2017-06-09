@@ -36,63 +36,55 @@ import org.universAAL.ontology.device.HumiditySensor;
  */
 public class RoomHumidityPublisher {
 
-    public static final String NAMESPACE = HumiditySensor.MY_URI;
+	public static final String NAMESPACE = HumiditySensor.MY_URI;
 
-    public static final String HUMIDITY_SENSOR_1 = NAMESPACE
-	    + "humiditySensor1";
+	public static final String HUMIDITY_SENSOR_1 = NAMESPACE + "humiditySensor1";
 
-    public static final String HUMIDITY_SENSOR_2 = NAMESPACE
-	    + "humiditySensor2";
+	public static final String HUMIDITY_SENSOR_2 = NAMESPACE + "humiditySensor2";
 
-    public static ContextPublisher myContextPublisher;
-    public static ModuleContext myModuleContext;
+	public static ContextPublisher myContextPublisher;
+	public static ModuleContext myModuleContext;
 
-    /**
-     * Constructor Here we set ContextEventPattern and add restrictions to it
-     * that tell universAAL platform which infofmation we want to recieve
-     * 
-     * @param context
-     */
-    protected RoomHumidityPublisher(ModuleContext context) {
+	/**
+	 * Constructor Here we set ContextEventPattern and add restrictions to it
+	 * that tell universAAL platform which infofmation we want to recieve
+	 * 
+	 * @param context
+	 */
+	protected RoomHumidityPublisher(ModuleContext context) {
 
-	RoomHumidityPublisher.myModuleContext = context;
+		RoomHumidityPublisher.myModuleContext = context;
 
-	ContextProvider myContextProvider = new ContextProvider(NAMESPACE
-		+ "roomHumidityContextProvider");
+		ContextProvider myContextProvider = new ContextProvider(NAMESPACE + "roomHumidityContextProvider");
 
-	ContextEventPattern myContextEventPattern = new ContextEventPattern();
+		ContextEventPattern myContextEventPattern = new ContextEventPattern();
 
-	myContextEventPattern.addRestriction(MergedRestriction
-		.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-			HumiditySensor.PROP_HAS_VALUE));
+		myContextEventPattern.addRestriction(MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
+				HumiditySensor.PROP_HAS_VALUE));
 
-	myContextEventPattern.addRestriction(MergedRestriction
-		.getAllValuesRestriction(ContextEvent.PROP_RDF_SUBJECT,
-			HumiditySensor.MY_URI));
+		myContextEventPattern.addRestriction(
+				MergedRestriction.getAllValuesRestriction(ContextEvent.PROP_RDF_SUBJECT, HumiditySensor.MY_URI));
 
-	ContextEventPattern[] contextEventPatterns = new ContextEventPattern[] { myContextEventPattern };
+		ContextEventPattern[] contextEventPatterns = new ContextEventPattern[] { myContextEventPattern };
 
-	myContextProvider.setType(ContextProviderType.controller);
-	myContextProvider.setProvidedEvents(contextEventPatterns);
-	myContextPublisher = new DefaultContextPublisher(context,
-		myContextProvider);
-    }
+		myContextProvider.setType(ContextProviderType.controller);
+		myContextProvider.setProvidedEvents(contextEventPatterns);
+		myContextPublisher = new DefaultContextPublisher(context, myContextProvider);
+	}
 
-    /**
-     * Method used for publishing context event that has HumiditySensor as a
-     * subject and it's value as a predicate
-     * 
-     * @param humiditySensor
-     */
-    public void publishContextEvent(HumiditySensor humiditySensor) {
+	/**
+	 * Method used for publishing context event that has HumiditySensor as a
+	 * subject and it's value as a predicate
+	 * 
+	 * @param humiditySensor
+	 */
+	public void publishContextEvent(HumiditySensor humiditySensor) {
 
-	ContextEvent myContextEvent = new ContextEvent(humiditySensor,
-		HumiditySensor.PROP_HAS_VALUE);
+		ContextEvent myContextEvent = new ContextEvent(humiditySensor, HumiditySensor.PROP_HAS_VALUE);
 
-	myContextPublisher.publish(myContextEvent);
-	System.out
-		.println("++++++++++++\n++++++++++++\n+++++++++++\n++++++++++++++++++\n\n\n+++++++");
+		myContextPublisher.publish(myContextEvent);
+		System.out.println("++++++++++++\n++++++++++++\n+++++++++++\n++++++++++++++++++\n\n\n+++++++");
 
-    }
+	}
 
 }

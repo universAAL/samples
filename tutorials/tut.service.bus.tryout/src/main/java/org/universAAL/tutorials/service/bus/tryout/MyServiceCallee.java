@@ -37,44 +37,41 @@ import org.universAAL.ontology.phThing.DeviceService;
  */
 public class MyServiceCallee extends ServiceCallee {
 
-    public static String SERVICE_TURN_ON = "urn:org.universAAL.tutorial:tut.callee#srvTurnOn";
-    public static String INPUT_LIGHT_URI = "urn:org.universAAL.tutorial:tut.callee#inLampURI";
+	public static String SERVICE_TURN_ON = "urn:org.universAAL.tutorial:tut.callee#srvTurnOn";
+	public static String INPUT_LIGHT_URI = "urn:org.universAAL.tutorial:tut.callee#inLampURI";
 
-    /**
-     * Create the service profile that describes what the service does.
-     * 
-     * @return an array of service profiles.
-     */
-    public static ServiceProfile[] getProfiles() {
-	Service turnOn = new DeviceService(SERVICE_TURN_ON);
-	turnOn.addFilteringInput(INPUT_LIGHT_URI, LightActuator.MY_URI, 1, 1,
-		new String[] { DeviceService.PROP_CONTROLS });
-	turnOn.getProfile().addChangeEffect(
-		new String[] { DeviceService.PROP_CONTROLS,
-			ValueDevice.PROP_HAS_VALUE }, new Integer(100));
+	/**
+	 * Create the service profile that describes what the service does.
+	 * 
+	 * @return an array of service profiles.
+	 */
+	public static ServiceProfile[] getProfiles() {
+		Service turnOn = new DeviceService(SERVICE_TURN_ON);
+		turnOn.addFilteringInput(INPUT_LIGHT_URI, LightActuator.MY_URI, 1, 1,
+				new String[] { DeviceService.PROP_CONTROLS });
+		turnOn.getProfile().addChangeEffect(new String[] { DeviceService.PROP_CONTROLS, ValueDevice.PROP_HAS_VALUE },
+				new Integer(100));
 
-	return new ServiceProfile[] { turnOn.getProfile() };
-    }
-
-    public MyServiceCallee(ModuleContext context) {
-	super(context, getProfiles());
-    }
-
-    /** @see ServiceCallee#handleCall(ServiceCall) */
-    public ServiceResponse handleCall(ServiceCall call) {
-	String operation = call.getProcessURI();
-	if (operation.startsWith(SERVICE_TURN_ON)) {
-	    Object input = call.getInputValue(INPUT_LIGHT_URI);
-	    System.out
-		    .println("Received service call for service 'turn on' with parameter "
-			    + input);
-	    return new ServiceResponse(CallStatus.succeeded);
+		return new ServiceProfile[] { turnOn.getProfile() };
 	}
 
-	return new ServiceResponse(CallStatus.serviceSpecificFailure);
-    }
+	public MyServiceCallee(ModuleContext context) {
+		super(context, getProfiles());
+	}
 
-    /** @see ServiceCallee#communicationChannelBroken() */
-    public void communicationChannelBroken() {
-    }
+	/** @see ServiceCallee#handleCall(ServiceCall) */
+	public ServiceResponse handleCall(ServiceCall call) {
+		String operation = call.getProcessURI();
+		if (operation.startsWith(SERVICE_TURN_ON)) {
+			Object input = call.getInputValue(INPUT_LIGHT_URI);
+			System.out.println("Received service call for service 'turn on' with parameter " + input);
+			return new ServiceResponse(CallStatus.succeeded);
+		}
+
+		return new ServiceResponse(CallStatus.serviceSpecificFailure);
+	}
+
+	/** @see ServiceCallee#communicationChannelBroken() */
+	public void communicationChannelBroken() {
+	}
 }

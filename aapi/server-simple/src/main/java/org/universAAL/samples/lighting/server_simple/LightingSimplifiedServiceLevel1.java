@@ -28,9 +28,8 @@ import org.universAAL.ontology.lighting.simple.LightingInterfaceLevel1;
  * @author dzmuda
  * @author mpsiuk
  */
-public class LightingSimplifiedServiceLevel1 extends MyLightingOntologified
-	implements LightingInterfaceLevel1 {
-    public LightingSimplifiedServiceLevel1() {
-	super(namespace);
-    }
+public class LightingSimplifiedServiceLevel1 extends MyLightingOntologified implements LightingInterfaceLevel1 {
+	public LightingSimplifiedServiceLevel1() {
+		super(namespace);
+	}
 }

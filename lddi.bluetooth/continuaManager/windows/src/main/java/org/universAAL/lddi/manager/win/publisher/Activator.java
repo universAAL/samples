@@ -43,55 +43,53 @@ import org.universAAL.lddi.manager.win.gui.GUI;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
 
-
-
 // Main class
 public class Activator implements BundleActivator {
-	
-//	/Continua Health Manager|http://www.tsbtecnologias.es|http://ontologies.universAAL.com/CONTINUAHEALTHMANAGERUI.owl#ContinuaManager
 
-	// Attributes    
+	// /Continua Health
+	// Manager|http://www.tsbtecnologias.es|http://ontologies.universAAL.com/CONTINUAHEALTHMANAGERUI.owl#ContinuaManager
+
+	// Attributes
 	/** Main GUI object */
-	private GUI gui = null;	
-	
-//	/** Bundle context object */
-//	private BundleContext ctx = null;	
-	
+	private GUI gui = null;
+
+	// /** Bundle context object */
+	// private BundleContext ctx = null;
+
 	private ModuleContext mdlContext;
 	private BundleContext bndContext;
 	private ServiceProvider service;
 	public static boolean dllReadyLatch = true;
-	
+
 	// Methods
 	/** Start */
-	public void start(BundleContext context) throws Exception {	
-		mdlContext = uAALBundleContainer.THE_CONTAINER
-				.registerModule(new Object[] { context });				
+	public void start(BundleContext context) throws Exception {
+		mdlContext = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
 		// Create and show main GUI frame
-		bndContext = context;		
-		gui = new GUI(bndContext);								
-		gui.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);			
-		gui.addWindowListener(new WindowAdapter() {				
-			public void windowClosing(WindowEvent e) {			
+		bndContext = context;
+		gui = new GUI(bndContext);
+		gui.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		gui.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
 				gui.setVisible(false);
 			}
 		});
-		//TODO cambiar para la demo true -> false
-		gui.setVisible(false);		
+		// TODO cambiar para la demo true -> false
+		gui.setVisible(false);
 		// Service callee
-		service = new ServiceProvider(mdlContext,gui);		
+		service = new ServiceProvider(mdlContext, gui);
 	}
 
 	/** Stop */
-	public void stop(BundleContext arg0) throws Exception {		
+	public void stop(BundleContext arg0) throws Exception {
 		gui.setVisible(false);
 		dllReadyLatch = true;
-		//gui.stopGUI();		
-//		bndContext = null;
-//		mdlContext = null;
-	}	
-	
-	void stopSafe(final Bundle bundle) {		
+		// gui.stopGUI();
+		// bndContext = null;
+		// mdlContext = null;
+	}
+
+	void stopSafe(final Bundle bundle) {
 		new Thread() {
 			public void run() {
 				try {
@@ -103,5 +101,5 @@ public class Activator implements BundleActivator {
 			}
 		}.start();
 	}
-	
+
 }

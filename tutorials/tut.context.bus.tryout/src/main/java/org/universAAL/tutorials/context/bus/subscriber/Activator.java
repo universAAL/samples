@@ -29,28 +29,28 @@ import org.universAAL.middleware.container.ModuleContext;
  */
 public class Activator implements ModuleActivator {
 
-    public static ModuleContext mc;
-    private MyContextSubscriber subscriber = null;
+	public static ModuleContext mc;
+	private MyContextSubscriber subscriber = null;
 
-    /**
-     * This method is called by the framework to start the module.
-     */
-    public void start(ModuleContext mc) throws Exception {
-	Activator.mc = mc;
-	if (subscriber == null) {
-	    // create our context subscriber
-	    subscriber = new MyContextSubscriber(mc);
+	/**
+	 * This method is called by the framework to start the module.
+	 */
+	public void start(ModuleContext mc) throws Exception {
+		Activator.mc = mc;
+		if (subscriber == null) {
+			// create our context subscriber
+			subscriber = new MyContextSubscriber(mc);
+		}
 	}
-    }
 
-    /**
-     * This method is called by the framework to stop the module.
-     */
-    public void stop(ModuleContext arg0) throws Exception {
-	if (subscriber != null) {
-	    // close our context subscriber and free all resources
-	    subscriber.close();
-	    subscriber = null;
+	/**
+	 * This method is called by the framework to stop the module.
+	 */
+	public void stop(ModuleContext arg0) throws Exception {
+		if (subscriber != null) {
+			// close our context subscriber and free all resources
+			subscriber.close();
+			subscriber = null;
+		}
 	}
-    }
 }

@@ -32,18 +32,18 @@ import org.universAAL.ontology.lighting.Lighting;
 @OntologyClasses(value = { Lighting.class })
 public interface LightingInterfaceLevel3 {
 
-    public final static String namespace = "http://ontology.igd.fhg.de/LightingServer.owl#";
+	public final static String namespace = "http://ontology.igd.fhg.de/LightingServer.owl#";
 
-    @ServiceOperation
-    public Integer[] getControlledLamps();
+	@ServiceOperation
+	public Integer[] getControlledLamps();
 
-    @ServiceOperation
-    @Outputs(value = { @Output(name = "brightness"), @Output(name = "location") })
-    public Object[] getLampInfo(@Input(name = "lampURI") int lampID);
+	@ServiceOperation
+	@Outputs(value = { @Output(name = "brightness"), @Output(name = "location") })
+	public Object[] getLampInfo(@Input(name = "lampURI") int lampID);
 
-    @ServiceOperation
-    public void turnOff(@Input(name = "lampURI") int lampID);
+	@ServiceOperation
+	public void turnOff(@Input(name = "lampURI") int lampID);
 
-    @ServiceOperation
-    public void turnOn(@Input(name = "lampURI") int lampID);
+	@ServiceOperation
+	public void turnOn(@Input(name = "lampURI") int lampID);
 }

@@ -62,81 +62,80 @@ import org.universAAL.middleware.deploymanager.uapp.model.Part;
  */
 
 public class Activator implements BundleActivator {
-    private DeployManager deployManager;
-    private AALSpaceManager aalSpaceManager;
-    // JAXB
-    private JAXBContext jc;
-    private Unmarshaller unmarshaller;
-    private Marshaller marshaller;
+	private DeployManager deployManager;
+	private AALSpaceManager aalSpaceManager;
+	// JAXB
+	private JAXBContext jc;
+	private Unmarshaller unmarshaller;
+	private Marshaller marshaller;
 
-    private static String UAAP_FOLDER = "/home/pulz/distro/example-A/packager";
-    private static String UAAP_URI ="/home/pulz/distro/example-A/packager/config/Single Part App.uapp.xml";
+	private static String UAAP_FOLDER = "/home/pulz/distro/example-A/packager";
+	private static String UAAP_URI = "/home/pulz/distro/example-A/packager/config/Single Part App.uapp.xml";
 
-    private final static String USRV_ID = "111";
-    private final static String UAAP_ID = "prova";
+	private final static String USRV_ID = "111";
+	private final static String UAAP_ID = "prova";
 
-    private final static Object[] DEPLOY_MANAGER_FILTER = new Object[]{ DeployManager.class.getName().toString() };
-    private final static Object[] AAL_SPACE_FILTER = new Object[]{ AALSpaceManager.class.getName().toString() };
+	private final static Object[] DEPLOY_MANAGER_FILTER = new Object[] { DeployManager.class.getName().toString() };
+	private final static Object[] AAL_SPACE_FILTER = new Object[] { AALSpaceManager.class.getName().toString() };
 
-    private Object getObject(ModuleContext mc, Object[] filter) {
-        Object sr = null;
-        sr = mc.getContainer().fetchSharedObject(mc, filter );
-        return sr;
-    }
+	private Object getObject(ModuleContext mc, Object[] filter) {
+		Object sr = null;
+		sr = mc.getContainer().fetchSharedObject(mc, filter);
+		return sr;
+	}
 
-    private void initClient(ModuleContext mc) {
-        Object dm = getObject(mc, DEPLOY_MANAGER_FILTER );
-        Object aalSpace = getObject( mc, AAL_SPACE_FILTER );
-        if (dm != null && aalSpace != null) {
-            deployManager = (DeployManager) dm;
-            aalSpaceManager = (AALSpaceManager) aalSpace;
-        } else {
-            throw new IllegalStateException("Either Deploy Manger or AAL Space Mangar shared object are not available");
-        }
-    }
+	private void initClient(ModuleContext mc) {
+		Object dm = getObject(mc, DEPLOY_MANAGER_FILTER);
+		Object aalSpace = getObject(mc, AAL_SPACE_FILTER);
+		if (dm != null && aalSpace != null) {
+			deployManager = (DeployManager) dm;
+			aalSpaceManager = (AALSpaceManager) aalSpace;
+		} else {
+			throw new IllegalStateException("Either Deploy Manger or AAL Space Mangar shared object are not available");
+		}
+	}
 
-    public void start(BundleContext context) throws Exception {
-        ModuleContext mc = uAALBundleContainer.THE_CONTAINER
-                .registerModule(new Object[] { context });
+	public void start(BundleContext context) throws Exception {
+		ModuleContext mc = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
 
-        initClient(mc);
-        URI uAAPUri = null;
-        URI uAPPFolder = null;
-        String x = context.getProperty("uAAL.deploymanager.test.folder");
-        if ( x != null ){
-        	UAAP_FOLDER = x;
-        } 
-        context.getProperty("uAAL.deploymanager.test.uri");
-        if ( x != null ){
-        	UAAP_URI = x;
-        } 
-        try {
-            LogUtils.logInfo(mc, Activator.class, "start", "Using upacked folder"+UAAP_FOLDER);
-            uAPPFolder = new URI( "file", UAAP_FOLDER, null);
-            LogUtils.logInfo(mc, Activator.class, "start", "uApp XML file"+UAAP_URI);
-            uAAPUri = new URI( "file", UAAP_URI, null);
-        } catch (URISyntaxException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        Map<PeerCard, List<Part>> layout = new HashMap<PeerCard, List<Part> >();
-        ArrayList<PeerCard> peerList = new ArrayList<PeerCard>( aalSpaceManager.getPeers().values() );
-        peerList.add(aalSpaceManager.getMyPeerCard());
-        PeerCard[] peers = peerList.toArray(new PeerCard[]{});
-        HashMap<String, Serializable> peersFilter = new HashMap<String, Serializable>();
-        peersFilter.put("karaf.version", null);
-        MatchingResult matchingPeers = aalSpaceManager.getMatchingPeers(peersFilter);
-        peers = matchingPeers.getPeers();
-       
-        UAPPPackage pkg = new UAPPPackage(USRV_ID, UAAP_ID, uAPPFolder, layout);
-        InstallationResultsDetails result = deployManager.requestToInstall( pkg );
-        if ( result.getGlobalResult() != InstallationResults.SUCCESS ) {
-            throw new IllegalStateException("Failed to installe the uAAP with "+result);
-        }
-    }
+		initClient(mc);
+		URI uAAPUri = null;
+		URI uAPPFolder = null;
+		String x = context.getProperty("uAAL.deploymanager.test.folder");
+		if (x != null) {
+			UAAP_FOLDER = x;
+		}
+		context.getProperty("uAAL.deploymanager.test.uri");
+		if (x != null) {
+			UAAP_URI = x;
+		}
+		try {
+			LogUtils.logInfo(mc, Activator.class, "start", "Using upacked folder" + UAAP_FOLDER);
+			uAPPFolder = new URI("file", UAAP_FOLDER, null);
+			LogUtils.logInfo(mc, Activator.class, "start", "uApp XML file" + UAAP_URI);
+			uAAPUri = new URI("file", UAAP_URI, null);
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Map<PeerCard, List<Part>> layout = new HashMap<PeerCard, List<Part>>();
+		ArrayList<PeerCard> peerList = new ArrayList<PeerCard>(aalSpaceManager.getPeers().values());
+		peerList.add(aalSpaceManager.getMyPeerCard());
+		PeerCard[] peers = peerList.toArray(new PeerCard[] {});
+		HashMap<String, Serializable> peersFilter = new HashMap<String, Serializable>();
+		peersFilter.put("karaf.version", null);
+		MatchingResult matchingPeers = aalSpaceManager.getMatchingPeers(peersFilter);
+		peers = matchingPeers.getPeers();
 
-    public void stop(BundleContext context) throws Exception {
-        deployManager.requestToUninstall(USRV_ID, UAAP_ID);
-    }
+		UAPPPackage pkg = new UAPPPackage(USRV_ID, UAAP_ID, uAPPFolder, layout);
+		InstallationResultsDetails result = deployManager.requestToInstall(pkg);
+		if (result.getGlobalResult() != InstallationResults.SUCCESS) {
+			throw new IllegalStateException("Failed to installe the uAAP with " + result);
+		}
+	}
+
+	public void stop(BundleContext context) throws Exception {
+		deployManager.requestToUninstall(USRV_ID, UAAP_ID);
+	}
 
 }

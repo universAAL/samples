@@ -38,74 +38,70 @@ import org.universAAL.ontology.profile.User;
  * 
  */
 public class LocationContextPublisher {
-    public static final String NAMESPACE = "http://www.universAAL.org/Location.owl#";
-    public static final String SLEEPING_ROOM = NAMESPACE + "sleepingRoom";
-    public static final String LIVING_ROOM = NAMESPACE + "livingRoom";
-    public static final String BATHROOM = NAMESPACE + "bathroom";
-    public static final String KITCHEN = NAMESPACE + "kitchen";
-    public static final String HOBBY_ROOM = NAMESPACE + "hobbyRoom";
+	public static final String NAMESPACE = "http://www.universAAL.org/Location.owl#";
+	public static final String SLEEPING_ROOM = NAMESPACE + "sleepingRoom";
+	public static final String LIVING_ROOM = NAMESPACE + "livingRoom";
+	public static final String BATHROOM = NAMESPACE + "bathroom";
+	public static final String KITCHEN = NAMESPACE + "kitchen";
+	public static final String HOBBY_ROOM = NAMESPACE + "hobbyRoom";
 
-    public static ContextPublisher cp;
-    private static ModuleContext mc;
+	public static ContextPublisher cp;
+	private static ModuleContext mc;
 
-    private static ContextEventPattern[] getProvidedContextEvents() {
-	ContextEventPattern contextEventPattern = new ContextEventPattern();
-	contextEventPattern.addRestriction(MergedRestriction
-		.getAllValuesRestriction(ContextEvent.PROP_RDF_SUBJECT,
-			User.MY_URI));
-	contextEventPattern.addRestriction(MergedRestriction
-		.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-			User.PROP_PHYSICAL_LOCATION));
-	return new ContextEventPattern[] { contextEventPattern };
-    }
-
-    public LocationContextPublisher(ModuleContext moduleContext) {
-	LocationContextPublisher.mc = moduleContext;
-
-	ContextProvider info = new ContextProvider(NAMESPACE
-		+ "UserLocationContextProvider");
-	info.setType(ContextProviderType.reasoner);
-	info.setProvidedEvents(getProvidedContextEvents());
-
-	cp = new DefaultContextPublisher(moduleContext, info);
-
-    }
-
-    /**
-     * Publishes context event that informs us of user's location
-     * 
-     * @param typeOfUser
-     * 
-     * @param userUri
-     * @param roomFunction
-     */
-    public void publishLocation(TypeOfUser typeOfUser, String userUri,
-	    String locationUri) {
-
-	User user = null;
-
-	switch (typeOfUser) {
-	case ASSISTED_PERSON:
-	    user = new AssistedPerson(userUri);
-	    break;
-	case CAREGIVER:
-	    user = new Caregiver(userUri);
-	    break;
-	default:
-	    user = new User(userUri);
-	    break;
+	private static ContextEventPattern[] getProvidedContextEvents() {
+		ContextEventPattern contextEventPattern = new ContextEventPattern();
+		contextEventPattern
+				.addRestriction(MergedRestriction.getAllValuesRestriction(ContextEvent.PROP_RDF_SUBJECT, User.MY_URI));
+		contextEventPattern.addRestriction(MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
+				User.PROP_PHYSICAL_LOCATION));
+		return new ContextEventPattern[] { contextEventPattern };
 	}
 
-	Location location = new Location(locationUri);
+	public LocationContextPublisher(ModuleContext moduleContext) {
+		LocationContextPublisher.mc = moduleContext;
 
-	user.setLocation(location);
+		ContextProvider info = new ContextProvider(NAMESPACE + "UserLocationContextProvider");
+		info.setType(ContextProviderType.reasoner);
+		info.setProvidedEvents(getProvidedContextEvents());
 
-	cp.publish(new ContextEvent(user, User.PROP_PHYSICAL_LOCATION));
+		cp = new DefaultContextPublisher(moduleContext, info);
 
-	LogUtils.logInfo(mc, this.getClass(), "publishLocation",
-		new Object[] { "User: " + user.getURI()
-			+ " user.getLocation().getURI()-> "
-			+ user.getLocation().getURI() }, null);
-    }
+	}
+
+	/**
+	 * Publishes context event that informs us of user's location
+	 * 
+	 * @param typeOfUser
+	 * 
+	 * @param userUri
+	 * @param roomFunction
+	 */
+	public void publishLocation(TypeOfUser typeOfUser, String userUri, String locationUri) {
+
+		User user = null;
+
+		switch (typeOfUser) {
+		case ASSISTED_PERSON:
+			user = new AssistedPerson(userUri);
+			break;
+		case CAREGIVER:
+			user = new Caregiver(userUri);
+			break;
+		default:
+			user = new User(userUri);
+			break;
+		}
+
+		Location location = new Location(locationUri);
+
+		user.setLocation(location);
+
+		cp.publish(new ContextEvent(user, User.PROP_PHYSICAL_LOCATION));
+
+		LogUtils.logInfo(mc, this.getClass(), "publishLocation",
+				new Object[] {
+						"User: " + user.getURI() + " user.getLocation().getURI()-> " + user.getLocation().getURI() },
+				null);
+	}
 
 }

@@ -28,23 +28,22 @@ import org.universAAL.middleware.rdf.ResourceFactory;
  */
 public class TutorialFactory implements ResourceFactory {
 
-    public TutorialFactory() {
-    }
-
-    public Resource createInstance(String classURI, String instanceURI,
-	    int factoryIndex) {
-
-	switch (factoryIndex) {
-	case 0:
-	    return new Device(instanceURI);
-	case 1:
-	    return new Lamp(instanceURI);
-	case 2:
-	    return new DeviceService(instanceURI);
-	case 3:
-	    return new LampService(instanceURI);
+	public TutorialFactory() {
 	}
 
-	return null;
-    }
+	public Resource createInstance(String classURI, String instanceURI, int factoryIndex) {
+
+		switch (factoryIndex) {
+		case 0:
+			return new Device(instanceURI);
+		case 1:
+			return new Lamp(instanceURI);
+		case 2:
+			return new DeviceService(instanceURI);
+		case 3:
+			return new LampService(instanceURI);
+		}
+
+		return null;
+	}
 }

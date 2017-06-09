@@ -30,46 +30,46 @@ import org.universAAL.support.utils.service.mid.InvalidOntologyUtilException;
 import org.universAAL.support.utils.service.top.UtilActuatorCallee;
 
 //Service Callee uAAL wrapper for a typical actuator service with default profiles
-public class CalleeExample extends UtilActuatorCallee{
+public class CalleeExample extends UtilActuatorCallee {
 
-    // Extended constructor
-    public CalleeExample(ModuleContext context, String namespace,
-	    Actuator actuator) throws InvalidOntologyUtilException {
-	super(context, namespace, actuator);
-    }
-
-    // Called when GET STATUS profile is requested
-    @Override
-    public boolean executeGet() {
-	return Activator.heater.getValue().equals(StatusValue.Activated);
-    }
-
-    // Called when TURN OFF profile is requested
-    @Override
-    public boolean executeOff() {
-	// Turn off and send event only if not already off
-	if(!Activator.heater.getValue().equals(StatusValue.NotActivated)){
-	    Activator.heater.setValue(StatusValue.NotActivated);
-	    Activator.publisher.publish(new ContextEvent(Activator.heater,HeaterActuator.PROP_HAS_VALUE));
+	// Extended constructor
+	public CalleeExample(ModuleContext context, String namespace, Actuator actuator)
+			throws InvalidOntologyUtilException {
+		super(context, namespace, actuator);
 	}
-	return true;
-    }
 
-    // Called when TURN ON profile is requested
-    @Override
-    public boolean executeOn() {
-	// Turn on and send event only if not already on
-	if(!Activator.heater.getValue().equals(StatusValue.Activated)){
-	    Activator.heater.setValue(StatusValue.Activated);
-	    Activator.publisher.publish(new ContextEvent(Activator.heater,HeaterActuator.PROP_HAS_VALUE));
+	// Called when GET STATUS profile is requested
+	@Override
+	public boolean executeGet() {
+		return Activator.heater.getValue().equals(StatusValue.Activated);
 	}
-	return true;
-    }
 
-    @Override
-    public void communicationChannelBroken() {
-	// TODO Auto-generated method stub
-	
-    }
+	// Called when TURN OFF profile is requested
+	@Override
+	public boolean executeOff() {
+		// Turn off and send event only if not already off
+		if (!Activator.heater.getValue().equals(StatusValue.NotActivated)) {
+			Activator.heater.setValue(StatusValue.NotActivated);
+			Activator.publisher.publish(new ContextEvent(Activator.heater, HeaterActuator.PROP_HAS_VALUE));
+		}
+		return true;
+	}
+
+	// Called when TURN ON profile is requested
+	@Override
+	public boolean executeOn() {
+		// Turn on and send event only if not already on
+		if (!Activator.heater.getValue().equals(StatusValue.Activated)) {
+			Activator.heater.setValue(StatusValue.Activated);
+			Activator.publisher.publish(new ContextEvent(Activator.heater, HeaterActuator.PROP_HAS_VALUE));
+		}
+		return true;
+	}
+
+	@Override
+	public void communicationChannelBroken() {
+		// TODO Auto-generated method stub
+
+	}
 
 }

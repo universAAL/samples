@@ -25,13 +25,13 @@ import org.universAAL.middleware.owl.OntologyManagement;
 
 public class TutorialActivator implements ModuleActivator {
 
-    private TutorialOntology deviceOntology = new TutorialOntology();
+	private TutorialOntology deviceOntology = new TutorialOntology();
 
-    public void start(ModuleContext mc) throws Exception {
-	OntologyManagement.getInstance().register(mc, deviceOntology);
-    }
+	public void start(ModuleContext mc) throws Exception {
+		OntologyManagement.getInstance().register(mc, deviceOntology);
+	}
 
-    public void stop(ModuleContext mc) throws Exception {
-	OntologyManagement.getInstance().unregister(mc, deviceOntology);
-    }
+	public void stop(ModuleContext mc) throws Exception {
+		OntologyManagement.getInstance().unregister(mc, deviceOntology);
+	}
 }

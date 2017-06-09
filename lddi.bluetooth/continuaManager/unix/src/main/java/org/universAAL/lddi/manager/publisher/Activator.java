@@ -41,36 +41,36 @@ import org.universAAL.lddi.manager.gui.GUI;;
 // Main class
 public class Activator implements BundleActivator {
 
-	// Attributes    
+	// Attributes
 	/** Main GUI object */
-	private GUI gui = null;	
-	
+	private GUI gui = null;
+
 	/** Bundle context object */
-	private BundleContext ctx = null;	
-	
+	private BundleContext ctx = null;
+
 	// Methods
 	/** Start */
-	public void start(BundleContext context) throws Exception {	
-		ctx = context;	
+	public void start(BundleContext context) throws Exception {
+		ctx = context;
 		// Create and show main GUI frame
-		gui = new GUI(ctx);								
-		gui.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);			
-		gui.addWindowListener(new WindowAdapter() {				
+		gui = new GUI(ctx);
+		gui.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		gui.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				gui.stopGUI();
 				try {
 					ctx.getBundle().stop();
-				} catch (BundleException e1) {					
+				} catch (BundleException e1) {
 					e1.printStackTrace();
-				}				
+				}
 			}
 		});
 		gui.setVisible(true);
 	}
 
 	/** Stop */
-	public void stop(BundleContext arg0) throws Exception {		
-		gui.stopGUI();	
+	public void stop(BundleContext arg0) throws Exception {
+		gui.stopGUI();
 		ctx = null;
-	}	
+	}
 }

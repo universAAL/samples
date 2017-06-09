@@ -39,32 +39,30 @@ import org.universAAL.ontology.device.ValueDevice;
  */
 public class Activator implements ModuleActivator {
 
-    public void start(ModuleContext mc) throws Exception {
-	// Set up the context publisher by providing some information about
-	// ourselves. Especially, we need a URI that uniquely identifies this
-	// component and the provider type (one of: controller, gauge,
-	// reasoner).
-	ContextProvider provInfo = new ContextProvider(
-		"urn:org.universAAL.tutorial:tut.provider");
-	provInfo.setType(ContextProviderType.controller);
-	ContextPublisher cp = new DefaultContextPublisher(mc, provInfo);
+	public void start(ModuleContext mc) throws Exception {
+		// Set up the context publisher by providing some information about
+		// ourselves. Especially, we need a URI that uniquely identifies this
+		// component and the provider type (one of: controller, gauge,
+		// reasoner).
+		ContextProvider provInfo = new ContextProvider("urn:org.universAAL.tutorial:tut.provider");
+		provInfo.setType(ContextProviderType.controller);
+		ContextPublisher cp = new DefaultContextPublisher(mc, provInfo);
 
-	// Create a context event telling the system that the brightness of a
-	// light source has changed. According to the device ontology the event
-	// describes a triple of the form:
-	// LightActuator hasValue x
-	// In this example, the brightness of the kitchen light was dimmed to
-	// 100% (= the kitchen light was turned on)
-	ContextEvent evt = new ContextEvent(new LightActuator(
-		"urn:org.universAAL.aal_space:KitchenLight"),
-		ValueDevice.PROP_HAS_VALUE, 100);
-	cp.publish(evt);
+		// Create a context event telling the system that the brightness of a
+		// light source has changed. According to the device ontology the event
+		// describes a triple of the form:
+		// LightActuator hasValue x
+		// In this example, the brightness of the kitchen light was dimmed to
+		// 100% (= the kitchen light was turned on)
+		ContextEvent evt = new ContextEvent(new LightActuator("urn:org.universAAL.aal_space:KitchenLight"),
+				ValueDevice.PROP_HAS_VALUE, 100);
+		cp.publish(evt);
 
-	// Close our context publisher and free all resources. The publisher
-	// should be re-used if multiple events need to be published.
-	cp.close();
-    }
+		// Close our context publisher and free all resources. The publisher
+		// should be re-used if multiple events need to be published.
+		cp.close();
+	}
 
-    public void stop(ModuleContext arg0) throws Exception {
-    }
+	public void stop(ModuleContext arg0) throws Exception {
+	}
 }

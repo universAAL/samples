@@ -32,69 +32,64 @@ import org.universAAL.samples.lighting.server.Activator;
  * 
  */
 public class MyLighting {
-    private class Lamp {
-	String loc;
-	boolean isOn;
+	private class Lamp {
+		String loc;
+		boolean isOn;
 
-	Lamp(String loc, boolean isOn) {
-	    this.loc = loc;
-	    this.isOn = isOn;
+		Lamp(String loc, boolean isOn) {
+			this.loc = loc;
+			this.isOn = isOn;
+		}
 	}
-    }
 
-    private Lamp[] myLampDB = new Lamp[] { new Lamp("loc1", false),
-	    new Lamp("loc2", false), new Lamp("loc3", false),
-	    new Lamp("loc4", false) };
+	private Lamp[] myLampDB = new Lamp[] { new Lamp("loc1", false), new Lamp("loc2", false), new Lamp("loc3", false),
+			new Lamp("loc4", false) };
 
-    private ArrayList listeners = new ArrayList();
+	private ArrayList listeners = new ArrayList();
 
-    public MyLighting() {
-    }
-
-    public void addListener(LampStateListener l) {
-	listeners.add(l);
-    }
-
-    public int[] getLampIDs() {
-	int[] ids = new int[myLampDB.length];
-	for (int i = 0; i < myLampDB.length; i++)
-	    ids[i] = i;
-	return ids;
-    }
-
-    public String getLampLocation(int lampID) {
-	return myLampDB[lampID].loc;
-    }
-
-    public boolean isOn(int lampID) {
-	return myLampDB[lampID].isOn;
-    }
-
-    public void removeListener(LampStateListener l) {
-	listeners.remove(l);
-    }
-
-    public void turnOff(int lampID) {
-	if (myLampDB[lampID].isOn) {
-	    myLampDB[lampID].isOn = false;
-	    LogUtils.logInfo(Activator.mc, MyLighting.class, "turnOff",
-		    new Object[] { "Lamp in ", myLampDB[lampID].loc,
-			    " turned off!" }, null);
-	    for (Iterator i = listeners.iterator(); i.hasNext();)
-		((LampStateListener) i.next()).lampStateChanged(lampID,
-			myLampDB[lampID].loc, false);
+	public MyLighting() {
 	}
-    }
 
-    public void turnOn(int lampID) {
-	if (!myLampDB[lampID].isOn) {
-	    myLampDB[lampID].isOn = true;
-	    LogUtils.logInfo(Activator.mc, MyLighting.class, "turnOn",
-		    new Object[] { "Lamp in ", myLampDB[lampID].loc,
-			    " turned on!" }, null);
-	    for (Iterator i = listeners.iterator(); i.hasNext();)
-		((LampStateListener) i.next()).lampStateChanged(lampID,
-			myLampDB[lampID].loc, true);
+	public void addListener(LampStateListener l) {
+		listeners.add(l);
 	}
-    }
+
+	public int[] getLampIDs() {
+		int[] ids = new int[myLampDB.length];
+		for (int i = 0; i < myLampDB.length; i++)
+			ids[i] = i;
+		return ids;
+	}
+
+	public String getLampLocation(int lampID) {
+		return myLampDB[lampID].loc;
+	}
+
+	public boolean isOn(int lampID) {
+		return myLampDB[lampID].isOn;
+	}
+
+	public void removeListener(LampStateListener l) {
+		listeners.remove(l);
+	}
+
+	public void turnOff(int lampID) {
+		if (myLampDB[lampID].isOn) {
+			myLampDB[lampID].isOn = false;
+			LogUtils.logInfo(Activator.mc, MyLighting.class, "turnOff",
+					new Object[] { "Lamp in ", myLampDB[lampID].loc, " turned off!" }, null);
+			for (Iterator i = listeners.iterator(); i.hasNext();)
+				((LampStateListener) i.next()).lampStateChanged(lampID, myLampDB[lampID].loc, false);
+		}
+	}
+
+	public void turnOn(int lampID) {
+		if (!myLampDB[lampID].isOn) {
+			myLampDB[lampID].isOn = true;
+			LogUtils.logInfo(Activator.mc, MyLighting.class, "turnOn",
+					new Object[] { "Lamp in ", myLampDB[lampID].loc, " turned on!" }, null);
+			for (Iterator i = listeners.iterator(); i.hasNext();)
+				((LampStateListener) i.next()).lampStateChanged(lampID, myLampDB[lampID].loc, true);
+		}
+	}
 }

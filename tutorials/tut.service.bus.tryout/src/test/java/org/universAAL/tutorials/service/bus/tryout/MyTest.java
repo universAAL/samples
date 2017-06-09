@@ -36,67 +36,66 @@ import org.universAAL.ontology.unit.UnitOntology;
 
 public class MyTest extends MWTestCase {
 
-    MyServiceCallee callee;
-    ServiceCaller caller;
+	MyServiceCallee callee;
+	ServiceCaller caller;
 
-    @Override
-    protected void setUp() throws Exception {
-	// Initialization
-	super.setUp();
+	@Override
+	protected void setUp() throws Exception {
+		// Initialization
+		super.setUp();
 
-	// as we do not start the platform in a regular way, we have to register
-	// the required ontologies manually
-	OntologyManagement.getInstance().register(mc, new LocationOntology());
-	OntologyManagement.getInstance().register(mc, new ShapeOntology());
-	OntologyManagement.getInstance().register(mc, new PhThingOntology());
-	OntologyManagement.getInstance().register(mc, new UnitOntology());
-	OntologyManagement.getInstance()
-		.register(mc, new MeasurementOntology());
-	OntologyManagement.getInstance().register(mc, new DeviceOntology());
+		// as we do not start the platform in a regular way, we have to register
+		// the required ontologies manually
+		OntologyManagement.getInstance().register(mc, new LocationOntology());
+		OntologyManagement.getInstance().register(mc, new ShapeOntology());
+		OntologyManagement.getInstance().register(mc, new PhThingOntology());
+		OntologyManagement.getInstance().register(mc, new UnitOntology());
+		OntologyManagement.getInstance().register(mc, new MeasurementOntology());
+		OntologyManagement.getInstance().register(mc, new DeviceOntology());
 
-	callee = new MyServiceCallee(mc);
-	caller = new DefaultServiceCaller(mc);
+		callee = new MyServiceCallee(mc);
+		caller = new DefaultServiceCaller(mc);
 
-	// If you want to start the LogMonitor as well, add the following
-	// dependency to the pom file (adapt version number to latest):
-	// <dependency>
-	// <groupId>org.universAAL.tools</groupId>
-	// <artifactId>tools.log-monitor</artifactId>
-	// <version>3.4.1-SNAPSHOT</version>
-	// </dependency>
-	// and start it by uncommenting the following lines:
+		// If you want to start the LogMonitor as well, add the following
+		// dependency to the pom file (adapt version number to latest):
+		// <dependency>
+		// <groupId>org.universAAL.tools</groupId>
+		// <artifactId>tools.log-monitor</artifactId>
+		// <version>3.4.1-SNAPSHOT</version>
+		// </dependency>
+		// and start it by uncommenting the following lines:
 
-	// org.universAAL.tools.logmonitor.Activator lm = new
-	// org.universAAL.tools.logmonitor.Activator();
-	// org.universAAL.tools.logmonitor.Activator.mc = mc;
-	// lm.start();
-	// ((JUnitContainer) mc.getContainer())
-	// .registerLogListener(org.universAAL.tools.logmonitor.Activator.lm);
-	// org.universAAL.tools.logmonitor.service_bus_matching.LogMonitor.checkModule
-	// = false;
+		// org.universAAL.tools.logmonitor.Activator lm = new
+		// org.universAAL.tools.logmonitor.Activator();
+		// org.universAAL.tools.logmonitor.Activator.mc = mc;
+		// lm.start();
+		// ((JUnitContainer) mc.getContainer())
+		// .registerLogListener(org.universAAL.tools.logmonitor.Activator.lm);
+		// org.universAAL.tools.logmonitor.service_bus_matching.LogMonitor.checkModule
+		// = false;
 
-	System.out.println(" - JUnit Framework started -");
-    }
+		System.out.println(" - JUnit Framework started -");
+	}
 
-    /**
-     * This is our main method. You can change the request and the profile in
-     * {@link MyServiceCallee} as needed.
-     */
-    public void test() {
-	ServiceRequest turnOn = new ServiceRequest(new DeviceService(), null);
-	turnOn.addValueFilter(new String[] { DeviceService.PROP_CONTROLS },
-		new LightActuator("urn:org.universAAL.aal_space:KitchenLight"));
-	turnOn.addChangeEffect(new String[] { DeviceService.PROP_CONTROLS,
-		ValueDevice.PROP_HAS_VALUE }, new Integer(100));
-	caller.call(turnOn);
+	/**
+	 * This is our main method. You can change the request and the profile in
+	 * {@link MyServiceCallee} as needed.
+	 */
+	public void test() {
+		ServiceRequest turnOn = new ServiceRequest(new DeviceService(), null);
+		turnOn.addValueFilter(new String[] { DeviceService.PROP_CONTROLS },
+				new LightActuator("urn:org.universAAL.aal_space:KitchenLight"));
+		turnOn.addChangeEffect(new String[] { DeviceService.PROP_CONTROLS, ValueDevice.PROP_HAS_VALUE },
+				new Integer(100));
+		caller.call(turnOn);
 
-	// // an endless loop to investigate output in LogMonitor
-	// while (true) {
-	// try {
-	// Thread.sleep(1000);
-	// } catch (InterruptedException e) {
-	// e.printStackTrace();
-	// }
-	// }
-    }
+		// // an endless loop to investigate output in LogMonitor
+		// while (true) {
+		// try {
+		// Thread.sleep(1000);
+		// } catch (InterruptedException e) {
+		// e.printStackTrace();
+		// }
+		// }
+	}
 }

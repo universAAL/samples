@@ -28,49 +28,49 @@ import javax.swing.undo.UndoManager;
  * @author amedrano
  *
  */
-public class SparQLQueryPanel extends JPanel implements Runnable{
+public class SparQLQueryPanel extends JPanel implements Runnable {
 
-    private JTextArea query;
-    private JTextArea result;
+	private JTextArea query;
+	private JTextArea result;
 
-    /**
-     * Create the panel.
-     */
-    public SparQLQueryPanel() {
-    	setLayout(new BorderLayout(0, 0));
-    	
-    	JSplitPane splitPane = new JSplitPane();
-    	splitPane.setResizeWeight(0.5);
-    	splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
-    	add(splitPane, BorderLayout.CENTER);
-    	
-    	JScrollPane scrollPane = new JScrollPane();
-    	splitPane.setLeftComponent(scrollPane);
-    	
-    	query = new JTextArea();
-    	scrollPane.setViewportView(query);
-    	query.getDocument().addUndoableEditListener(new UndoManager());
-    	
-    	JScrollPane scrollPane_1 = new JScrollPane();
-    	splitPane.setRightComponent(scrollPane_1);
-    	
-    	result = new JTextArea();
-    	result.setEditable(false);
-    	scrollPane_1.setViewportView(result);
+	/**
+	 * Create the panel.
+	 */
+	public SparQLQueryPanel() {
+		setLayout(new BorderLayout(0, 0));
 
-    }
+		JSplitPane splitPane = new JSplitPane();
+		splitPane.setResizeWeight(0.5);
+		splitPane.setOrientation(JSplitPane.VERTICAL_SPLIT);
+		add(splitPane, BorderLayout.CENTER);
 
-    public void query(){
-	new Thread(this).start();
-    }
+		JScrollPane scrollPane = new JScrollPane();
+		splitPane.setLeftComponent(scrollPane);
 
-    /** {@ inheritDoc}	 */
-    public void run() {
-	String text = this.query.getText();
-	if (!text.isEmpty()) {
-	    	    String res = Activator.hcaller.callDoSPARQL(text);
-	    this.result.setText(res);
-	}	
-    }
-    
+		query = new JTextArea();
+		scrollPane.setViewportView(query);
+		query.getDocument().addUndoableEditListener(new UndoManager());
+
+		JScrollPane scrollPane_1 = new JScrollPane();
+		splitPane.setRightComponent(scrollPane_1);
+
+		result = new JTextArea();
+		result.setEditable(false);
+		scrollPane_1.setViewportView(result);
+
+	}
+
+	public void query() {
+		new Thread(this).start();
+	}
+
+	/** {@ inheritDoc} */
+	public void run() {
+		String text = this.query.getText();
+		if (!text.isEmpty()) {
+			String res = Activator.hcaller.callDoSPARQL(text);
+			this.result.setText(res);
+		}
+	}
+
 }

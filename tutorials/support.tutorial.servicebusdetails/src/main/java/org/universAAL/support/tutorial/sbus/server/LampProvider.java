@@ -28,31 +28,30 @@ import org.universAAL.middleware.service.owls.profile.ServiceProfile;
 
 public class LampProvider {
 
-    public LampProvider(ModuleContext mc) {
-	for (ServiceProfile prof : ProfileUtil.profiles) {
-	    // create a separate callee for each profile
-	    ServiceProfile[] profarr = new ServiceProfile[] { prof };
+	public LampProvider(ModuleContext mc) {
+		for (ServiceProfile prof : ProfileUtil.profiles) {
+			// create a separate callee for each profile
+			ServiceProfile[] profarr = new ServiceProfile[] { prof };
 
-	    new ServiceCallee(mc, profarr) {
-		@Override
-		public void communicationChannelBroken() {
+			new ServiceCallee(mc, profarr) {
+				@Override
+				public void communicationChannelBroken() {
+				}
+
+				@Override
+				public ServiceResponse handleCall(ServiceCall call) {
+					if (call == null)
+						return null;
+
+					String op = call.getProcessURI();
+					if (op == null)
+						return null;
+
+					System.out.println("Server received call for: " + op.substring(0, op.length() - 7));
+
+					return new ServiceResponse(CallStatus.succeeded);
+				}
+			};
 		}
-
-		@Override
-		public ServiceResponse handleCall(ServiceCall call) {
-		    if (call == null)
-			return null;
-
-		    String op = call.getProcessURI();
-		    if (op == null)
-			return null;
-
-		    System.out.println("Server received call for: "
-			    + op.substring(0, op.length() - 7));
-
-		    return new ServiceResponse(CallStatus.succeeded);
-		}
-	    };
 	}
-    }
 }

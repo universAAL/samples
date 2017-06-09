@@ -32,34 +32,33 @@ import org.universAAL.ontology.phThing.PhysicalThing;
  * 
  */
 public class Device extends PhysicalThing {
-    public static final String MY_URI = TutorialOntology.NAMESPACE + "Device";
+	public static final String MY_URI = TutorialOntology.NAMESPACE + "Device";
 
-    public Device() {
-	super();
-    }
+	public Device() {
+		super();
+	}
 
-    public Device(String uri) {
-	super(uri);
-    }
+	public Device(String uri) {
+		super(uri);
+	}
 
-    /** @see org.universAAL.middleware.owl.ManagedIndividual#getClassURI() */
-    public String getClassURI() {
-	return MY_URI;
-    }
+	/** @see org.universAAL.middleware.owl.ManagedIndividual#getClassURI() */
+	public String getClassURI() {
+		return MY_URI;
+	}
 
-    /**
-     * @see org.universAAL.middleware.owl.ManagedIndividual#getPropSerializationType
-     *      (java.lang.String)
-     */
-    public int getPropSerializationType(String propURI) {
-	return (PROP_PHYSICAL_LOCATION.equals(propURI)) ? PROP_SERIALIZATION_REDUCED
-		: PROP_SERIALIZATION_FULL;
-    }
+	/**
+	 * @see org.universAAL.middleware.owl.ManagedIndividual#getPropSerializationType
+	 *      (java.lang.String)
+	 */
+	public int getPropSerializationType(String propURI) {
+		return (PROP_PHYSICAL_LOCATION.equals(propURI)) ? PROP_SERIALIZATION_REDUCED : PROP_SERIALIZATION_FULL;
+	}
 
-    /**
-     * @see org.universAAL.middleware.owl.ManagedIndividual#isWellFormed()
-     */
-    public boolean isWellFormed() {
-	return props.containsKey(PROP_PHYSICAL_LOCATION);
-    }
+	/**
+	 * @see org.universAAL.middleware.owl.ManagedIndividual#isWellFormed()
+	 */
+	public boolean isWellFormed() {
+		return props.containsKey(PROP_PHYSICAL_LOCATION);
+	}
 }

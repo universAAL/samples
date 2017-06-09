@@ -34,51 +34,50 @@ import org.universAAL.ontology.location.indoor.Room;
 import org.universAAL.support.utils.context.mid.UtilPublisher;
 
 public class Activator implements BundleActivator {
-    // Declare constants
-    public static final String SERVER_NAMESPACE = "http://ontology.universAAL.org/SimpleLightServ.owl#";
-    private static final String PROVIDER_URI = SERVER_NAMESPACE+"MyProvider";
-    public static final String LIGHT_URI_PREFIX = SERVER_NAMESPACE + "MyLight";
-    private static final String LIGHT_LOC_PREFIX = SERVER_NAMESPACE + "MyLocation";
-    // OSGi & uAAL contexts
-    public static BundleContext osgiContext = null;
-    public static ModuleContext context = null;
-    // uAAL wrappers: Context Publisher and Service Callee
-    protected static UtilPublisher publisher;
-    protected static CalleeExample callee;
-    // The lights the app controls. It uses the ontology model directly but it could be any imaginable model.
-    protected static ArrayList<LightController> myLights=new ArrayList<LightController>(4);
-    
-    // Initialize the lights the app controls.
-    static {
-	for (int i = 0; i < 4; i++) {
-	    LightController light = new LightController(LIGHT_URI_PREFIX + i);
-	    light.setLocation(new Room(LIGHT_LOC_PREFIX + i));
-	    light.setValue(0);
-	    myLights.add(light);
+	// Declare constants
+	public static final String SERVER_NAMESPACE = "http://ontology.universAAL.org/SimpleLightServ.owl#";
+	private static final String PROVIDER_URI = SERVER_NAMESPACE + "MyProvider";
+	public static final String LIGHT_URI_PREFIX = SERVER_NAMESPACE + "MyLight";
+	private static final String LIGHT_LOC_PREFIX = SERVER_NAMESPACE + "MyLocation";
+	// OSGi & uAAL contexts
+	public static BundleContext osgiContext = null;
+	public static ModuleContext context = null;
+	// uAAL wrappers: Context Publisher and Service Callee
+	protected static UtilPublisher publisher;
+	protected static CalleeExample callee;
+	// The lights the app controls. It uses the ontology model directly but it
+	// could be any imaginable model.
+	protected static ArrayList<LightController> myLights = new ArrayList<LightController>(4);
+
+	// Initialize the lights the app controls.
+	static {
+		for (int i = 0; i < 4; i++) {
+			LightController light = new LightController(LIGHT_URI_PREFIX + i);
+			light.setLocation(new Room(LIGHT_LOC_PREFIX + i));
+			light.setValue(0);
+			myLights.add(light);
+		}
 	}
-    }
 
-    // Start the wrapping to uAAL
-    public void start(BundleContext bcontext) throws Exception {
-	// Get the uAAL module context
-	Activator.osgiContext = bcontext;
-	Activator.context = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { bcontext });
-	
-	// Register the Context Publisher as controller and to send events about light brightness
-	publisher = new UtilPublisher(context, PROVIDER_URI,
-		ContextProviderType.controller, 
-		LightController.MY_URI, 
-		LightController.PROP_HAS_VALUE,
-		TypeMapper.getDatatypeURI(Integer.class));
-	// Register the Service Callee. The provided services are defined therein.
-	callee = new CalleeExample(context);
-    }
+	// Start the wrapping to uAAL
+	public void start(BundleContext bcontext) throws Exception {
+		// Get the uAAL module context
+		Activator.osgiContext = bcontext;
+		Activator.context = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
-    // Stop the wrapping to uAAL
-    public void stop(BundleContext arg0) throws Exception {
-	callee.close();
-	publisher.close();
-    }
+		// Register the Context Publisher as controller and to send events about
+		// light brightness
+		publisher = new UtilPublisher(context, PROVIDER_URI, ContextProviderType.controller, LightController.MY_URI,
+				LightController.PROP_HAS_VALUE, TypeMapper.getDatatypeURI(Integer.class));
+		// Register the Service Callee. The provided services are defined
+		// therein.
+		callee = new CalleeExample(context);
+	}
+
+	// Stop the wrapping to uAAL
+	public void stop(BundleContext arg0) throws Exception {
+		callee.close();
+		publisher.close();
+	}
 
 }

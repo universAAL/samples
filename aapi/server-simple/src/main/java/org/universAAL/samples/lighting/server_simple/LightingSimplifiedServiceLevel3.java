@@ -29,7 +29,6 @@ import org.universAAL.samples.lighting.server_simple.unit_impl.MyLighting;
  * @author dzmuda
  * @author mpsiuk
  */
-public class LightingSimplifiedServiceLevel3 extends MyLighting implements
-	LightingInterfaceLevel3 {
+public class LightingSimplifiedServiceLevel3 extends MyLighting implements LightingInterfaceLevel3 {
 
 }

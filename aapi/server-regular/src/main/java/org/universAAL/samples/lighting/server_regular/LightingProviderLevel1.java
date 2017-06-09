@@ -35,107 +35,97 @@ import org.universAAL.ontology.lighting.simple.LightingServerURIs;
 
 public class LightingProviderLevel1 extends ServiceCallee {
 
-    // this is just to prepare a standard error message for later use
-    private static final ServiceResponse invalidInput = new ServiceResponse(
-	    CallStatus.serviceSpecificFailure);
-    static {
-	invalidInput.addOutput(new ProcessOutput(
-		ServiceResponse.PROP_SERVICE_SPECIFIC_ERROR, "Invalid input!"));
-    }
+	// this is just to prepare a standard error message for later use
+	private static final ServiceResponse invalidInput = new ServiceResponse(CallStatus.serviceSpecificFailure);
+	static {
+		invalidInput.addOutput(new ProcessOutput(ServiceResponse.PROP_SERVICE_SPECIFIC_ERROR, "Invalid input!"));
+	}
 
-    private MyLightingOntologified ontologifiedServer;
+	private MyLightingOntologified ontologifiedServer;
 
-    public LightingProviderLevel1(ModuleContext context) {
-	super(context, ProvidedLightingServiceLevel1.profiles);
-	ontologifiedServer = new MyLightingOntologified(LightingServerURIs.NAMESPACE);
-    }
+	public LightingProviderLevel1(ModuleContext context) {
+		super(context, ProvidedLightingServiceLevel1.profiles);
+		ontologifiedServer = new MyLightingOntologified(LightingServerURIs.NAMESPACE);
+	}
 
+	public ServiceResponse handleCall(ServiceCall call) {
+		if (call == null)
+			return null;
 
-    public ServiceResponse handleCall(ServiceCall call) {
-	if (call == null)
-	    return null;
+		String operation = call.getProcessURI();
+		if (operation == null)
+			return null;
 
-	String operation = call.getProcessURI();
-	if (operation == null)
-	    return null;
+		if (operation.startsWith(LightingServerURIs.GetControlledLamps.URI))
+			return getControlledLamps();
 
-	if (operation.startsWith(LightingServerURIs.GetControlledLamps.URI))
-	    return getControlledLamps();
+		LightSource input = (LightSource) call.getInputValue(LightingServerURIs.GetLampInfo.Input.LAMP_URI);
+		if (input == null)
+			return null;
 
-	LightSource input = (LightSource) call
-		.getInputValue(LightingServerURIs.GetLampInfo.Input.LAMP_URI);
-	if (input == null)
-	    return null;
+		if (operation.startsWith(LightingServerURIs.GetLampInfo.URI))
+			return getLampInfo(input);
 
-	if (operation.startsWith(LightingServerURIs.GetLampInfo.URI))
-	    return getLampInfo(input);
+		if (operation.startsWith(LightingServerURIs.TurnOff.URI))
+			return turnOff(input);
 
-	if (operation.startsWith(LightingServerURIs.TurnOff.URI))
-	    return turnOff(input);
+		if (operation.startsWith(LightingServerURIs.TurnOn.URI))
+			return turnOn(input);
 
-	if (operation.startsWith(LightingServerURIs.TurnOn.URI))
-	    return turnOn(input);
+		return null;
+	}
 
-	return null;
-    }
-
-    // create a service response that including all available light sources
-    private ServiceResponse getControlledLamps() {
-    	AapiServiceResponse sr = new AapiServiceResponse(CallStatus.succeeded);
-	List al = new ArrayList(Arrays.asList(ontologifiedServer.getControlledLamps()));
-	// allow output even if not specified in service profile
-	sr.allowUnboundOutput();
-
-	sr.addOutput(new ProcessOutput(
-		LightingServerURIs.GetControlledLamps.Output.CONTROLLED_LAMPS,
-		al));
-	return sr;
-    }
-
-    // create a service response with informations about the available lights
-    private ServiceResponse getLampInfo(LightSource lamp) {
-	try {
+	// create a service response that including all available light sources
+	private ServiceResponse getControlledLamps() {
 		AapiServiceResponse sr = new AapiServiceResponse(CallStatus.succeeded);
-	    Object lampInfo[] = ontologifiedServer.getLampInfo(lamp);
-	    // allow output even if not specified in service profile
-	    sr.allowUnboundOutput();
-	    // create and add a ProcessOutput-Event that binds the output URI to
-	    // the state of the lamp
-	    sr.addOutput(new ProcessOutput(
-		    LightingServerURIs.GetLampInfo.Output.LAMP_BRIGHTNESS,
-		    lampInfo[0]));
-	    // create and add a ProcessOutput-Event that binds the output URI to
-	    // the location of the lamp
-	    sr.addOutput(new ProcessOutput(
-		    LightingServerURIs.GetLampInfo.Output.LAMP_LOCATION,
-		    lampInfo[1]));
-	    return sr;
-	} catch (Exception e) {
-	    return invalidInput;
-	}
-    }
+		List al = new ArrayList(Arrays.asList(ontologifiedServer.getControlledLamps()));
+		// allow output even if not specified in service profile
+		sr.allowUnboundOutput();
 
-    // Simple use the turnOff method from the ProvidedLightingService
-    private ServiceResponse turnOff(LightSource lamp) {
-	try {
-	    ontologifiedServer.turnOff(lamp);
-	    return new ServiceResponse(CallStatus.succeeded);
-	} catch (Exception e) {
-	    return invalidInput;
+		sr.addOutput(new ProcessOutput(LightingServerURIs.GetControlledLamps.Output.CONTROLLED_LAMPS, al));
+		return sr;
 	}
-    }
 
-    // Simple use the turnOn method from the ProvidedLightingService
-    private ServiceResponse turnOn(LightSource lamp) {
-	try {
-	    ontologifiedServer.turnOn(lamp);
-	    return new ServiceResponse(CallStatus.succeeded);
-	} catch (Exception e) {
-	    return invalidInput;
+	// create a service response with informations about the available lights
+	private ServiceResponse getLampInfo(LightSource lamp) {
+		try {
+			AapiServiceResponse sr = new AapiServiceResponse(CallStatus.succeeded);
+			Object lampInfo[] = ontologifiedServer.getLampInfo(lamp);
+			// allow output even if not specified in service profile
+			sr.allowUnboundOutput();
+			// create and add a ProcessOutput-Event that binds the output URI to
+			// the state of the lamp
+			sr.addOutput(new ProcessOutput(LightingServerURIs.GetLampInfo.Output.LAMP_BRIGHTNESS, lampInfo[0]));
+			// create and add a ProcessOutput-Event that binds the output URI to
+			// the location of the lamp
+			sr.addOutput(new ProcessOutput(LightingServerURIs.GetLampInfo.Output.LAMP_LOCATION, lampInfo[1]));
+			return sr;
+		} catch (Exception e) {
+			return invalidInput;
+		}
 	}
-    }
 
-    public void communicationChannelBroken() {
-    }
+	// Simple use the turnOff method from the ProvidedLightingService
+	private ServiceResponse turnOff(LightSource lamp) {
+		try {
+			ontologifiedServer.turnOff(lamp);
+			return new ServiceResponse(CallStatus.succeeded);
+		} catch (Exception e) {
+			return invalidInput;
+		}
+	}
+
+	// Simple use the turnOn method from the ProvidedLightingService
+	private ServiceResponse turnOn(LightSource lamp) {
+		try {
+			ontologifiedServer.turnOn(lamp);
+			return new ServiceResponse(CallStatus.succeeded);
+		} catch (Exception e) {
+			return invalidInput;
+		}
+	}
+
+	public void communicationChannelBroken() {
+	}
 
 }

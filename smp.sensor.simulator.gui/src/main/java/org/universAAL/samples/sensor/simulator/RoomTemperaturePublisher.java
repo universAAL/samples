@@ -36,64 +36,54 @@ import org.universAAL.ontology.device.TemperatureSensor;
  */
 public class RoomTemperaturePublisher {
 
-    public static final String NAMESPACE = TemperatureSensor.MY_URI;
+	public static final String NAMESPACE = TemperatureSensor.MY_URI;
 
-    public static final String SLEEPING_ROOM_TEMP_SENSOR = NAMESPACE
-	    + "sleepingRoomTemperatureSensor";
-    public static final String LIVING_ROOM_TEMP_SENSOR = NAMESPACE
-	    + "livingRoomTemperatureSensor";
-    public static final String BATHROOM_TEMP_SENSOR = NAMESPACE
-	    + "bathroomTemperatureSensor";
-    public static final String KITCHEN_TEMP_SENSOR = NAMESPACE
-	    + "kitchenTemperatureSensor";
-    public static final String HOBBY_ROOM_TEMP_SENSOR = NAMESPACE
-	    + "hobbyRoomTemperatureSensor";
+	public static final String SLEEPING_ROOM_TEMP_SENSOR = NAMESPACE + "sleepingRoomTemperatureSensor";
+	public static final String LIVING_ROOM_TEMP_SENSOR = NAMESPACE + "livingRoomTemperatureSensor";
+	public static final String BATHROOM_TEMP_SENSOR = NAMESPACE + "bathroomTemperatureSensor";
+	public static final String KITCHEN_TEMP_SENSOR = NAMESPACE + "kitchenTemperatureSensor";
+	public static final String HOBBY_ROOM_TEMP_SENSOR = NAMESPACE + "hobbyRoomTemperatureSensor";
 
-    public static ContextPublisher myContextPublisher;
-    public static ModuleContext myModuleContext;
+	public static ContextPublisher myContextPublisher;
+	public static ModuleContext myModuleContext;
 
-    /**
-     * Constructor Here we set ContextEventPattern and add restrictions to it
-     * that tell universAAL platform which infofmation we want to recieve
-     * 
-     * @param context
-     */
-    protected RoomTemperaturePublisher(ModuleContext context) {
+	/**
+	 * Constructor Here we set ContextEventPattern and add restrictions to it
+	 * that tell universAAL platform which infofmation we want to recieve
+	 * 
+	 * @param context
+	 */
+	protected RoomTemperaturePublisher(ModuleContext context) {
 
-	RoomTemperaturePublisher.myModuleContext = context;
+		RoomTemperaturePublisher.myModuleContext = context;
 
-	ContextProvider myContextProvider = new ContextProvider(NAMESPACE
-		+ "roomTemperatureContextProvider");
+		ContextProvider myContextProvider = new ContextProvider(NAMESPACE + "roomTemperatureContextProvider");
 
-	ContextEventPattern myContextEventPattern = new ContextEventPattern();
+		ContextEventPattern myContextEventPattern = new ContextEventPattern();
 
-	myContextEventPattern.addRestriction(MergedRestriction
-		.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-			TemperatureSensor.PROP_HAS_VALUE));
+		myContextEventPattern.addRestriction(MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
+				TemperatureSensor.PROP_HAS_VALUE));
 
-	myContextEventPattern.addRestriction(MergedRestriction
-		.getAllValuesRestriction(ContextEvent.PROP_RDF_SUBJECT,
-			TemperatureSensor.MY_URI));
+		myContextEventPattern.addRestriction(
+				MergedRestriction.getAllValuesRestriction(ContextEvent.PROP_RDF_SUBJECT, TemperatureSensor.MY_URI));
 
-	ContextEventPattern[] contextEventPatterns = new ContextEventPattern[] { myContextEventPattern };
+		ContextEventPattern[] contextEventPatterns = new ContextEventPattern[] { myContextEventPattern };
 
-	myContextProvider.setType(ContextProviderType.controller);
-	myContextProvider.setProvidedEvents(contextEventPatterns);
-	myContextPublisher = new DefaultContextPublisher(context,
-		myContextProvider);
-    }
+		myContextProvider.setType(ContextProviderType.controller);
+		myContextProvider.setProvidedEvents(contextEventPatterns);
+		myContextPublisher = new DefaultContextPublisher(context, myContextProvider);
+	}
 
-    /**
-     * Publish ContextEvent connected to temperatureSensor parameter
-     * 
-     * @param temperatureSensor
-     */
-    public void publishContextEvent(TemperatureSensor temperatureSensor) {
+	/**
+	 * Publish ContextEvent connected to temperatureSensor parameter
+	 * 
+	 * @param temperatureSensor
+	 */
+	public void publishContextEvent(TemperatureSensor temperatureSensor) {
 
-	ContextEvent myContextEvent = new ContextEvent(temperatureSensor,
-		TemperatureSensor.PROP_HAS_VALUE);
+		ContextEvent myContextEvent = new ContextEvent(temperatureSensor, TemperatureSensor.PROP_HAS_VALUE);
 
-	myContextPublisher.publish(myContextEvent);
-    }
+		myContextPublisher.publish(myContextEvent);
+	}
 
 }

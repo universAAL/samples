@@ -39,17 +39,17 @@ import org.universAAL.ontology.activityhub.TemperatureSensor;
 import org.universAAL.ontology.activityhub.UsageSensor;
 
 /**
- * Instantiates several ActivityHub devices according to config.
- * Starts the context publisher thread.
+ * Instantiates several ActivityHub devices according to config. Starts the
+ * context publisher thread.
  * 
  * @author Thomas Fuxreiter (foex@gmx.at)
  */
 public class AHSimulator implements ManagedService {
-	
+
 	private BundleContext context;
 	private ModuleContext mc;
 	private LogService logger;
-//	private static ActivityHubFactory factory = new ActivityHubFactory();
+	// private static ActivityHubFactory factory = new ActivityHubFactory();
 	private Thread simulaotrThread;
 
 	// properties
@@ -68,8 +68,8 @@ public class AHSimulator implements ManagedService {
 	public List<TemperatureSensor> tempSensors = new ArrayList<TemperatureSensor>();
 
 	// big sensor list
-//	List<ActivityHubSensor> mySensorCollection = new ArrayList<ActivityHubSensor>();
-
+	// List<ActivityHubSensor> mySensorCollection = new
+	// ArrayList<ActivityHubSensor>();
 
 	public AHSimulator(BundleContext context, LogService logger, ModuleContext mc) {
 		this.context = context;
@@ -78,16 +78,14 @@ public class AHSimulator implements ManagedService {
 
 		this.registerManagedService();
 	}
-    
+
 	/***
 	 * Register this class as Managed Service
 	 */
 	private void registerManagedService() {
 		Dictionary propManagedService = new Properties();
-		propManagedService.put(Constants.SERVICE_PID, this.context.getBundle()
-				.getSymbolicName());
-		this.context.registerService(ManagedService.class.getName(), this,
-				propManagedService);
+		propManagedService.put(Constants.SERVICE_PID, this.context.getBundle().getSymbolicName());
+		this.context.registerService(ManagedService.class.getName(), this, propManagedService);
 	}
 
 	/**
@@ -96,47 +94,47 @@ public class AHSimulator implements ManagedService {
 	private void initSimulator() {
 		// create motion sensor devices from ontology
 		for (int i = 1; i <= numberOfMotionSensors; i++) {
-	    	String instanceURI = "ActivityHubMotionSensor" + i;
-	    	MotionSensor ms = new MotionSensor(instanceURI);
+			String instanceURI = "ActivityHubMotionSensor" + i;
+			MotionSensor ms = new MotionSensor(instanceURI);
 			motionSensors.add(ms);
 		}
 		this.logger.log(LogService.LOG_INFO, "MotionSensors created: " + this.motionSensors.size());
 
 		// create contact closure sensor devices from ontology
 		for (int i = 1; i <= numberOfContactClosureSensors; i++) {
-	    	String instanceURI = "ActivityHubContactClosureSensor" + i;
-	    	ContactClosureSensor ms = new ContactClosureSensor(instanceURI);
-	    	contactClosureSensors.add(ms);
+			String instanceURI = "ActivityHubContactClosureSensor" + i;
+			ContactClosureSensor ms = new ContactClosureSensor(instanceURI);
+			contactClosureSensors.add(ms);
 		}
 		this.logger.log(LogService.LOG_INFO, "ContactClosureSensors created: " + this.contactClosureSensors.size());
 
 		// create usage sensor devices from ontology
 		for (int i = 1; i <= numberOfUsageSensors; i++) {
-	    	String instanceURI = "ActivityHubUsageSensor" + i;
-	    	UsageSensor ms = new UsageSensor(instanceURI);
-	    	usageSensors.add(ms);
+			String instanceURI = "ActivityHubUsageSensor" + i;
+			UsageSensor ms = new UsageSensor(instanceURI);
+			usageSensors.add(ms);
 		}
 		this.logger.log(LogService.LOG_INFO, "UsageSensors created: " + this.usageSensors.size());
 
 		// create switch sensor devices from ontology
 		for (int i = 1; i <= numberOfSwitchSensors; i++) {
-	    	String instanceURI = "ActivityHubSwitchSensor" + i;
-	    	SwitchSensor ms = new SwitchSensor(instanceURI);
-	    	switchSensors.add(ms);
+			String instanceURI = "ActivityHubSwitchSensor" + i;
+			SwitchSensor ms = new SwitchSensor(instanceURI);
+			switchSensors.add(ms);
 		}
 		this.logger.log(LogService.LOG_INFO, "SwitchSensors created: " + this.switchSensors.size());
 
 		// create temp sensor devices from ontology
 		for (int i = 1; i <= numberOfTempSensors; i++) {
-	    	String instanceURI = "ActivityHubTempSensor" + i;
-	    	TemperatureSensor ms = new TemperatureSensor(instanceURI);
-	    	tempSensors.add(ms);
+			String instanceURI = "ActivityHubTempSensor" + i;
+			TemperatureSensor ms = new TemperatureSensor(instanceURI);
+			tempSensors.add(ms);
 		}
 		this.logger.log(LogService.LOG_INFO, "TempSensors created: " + this.tempSensors.size());
 
-//		this.logger.log(LogService.LOG_INFO, "Created a list of "
-//				+ this.mySensorCollection.size()
-//				+ " ActivityHubSensors for simulation");
+		// this.logger.log(LogService.LOG_INFO, "Created a list of "
+		// + this.mySensorCollection.size()
+		// + " ActivityHubSensors for simulation");
 
 		// // fill overall sensor collection
 		// mySensorCollection.add(motionSensors);
@@ -147,7 +145,6 @@ public class AHSimulator implements ManagedService {
 
 	}
 
-	
 	/**
 	 * Start context publisher simulator thread
 	 */
@@ -158,52 +155,37 @@ public class AHSimulator implements ManagedService {
 		simulaotrThread.start();
 	}
 
-	
 	public LogService getLogger() {
 		return this.logger;
 	}
 
-
 	/**
 	 * Get updated from ConfigurationAdmin.
 	 */
-	public void updated(@SuppressWarnings("unchecked") Dictionary properties)
-			throws ConfigurationException {
-		this.logger.log(LogService.LOG_INFO, "AHSimulator.updated: "
-				+ properties);
+	public void updated(@SuppressWarnings("unchecked") Dictionary properties) throws ConfigurationException {
+		this.logger.log(LogService.LOG_INFO, "AHSimulator.updated: " + properties);
 
 		try {
 			if (properties != null) {
-				this.setNumberOfMotionSensors(Integer
-						.valueOf((String) properties
-								.get("numberOfMotionSensors")));
-				this.setNumberOfContactClosureSensors(Integer
-						.valueOf((String) properties
-								.get("numberOfContactClosureSensors")));
-				this.setNumberOfUsageSensors(Integer
-						.valueOf((String) properties
-								.get("numberOfUsageSensors")));
-				this.setNumberOfSwitchSensors(Integer
-						.valueOf((String) properties
-								.get("numberOfSwitchSensors")));
-				this.setNumberOfTempSensors(Integer.valueOf((String) properties
-						.get("numberOfTempSensors")));
-				this.setEventIntervall(Integer.valueOf((String) properties
-						.get("eventInterval")));
+				this.setNumberOfMotionSensors(Integer.valueOf((String) properties.get("numberOfMotionSensors")));
+				this.setNumberOfContactClosureSensors(
+						Integer.valueOf((String) properties.get("numberOfContactClosureSensors")));
+				this.setNumberOfUsageSensors(Integer.valueOf((String) properties.get("numberOfUsageSensors")));
+				this.setNumberOfSwitchSensors(Integer.valueOf((String) properties.get("numberOfSwitchSensors")));
+				this.setNumberOfTempSensors(Integer.valueOf((String) properties.get("numberOfTempSensors")));
+				this.setEventIntervall(Integer.valueOf((String) properties.get("eventInterval")));
 
 				// init simulator devices
 				initSimulator();
-				
+
 				// activate simulation publisher
 				startSimulator();
 
 			} else {
-				this.logger.log(LogService.LOG_ERROR,
-						"Property file for ActivityHub Simulator not found!");
+				this.logger.log(LogService.LOG_ERROR, "Property file for ActivityHub Simulator not found!");
 			}
 		} catch (NumberFormatException nfe) {
-			this.logger.log(LogService.LOG_ERROR, "NumberFormatException\n"
-					+ nfe.getMessage());
+			this.logger.log(LogService.LOG_ERROR, "NumberFormatException\n" + nfe.getMessage());
 		}
 	}
 
@@ -211,8 +193,7 @@ public class AHSimulator implements ManagedService {
 	 * @param numberOfContactClosureSensors
 	 *            the numberOfContactClosureSensors to set
 	 */
-	public void setNumberOfContactClosureSensors(
-			int numberOfContactClosureSensors) {
+	public void setNumberOfContactClosureSensors(int numberOfContactClosureSensors) {
 		this.numberOfContactClosureSensors = numberOfContactClosureSensors;
 	}
 
@@ -298,7 +279,6 @@ public class AHSimulator implements ManagedService {
 		return eventIntervall;
 	}
 
-	
 	/**
 	 * Runnable helper class for access to running servers/threads.
 	 * 
@@ -306,7 +286,7 @@ public class AHSimulator implements ManagedService {
 	 */
 	private class MyThread implements Runnable {
 		AHSimulator ahSimulator;
-		
+
 		public MyThread(AHSimulator ahSimulator) {
 			this.ahSimulator = ahSimulator;
 		}

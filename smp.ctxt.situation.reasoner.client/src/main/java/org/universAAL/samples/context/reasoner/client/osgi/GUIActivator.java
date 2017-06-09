@@ -26,22 +26,22 @@ import org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller;
 import org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller;
 
 public class GUIActivator {
-    public static ReasoningCaller scaller = null;
-    public static ReasoningGUI gui = null;
-    public static CHECaller cheCaller = null;
+	public static ReasoningCaller scaller = null;
+	public static ReasoningGUI gui = null;
+	public static CHECaller cheCaller = null;
 
-    GUIActivator(BundleContext osgiContext, ModuleContext context) {
-	scaller = new ReasoningCaller();
-	gui = new ReasoningGUI(scaller);
-	cheCaller = new CHECaller(context);
-    }
+	GUIActivator(BundleContext osgiContext, ModuleContext context) {
+		scaller = new ReasoningCaller();
+		gui = new ReasoningGUI(scaller);
+		cheCaller = new CHECaller(context);
+	}
 
-    public void stop() throws Exception {
-	scaller.unregister();
-	scaller = null;
-	gui.close();
-	gui = null;
-	cheCaller.close();
-	cheCaller = null;
-    }
+	public void stop() throws Exception {
+		scaller.unregister();
+		scaller = null;
+		gui.close();
+		gui = null;
+		cheCaller.close();
+		cheCaller = null;
+	}
 }

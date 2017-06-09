@@ -42,23 +42,22 @@ import org.universAAL.middleware.container.osgi.uAALBundleContainer;
  * 
  */
 public class Activator implements BundleActivator {
-    public static ModuleContext context = null;
-    private GUIActivator gui = null;
-    
-    public static File dataHome;
+	public static ModuleContext context = null;
+	private GUIActivator gui = null;
 
-    public void start(BundleContext bcontext) throws Exception {
-	Activator.context = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { bcontext });
+	public static File dataHome;
 
-	dataHome = context.getDataFolder();
-	
-	new UAALInterfaceActivator(bcontext, context);
-	gui = new GUIActivator(bcontext, context);
-    }
+	public void start(BundleContext bcontext) throws Exception {
+		Activator.context = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
-    public void stop(BundleContext arg0) throws Exception {
-	Activator.context = null;
-	gui.stop();
-    }
+		dataHome = context.getDataFolder();
+
+		new UAALInterfaceActivator(bcontext, context);
+		gui = new GUIActivator(bcontext, context);
+	}
+
+	public void stop(BundleContext arg0) throws Exception {
+		Activator.context = null;
+		gui.stop();
+	}
 }

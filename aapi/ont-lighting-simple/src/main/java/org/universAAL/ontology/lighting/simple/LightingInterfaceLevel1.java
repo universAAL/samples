@@ -36,31 +36,28 @@ import org.universAAL.ontology.phThing.PhysicalThing;
 @OntologyClasses(value = { Lighting.class })
 public interface LightingInterfaceLevel1 {
 
-    public final static String namespace = "http://ontology.igd.fhg.de/LightingServer.owl#";
-    
-    @ServiceOperation(value = "getControlledLamps")
-    @Output(name = "controlledLamps", propertyPaths = { Lighting.PROP_CONTROLS })
-    public LightSource[] getControlledLamps();
+	public final static String namespace = "http://ontology.igd.fhg.de/LightingServer.owl#";
 
-    @ServiceOperation
-    @Outputs(value = {
-	    @Output(name = "brightness", filteringClass = Integer.class, propertyPaths = {
-		    Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS }),
-	    @Output(name = "location", filteringClass = Location.class, propertyPaths = {
-		    Lighting.PROP_CONTROLS, PhysicalThing.PROP_PHYSICAL_LOCATION }) })
-    public Object[] getLampInfo(
-	    @Input(name = "lampURI", propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
+	@ServiceOperation(value = "getControlledLamps")
+	@Output(name = "controlledLamps", propertyPaths = { Lighting.PROP_CONTROLS })
+	public LightSource[] getControlledLamps();
 
-    @ServiceOperation
-    @ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS },
-	    value = "0", valueType = Integer.class)
-    public void turnOff(
-	    @Input(name = "lampURI", propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
+	@ServiceOperation
+	@Outputs(value = {
+			@Output(name = "brightness", filteringClass = Integer.class, propertyPaths = { Lighting.PROP_CONTROLS,
+					LightSource.PROP_SOURCE_BRIGHTNESS }),
+			@Output(name = "location", filteringClass = Location.class, propertyPaths = { Lighting.PROP_CONTROLS,
+					PhysicalThing.PROP_PHYSICAL_LOCATION }) })
+	public Object[] getLampInfo(@Input(name = "lampURI", propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
 
-    @ServiceOperation
-    @ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS },
-	    value = "100", valueType = Integer.class)
-    public void turnOn(
-	    @Input(name = "lampURI", propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
-    
+	@ServiceOperation
+	@ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS,
+			LightSource.PROP_SOURCE_BRIGHTNESS }, value = "0", valueType = Integer.class)
+	public void turnOff(@Input(name = "lampURI", propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
+
+	@ServiceOperation
+	@ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS,
+			LightSource.PROP_SOURCE_BRIGHTNESS }, value = "100", valueType = Integer.class)
+	public void turnOn(@Input(name = "lampURI", propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
+
 }

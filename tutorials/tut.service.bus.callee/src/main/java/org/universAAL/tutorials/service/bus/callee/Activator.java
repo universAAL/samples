@@ -32,28 +32,28 @@ import org.universAAL.middleware.container.ModuleContext;
  */
 public class Activator implements ModuleActivator {
 
-    public static ModuleContext mc;
-    private MyServiceCallee callee = null;
+	public static ModuleContext mc;
+	private MyServiceCallee callee = null;
 
-    /**
-     * This method is called by the framework to start the module.
-     */
-    public void start(ModuleContext mc) throws Exception {
-	Activator.mc = mc;
-	if (callee == null) {
-	    // create our service callee
-	    callee = new MyServiceCallee(mc);
+	/**
+	 * This method is called by the framework to start the module.
+	 */
+	public void start(ModuleContext mc) throws Exception {
+		Activator.mc = mc;
+		if (callee == null) {
+			// create our service callee
+			callee = new MyServiceCallee(mc);
+		}
 	}
-    }
 
-    /**
-     * This method is called by the framework to stop the module.
-     */
-    public void stop(ModuleContext arg0) throws Exception {
-	if (callee != null) {
-	    // close our service callee and free all resources
-	    callee.close();
-	    callee = null;
+	/**
+	 * This method is called by the framework to stop the module.
+	 */
+	public void stop(ModuleContext arg0) throws Exception {
+		if (callee != null) {
+			// close our service callee and free all resources
+			callee.close();
+			callee = null;
+		}
 	}
-    }
 }

@@ -31,33 +31,31 @@ import org.universAAL.ontology.lighting.simple.LightingServerURIs;
  */
 public class Activator implements BundleActivator {
 
-    public static ModuleContext mc;
-    
-    /** Prefix of lamp URIs */
-    public static final String LAMP_URI_PREFIX = LightingServerURIs.NAMESPACE
-	    + "controlledLamp";
-    
-    /** Prefix of locaion URIs */
-    public static final String LOCATION_URI_PREFIX = "urn:aal_space:myHome#";    
+	public static ModuleContext mc;
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext
-     * )
-     */
-    public void start(final BundleContext context) throws Exception {
-	mc = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { context });
-    }
+	/** Prefix of lamp URIs */
+	public static final String LAMP_URI_PREFIX = LightingServerURIs.NAMESPACE + "controlledLamp";
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
-     */
-    public void stop(BundleContext context) throws Exception {
-    }
+	/** Prefix of locaion URIs */
+	public static final String LOCATION_URI_PREFIX = "urn:aal_space:myHome#";
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext
+	 * )
+	 */
+	public void start(final BundleContext context) throws Exception {
+		mc = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
+	 */
+	public void stop(BundleContext context) throws Exception {
+	}
 }

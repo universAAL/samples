@@ -36,63 +36,60 @@ import org.universAAL.ontology.location.Location;
 import org.universAAL.support.utils.context.mid.UtilPublisher;
 
 public class Activator implements BundleActivator {
-    // Declare constants
-    public static final String APP_NAMESPACE = "http://ontology.universAAL.org/SimpleApp.owl#";
-    public static final String APP_URL = "http://www.samples.org";
-    public static final String APP_NAME = "Heater App Example";
-    private static final String PROVIDER_URI = APP_NAMESPACE+"MyProvider";
-    private static final String HEATER_URI = APP_NAMESPACE+"MyHeater";
-    private static final String LOCATION_URI = APP_NAMESPACE+"LivingRoom";
-    public static final Float THERMOSTAT = 14f;
-    // OSGi & uAAL contexts
-    public static BundleContext osgiContext = null;
-    public static ModuleContext context = null;
-    // uAAL wrappers: All
-    protected static UtilPublisher publisher;
-    protected static CalleeExample callee;
-    protected static ServiceCaller caller;
-    protected static SubscriberExample subscriber;
-    protected static UIExample ui;
-    // The heater the app controls. It uses the ontology model directly but it could be any imaginable model.
-    protected static HeaterActuator heater;
-    
-    // Initialize the heater the app controls.
-    static{
-	heater=new HeaterActuator(HEATER_URI);
-	heater.setLocation(new Location(LOCATION_URI));
-	heater.setValue(StatusValue.NotActivated);
-    }
+	// Declare constants
+	public static final String APP_NAMESPACE = "http://ontology.universAAL.org/SimpleApp.owl#";
+	public static final String APP_URL = "http://www.samples.org";
+	public static final String APP_NAME = "Heater App Example";
+	private static final String PROVIDER_URI = APP_NAMESPACE + "MyProvider";
+	private static final String HEATER_URI = APP_NAMESPACE + "MyHeater";
+	private static final String LOCATION_URI = APP_NAMESPACE + "LivingRoom";
+	public static final Float THERMOSTAT = 14f;
+	// OSGi & uAAL contexts
+	public static BundleContext osgiContext = null;
+	public static ModuleContext context = null;
+	// uAAL wrappers: All
+	protected static UtilPublisher publisher;
+	protected static CalleeExample callee;
+	protected static ServiceCaller caller;
+	protected static SubscriberExample subscriber;
+	protected static UIExample ui;
+	// The heater the app controls. It uses the ontology model directly but it
+	// could be any imaginable model.
+	protected static HeaterActuator heater;
 
-    // Start the wrapping to uAAL
-    public void start(BundleContext bcontext) throws Exception {
-	// Get the uAAL module context
-	Activator.osgiContext = bcontext;
-	Activator.context = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { bcontext });
+	// Initialize the heater the app controls.
+	static {
+		heater = new HeaterActuator(HEATER_URI);
+		heater.setLocation(new Location(LOCATION_URI));
+		heater.setValue(StatusValue.NotActivated);
+	}
 
-	// Register the Context Publisher as controller and to send events
-	publisher = new UtilPublisher(context, PROVIDER_URI,
-		ContextProviderType.controller, HeaterActuator.MY_URI,
-		HeaterActuator.PROP_HAS_VALUE,
-		TypeMapper.getDatatypeURI(Boolean.class));
-	// Create a default Service Caller. Not used yet, though
-	caller = new DefaultServiceCaller(context);
-	// Register the Service Callee as a typical actuator service
-	callee = new CalleeExample(context, APP_NAMESPACE, heater);
-	// Register the UI Caller and add its button to Main Menu
-	ui = new UIExample(context, APP_NAMESPACE, APP_URL, APP_NAME);
-	// Register the Context Subscriber to receive temperature events
-	subscriber = new SubscriberExample(context, TemperatureSensor.MY_URI,
-		TemperatureSensor.PROP_HAS_VALUE, null);
-    }
+	// Start the wrapping to uAAL
+	public void start(BundleContext bcontext) throws Exception {
+		// Get the uAAL module context
+		Activator.osgiContext = bcontext;
+		Activator.context = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
-    // Stop the wrapping to uAAL
-    public void stop(BundleContext arg0) throws Exception {
-	subscriber.close();
-	ui.close();
-	callee.close();
-	caller.close();
-	publisher.close();
-    }
+		// Register the Context Publisher as controller and to send events
+		publisher = new UtilPublisher(context, PROVIDER_URI, ContextProviderType.controller, HeaterActuator.MY_URI,
+				HeaterActuator.PROP_HAS_VALUE, TypeMapper.getDatatypeURI(Boolean.class));
+		// Create a default Service Caller. Not used yet, though
+		caller = new DefaultServiceCaller(context);
+		// Register the Service Callee as a typical actuator service
+		callee = new CalleeExample(context, APP_NAMESPACE, heater);
+		// Register the UI Caller and add its button to Main Menu
+		ui = new UIExample(context, APP_NAMESPACE, APP_URL, APP_NAME);
+		// Register the Context Subscriber to receive temperature events
+		subscriber = new SubscriberExample(context, TemperatureSensor.MY_URI, TemperatureSensor.PROP_HAS_VALUE, null);
+	}
+
+	// Stop the wrapping to uAAL
+	public void stop(BundleContext arg0) throws Exception {
+		subscriber.close();
+		ui.close();
+		callee.close();
+		caller.close();
+		publisher.close();
+	}
 
 }

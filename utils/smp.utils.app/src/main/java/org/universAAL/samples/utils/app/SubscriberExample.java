@@ -26,32 +26,31 @@ import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.support.utils.context.mid.UtilSubscriber;
 
 // Context Subscriber uAAL wrapper
-public class SubscriberExample extends UtilSubscriber{
+public class SubscriberExample extends UtilSubscriber {
 
-    // Extended constructor
-    protected SubscriberExample(ModuleContext context, String subjTypeURI,
-	    String predicate, String objTypeURI) {
-	super(context, subjTypeURI, predicate, objTypeURI);
-    }
-
-    // Called when received events
-    @Override
-    public void handleContextEvent(ContextEvent event) {
-	Float temp=(Float)event.getRDFObject();
-	if(temp < Activator.THERMOSTAT){
-	    // Turn on heater and tell the user
-	    Activator.callee.executeOn();
-	    Activator.ui.showMessage();
-	}else{
-	    // Turn off heater and tell the user
-	    Activator.callee.executeOff();
-	    Activator.ui.showMessage();
+	// Extended constructor
+	protected SubscriberExample(ModuleContext context, String subjTypeURI, String predicate, String objTypeURI) {
+		super(context, subjTypeURI, predicate, objTypeURI);
 	}
-    }
-    
-    @Override
-    public void communicationChannelBroken() {
-	// TODO Auto-generated method stub
-    }
+
+	// Called when received events
+	@Override
+	public void handleContextEvent(ContextEvent event) {
+		Float temp = (Float) event.getRDFObject();
+		if (temp < Activator.THERMOSTAT) {
+			// Turn on heater and tell the user
+			Activator.callee.executeOn();
+			Activator.ui.showMessage();
+		} else {
+			// Turn off heater and tell the user
+			Activator.callee.executeOff();
+			Activator.ui.showMessage();
+		}
+	}
+
+	@Override
+	public void communicationChannelBroken() {
+		// TODO Auto-generated method stub
+	}
 
 }

@@ -34,22 +34,22 @@ import org.universAAL.ontology.lighting.Lighting;
 @OntologyClasses(value = { Lighting.class })
 public interface LightingInterfaceLevel2 {
 
-    public final static String namespace = "http://ontology.igd.fhg.de/LightingServer.owl#";
+	public final static String namespace = "http://ontology.igd.fhg.de/LightingServer.owl#";
 
-    @ServiceOperation
-    public LightSource[] getControlledLamps();
+	@ServiceOperation
+	public LightSource[] getControlledLamps();
 
-    @ServiceOperation
-    @Outputs(value = { @Output(name = "brightness"), @Output(name = "location") })
-    public Object[] getLampInfo(@Input(name = "lampURI") LightSource lamp);
+	@ServiceOperation
+	@Outputs(value = { @Output(name = "brightness"), @Output(name = "location") })
+	public Object[] getLampInfo(@Input(name = "lampURI") LightSource lamp);
 
-    @ServiceOperation
-    @ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS },
-	    value = "0", valueType = Integer.class)
-    public void turnOff(@Input(name = "lampURI") LightSource lamp);
+	@ServiceOperation
+	@ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS,
+			LightSource.PROP_SOURCE_BRIGHTNESS }, value = "0", valueType = Integer.class)
+	public void turnOff(@Input(name = "lampURI") LightSource lamp);
 
-    @ServiceOperation
-    @ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS },
-	    value = "100", valueType = Integer.class)
-    public void turnOn(@Input(name = "lampURI") LightSource lamp);
+	@ServiceOperation
+	@ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS,
+			LightSource.PROP_SOURCE_BRIGHTNESS }, value = "100", valueType = Integer.class)
+	public void turnOn(@Input(name = "lampURI") LightSource lamp);
 }

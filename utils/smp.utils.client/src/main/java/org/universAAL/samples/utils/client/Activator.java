@@ -30,38 +30,38 @@ import org.universAAL.middleware.service.ServiceCaller;
 import org.universAAL.ontology.device.LightController;
 
 public class Activator implements BundleActivator {
-    // Declare constants
-    public static final String CLIENT_NAMESPACE = "http://ontology.universAAL.org/SimpleLightClient.owl#";
-    public static final String CLIENT_URL = "http://www.samples.org";
-    public static final String CLIENT_APPNAME = "Lighting Client Example";
-    // OSGi & uAAL contexts
-    public static BundleContext osgiContext = null;
-    public static ModuleContext context = null;
-    // uAAL wrappers: Service Caller, Context Subscriber and UI Caller
-    protected static ServiceCaller caller;
-    protected static SubscriberExample subscriber;
-    protected static UIExample ui;
+	// Declare constants
+	public static final String CLIENT_NAMESPACE = "http://ontology.universAAL.org/SimpleLightClient.owl#";
+	public static final String CLIENT_URL = "http://www.samples.org";
+	public static final String CLIENT_APPNAME = "Lighting Client Example";
+	// OSGi & uAAL contexts
+	public static BundleContext osgiContext = null;
+	public static ModuleContext context = null;
+	// uAAL wrappers: Service Caller, Context Subscriber and UI Caller
+	protected static ServiceCaller caller;
+	protected static SubscriberExample subscriber;
+	protected static UIExample ui;
 
-    // Start the wrapping to uAAL
-    public void start(BundleContext bcontext) throws Exception {
-	// Get the uAAL module context
-	Activator.osgiContext = bcontext;
-	Activator.context = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { bcontext });
+	// Start the wrapping to uAAL
+	public void start(BundleContext bcontext) throws Exception {
+		// Get the uAAL module context
+		Activator.osgiContext = bcontext;
+		Activator.context = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
-	// Create a default Service Caller, enough to send service calls
-	caller = new DefaultServiceCaller(context);
-	// Register the UI Caller and add its button to Main Menu
-	ui = new UIExample(context, CLIENT_NAMESPACE, CLIENT_URL, CLIENT_APPNAME);
-	// Register the Context Subscriber to receive events about light brightness
-	subscriber = new SubscriberExample(context, LightController.MY_URI, LightController.PROP_HAS_VALUE, null);
-    }
+		// Create a default Service Caller, enough to send service calls
+		caller = new DefaultServiceCaller(context);
+		// Register the UI Caller and add its button to Main Menu
+		ui = new UIExample(context, CLIENT_NAMESPACE, CLIENT_URL, CLIENT_APPNAME);
+		// Register the Context Subscriber to receive events about light
+		// brightness
+		subscriber = new SubscriberExample(context, LightController.MY_URI, LightController.PROP_HAS_VALUE, null);
+	}
 
-    // Stop the wrapping to uAAL
-    public void stop(BundleContext arg0) throws Exception {
-	subscriber.close();
-	ui.close();
-	caller.close();
-    }
+	// Stop the wrapping to uAAL
+	public void stop(BundleContext arg0) throws Exception {
+		subscriber.close();
+		ui.close();
+		caller.close();
+	}
 
 }

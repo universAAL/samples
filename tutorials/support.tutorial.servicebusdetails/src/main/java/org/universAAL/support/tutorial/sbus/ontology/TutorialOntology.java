@@ -37,49 +37,44 @@ import org.universAAL.ontology.phThing.PhysicalThing;
  */
 public final class TutorialOntology extends Ontology {
 
-    private static TutorialFactory factory = new TutorialFactory();;
+	private static TutorialFactory factory = new TutorialFactory();;
 
-    public static final String NAMESPACE = "http://ontology.universaal.org/Tutorial.owl#";
+	public static final String NAMESPACE = "http://ontology.universaal.org/Tutorial.owl#";
 
-    public TutorialOntology() {
-	super(NAMESPACE);
-    }
+	public TutorialOntology() {
+		super(NAMESPACE);
+	}
 
-    public void create() {
-	Resource r = getInfo();
-	r.setResourceComment("Tutorial ontology with device and lamp.");
-	r.setResourceLabel("Tutorial ontology");
-	addImport(DataRepOntology.NAMESPACE);
-	addImport(ServiceBusOntology.NAMESPACE);
-	addImport(LocationOntology.NAMESPACE);
+	public void create() {
+		Resource r = getInfo();
+		r.setResourceComment("Tutorial ontology with device and lamp.");
+		r.setResourceLabel("Tutorial ontology");
+		addImport(DataRepOntology.NAMESPACE);
+		addImport(ServiceBusOntology.NAMESPACE);
+		addImport(LocationOntology.NAMESPACE);
 
-	OntClassInfoSetup oci;
+		OntClassInfoSetup oci;
 
-	// load Device
-	oci = createNewOntClassInfo(Device.MY_URI, factory, 0);
-	oci.addSuperClass(PhysicalThing.MY_URI);
+		// load Device
+		oci = createNewOntClassInfo(Device.MY_URI, factory, 0);
+		oci.addSuperClass(PhysicalThing.MY_URI);
 
-	// load Lamp
-	oci = createNewOntClassInfo(Lamp.MY_URI, factory, 1);
-	oci.addSuperClass(Device.MY_URI);
-	oci.addDatatypeProperty(Lamp.PROP_SOURCE_BRIGHTNESS).setFunctional();
-	oci.addRestriction(MergedRestriction
-		.getAllValuesRestrictionWithCardinality(
-			Lamp.PROP_SOURCE_BRIGHTNESS, new IntRestriction(
-				new Integer(0), true, new Integer(100), true),
-			1, 1));
+		// load Lamp
+		oci = createNewOntClassInfo(Lamp.MY_URI, factory, 1);
+		oci.addSuperClass(Device.MY_URI);
+		oci.addDatatypeProperty(Lamp.PROP_SOURCE_BRIGHTNESS).setFunctional();
+		oci.addRestriction(MergedRestriction.getAllValuesRestrictionWithCardinality(Lamp.PROP_SOURCE_BRIGHTNESS,
+				new IntRestriction(new Integer(0), true, new Integer(100), true), 1, 1));
 
-	// load DeviceService
-	oci = createNewOntClassInfo(DeviceService.MY_URI, factory, 2);
-	oci.addSuperClass(Service.MY_URI);
-	oci.addObjectProperty(DeviceService.PROP_CONTROLS);
-	oci.addRestriction(MergedRestriction.getAllValuesRestriction(
-		DeviceService.PROP_CONTROLS, Device.MY_URI));
+		// load DeviceService
+		oci = createNewOntClassInfo(DeviceService.MY_URI, factory, 2);
+		oci.addSuperClass(Service.MY_URI);
+		oci.addObjectProperty(DeviceService.PROP_CONTROLS);
+		oci.addRestriction(MergedRestriction.getAllValuesRestriction(DeviceService.PROP_CONTROLS, Device.MY_URI));
 
-	// load LampService
-	oci = createNewOntClassInfo(LampService.MY_URI, factory, 3);
-	oci.addSuperClass(DeviceService.MY_URI);
-	oci.addRestriction(MergedRestriction.getAllValuesRestriction(
-		DeviceService.PROP_CONTROLS, Lamp.MY_URI));
-    }
+		// load LampService
+		oci = createNewOntClassInfo(LampService.MY_URI, factory, 3);
+		oci.addSuperClass(DeviceService.MY_URI);
+		oci.addRestriction(MergedRestriction.getAllValuesRestriction(DeviceService.PROP_CONTROLS, Lamp.MY_URI));
+	}
 }

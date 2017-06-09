@@ -34,68 +34,63 @@ import org.universAAL.ontology.lighting.simple.LightingSimplified;
  */
 public class ProvidedLightingServiceLevel3 extends LightingSimplified {
 
-    static final ServiceProfile[] profiles = new ServiceProfile[4];
+	static final ServiceProfile[] profiles = new ServiceProfile[4];
 
-    static {
-	// we need to register all classes in the ontology for the serialization
-	// of the object
-	OntologyManagement.getInstance().register(Activator.mc,
-		new SimpleOntology(MY_URI, LightingSimplified.MY_URI,
-			new ResourceFactory() {
-			    public Resource createInstance(String classURI,
-				    String instanceURI, int factoryIndex) {
-				return new ProvidedLightingServiceLevel3(
-					instanceURI);
-			    }
-			}));
+	static {
+		// we need to register all classes in the ontology for the serialization
+		// of the object
+		OntologyManagement.getInstance().register(Activator.mc,
+				new SimpleOntology(MY_URI, LightingSimplified.MY_URI, new ResourceFactory() {
+					public Resource createInstance(String classURI, String instanceURI, int factoryIndex) {
+						return new ProvidedLightingServiceLevel3(instanceURI);
+					}
+				}));
 
-	/*
-	 * create the service description #1 to be registered with the service
-	 * bus
-	 */
+		/*
+		 * create the service description #1 to be registered with the service
+		 * bus
+		 */
 
-	// Create the service-object for retrieving the controlled light bulbs
-	ProvidedLightingServiceLevel3 getControlledLamps = new ProvidedLightingServiceLevel3(
-		LightingServerURIs.GetControlledLamps.URI);
-	profiles[0] = getControlledLamps.myProfile;
+		// Create the service-object for retrieving the controlled light bulbs
+		ProvidedLightingServiceLevel3 getControlledLamps = new ProvidedLightingServiceLevel3(
+				LightingServerURIs.GetControlledLamps.URI);
+		profiles[0] = getControlledLamps.myProfile;
 
-	/*
-	 * create the service description #2 to be registered with the service
-	 * bus
-	 */
+		/*
+		 * create the service description #2 to be registered with the service
+		 * bus
+		 */
 
-	// Create the service-object for retrieving info about the location and
-	// state of each controlled light bulb
-	ProvidedLightingServiceLevel3 getLampInfo = new ProvidedLightingServiceLevel3(
-		LightingServerURIs.GetLampInfo.URI);
-	profiles[1] = getLampInfo.myProfile;
+		// Create the service-object for retrieving info about the location and
+		// state of each controlled light bulb
+		ProvidedLightingServiceLevel3 getLampInfo = new ProvidedLightingServiceLevel3(
+				LightingServerURIs.GetLampInfo.URI);
+		profiles[1] = getLampInfo.myProfile;
 
-	/*
-	 * create the service description #3 to be registered with the service
-	 * bus
-	 */
+		/*
+		 * create the service description #3 to be registered with the service
+		 * bus
+		 */
 
-	// Create the service-object for turning off each controlled light bulb
-	ProvidedLightingServiceLevel3 turnOff = new ProvidedLightingServiceLevel3(
-		LightingServerURIs.TurnOff.URI);
-	profiles[2] = turnOff.myProfile;
+		// Create the service-object for turning off each controlled light bulb
+		ProvidedLightingServiceLevel3 turnOff = new ProvidedLightingServiceLevel3(LightingServerURIs.TurnOff.URI);
+		profiles[2] = turnOff.myProfile;
 
-	/*
-	 * create the service description #4 to be registered with the service
-	 * bus
-	 */
+		/*
+		 * create the service description #4 to be registered with the service
+		 * bus
+		 */
 
-	// Create the service-object for turning on each controlled light bulb
-	ProvidedLightingServiceLevel3 turnOn = new ProvidedLightingServiceLevel3(
-		LightingServerURIs.TurnOn.URI);
-	profiles[3] = turnOn.myProfile;
-    }
+		// Create the service-object for turning on each controlled light bulb
+		ProvidedLightingServiceLevel3 turnOn = new ProvidedLightingServiceLevel3(LightingServerURIs.TurnOn.URI);
+		profiles[3] = turnOn.myProfile;
+	}
 
-    private ProvidedLightingServiceLevel3(String uri) {
-	super(uri);
-    }
+	private ProvidedLightingServiceLevel3(String uri) {
+		super(uri);
+	}
 
-    public String getClassURI() {
-	return MY_URI;
-    }
+	public String getClassURI() {
+		return MY_URI;
+	}
 }

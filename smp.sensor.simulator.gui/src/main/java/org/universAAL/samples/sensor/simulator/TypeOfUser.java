@@ -20,14 +20,14 @@ package org.universAAL.samples.sensor.simulator;
 
 public enum TypeOfUser {
 
-    DEFAULT_USER(1), ASSISTED_PERSON(2), CAREGIVER(3);
+	DEFAULT_USER(1), ASSISTED_PERSON(2), CAREGIVER(3);
 
-    @SuppressWarnings("unused")
-    private int userType;
+	@SuppressWarnings("unused")
+	private int userType;
 
-    private TypeOfUser(int userType) {
+	private TypeOfUser(int userType) {
 
-	this.userType = userType;
-    }
+		this.userType = userType;
+	}
 
 }

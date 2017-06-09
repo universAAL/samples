@@ -23,25 +23,25 @@ package org.universAAL.ontology.lighting.simple;
 import org.universAAL.middleware.service.owl.Service;
 
 /**
- * Ontological service that handles light sources. 
+ * Ontological service that handles light sources.
  * 
  * @author mtazari
  * @author mpsiuk
  * 
  */
 public class LightingSimplified extends Service {
-    public static final String MY_URI = LightingOntologySimplified.NAMESPACE + "Lighting";
+	public static final String MY_URI = LightingOntologySimplified.NAMESPACE + "Lighting";
 
-    public LightingSimplified() {
-	super();
-    }
+	public LightingSimplified() {
+		super();
+	}
 
-    public LightingSimplified(String uri) {
-	super(uri);
-    }
-    
-    public String getClassURI() {
-	return MY_URI;
-    }
+	public LightingSimplified(String uri) {
+		super(uri);
+	}
+
+	public String getClassURI() {
+		return MY_URI;
+	}
 
 }

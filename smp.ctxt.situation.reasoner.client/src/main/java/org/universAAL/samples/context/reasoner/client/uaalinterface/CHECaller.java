@@ -49,133 +49,111 @@ import org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivato
  * 
  */
 public class CHECaller extends ServiceCaller {
-    private static final String HISTORY_CLIENT_NAMESPACE = "http://ontology.itaca.es/Reasoner.owl#";
-    private static final String OUTPUT_RESULT_STRING = HISTORY_CLIENT_NAMESPACE
-	    + "resultString";
-    private static final String GENERIC_EVENT = "urn:org.universAAL.middleware.context.rdf:ContextEvent#_:0000000000000000:00";
+	private static final String HISTORY_CLIENT_NAMESPACE = "http://ontology.itaca.es/Reasoner.owl#";
+	private static final String OUTPUT_RESULT_STRING = HISTORY_CLIENT_NAMESPACE + "resultString";
+	private static final String GENERIC_EVENT = "urn:org.universAAL.middleware.context.rdf:ContextEvent#_:0000000000000000:00";
 
-    public CHECaller(ModuleContext context) {
-	super(context);
-    }
-
-    public void communicationChannelBroken() {
-    }
-
-    public void handleResponse(String reqID, ServiceResponse response) {
-    }
-
-    /**
-     * Execute a SPARQL CONSTRUCT query on the CHE that will return a reasoned
-     * event. That event will be published.
-     * 
-     * @param theQuery
-     *            The SPARQL CONSTRUCT query
-     */
-    public ContextEvent executeQuery(String theQuery) {
-	String query = theQuery.replace(
-		GENERIC_EVENT,
-		ContextEvent.CONTEXT_EVENT_URI_PREFIX
-			+ StringUtils.createUniqueID());
-	String ser = callDoSPARQL(query);
-	if (!ser.isEmpty()) {
-	    ContextEvent event = (ContextEvent) UAALInterfaceActivator.serializer
-		    .deserialize(ser);
-	    event.setTimestamp(new Long(System.currentTimeMillis()));
-	    return event;
+	public CHECaller(ModuleContext context) {
+		super(context);
 	}
-	return null;
-    }
 
-    /**
-     * Call the CHE service
-     * 
-     * @param query
-     *            The CONSTRUCT query
-     * @return Serialized event constructed
-     */
-    public String callDoSPARQL(String query) {
-	ServiceResponse response = this.call(getDoSPARQLRequest(query));
-	if (response.getCallStatus() == CallStatus.succeeded) {
-	    try {
-		String results = (String) getReturnValue(response.getOutputs(),
-			OUTPUT_RESULT_STRING);
-		return results;
-	    } catch (Exception e) {
-		LogUtils.logInfo(Activator.context, CHECaller.class,
-			"callDoSPARQL",
-			new Object[] { "History Client: Result corrupt!" }, e);
+	public void communicationChannelBroken() {
+	}
+
+	public void handleResponse(String reqID, ServiceResponse response) {
+	}
+
+	/**
+	 * Execute a SPARQL CONSTRUCT query on the CHE that will return a reasoned
+	 * event. That event will be published.
+	 * 
+	 * @param theQuery
+	 *            The SPARQL CONSTRUCT query
+	 */
+	public ContextEvent executeQuery(String theQuery) {
+		String query = theQuery.replace(GENERIC_EVENT,
+				ContextEvent.CONTEXT_EVENT_URI_PREFIX + StringUtils.createUniqueID());
+		String ser = callDoSPARQL(query);
+		if (!ser.isEmpty()) {
+			ContextEvent event = (ContextEvent) UAALInterfaceActivator.serializer.deserialize(ser);
+			event.setTimestamp(new Long(System.currentTimeMillis()));
+			return event;
+		}
+		return null;
+	}
+
+	/**
+	 * Call the CHE service
+	 * 
+	 * @param query
+	 *            The CONSTRUCT query
+	 * @return Serialized event constructed
+	 */
+	public String callDoSPARQL(String query) {
+		ServiceResponse response = this.call(getDoSPARQLRequest(query));
+		if (response.getCallStatus() == CallStatus.succeeded) {
+			try {
+				String results = (String) getReturnValue(response.getOutputs(), OUTPUT_RESULT_STRING);
+				return results;
+			} catch (Exception e) {
+				LogUtils.logInfo(Activator.context, CHECaller.class, "callDoSPARQL",
+						new Object[] { "History Client: Result corrupt!" }, e);
+				return "";
+			}
+		} else
+			LogUtils.logInfo(Activator.context, CHECaller.class, "callDoSPARQL",
+					new Object[] { "History Client - status of doSparqlQuery(): " + response.getCallStatus() }, null);
 		return "";
-	    }
-	} else
-	    LogUtils.logInfo(
-		    Activator.context,
-		    CHECaller.class,
-		    "callDoSPARQL",
-		    new Object[] { "History Client - status of doSparqlQuery(): "
-			    + response.getCallStatus() }, null);
-	return "";
-    }
+	}
 
-    /**
-     * Prepare the call for CHE
-     * 
-     * @param query
-     *            The CONSTRUCT query
-     * @return The request for the call
-     */
-    private ServiceRequest getDoSPARQLRequest(String query) {
-	ServiceRequest getQuery = new ServiceRequest(new ContextHistoryService(
-		null), null);
+	/**
+	 * Prepare the call for CHE
+	 * 
+	 * @param query
+	 *            The CONSTRUCT query
+	 * @return The request for the call
+	 */
+	private ServiceRequest getDoSPARQLRequest(String query) {
+		ServiceRequest getQuery = new ServiceRequest(new ContextHistoryService(null), null);
 
-	MergedRestriction r = MergedRestriction.getFixedValueRestriction(
-		ContextHistoryService.PROP_PROCESSES, query);
+		MergedRestriction r = MergedRestriction.getFixedValueRestriction(ContextHistoryService.PROP_PROCESSES, query);
 
-	getQuery.getRequestedService().addInstanceLevelRestriction(r,
-		new String[] { ContextHistoryService.PROP_PROCESSES });
-	getQuery.addSimpleOutputBinding(
-		new ProcessOutput(OUTPUT_RESULT_STRING), new PropertyPath(null,
-			true,
-			new String[] { ContextHistoryService.PROP_RETURNS })
-			.getThePath());
-	return getQuery;
-    }
+		getQuery.getRequestedService().addInstanceLevelRestriction(r,
+				new String[] { ContextHistoryService.PROP_PROCESSES });
+		getQuery.addSimpleOutputBinding(new ProcessOutput(OUTPUT_RESULT_STRING),
+				new PropertyPath(null, true, new String[] { ContextHistoryService.PROP_RETURNS }).getThePath());
+		return getQuery;
+	}
 
-    /**
-     * Process service call response
-     * 
-     * @param outputs
-     *            The outputs of the response
-     * @param expectedOutput
-     *            The URI of the desired output
-     * @return The desired output value
-     */
-    @SuppressWarnings("unchecked")
-    private Object getReturnValue(List outputs, String expectedOutput) {
-	Object returnValue = null;
-	if (outputs == null)
-	    LogUtils.logInfo(Activator.context, CHECaller.class,
-		    "getReturnValue",
-		    new Object[] { "History Client: No events found!" }, null);
-	else
-	    for (Iterator i = outputs.iterator(); i.hasNext();) {
-		ProcessOutput output = (ProcessOutput) i.next();
-		if (output.getURI().equals(expectedOutput))
-		    if (returnValue == null)
-			returnValue = output.getParameterValue();
-		    else
-			LogUtils.logInfo(
-				Activator.context,
-				CHECaller.class,
-				"getReturnValue",
-				new Object[] { "History Client: redundant return value!" },
-				null);
+	/**
+	 * Process service call response
+	 * 
+	 * @param outputs
+	 *            The outputs of the response
+	 * @param expectedOutput
+	 *            The URI of the desired output
+	 * @return The desired output value
+	 */
+	@SuppressWarnings("unchecked")
+	private Object getReturnValue(List outputs, String expectedOutput) {
+		Object returnValue = null;
+		if (outputs == null)
+			LogUtils.logInfo(Activator.context, CHECaller.class, "getReturnValue",
+					new Object[] { "History Client: No events found!" }, null);
 		else
-		    LogUtils.logInfo(Activator.context, CHECaller.class,
-			    "getReturnValue",
-			    new Object[] { "History Client - output ignored: "
-				    + output.getURI() }, null);
-	    }
+			for (Iterator i = outputs.iterator(); i.hasNext();) {
+				ProcessOutput output = (ProcessOutput) i.next();
+				if (output.getURI().equals(expectedOutput))
+					if (returnValue == null)
+						returnValue = output.getParameterValue();
+					else
+						LogUtils.logInfo(Activator.context, CHECaller.class, "getReturnValue",
+								new Object[] { "History Client: redundant return value!" }, null);
+				else
+					LogUtils.logInfo(Activator.context, CHECaller.class, "getReturnValue",
+							new Object[] { "History Client - output ignored: " + output.getURI() }, null);
+			}
 
-	return returnValue;
-    }
+		return returnValue;
+	}
 }

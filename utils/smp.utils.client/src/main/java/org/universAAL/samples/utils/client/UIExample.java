@@ -40,120 +40,121 @@ import org.universAAL.support.utils.ui.low.Message;
 import org.universAAL.support.utils.ui.mid.UtilUICaller;
 
 // UI Caller uAAL wrapper
-public class UIExample extends UtilUICaller{
-    // Declare URI & paths constants to be used in requests and forms
-    private static final String OUTPUT_LIST_OF_LAMPS = Activator.CLIENT_NAMESPACE + "controlledLamps";
-    private static final String OUTPUT_BR = Activator.CLIENT_NAMESPACE + "lampBrightness";
-    private static final String OUTPUT_LOC = Activator.CLIENT_NAMESPACE + "lampLocation";
-    private static final String REF_ON = Activator.CLIENT_NAMESPACE+"SubmitON";
-    private static final String REF_OFF = Activator.CLIENT_NAMESPACE+"SubmitOFF";
-    private static final String REF_GET = Activator.CLIENT_NAMESPACE+"SubmitGET";
-    private static final String REF_DIM = Activator.CLIENT_NAMESPACE+"SubmitGET";
-    private static final String REF_EXIT = Activator.CLIENT_NAMESPACE+"SubmitEXIT";
-    private static final String PROP_PATH_SELECTED_LAMP = Activator.CLIENT_NAMESPACE+"selectLight";
-    private static final String PROP_PATH_DIM = Activator.CLIENT_NAMESPACE+"dimLight";
-    // user variabel identifying who is this app interacting with
-    private User sampleUser;
+public class UIExample extends UtilUICaller {
+	// Declare URI & paths constants to be used in requests and forms
+	private static final String OUTPUT_LIST_OF_LAMPS = Activator.CLIENT_NAMESPACE + "controlledLamps";
+	private static final String OUTPUT_BR = Activator.CLIENT_NAMESPACE + "lampBrightness";
+	private static final String OUTPUT_LOC = Activator.CLIENT_NAMESPACE + "lampLocation";
+	private static final String REF_ON = Activator.CLIENT_NAMESPACE + "SubmitON";
+	private static final String REF_OFF = Activator.CLIENT_NAMESPACE + "SubmitOFF";
+	private static final String REF_GET = Activator.CLIENT_NAMESPACE + "SubmitGET";
+	private static final String REF_DIM = Activator.CLIENT_NAMESPACE + "SubmitGET";
+	private static final String REF_EXIT = Activator.CLIENT_NAMESPACE + "SubmitEXIT";
+	private static final String PROP_PATH_SELECTED_LAMP = Activator.CLIENT_NAMESPACE + "selectLight";
+	private static final String PROP_PATH_DIM = Activator.CLIENT_NAMESPACE + "dimLight";
+	// user variabel identifying who is this app interacting with
+	private User sampleUser;
 
-    // Extended constructor
-    protected UIExample(ModuleContext context, String namespace,
-	    String url, String desc) {
-	super(context, namespace, url, desc);
-    }
-    
-    // Called when initial dialog is requested by user -> show main dialog
-    @Override
-    public void executeStartUI(Resource user) {
-	// Call the GET LAMPS service
-	Request req=new Request(new DeviceService());
-	req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.out(OUTPUT_LIST_OF_LAMPS));
-	ServiceResponse resp=Activator.caller.call(req);
-	Object[] lights= Request.recoverOutputs(resp, OUTPUT_LIST_OF_LAMPS);
-	
-	// User safe check (not necessary in 1.2.0)
-	if(user instanceof User){
-	    sampleUser=(User)user;
-	}else{
-	    sampleUser=new User(user.getURI());
+	// Extended constructor
+	protected UIExample(ModuleContext context, String namespace, String url, String desc) {
+		super(context, namespace, url, desc);
 	}
-	
-	// Create the main dialog: SelectOne<lights> Range<0-100> Submit<ON> Submit<OFF> Submit<DIM> Submit<EXIT> 
-	Dialog d=new Dialog(sampleUser,Activator.CLIENT_APPNAME);
-	SelectOne one=new SelectOne(PROP_PATH_SELECTED_LAMP, "Lamps");
-	for(int i=0; i<lights.length;i++){
-	    one.addOption(((LightController)lights[i]).getURI());
+
+	// Called when initial dialog is requested by user -> show main dialog
+	@Override
+	public void executeStartUI(Resource user) {
+		// Call the GET LAMPS service
+		Request req = new Request(new DeviceService());
+		req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.out(OUTPUT_LIST_OF_LAMPS));
+		ServiceResponse resp = Activator.caller.call(req);
+		Object[] lights = Request.recoverOutputs(resp, OUTPUT_LIST_OF_LAMPS);
+
+		// User safe check (not necessary in 1.2.0)
+		if (user instanceof User) {
+			sampleUser = (User) user;
+		} else {
+			sampleUser = new User(user.getURI());
+		}
+
+		// Create the main dialog: SelectOne<lights> Range<0-100> Submit<ON>
+		// Submit<OFF> Submit<DIM> Submit<EXIT>
+		Dialog d = new Dialog(sampleUser, Activator.CLIENT_APPNAME);
+		SelectOne one = new SelectOne(PROP_PATH_SELECTED_LAMP, "Lamps");
+		for (int i = 0; i < lights.length; i++) {
+			one.addOption(((LightController) lights[i]).getURI());
+		}
+		d.add(one);
+		SelectRange range = new SelectRange(PROP_PATH_DIM, "Dimmer", 0, 100, 50);
+		d.add(range);
+		SubmitCmd sub1 = new SubmitCmd(REF_ON, "Turn On");
+		sub1.addMandatoryInput(one);
+		d.addSubmit(sub1);
+		SubmitCmd sub2 = new SubmitCmd(REF_OFF, "Turn Off");
+		sub2.addMandatoryInput(one);
+		d.addSubmit(sub2);
+		SubmitCmd sub3 = new SubmitCmd(REF_GET, "Get Info");
+		sub3.addMandatoryInput(one);
+		d.addSubmit(sub3);
+		SubmitCmd sub4 = new SubmitCmd(REF_DIM, "Dim");
+		sub4.addMandatoryInput(one);
+		sub4.addMandatoryInput(range);
+		d.addSubmit(sub4);
+		d.addSubmit(Forms.submit(REF_EXIT, "Exit"));
+		sendUIRequest(d);
 	}
-	d.add(one);
-	SelectRange range=new SelectRange(PROP_PATH_DIM,"Dimmer",0,100,50);
-	d.add(range);
-	SubmitCmd sub1=new SubmitCmd(REF_ON, "Turn On");
-	sub1.addMandatoryInput(one);
-	d.addSubmit(sub1);
-	SubmitCmd sub2=new SubmitCmd(REF_OFF, "Turn Off");
-	sub2.addMandatoryInput(one);
-	d.addSubmit(sub2);
-	SubmitCmd sub3=new SubmitCmd(REF_GET, "Get Info");
-	sub3.addMandatoryInput(one);
-	d.addSubmit(sub3);
-	SubmitCmd sub4=new SubmitCmd(REF_DIM, "Dim");
-	sub4.addMandatoryInput(one);
-	sub4.addMandatoryInput(range);
-	d.addSubmit(sub4);
-	d.addSubmit(Forms.submit(REF_EXIT, "Exit"));
-	sendUIRequest(d);
-    }
-    
-    // Display a pop up message describing a light status
-    public void showMessage(String light, String loc, Integer integer){
-	if(sampleUser!=null){
-	    Message m=new Message(sampleUser, "Simple Client Subscriber", 
-		    "Brightness of Light "+light+" in "+loc+" is "+integer);
-	    sendUIRequest(m);
+
+	// Display a pop up message describing a light status
+	public void showMessage(String light, String loc, Integer integer) {
+		if (sampleUser != null) {
+			Message m = new Message(sampleUser, "Simple Client Subscriber",
+					"Brightness of Light " + light + " in " + loc + " is " + integer);
+			sendUIRequest(m);
+		}
 	}
-    }
-    
-    // Called when user has completed a dialog
-    @Override
-    public void handleUIResponse(UIResponse input) {
-	String submit = input.getSubmissionID();
-	if (submit.contains(REF_ON) || submit.contains(REF_OFF)) {
-	    // Turn ON/OFF the light selected in SelectOne
-	    Integer val=Integer.valueOf(submit.contains(REF_ON)?100:0);
-	    String selected = (String) input.getUserInput(Path.at(PROP_PATH_SELECTED_LAMP).path);
-	    // Call TURN ON or TURN OFF
-	    Request req = new Request(new DeviceService());
-	    req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(new LightController(selected)));
-	    req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE),Arg.change(val));
-	    Activator.caller.call(req);
+
+	// Called when user has completed a dialog
+	@Override
+	public void handleUIResponse(UIResponse input) {
+		String submit = input.getSubmissionID();
+		if (submit.contains(REF_ON) || submit.contains(REF_OFF)) {
+			// Turn ON/OFF the light selected in SelectOne
+			Integer val = Integer.valueOf(submit.contains(REF_ON) ? 100 : 0);
+			String selected = (String) input.getUserInput(Path.at(PROP_PATH_SELECTED_LAMP).path);
+			// Call TURN ON or TURN OFF
+			Request req = new Request(new DeviceService());
+			req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(new LightController(selected)));
+			req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE), Arg.change(val));
+			Activator.caller.call(req);
+		}
+		if (submit.contains(REF_DIM)) {
+			// Dim the light selected in SelectOne
+			Integer val = (Integer) input.getUserInput(Path.at(PROP_PATH_DIM).path);
+			String selected = (String) input.getUserInput(Path.at(PROP_PATH_SELECTED_LAMP).path);
+			// Call DIM
+			Request req = new Request(new DeviceService());
+			req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(new LightController(selected)));
+			req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE), Arg.change(val));
+			Activator.caller.call(req);
+		}
+		if (submit.contains(REF_GET)) {
+			// Get the status of the light selected in SelectOne
+			String selected = (String) input.getUserInput(Path.at(PROP_PATH_SELECTED_LAMP).path);
+			// Call GET LAMP INFO
+			Request req = new Request(new DeviceService());
+			req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(new LightController(selected)));
+			req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE), Arg.out(OUTPUT_BR));
+			req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_PHYSICAL_LOCATION),
+					Arg.out(OUTPUT_LOC));
+			ServiceResponse resp = Activator.caller.call(req);
+			// Display pop up message with light status
+			showMessage(selected, resp.getOutput(OUTPUT_LOC, true).get(0).toString(),
+					(Integer) resp.getOutput(OUTPUT_BR, true).get(0));
+		}
 	}
-	if (submit.contains(REF_DIM)) {
-	    // Dim the light selected in SelectOne
-	    Integer val=(Integer)input.getUserInput(Path.at(PROP_PATH_DIM).path);
-	    String selected = (String) input.getUserInput(Path.at(PROP_PATH_SELECTED_LAMP).path);
-	    // Call DIM
-	    Request req = new Request(new DeviceService());
-	    req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(new LightController(selected)));
-	    req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE),Arg.change(val));
-	    Activator.caller.call(req);
+
+	@Override
+	public void dialogAborted(String dialogID, Resource data) {
+		// TODO Auto-generated method stub
 	}
-	if (submit.contains(REF_GET)) {
-	    // Get the status of the light selected in SelectOne
-	    String selected = (String) input.getUserInput(Path.at(PROP_PATH_SELECTED_LAMP).path);
-	    // Call GET LAMP INFO
-	    Request req = new Request(new DeviceService());
-	    req.put(Path.at(DeviceService.PROP_CONTROLS), Arg.in(new LightController(selected)));
-	    req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_HAS_VALUE),Arg.out(OUTPUT_BR));
-	    req.put(Path.at(DeviceService.PROP_CONTROLS).to(LightController.PROP_PHYSICAL_LOCATION),Arg.out(OUTPUT_LOC));
-	    ServiceResponse resp=Activator.caller.call(req);
-	    // Display pop up message with light status
-	    showMessage(selected, resp.getOutput(OUTPUT_LOC, true).get(0).toString(),
-		    (Integer) resp.getOutput(OUTPUT_BR, true).get(0));
-	}
-    }
-    
-    @Override
-    public void dialogAborted(String dialogID, Resource data) {
-	// TODO Auto-generated method stub
-    }
 
 }

@@ -30,13 +30,13 @@ import org.universAAL.itests.IntegrationTest;
  */
 public class ArtifactIT extends IntegrationTest {
 
-    public ArtifactIT() {
-	setRunArguments("net.slp.multicastTimeouts", "500,750");
-	setRunArguments("java.net.preferIPv4Stack", "true");
-	setRunArguments("net.slp.port", "7000");
-    }
-    
-    public void testComposite() {
-	logAllBundles();
-    }
+	public ArtifactIT() {
+		setRunArguments("net.slp.multicastTimeouts", "500,750");
+		setRunArguments("java.net.preferIPv4Stack", "true");
+		setRunArguments("net.slp.port", "7000");
+	}
+
+	public void testComposite() {
+		logAllBundles();
+	}
 }

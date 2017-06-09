@@ -35,30 +35,27 @@ import org.universAAL.middleware.container.utils.LogUtils;
  */
 public class Activator implements BundleActivator {
 
-    private BrokerClientImpl brokerClient;
-    private ModuleContext moduleContext = null;
+	private BrokerClientImpl brokerClient;
+	private ModuleContext moduleContext = null;
 
-    public void start(BundleContext context) throws Exception {
-	ServiceReference ref = context.getServiceReference(LogService.class
-		.getName());
+	public void start(BundleContext context) throws Exception {
+		ServiceReference ref = context.getServiceReference(LogService.class.getName());
 
-	moduleContext = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { context });
-	LogUtils.logDebug(moduleContext, Activator.class, "startBrokerClient",
-		new Object[] { "Starting Brokerclient!" }, null);
+		moduleContext = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
+		LogUtils.logDebug(moduleContext, Activator.class, "startBrokerClient",
+				new Object[] { "Starting Brokerclient!" }, null);
 
-	brokerClient = new BrokerClientImpl(moduleContext);
-	brokerClient.startBrokerClient();
-    }
-
-    public void stop(BundleContext context) throws Exception {
-	if (brokerClient != null) {
-	    LogUtils.logDebug(moduleContext, Activator.class,
-		    "stopBrokerClient",
-		    new Object[] { "Stopping the BrokerClient" }, null);
-	    brokerClient.setStop(true);
+		brokerClient = new BrokerClientImpl(moduleContext);
+		brokerClient.startBrokerClient();
 	}
 
-    }
+	public void stop(BundleContext context) throws Exception {
+		if (brokerClient != null) {
+			LogUtils.logDebug(moduleContext, Activator.class, "stopBrokerClient",
+					new Object[] { "Stopping the BrokerClient" }, null);
+			brokerClient.setStop(true);
+		}
+
+	}
 
 }

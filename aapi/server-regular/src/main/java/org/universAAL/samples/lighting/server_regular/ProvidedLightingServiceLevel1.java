@@ -35,64 +35,54 @@ import org.universAAL.ontology.phThing.PhysicalThing;
 
 public class ProvidedLightingServiceLevel1 extends Lighting {
 
-    public static final String LIGHTING_SERVER_NAMESPACE = "http://ontology.igd.fhg.de/LightingServer.owl#";
-    public static final String MY_URI = LIGHTING_SERVER_NAMESPACE
-	    + "LightingService";
+	public static final String LIGHTING_SERVER_NAMESPACE = "http://ontology.igd.fhg.de/LightingServer.owl#";
+	public static final String MY_URI = LIGHTING_SERVER_NAMESPACE + "LightingService";
 
-    static final ServiceProfile[] profiles = new ServiceProfile[4];
-    private static Hashtable serverLightingRestrictions = new Hashtable();
-    static {
-	OntologyManagement.getInstance().register(Activator.mc,
-		new SimpleOntology(MY_URI, Lighting.MY_URI,
-			new ResourceFactory() {
-			    public Resource createInstance(String classURI,
-				    String instanceURI, int factoryIndex) {
-				return new ProvidedLightingServiceLevel1(
-					instanceURI);
-			    }
-			}));
+	static final ServiceProfile[] profiles = new ServiceProfile[4];
+	private static Hashtable serverLightingRestrictions = new Hashtable();
+	static {
+		OntologyManagement.getInstance().register(Activator.mc,
+				new SimpleOntology(MY_URI, Lighting.MY_URI, new ResourceFactory() {
+					public Resource createInstance(String classURI, String instanceURI, int factoryIndex) {
+						return new ProvidedLightingServiceLevel1(instanceURI);
+					}
+				}));
 
-	String[] ppControls = new String[] { Lighting.PROP_CONTROLS };
-	String[] ppBrightness = new String[] { Lighting.PROP_CONTROLS,
-		LightSource.PROP_SOURCE_BRIGHTNESS };
+		String[] ppControls = new String[] { Lighting.PROP_CONTROLS };
+		String[] ppBrightness = new String[] { Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS };
 
-	ProvidedLightingServiceLevel1 getControlledLamps = new ProvidedLightingServiceLevel1(
-		LightingServerURIs.GetControlledLamps.URI);
-	getControlledLamps.addOutput(LightingServerURIs.GetControlledLamps.Output.CONTROLLED_LAMPS,
-		LightSource.MY_URI, 0, 0, ppControls);
-	profiles[0] = getControlledLamps.myProfile;
+		ProvidedLightingServiceLevel1 getControlledLamps = new ProvidedLightingServiceLevel1(
+				LightingServerURIs.GetControlledLamps.URI);
+		getControlledLamps.addOutput(LightingServerURIs.GetControlledLamps.Output.CONTROLLED_LAMPS, LightSource.MY_URI,
+				0, 0, ppControls);
+		profiles[0] = getControlledLamps.myProfile;
 
-	ProvidedLightingServiceLevel1 getLampInfo = new ProvidedLightingServiceLevel1(
-		LightingServerURIs.GetLampInfo.URI);
-	getLampInfo.addFilteringInput(LightingServerURIs.GetLampInfo.Input.LAMP_URI, LightSource.MY_URI, 1, 1,
-		ppControls);
-	getLampInfo.addOutput(LightingServerURIs.GetLampInfo.Output.LAMP_BRIGHTNESS, TypeMapper
-		.getDatatypeURI(Integer.class), 1, 1, ppBrightness);
-	getLampInfo.addOutput(LightingServerURIs.GetLampInfo.Output.LAMP_LOCATION, Location.MY_URI, 1, 1,
-		new String[] { Lighting.PROP_CONTROLS,
-			PhysicalThing.PROP_PHYSICAL_LOCATION });
-	profiles[1] = getLampInfo.myProfile;
+		ProvidedLightingServiceLevel1 getLampInfo = new ProvidedLightingServiceLevel1(
+				LightingServerURIs.GetLampInfo.URI);
+		getLampInfo.addFilteringInput(LightingServerURIs.GetLampInfo.Input.LAMP_URI, LightSource.MY_URI, 1, 1,
+				ppControls);
+		getLampInfo.addOutput(LightingServerURIs.GetLampInfo.Output.LAMP_BRIGHTNESS,
+				TypeMapper.getDatatypeURI(Integer.class), 1, 1, ppBrightness);
+		getLampInfo.addOutput(LightingServerURIs.GetLampInfo.Output.LAMP_LOCATION, Location.MY_URI, 1, 1,
+				new String[] { Lighting.PROP_CONTROLS, PhysicalThing.PROP_PHYSICAL_LOCATION });
+		profiles[1] = getLampInfo.myProfile;
 
-	ProvidedLightingServiceLevel1 turnOff = new ProvidedLightingServiceLevel1(
-		LightingServerURIs.TurnOff.URI);
-	turnOff.addFilteringInput(LightingServerURIs.TurnOff.Input.LAMP_URI, LightSource.MY_URI, 1, 1,
-		ppControls);
-	turnOff.myProfile.addChangeEffect(ppBrightness, new Integer(0));
-	profiles[2] = turnOff.myProfile;
+		ProvidedLightingServiceLevel1 turnOff = new ProvidedLightingServiceLevel1(LightingServerURIs.TurnOff.URI);
+		turnOff.addFilteringInput(LightingServerURIs.TurnOff.Input.LAMP_URI, LightSource.MY_URI, 1, 1, ppControls);
+		turnOff.myProfile.addChangeEffect(ppBrightness, new Integer(0));
+		profiles[2] = turnOff.myProfile;
 
-	ProvidedLightingServiceLevel1 turnOn = new ProvidedLightingServiceLevel1(
-		LightingServerURIs.TurnOn.URI);
-	turnOn.addFilteringInput(LightingServerURIs.TurnOn.Input.LAMP_URI, LightSource.MY_URI, 1, 1,
-		ppControls);
-	turnOn.myProfile.addChangeEffect(ppBrightness, new Integer(100));
-	profiles[3] = turnOn.myProfile;
-    }
+		ProvidedLightingServiceLevel1 turnOn = new ProvidedLightingServiceLevel1(LightingServerURIs.TurnOn.URI);
+		turnOn.addFilteringInput(LightingServerURIs.TurnOn.Input.LAMP_URI, LightSource.MY_URI, 1, 1, ppControls);
+		turnOn.myProfile.addChangeEffect(ppBrightness, new Integer(100));
+		profiles[3] = turnOn.myProfile;
+	}
 
-    private ProvidedLightingServiceLevel1(String uri) {
-	super(uri);
-    }
+	private ProvidedLightingServiceLevel1(String uri) {
+		super(uri);
+	}
 
-    public String getClassURI() {
-	return MY_URI;
-    }
+	public String getClassURI() {
+		return MY_URI;
+	}
 }

@@ -22,8 +22,7 @@ public class ServiceImpl implements ServiceInterface {
 
 	private static ServiceCaller caller;
 	private static final String LIGHTING_CONSUMER_NAMESPACE = "http://ontology.igd.fhg.de/LightingConsumer.owl#";
-	private static final String OUTPUT_LIST_OF_LAMPS = LIGHTING_CONSUMER_NAMESPACE
-			+ "controlledLamps";
+	private static final String OUTPUT_LIST_OF_LAMPS = LIGHTING_CONSUMER_NAMESPACE + "controlledLamps";
 	MessageContentSerializer m;
 	ContextEvent event;
 
@@ -38,11 +37,9 @@ public class ServiceImpl implements ServiceInterface {
 			list.add(lamps[i]);
 			System.out.println("Server: returning Lamp list OK");
 		}
-		Object[] contentSerializerParams = new Object[] { MessageContentSerializer.class
-				.getName() };
-		MessageContentSerializer s = (MessageContentSerializer) Activator.mc
-				.getContainer().fetchSharedObject(Activator.mc,
-						contentSerializerParams);
+		Object[] contentSerializerParams = new Object[] { MessageContentSerializer.class.getName() };
+		MessageContentSerializer s = (MessageContentSerializer) Activator.mc.getContainer()
+				.fetchSharedObject(Activator.mc, contentSerializerParams);
 		String sGetLamps = s.serialize(sr);
 
 		// System.out.println("\n" + sGetLamps + "\n");
@@ -55,8 +52,7 @@ public class ServiceImpl implements ServiceInterface {
 
 		ServiceRequest getAllLamps = new ServiceRequest(new Lighting(), null);
 
-		getAllLamps.addRequiredOutput(OUTPUT_LIST_OF_LAMPS,
-				new String[] { Lighting.PROP_CONTROLS });
+		getAllLamps.addRequiredOutput(OUTPUT_LIST_OF_LAMPS, new String[] { Lighting.PROP_CONTROLS });
 
 		return getAllLamps;
 	}
@@ -66,11 +62,9 @@ public class ServiceImpl implements ServiceInterface {
 		caller = new DefaultServiceCaller(Activator.mc);
 
 		sr = caller.call(turtleStr);
-		Object[] contentSerializerParams = new Object[] { MessageContentSerializer.class
-				.getName() };
-		MessageContentSerializer s = (MessageContentSerializer) Activator.mc
-				.getContainer().fetchSharedObject(Activator.mc,
-						contentSerializerParams);
+		Object[] contentSerializerParams = new Object[] { MessageContentSerializer.class.getName() };
+		MessageContentSerializer s = (MessageContentSerializer) Activator.mc.getContainer()
+				.fetchSharedObject(Activator.mc, contentSerializerParams);
 		String serializedStr = s.serialize(sr);
 
 		return serializedStr;
@@ -91,26 +85,22 @@ public class ServiceImpl implements ServiceInterface {
 				List lampList = sr.getOutput(OUTPUT_LIST_OF_LAMPS, true);
 
 				if (lampList == null || lampList.size() == 0) {
-					LogUtils.logInfo(Activator.mc, ServiceImpl.class,
-							"getControlledLamps",
+					LogUtils.logInfo(Activator.mc, ServiceImpl.class, "getControlledLamps",
 							new Object[] { "there are no lamps" }, null);
 					return null;
 				}
 
-				LightSource[] lamps = (LightSource[]) lampList
-						.toArray(new LightSource[lampList.size()]);
+				LightSource[] lamps = (LightSource[]) lampList.toArray(new LightSource[lampList.size()]);
 
 				return lamps;
 
 			} catch (Exception e) {
-				LogUtils.logError(Activator.mc, ServiceImpl.class,
-						"getControlledLamps",
+				LogUtils.logError(Activator.mc, ServiceImpl.class, "getControlledLamps",
 						new Object[] { "got exception", e.getMessage() }, e);
 				return null;
 			}
 		} else {
-			LogUtils.logWarn(Activator.mc, ServiceImpl.class,
-					"getControlledLamps",
+			LogUtils.logWarn(Activator.mc, ServiceImpl.class, "getControlledLamps",
 					new Object[] { "callstatus is not succeeded" }, null);
 			return null;
 		}
@@ -134,11 +124,10 @@ public class ServiceImpl implements ServiceInterface {
 
 		ServiceRequest turnOff = new ServiceRequest(new Lighting(), null);
 
-		turnOff.addValueFilter(new String[] { Lighting.PROP_CONTROLS },
-				new LightSource(lampURI));
+		turnOff.addValueFilter(new String[] { Lighting.PROP_CONTROLS }, new LightSource(lampURI));
 
-		turnOff.addChangeEffect(new String[] { Lighting.PROP_CONTROLS,
-				LightSource.PROP_SOURCE_BRIGHTNESS }, new Integer(0));
+		turnOff.addChangeEffect(new String[] { Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS },
+				new Integer(0));
 		return turnOff;
 	}
 }

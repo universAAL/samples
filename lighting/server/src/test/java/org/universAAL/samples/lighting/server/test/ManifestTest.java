@@ -32,38 +32,32 @@ import org.universAAL.samples.lighting.server.unit_impl.MyLighting;
 
 public class ManifestTest extends ManifestTestCase {
 
-    @Override
-    protected void setUp() throws Exception {
-	super.setUp();
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
 
-	OntologyManagement.getInstance().register(mc, new LocationOntology());
-	OntologyManagement.getInstance().register(mc, new ShapeOntology());
-	OntologyManagement.getInstance().register(mc, new PhThingOntology());
-	OntologyManagement.getInstance().register(mc, new LightingOntology());
-    }
+		OntologyManagement.getInstance().register(mc, new LocationOntology());
+		OntologyManagement.getInstance().register(mc, new ShapeOntology());
+		OntologyManagement.getInstance().register(mc, new PhThingOntology());
+		OntologyManagement.getInstance().register(mc, new LightingOntology());
+	}
 
-    public void testCreateManifest() {
-	// service profiles
-	add("Get controlled lamps",
-		"get the identifiers of all lamps that are controlled by this component.",
-		ProvidedLightingService.profiles[0]);
-	add("Get lamp info",
-		"Get information about a specific light source, i.e. its location and brightness.",
-		ProvidedLightingService.profiles[1]);
-	add("Turn light off", "Turn off a specific light source.",
-		ProvidedLightingService.profiles[2]);
-	add("Turn light on", "Turn on a specific light source.",
-		ProvidedLightingService.profiles[3]);
+	public void testCreateManifest() {
+		// service profiles
+		add("Get controlled lamps", "get the identifiers of all lamps that are controlled by this component.",
+				ProvidedLightingService.profiles[0]);
+		add("Get lamp info", "Get information about a specific light source, i.e. its location and brightness.",
+				ProvidedLightingService.profiles[1]);
+		add("Turn light off", "Turn off a specific light source.", ProvidedLightingService.profiles[2]);
+		add("Turn light on", "Turn on a specific light source.", ProvidedLightingService.profiles[3]);
 
-	// context event patterns
-	ContextEventPattern[] cep = LightingProvider
-		.providedEvents(new MyLighting());
-	add("Light source brightness",
-		"Changes in the brightness of a light source.", cep[0], true);
-	add("Light source brightness (only lightbulbs)",
-		"Changes in the brightness of a light source, but only for lightbulbs that are in rooms.",
-		cep[1], true);
+		// context event patterns
+		ContextEventPattern[] cep = LightingProvider.providedEvents(new MyLighting());
+		add("Light source brightness", "Changes in the brightness of a light source.", cep[0], true);
+		add("Light source brightness (only lightbulbs)",
+				"Changes in the brightness of a light source, but only for lightbulbs that are in rooms.", cep[1],
+				true);
 
-	writeManifest();
-    }
+		writeManifest();
+	}
 }

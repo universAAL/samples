@@ -36,48 +36,47 @@ import com.google.gson.Gson;
  */
 public class SimpleMessage implements BrokerMessage {
 
-    /**
+	/**
 	 * 
 	 */
-    private SimpleMessageTypes type;
-    private BrokerMessageTypes mtype;
+	private SimpleMessageTypes type;
+	private BrokerMessageTypes mtype;
 
-    public enum SimpleMessageTypes {
-	PING, PONG
-    }
-
-    public SimpleMessage(SimpleMessageTypes type) {
-	this.type = type;
-	this.mtype = BrokerMessageTypes.SimpleMessage;
-
-    }
-
-    public SimpleMessageTypes getType() {
-	return this.type;
-    }
-
-    public String toString() {
-	try {
-	    Gson gson = GsonParserBuilder.getInstance();
-	    return gson.toJson(this);
-
-	} catch (Exception e) {
-	    throw new AALSpaceMessageException(
-		    "Unable to mashall BrokerMessage. Details: " + e);
+	public enum SimpleMessageTypes {
+		PING, PONG
 	}
-    }
 
-    /**
-     * To implement
-     */
-    public PeerCard[] getReceivers() {
-	// TODO Auto-generated method stub
-	return null;
-    }
+	public SimpleMessage(SimpleMessageTypes type) {
+		this.type = type;
+		this.mtype = BrokerMessageTypes.SimpleMessage;
 
-    public BrokerMessageTypes getMType() {
+	}
 
-	return mtype;
-    }
+	public SimpleMessageTypes getType() {
+		return this.type;
+	}
+
+	public String toString() {
+		try {
+			Gson gson = GsonParserBuilder.getInstance();
+			return gson.toJson(this);
+
+		} catch (Exception e) {
+			throw new AALSpaceMessageException("Unable to mashall BrokerMessage. Details: " + e);
+		}
+	}
+
+	/**
+	 * To implement
+	 */
+	public PeerCard[] getReceivers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public BrokerMessageTypes getMType() {
+
+		return mtype;
+	}
 
 }

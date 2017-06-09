@@ -34,11 +34,11 @@ import org.universAAL.middleware.container.utils.LogUtils;
  */
 public class Activator implements BundleActivator {
 
-    public static ModuleContext mc;
+	public static ModuleContext mc;
 	private static DeviceClient dc;
-    public DeviceServiceCaller serviceCaller;
-    private DeviceContextListener contextListener;
-    private Thread thread;
+	public DeviceServiceCaller serviceCaller;
+	private DeviceContextListener contextListener;
+	private Thread thread;
 
 	public void start(BundleContext context) throws Exception {
 		mc = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
@@ -46,34 +46,34 @@ public class Activator implements BundleActivator {
 		try {
 			dc = new DeviceClient(this);
 		} catch (java.awt.HeadlessException ex) {
-		    LogUtils.logInfo(mc,Activator.class,"Activator",
-			    new Object[] { "client activates GUI-off mode because of no screen access" },
-			    null);
+			LogUtils.logInfo(mc, Activator.class, "Activator",
+					new Object[] { "client activates GUI-off mode because of no screen access" }, null);
 		}
 
 		// start uAAL bus consumer threads
-		MyThread runnable = new MyThread(); 
-		thread=new Thread(runnable);
+		MyThread runnable = new MyThread();
+		thread = new Thread(runnable);
 		thread.start();
-//		new Thread() {
-//			public void run() { 
-//				new MyActivityHubContextListener(mc);
-//				new MyActivityHubServiceConsumer(mc);
-//			}
-//		}.start();
+		// new Thread() {
+		// public void run() {
+		// new MyActivityHubContextListener(mc);
+		// new MyActivityHubServiceConsumer(mc);
+		// }
+		// }.start();
 	}
 
 	public void stop(BundleContext context) throws Exception {
-//		if (serviceCaller != null)
-//			serviceCaller.deleteGui();
+		// if (serviceCaller != null)
+		// serviceCaller.deleteGui();
 		thread.interrupt();
 		// uninstall myself from uAALBundleContainer ??
-		//uAALBundleContainer.THE_CONTAINER.unregister...
-//		System.out.println("Stoppable: " + mc.canBeStopped(mc) );	-> false
-//		System.out.println("Uninstallable: " + mc.canBeUninstalled(mc) );	->false
+		// uAALBundleContainer.THE_CONTAINER.unregister...
+		// System.out.println("Stoppable: " + mc.canBeStopped(mc) ); -> false
+		// System.out.println("Uninstallable: " + mc.canBeUninstalled(mc) );
+		// ->false
 		// TODO how to stop/uninstall a bundle ???
-		
-		if ( mc.stop(mc) ) //mc.uninstall(mc)
+
+		if (mc.stop(mc)) // mc.uninstall(mc)
 			System.out.println("smp.device.client bundle successfully stopped from uAALBundleContainer!");
 		else
 			System.out.println("Problem stopping smp.device.client bundle in uAALBundleContainer!");
@@ -85,12 +85,13 @@ public class Activator implements BundleActivator {
 	 * @author fuxreitert
 	 *
 	 */
-	class MyThread implements Runnable{
+	class MyThread implements Runnable {
 		public MyThread() {
 		}
+
 		public void run() {
 			serviceCaller = new DeviceServiceCaller(mc);
-			contextListener = new DeviceContextListener(mc,dc);
+			contextListener = new DeviceContextListener(mc, dc);
 		}
 	}
 

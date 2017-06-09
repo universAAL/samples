@@ -55,8 +55,7 @@ import org.universAAL.ontology.activityhub.factory.ActivityHubEventFactory;
 public class AHContextPublisherSimulator {
 
 	// define namespace URIs
-	public static final String ACTIVITYHUB_SERVER_NAMESPACE = 
-		Resource.uAAL_NAMESPACE_PREFIX + "ActivityHubServer.owl#";
+	public static final String ACTIVITYHUB_SERVER_NAMESPACE = Resource.uAAL_NAMESPACE_PREFIX + "ActivityHubServer.owl#";
 
 	private DefaultContextPublisher cp;
 	private AHSimulator ahSimulator;
@@ -69,14 +68,12 @@ public class AHContextPublisherSimulator {
 		this.logger = this.ahSimulator.getLogger();
 
 		// prepare for context publishing
-		ContextProvider info = new ContextProvider(
-				ACTIVITYHUB_SERVER_NAMESPACE + "AHContextPublisherSimulator");
+		ContextProvider info = new ContextProvider(ACTIVITYHUB_SERVER_NAMESPACE + "AHContextPublisherSimulator");
 		info.setType(ContextProviderType.gauge);
 		info.setProvidedEvents(providedEvents());
 		cp = new DefaultContextPublisher(mc, info);
 
-		this.logger.log(LogService.LOG_INFO,
-				"Activated ActivityHub ContextEvent Patterns");
+		this.logger.log(LogService.LOG_INFO, "Activated ActivityHub ContextEvent Patterns");
 
 		startSimulation();
 	}
@@ -93,15 +90,12 @@ public class AHContextPublisherSimulator {
 
 		// the following is to say that the subject of my context events is
 		// always one single instance of ActivityHubSensor
-		MergedRestriction subjectRestriction = MergedRestriction
-				.getAllValuesRestrictionWithCardinality(
-						ContextEvent.PROP_RDF_SUBJECT, new TypeURI(
-								ActivityHubSensor.MY_URI, false), 1, 1);
+		MergedRestriction subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(
+				ContextEvent.PROP_RDF_SUBJECT, new TypeURI(ActivityHubSensor.MY_URI, false), 1, 1);
 
 		// the event is always about the change of measured value
 		MergedRestriction predicateRestriction = MergedRestriction
-				.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
-						ActivityHubSensor.PROP_HAS_VALUE);
+				.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE, ActivityHubSensor.PROP_HAS_VALUE);
 
 		// the reported value will always be of type ActivityHubSensorEvent
 		// MergedRestriction objectRestriction = MergedRestriction
@@ -115,12 +109,10 @@ public class AHContextPublisherSimulator {
 		cep1.addRestriction(predicateRestriction);
 		// cep1.addRestriction(objectRestriction);
 
-
 		// Motion Sensor
-		subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(
-				ContextEvent.PROP_RDF_SUBJECT, new TypeURI(
-						MotionSensor.MY_URI, false), 1, 1);
-		
+		subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(ContextEvent.PROP_RDF_SUBJECT,
+				new TypeURI(MotionSensor.MY_URI, false), 1, 1);
+
 		predicateRestriction = MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
 				MotionSensor.PROP_HAS_VALUE);
 
@@ -129,10 +121,9 @@ public class AHContextPublisherSimulator {
 		cep2.addRestriction(predicateRestriction);
 
 		// ContactClosureSensor
-		subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(
-				ContextEvent.PROP_RDF_SUBJECT, new TypeURI(
-						ContactClosureSensor.MY_URI, false), 1, 1);
-		
+		subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(ContextEvent.PROP_RDF_SUBJECT,
+				new TypeURI(ContactClosureSensor.MY_URI, false), 1, 1);
+
 		predicateRestriction = MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
 				ContactClosureSensor.PROP_HAS_VALUE);
 
@@ -140,12 +131,10 @@ public class AHContextPublisherSimulator {
 		cep3.addRestriction(subjectRestriction);
 		cep3.addRestriction(predicateRestriction);
 
-
 		// UsageSensor
-		subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(
-				ContextEvent.PROP_RDF_SUBJECT, new TypeURI(
-						UsageSensor.MY_URI, false), 1, 1);
-		
+		subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(ContextEvent.PROP_RDF_SUBJECT,
+				new TypeURI(UsageSensor.MY_URI, false), 1, 1);
+
 		predicateRestriction = MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
 				UsageSensor.PROP_HAS_VALUE);
 
@@ -153,12 +142,10 @@ public class AHContextPublisherSimulator {
 		cep4.addRestriction(subjectRestriction);
 		cep4.addRestriction(predicateRestriction);
 
-
 		// SwitchSensor
-		subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(
-				ContextEvent.PROP_RDF_SUBJECT, new TypeURI(
-						SwitchSensor.MY_URI, false), 1, 1);
-		
+		subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(ContextEvent.PROP_RDF_SUBJECT,
+				new TypeURI(SwitchSensor.MY_URI, false), 1, 1);
+
 		predicateRestriction = MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
 				SwitchSensor.PROP_HAS_VALUE);
 
@@ -167,17 +154,15 @@ public class AHContextPublisherSimulator {
 		cep5.addRestriction(predicateRestriction);
 
 		// TemperatureSensor
-		subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(
-				ContextEvent.PROP_RDF_SUBJECT, new TypeURI(
-						TemperatureSensor.MY_URI, false), 1, 1);
-		
+		subjectRestriction = MergedRestriction.getAllValuesRestrictionWithCardinality(ContextEvent.PROP_RDF_SUBJECT,
+				new TypeURI(TemperatureSensor.MY_URI, false), 1, 1);
+
 		predicateRestriction = MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
 				TemperatureSensor.PROP_HAS_VALUE);
 
 		ContextEventPattern cep6 = new ContextEventPattern();
 		cep6.addRestriction(subjectRestriction);
 		cep6.addRestriction(predicateRestriction);
-
 
 		// Register all patterns
 		return new ContextEventPattern[] { cep1, cep2, cep3, cep4, cep5, cep6 };
@@ -190,16 +175,15 @@ public class AHContextPublisherSimulator {
 
 			// select sensor type randomly
 			switch (randomGenerator.nextInt(5)) {
-			
+
 			case 0: // MotionSensor
-				
+
 				// startover condition
 				if (this.ahSimulator.motionSensors.size() < 1)
 					continue;
 
 				// select motion sensor from list randomly
-				sensorIndex = randomGenerator
-						.nextInt(this.ahSimulator.motionSensors.size());
+				sensorIndex = randomGenerator.nextInt(this.ahSimulator.motionSensors.size());
 				MotionSensor ms = this.ahSimulator.motionSensors.get(sensorIndex);
 
 				// choose motion sensor event randomly
@@ -210,34 +194,24 @@ public class AHContextPublisherSimulator {
 				if (ms != null) {
 					ms.setMeasuredValue(msEventURI);
 
-					LogUtils
-							.logDebug(
-									Activator.mc,
-									AHContextPublisherSimulator.class,
-									"startSimulation",
-									new Object[] { "publishing motion sensor context event" },
-									null);
+					LogUtils.logDebug(Activator.mc, AHContextPublisherSimulator.class, "startSimulation",
+							new Object[] { "publishing motion sensor context event" }, null);
 					// publish event
-					cp.publish(new ContextEvent(ms,
-							MotionSensor.PROP_HAS_VALUE));
+					cp.publish(new ContextEvent(ms, MotionSensor.PROP_HAS_VALUE));
 				} else {
-					LogUtils.logError(Activator.mc,
-							AHContextPublisherSimulator.class,
-							"startSimulation",
-							new Object[] { "MotionSensor object is NULL" },
-							null);
+					LogUtils.logError(Activator.mc, AHContextPublisherSimulator.class, "startSimulation",
+							new Object[] { "MotionSensor object is NULL" }, null);
 				}
 				break;
-				
+
 			case 1: // ContactClosureSensors
-				
+
 				// startover condition
 				if (this.ahSimulator.contactClosureSensors.size() < 1)
 					continue;
-				
+
 				// select contact closure sensor from list randomly
-				sensorIndex = randomGenerator
-						.nextInt(this.ahSimulator.contactClosureSensors.size());
+				sensorIndex = randomGenerator.nextInt(this.ahSimulator.contactClosureSensors.size());
 				ContactClosureSensor ccs = this.ahSimulator.contactClosureSensors.get(sensorIndex);
 
 				// choose contact closure sensor event randomly
@@ -248,34 +222,24 @@ public class AHContextPublisherSimulator {
 				if (ccs != null) {
 					ccs.setMeasuredValue(ccsEventURI);
 
-					LogUtils
-							.logDebug(
-									Activator.mc,
-									AHContextPublisherSimulator.class,
-									"startSimulation",
-									new Object[] { "publishing contact closure sensor context event" },
-									null);
+					LogUtils.logDebug(Activator.mc, AHContextPublisherSimulator.class, "startSimulation",
+							new Object[] { "publishing contact closure sensor context event" }, null);
 					// publish event
-					cp.publish(new ContextEvent(ccs,
-							ContactClosureSensor.PROP_HAS_VALUE));
+					cp.publish(new ContextEvent(ccs, ContactClosureSensor.PROP_HAS_VALUE));
 				} else {
-					LogUtils.logError(Activator.mc,
-							AHContextPublisherSimulator.class,
-							"startSimulation",
-							new Object[] { "ContactClosureSensor object is NULL" },
-							null);
+					LogUtils.logError(Activator.mc, AHContextPublisherSimulator.class, "startSimulation",
+							new Object[] { "ContactClosureSensor object is NULL" }, null);
 				}
 				break;
 
 			case 2: // UsageSensors
-				
+
 				// startover condition
 				if (this.ahSimulator.usageSensors.size() < 1)
 					continue;
-				
+
 				// select usage sensor from list randomly
-				sensorIndex = randomGenerator
-						.nextInt(this.ahSimulator.usageSensors.size());
+				sensorIndex = randomGenerator.nextInt(this.ahSimulator.usageSensors.size());
 				UsageSensor us = this.ahSimulator.usageSensors.get(sensorIndex);
 
 				// choose usage sensor event randomly
@@ -286,34 +250,24 @@ public class AHContextPublisherSimulator {
 				if (us != null) {
 					us.setMeasuredValue(usEventURI);
 
-					LogUtils
-							.logDebug(
-									Activator.mc,
-									AHContextPublisherSimulator.class,
-									"startSimulation",
-									new Object[] { "publishing usage sensor context event" },
-									null);
+					LogUtils.logDebug(Activator.mc, AHContextPublisherSimulator.class, "startSimulation",
+							new Object[] { "publishing usage sensor context event" }, null);
 					// publish event
-					cp.publish(new ContextEvent(us,
-							UsageSensor.PROP_HAS_VALUE));
+					cp.publish(new ContextEvent(us, UsageSensor.PROP_HAS_VALUE));
 				} else {
-					LogUtils.logError(Activator.mc,
-							AHContextPublisherSimulator.class,
-							"startSimulation",
-							new Object[] { "UsageSensor object is NULL" },
-							null);
+					LogUtils.logError(Activator.mc, AHContextPublisherSimulator.class, "startSimulation",
+							new Object[] { "UsageSensor object is NULL" }, null);
 				}
 				break;
 
 			case 3: // SwitchSensors
-				
+
 				// startover condition
 				if (this.ahSimulator.switchSensors.size() < 1)
 					continue;
 
 				// select switch sensor from list randomly
-				sensorIndex = randomGenerator
-						.nextInt(this.ahSimulator.switchSensors.size());
+				sensorIndex = randomGenerator.nextInt(this.ahSimulator.switchSensors.size());
 				SwitchSensor ss = this.ahSimulator.switchSensors.get(sensorIndex);
 
 				// choose usage sensor event randomly
@@ -324,34 +278,24 @@ public class AHContextPublisherSimulator {
 				if (ss != null) {
 					ss.setMeasuredValue(ssEventURI);
 
-					LogUtils
-							.logDebug(
-									Activator.mc,
-									AHContextPublisherSimulator.class,
-									"startSimulation",
-									new Object[] { "publishing switch sensor context event" },
-									null);
+					LogUtils.logDebug(Activator.mc, AHContextPublisherSimulator.class, "startSimulation",
+							new Object[] { "publishing switch sensor context event" }, null);
 					// publish event
-					cp.publish(new ContextEvent(ss,
-							SwitchSensor.PROP_HAS_VALUE));
+					cp.publish(new ContextEvent(ss, SwitchSensor.PROP_HAS_VALUE));
 				} else {
-					LogUtils.logError(Activator.mc,
-							AHContextPublisherSimulator.class,
-							"startSimulation",
-							new Object[] { "SwitchSensor object is NULL" },
-							null);
+					LogUtils.logError(Activator.mc, AHContextPublisherSimulator.class, "startSimulation",
+							new Object[] { "SwitchSensor object is NULL" }, null);
 				}
 				break;
 
 			case 4: // TempSensors
-				
+
 				// startover condition
 				if (this.ahSimulator.tempSensors.size() < 1)
 					continue;
 
 				// select temp sensor from list randomly
-				sensorIndex = randomGenerator
-						.nextInt(this.ahSimulator.tempSensors.size());
+				sensorIndex = randomGenerator.nextInt(this.ahSimulator.tempSensors.size());
 				TemperatureSensor ts = this.ahSimulator.tempSensors.get(sensorIndex);
 
 				// choose temp sensor event randomly
@@ -362,22 +306,13 @@ public class AHContextPublisherSimulator {
 				if (ts != null) {
 					ts.setMeasuredValue(tsEventURI);
 
-					LogUtils
-							.logDebug(
-									Activator.mc,
-									AHContextPublisherSimulator.class,
-									"startSimulation",
-									new Object[] { "publishing temp sensor context event" },
-									null);
+					LogUtils.logDebug(Activator.mc, AHContextPublisherSimulator.class, "startSimulation",
+							new Object[] { "publishing temp sensor context event" }, null);
 					// publish event
-					cp.publish(new ContextEvent(ts,
-							TemperatureSensor.PROP_HAS_VALUE));
+					cp.publish(new ContextEvent(ts, TemperatureSensor.PROP_HAS_VALUE));
 				} else {
-					LogUtils.logError(Activator.mc,
-							AHContextPublisherSimulator.class,
-							"startSimulation",
-							new Object[] { "TemperatureSensor object is NULL" },
-							null);
+					LogUtils.logError(Activator.mc, AHContextPublisherSimulator.class, "startSimulation",
+							new Object[] { "TemperatureSensor object is NULL" }, null);
 				}
 				break;
 
@@ -388,7 +323,7 @@ public class AHContextPublisherSimulator {
 					interval = 1;
 				else
 					interval = this.ahSimulator.getEventIntervall();
-				
+
 				wait(interval * 1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block

@@ -32,25 +32,20 @@ public class MainButtonProvider extends ServiceCallee {
 	private static final String START_UI = NAMESPACE + "startUI";
 
 	private ModuleContext ctxt;
-	
-	public MainButtonProvider(ModuleContext context,
-			ServiceProfile[] realizedServices) {
+
+	public MainButtonProvider(ModuleContext context, ServiceProfile[] realizedServices) {
 		super(context, realizedServices);
 		this.ctxt = context;
 	}
-	
-	public MainButtonProvider(ModuleContext context){
-		this(context,getProfiles());
+
+	public MainButtonProvider(ModuleContext context) {
+		this(context, getProfiles());
 	}
 
 	private static ServiceProfile[] getProfiles() {
-		ServiceProfile initDP = InitialServiceDialog
-				.createInitialDialogProfile(
-						MY_URI,
-						"http://depot.universAAL.com",
-						"simple UI",
-						START_UI);
-		return new ServiceProfile[] {initDP};
+		ServiceProfile initDP = InitialServiceDialog.createInitialDialogProfile(MY_URI, "http://depot.universAAL.com",
+				"simple UI", START_UI);
+		return new ServiceProfile[] { initDP };
 	}
 
 	@Override

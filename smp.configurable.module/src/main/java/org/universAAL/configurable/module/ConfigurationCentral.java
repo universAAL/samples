@@ -28,85 +28,82 @@ import org.universAAL.middleware.owl.MergedRestriction;
 import org.universAAL.middleware.rdf.TypeMapper;
 
 /**
- * An example of a {@link ConfigurableModule}, not all implementations should be like this.
+ * An example of a {@link ConfigurableModule}, not all implementations should be
+ * like this.
+ * 
  * @author amedrano
  *
  */
-public class ConfigurationCentral implements ConfigurableModule{
+public class ConfigurationCentral implements ConfigurableModule {
 
 	public static String APPID = "configurationSample";
-	
-	public static DescribedEntity[] configurations = {
-		new ConfigurationParameter() {
-			
-			public Scope getScope() {
-				return Scope.applicationScope("app.name", APPID);
-			}
-			
-			public String getDescription(Locale loc) {
-				return "the string to use as application name";
-			}
-			
-			public MergedRestriction getType() {
-				return  MergedRestriction
-						.getAllValuesRestrictionWithCardinality(ConfigurationParameter.PROP_CONFIG_VALUE, 
-								TypeMapper.getDatatypeURI(String.class), 1, 1);
-			}
-			
-			public Object getDefaultValue() {
-				return "Configuration Example";
-			}
-		},
 
-		new ConfigurationParameter() {
-		    
-		    public Scope getScope() {
-			return Scope.applicationScope("number.of.foos", APPID);
-		    }
-		    
-		    public String getDescription(Locale loc) {
-			if (loc.equals(Locale.FRENCH)){
-			    //return description in french.
-			}
-			return "The number of foos to give by this module, between 0 and 10";
-		    }
-		    
-		    public MergedRestriction getType() {
-			MergedRestriction mr = MergedRestriction
-				.getAllValuesRestrictionWithCardinality(ConfigurationParameter.PROP_CONFIG_VALUE, 
-					new IntRestriction(0, true, 10, true), 1, 1);
-//			mr.addType();
-			return mr;
-		    }
-		    
-		    public Object getDefaultValue() {
-			return 1;
-		    }
-		},
-		new ConfigurationFile() {
-			
-			public Scope getScope() {
-				return Scope.applicationScope("optional.file", APPID);
-			}
-			
-			public String getDescription(Locale loc) {
-				return "a file that only I could interpret, I.E: not a properties file.";
-			}
-			
-			public String getExtensionfilter() {
-				return ".xml";
-			}
-			
-			public URL getDefaultFileRef() {
-				return null;
-			}
-		},
-	};
-	
+	public static DescribedEntity[] configurations = { new ConfigurationParameter() {
+
+		public Scope getScope() {
+			return Scope.applicationScope("app.name", APPID);
+		}
+
+		public String getDescription(Locale loc) {
+			return "the string to use as application name";
+		}
+
+		public MergedRestriction getType() {
+			return MergedRestriction.getAllValuesRestrictionWithCardinality(ConfigurationParameter.PROP_CONFIG_VALUE,
+					TypeMapper.getDatatypeURI(String.class), 1, 1);
+		}
+
+		public Object getDefaultValue() {
+			return "Configuration Example";
+		}
+	},
+
+			new ConfigurationParameter() {
+
+				public Scope getScope() {
+					return Scope.applicationScope("number.of.foos", APPID);
+				}
+
+				public String getDescription(Locale loc) {
+					if (loc.equals(Locale.FRENCH)) {
+						// return description in french.
+					}
+					return "The number of foos to give by this module, between 0 and 10";
+				}
+
+				public MergedRestriction getType() {
+					MergedRestriction mr = MergedRestriction.getAllValuesRestrictionWithCardinality(
+							ConfigurationParameter.PROP_CONFIG_VALUE, new IntRestriction(0, true, 10, true), 1, 1);
+					// mr.addType();
+					return mr;
+				}
+
+				public Object getDefaultValue() {
+					return 1;
+				}
+			}, new ConfigurationFile() {
+
+				public Scope getScope() {
+					return Scope.applicationScope("optional.file", APPID);
+				}
+
+				public String getDescription(Locale loc) {
+					return "a file that only I could interpret, I.E: not a properties file.";
+				}
+
+				public String getExtensionfilter() {
+					return ".xml";
+				}
+
+				public URL getDefaultFileRef() {
+					return null;
+				}
+			}, };
+
 	/** {@inheritDoc} */
 	public boolean configurationChanged(Scope param, Object value) {
 		System.out.println(param.getId() + " changed to: " + value);
-		//in this example always accepted...
+		// in this example always accepted...
 		return true;
 	}
 

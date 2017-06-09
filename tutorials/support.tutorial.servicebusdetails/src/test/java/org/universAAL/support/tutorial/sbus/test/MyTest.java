@@ -14,25 +14,25 @@ import org.universAAL.support.tutorial.sbus.server.LampProvider;
 
 public class MyTest extends BusTestCase {
 
-    MyConsumer lc;
-    LampProvider lp;
+	MyConsumer lc;
+	LampProvider lp;
 
-    @Override
-    protected void setUp() throws Exception {
-	super.setUp();
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
 
-	OntologyManagement.getInstance().register(mc, new LocationOntology());
-	OntologyManagement.getInstance().register(mc, new ShapeOntology());
-	OntologyManagement.getInstance().register(mc, new PhThingOntology());
-	OntologyManagement.getInstance().register(mc, new TutorialOntology());
+		OntologyManagement.getInstance().register(mc, new LocationOntology());
+		OntologyManagement.getInstance().register(mc, new ShapeOntology());
+		OntologyManagement.getInstance().register(mc, new PhThingOntology());
+		OntologyManagement.getInstance().register(mc, new TutorialOntology());
 
-	mc.setAttribute(AccessControl.PROP_MODE, "none");
-	((JUnitModuleContext) mc).setLogLevel(LogLevel.ERROR);
+		mc.setAttribute(AccessControl.PROP_MODE, "none");
+		((JUnitModuleContext) mc).setLogLevel(LogLevel.ERROR);
 
-	lp = new LampProvider(mc);
-	lc = new MyConsumer(mc);
-    }
+		lp = new LampProvider(mc);
+		lc = new MyConsumer(mc);
+	}
 
-    public void test() {
-    }
+	public void test() {
+	}
 }

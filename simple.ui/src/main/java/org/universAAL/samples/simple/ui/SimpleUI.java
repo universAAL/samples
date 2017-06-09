@@ -36,23 +36,25 @@ public class SimpleUI extends UICaller {
 	}
 
 	@Override
-	public void communicationChannelBroken() {	}
+	public void communicationChannelBroken() {
+	}
 
 	@Override
-	public void dialogAborted(String dialogID, Resource data) {	}
+	public void dialogAborted(String dialogID, Resource data) {
+	}
 
 	@Override
 	public void handleUIResponse(UIResponse input) {
 		// TODO Auto-generated method stub
 	}
-	
-	public void showDialog(Resource inputUser){
+
+	public void showDialog(Resource inputUser) {
 		Form f = Form.newDialog("simple UI", new Resource());
-		//start of the form model
+		// start of the form model
 		new SimpleOutput(f.getIOControls(), null, null, "Hello world!");
-		//...
+		// ...
 		new Submit(f.getSubmits(), new Label("Done", null), "doneForm");
-		//stop of form model
+		// stop of form model
 		UIRequest req = new UIRequest(inputUser, f, LevelRating.none, Locale.ENGLISH, PrivacyLevel.insensible);
 		this.sendUIRequest(req);
 	}

@@ -49,7 +49,7 @@ import org.universAAL.ontology.personalhealthdevice.WeighingScale;
 
 // Main class
 public class Publisher {
-	
+
 	// Atributes
 	// Default context publisher
 	private ContextPublisher cp;
@@ -58,14 +58,16 @@ public class Publisher {
 	// Module context
 	ModuleContext mc;
 	// URI prefix
-	public static final String PUBLISHER_URI_PREFIX = 
-		"http://http://ontology.universAAL.org/PersonalHealtDeviceSimulator.owl#";
+	public static final String PUBLISHER_URI_PREFIX = "http://http://ontology.universAAL.org/PersonalHealtDeviceSimulator.owl#";
 
 	// Constructor
-	
-	/** Publisher contructor 
-	 *  @param context - framework bundle context
-	 * */
+
+	/**
+	 * Publisher contructor
+	 * 
+	 * @param context
+	 *            - framework bundle context
+	 */
 	public Publisher(BundleContext context) {
 		// Instantiate the context provider info with a valid provider URI
 		cpInfo = new ContextProvider(PUBLISHER_URI_PREFIX + "PersonalHealthDeviceContextProvider");
@@ -75,43 +77,43 @@ public class Publisher {
 		// Set the provided events to unknown with an empty pattern
 		cpInfo.setProvidedEvents(new ContextEventPattern[] { new ContextEventPattern() });
 		// Create and register the context publisher
-		cp = new DefaultContextPublisher(mc,cpInfo);
+		cp = new DefaultContextPublisher(mc, cpInfo);
 	}
-	
+
 	// Methods
-	
-	/** Publish weighting scale events to uAAL bus */	
-	public void publishWeightEvent(int weight) {		
-		WeighingScale ws = new WeighingScale(PUBLISHER_URI_PREFIX + "WeighingScale");		
+
+	/** Publish weighting scale events to uAAL bus */
+	public void publishWeightEvent(int weight) {
+		WeighingScale ws = new WeighingScale(PUBLISHER_URI_PREFIX + "WeighingScale");
 		PersonWeight m_ws = new PersonWeight(PUBLISHER_URI_PREFIX + "Measurement_Weight");
-		m_ws.setProperty(Measurement.PROP_VALUE, Float.valueOf((float)weight));
-		ws.setValue(m_ws);		
-		cp.publish(new ContextEvent(ws,WeighingScale.PROP_HAS_VALUE));		
+		m_ws.setProperty(Measurement.PROP_VALUE, Float.valueOf((float) weight));
+		ws.setValue(m_ws);
+		cp.publish(new ContextEvent(ws, WeighingScale.PROP_HAS_VALUE));
 	}
-	
+
 	/** Publish blood pressure events to uAAL bus */
-	public void publishBloodPressureEvent(int sys,int dia,int hr) {		
+	public void publishBloodPressureEvent(int sys, int dia, int hr) {
 		BloodPressure value = new BloodPressure(PUBLISHER_URI_PREFIX + "BloodPressureMeasurement");
-		
+
 		Measurement systolic = new Measurement();
 		systolic.setValue(Float.valueOf(sys));
-		
+
 		Measurement diastolic = new Measurement();
 		diastolic.setValue(Float.valueOf(dia));
-		
+
 		value.setSyst(systolic);
 		value.setDias(diastolic);
-		
-		BloodPressureSensor sensor = new BloodPressureSensor( PUBLISHER_URI_PREFIX + "continuaBTBloodPressureSensor" );
+
+		BloodPressureSensor sensor = new BloodPressureSensor(PUBLISHER_URI_PREFIX + "continuaBTBloodPressureSensor");
 		sensor.setValue(value);
-		
-		cp.publish(new ContextEvent(sensor,BloodPressureSensor.PROP_HAS_VALUE));
+
+		cp.publish(new ContextEvent(sensor, BloodPressureSensor.PROP_HAS_VALUE));
 
 		HeartRate hrvalue = new HeartRate();
 		hrvalue.setProperty(Measurement.PROP_VALUE, Integer.valueOf(hr));
-		HeartRateSensor hrsensor = new HeartRateSensor( PUBLISHER_URI_PREFIX + "continuaBTHeartRateSensor" );
+		HeartRateSensor hrsensor = new HeartRateSensor(PUBLISHER_URI_PREFIX + "continuaBTHeartRateSensor");
 		hrsensor.setValue(hrvalue);
-		
-		cp.publish(new ContextEvent(hrsensor,BloodPressureSensor.PROP_HAS_VALUE));
+
+		cp.publish(new ContextEvent(hrsensor, BloodPressureSensor.PROP_HAS_VALUE));
 	}
 }

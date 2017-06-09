@@ -26,16 +26,15 @@ import org.universAAL.samples.lighting.uiclient.SharedResources;
 
 public class Activator implements BundleActivator {
 
-    SharedResources sr;
+	SharedResources sr;
 
-    public void start(BundleContext context) throws Exception {
-	SharedResources.moduleContext = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { context });
+	public void start(BundleContext context) throws Exception {
+		SharedResources.moduleContext = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
 
-	sr = new SharedResources();
-	sr.start();
-    }
+		sr = new SharedResources();
+		sr.start();
+	}
 
-    public void stop(BundleContext context) throws Exception {
-    }
+	public void stop(BundleContext context) throws Exception {
+	}
 }

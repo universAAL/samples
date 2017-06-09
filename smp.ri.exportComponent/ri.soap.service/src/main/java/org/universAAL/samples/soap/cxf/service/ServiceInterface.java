@@ -26,5 +26,5 @@ public interface ServiceInterface {
 
 	Collection<String> getAllLamps();
 
-	String  turnOffLamp(String lampURI);
+	String turnOffLamp(String lampURI);
 }

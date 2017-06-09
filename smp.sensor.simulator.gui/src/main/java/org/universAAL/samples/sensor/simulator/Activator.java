@@ -32,76 +32,60 @@ import org.universAAL.middleware.container.utils.LogUtils;
  * 
  */
 public class Activator implements BundleActivator {
-    /**
-     * {@link ModuleContext}
-     */
-    private static ModuleContext mcontext;
-    LocationContextPublisher lp = null;
-    SensorSimulatorGUI frame = null;
+	/**
+	 * {@link ModuleContext}
+	 */
+	private static ModuleContext mcontext;
+	LocationContextPublisher lp = null;
+	SensorSimulatorGUI frame = null;
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext
-     * )
-     */
-    public void start(BundleContext bcontext) throws Exception {
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext
+	 * )
+	 */
+	public void start(BundleContext bcontext) throws Exception {
 
-	Activator.mcontext = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { bcontext });
+		Activator.mcontext = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
-	EventQueue.invokeLater(new Runnable() {
-	    public void run() {
-		try {
-		    LocationContextPublisher lp = new LocationContextPublisher(
-			    mcontext);
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					LocationContextPublisher lp = new LocationContextPublisher(mcontext);
 
-		    LampStatePublisher lampStatePublisher = new LampStatePublisher(
-			    mcontext);
-		    RoomTemperaturePublisher roomTemperaturePublisher = new RoomTemperaturePublisher(
-			    mcontext);
+					LampStatePublisher lampStatePublisher = new LampStatePublisher(mcontext);
+					RoomTemperaturePublisher roomTemperaturePublisher = new RoomTemperaturePublisher(mcontext);
 
-		    RoomHumidityPublisher roomHumidityPublisher = new RoomHumidityPublisher(
-			    mcontext);
+					RoomHumidityPublisher roomHumidityPublisher = new RoomHumidityPublisher(mcontext);
 
-		    SensorSimulatorGUI frame = new SensorSimulatorGUI(lp,
-			    lampStatePublisher, roomTemperaturePublisher,
-			    roomHumidityPublisher);
-		    frame.setVisible(true);
-		} catch (Exception e) {
-		    e.printStackTrace();
-		}
-	    }
-	});
+					SensorSimulatorGUI frame = new SensorSimulatorGUI(lp, lampStatePublisher, roomTemperaturePublisher,
+							roomHumidityPublisher);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 
-	LogUtils
-		.logInfo(
-			mcontext,
-			this.getClass(),
-			"start",
-			new Object[] { "smp.sensor.simulator.gui bundle has started." },
-			null);
-    }
+		LogUtils.logInfo(mcontext, this.getClass(), "start",
+				new Object[] { "smp.sensor.simulator.gui bundle has started." }, null);
+	}
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see
-     * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
-     */
-    public void stop(BundleContext context) throws Exception {
-	LogUtils
-		.logInfo(
-			mcontext,
-			this.getClass(),
-			"stop",
-			new Object[] { "smp.sensor.simulator.gui bundle has stopped." },
-			null);
-	mcontext = null;
-	lp = null;
-	frame = null;
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
+	 */
+	public void stop(BundleContext context) throws Exception {
+		LogUtils.logInfo(mcontext, this.getClass(), "stop",
+				new Object[] { "smp.sensor.simulator.gui bundle has stopped." }, null);
+		mcontext = null;
+		lp = null;
+		frame = null;
 
-    }
+	}
 
 }

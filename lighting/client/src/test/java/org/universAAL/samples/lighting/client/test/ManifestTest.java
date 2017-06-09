@@ -30,44 +30,40 @@ import org.universAAL.samples.lighting.client.LightingConsumer;
 
 public class ManifestTest extends ManifestTestCase {
 
-    @Override
-    protected void setUp() throws Exception {
-	super.setUp();
+	@Override
+	protected void setUp() throws Exception {
+		super.setUp();
 
-	OntologyManagement.getInstance().register(mc, new LocationOntology());
-	OntologyManagement.getInstance().register(mc, new ShapeOntology());
-	OntologyManagement.getInstance().register(mc, new PhThingOntology());
-	OntologyManagement.getInstance().register(mc, new LightingOntology());
-    }
+		OntologyManagement.getInstance().register(mc, new LocationOntology());
+		OntologyManagement.getInstance().register(mc, new ShapeOntology());
+		OntologyManagement.getInstance().register(mc, new PhThingOntology());
+		OntologyManagement.getInstance().register(mc, new LightingOntology());
+	}
 
-    public void testCreateManifest() {
-	// service requests
-	ServiceRequest req;
-	req = add("Get all light sources", "Get a list of all light sources.",
-		LightingConsumer.getAllLampsRequest(), true);
+	public void testCreateManifest() {
+		// service requests
+		ServiceRequest req;
+		req = add("Get all light sources", "Get a list of all light sources.", LightingConsumer.getAllLampsRequest(),
+				true);
 
-	req = add("Turn light source on", "Turn on a specific light source.",
-		LightingConsumer.turnOnRequest("testLampUri"),
-		ManifestTestCase.EXTEND_HASVALUE);
-	assertTrue(req.matches(LightingConsumer.turnOnRequest("someOtherUri")));
+		req = add("Turn light source on", "Turn on a specific light source.",
+				LightingConsumer.turnOnRequest("testLampUri"), ManifestTestCase.EXTEND_HASVALUE);
+		assertTrue(req.matches(LightingConsumer.turnOnRequest("someOtherUri")));
 
-	req = add("Turn light source off", "Turn off a specific light source.",
-		LightingConsumer.turnOffRequest("testLampUri"),
-		ManifestTestCase.EXTEND_HASVALUE);
-	assertTrue(req.matches(LightingConsumer.turnOffRequest("someOtherUri")));
+		req = add("Turn light source off", "Turn off a specific light source.",
+				LightingConsumer.turnOffRequest("testLampUri"), ManifestTestCase.EXTEND_HASVALUE);
+		assertTrue(req.matches(LightingConsumer.turnOffRequest("someOtherUri")));
 
-	req = add("Dim light source",
-		"Dim a specific light source to a given value.",
-		LightingConsumer.dimRequest("testLampUri", 50), true);
-	assertTrue(LightingConsumer.dimRequest("someOtherUri", 0).matches(req));
-	assertTrue(LightingConsumer.dimRequest("someOtherUri", 50).matches(req));
-	assertTrue(LightingConsumer.dimRequest("someOtherUri", 100)
-		.matches(req));
+		req = add("Dim light source", "Dim a specific light source to a given value.",
+				LightingConsumer.dimRequest("testLampUri", 50), true);
+		assertTrue(LightingConsumer.dimRequest("someOtherUri", 0).matches(req));
+		assertTrue(LightingConsumer.dimRequest("someOtherUri", 50).matches(req));
+		assertTrue(LightingConsumer.dimRequest("someOtherUri", 100).matches(req));
 
-	// context event patterns
-	add("light sources", "All changes for light sources.",
-		LightingConsumer.getContextSubscriptionParams()[0], false);
+		// context event patterns
+		add("light sources", "All changes for light sources.", LightingConsumer.getContextSubscriptionParams()[0],
+				false);
 
-	writeManifest();
-    }
+		writeManifest();
+	}
 }

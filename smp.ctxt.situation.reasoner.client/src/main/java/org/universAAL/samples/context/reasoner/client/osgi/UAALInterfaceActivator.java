@@ -28,38 +28,33 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.serialization.MessageContentSerializer;
 
 public class UAALInterfaceActivator implements ServiceListener {
-    private BundleContext osgiContext = null;
-    public static MessageContentSerializer serializer = null;
+	private BundleContext osgiContext = null;
+	public static MessageContentSerializer serializer = null;
 
-    UAALInterfaceActivator(BundleContext osgiContext, ModuleContext context)
-	    throws InvalidSyntaxException {
-	this.osgiContext = osgiContext;
+	UAALInterfaceActivator(BundleContext osgiContext, ModuleContext context) throws InvalidSyntaxException {
+		this.osgiContext = osgiContext;
 
-	// Look for MessageContentSerializer of mw.data.serialization
-	String filter = "(objectclass="
-		+ MessageContentSerializer.class.getName() + ")";
-	osgiContext.addServiceListener(this, filter);
-	ServiceReference[] references = osgiContext.getServiceReferences(null,
-		filter);
-	for (int i = 0; references != null && i < references.length; i++) {
-	    this.serviceChanged(new ServiceEvent(ServiceEvent.REGISTERED,
-		    references[i]));
+		// Look for MessageContentSerializer of mw.data.serialization
+		String filter = "(objectclass=" + MessageContentSerializer.class.getName() + ")";
+		osgiContext.addServiceListener(this, filter);
+		ServiceReference[] references = osgiContext.getServiceReferences(null, filter);
+		for (int i = 0; references != null && i < references.length; i++) {
+			this.serviceChanged(new ServiceEvent(ServiceEvent.REGISTERED, references[i]));
+		}
 	}
-    }
 
-    public void serviceChanged(ServiceEvent event) {
-	// Update the MessageContentSerializer
-	switch (event.getType()) {
-	case ServiceEvent.REGISTERED:
-	case ServiceEvent.MODIFIED: {
-	    serializer = (MessageContentSerializer) osgiContext
-		    .getService(event.getServiceReference());
-	    break;
+	public void serviceChanged(ServiceEvent event) {
+		// Update the MessageContentSerializer
+		switch (event.getType()) {
+		case ServiceEvent.REGISTERED:
+		case ServiceEvent.MODIFIED: {
+			serializer = (MessageContentSerializer) osgiContext.getService(event.getServiceReference());
+			break;
+		}
+		case ServiceEvent.UNREGISTERING:
+			break;
+		default:
+			break;
+		}
 	}
-	case ServiceEvent.UNREGISTERING:
-	    break;
-	default:
-	    break;
-	}
-    }
 }

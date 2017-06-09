@@ -46,69 +46,65 @@ import org.universAAL.support.utils.ui.Forms;
 import org.universAAL.support.utils.ui.low.Dialog;
 
 public class Activator implements BundleActivator {
-    // OSGi & uAAL contexts
-    public static BundleContext osgiContext = null;
-    public static ModuleContext context = null;
-    // Namespace constant to reuse
-    private static String NAMESPACE = "http://ontology.itaca.upv.es/Test.owl#";
-    // The UAAL helper
-    private UAAL u;
+	// OSGi & uAAL contexts
+	public static BundleContext osgiContext = null;
+	public static ModuleContext context = null;
+	// Namespace constant to reuse
+	private static String NAMESPACE = "http://ontology.itaca.upv.es/Test.owl#";
+	// The UAAL helper
+	private UAAL u;
 
-    public void start(BundleContext bcontext) throws Exception {
-	// Get the uAAL module context
-	Activator.osgiContext = bcontext;
-	Activator.context = uAALBundleContainer.THE_CONTAINER
-		.registerModule(new Object[] { bcontext });
+	public void start(BundleContext bcontext) throws Exception {
+		// Get the uAAL module context
+		Activator.osgiContext = bcontext;
+		Activator.context = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
-	// Instantiate the UAAL helper
-	u = new UAAL(context);
-	
-	// Subscribe events [Subject: User, Predicate: hasLocation]
-	Pattern cep = new Pattern(User.MY_URI, User.PROP_PHYSICAL_LOCATION, null);
-	u.subscribeC(new ContextEventPattern[] { cep }, new ICListener() {
-	    public void handleContextEvent(ContextEvent event) {
-		System.out.println(">>> Received Event: " + event.toString());
-	    }
-	});
-	
-	// Send event [Subject: user1, Predicate: hasLocation, Object: loc1]
-	User user1 = new User(Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX + "saied");
-	user1.setLocation(new Location(NAMESPACE + "loc1"));
-	ContextEvent e = new ContextEvent(user1, User.PROP_PHYSICAL_LOCATION);
-	u.sendC(e);
-			
-	// Provide service [Profiling services GET/SET/ADD/REMOVE a User]
-	u.provideS(UtilEditor.getServiceProfiles(NAMESPACE,
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).path, User.MY_URI),
-		new ISListener() {
-		    public ServiceResponse handleCall(ServiceCall s) {
-			System.out.println(">>> Received Service Call: " + s.toString());
-			return new ServiceResponse(CallStatus.succeeded);
-		    }
+		// Instantiate the UAAL helper
+		u = new UAAL(context);
+
+		// Subscribe events [Subject: User, Predicate: hasLocation]
+		Pattern cep = new Pattern(User.MY_URI, User.PROP_PHYSICAL_LOCATION, null);
+		u.subscribeC(new ContextEventPattern[] { cep }, new ICListener() {
+			public void handleContextEvent(ContextEvent event) {
+				System.out.println(">>> Received Event: " + event.toString());
+			}
 		});
 
-	// Call service [Profiling service REMOVE user1]
-	ServiceResponse r = u.callS(UtilEditor.requestRemove(
-		ProfilingService.MY_URI,
-		Path.at(ProfilingService.PROP_CONTROLS).path, user1));
-	System.out.println(">>> Received Service Response: "+ r.getCallStatus());
-	
-	// Request UI [Output: "Successfully reached UI test", Submit:"OK"]
-	Dialog d = new Dialog(user1,"UI example");
-	d.add(Forms.out("Result:", "Successfully reached UI test"));
-	d.addSubmit(Forms.submit(NAMESPACE + "button1", "OK"));
-	u.requestUI(d, new IUIListener() {
-	    public void handleUIResponse(UIResponse r) {
-		System.out.println(">>> Received UI Response: "	+ r.getSubmissionID());
-	    }
-	});
+		// Send event [Subject: user1, Predicate: hasLocation, Object: loc1]
+		User user1 = new User(Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX + "saied");
+		user1.setLocation(new Location(NAMESPACE + "loc1"));
+		ContextEvent e = new ContextEvent(user1, User.PROP_PHYSICAL_LOCATION);
+		u.sendC(e);
 
-    }
+		// Provide service [Profiling services GET/SET/ADD/REMOVE a User]
+		u.provideS(UtilEditor.getServiceProfiles(NAMESPACE, ProfilingService.MY_URI,
+				Path.at(ProfilingService.PROP_CONTROLS).path, User.MY_URI), new ISListener() {
+					public ServiceResponse handleCall(ServiceCall s) {
+						System.out.println(">>> Received Service Call: " + s.toString());
+						return new ServiceResponse(CallStatus.succeeded);
+					}
+				});
 
-    public void stop(BundleContext arg0) throws Exception {
-	// Close uAAL wrappers and free resources
-	u.terminate();
-    }
+		// Call service [Profiling service REMOVE user1]
+		ServiceResponse r = u.callS(
+				UtilEditor.requestRemove(ProfilingService.MY_URI, Path.at(ProfilingService.PROP_CONTROLS).path, user1));
+		System.out.println(">>> Received Service Response: " + r.getCallStatus());
+
+		// Request UI [Output: "Successfully reached UI test", Submit:"OK"]
+		Dialog d = new Dialog(user1, "UI example");
+		d.add(Forms.out("Result:", "Successfully reached UI test"));
+		d.addSubmit(Forms.submit(NAMESPACE + "button1", "OK"));
+		u.requestUI(d, new IUIListener() {
+			public void handleUIResponse(UIResponse r) {
+				System.out.println(">>> Received UI Response: " + r.getSubmissionID());
+			}
+		});
+
+	}
+
+	public void stop(BundleContext arg0) throws Exception {
+		// Close uAAL wrappers and free resources
+		u.terminate();
+	}
 
 }
