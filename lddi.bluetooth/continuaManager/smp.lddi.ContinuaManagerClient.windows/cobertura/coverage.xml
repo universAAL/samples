@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="412" branches-covered="0" branches-valid="90" complexity="1.8103448275862069" version="2.1.1" timestamp="1496983355494">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="412" branches-covered="0" branches-valid="90" complexity="1.8103448275862069" version="2.1.1" timestamp="1497041766318">
 	<sources>
 		<source>/home/travis/build/universAAL/samples/lddi.bluetooth/continuaManager/windows/src/main/java</source>
 		<source>--source</source>
