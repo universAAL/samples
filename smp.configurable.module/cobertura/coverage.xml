@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="39" branches-covered="0" branches-valid="2" complexity="1.0666666666666667" version="2.1.1" timestamp="1496717951702">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="39" branches-covered="0" branches-valid="2" complexity="1.0666666666666667" version="2.1.1" timestamp="1496983326536">
 	<sources>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/smp.configurable.module/src/main/java</source>
@@ -13,35 +13,35 @@
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="37" hits="0" branch="false"/>
 								<line number="39" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="35" hits="0" branch="false"/>
+								<line number="37" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="configurationChanged" signature="(Lorg/universAAL/middleware/interfaces/configuration/scope/Scope;Ljava/lang/Object;)Z" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="108" hits="0" branch="false"/>
-								<line number="110" hits="0" branch="false"/>
+								<line number="105" hits="0" branch="false"/>
+								<line number="107" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="35" hits="0" branch="false"/>
 						<line number="37" hits="0" branch="false"/>
 						<line number="39" hits="0" branch="false"/>
-						<line number="108" hits="0" branch="false"/>
-						<line number="110" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="105" hits="0" branch="false"/>
+						<line number="107" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.configurable.module.ConfigurationCentral$1" filename="org/universAAL/configurable/module/ConfigurationCentral.java" line-rate="0.0" branch-rate="1.0" complexity="1.0769230769230769">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="getDefaultValue" signature="()Ljava/lang/Object;" line-rate="0.0" branch-rate="1.0" complexity="0">
@@ -51,27 +51,25 @@
 						</method>
 						<method name="getDescription" signature="(Ljava/util/Locale;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="47" hits="0" branch="false"/>
+								<line number="48" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="getScope" signature="()Lorg/universAAL/middleware/interfaces/configuration/scope/Scope;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="43" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="getType" signature="()Lorg/universAAL/middleware/owl/MergedRestriction;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="51" hits="0" branch="false"/>
 								<line number="52" hits="0" branch="false"/>
 								<line number="53" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="40" hits="0" branch="false"/>
-						<line number="43" hits="0" branch="false"/>
-						<line number="47" hits="0" branch="false"/>
-						<line number="51" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
 						<line number="52" hits="0" branch="false"/>
 						<line number="53" hits="0" branch="false"/>
 						<line number="57" hits="0" branch="false"/>
@@ -86,7 +84,7 @@
 						</method>
 						<method name="getDefaultValue" signature="()Ljava/lang/Object;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="83" hits="0" branch="false"/>
+								<line number="82" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="getDescription" signature="(Ljava/util/Locale;)Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
@@ -107,8 +105,7 @@
 						<method name="getType" signature="()Lorg/universAAL/middleware/owl/MergedRestriction;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="75" hits="0" branch="false"/>
-								<line number="76" hits="0" branch="false"/>
-								<line number="79" hits="0" branch="false"/>
+								<line number="78" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -122,45 +119,44 @@
 						</line>
 						<line number="71" hits="0" branch="false"/>
 						<line number="75" hits="0" branch="false"/>
-						<line number="76" hits="0" branch="false"/>
-						<line number="79" hits="0" branch="false"/>
-						<line number="83" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="82" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.configurable.module.ConfigurationCentral$3" filename="org/universAAL/configurable/module/ConfigurationCentral.java" line-rate="0.0" branch-rate="1.0" complexity="1.0769230769230769">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="86" hits="0" branch="false"/>
+								<line number="84" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="getDefaultFileRef" signature="()Ljava/net/URL;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="101" hits="0" branch="false"/>
+								<line number="99" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="getDescription" signature="(Ljava/util/Locale;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="93" hits="0" branch="false"/>
+								<line number="91" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="getExtensionfilter" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="97" hits="0" branch="false"/>
+								<line number="95" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="getScope" signature="()Lorg/universAAL/middleware/interfaces/configuration/scope/Scope;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="89" hits="0" branch="false"/>
+								<line number="87" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="86" hits="0" branch="false"/>
-						<line number="89" hits="0" branch="false"/>
-						<line number="93" hits="0" branch="false"/>
-						<line number="97" hits="0" branch="false"/>
-						<line number="101" hits="0" branch="false"/>
+						<line number="84" hits="0" branch="false"/>
+						<line number="87" hits="0" branch="false"/>
+						<line number="91" hits="0" branch="false"/>
+						<line number="95" hits="0" branch="false"/>
+						<line number="99" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.configurable.module.ProjectActivator" filename="org/universAAL/configurable/module/ProjectActivator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
@@ -176,19 +172,21 @@
 								<line number="15" hits="0" branch="false"/>
 								<line number="20" hits="0" branch="false"/>
 								<line number="22" hits="0" branch="false"/>
-								<line number="24" hits="0" branch="false"/>
+								<line number="23" hits="0" branch="false"/>
 								<line number="25" hits="0" branch="false"/>
 								<line number="26" hits="0" branch="false"/>
+								<line number="27" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="stop" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="30" hits="0" branch="false"/>
 								<line number="35" hits="0" branch="false"/>
-								<line number="37" hits="0" branch="false"/>
-								<line number="41" hits="0" branch="false"/>
+								<line number="36" hits="0" branch="false"/>
+								<line number="38" hits="0" branch="false"/>
 								<line number="42" hits="0" branch="false"/>
-								<line number="44" hits="0" branch="false"/>
+								<line number="43" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -198,15 +196,17 @@
 						<line number="15" hits="0" branch="false"/>
 						<line number="20" hits="0" branch="false"/>
 						<line number="22" hits="0" branch="false"/>
-						<line number="24" hits="0" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
 						<line number="25" hits="0" branch="false"/>
 						<line number="26" hits="0" branch="false"/>
+						<line number="27" hits="0" branch="false"/>
 						<line number="30" hits="0" branch="false"/>
 						<line number="35" hits="0" branch="false"/>
-						<line number="37" hits="0" branch="false"/>
-						<line number="41" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
 						<line number="42" hits="0" branch="false"/>
-						<line number="44" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
 					</lines>
 				</class>
 			</classes>

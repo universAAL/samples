@@ -28,7 +28,7 @@ under the License.
       <title>File: 4,
              Errors: 65,
              Warnings: 4,
-             Infos: 215
+             Infos: 40
       </title>
             <link>http://xtras/samples/lddi.bluetooth/smp.lddi.weighingScalePublisher//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/lddi.bluetooth/smp.lddi.weighingScalePublisher//checkstyle.html#org.universAAL.lddi.weighingscale.publisher.hdpManagerListener.java">org/universAAL/lddi/weighingscale/publisher/hdpManagerListener.java</a>
                 </td>
                 <td>
-                  26
+                  10
                 </td>
                 <td>
                   1
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/lddi.bluetooth/smp.lddi.weighingScalePublisher//checkstyle.html#org.universAAL.lddi.weighingscale.publisher.Publisher.java">org/universAAL/lddi/weighingscale/publisher/Publisher.java</a>
                 </td>
                 <td>
-                  17
+                  5
                 </td>
                 <td>
                   0
@@ -77,7 +77,7 @@ under the License.
                   <a href="http://xtras/samples/lddi.bluetooth/smp.lddi.weighingScalePublisher//checkstyle.html#org.universAAL.lddi.weighingscale.publisher.Activator.java">org/universAAL/lddi/weighingscale/publisher/Activator.java</a>
                 </td>
                 <td>
-                  17
+                  3
                 </td>
                 <td>
                   1
@@ -91,7 +91,7 @@ under the License.
                   <a href="http://xtras/samples/lddi.bluetooth/smp.lddi.weighingScalePublisher//checkstyle.html#org.universAAL.lddi.weighingscale.publisher.hdpManager.java">org/universAAL/lddi/weighingscale/publisher/hdpManager.java</a>
                 </td>
                 <td>
-                  155
+                  22
                 </td>
                 <td>
                   2

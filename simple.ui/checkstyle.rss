@@ -28,7 +28,7 @@ under the License.
       <title>File: 3,
              Errors: 21,
              Warnings: 1,
-             Infos: 20
+             Infos: 9
       </title>
             <link>http://xtras/samples/simple.ui//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/simple.ui//checkstyle.html#org.universAAL.samples.simple.ui.MainButtonProvider.java">org/universAAL/samples/simple/ui/MainButtonProvider.java</a>
                 </td>
                 <td>
-                  7
+                  3
                 </td>
                 <td>
                   1
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/simple.ui//checkstyle.html#org.universAAL.samples.simple.ui.ProjectActivator.java">org/universAAL/samples/simple/ui/ProjectActivator.java</a>
                 </td>
                 <td>
-                  8
+                  3
                 </td>
                 <td>
                   0
@@ -77,7 +77,7 @@ under the License.
                   <a href="http://xtras/samples/simple.ui//checkstyle.html#org.universAAL.samples.simple.ui.SimpleUI.java">org/universAAL/samples/simple/ui/SimpleUI.java</a>
                 </td>
                 <td>
-                  5
+                  3
                 </td>
                 <td>
                   0

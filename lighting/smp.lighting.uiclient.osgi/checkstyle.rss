@@ -28,7 +28,7 @@ under the License.
       <title>File: 5,
              Errors: 64,
              Warnings: 3,
-             Infos: 33
+             Infos: 34
       </title>
             <link>http://xtras/samples/lighting/smp.lighting.uiclient.osgi//checkstyle.html</link>
       <description>
@@ -77,7 +77,7 @@ under the License.
                   <a href="http://xtras/samples/lighting/smp.lighting.uiclient.osgi//checkstyle.html#org.universAAL.samples.lighting.uiclient.LightingConsumer.java">org/universAAL/samples/lighting/uiclient/LightingConsumer.java</a>
                 </td>
                 <td>
-                  11
+                  12
                 </td>
                 <td>
                   1

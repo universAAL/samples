@@ -28,7 +28,7 @@ under the License.
       <title>File: 4,
              Errors: 47,
              Warnings: 3,
-             Infos: 16
+             Infos: 15
       </title>
             <link>http://xtras/samples/smp.mw.broker.client//checkstyle.html</link>
       <description>
@@ -91,7 +91,7 @@ under the License.
                   <a href="http://xtras/samples/smp.mw.broker.client//checkstyle.html#org.universAAL.middleware.broker.client.BrokerClientImpl.java">org/universAAL/middleware/broker/client/BrokerClientImpl.java</a>
                 </td>
                 <td>
-                  6
+                  5
                 </td>
                 <td>
                   1

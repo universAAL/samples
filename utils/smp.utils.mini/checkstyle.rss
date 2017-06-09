@@ -28,7 +28,7 @@ under the License.
       <title>File: 1,
              Errors: 11,
              Warnings: 2,
-             Infos: 13
+             Infos: 7
       </title>
             <link>http://xtras/samples/utils/smp.utils.mini//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/utils/smp.utils.mini//checkstyle.html#org.universAAL.samples.util.mini.Activator.java">org/universAAL/samples/util/mini/Activator.java</a>
                 </td>
                 <td>
-                  13
+                  7
                 </td>
                 <td>
                   2

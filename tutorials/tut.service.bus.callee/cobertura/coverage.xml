@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="25" branches-covered="0" branches-valid="6" complexity="1.6666666666666667" version="2.1.1" timestamp="1496718009687">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="25" branches-covered="0" branches-valid="6" complexity="1.6666666666666667" version="2.1.1" timestamp="1496983386808">
 	<sources>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/tutorials/tut.service.bus.callee/src/main/java</source>
@@ -73,13 +73,13 @@
 						</method>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
+								<line number="88" hits="0" branch="false"/>
 								<line number="89" hits="0" branch="false"/>
-								<line number="90" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="communicationChannelBroken" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="117" hits="0" branch="false"/>
+								<line number="114" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="getProfiles" signature="()[Lorg/universAAL/middleware/service/owls/profile/ServiceProfile;" line-rate="0.0" branch-rate="1.0" complexity="0">
@@ -87,21 +87,21 @@
 								<line number="66" hits="0" branch="false"/>
 								<line number="71" hits="0" branch="false"/>
 								<line number="75" hits="0" branch="false"/>
-								<line number="84" hits="0" branch="false"/>
+								<line number="83" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="handleCall" signature="(Lorg/universAAL/middleware/service/ServiceCall;)Lorg/universAAL/middleware/service/ServiceResponse;" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
-								<line number="96" hits="0" branch="false"/>
-								<line number="97" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="95" hits="0" branch="false"/>
+								<line number="96" hits="0" branch="true" condition-coverage="0% (0/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="0%"/>
 									</conditions>
 								</line>
-								<line number="99" hits="0" branch="false"/>
-								<line number="102" hits="0" branch="false"/>
+								<line number="98" hits="0" branch="false"/>
+								<line number="101" hits="0" branch="false"/>
+								<line number="103" hits="0" branch="false"/>
 								<line number="106" hits="0" branch="false"/>
-								<line number="109" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -111,20 +111,20 @@
 						<line number="66" hits="0" branch="false"/>
 						<line number="71" hits="0" branch="false"/>
 						<line number="75" hits="0" branch="false"/>
-						<line number="84" hits="0" branch="false"/>
+						<line number="83" hits="0" branch="false"/>
+						<line number="88" hits="0" branch="false"/>
 						<line number="89" hits="0" branch="false"/>
-						<line number="90" hits="0" branch="false"/>
-						<line number="96" hits="0" branch="false"/>
-						<line number="97" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="95" hits="0" branch="false"/>
+						<line number="96" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
 							</conditions>
 						</line>
-						<line number="99" hits="0" branch="false"/>
-						<line number="102" hits="0" branch="false"/>
+						<line number="98" hits="0" branch="false"/>
+						<line number="101" hits="0" branch="false"/>
+						<line number="103" hits="0" branch="false"/>
 						<line number="106" hits="0" branch="false"/>
-						<line number="109" hits="0" branch="false"/>
-						<line number="117" hits="0" branch="false"/>
+						<line number="114" hits="0" branch="false"/>
 					</lines>
 				</class>
 			</classes>

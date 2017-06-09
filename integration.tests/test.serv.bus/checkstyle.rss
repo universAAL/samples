@@ -28,7 +28,7 @@ under the License.
       <title>File: 2,
              Errors: 32,
              Warnings: 1,
-             Infos: 22
+             Infos: 14
       </title>
             <link>http://xtras/samples/integration.tests/test.serv.bus//checkstyle.html</link>
       <description>
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.serv.bus//checkstyle.html#org.universAAL.samples.servbus.GUIPanel.java">org/universAAL/samples/servbus/GUIPanel.java</a>
                 </td>
                 <td>
-                  15
+                  7
                 </td>
                 <td>
                   0

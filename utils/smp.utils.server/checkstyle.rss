@@ -28,7 +28,7 @@ under the License.
       <title>File: 2,
              Errors: 31,
              Warnings: 1,
-             Infos: 62
+             Infos: 14
       </title>
             <link>http://xtras/samples/utils/smp.utils.server//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/utils/smp.utils.server//checkstyle.html#org.universAAL.samples.utils.server.CalleeExample.java">org/universAAL/samples/utils/server/CalleeExample.java</a>
                 </td>
                 <td>
-                  47
+                  7
                 </td>
                 <td>
                   0
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/utils/smp.utils.server//checkstyle.html#org.universAAL.samples.utils.server.Activator.java">org/universAAL/samples/utils/server/Activator.java</a>
                 </td>
                 <td>
-                  15
+                  7
                 </td>
                 <td>
                   1

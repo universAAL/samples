@@ -28,7 +28,7 @@ under the License.
       <title>File: 2,
              Errors: 29,
              Warnings: 2,
-             Infos: 3
+             Infos: 1
       </title>
             <link>http://xtras/samples/smp.ri.exportComponent/smp.cxf.server//checkstyle.html</link>
       <description>
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/smp.ri.exportComponent/smp.cxf.server//checkstyle.html#org.universAAL.samples.soap.cxf.server.Activator.java">org/universAAL/samples/soap/cxf/server/Activator.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   2

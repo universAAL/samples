@@ -215,125 +215,128 @@
 <td>153</td></tr>
 <tr class="b"><td colspan='3'>
 <div>
-<pre>		radiobuttonPanel.setBounds(20,100,400,50);		
+<pre>		radiobuttonPanel.setBounds(20, 100, 400, 50);
 		radioButtonsGroup = new ButtonGroup();
-		realMeasurementButton = createJRadioButton(&quot;Real measurement&quot;);	
+		realMeasurementButton = createJRadioButton(&quot;Real measurement&quot;);
 		realMeasurementButton.setToolTipText(&quot;Continua devices should be paired first&quot;);
 		simulatedMeasurementButton = createJRadioButton(&quot;Simulated measurement&quot;);
-		simulatedMeasurementButton.setToolTipText(&quot;Random values will be published to uAAL context bus (Continua devices not required)&quot;);
+		simulatedMeasurementButton
+				.setToolTipText(&quot;Random values will be published to uAAL context bus (Continua devices not required)&quot;);
 		radiobuttonPanel.add(realMeasurementButton);
 		radiobuttonPanel.add(simulatedMeasurementButton);
 		mainPanel.add(radiobuttonPanel);
 		// Buttons
-		bloodPressureButton = createJButton(bloodPressureImage,214,160,218,145,&quot;bloodPressure&quot;);		
-		mainPanel.add(bloodPressureButton);		
-		weighingScaleButton = createJButton(weighingScaleImage,18,154,178,157,&quot;weighingScale&quot;);			
-		mainPanel.add(weighingScaleButton);		
-	}	
-	
+		bloodPressureButton = createJButton(bloodPressureImage, 214, 160, 218, 145, &quot;bloodPressure&quot;);
+		mainPanel.add(bloodPressureButton);
+		weighingScaleButton = createJButton(weighingScaleImage, 18, 154, 178, 157, &quot;weighingScale&quot;);
+		mainPanel.add(weighingScaleButton);
+	}
+
 	/** Create JPanel */
 	public JPanel createJPanel() {
 		JPanel output = null;
-		output = new JPanel();	
+		output = new JPanel();
 		output.setLayout(null);
-		output.setBorder(new EmptyBorder(5,5,5,5));	
+		output.setBorder(new EmptyBorder(5, 5, 5, 5));
 		output.setBackground(Color.WHITE);
 		return output;
 	}
-	
+
 	/** Create JButtons */
-	public JButton createJButton(String image,int x,int y,int weight,int height,String name) {
+	public JButton createJButton(String image, int x, int y, int weight, int height, String name) {
 		JButton output = null;
 		output = new JButton(&quot;&quot;);
 		output.setBackground(Color.WHITE);
-		if(image != null)
+		if (image != null)
 			output.setIcon(new ImageIcon(ctx.getBundle().getResource(image)));
-		output.setBounds(x,y,weight,height);
+		output.setBounds(x, y, weight, height);
 		output.setActionCommand(name);
 		output.addActionListener(this);
 		return output;
-	}	
-	
+	}
+
 	/** Create JRadioButtons */
 	public JRadioButton createJRadioButton(String name) {
 		JRadioButton output = null;
-		output = new JRadioButton(name,false);
+		output = new JRadioButton(name, false);
 		output.setActionCommand(name);
 		output.setBackground(Color.WHITE);
 		output.addActionListener(this);
 		radioButtonsGroup.add(output);
 		return output;
 	}
-    
-	/** Close GUI frame */
-    public void closeGUI(){	     	
-    	dispose();		
-    }
 
-    /** Action listener for radio buttons and jbuttons */
+	/** Close GUI frame */
+	public void closeGUI() {
+		dispose();
+	}
+
+	/** Action listener for radio buttons and jbuttons */
 	public void actionPerformed(ActionEvent e) {
-		if(e.getActionCommand().equals(&quot;bloodPressure&quot;)) {
+		if (e.getActionCommand().equals(&quot;bloodPressure&quot;)) {
 			// Blood pressure device
-			if(realMeasurementButton.isSelected()) {
+			if (realMeasurementButton.isSelected()) {
 				realMeasurement = true;
-				createUaalPublisher(&quot;bloodPressure&quot;,&quot;real&quot;);				
-			} else if(simulatedMeasurementButton.isSelected()) {
+				createUaalPublisher(&quot;bloodPressure&quot;, &quot;real&quot;);
+			} else if (simulatedMeasurementButton.isSelected()) {
 				realMeasurement = false;
-				createUaalPublisher(&quot;bloodPressure&quot;,&quot;simulated&quot;);				
-			}	
-		} else if(e.getActionCommand().equals(&quot;weighingScale&quot;)) {
-			// Weighing scale device
-			if(realMeasurementButton.isSelected()) {
-				realMeasurement = true;
-				createUaalPublisher(&quot;weighingScale&quot;,&quot;real&quot;);				
-			} else if(simulatedMeasurementButton.isSelected()) {
-				realMeasurement = false;
-				createUaalPublisher(&quot;weighingScale&quot;,&quot;simulated&quot;);				
+				createUaalPublisher(&quot;bloodPressure&quot;, &quot;simulated&quot;);
 			}
-		} else if(e.getActionCommand().equals(&quot;publishData&quot;)) {
+		} else if (e.getActionCommand().equals(&quot;weighingScale&quot;)) {
+			// Weighing scale device
+			if (realMeasurementButton.isSelected()) {
+				realMeasurement = true;
+				createUaalPublisher(&quot;weighingScale&quot;, &quot;real&quot;);
+			} else if (simulatedMeasurementButton.isSelected()) {
+				realMeasurement = false;
+				createUaalPublisher(&quot;weighingScale&quot;, &quot;simulated&quot;);
+			}
+		} else if (e.getActionCommand().equals(&quot;publishData&quot;)) {
 			// Publish data to uAAL context bus. Ensure that values are not NULL
-			uaalX73Publisher = new Publisher(ctx);			
-			if(realMeasurement) {				
+			uaalX73Publisher = new Publisher(ctx);
+			if (realMeasurement) {
 				// Real values
-				if(remoteDeviceType.equals(&quot;WeightingScale&quot;)) {					
-					if(finalMeasuredWeightData != -1.0) {						
-						double temp_1 = shortDecimalNumber(finalMeasuredWeightData)*1000;
-						int temp = (int) temp_1;						
-						uaalX73Publisher.publishWeightEvent(temp);	
-						//stopPublisherGUI();
-					}	
+				if (remoteDeviceType.equals(&quot;WeightingScale&quot;)) {
+					if (finalMeasuredWeightData != -1.0) {
+						double temp_1 = shortDecimalNumber(finalMeasuredWeightData) * 1000;
+						int temp = (int) temp_1;
+						uaalX73Publisher.publishWeightEvent(temp);
+						// stopPublisherGUI();
+					}
 				} else {
-					if((finalDiaBloodPressureData != -1)&amp;&amp;(finalHrBloodPressureData != -1)&amp;&amp;(finalSysBloodPressureData != -1)) {						
+					if ((finalDiaBloodPressureData != -1) &amp;&amp; (finalHrBloodPressureData != -1)
+							&amp;&amp; (finalSysBloodPressureData != -1)) {
 						int temp_0 = (int) finalSysBloodPressureData;
 						int temp_1 = (int) finalDiaBloodPressureData;
-						int temp_2 = (int) finalHrBloodPressureData;						
-						uaalX73Publisher.publishBloodPressureEvent(temp_0,temp_1,temp_2);	
-						//stopPublisherGUI();
+						int temp_2 = (int) finalHrBloodPressureData;
+						uaalX73Publisher.publishBloodPressureEvent(temp_0, temp_1, temp_2);
+						// stopPublisherGUI();
 					}
-				}				
-			} else {				
-				// Random values
-				if(remoteDeviceType.equals(&quot;WeightingScale&quot;)) {
-					uaalX73Publisher.publishWeightEvent(Integer.parseInt(uaalPublisherWeightValueTextfield.getText()));
-					//stopPublisherGUI();
-				} else {					
-					uaalX73Publisher.publishBloodPressureEvent(Integer.parseInt(uaalPublisherBloodPressureSysValueTextfield.getText()),
-							   Integer.parseInt(uaalPublisherBloodPressureDiaValueTextfield.getText()),
-							   Integer.parseInt(uaalPublisherBloodPressurePulValueTextfield.getText()));
-					//stopPublisherGUI();
 				}
-			}			
+			} else {
+				// Random values
+				if (remoteDeviceType.equals(&quot;WeightingScale&quot;)) {
+					uaalX73Publisher.publishWeightEvent(Integer.parseInt(uaalPublisherWeightValueTextfield.getText()));
+					// stopPublisherGUI();
+				} else {
+					uaalX73Publisher.publishBloodPressureEvent(
+							Integer.parseInt(uaalPublisherBloodPressureSysValueTextfield.getText()),
+							Integer.parseInt(uaalPublisherBloodPressureDiaValueTextfield.getText()),
+							Integer.parseInt(uaalPublisherBloodPressurePulValueTextfield.getText()));
+					// stopPublisherGUI();
+				}
+			}
 		}
-	}    
-	
+	}
+
 	/** Create and show uAAL publisher frame */
-	public void createUaalPublisher(String device,String type) {
+	public void createUaalPublisher(String device, String type) {
 		// Hide main GUI
 		setVisible(false);
 		// Create dialog frame
-		uaalPublisher = new JDialog(this,&quot;uAAL publisher&quot;,true);
+		uaalPublisher = new JDialog(this, &quot;uAAL publisher&quot;, true);
 		uaalPublisher.setResizable(false);
-		uaalPublisher.setBounds(100,100,650,325);</pre></div></td></tr></table>
+		uaalPublisher.setBounds(100, 100, 650, 325);</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="a">
 <th>File</th>
@@ -342,71 +345,71 @@
 <tr class="b">
 <td>org/universAAL/lddi/manager/gui/GUI.java</td>
 <td>universAAL Samples LDDI Continua Manager Client (unix OS version)</td>
-<td>277</td></tr>
+<td>280</td></tr>
 <tr class="a">
 <td>org/universAAL/lddi/manager/win/gui/GUI.java</td>
 <td>universAAL Samples LDDI Continua Manager Client (windows OS version)</td>
-<td>275</td></tr>
+<td>278</td></tr>
 <tr class="b"><td colspan='3'>
 <div>
-<pre>		    	stopPublisherGUI();
-		    }
-		});		
+<pre>				stopPublisherGUI();
+			}
+		});
 		// Main panel
 		mainPublisherPanel = createJPanel();
-		uaalPublisher.getContentPane().add(mainPublisherPanel,BorderLayout.CENTER);
-		// Main text label 		
-		uaalPublisherMainLabel = createJLabel(&quot;&quot;,200,5,350,50,Font.BOLD,24);					
-		// Image icon		
-		uaalPublisherLogoLabel = new JLabel(&quot;&quot;);		
-		uaalPublisherLogoLabel.setBounds(25,75,218,145);		
+		uaalPublisher.getContentPane().add(mainPublisherPanel, BorderLayout.CENTER);
+		// Main text label
+		uaalPublisherMainLabel = createJLabel(&quot;&quot;, 200, 5, 350, 50, Font.BOLD, 24);
+		// Image icon
+		uaalPublisherLogoLabel = new JLabel(&quot;&quot;);
+		uaalPublisherLogoLabel.setBounds(25, 75, 218, 145);
 		// Check Continua agent selected
-		if(device.equals(&quot;bloodPressure&quot;)) {
-			uaalPublisherMainLabel.setText(&quot;Blood pressure monitor&quot;);		
-			uaalPublisherLogoLabel.setIcon(new ImageIcon(ctx.getBundle().getResource(bloodPressureImage)));			
-			uaalPublisherBloodPressureSysValueLabel = createJLabel(&quot;SYS(mmHg)&quot;,250,100,100,50,Font.PLAIN,16);			
-			uaalPublisherBloodPressureSysValueTextfield = createJTextfield(400,100,100,50,Font.PLAIN,16);			
-			uaalPublisherBloodPressureDiaValueLabel = createJLabel(&quot;DIA(mmHg)&quot;,250,150,100,50,Font.PLAIN,16);				
-			uaalPublisherBloodPressureDiaValueTextfield = createJTextfield(400,150,100,50,Font.PLAIN,16);			
-			uaalPublisherBloodPressurePulValueLabel = createJLabel(&quot;     BPM&quot;,250,200,100,50,Font.PLAIN,16);
-			uaalPublisherBloodPressurePulValueTextfield = createJTextfield(400,200,100,50,Font.PLAIN,16);
+		if (device.equals(&quot;bloodPressure&quot;)) {
+			uaalPublisherMainLabel.setText(&quot;Blood pressure monitor&quot;);
+			uaalPublisherLogoLabel.setIcon(new ImageIcon(ctx.getBundle().getResource(bloodPressureImage)));
+			uaalPublisherBloodPressureSysValueLabel = createJLabel(&quot;SYS(mmHg)&quot;, 250, 100, 100, 50, Font.PLAIN, 16);
+			uaalPublisherBloodPressureSysValueTextfield = createJTextfield(400, 100, 100, 50, Font.PLAIN, 16);
+			uaalPublisherBloodPressureDiaValueLabel = createJLabel(&quot;DIA(mmHg)&quot;, 250, 150, 100, 50, Font.PLAIN, 16);
+			uaalPublisherBloodPressureDiaValueTextfield = createJTextfield(400, 150, 100, 50, Font.PLAIN, 16);
+			uaalPublisherBloodPressurePulValueLabel = createJLabel(&quot;     BPM&quot;, 250, 200, 100, 50, Font.PLAIN, 16);
+			uaalPublisherBloodPressurePulValueTextfield = createJTextfield(400, 200, 100, 50, Font.PLAIN, 16);
 		} else {
 			uaalPublisherMainLabel.setText(&quot;Weighing scale&quot;);
 			uaalPublisherLogoLabel.setIcon(new ImageIcon(ctx.getBundle().getResource(weighingScaleImage)));
-			uaalPublisherWeightValueLabel = createJLabel(&quot;Weight value&quot;,250,100,150,50,Font.PLAIN,16);			
-			uaalPublisherWeightValueTextfield = createJTextfield(400,100,100,50,Font.PLAIN,16);			
-			uaalPublisherWeightUnitLabel = createJLabel(&quot; Weight unit&quot;,250,150,150,50,Font.PLAIN,16);				
-			uaalPublisherWeightUnitTextfield = createJTextfield(400,150,100,50,Font.PLAIN,16);
+			uaalPublisherWeightValueLabel = createJLabel(&quot;Weight value&quot;, 250, 100, 150, 50, Font.PLAIN, 16);
+			uaalPublisherWeightValueTextfield = createJTextfield(400, 100, 100, 50, Font.PLAIN, 16);
+			uaalPublisherWeightUnitLabel = createJLabel(&quot; Weight unit&quot;, 250, 150, 150, 50, Font.PLAIN, 16);
+			uaalPublisherWeightUnitTextfield = createJTextfield(400, 150, 100, 50, Font.PLAIN, 16);
 		}
-		uaalPublisherButton = createJButton(null,250,275,200,25,&quot;publishData&quot;);
-		uaalPublisherButton.setText(&quot;Publish to uAAL&quot;);	
+		uaalPublisherButton = createJButton(null, 250, 275, 200, 25, &quot;publishData&quot;);
+		uaalPublisherButton.setText(&quot;Publish to uAAL&quot;);
 		uaalPublisherButton.setToolTipText(&quot;Public measured data to uAAL context bus&quot;);
 		// Check type of measurement
-		if(type.equals(&quot;real&quot;)) {
-			// Run hdp manager and wait for agent values			
-			if(device.equals(&quot;bloodPressure&quot;)) {
+		if (type.equals(&quot;real&quot;)) {
+			// Run hdp manager and wait for agent values
+			if (device.equals(&quot;bloodPressure&quot;)) {
 				remoteDeviceType = &quot;BloodPressureMonitor&quot;;
-				instantiateHdpManager();				
-			} else {		
+				instantiateHdpManager();
+			} else {
 				remoteDeviceType = &quot;WeightingScale&quot;;
-				instantiateHdpManager();				
+				instantiateHdpManager();
 			}
 		} else {
 			// Generate random values
-			if(device.equals(&quot;bloodPressure&quot;)) {
+			if (device.equals(&quot;bloodPressure&quot;)) {
 				remoteDeviceType = &quot;BloodPressureMonitor&quot;;
-				uaalPublisherBloodPressureSysValueTextfield.setText(&quot;&quot;+getRandomValue(90,119));
-				uaalPublisherBloodPressureDiaValueTextfield.setText(&quot;&quot;+getRandomValue(60,79));
-				uaalPublisherBloodPressurePulValueTextfield.setText(&quot;&quot;+getRandomValue(49,198));
+				uaalPublisherBloodPressureSysValueTextfield.setText(&quot;&quot; + getRandomValue(90, 119));
+				uaalPublisherBloodPressureDiaValueTextfield.setText(&quot;&quot; + getRandomValue(60, 79));
+				uaalPublisherBloodPressurePulValueTextfield.setText(&quot;&quot; + getRandomValue(49, 198));
 			} else {
 				remoteDeviceType = &quot;WeightingScale&quot;;
-				uaalPublisherWeightValueTextfield.setText(&quot;&quot;+getRandomValue(50,110));
+				uaalPublisherWeightValueTextfield.setText(&quot;&quot; + getRandomValue(50, 110));
 				uaalPublisherWeightUnitTextfield.setText(&quot;kg&quot;);
 			}
 		}
 		// Add components to the panel
 		mainPublisherPanel.add(uaalPublisherMainLabel);
-		mainPublisherPanel.add(uaalPublisherLogoLabel);	
+		mainPublisherPanel.add(uaalPublisherLogoLabel);
 		addJLabelComponent(uaalPublisherBloodPressureSysValueLabel);
 		addJLabelComponent(uaalPublisherBloodPressureSysValueTextfield);
 		addJLabelComponent(uaalPublisherBloodPressureDiaValueLabel);
@@ -428,87 +431,112 @@
 <tr class="b">
 <td>org/universAAL/lddi/manager/publisher/hdpManager.java</td>
 <td>universAAL Samples LDDI Continua Manager Client (unix OS version)</td>
-<td>279</td></tr>
+<td>333</td></tr>
 <tr class="a">
 <td>org/universAAL/lddi/weighingscale/publisher/hdpManager.java</td>
 <td>universAAL Samples LDDI Weighing scale agent publisher</td>
-<td>267</td></tr>
+<td>319</td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>	}
 
-	/** Java methods */	
+	/** Java methods */
 	// Init method
-	public void init() {		
+	public void init() {
 		// Create the objects related to ISO/IEEE 11073 Manager interpreter
 		eventmanager = new EventIEEEManager();
 		x73manager = new Manager(eventmanager);
 		fsm = x73manager.getFSM();
-		rmp = x73manager.getMessageProcessor();		
-		// First (mandatory) step: DBUS platform should be successfully initialized (otherwise JVM will return fatal errors)
-		if(startDbusPlatform()) {			
-			// Get and show the object path of the DEFAULT adapter (in GNU/Linux environments should be 'hci0')
+		rmp = x73manager.getMessageProcessor();
+		// First (mandatory) step: DBUS platform should be successfully
+		// initialized (otherwise JVM will return fatal errors)
+		if (startDbusPlatform()) {
+			// Get and show the object path of the DEFAULT adapter (in GNU/Linux
+			// environments should be 'hci0')
 			String defaultDevicePathTemp = getLocalBluetoothAdapterPath();
-			System.out.println(&quot;Default bluetooth adapter path: &quot;+defaultDevicePathTemp);	
-			if(defaultDevicePathTemp == null) {				
+			System.out.println(&quot;Default bluetooth adapter path: &quot; + defaultDevicePathTemp);
+			if (defaultDevicePathTemp == null) {
 				System.out.println(&quot;Unable to detect bluetooth adapters&quot;);
 				System.exit(0);
-			}	
-			// Show the object path of ALL the local bluetooth adapters available at our PC
+			}
+			// Show the object path of ALL the local bluetooth adapters
+			// available at our PC
 			System.out.println(&quot;List of local bluetooth adapters:&quot;);
 			showLocalBluetoothAdaptersPath();
-			// Show some properties of the DEFAULT adapter: address, name, class, powered, discoverable, pairable, discoverable timeout, pairable timeout,
-			// discovering, devices and UUIDs. Check bluetooth manuals to understand the meaning of each
+			// Show some properties of the DEFAULT adapter: address, name,
+			// class, powered, discoverable, pairable, discoverable timeout,
+			// pairable timeout,
+			// discovering, devices and UUIDs. Check bluetooth manuals to
+			// understand the meaning of each
 			System.out.println(&quot;Local bluetooth properties:&quot;);
 			showDefaultLocalBluetoothAdaptersProperties();
 			// Object path of a remote device
 			remoteDevicePath = getRemoteBluetoothAdapterPath(macAddressRemoteDevice);
-			System.out.println(&quot;Remote bluetooth adapter path: &quot;+remoteDevicePath);	
+			System.out.println(&quot;Remote bluetooth adapter path: &quot; + remoteDevicePath);
 			// Remote device properties (from its own path)
 			System.out.println(&quot;Remote device properties (BEFORE):&quot;);
 			showRemoteBluetoothAdapterProperties(remoteDevicePath);
-			// Prior to start any communication process, we need to ensure that the remote device appears as a 'Trusted' (true value) device (by default  
-			// it should appear as false (not trusted) so we need to change this property			
-			setPropertyRemoteDevice(remoteDevicePath,trustedProperty,true);			
-			// Show the properties of the remote device to verify that the 'Trusted' value has been successfully changed (false -&gt; true)
-			System.out.println(&quot;Remote device properties (AFTER):&quot;);			
+			// Prior to start any communication process, we need to ensure that
+			// the remote device appears as a 'Trusted' (true value) device (by
+			// default
+			// it should appear as false (not trusted) so we need to change this
+			// property
+			setPropertyRemoteDevice(remoteDevicePath, trustedProperty, true);
+			// Show the properties of the remote device to verify that the
+			// 'Trusted' value has been successfully changed (false -&gt; true)
+			System.out.println(&quot;Remote device properties (AFTER):&quot;);
 			showRemoteBluetoothAdapterProperties(remoteDevicePath);
-			// We need to create an HDP application before any HDP data frames exchange between agents/sources and managers/sinks. IMPORTANT: the app 
-			// created will be only valid for the data types and roles passed as arguments. For instance, this HDP channel will be created only if the 
-			// remote device is a weight scale acting as a source. So, here we go...
-			String hdpApplicationIdTemp = createHDPApplication(dataTypeValue,roleValue,shortDescriptionValue,channelTypeValue);
-			System.out.println(&quot;HDP application identifier: &quot;+hdpApplicationIdTemp);
+			// We need to create an HDP application before any HDP data frames
+			// exchange between agents/sources and managers/sinks. IMPORTANT:
+			// the app
+			// created will be only valid for the data types and roles passed as
+			// arguments. For instance, this HDP channel will be created only if
+			// the
+			// remote device is a weight scale acting as a source. So, here we
+			// go...
+			String hdpApplicationIdTemp = createHDPApplication(dataTypeValue, roleValue, shortDescriptionValue,
+					channelTypeValue);
+			System.out.println(&quot;HDP application identifier: &quot; + hdpApplicationIdTemp);
 			// HDP app successfully created
-			if(hdpApplicationIdTemp != null) {
-				// We have the option to destroy/close any HDP application. For security reason, only the owner of this process will be able to destroy it
+			if (hdpApplicationIdTemp != null) {
+				// We have the option to destroy/close any HDP application. For
+				// security reason, only the owner of this process will be able
+				// to destroy it
 				destroyHDPApplication(hdpApplicationIdTemp);
 				// New HDP application (again)
-				hdpApplicationIdTemp = createHDPApplication(dataTypeValue,roleValue,shortDescriptionValue,channelTypeValue);
-				System.out.println(&quot;HDP application identifier: &quot;+hdpApplicationIdTemp);				
-				// A good practice should be check the availability of the DBUS system (is it still alive?)
-				System.out.println(&quot;DBUS sytem status: &quot;+(getDbusSystemAvailability()?&quot;Up&quot;:&quot;Down&quot;));
-				// Remember that those PHD devices with compatible data type and role (weight scales and sources) are able to find our applicattion through 
-				// bluetooth connections. At this case: we are a sink so we need to wait for input connections (handle signals). First step: we need to
+				hdpApplicationIdTemp = createHDPApplication(dataTypeValue, roleValue, shortDescriptionValue,
+						channelTypeValue);
+				System.out.println(&quot;HDP application identifier: &quot; + hdpApplicationIdTemp);
+				// A good practice should be check the availability of the DBUS
+				// system (is it still alive?)
+				System.out.println(&quot;DBUS sytem status: &quot; + (getDbusSystemAvailability() ? &quot;Up&quot; : &quot;Down&quot;));
+				// Remember that those PHD devices with compatible data type and
+				// role (weight scales and sources) are able to find our
+				// applicattion through
+				// bluetooth connections. At this case: we are a sink so we need
+				// to wait for input connections (handle signals). First step:
+				// we need to
 				// subscribe our application to HDP events in the DBUS system.
-				if(!enableHDPListener()) {
+				if (!enableHDPListener()) {
 					System.out.println(&quot;Unable to listen HDP messages inside DBUS&quot;);
 					System.exit(0);
 				} else {
-					System.out.println(fsm.getStringTransportState() + &quot; &quot; +fsm.getStringChannelState());					
+					System.out.println(fsm.getStringTransportState() + &quot; &quot; + fsm.getStringChannelState());
 					waitHDPConnections();
-				}				
+				}
 			}
 		} else {
-			System.out.println(&quot;Ups. Bad news, the monkey who has developed this application ran out of nuts. Try again later...&quot;);
+			System.out.println(
+					&quot;Ups. Bad news, the monkey who has developed this application ran out of nuts. Try again later...&quot;);
 		}
-	}	
+	}
 
 	/* HDP channel available. x073 state machine at connected status */
-	public void onChannelConnected() {		
+	public void onChannelConnected() {
 		// Get the object path of the just created HDP channel
-		if(remoteDevicePath != null) {
+		if (remoteDevicePath != null) {
 			hdpDataChannelPath = getHDPDataChannelPath(remoteDevicePath);
-			System.out.println(&quot;HDP channel path: &quot;+hdpDataChannelPath);			</pre></div></td></tr></table>
+			System.out.println(&quot;HDP channel path: &quot; + hdpDataChannelPath);</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="a">
 <th>File</th>
@@ -525,7 +553,7 @@
 <tr class="b"><td colspan='3'>
 <div>
 <pre>public class Publisher {
-	
+
 	// Atributes
 	// Default context publisher
 	private ContextPublisher cp;
@@ -534,14 +562,16 @@
 	// Module context
 	ModuleContext mc;
 	// URI prefix
-	public static final String PUBLISHER_URI_PREFIX = 
-		&quot;http://http://ontology.universAAL.org/PersonalHealtDeviceSimulator.owl#&quot;;
+	public static final String PUBLISHER_URI_PREFIX = &quot;http://http://ontology.universAAL.org/PersonalHealtDeviceSimulator.owl#&quot;;
 
 	// Constructor
-	
-	/** Publisher contructor 
-	 *  @param context - framework bundle context
-	 * */
+
+	/**
+	 * Publisher contructor
+	 * 
+	 * @param context
+	 *            - framework bundle context
+	 */
 	public Publisher(BundleContext context) {
 		// Instantiate the context provider info with a valid provider URI
 		cpInfo = new ContextProvider(PUBLISHER_URI_PREFIX + &quot;PersonalHealthDeviceContextProvider&quot;);
@@ -551,44 +581,44 @@
 		// Set the provided events to unknown with an empty pattern
 		cpInfo.setProvidedEvents(new ContextEventPattern[] { new ContextEventPattern() });
 		// Create and register the context publisher
-		cp = new DefaultContextPublisher(mc,cpInfo);
+		cp = new DefaultContextPublisher(mc, cpInfo);
 	}
-	
+
 	// Methods
-	
-	/** Publish weighting scale events to uAAL bus */	
-	public void publishWeightEvent(int weight) {		
-		WeighingScale ws = new WeighingScale(PUBLISHER_URI_PREFIX + &quot;WeighingScale&quot;);		
+
+	/** Publish weighting scale events to uAAL bus */
+	public void publishWeightEvent(int weight) {
+		WeighingScale ws = new WeighingScale(PUBLISHER_URI_PREFIX + &quot;WeighingScale&quot;);
 		PersonWeight m_ws = new PersonWeight(PUBLISHER_URI_PREFIX + &quot;Measurement_Weight&quot;);
-		m_ws.setProperty(Measurement.PROP_VALUE, Float.valueOf((float)weight));
-		ws.setValue(m_ws);		
-		cp.publish(new ContextEvent(ws,WeighingScale.PROP_HAS_VALUE));		
+		m_ws.setProperty(Measurement.PROP_VALUE, Float.valueOf((float) weight));
+		ws.setValue(m_ws);
+		cp.publish(new ContextEvent(ws, WeighingScale.PROP_HAS_VALUE));
 	}
-	
+
 	/** Publish blood pressure events to uAAL bus */
-	public void publishBloodPressureEvent(int sys,int dia,int hr) {		
+	public void publishBloodPressureEvent(int sys, int dia, int hr) {
 		BloodPressure value = new BloodPressure(PUBLISHER_URI_PREFIX + &quot;BloodPressureMeasurement&quot;);
-		
+
 		Measurement systolic = new Measurement();
 		systolic.setValue(Float.valueOf(sys));
-		
+
 		Measurement diastolic = new Measurement();
 		diastolic.setValue(Float.valueOf(dia));
-		
+
 		value.setSyst(systolic);
 		value.setDias(diastolic);
-		
-		BloodPressureSensor sensor = new BloodPressureSensor( PUBLISHER_URI_PREFIX + &quot;continuaBTBloodPressureSensor&quot; );
+
+		BloodPressureSensor sensor = new BloodPressureSensor(PUBLISHER_URI_PREFIX + &quot;continuaBTBloodPressureSensor&quot;);
 		sensor.setValue(value);
-		
-		cp.publish(new ContextEvent(sensor,BloodPressureSensor.PROP_HAS_VALUE));
+
+		cp.publish(new ContextEvent(sensor, BloodPressureSensor.PROP_HAS_VALUE));
 
 		HeartRate hrvalue = new HeartRate();
 		hrvalue.setProperty(Measurement.PROP_VALUE, Integer.valueOf(hr));
-		HeartRateSensor hrsensor = new HeartRateSensor( PUBLISHER_URI_PREFIX + &quot;continuaBTHeartRateSensor&quot; );
+		HeartRateSensor hrsensor = new HeartRateSensor(PUBLISHER_URI_PREFIX + &quot;continuaBTHeartRateSensor&quot;);
 		hrsensor.setValue(hrvalue);
-		
-		cp.publish(new ContextEvent(hrsensor,BloodPressureSensor.PROP_HAS_VALUE));
+
+		cp.publish(new ContextEvent(hrsensor, BloodPressureSensor.PROP_HAS_VALUE));
 	}
 }</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
@@ -607,68 +637,68 @@
 <tr class="b"><td colspan='3'>
 <div>
 <pre>public class MyLightingOntologified {
-    /**
-     * Real implementation controlling light sources.
-     */
-    private MyLighting realLighting = new MyLighting();
+	/**
+	 * Real implementation controlling light sources.
+	 */
+	private MyLighting realLighting = new MyLighting();
 
-    public MyLightingOntologified(String namespace) {
-	/* Initializing fields with ontological constants */
-	this.LAMP_URI_PREFIX = namespace + &quot;controlledLamp&quot;;
-	this.LOCATION_URI_PREFIX = &quot;urn:aal_space:myHome#&quot;;
-    }
-    
-    /*
-     * Fields and methods for mapping real implementation onto ontology.
-     */
-
-    private final String LAMP_URI_PREFIX;
-    private final String LOCATION_URI_PREFIX; 
-
-    private String constructLampURIfromLocalID(int localID) {
-	return LAMP_URI_PREFIX + localID;
-    }
-
-    private String constructLocationURIfromLocalID(String localID) {
-	return LOCATION_URI_PREFIX + localID;
-    }
-
-    private int extractLocalIDfromLampURI(String lampURI) {
-	return Integer.parseInt(lampURI.substring(LAMP_URI_PREFIX.length()));
-    }
-
-    /*
-     * Implementation of ontological interface
-     */
-
-    public LightSource[] getControlledLamps() {
-	ArrayList&lt;LightSource&gt; al = new ArrayList&lt;LightSource&gt;();
-	Integer[] controlledLamps = realLighting.getControlledLamps();
-	for (int i = 0; i &lt; controlledLamps.length; i++) {
-	    LightSource ls = new LightSource(constructLampURIfromLocalID(i));
-	    ls.setLightType(ElectricLight.lightBulb);
-	    al.add(ls);
+	public MyLightingOntologified(String namespace) {
+		/* Initializing fields with ontological constants */
+		this.LAMP_URI_PREFIX = namespace + &quot;controlledLamp&quot;;
+		this.LOCATION_URI_PREFIX = &quot;urn:aal_space:myHome#&quot;;
 	}
-	return al.toArray(new LightSource[0]);
-    }
 
-    public Object[] getLampInfo(LightSource lamp) {
-	int lampID = extractLocalIDfromLampURI(lamp.getURI());
-	int state = realLighting.getState(lampID);
-	String loc = realLighting.getLampLocation(lampID);
-	Room ontologyLoc = new Room(constructLocationURIfromLocalID(loc));
-	return new Object[] { state, ontologyLoc };
-    }
+	/*
+	 * Fields and methods for mapping real implementation onto ontology.
+	 */
 
-    public void turnOff(LightSource lamp) {
-	int lampID = extractLocalIDfromLampURI(lamp.getURI());
-	realLighting.turnOff(lampID);
-    }
+	private final String LAMP_URI_PREFIX;
+	private final String LOCATION_URI_PREFIX;
 
-    public void turnOn(LightSource lamp) {
-	int lampID = extractLocalIDfromLampURI(lamp.getURI());
-	realLighting.turnOn(lampID);
-    }
+	private String constructLampURIfromLocalID(int localID) {
+		return LAMP_URI_PREFIX + localID;
+	}
+
+	private String constructLocationURIfromLocalID(String localID) {
+		return LOCATION_URI_PREFIX + localID;
+	}
+
+	private int extractLocalIDfromLampURI(String lampURI) {
+		return Integer.parseInt(lampURI.substring(LAMP_URI_PREFIX.length()));
+	}
+
+	/*
+	 * Implementation of ontological interface
+	 */
+
+	public LightSource[] getControlledLamps() {
+		ArrayList&lt;LightSource&gt; al = new ArrayList&lt;LightSource&gt;();
+		Integer[] controlledLamps = realLighting.getControlledLamps();
+		for (int i = 0; i &lt; controlledLamps.length; i++) {
+			LightSource ls = new LightSource(constructLampURIfromLocalID(i));
+			ls.setLightType(ElectricLight.lightBulb);
+			al.add(ls);
+		}
+		return al.toArray(new LightSource[0]);
+	}
+
+	public Object[] getLampInfo(LightSource lamp) {
+		int lampID = extractLocalIDfromLampURI(lamp.getURI());
+		int state = realLighting.getState(lampID);
+		String loc = realLighting.getLampLocation(lampID);
+		Room ontologyLoc = new Room(constructLocationURIfromLocalID(loc));
+		return new Object[] { state, ontologyLoc };
+	}
+
+	public void turnOff(LightSource lamp) {
+		int lampID = extractLocalIDfromLampURI(lamp.getURI());
+		realLighting.turnOff(lampID);
+	}
+
+	public void turnOn(LightSource lamp) {
+		int lampID = extractLocalIDfromLampURI(lamp.getURI());
+		realLighting.turnOn(lampID);
+	}
 }</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -686,52 +716,51 @@
 <tr class="b"><td colspan='3'>
 <div>
 <pre>public class MyLighting {
-    private class Lamp {
-	String loc;
-	boolean isOn;
+	private class Lamp {
+		String loc;
+		boolean isOn;
 
-	Lamp(String loc, boolean isOn) {
-	    this.loc = loc;
-	    this.isOn = isOn;
+		Lamp(String loc, boolean isOn) {
+			this.loc = loc;
+			this.isOn = isOn;
+		}
 	}
-    }
 
-    private Lamp[] myLampDB = new Lamp[] { new Lamp(&quot;loc1&quot;, false),
-	    new Lamp(&quot;loc2&quot;, false), new Lamp(&quot;loc3&quot;, false),
-	    new Lamp(&quot;loc4&quot;, false) };
+	private Lamp[] myLampDB = new Lamp[] { new Lamp(&quot;loc1&quot;, false), new Lamp(&quot;loc2&quot;, false), new Lamp(&quot;loc3&quot;, false),
+			new Lamp(&quot;loc4&quot;, false) };
 
-    public String getLampLocation(int lampID) {
-	return myLampDB[lampID].loc;
-    }
-
-    public int getState(int lampID) {
-	return myLampDB[lampID].isOn ? 100 : 0;
-    }
-
-    public Integer[] getControlledLamps() {
-	Integer[] ids = new Integer[myLampDB.length];
-	for (int i = 0; i &lt; myLampDB.length; i++)
-	    ids[i] = i;
-	return ids;
-    }
-
-    public Object[] getLampInfo(int lampID) {
-	String loc = getLampLocation(lampID);
-	int state = getState(lampID);
-	return new Object[] { state, loc };
-    }
-
-    public void turnOff(int lampID) {
-	if (myLampDB[lampID].isOn) {
-	    myLampDB[lampID].isOn = false;
+	public String getLampLocation(int lampID) {
+		return myLampDB[lampID].loc;
 	}
-    }
 
-    public void turnOn(int lampID) {
-	if (!myLampDB[lampID].isOn) {
-	    myLampDB[lampID].isOn = true;
+	public int getState(int lampID) {
+		return myLampDB[lampID].isOn ? 100 : 0;
 	}
-    }
+
+	public Integer[] getControlledLamps() {
+		Integer[] ids = new Integer[myLampDB.length];
+		for (int i = 0; i &lt; myLampDB.length; i++)
+			ids[i] = i;
+		return ids;
+	}
+
+	public Object[] getLampInfo(int lampID) {
+		String loc = getLampLocation(lampID);
+		int state = getState(lampID);
+		return new Object[] { state, loc };
+	}
+
+	public void turnOff(int lampID) {
+		if (myLampDB[lampID].isOn) {
+			myLampDB[lampID].isOn = false;
+		}
+	}
+
+	public void turnOn(int lampID) {
+		if (!myLampDB[lampID].isOn) {
+			myLampDB[lampID].isOn = true;
+		}
+	}
 }</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -741,44 +770,44 @@
 <tr class="b">
 <td>org/universAAL/lddi/manager/gui/GUI.java</td>
 <td>universAAL Samples LDDI Continua Manager Client (unix OS version)</td>
-<td>347</td></tr>
+<td>350</td></tr>
 <tr class="a">
 <td>org/universAAL/lddi/manager/win/gui/GUI.java</td>
 <td>universAAL Samples LDDI Continua Manager Client (windows OS version)</td>
-<td>346</td></tr>
+<td>349</td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>		uaalPublisher.setVisible(true);
 	}
-	
+
 	/** Create JLabel */
-	public JLabel createJLabel(String name,int x,int y,int weight,int height,int fontType,int fontSize) {
+	public JLabel createJLabel(String name, int x, int y, int weight, int height, int fontType, int fontSize) {
 		JLabel output = null;
-		output = new JLabel(name);	
-		output.setBounds(x,y,weight,height);
-		output.setFont(new Font(&quot;Courier&quot;,fontType,fontSize));	
+		output = new JLabel(name);
+		output.setBounds(x, y, weight, height);
+		output.setFont(new Font(&quot;Courier&quot;, fontType, fontSize));
 		output.setHorizontalTextPosition(SwingConstants.CENTER);
 		return output;
 	}
-	
+
 	/** Create JTextfield */
-	public JTextField createJTextfield(int x,int y,int weight,int height,int fontType,int fontSize) {
+	public JTextField createJTextfield(int x, int y, int weight, int height, int fontType, int fontSize) {
 		JTextField output = null;
-		output = new JTextField(10);	
-		output.setBounds(x,y,weight,height);
+		output = new JTextField(10);
+		output.setBounds(x, y, weight, height);
 		output.setEditable(false);
 		output.setColumns(10);
 		output.setHorizontalAlignment(JTextField.CENTER);
-		output.setFont(new Font(&quot;Courier&quot;,fontType,fontSize));		
+		output.setFont(new Font(&quot;Courier&quot;, fontType, fontSize));
 		return output;
 	}
-	
+
 	/** Add components to panel */
 	public void addJLabelComponent(JComponent component) {
-		if(component != null)
+		if (component != null)
 			mainPublisherPanel.add(component);
 	}
-	
+
 	/** Reset components */
 	public void resetComponentsStatus() {
 		uaalPublisherWeightValueLabel = null;
@@ -798,7 +827,7 @@
 		finalDiaBloodPressureData = -1;
 		finalHrBloodPressureData = -1;
 	}
-	
+
 	/** Shorten number of decimals */
 	public double shortDecimalNumber(double d) {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
@@ -809,52 +838,46 @@
 <tr class="b">
 <td>org/universAAL/samples/ctxtbus/HistoryCaller.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>82</td></tr>
+<td>76</td></tr>
 <tr class="a">
 <td>org/universAAL/samples/ctxtbus/HistoryCaller.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>194</td></tr>
+<td>171</td></tr>
 <tr class="b"><td colspan='3'>
 <div>
-<pre>		tstFrom, tstTo));
-	if (response.getCallStatus() == CallStatus.succeeded) {
-//	    Object value = getReturnValue(response.getOutputs(),
-//		    OUTPUT_LIST_OF_EVENTS);
-	    Object value=response.getOutput(OUTPUT_LIST_OF_EVENTS,true);
-	    if (value instanceof Resource) {
-		if (((Resource) value).getURI().contains(&quot;#nil&quot;)) {
-		    log.info(&quot;History Client - result is empty&quot;);
-		    return 0;
-		}
-	    } else {
-		try {
-		    ContextEvent[] events = (ContextEvent[]) ((List) value)
-			    .toArray(new ContextEvent[((List) value).size()]);
+<pre>		ServiceResponse response = caller.call(getGetEventsRequest(matchEvent, tstFrom, tstTo));
+		if (response.getCallStatus() == CallStatus.succeeded) {
+			// Object value = getReturnValue(response.getOutputs(),
+			// OUTPUT_LIST_OF_EVENTS);
+			Object value = response.getOutput(OUTPUT_LIST_OF_EVENTS, true);
+			if (value instanceof Resource) {
+				if (((Resource) value).getURI().contains(&quot;#nil&quot;)) {
+					log.info(&quot;History Client - result is empty&quot;);
+					return 0;
+				}
+			} else {
+				try {
+					ContextEvent[] events = (ContextEvent[]) ((List) value)
+							.toArray(new ContextEvent[((List) value).size()]);
 
-		    for (int j = 0; j &lt; events.length; j++) {
-			count++;
-			log.info(&quot;Retrieved context event from CHe:\n&quot;
-				+ &quot;    Subject     =&quot;
-				+ events[j].getSubjectURI() + &quot;\n&quot;
-				+ &quot;    Subject type=&quot;
-				+ events[j].getSubjectTypeURI() + &quot;\n&quot;
-				+ &quot;    Predicate   =&quot;
-				+ events[j].getRDFPredicate() + &quot;\n&quot;
-				+ &quot;    Object      =&quot;
-				+ events[j].getRDFObject());
-			log.info(Activator.ser.serialize(events[j]));
-		    }
-		} catch (Exception e) {
-		    log.info(&quot;History Client: List of events corrupt!&quot;, e);
-		}
-	    }
-	} else
-	    log.info(&quot;History Client - status of getEvents(): &quot;
-		    + response.getCallStatus());
-	return count;
-    }
+					for (int j = 0; j &lt; events.length; j++) {
+						count++;
+						log.info(&quot;Retrieved context event from CHe:\n&quot; + &quot;    Subject     =&quot; + events[j].getSubjectURI()
+								+ &quot;\n&quot; + &quot;    Subject type=&quot; + events[j].getSubjectTypeURI() + &quot;\n&quot;
+								+ &quot;    Predicate   =&quot; + events[j].getRDFPredicate() + &quot;\n&quot; + &quot;    Object      =&quot;
+								+ events[j].getRDFObject());
+						log.info(Activator.ser.serialize(events[j]));
+					}
+				} catch (Exception e) {
+					log.info(&quot;History Client: List of events corrupt!&quot;, e);
+				}
+			}
+		} else
+			log.info(&quot;History Client - status of getEvents(): &quot; + response.getCallStatus());
+		return count;
+	}
 
-    private ServiceRequest getGetEventsRequest(</pre></div></td></tr></table>
+	private ServiceRequest getGetEventsRequest(org.universAAL.ontology.che.ContextEvent matchEvent, long tstFrom,</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="a">
 <th>File</th>
@@ -863,11 +886,11 @@
 <tr class="b">
 <td>org/universAAL/lddi/manager/publisher/hdpManager.java</td>
 <td>universAAL Samples LDDI Continua Manager Client (unix OS version)</td>
-<td>99</td></tr>
+<td>107</td></tr>
 <tr class="a">
 <td>org/universAAL/lddi/weighingscale/publisher/hdpManager.java</td>
 <td>universAAL Samples LDDI Weighing scale agent publisher</td>
-<td>97</td></tr>
+<td>103</td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>	private String remoteDeviceType = null;
@@ -875,73 +898,98 @@
 	/** Native functions */
 
 	/**
-	 *  Start dbus platform for message interchanging within processes in Linux OS.
-	 *  
+	 * Start dbus platform for message interchanging within processes in Linux
+	 * OS.
+	 * 
 	 * @return if the Dbus platform is correctly initialized.
 	 */
 	private native boolean startDbusPlatform();
 
 	/**
-	 * Get the path for the local Bluetooth adapter which is in use at the moment.
+	 * Get the path for the local Bluetooth adapter which is in use at the
+	 * moment.
 	 * 
 	 * @return local bluetooth adapter path
 	 */
 	private native String getLocalBluetoothAdapterPath();
 
 	/**
-	 * Show path of all local bluetooth adapters available at PC (may be more than one).
+	 * Show path of all local bluetooth adapters available at PC (may be more
+	 * than one).
 	 */
 	private native void showLocalBluetoothAdaptersPath();
 
 	/**
-	 * Show all properties of the DEFAULT local bluetooth adapter. In case a computer has more than one Bluetooth adapter, 
-	 * there will be one in use by default.
+	 * Show all properties of the DEFAULT local bluetooth adapter. In case a
+	 * computer has more than one Bluetooth adapter, there will be one in use by
+	 * default.
 	 */
 	private native void showDefaultLocalBluetoothAdaptersProperties();
 
 	/**
-	 * Get the object path of a remote device given a MAC address (format:XX:XX:XX:XX:XX:XX).
+	 * Get the object path of a remote device given a MAC address
+	 * (format:XX:XX:XX:XX:XX:XX).
 	 * 
-	 * @param macAddressRemoteDevice the MAC address of the desired remote device (the format of the MAC is XX:XX:XX:XX:XX:XX).
+	 * @param macAddressRemoteDevice
+	 *            the MAC address of the desired remote device (the format of
+	 *            the MAC is XX:XX:XX:XX:XX:XX).
 	 * @return the path for the remote Bluetooth device in the local machine.
 	 */
 	private native String getRemoteBluetoothAdapterPath(String macAddressRemoteDevice);
 
 	/**
-	 * Show all properties of a remote device (it should be first created with getRemoteBluetoothAdapterPath method).
+	 * Show all properties of a remote device (it should be first created with
+	 * getRemoteBluetoothAdapterPath method).
 	 * 
-	 * @param remoteDevicePath the path for the remote Bluetooth device in the local machine.
+	 * @param remoteDevicePath
+	 *            the path for the remote Bluetooth device in the local machine.
 	 * @see showDefaultLocalBluetoothAdaptersProperties()
 	 */
 	private native void showRemoteBluetoothAdapterProperties(String remoteDevicePath);
 
 	/**
-	 * Modify a property of a remote device.
-	 * This will be used for enabling the &quot;Trusted&quot; property in a remote Health Device Profile capable device for being establish a connection.
+	 * Modify a property of a remote device. This will be used for enabling the
+	 * &quot;Trusted&quot; property in a remote Health Device Profile capable device for
+	 * being establish a connection.
 	 * 
-	 * @param remoteDevicePath the path for the remote Bluetooth device in the local machine.
-	 * @param propertyKey the name of the property to be modified.
-	 * @param propertyValue the new value for the property.
+	 * @param remoteDevicePath
+	 *            the path for the remote Bluetooth device in the local machine.
+	 * @param propertyKey
+	 *            the name of the property to be modified.
+	 * @param propertyValue
+	 *            the new value for the property.
 	 */
-	private native void setPropertyRemoteDevice(String remoteDevicePath,String propertyKey,boolean propertyValue);
+	private native void setPropertyRemoteDevice(String remoteDevicePath, String propertyKey, boolean propertyValue);
 
 	/**
-	 * Create a new HDP application and gets the object path of the new created application.
+	 * Create a new HDP application and gets the object path of the new created
+	 * application.
 	 * 
-	 * @param dataTypeValue which kind of a HDP capable device will be used.
-	 * @param roleValue set the role of the HDP role that the local machine will be playing. Usually, &quot;Sink&quot;
-	 * @param shortDescriptionValue custom string for helping the remote devices to identify the local machine they are connected to.
-	 * @param channelTypeValue set whether the channel is working with trusted or streaming mode.
-	 * @return the path of the new Health Device Profile application newly created in the local machine. 
+	 * @param dataTypeValue
+	 *            which kind of a HDP capable device will be used.
+	 * @param roleValue
+	 *            set the role of the HDP role that the local machine will be
+	 *            playing. Usually, &quot;Sink&quot;
+	 * @param shortDescriptionValue
+	 *            custom string for helping the remote devices to identify the
+	 *            local machine they are connected to.
+	 * @param channelTypeValue
+	 *            set whether the channel is working with trusted or streaming
+	 *            mode.
+	 * @return the path of the new Health Device Profile application newly
+	 *         created in the local machine.
 	 */
-	private native String createHDPApplication(String dataTypeValue,String roleValue,String shortDescriptionValue,String channelTypeValue);
+	private native String createHDPApplication(String dataTypeValue, String roleValue, String shortDescriptionValue,
+			String channelTypeValue);
 
 	/**
 	 * Destroy an HDP application.
 	 * 
-	 * @param objectPathHDPApplication the path of the Health Device Profile application to be destroyed. 
+	 * @param objectPathHDPApplication
+	 *            the path of the Health Device Profile application to be
+	 *            destroyed.
 	 */
-	private native void destroyHDPApplication(String objectPathHDPApplication);	
+	private native void destroyHDPApplication(String objectPathHDPApplication);
 
 	/**
 	 * Checks DBUS system availability.
@@ -951,59 +999,74 @@
 	private native boolean getDbusSystemAvailability();
 
 	/**
-	 * Add a specific rule to follow HDP messages inside DBUS. 
+	 * Add a specific rule to follow HDP messages inside DBUS.
 	 * 
-	 * @return true if the local application is subscribed to HDP messages in DBus.
+	 * @return true if the local application is subscribed to HDP messages in
+	 *         DBus.
 	 */
 	private native boolean enableHDPListener();
 
 	/**
-	 * 	Wait for new incoming HDP connections.
+	 * Wait for new incoming HDP connections.
 	 */
 	private native void waitHDPConnections();
 
 	/**
-	 * Get the object path of the HDP channel ready to send/receive data to/from Continua devices.
+	 * Get the object path of the HDP channel ready to send/receive data to/from
+	 * Continua devices.
 	 * 
-	 * @param remoteDevicePath the path for the remote Bluetooth device in the local machine.  
-	 * @return the path of the data channel from a Health Device Profile application.  
+	 * @param remoteDevicePath
+	 *            the path for the remote Bluetooth device in the local machine.
+	 * @return the path of the data channel from a Health Device Profile
+	 *         application.
 	 */
 	private native String getHDPDataChannelPath(String remoteDevicePath);
 
 	/**
 	 * Show the properties of a HDP data channel previously created.
 	 * 
-	 * @param hdpDataChannelPath the path of the data channel from a Health Device Profile application.  
+	 * @param hdpDataChannelPath
+	 *            the path of the data channel from a Health Device Profile
+	 *            application.
 	 */
 	private native void showHDPDataChannelProperties(String hdpDataChannelPath);
 
 	/**
 	 * Get the file descriptor associated to a HDP data channel
 	 * 
-	 * @param hdpDataChannelPath the path of the data channel from a Health Device Profile application. 
+	 * @param hdpDataChannelPath
+	 *            the path of the data channel from a Health Device Profile
+	 *            application.
 	 * @return the number that identifies the file descriptor in a Linux OS.
 	 */
 	private native int getHDPDataChannelFileDescriptor(String hdpDataChannelPath);
 
 	/**
-	 * Release the file descriptor associated to this HDP data channel (HDP application will be closed).
+	 * Release the file descriptor associated to this HDP data channel (HDP
+	 * application will be closed).
 	 * 
-	 * @param hdpDataChannelPath the path of the data channel from a Health Device Profile application. 
+	 * @param hdpDataChannelPath
+	 *            the path of the data channel from a Health Device Profile
+	 *            application.
 	 */
 	private native void releaseHDPDataChannelFileDescriptor(String hdpDataChannelPath);
 
 	/**
-	 * Wait for HDP data frames from Continua Health devices. These frames will be compliant with ISO/IEEE 11073 standard.
+	 * Wait for HDP data frames from Continua Health devices. These frames will
+	 * be compliant with ISO/IEEE 11073 standard.
 	 * 
-	 * @param hdpDataChannelFileDescriptor the file descriptor that identifies a HDP data channel.
+	 * @param hdpDataChannelFileDescriptor
+	 *            the file descriptor that identifies a HDP data channel.
 	 */
 	private native void waitHDPDataFrames(int hdpDataChannelFileDescriptor);
 
 	/**
-	 * Get the input data frame from a Continua Health device. The data will be retrieved in raw format (byte array), and will be processed by the
+	 * Get the input data frame from a Continua Health device. The data will be
+	 * retrieved in raw format (byte array), and will be processed by the
 	 * ISO/IEEE 11073 library included.
 	 * 
-	 * @param hdpDataChannelFileDescriptor the file descriptor that identifies a HDP data channel.
+	 * @param hdpDataChannelFileDescriptor
+	 *            the file descriptor that identifies a HDP data channel.
 	 * @return the data a remote device sent, in raw format.
 	 */
 	private native byte[] getHDPDataFrame(int hdpDataChannelFileDescriptor);
@@ -1011,34 +1074,40 @@
 	/**
 	 * Get the number of bytes read from input data frames.
 	 * 
-	 * @param hdpDataChannelFileDescriptor the file descriptor that identifies a HDP data channel.
+	 * @param hdpDataChannelFileDescriptor
+	 *            the file descriptor that identifies a HDP data channel.
 	 * @return the size of the data frame received.
 	 */
 	private native int getSizeHDPDataFrame(int hdpDataChannelFileDescriptor);
 
 	/**
-	 * Show HDP data frame received. 
-	 *  
-	 * @param hdpDataChannelFileDescriptor the file descriptor that identifies a HDP data channel.
+	 * Show HDP data frame received.
+	 * 
+	 * @param hdpDataChannelFileDescriptor
+	 *            the file descriptor that identifies a HDP data channel.
 	 */
 	private native void showHDPDataFrame(int hdpDataChannelFileDescriptor);
 
 	/**
-	 * Send HDP data frames to Continua Health devices after processing the ones previously received and generate the proper response to them.
+	 * Send HDP data frames to Continua Health devices after processing the ones
+	 * previously received and generate the proper response to them.
 	 * 
-	 * @param hdpDataChannelFileDescriptor the file descriptor that identifies a HDP data channel.
-	 * @param hdpDataFrame the raw byte array of the data that will be sent back to a Continua device.
+	 * @param hdpDataChannelFileDescriptor
+	 *            the file descriptor that identifies a HDP data channel.
+	 * @param hdpDataFrame
+	 *            the raw byte array of the data that will be sent back to a
+	 *            Continua device.
 	 */
-	private native void sendHDPDataToDevice(int hdpDataChannelFileDescriptor,byte[] hdpDataFrame);
+	private native void sendHDPDataToDevice(int hdpDataChannelFileDescriptor, byte[] hdpDataFrame);
 
 	/**
 	 * Free all employed resources and end HDP manager in a well-known status
 	 * 
 	 */
-	private native void closeHDPManager(); 
-	
+	private native void closeHDPManager();
+
 	/** Constructor */
-	public hdpManager(String str) {	</pre></div></td></tr></table>
+	public hdpManager(String str) {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="a">
 <th>File</th>
@@ -1047,50 +1116,52 @@
 <tr class="b">
 <td>org/universAAL/lddi/manager/gui/GUI.java</td>
 <td>universAAL Samples LDDI Continua Manager Client (unix OS version)</td>
-<td>228</td></tr>
+<td>229</td></tr>
 <tr class="a">
 <td>org/universAAL/lddi/manager/win/gui/GUI.java</td>
 <td>universAAL Samples LDDI Continua Manager Client (windows OS version)</td>
-<td>228</td></tr>
+<td>229</td></tr>
 <tr class="b">
 <td>org/universAAL/lddi/manager/win/gui/GUI.java</td>
 <td>universAAL Samples LDDI Continua Manager Client (windows OS version)</td>
-<td>413</td></tr>
+<td>416</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>		} else if(e.getActionCommand().equals(&quot;publishData&quot;)) {
+<pre>		} else if (e.getActionCommand().equals(&quot;publishData&quot;)) {
 			// Publish data to uAAL context bus. Ensure that values are not NULL
-			uaalX73Publisher = new Publisher(ctx);			
-			if(realMeasurement) {				
+			uaalX73Publisher = new Publisher(ctx);
+			if (realMeasurement) {
 				// Real values
-				if(remoteDeviceType.equals(&quot;WeightingScale&quot;)) {					
-					if(finalMeasuredWeightData != -1.0) {						
-						double temp_1 = shortDecimalNumber(finalMeasuredWeightData)*1000;
-						int temp = (int) temp_1;						
-						uaalX73Publisher.publishWeightEvent(temp);	
-						//stopPublisherGUI();
-					}	
+				if (remoteDeviceType.equals(&quot;WeightingScale&quot;)) {
+					if (finalMeasuredWeightData != -1.0) {
+						double temp_1 = shortDecimalNumber(finalMeasuredWeightData) * 1000;
+						int temp = (int) temp_1;
+						uaalX73Publisher.publishWeightEvent(temp);
+						// stopPublisherGUI();
+					}
 				} else {
-					if((finalDiaBloodPressureData != -1)&amp;&amp;(finalHrBloodPressureData != -1)&amp;&amp;(finalSysBloodPressureData != -1)) {						
+					if ((finalDiaBloodPressureData != -1) &amp;&amp; (finalHrBloodPressureData != -1)
+							&amp;&amp; (finalSysBloodPressureData != -1)) {
 						int temp_0 = (int) finalSysBloodPressureData;
 						int temp_1 = (int) finalDiaBloodPressureData;
-						int temp_2 = (int) finalHrBloodPressureData;						
-						uaalX73Publisher.publishBloodPressureEvent(temp_0,temp_1,temp_2);	
-						//stopPublisherGUI();
+						int temp_2 = (int) finalHrBloodPressureData;
+						uaalX73Publisher.publishBloodPressureEvent(temp_0, temp_1, temp_2);
+						// stopPublisherGUI();
 					}
-				}				
-			} else {				
-				// Random values
-				if(remoteDeviceType.equals(&quot;WeightingScale&quot;)) {
-					uaalX73Publisher.publishWeightEvent(Integer.parseInt(uaalPublisherWeightValueTextfield.getText()));
-					//stopPublisherGUI();
-				} else {					
-					uaalX73Publisher.publishBloodPressureEvent(Integer.parseInt(uaalPublisherBloodPressureSysValueTextfield.getText()),
-							   Integer.parseInt(uaalPublisherBloodPressureDiaValueTextfield.getText()),
-							   Integer.parseInt(uaalPublisherBloodPressurePulValueTextfield.getText()));
-					//stopPublisherGUI();
 				}
-			}			
+			} else {
+				// Random values
+				if (remoteDeviceType.equals(&quot;WeightingScale&quot;)) {
+					uaalX73Publisher.publishWeightEvent(Integer.parseInt(uaalPublisherWeightValueTextfield.getText()));
+					// stopPublisherGUI();
+				} else {
+					uaalX73Publisher.publishBloodPressureEvent(
+							Integer.parseInt(uaalPublisherBloodPressureSysValueTextfield.getText()),
+							Integer.parseInt(uaalPublisherBloodPressureDiaValueTextfield.getText()),
+							Integer.parseInt(uaalPublisherBloodPressurePulValueTextfield.getText()));
+					// stopPublisherGUI();
+				}
+			}
 		}</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
@@ -1100,16 +1171,16 @@
 <tr class="a">
 <td>org/universAAL/samples/lighting/client_regular/LightClient.java</td>
 <td>universAAL Samples AAPI Regular Lighting Client</td>
-<td>134</td></tr>
+<td>124</td></tr>
 <tr class="b">
 <td>org/universAAL/samples/lighting/client/LightClient.java</td>
 <td>universAAL Samples Lighting Client (OSGi)</td>
-<td>170</td></tr>
+<td>167</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>		start(d);
 	}
-	
+
 	private void initGUI() {
 		try {
 			setPreferredSize(new Dimension(400, 300));
@@ -1118,27 +1189,26 @@
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
-	* Auto-generated method for setting the popup menu for a component
-	*/
+	 * Auto-generated method for setting the popup menu for a component
+	 */
 	private void setComponentPopupMenu(final java.awt.Component parent, final javax.swing.JPopupMenu menu) {
 		parent.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mousePressed(java.awt.event.MouseEvent e) {
-				if(e.isPopupTrigger())
+				if (e.isPopupTrigger())
 					menu.show(parent, e.getX(), e.getY());
 			}
+
 			public void mouseReleased(java.awt.event.MouseEvent e) {
-				if(e.isPopupTrigger())
+				if (e.isPopupTrigger())
 					menu.show(parent, e.getX(), e.getY());
 			}
 		});
 	}
-	
 
-	
 	private AbstractAction getOn() {
-		if(On == null) {
+		if (On == null) {
 			On = new AbstractAction(&quot;On&quot;, null) {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
@@ -1148,35 +1218,35 @@
 <tr class="a">
 <td>org/universAAL/samples/uibus/OPublisher.java</td>
 <td>universAAL Samples UI bus tester</td>
-<td>247</td></tr>
+<td>232</td></tr>
 <tr class="b">
 <td>org/universAAL/samples/uibus/OPublisher.java</td>
 <td>universAAL Samples UI bus tester</td>
-<td>389</td></tr>
+<td>349</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>	    String PROP_TABLE = &quot;http://ontology.aal-persona.org/Tests.owl#table&quot;;
-	    String PROP_COL = &quot;http://ontology.aal-persona.org/Tests.owl#column&quot;;
-	    List rows = new ArrayList();
-	      Resource cell = new Resource();
-	      cell.setProperty(PROP_COL + &quot;1&quot;, new Integer(1));
-	      cell.setProperty(PROP_COL + &quot;2&quot;, &quot;two&quot;);
-	      cell.setProperty(PROP_COL + &quot;3&quot;, new Float(3));
-	      rows.add(cell);
-	      //...
-	      cell = new Resource();
-	      cell.setProperty(PROP_COL + &quot;1&quot;, new Integer(2));
-	      cell.setProperty(PROP_COL + &quot;2&quot;, &quot;three&quot;);
-	      cell.setProperty(PROP_COL + &quot;3&quot;, new Float(4));
-	      rows.add(cell);
-	      //...
-	      cell = new Resource();
-	      cell.setProperty(PROP_COL + &quot;1&quot;, new Integer(3));
-	      cell.setProperty(PROP_COL + &quot;2&quot;, &quot;four&quot;);
-	      cell.setProperty(PROP_COL + &quot;3&quot;, new Float(5));
-	      rows.add(cell);
-	      Resource dataRoot = new Resource();
-	      dataRoot.setProperty(PROP_TABLE, rows);</pre></div></td></tr></table>
+<pre>			String PROP_TABLE = &quot;http://ontology.aal-persona.org/Tests.owl#table&quot;;
+			String PROP_COL = &quot;http://ontology.aal-persona.org/Tests.owl#column&quot;;
+			List rows = new ArrayList();
+			Resource cell = new Resource();
+			cell.setProperty(PROP_COL + &quot;1&quot;, new Integer(1));
+			cell.setProperty(PROP_COL + &quot;2&quot;, &quot;two&quot;);
+			cell.setProperty(PROP_COL + &quot;3&quot;, new Float(3));
+			rows.add(cell);
+			// ...
+			cell = new Resource();
+			cell.setProperty(PROP_COL + &quot;1&quot;, new Integer(2));
+			cell.setProperty(PROP_COL + &quot;2&quot;, &quot;three&quot;);
+			cell.setProperty(PROP_COL + &quot;3&quot;, new Float(4));
+			rows.add(cell);
+			// ...
+			cell = new Resource();
+			cell.setProperty(PROP_COL + &quot;1&quot;, new Integer(3));
+			cell.setProperty(PROP_COL + &quot;2&quot;, &quot;four&quot;);
+			cell.setProperty(PROP_COL + &quot;3&quot;, new Float(5));
+			rows.add(cell);
+			Resource dataRoot = new Resource();
+			dataRoot.setProperty(PROP_TABLE, rows);</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1185,11 +1255,11 @@
 <tr class="a">
 <td>org/universAAL/lddi/samples/activityhub/client/ActivityHubClient.java</td>
 <td>universAAL Samples Activity Hub Client</td>
-<td>147</td></tr>
+<td>156</td></tr>
 <tr class="b">
 <td>org/universAAL/lddi/samples/device/client/DeviceClient.java</td>
 <td>universAAL Samples Device Client</td>
-<td>163</td></tr>
+<td>171</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>			infoButton.setAction(getInfo());
@@ -1208,7 +1278,7 @@
 			label3 = new JLabel(&quot;Context Events&quot;);
 			frame.getContentPane().add(label3);
 			label3.setBounds(20, 330, 200, 20);
-			
+
 			frame.getContentPane().add(jsp2);
 			jsp2.setBounds(20, 350, 900, 180);
 		}
@@ -1222,10 +1292,10 @@
 			jsp3.setBounds(20, 560, 900, 180);
 		}
 	}
-	
+
 	/**
-	 * AbstractAction for button getSensors
-	 * initiates service call to parent
+	 * AbstractAction for button getSensors initiates service call to parent
+	 * 
 	 * @return
 	 */
 	private AbstractAction getSensors() {</pre></div></td></tr></table>
@@ -1237,48 +1307,46 @@
 <tr class="a">
 <td>org/universAAL/samples/lighting/server_regular/LightingProviderLevel1.java</td>
 <td>universAAL Samples AAPI Regular Lighting Server</td>
-<td>51</td></tr>
+<td>49</td></tr>
 <tr class="b">
 <td>org/universAAL/samples/lighting/server_regular/LightingProviderLevel2.java</td>
 <td>universAAL Samples AAPI Regular Lighting Server</td>
-<td>67</td></tr>
+<td>65</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>    }
+<pre>	}
 
+	public ServiceResponse handleCall(ServiceCall call) {
+		if (call == null)
+			return null;
 
-    public ServiceResponse handleCall(ServiceCall call) {
-	if (call == null)
-	    return null;
+		String operation = call.getProcessURI();
+		if (operation == null)
+			return null;
 
-	String operation = call.getProcessURI();
-	if (operation == null)
-	    return null;
+		if (operation.startsWith(LightingServerURIs.GetControlledLamps.URI))
+			return getControlledLamps();
 
-	if (operation.startsWith(LightingServerURIs.GetControlledLamps.URI))
-	    return getControlledLamps();
+		LightSource input = (LightSource) call.getInputValue(LightingServerURIs.GetLampInfo.Input.LAMP_URI);
+		if (input == null)
+			return null;
 
-	LightSource input = (LightSource) call
-		.getInputValue(LightingServerURIs.GetLampInfo.Input.LAMP_URI);
-	if (input == null)
-	    return null;
+		if (operation.startsWith(LightingServerURIs.GetLampInfo.URI))
+			return getLampInfo(input);
 
-	if (operation.startsWith(LightingServerURIs.GetLampInfo.URI))
-	    return getLampInfo(input);
+		if (operation.startsWith(LightingServerURIs.TurnOff.URI))
+			return turnOff(input);
 
-	if (operation.startsWith(LightingServerURIs.TurnOff.URI))
-	    return turnOff(input);
+		if (operation.startsWith(LightingServerURIs.TurnOn.URI))
+			return turnOn(input);
 
-	if (operation.startsWith(LightingServerURIs.TurnOn.URI))
-	    return turnOn(input);
+		return null;
+	}
 
-	return null;
-    }
-
-    // create a service response that including all available light sources
-    private ServiceResponse getControlledLamps() {
-    	AapiServiceResponse sr = new AapiServiceResponse(CallStatus.succeeded);
-	List al = new ArrayList(Arrays.asList(ontologifiedServer.getControlledLamps()));</pre></div></td></tr></table>
+	// create a service response that including all available light sources
+	private ServiceResponse getControlledLamps() {
+		AapiServiceResponse sr = new AapiServiceResponse(CallStatus.succeeded);
+		List al = new ArrayList(Arrays.asList(ontologifiedServer.getControlledLamps()));</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1287,19 +1355,20 @@
 <tr class="a">
 <td>org/universAAL/lddi/samples/activityhub/client/ActivityHubClient.java</td>
 <td>universAAL Samples Activity Hub Client</td>
-<td>246</td></tr>
+<td>258</td></tr>
 <tr class="b">
 <td>org/universAAL/lddi/samples/device/client/DeviceClient.java</td>
 <td>universAAL Samples Device Client</td>
-<td>251</td></tr>
+<td>258</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>	}
 
-	
 	/**
 	 * send all text lines from the given array to addTextToDeviceArea
-	 * @param multiple text lines for 1 device info response  
+	 * 
+	 * @param multiple
+	 *            text lines for 1 device info response
 	 */
 	public void showDeviceInfo(String[] listData) {
 		for (String line : listData) {
@@ -1308,20 +1377,22 @@
 	}
 
 	/**
-	 * Helper class that displays the given text on the deviceInfoArea on the GUI
-	 * adding a line break
-	 * and set focus always to the bottom of the textArea
+	 * Helper class that displays the given text on the deviceInfoArea on the
+	 * GUI adding a line break and set focus always to the bottom of the
+	 * textArea
+	 * 
 	 * @param text
 	 */
 	public void addTextToDeviceArea(String text) {
 		deviceInfoArea.setText(deviceInfoArea.getText() + text + &quot;\n&quot;);
-	    deviceInfoArea.setCaretPosition(deviceInfoArea.getDocument().getLength());
+		deviceInfoArea.setCaretPosition(deviceInfoArea.getDocument().getLength());
 	}
-	
-	
+
 	/**
 	 * send all text lines from the given array to addTextToContextArea
-	 * @param multiple text lines for 1 context event  
+	 * 
+	 * @param multiple
+	 *            text lines for 1 context event
 	 */
 	public void showContextEvent(String[] listData) {
 		for (String line : listData) {
@@ -1331,25 +1402,25 @@
 
 	/**
 	 * Helper class that displays the given text on the contextArea on the GUI
-	 * adding a line break
-	 * and set focus always to the bottom of the textArea
+	 * adding a line break and set focus always to the bottom of the textArea
+	 * 
 	 * @param text
 	 */
 	public void addTextToContextArea(String text) {
 		contextArea.setText(contextArea.getText() + text + &quot;\n&quot;);
-	    contextArea.setCaretPosition(contextArea.getDocument().getLength());
+		contextArea.setCaretPosition(contextArea.getDocument().getLength());
 	}
-	
+
 	/**
 	 * Helper class that displays the given text on the logArea on the GUI
 	 * adding a line break
+	 * 
 	 * @param text
 	 */
 	public void addTextToLogArea(String text) {
 		logArea.setText(logArea.getText() + text + &quot;\n&quot;);
 	}
 
-	
 	/**
 	 * 
 	 */
@@ -1374,29 +1445,29 @@
 <tr class="a"><td colspan='3'>
 <div>
 <pre>public class GUI extends JDialog implements ActionListener {
-	
-// Attributes
-	
+
+	// Attributes
+
 	/** Serializable object */
-	private static final long serialVersionUID = 1L;	
-	
+	private static final long serialVersionUID = 1L;
+
 	/** uAAL publisher window */
 	private JDialog uaalPublisher = null;
-	
+
 	/** Main and secondary panels */
 	public static JPanel mainPanel = null;
 	private JPanel radiobuttonPanel = null;
 	private JPanel mainPublisherPanel = null;
-	
+
 	/** Components */
-	private JRadioButton realMeasurementButton = null;		
+	private JRadioButton realMeasurementButton = null;
 	private JRadioButton simulatedMeasurementButton = null;
 	private ButtonGroup radioButtonsGroup = null;
 	private JButton bloodPressureButton = null;
 	private JButton weighingScaleButton = null;
 	private JLabel uaalLogoLabel = null;
 	private JLabel uaalPublisherMainLabel = null;
-	private JLabel uaalPublisherLogoLabel = null;	
+	private JLabel uaalPublisherLogoLabel = null;
 	private JLabel uaalPublisherWeightValueLabel = null;
 	public static JTextField uaalPublisherWeightValueTextfield = null;
 	private JLabel uaalPublisherWeightUnitLabel = null;
@@ -1408,12 +1479,12 @@
 	private JLabel uaalPublisherBloodPressurePulValueLabel = null;
 	public static JTextField uaalPublisherBloodPressurePulValueTextfield = null;
 	private JButton uaalPublisherButton = null;
-	
+
 	/** Constants */
 	private static final String weighingScaleImage = &quot;ws.png&quot;;
 	private static final String bloodPressureImage = &quot;bp.png&quot;;
 	private static final String uaalLogoImage = &quot;uaal_logo_resized.jpg&quot;;
-	
+
 	/** Bundle context object */
 	private BundleContext ctx = null;</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
@@ -1424,25 +1495,28 @@
 <tr class="a">
 <td>org/universAAL/lddi/manager/publisher/hdpManager.java</td>
 <td>universAAL Samples LDDI Continua Manager Client (unix OS version)</td>
-<td>356</td></tr>
+<td>435</td></tr>
 <tr class="b">
 <td>org/universAAL/lddi/weighingscale/publisher/hdpManager.java</td>
 <td>universAAL Samples LDDI Weighing scale agent publisher</td>
-<td>344</td></tr>
+<td>421</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>				showHDPDataChannelProperties(hdpDataChannelPath);
-				// We need a valid file descriptor prior sending or receiving data bytes between managers and agents. If the file descriptor getted is not
+				// We need a valid file descriptor prior sending or receiving
+				// data bytes between managers and agents. If the file
+				// descriptor getted is not
 				// valid a -1 value will be returned
 				hdpDataChannelFileDescriptor = getHDPDataChannelFileDescriptor(hdpDataChannelPath);
-				System.out.println(&quot;Number of file descriptor: &quot;+hdpDataChannelFileDescriptor);
+				System.out.println(&quot;Number of file descriptor: &quot; + hdpDataChannelFileDescriptor);
 				// Notify the connection to the FSM of the Manager
 				fsm = x73manager.getFSM();
 				fsm.transportActivate();
 				System.out.println(fsm.getStringTransportState());
-				// Wait until right HDP data frame will be available in our assigned file descriptor
+				// Wait until right HDP data frame will be available in our
+				// assigned file descriptor
 				waitHDPDataFrames(hdpDataChannelFileDescriptor);
-			} else 
+			} else
 				System.out.println(&quot;HDP channel not available&quot;);
 		}
 	}
@@ -1451,18 +1525,19 @@
 	public void onDataReceived() {
 		// Show the received data frame (each byte in hex mode)
 		showHDPDataFrame(hdpDataChannelFileDescriptor);
-		// Get the number of bytes read (size of the buffer array with VALID data)
+		// Get the number of bytes read (size of the buffer array with VALID
+		// data)
 		int numberBytes = getSizeHDPDataFrame(hdpDataChannelFileDescriptor);
-		System.out.println(&quot;Number of bytes received (call from native code): &quot;+numberBytes);
+		System.out.println(&quot;Number of bytes received (call from native code): &quot; + numberBytes);
 		// Get the input data frame as a whole
 		hdpReceivedDataFrame = getHDPDataFrame(hdpDataChannelFileDescriptor);
-		System.out.println(&quot;Number of bytes received (call from JAVA): &quot;+hdpReceivedDataFrame.length);
-		System.out.println(&quot;Answering agent data frames&quot;);		
-		rmp = x73manager.getMessageProcessor();		
+		System.out.println(&quot;Number of bytes received (call from JAVA): &quot; + hdpReceivedDataFrame.length);
+		System.out.println(&quot;Answering agent data frames&quot;);
+		rmp = x73manager.getMessageProcessor();
 		byte[] response = x73manager.getAPDU(hdpReceivedDataFrame);
-		sendHDPDataToDevice(hdpDataChannelFileDescriptor,response);
-		if(fsm.getStringChannelState().equals(&quot;ASSOCIATED - OPERATING&quot;)) {					
-			if(remoteDeviceType.equals(&quot;BloodPressureMonitor&quot;)) {</pre></div></td></tr></table>
+		sendHDPDataToDevice(hdpDataChannelFileDescriptor, response);
+		if (fsm.getStringChannelState().equals(&quot;ASSOCIATED - OPERATING&quot;)) {
+			if (remoteDeviceType.equals(&quot;BloodPressureMonitor&quot;)) {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1480,64 +1555,63 @@
 <div>
 <pre>public class MyServiceCallee extends ServiceCallee {
 
-    // URI for the service
-    public static String SERVICE_TURN_ON = &quot;urn:org.universAAL.tutorial:tut.callee#srvTurnOn&quot;;
+	// URI for the service
+	public static String SERVICE_TURN_ON = &quot;urn:org.universAAL.tutorial:tut.callee#srvTurnOn&quot;;
 
-    // URI for an input parameter: we expect the URI of a LightActuator as a
-    // parameter identified by this URI
-    public static String INPUT_LIGHT_URI = &quot;urn:org.universAAL.tutorial:tut.callee#inLampURI&quot;;
+	// URI for an input parameter: we expect the URI of a LightActuator as a
+	// parameter identified by this URI
+	public static String INPUT_LIGHT_URI = &quot;urn:org.universAAL.tutorial:tut.callee#inLampURI&quot;;
 
-    /**
-     * Create the service profile that describes what the service does.
-     * 
-     * @return an array of service profiles.
-     */
-    public static ServiceProfile[] getProfiles() {
-	// Create a device service. Subclasses of the class 'Service' are our
-	// 'entry points' in the ontology. Starting from this class we go along
-	// some property path and describe what we do, return, or expect at that
-	// path.
-	// A service can
-	// - do something: add, change, or remove a property
-	// - return something
-	// - expect something: an input parameter that the caller has to provide
+	/**
+	 * Create the service profile that describes what the service does.
+	 * 
+	 * @return an array of service profiles.
+	 */
+	public static ServiceProfile[] getProfiles() {
+		// Create a device service. Subclasses of the class 'Service' are our
+		// 'entry points' in the ontology. Starting from this class we go along
+		// some property path and describe what we do, return, or expect at that
+		// path.
+		// A service can
+		// - do something: add, change, or remove a property
+		// - return something
+		// - expect something: an input parameter that the caller has to provide
 
-	// In this tutorial, we create a service that can turn on a light
-	// source (= setting the value of a LightActuator to 100%)
-	Service turnOn = new DeviceService(SERVICE_TURN_ON);
+		// In this tutorial, we create a service that can turn on a light
+		// source (= setting the value of a LightActuator to 100%)
+		Service turnOn = new DeviceService(SERVICE_TURN_ON);
 
-	// We add a filtering input: at the path 'controls' we expect exactly
-	// one parameter of type LightActuator. When the service is called, we
-	// can query this parameter with the URI 'INPUT_LIGHT_URI'
-	turnOn.addFilteringInput(INPUT_LIGHT_URI, LightActuator.MY_URI, 1, 1,
-		new String[] { DeviceService.PROP_CONTROLS });
-	// We add a change effect: at the path 'controls-hasValue' the service
-	// can change the value to 100
-	turnOn.getProfile().addChangeEffect(
-		new String[] { DeviceService.PROP_CONTROLS,
-			ValueDevice.PROP_HAS_VALUE }, new Integer(100));
+		// We add a filtering input: at the path 'controls' we expect exactly
+		// one parameter of type LightActuator. When the service is called, we
+		// can query this parameter with the URI 'INPUT_LIGHT_URI'
+		turnOn.addFilteringInput(INPUT_LIGHT_URI, LightActuator.MY_URI, 1, 1,
+				new String[] { DeviceService.PROP_CONTROLS });
+		// We add a change effect: at the path 'controls-hasValue' the service
+		// can change the value to 100
+		turnOn.getProfile().addChangeEffect(new String[] { DeviceService.PROP_CONTROLS, ValueDevice.PROP_HAS_VALUE },
+				new Integer(100));
 
-	// We can create more profiles here and return everything in an array.
-	// Please note that there is a difference between
-	// - registering one calle with multiple profiles, and
-	// - registering multiple callees, each with one profile
-	// See also the section on service bus details in the Wiki
-	return new ServiceProfile[] { turnOn.getProfile() };
-    }
+		// We can create more profiles here and return everything in an array.
+		// Please note that there is a difference between
+		// - registering one calle with multiple profiles, and
+		// - registering multiple callees, each with one profile
+		// See also the section on service bus details in the Wiki
+		return new ServiceProfile[] { turnOn.getProfile() };
+	}
 
-    public MyServiceCallee(ModuleContext context) {
-	// The constructor register us to the service bus for some profiles
-	super(context, getProfiles());
-    }
+	public MyServiceCallee(ModuleContext context) {
+		// The constructor register us to the service bus for some profiles
+		super(context, getProfiles());
+	}
 
-    /** @see ServiceCallee#handleCall(ServiceCall) */
-    public ServiceResponse handleCall(ServiceCall call) {
-	// If we have registered multiple profiles, we can distinguish the
-	// service by comparing the service URI with the process URI
-	String operation = call.getProcessURI();
-	if (operation.startsWith(SERVICE_TURN_ON)) {
-	    // Get the parameter
-	    Object input = call.getInputValue(INPUT_LIGHT_URI);</pre></div></td></tr></table>
+	/** @see ServiceCallee#handleCall(ServiceCall) */
+	public ServiceResponse handleCall(ServiceCall call) {
+		// If we have registered multiple profiles, we can distinguish the
+		// service by comparing the service URI with the process URI
+		String operation = call.getProcessURI();
+		if (operation.startsWith(SERVICE_TURN_ON)) {
+			// Get the parameter
+			Object input = call.getInputValue(INPUT_LIGHT_URI);</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1546,44 +1620,44 @@
 <tr class="a">
 <td>org/universAAL/samples/servbus/GUIPanel.java</td>
 <td>universAAL Samples Service bus tester</td>
-<td>135</td></tr>
+<td>132</td></tr>
 <tr class="b">
 <td>org/universAAL/samples/servbus/GUIPanel.java</td>
 <td>universAAL Samples Service bus tester</td>
-<td>188</td></tr>
+<td>182</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>    private void sendButton1ActionPerformed(ActionEvent evt) {
-	this.label1p1.setText(&quot;Delay: &quot;);
-	int siz = 0;
-	try {
-	    siz = Integer.parseInt(this.text1p1.getText());
-	} catch (Exception e) {
-	    this.label1p1.setText(&quot;Invalid size of burst&quot;);
-	    return;
-	}
-	ServiceRequest srq = null;
-	switch (this.combo1p1.getSelectedIndex()) {
-	case 0:
-	    srq = getGETLAMPSrequest();
-	    break;
-	case 1:
-	    srq = getGETLAMPINFOrequest();
-	    break;
-	case 2:
-	    srq = getSETreqest(100);
-	    break;
-	case 3:
-	    srq = getSETreqest(0);
-	    break;
-	case 4:
-	    srq = getSETreqest(50);
-	    break;
-	default:
-	    break;
-	}
-	long t0 = System.currentTimeMillis();
-	for (int i = 0; i &lt; siz; i++) {</pre></div></td></tr></table>
+<pre>	private void sendButton1ActionPerformed(ActionEvent evt) {
+		this.label1p1.setText(&quot;Delay: &quot;);
+		int siz = 0;
+		try {
+			siz = Integer.parseInt(this.text1p1.getText());
+		} catch (Exception e) {
+			this.label1p1.setText(&quot;Invalid size of burst&quot;);
+			return;
+		}
+		ServiceRequest srq = null;
+		switch (this.combo1p1.getSelectedIndex()) {
+		case 0:
+			srq = getGETLAMPSrequest();
+			break;
+		case 1:
+			srq = getGETLAMPINFOrequest();
+			break;
+		case 2:
+			srq = getSETreqest(100);
+			break;
+		case 3:
+			srq = getSETreqest(0);
+			break;
+		case 4:
+			srq = getSETreqest(50);
+			break;
+		default:
+			break;
+		}
+		long t0 = System.currentTimeMillis();
+		for (int i = 0; i &lt; siz; i++) {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1592,40 +1666,40 @@
 <tr class="a">
 <td>org/universAAL/samples/ctxtbus/CPublisher.java</td>
 <td>universAAL Samples Context bus tester for Android</td>
-<td>65</td></tr>
+<td>64</td></tr>
 <tr class="b">
 <td>org/universAAL/samples/ctxtbus/CPublisher.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>67</td></tr>
+<td>65</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>		+ &quot;TestMassAndContextProvider&quot;);
-	cpinfo.setType(ContextProviderType.gauge);
-	cpinfo.setProvidedEvents(new ContextEventPattern[] { new ContextEventPattern() });
-	return cpinfo;
-    }
-
-    public void communicationChannelBroken() {
-	// TODO Auto-generated method stub
-
-    }
-
-    public long sendBurst(int size) {
-	Random r = new Random();
-	long t0 = System.currentTimeMillis();
-	for (int i = 0; i &lt; size; i++) {
-	    this.publish(sampleEvents[r.nextInt(samples)]);
+<pre>		ContextProvider cpinfo = new ContextProvider(URIROOT + &quot;TestMassAndContextProvider&quot;);
+		cpinfo.setType(ContextProviderType.gauge);
+		cpinfo.setProvidedEvents(new ContextEventPattern[] { new ContextEventPattern() });
+		return cpinfo;
 	}
-	long t1 = System.currentTimeMillis();
-	return t1 - t0;
-    }
 
-    // to send burst of event with unique URIs (for CHe)
-    // may introduce more delay
-    public long sendUniqueBurst(int size) {
-	Random r = new Random();
-	long t0 = System.currentTimeMillis();
-	for (int i = 0; i &lt; size; i++) {</pre></div></td></tr></table>
+	public void communicationChannelBroken() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public long sendBurst(int size) {
+		Random r = new Random();
+		long t0 = System.currentTimeMillis();
+		for (int i = 0; i &lt; size; i++) {
+			this.publish(sampleEvents[r.nextInt(samples)]);
+		}
+		long t1 = System.currentTimeMillis();
+		return t1 - t0;
+	}
+
+	// to send burst of event with unique URIs (for CHe)
+	// may introduce more delay
+	public long sendUniqueBurst(int size) {
+		Random r = new Random();
+		long t0 = System.currentTimeMillis();
+		for (int i = 0; i &lt; size; i++) {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1641,21 +1715,18 @@
 <td>50</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>		    Lighting.PROP_CONTROLS, Resource.uAAL_VOCABULARY_NAMESPACE + &quot;hasLocation&quot; }) })
-    public Object[] getLampInfo(
-	    @Input(name = &quot;lampURI&quot;, propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
+<pre>					Resource.uAAL_VOCABULARY_NAMESPACE + &quot;hasLocation&quot; }) })
+	public Object[] getLampInfo(@Input(name = &quot;lampURI&quot;, propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
 
-    @ServiceOperation
-    @ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS },
-	    value = &quot;0&quot;, valueType = Integer.class)
-    public void turnOff(
-	    @Input(name = &quot;lampURI&quot;, propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
+	@ServiceOperation
+	@ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS,
+			LightSource.PROP_SOURCE_BRIGHTNESS }, value = &quot;0&quot;, valueType = Integer.class)
+	public void turnOff(@Input(name = &quot;lampURI&quot;, propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
 
-    @ServiceOperation
-    @ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS },
-	    value = &quot;100&quot;, valueType = Integer.class)
-    public void turnOn(
-	    @Input(name = &quot;lampURI&quot;, propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
+	@ServiceOperation
+	@ChangeEffect(propertyPaths = { Lighting.PROP_CONTROLS,
+			LightSource.PROP_SOURCE_BRIGHTNESS }, value = &quot;100&quot;, valueType = Integer.class)
+	public void turnOn(@Input(name = &quot;lampURI&quot;, propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
 }</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
@@ -1665,11 +1736,11 @@
 <tr class="a">
 <td>org/universAAL/lddi/samples/activityhub/client/ActivityHubClient.java</td>
 <td>universAAL Samples Activity Hub Client</td>
-<td>64</td></tr>
+<td>65</td></tr>
 <tr class="b">
 <td>org/universAAL/lddi/samples/device/client/DeviceClient.java</td>
 <td>universAAL Samples Device Client</td>
-<td>60</td></tr>
+<td>61</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>	private Activator myParent;
@@ -1677,7 +1748,7 @@
 	private static ListModel jListModel = new DefaultComboBoxModel(new Object[] { &quot;Init...&quot; });
 	static private JList jList1 = new JList(jListModel);
 	private static JScrollPane jsp0 = new JScrollPane(jList1);
-//	private static JTextArea deviceArea = new JTextArea();
+	// private static JTextArea deviceArea = new JTextArea();
 	private static JTextArea deviceInfoArea = new JTextArea();
 	private static JScrollPane jsp1 = new JScrollPane(deviceInfoArea);
 	private static JTextArea contextArea = new JTextArea();
@@ -1704,29 +1775,29 @@
 <td>131</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>		setBounds(100,100,450,325);
+<pre>		setBounds(100, 100, 450, 325);
 		setTitle(&quot;uAAL Continua manager client&quot;);
 		getContentPane().setLayout(new BorderLayout());
 		// Main panel (content pane)
 		mainPanel = createJPanel();
-		getContentPane().add(mainPanel,BorderLayout.CENTER);
+		getContentPane().add(mainPanel, BorderLayout.CENTER);
 		// Create and add components
-		createComponents();	
-		// Show		
+		createComponents();
+		// Show
 		setVisible(true);
-	}	
-	
+	}
+
 	/** Create components */
 	public void createComponents() {
 		// Label (uaal image icon)
 		uaalLogoLabel = new JLabel(&quot;&quot;);
 		uaalLogoLabel.setIcon(new ImageIcon(ctx.getBundle().getResource(uaalLogoImage)));
-		uaalLogoLabel.setBounds(75,10,300,81);
+		uaalLogoLabel.setBounds(75, 10, 300, 81);
 		mainPanel.add(uaalLogoLabel);
 		// Radio buttons group
-		radiobuttonPanel = new JPanel();	
-		radiobuttonPanel.setLayout(new GridLayout(1,0));
-		radiobuttonPanel.setBounds(20,100,400,50);		</pre></div></td></tr></table>
+		radiobuttonPanel = new JPanel();
+		radiobuttonPanel.setLayout(new GridLayout(1, 0));
+		radiobuttonPanel.setBounds(20, 100, 400, 50);</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1735,31 +1806,26 @@
 <tr class="a">
 <td>org/universAAL/lddi/samples/activityhub/client/MyActivityHubContextListener.java</td>
 <td>universAAL Samples Activity Hub Client</td>
-<td>87</td></tr>
+<td>93</td></tr>
 <tr class="b">
 <td>org/universAAL/lddi/samples/device/client/DeviceContextListener.java</td>
 <td>universAAL Samples Device Client</td>
-<td>87</td></tr>
+<td>92</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>		LogUtils.logInfo(Activator.mc, MyActivityHubContextListener.class,
-			&quot;handleContextEvent&quot;, new Object[] {
-			&quot;\n*****************************\n&quot;,
-			&quot;Received context event:\n&quot;, &quot;    Subject     = &quot;,
-			event.getSubjectURI(), &quot;\n&quot;, &quot;    Subject type= &quot;,
-			event.getSubjectTypeURI(), &quot;\n&quot;, &quot;    Predicate   = &quot;,
-			event.getRDFPredicate(), &quot;\n&quot;, &quot;    Object      = &quot;,
-			event.getRDFObject() } , null);
+<pre>		LogUtils.logInfo(Activator.mc, MyActivityHubContextListener.class, &quot;handleContextEvent&quot;,
+				new Object[] { &quot;\n*****************************\n&quot;, &quot;Received context event:\n&quot;, &quot;    Subject     = &quot;,
+						event.getSubjectURI(), &quot;\n&quot;, &quot;    Subject type= &quot;, event.getSubjectTypeURI(), &quot;\n&quot;,
+						&quot;    Predicate   = &quot;, event.getRDFPredicate(), &quot;\n&quot;, &quot;    Object      = &quot;,
+						event.getRDFObject() },
+				null);
 
-		String[] log = new String[] {	
-				&quot;************ Last received context event: &quot; +
-				dfm.format(new Date(System.currentTimeMillis())),
-				&quot;  Subject     = &quot; + event.getSubjectURI(),
-				&quot;  Subject type= &quot; + event.getSubjectTypeURI(),
-				&quot;  Predicate   = &quot; + event.getRDFPredicate(),
-				&quot;  Object      = &quot; + event.getRDFObject() };
-		
-		this.ahc.showContextEvent( log );</pre></div></td></tr></table>
+		String[] log = new String[] {
+				&quot;************ Last received context event: &quot; + dfm.format(new Date(System.currentTimeMillis())),
+				&quot;  Subject     = &quot; + event.getSubjectURI(), &quot;  Subject type= &quot; + event.getSubjectTypeURI(),
+				&quot;  Predicate   = &quot; + event.getRDFPredicate(), &quot;  Object      = &quot; + event.getRDFObject() };
+
+		this.ahc.showContextEvent(log);</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1768,16 +1834,16 @@
 <tr class="a">
 <td>org/universAAL/lddi/samples/activityhub/client/ActivityHubClient.java</td>
 <td>universAAL Samples Activity Hub Client</td>
-<td>89</td></tr>
+<td>92</td></tr>
 <tr class="b">
 <td>org/universAAL/lddi/samples/device/client/DeviceClient.java</td>
 <td>universAAL Samples Device Client</td>
-<td>90</td></tr>
+<td>92</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>	public ActivityHubClient(Activator parent) {
 		super();
-		this.myParent = parent; 
+		this.myParent = parent;
 		initGUI();
 		start();
 	}
@@ -1790,12 +1856,18 @@
 			e.printStackTrace();
 		}
 	}
-	
-	// create the GUI 
-	public void start(){
+
+	// create the GUI
+	public void start() {
 
 		frame = new JFrame();
-		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); // doesn't stop the whole framework on close
+		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); // doesn't
+																			// stop
+																			// the
+																			// whole
+																			// framework
+																			// on
+																			// close
 		frame.pack();
 		frame.setSize(1000, 800);
 		frame.setVisible(true);
@@ -1809,32 +1881,34 @@
 <tr class="a">
 <td>org/universAAL/samples/ctxtbus/ProfileCaller.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>506</td></tr>
+<td>519</td></tr>
 <tr class="b">
 <td>org/universAAL/samples/ctxtbus/ProfileCaller.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>530</td></tr>
+<td>547</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>	req.addTypeFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE}, PersonalInformationSubprofile.MY_URI);
-	req.addRequiredOutput(OUTPUT_GETSUBPROFILES, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
-	ServiceResponse resp=caller.call(req);
-	if (resp.getCallStatus() == CallStatus.succeeded) {
-//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
-	    Object out=resp.getOutput(OUTPUT_GETSUBPROFILES,true);
-	    if (out != null) {
-		log.debug(out.toString());
-		return out.toString();
-	    } else {
-		log.debug(&quot;NOTHING!&quot;);
-		return &quot;nothing&quot;;
-	    }
-	}else{
-	    return resp.getCallStatus().name();
+<pre>				Profile.PROP_HAS_SUB_PROFILE }, PersonalInformationSubprofile.MY_URI);
+		req.addRequiredOutput(OUTPUT_GETSUBPROFILES, new String[] { ProfilingService.PROP_CONTROLS,
+				Profilable.PROP_HAS_PROFILE, Profile.PROP_HAS_SUB_PROFILE });
+		ServiceResponse resp = caller.call(req);
+		if (resp.getCallStatus() == CallStatus.succeeded) {
+			// Object
+			// out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
+			Object out = resp.getOutput(OUTPUT_GETSUBPROFILES, true);
+			if (out != null) {
+				log.debug(out.toString());
+				return out.toString();
+			} else {
+				log.debug(&quot;NOTHING!&quot;);
+				return &quot;nothing&quot;;
+			}
+		} else {
+			return resp.getCallStatus().name();
+		}
 	}
-    }
-    
-    private String getSubprofiles(UserProfile profile) {</pre></div></td></tr></table>
+
+	private String getSubprofiles(UserProfile profile) {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1847,29 +1921,30 @@
 <tr class="b">
 <td>org/universAAL/samples/ctxtbus/ProfileCaller.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>480</td></tr>
+<td>489</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE}, profile);
-	req.addRequiredOutput(OUTPUT_GETPROFILE, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
-	ServiceResponse resp = caller.call(req);
-	if (resp.getCallStatus() == CallStatus.succeeded) {
-//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
-	    Object out=resp.getOutput(OUTPUT_GETPROFILE,true);
-	    if (out != null) {
-		log.debug(out.toString());
-		return out.toString();
-	    } else {
-		log.debug(&quot;NOTHING!&quot;);
-		return &quot;nothing&quot;;
-	    }
-	}else{
-	    return resp.getCallStatus().name();
+<pre>		req.addValueFilter(new String[] { ProfilingService.PROP_CONTROLS, Profilable.PROP_HAS_PROFILE }, profile);
+		req.addRequiredOutput(OUTPUT_GETPROFILE,
+				new String[] { ProfilingService.PROP_CONTROLS, Profilable.PROP_HAS_PROFILE });
+		ServiceResponse resp = caller.call(req);
+		if (resp.getCallStatus() == CallStatus.succeeded) {
+			// Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETPROFILE);
+			Object out = resp.getOutput(OUTPUT_GETPROFILE, true);
+			if (out != null) {
+				log.debug(out.toString());
+				return out.toString();
+			} else {
+				log.debug(&quot;NOTHING!&quot;);
+				return &quot;nothing&quot;;
+			}
+		} else {
+			return resp.getCallStatus().name();
+		}
 	}
-    }
-    
-    //:::::::::::::SUBPROFILE GET/ADD/CHANGE/REMOVE:::::::::::::::::
-    private String removeSubProfile(SubProfile profile) {</pre></div></td></tr></table>
+
+	// :::::::::::::SUBPROFILE GET/ADD/CHANGE/REMOVE:::::::::::::::::
+	private String removeSubProfile(SubProfile profile) {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1878,32 +1953,32 @@
 <tr class="a">
 <td>org/universAAL/samples/ctxtbus/SpaceCaller.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>504</td></tr>
+<td>553</td></tr>
 <tr class="b">
 <td>org/universAAL/samples/ctxtbus/SpaceCaller.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>541</td></tr>
+<td>591</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre> 	req.addValueFilter(new String[]{ProfilingService.PROP_CONTROLS}, aalService);
-	req.addRequiredOutput(OUTPUT, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE});
- 	ServiceResponse resp=caller.call(req);
- 	if (resp.getCallStatus() == CallStatus.succeeded) {
-// 	    Object out=getReturnValue(resp.getOutputs(),OUTPUT);
- 	   Object out=resp.getOutput(OUTPUT,true);
- 	    if (out != null) {
- 		log.debug(out.toString());
- 		return out.toString();
- 	    } else {
- 		log.debug(&quot;NOTHING!&quot;);
- 		return &quot;nothing&quot;;
- 	    }
- 	}else{
- 	    return resp.getCallStatus().name();
- 	}
-    }
+<pre>		req.addValueFilter(new String[] { ProfilingService.PROP_CONTROLS }, aalService);
+		req.addRequiredOutput(OUTPUT, new String[] { ProfilingService.PROP_CONTROLS, Profilable.PROP_HAS_PROFILE });
+		ServiceResponse resp = caller.call(req);
+		if (resp.getCallStatus() == CallStatus.succeeded) {
+			// Object out=getReturnValue(resp.getOutputs(),OUTPUT);
+			Object out = resp.getOutput(OUTPUT, true);
+			if (out != null) {
+				log.debug(out.toString());
+				return out.toString();
+			} else {
+				log.debug(&quot;NOTHING!&quot;);
+				return &quot;nothing&quot;;
+			}
+		} else {
+			return resp.getCallStatus().name();
+		}
+	}
 
-    private String addServprofToServ(AALService aalService,</pre></div></td></tr></table>
+	private String addServprofToServ(AALService aalService, AALServiceProfile aalServiceProfile) {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1912,26 +1987,26 @@
 <tr class="a">
 <td>org/universAAL/samples/context/reasoner/client/gui/QueryCreatorFrame.java</td>
 <td>universAAL Samples Context Situation Reasoner Test Client</td>
-<td>283</td></tr>
+<td>265</td></tr>
 <tr class="b">
 <td>org/universAAL/samples/context/reasoner/client/gui/RuleCreatorFrame.java</td>
 <td>universAAL Samples Context Situation Reasoner Test Client</td>
 <td>150</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>	c.weightx = 1.0;
-	c.fill = GridBagConstraints.HORIZONTAL;
-	Box footerBox = Box.createHorizontalBox();
-	this.getContentPane().add(footerBox, c);
-	footerBox.add(Box.createHorizontalGlue());
-	saveCheck = new JCheckBox(&quot;Save permanent: &quot;);
-	saveCheck.setSelected(true);
-	footerBox.add(saveCheck);
-	footerBox.add(Box.createHorizontalStrut(50));
-	JButton addButton = new JButton(&quot;Add&quot;);
-	addButton.setPreferredSize(new Dimension(80, 30));
-	addButton.addActionListener(new ActionListener() {
-	    public void actionPerformed(ActionEvent e) {</pre></div></td></tr></table>
+<pre>		c.weightx = 1.0;
+		c.fill = GridBagConstraints.HORIZONTAL;
+		Box footerBox = Box.createHorizontalBox();
+		this.getContentPane().add(footerBox, c);
+		footerBox.add(Box.createHorizontalGlue());
+		saveCheck = new JCheckBox(&quot;Save permanent: &quot;);
+		saveCheck.setSelected(true);
+		footerBox.add(saveCheck);
+		footerBox.add(Box.createHorizontalStrut(50));
+		JButton addButton = new JButton(&quot;Add&quot;);
+		addButton.setPreferredSize(new Dimension(80, 30));
+		addButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
@@ -1940,36 +2015,38 @@
 <tr class="a">
 <td>org/universAAL/samples/ctxtbus/ProfileCaller.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>239</td></tr>
+<td>237</td></tr>
 <tr class="b">
 <td>org/universAAL/samples/ctxtbus/ProfileCaller.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>507</td></tr>
+<td>520</td></tr>
 <tr class="a">
 <td>org/universAAL/samples/ctxtbus/ProfileCaller.java</td>
 <td>universAAL Samples Context bus tester</td>
-<td>531</td></tr>
+<td>548</td></tr>
 <tr class="b"><td colspan='3'>
 <div>
-<pre>	req.addSimpleOutputBinding(po, new String[]{ProfilingService.PROP_CONTROLS,Profilable.PROP_HAS_PROFILE,Profile.PROP_HAS_SUB_PROFILE});
-	ServiceResponse resp=caller.call(req);
-	if (resp.getCallStatus() == CallStatus.succeeded) {
-//	    Object out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
-	    Object out=resp.getOutput(OUTPUT_GETSUBPROFILES,true);
-	    if (out != null) {
-		log.debug(out.toString());
-		return out.toString();
-	    } else {
-		log.debug(&quot;NOTHING!&quot;);
-		return &quot;nothing&quot;;
-	    }
-	}else{
-	    return resp.getCallStatus().name();
+<pre>		req.addSimpleOutputBinding(po, new String[] { ProfilingService.PROP_CONTROLS, Profilable.PROP_HAS_PROFILE,
+				Profile.PROP_HAS_SUB_PROFILE });
+		ServiceResponse resp = caller.call(req);
+		if (resp.getCallStatus() == CallStatus.succeeded) {
+			// Object
+			// out=getReturnValue(resp.getOutputs(),OUTPUT_GETSUBPROFILES);
+			Object out = resp.getOutput(OUTPUT_GETSUBPROFILES, true);
+			if (out != null) {
+				log.debug(out.toString());
+				return out.toString();
+			} else {
+				log.debug(&quot;NOTHING!&quot;);
+				return &quot;nothing&quot;;
+			}
+		} else {
+			return resp.getCallStatus().name();
+		}
 	}
-    }
 
-    //:::::::::::::PROFILABLE GET/ADD/CHANGE/REMOVE:::::::::::::::::
-    private String removeProfilable(Resource profilable) {</pre></div></td></tr></table></div>
+	// :::::::::::::PROFILABLE GET/ADD/CHANGE/REMOVE:::::::::::::::::
+	private String removeProfilable(Resource profilable) {</pre></div></td></tr></table></div>
       </div>
     </div>
     <div class="clear">

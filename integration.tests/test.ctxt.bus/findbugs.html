@@ -191,13 +191,13 @@
 <td>Switch statement found in org.universAAL.samples.ctxtbus.Activator.serviceChanged(ServiceEvent) where default case is missing</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT</a></td>
-<td>81</td>
+<td>77</td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>Write to static field org.universAAL.samples.ctxtbus.Activator.parser from instance method org.universAAL.samples.ctxtbus.Activator.serviceChanged(ServiceEvent)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>84</td>
+<td>80</td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>Write to static field org.universAAL.samples.ctxtbus.Activator.context from instance method org.universAAL.samples.ctxtbus.Activator.start(BundleContext)</td>
@@ -218,31 +218,31 @@
 <td>Primitive value is boxed and then immediately unboxed in org.universAAL.samples.ctxtbus.CPublisher.getSample(int)</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BX_BOXING_IMMEDIATELY_UNBOXED">BX_BOXING_IMMEDIATELY_UNBOXED</a></td>
-<td>163</td>
+<td>156</td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>org.universAAL.samples.ctxtbus.CPublisher.getSample(int) invokes inefficient Boolean constructor; use Boolean.valueOf(...) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_BOOLEAN_CTOR">DM_BOOLEAN_CTOR</a></td>
-<td>185</td>
+<td>177</td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>org.universAAL.samples.ctxtbus.CPublisher.sendSituation() invokes inefficient Boolean constructor; use Boolean.valueOf(...) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_BOOLEAN_CTOR">DM_BOOLEAN_CTOR</a></td>
-<td>198</td>
+<td>187</td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>org.universAAL.samples.ctxtbus.CPublisher.getSample(int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
-<td>152</td>
+<td>145</td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>org.universAAL.samples.ctxtbus.CPublisher.initSamples() invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
-<td>111</td>
+<td>108</td>
 <td>Medium</td></tr></table></div><a name="org.universAAL.samples.ctxtbus.GUIPanel"></a>
 <div class="section">
 <h3><a name="org.universAAL.samples.ctxtbus.GUIPanel"></a>org.universAAL.samples.ctxtbus.GUIPanel</h3>
@@ -257,19 +257,19 @@
 <td>Primitive value is boxed and then immediately unboxed in org.universAAL.samples.ctxtbus.GUIPanel.getSample(int)</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BX_BOXING_IMMEDIATELY_UNBOXED">BX_BOXING_IMMEDIATELY_UNBOXED</a></td>
-<td>782</td>
+<td>724</td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>org.universAAL.samples.ctxtbus.GUIPanel.getSample(int) invokes inefficient Boolean constructor; use Boolean.valueOf(...) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_BOOLEAN_CTOR">DM_BOOLEAN_CTOR</a></td>
-<td>804</td>
+<td>745</td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>org.universAAL.samples.ctxtbus.GUIPanel.getSample(int) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
-<td>771</td>
+<td>713</td>
 <td>Medium</td></tr></table></div><a name="org.universAAL.samples.ctxtbus.HistoryCaller"></a>
 <div class="section">
 <h3><a name="org.universAAL.samples.ctxtbus.HistoryCaller"></a>org.universAAL.samples.ctxtbus.HistoryCaller</h3>
@@ -284,7 +284,7 @@
 <td>org.universAAL.samples.ctxtbus.HistoryCaller.getGetEventsRequest(ContextEvent, long, long) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
-<td>132</td>
+<td>118</td>
 <td>Medium</td></tr></table></div><a name="org.universAAL.samples.ctxtbus.SpaceCaller"></a>
 <div class="section">
 <h3><a name="org.universAAL.samples.ctxtbus.SpaceCaller"></a>org.universAAL.samples.ctxtbus.SpaceCaller</h3>
@@ -299,7 +299,7 @@
 <td>org.universAAL.samples.ctxtbus.SpaceCaller.getListOfResults(ServiceResponse) concatenates strings using + in a loop</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SBSC_USE_STRINGBUFFER_CONCATENATION">SBSC_USE_STRINGBUFFER_CONCATENATION</a></td>
-<td>578</td>
+<td>627</td>
 <td>Medium</td></tr></table></div>
       </div>
     </div>

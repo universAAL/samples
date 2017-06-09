@@ -149,19 +149,19 @@
 <td>Write to static field org.universAAL.samples.lighting.client.LightClient.jList1 from instance method org.universAAL.samples.lighting.client.LightClient.start()</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>122</td>
+<td>119</td>
 <td>High</td></tr>
 <tr class="a">
 <td>Write to static field org.universAAL.samples.lighting.client.LightClient.offButton from instance method org.universAAL.samples.lighting.client.LightClient.start()</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>93</td>
+<td>90</td>
 <td>High</td></tr>
 <tr class="b">
 <td>Write to static field org.universAAL.samples.lighting.client.LightClient.onButton from instance method org.universAAL.samples.lighting.client.LightClient.start()</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>86</td>
+<td>83</td>
 <td>High</td></tr></table></div><a name="org.universAAL.samples.lighting.client.LightClient5"></a>
 <div class="section">
 <h3><a name="org.universAAL.samples.lighting.client.LightClient5"></a>org.universAAL.samples.lighting.client.LightClient$5</h3>
@@ -176,13 +176,13 @@
 <td>Boxing/unboxing to parse a primitive org.universAAL.samples.lighting.client.LightClient$5.actionPerformed(ActionEvent)</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_BOXED_PRIMITIVE_FOR_PARSING">DM_BOXED_PRIMITIVE_FOR_PARSING</a></td>
-<td>235</td>
+<td>230</td>
 <td>High</td></tr>
 <tr class="a">
 <td>org.universAAL.samples.lighting.client.LightClient$5.actionPerformed(ActionEvent) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
-<td>236</td>
+<td>231</td>
 <td>Medium</td></tr></table></div><a name="org.universAAL.samples.lighting.client.LightingConsumer"></a>
 <div class="section">
 <h3><a name="org.universAAL.samples.lighting.client.LightingConsumer"></a>org.universAAL.samples.lighting.client.LightingConsumer</h3>
@@ -197,37 +197,37 @@
 <td>instanceof will always return true for all non-null values in org.universAAL.samples.lighting.client.LightingConsumer.dimToValue(String, Integer), since all Integer are instances of Integer</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BC_VACUOUS_INSTANCEOF">BC_VACUOUS_INSTANCEOF</a></td>
-<td>250</td>
+<td>234</td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>instanceof will always return true for all non-null values in org.universAAL.samples.lighting.client.LightingConsumer.dimToValue(String, Integer), since all String are instances of String</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BC_VACUOUS_INSTANCEOF">BC_VACUOUS_INSTANCEOF</a></td>
-<td>250</td>
+<td>234</td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>instanceof will always return true for all non-null values in org.universAAL.samples.lighting.client.LightingConsumer.turnOff(String), since all String are instances of String</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BC_VACUOUS_INSTANCEOF">BC_VACUOUS_INSTANCEOF</a></td>
-<td>202</td>
+<td>190</td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>instanceof will always return true for all non-null values in org.universAAL.samples.lighting.client.LightingConsumer.turnOn(String), since all String are instances of String</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#BC_VACUOUS_INSTANCEOF">BC_VACUOUS_INSTANCEOF</a></td>
-<td>227</td>
+<td>213</td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>org.universAAL.samples.lighting.client.LightingConsumer.turnOffRequest(String) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
-<td>101</td>
+<td>95</td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>org.universAAL.samples.lighting.client.LightingConsumer.turnOnRequest(String) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
-<td>115</td>
+<td>108</td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>org.universAAL.samples.lighting.client.LightingConsumer.caller should be package protected</td>
@@ -239,7 +239,7 @@
 <td>Write to static field org.universAAL.samples.lighting.client.LightingConsumer.caller from instance method new org.universAAL.samples.lighting.client.LightingConsumer(ModuleContext)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>68</td>
+<td>67</td>
 <td>Medium</td></tr></table></div>
       </div>
     </div>

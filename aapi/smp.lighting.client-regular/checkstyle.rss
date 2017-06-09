@@ -28,7 +28,7 @@ under the License.
       <title>File: 5,
              Errors: 52,
              Warnings: 17,
-             Infos: 89
+             Infos: 43
       </title>
             <link>http://xtras/samples/aapi/smp.lighting.client-regular//checkstyle.html</link>
       <description>
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.client-regular//checkstyle.html#org.universAAL.samples.lighting.client_regular.LightClient.java">org/universAAL/samples/lighting/client_regular/LightClient.java</a>
                 </td>
                 <td>
-                  42
+                  9
                 </td>
                 <td>
                   8
@@ -91,7 +91,7 @@ under the License.
                   <a href="http://xtras/samples/aapi/smp.lighting.client-regular//checkstyle.html#org.universAAL.samples.lighting.client_regular.LightingConsumerLevel2.java">org/universAAL/samples/lighting/client_regular/LightingConsumerLevel2.java</a>
                 </td>
                 <td>
-                  22
+                  9
                 </td>
                 <td>
                   3

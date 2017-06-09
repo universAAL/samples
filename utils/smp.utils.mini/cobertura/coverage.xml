@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="1.0" lines-covered="0" lines-valid="35" branches-covered="0" branches-valid="0" complexity="1.0" version="2.1.1" timestamp="1496717890208">
+<coverage line-rate="0.0" branch-rate="1.0" lines-covered="0" lines-valid="34" branches-covered="0" branches-valid="0" complexity="1.0" version="2.1.1" timestamp="1496983264338">
 	<sources>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/utils/smp.utils.mini/src/main/java</source>
@@ -27,30 +27,29 @@
 							<lines>
 								<line number="59" hits="0" branch="false"/>
 								<line number="60" hits="0" branch="false"/>
-								<line number="61" hits="0" branch="false"/>
-								<line number="64" hits="0" branch="false"/>
+								<line number="63" hits="0" branch="false"/>
+								<line number="66" hits="0" branch="false"/>
 								<line number="67" hits="0" branch="false"/>
-								<line number="68" hits="0" branch="false"/>
+								<line number="74" hits="0" branch="false"/>
 								<line number="75" hits="0" branch="false"/>
 								<line number="76" hits="0" branch="false"/>
 								<line number="77" hits="0" branch="false"/>
-								<line number="78" hits="0" branch="false"/>
+								<line number="80" hits="0" branch="false"/>
 								<line number="81" hits="0" branch="false"/>
-								<line number="83" hits="0" branch="false"/>
-								<line number="92" hits="0" branch="false"/>
+								<line number="89" hits="0" branch="false"/>
+								<line number="90" hits="0" branch="false"/>
+								<line number="91" hits="0" branch="false"/>
 								<line number="94" hits="0" branch="false"/>
 								<line number="95" hits="0" branch="false"/>
-								<line number="98" hits="0" branch="false"/>
-								<line number="99" hits="0" branch="false"/>
-								<line number="100" hits="0" branch="false"/>
-								<line number="101" hits="0" branch="false"/>
-								<line number="107" hits="0" branch="false"/>
+								<line number="96" hits="0" branch="false"/>
+								<line number="97" hits="0" branch="false"/>
+								<line number="103" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="stop" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="111" hits="0" branch="false"/>
-								<line number="112" hits="0" branch="false"/>
+								<line number="107" hits="0" branch="false"/>
+								<line number="108" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -61,86 +60,85 @@
 						<line number="53" hits="0" branch="false"/>
 						<line number="59" hits="0" branch="false"/>
 						<line number="60" hits="0" branch="false"/>
-						<line number="61" hits="0" branch="false"/>
-						<line number="64" hits="0" branch="false"/>
+						<line number="63" hits="0" branch="false"/>
+						<line number="66" hits="0" branch="false"/>
 						<line number="67" hits="0" branch="false"/>
-						<line number="68" hits="0" branch="false"/>
+						<line number="74" hits="0" branch="false"/>
 						<line number="75" hits="0" branch="false"/>
 						<line number="76" hits="0" branch="false"/>
 						<line number="77" hits="0" branch="false"/>
-						<line number="78" hits="0" branch="false"/>
+						<line number="80" hits="0" branch="false"/>
 						<line number="81" hits="0" branch="false"/>
-						<line number="83" hits="0" branch="false"/>
-						<line number="92" hits="0" branch="false"/>
+						<line number="89" hits="0" branch="false"/>
+						<line number="90" hits="0" branch="false"/>
+						<line number="91" hits="0" branch="false"/>
 						<line number="94" hits="0" branch="false"/>
 						<line number="95" hits="0" branch="false"/>
-						<line number="98" hits="0" branch="false"/>
-						<line number="99" hits="0" branch="false"/>
-						<line number="100" hits="0" branch="false"/>
-						<line number="101" hits="0" branch="false"/>
+						<line number="96" hits="0" branch="false"/>
+						<line number="97" hits="0" branch="false"/>
+						<line number="103" hits="0" branch="false"/>
 						<line number="107" hits="0" branch="false"/>
-						<line number="111" hits="0" branch="false"/>
-						<line number="112" hits="0" branch="false"/>
+						<line number="108" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.samples.util.mini.Activator$1" filename="org/universAAL/samples/util/mini/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/util/mini/Activator;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="68" hits="0" branch="false"/>
+								<line number="67" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="handleContextEvent" signature="(Lorg/universAAL/middleware/context/ContextEvent;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
+								<line number="69" hits="0" branch="false"/>
 								<line number="70" hits="0" branch="false"/>
-								<line number="71" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="68" hits="0" branch="false"/>
+						<line number="67" hits="0" branch="false"/>
+						<line number="69" hits="0" branch="false"/>
 						<line number="70" hits="0" branch="false"/>
-						<line number="71" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.samples.util.mini.Activator$2" filename="org/universAAL/samples/util/mini/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/util/mini/Activator;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="84" hits="0" branch="false"/>
+								<line number="81" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="handleCall" signature="(Lorg/universAAL/middleware/service/ServiceCall;)Lorg/universAAL/middleware/service/ServiceResponse;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="86" hits="0" branch="false"/>
-								<line number="87" hits="0" branch="false"/>
+								<line number="83" hits="0" branch="false"/>
+								<line number="84" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
+						<line number="81" hits="0" branch="false"/>
+						<line number="83" hits="0" branch="false"/>
 						<line number="84" hits="0" branch="false"/>
-						<line number="86" hits="0" branch="false"/>
-						<line number="87" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.samples.util.mini.Activator$3" filename="org/universAAL/samples/util/mini/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/util/mini/Activator;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="101" hits="0" branch="false"/>
+								<line number="97" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="handleUIResponse" signature="(Lorg/universAAL/middleware/ui/UIResponse;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="103" hits="0" branch="false"/>
-								<line number="104" hits="0" branch="false"/>
+								<line number="99" hits="0" branch="false"/>
+								<line number="100" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="101" hits="0" branch="false"/>
-						<line number="103" hits="0" branch="false"/>
-						<line number="104" hits="0" branch="false"/>
+						<line number="97" hits="0" branch="false"/>
+						<line number="99" hits="0" branch="false"/>
+						<line number="100" hits="0" branch="false"/>
 					</lines>
 				</class>
 			</classes>
