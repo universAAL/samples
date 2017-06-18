@@ -106,7 +106,7 @@ public class BrokerClientImpl implements Broker, MessageListener {
 		LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
 				new Object[] { "---------Session 1--------------" }, null);
 
-		Set<SpaceCard> aalSpaces = aalSpaceManager.getAALSpaces();
+		Set<SpaceCard> aalSpaces = aalSpaceManager.getSpaces();
 		if (aalSpaces != null)
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
 					new Object[] { "Found:" + aalSpaces.size() + " AALSpaces" }, null);
@@ -121,9 +121,9 @@ public class BrokerClientImpl implements Broker, MessageListener {
 
 		LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient", new Object[] { "----" }, null);
 
-		if (aalSpaceManager.getManagedAALSpaces() != null)
+		if (aalSpaceManager.getManagedSpaces() != null)
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient", new Object[] {
-					"This MW instance manages: " + aalSpaceManager.getManagedAALSpaces().size() + " AALSpaces" }, null);
+					"This MW instance manages: " + aalSpaceManager.getManagedSpaces().size() + " AALSpaces" }, null);
 
 		LogUtils.logInfo(context, BrokerClientImpl.class, "startBrokerClient", new Object[] { "-----" }, null);
 
