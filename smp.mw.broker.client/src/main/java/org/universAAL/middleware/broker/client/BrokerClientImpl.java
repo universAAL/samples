@@ -33,8 +33,8 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.utils.LogUtils;
 import org.universAAL.middleware.interfaces.PeerCard;
 import org.universAAL.middleware.interfaces.PeerRole;
-import org.universAAL.middleware.interfaces.aalspace.AALSpaceCard;
-import org.universAAL.middleware.managers.api.AALSpaceManager;
+import org.universAAL.middleware.interfaces.space.SpaceCard;
+import org.universAAL.middleware.managers.api.SpaceManager;
 import org.universAAL.middleware.modules.CommunicationModule;
 import org.universAAL.middleware.modules.listener.MessageListener;
 
@@ -50,7 +50,7 @@ import com.google.gson.Gson;
 public class BrokerClientImpl implements Broker, MessageListener {
 
 	private ModuleContext context;
-	private AALSpaceManager aalSpaceManager;
+	private SpaceManager aalSpaceManager;
 	private CommunicationModule communicationModule;
 	private boolean stop = false;
 	private String brokerName;
@@ -65,12 +65,12 @@ public class BrokerClientImpl implements Broker, MessageListener {
 	public void startBrokerClient() {
 
 		Object ref = context.getContainer().fetchSharedObject(context,
-				new Object[] { AALSpaceManager.class.getName().toString() });
+				new Object[] { SpaceManager.class.getName().toString() });
 		if (ref != null) {
 
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
 					new Object[] { "AALSpaceManager found!" }, null);
-			aalSpaceManager = (AALSpaceManager) ref;
+			aalSpaceManager = (SpaceManager) ref;
 			brokerName = getBrokerName();
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
 					new Object[] { "AALSpaceModule fetched" }, null);
@@ -106,17 +106,17 @@ public class BrokerClientImpl implements Broker, MessageListener {
 		LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
 				new Object[] { "---------Session 1--------------" }, null);
 
-		Set<AALSpaceCard> aalSpaces = aalSpaceManager.getAALSpaces();
+		Set<SpaceCard> aalSpaces = aalSpaceManager.getAALSpaces();
 		if (aalSpaces != null)
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
 					new Object[] { "Found:" + aalSpaces.size() + " AALSpaces" }, null);
 
 		LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient", new Object[] { "----" }, null);
 
-		if (aalSpaceManager.getAALSpaceDescriptor() != null)
+		if (aalSpaceManager.getSpaceDescriptor() != null)
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
 					new Object[] { "Currently member of the AALSpace: "
-							+ aalSpaceManager.getAALSpaceDescriptor().getSpaceCard().toString() },
+							+ aalSpaceManager.getSpaceDescriptor().getSpaceCard().toString() },
 					null);
 
 		LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient", new Object[] { "----" }, null);
@@ -151,7 +151,7 @@ public class BrokerClientImpl implements Broker, MessageListener {
 
 			return;
 		} else {
-			String dest = aalSpaceManager.getAALSpaceDescriptor().getSpaceCard().getCoordinatorID();
+			String dest = aalSpaceManager.getSpaceDescriptor().getSpaceCard().getCoordinatorID();
 			PeerCard dstCard = new PeerCard(dest, PeerRole.COORDINATOR);
 			SimpleMessage ping = new SimpleMessage(SimpleMessageTypes.PING);
 

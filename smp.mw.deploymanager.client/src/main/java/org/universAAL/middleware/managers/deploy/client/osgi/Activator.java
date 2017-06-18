@@ -40,7 +40,7 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.uAALBundleContainer;
 import org.universAAL.middleware.container.utils.LogUtils;
 import org.universAAL.middleware.interfaces.PeerCard;
-import org.universAAL.middleware.managers.api.AALSpaceManager;
+import org.universAAL.middleware.managers.api.SpaceManager;
 import org.universAAL.middleware.managers.api.DeployManager;
 import org.universAAL.middleware.managers.api.InstallationResults;
 import org.universAAL.middleware.managers.api.InstallationResultsDetails;
@@ -63,7 +63,7 @@ import org.universAAL.middleware.deploymanager.uapp.model.Part;
 
 public class Activator implements BundleActivator {
 	private DeployManager deployManager;
-	private AALSpaceManager aalSpaceManager;
+	private SpaceManager aalSpaceManager;
 	// JAXB
 	private JAXBContext jc;
 	private Unmarshaller unmarshaller;
@@ -76,7 +76,7 @@ public class Activator implements BundleActivator {
 	private final static String UAAP_ID = "prova";
 
 	private final static Object[] DEPLOY_MANAGER_FILTER = new Object[] { DeployManager.class.getName().toString() };
-	private final static Object[] AAL_SPACE_FILTER = new Object[] { AALSpaceManager.class.getName().toString() };
+	private final static Object[] AAL_SPACE_FILTER = new Object[] { SpaceManager.class.getName().toString() };
 
 	private Object getObject(ModuleContext mc, Object[] filter) {
 		Object sr = null;
@@ -89,7 +89,7 @@ public class Activator implements BundleActivator {
 		Object aalSpace = getObject(mc, AAL_SPACE_FILTER);
 		if (dm != null && aalSpace != null) {
 			deployManager = (DeployManager) dm;
-			aalSpaceManager = (AALSpaceManager) aalSpace;
+			aalSpaceManager = (SpaceManager) aalSpace;
 		} else {
 			throw new IllegalStateException("Either Deploy Manger or AAL Space Mangar shared object are not available");
 		}
