@@ -27,7 +27,7 @@ public class MyTest extends BusTestCase {
 		OntologyManagement.getInstance().register(mc, new TutorialOntology());
 
 		mc.setAttribute(AccessControl.PROP_MODE, "none");
-		((JUnitModuleContext) mc).setLogLevel(LogLevel.ERROR);
+		//((JUnitModuleContext) mc).setLogLevel(LogLevel.ERROR);
 
 		lp = new LampProvider(mc);
 		lc = new MyConsumer(mc);

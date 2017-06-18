@@ -57,7 +57,7 @@ public class MyTest extends MWTestCase {
 		OntologyManagement.getInstance().register(mc, new UnitOntology());
 		OntologyManagement.getInstance().register(mc, new MeasurementOntology());
 		OntologyManagement.getInstance().register(mc, new DeviceOntology());
-		((JUnitModuleContext) mc).setLogLevel(LogLevel.INFO);
+		//((JUnitModuleContext) mc).setLogLevel(LogLevel.INFO);
 		BusMessage.setMessageContentSerializer(mcs);
 
 		subscriber = new MyContextSubscriber(mc);
