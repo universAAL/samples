@@ -21,8 +21,8 @@
 package org.universAAL.middleware.broker.client;
 
 import org.universAAL.middleware.brokers.message.BrokerMessage;
-import org.universAAL.middleware.brokers.message.aalspace.AALSpaceMessageException;
 import org.universAAL.middleware.brokers.message.gson.GsonParserBuilder;
+import org.universAAL.middleware.brokers.message.space.SpaceMessageException;
 import org.universAAL.middleware.interfaces.PeerCard;
 
 import com.google.gson.Gson;
@@ -62,7 +62,7 @@ public class SimpleMessage implements BrokerMessage {
 			return gson.toJson(this);
 
 		} catch (Exception e) {
-			throw new AALSpaceMessageException("Unable to mashall BrokerMessage. Details: " + e);
+			throw new SpaceMessageException("Unable to mashall BrokerMessage. Details: " + e);
 		}
 	}
 
