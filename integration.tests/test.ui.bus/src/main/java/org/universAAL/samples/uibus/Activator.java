@@ -39,7 +39,7 @@ public class Activator implements BundleActivator {
 	public static OPublisher uoutput;
 	// public static InputPublisher uipub;
 	public static User sampleUser;
-	static final String sampleUserURI = Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX + "saied";
+	static final String sampleUserURI = Constants.MIDDLEWARE_LOCAL_ID_PREFIX + "saied";
 	private static ModuleContext moduleContext = null;
 
 	public void start(BundleContext context) throws Exception {

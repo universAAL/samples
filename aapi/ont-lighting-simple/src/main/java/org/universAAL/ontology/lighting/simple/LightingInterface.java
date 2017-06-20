@@ -45,7 +45,7 @@ public interface LightingInterface {
 			@Output(name = "brightness", filteringClass = Integer.class, propertyPaths = { Lighting.PROP_CONTROLS,
 					LightSource.PROP_SOURCE_BRIGHTNESS }),
 			@Output(name = "location", filteringClass = Location.class, propertyPaths = { Lighting.PROP_CONTROLS,
-					Resource.uAAL_VOCABULARY_NAMESPACE + "hasLocation" }) })
+					Resource.VOCABULARY_NAMESPACE + "hasLocation" }) })
 	public Object[] getLampInfo(@Input(name = "lampURI", propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
 
 	@ServiceOperation

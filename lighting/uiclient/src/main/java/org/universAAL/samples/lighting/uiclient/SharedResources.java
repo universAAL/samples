@@ -32,7 +32,7 @@ public class SharedResources {
 	static ServiceProvider serviceProvider;
 	static UIProvider uIProvider;
 
-	static final AssistedPerson testUser = new AssistedPerson(Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX + "saied");
+	static final AssistedPerson testUser = new AssistedPerson(Constants.MIDDLEWARE_LOCAL_ID_PREFIX + "saied");
 
 	/*
 	 * (non-Javadoc)

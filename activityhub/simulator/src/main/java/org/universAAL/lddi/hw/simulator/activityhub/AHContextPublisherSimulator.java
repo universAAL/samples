@@ -55,7 +55,7 @@ import org.universAAL.ontology.activityhub.factory.ActivityHubEventFactory;
 public class AHContextPublisherSimulator {
 
 	// define namespace URIs
-	public static final String ACTIVITYHUB_SERVER_NAMESPACE = Resource.uAAL_NAMESPACE_PREFIX + "ActivityHubServer.owl#";
+	public static final String ACTIVITYHUB_SERVER_NAMESPACE = Resource.NAMESPACE_PREFIX + "ActivityHubServer.owl#";
 
 	private DefaultContextPublisher cp;
 	private AHSimulator ahSimulator;

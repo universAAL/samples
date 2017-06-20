@@ -56,7 +56,7 @@ public class MainButtonProvider extends ServiceCallee {
 
 	@Override
 	public ServiceResponse handleCall(ServiceCall call) {
-		Object inputUser = call.getProperty(ServiceRequest.PROP_uAAL_INVOLVED_HUMAN_USER);
+		Object inputUser = call.getProperty(ServiceRequest.PROP_INVOLVED_HUMAN_USER);
 		new SimpleUI(this.ctxt).showDialog((Resource) inputUser);
 		return new ServiceResponse(CallStatus.succeeded);
 	}

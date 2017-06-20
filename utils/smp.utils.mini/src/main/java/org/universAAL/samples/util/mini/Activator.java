@@ -71,7 +71,7 @@ public class Activator implements BundleActivator {
 		});
 
 		// Send event [Subject: user1, Predicate: hasLocation, Object: loc1]
-		User user1 = new User(Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX + "saied");
+		User user1 = new User(Constants.MIDDLEWARE_LOCAL_ID_PREFIX + "saied");
 		user1.setLocation(new Location(NAMESPACE + "loc1"));
 		ContextEvent e = new ContextEvent(user1, User.PROP_PHYSICAL_LOCATION);
 		u.sendC(e);

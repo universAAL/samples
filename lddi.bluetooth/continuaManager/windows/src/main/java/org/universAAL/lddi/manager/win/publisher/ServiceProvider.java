@@ -90,7 +90,7 @@ public class ServiceProvider extends ServiceCallee {
 			// System.out.println("linea 3");
 			if (operation != null && operation.startsWith(PROF_START_UI)) {
 				// System.out.println("linea 4");
-				Object inputUser = call.getProperty(ServiceRequest.PROP_uAAL_INVOLVED_HUMAN_USER);
+				Object inputUser = call.getProperty(ServiceRequest.PROP_INVOLVED_HUMAN_USER);
 				// System.out.println("linea 5");
 				// Create and show main GUI frame
 				gui.setVisible(true);

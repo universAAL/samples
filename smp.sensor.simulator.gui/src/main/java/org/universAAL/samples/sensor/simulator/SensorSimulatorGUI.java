@@ -72,11 +72,11 @@ public class SensorSimulatorGUI extends JFrame {
 	private RoomTemperaturePublisher roomTemperaturePublisher;
 	private RoomHumidityPublisher roomHumidityPublisher;
 
-	private String USER_NAMESPACE = Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX;
+	private String USER_NAMESPACE = Constants.MIDDLEWARE_LOCAL_ID_PREFIX;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JTextField textFieldUserLocation;
 
-	private String LOCATION_NAMESPACE = Constants.uAAL_MIDDLEWARE_LOCAL_ID_PREFIX;
+	private String LOCATION_NAMESPACE = Constants.MIDDLEWARE_LOCAL_ID_PREFIX;
 	private String SLEEPING_ROOM = "sleepingRoom";
 	private String BATHROOM = "bathroom";
 	private String HOBBY_ROOM = "hobbyRoom";
