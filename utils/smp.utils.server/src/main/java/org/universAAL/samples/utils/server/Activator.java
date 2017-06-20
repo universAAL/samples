@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.osgi.OSGiContainer;
 import org.universAAL.middleware.context.owl.ContextProviderType;
 import org.universAAL.middleware.rdf.TypeMapper;
 import org.universAAL.ontology.device.LightController;
@@ -63,7 +63,7 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext bcontext) throws Exception {
 		// Get the uAAL module context
 		Activator.osgiContext = bcontext;
-		Activator.context = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
+		Activator.context = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
 		// Register the Context Publisher as controller and to send events about
 		// light brightness

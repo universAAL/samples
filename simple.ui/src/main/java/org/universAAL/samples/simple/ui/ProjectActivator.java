@@ -18,7 +18,7 @@ package org.universAAL.samples.simple.ui;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.osgi.OSGiContainer;
 
 public class ProjectActivator implements BundleActivator {
 
@@ -26,7 +26,7 @@ public class ProjectActivator implements BundleActivator {
 	public MainButtonProvider service;
 
 	public void start(BundleContext arg0) throws Exception {
-		context = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { arg0 });
+		context = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { arg0 });
 		context.logDebug("simple.ui", "Initialising Project", null);
 
 		/*

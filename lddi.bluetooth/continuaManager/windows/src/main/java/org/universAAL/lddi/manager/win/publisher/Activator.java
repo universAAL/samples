@@ -41,7 +41,7 @@ import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleException;
 import org.universAAL.lddi.manager.win.gui.GUI;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.osgi.OSGiContainer;
 
 // Main class
 public class Activator implements BundleActivator {
@@ -64,7 +64,7 @@ public class Activator implements BundleActivator {
 	// Methods
 	/** Start */
 	public void start(BundleContext context) throws Exception {
-		mdlContext = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
+		mdlContext = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { context });
 		// Create and show main GUI frame
 		bndContext = context;
 		gui = new GUI(bndContext);

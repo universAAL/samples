@@ -24,7 +24,7 @@ import java.awt.EventQueue;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.osgi.OSGiContainer;
 import org.universAAL.middleware.container.utils.LogUtils;
 
 /**
@@ -48,7 +48,7 @@ public class Activator implements BundleActivator {
 	 */
 	public void start(BundleContext bcontext) throws Exception {
 
-		Activator.mcontext = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
+		Activator.mcontext = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

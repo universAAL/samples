@@ -24,7 +24,7 @@ package org.universAAL.samples.utils.client;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.osgi.OSGiContainer;
 import org.universAAL.middleware.service.DefaultServiceCaller;
 import org.universAAL.middleware.service.ServiceCaller;
 import org.universAAL.ontology.device.LightController;
@@ -46,7 +46,7 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext bcontext) throws Exception {
 		// Get the uAAL module context
 		Activator.osgiContext = bcontext;
-		Activator.context = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
+		Activator.context = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
 		// Create a default Service Caller, enough to send service calls
 		caller = new DefaultServiceCaller(context);

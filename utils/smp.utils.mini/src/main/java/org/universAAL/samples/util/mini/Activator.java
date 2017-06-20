@@ -24,7 +24,7 @@ package org.universAAL.samples.util.mini;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.osgi.OSGiContainer;
 import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.middleware.context.ContextEventPattern;
 import org.universAAL.middleware.service.CallStatus;
@@ -57,7 +57,7 @@ public class Activator implements BundleActivator {
 	public void start(BundleContext bcontext) throws Exception {
 		// Get the uAAL module context
 		Activator.osgiContext = bcontext;
-		Activator.context = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
+		Activator.context = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
 		// Instantiate the UAAL helper
 		u = new UAAL(context);

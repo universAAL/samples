@@ -37,7 +37,7 @@ import javax.xml.bind.Unmarshaller;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.osgi.OSGiContainer;
 import org.universAAL.middleware.container.utils.LogUtils;
 import org.universAAL.middleware.interfaces.PeerCard;
 import org.universAAL.middleware.managers.api.SpaceManager;
@@ -96,7 +96,7 @@ public class Activator implements BundleActivator {
 	}
 
 	public void start(BundleContext context) throws Exception {
-		ModuleContext mc = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
+		ModuleContext mc = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { context });
 
 		initClient(mc);
 		URI uAAPUri = null;

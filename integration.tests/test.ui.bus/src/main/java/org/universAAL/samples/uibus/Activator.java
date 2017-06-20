@@ -24,7 +24,7 @@ package org.universAAL.samples.uibus;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
-import org.universAAL.middleware.container.osgi.uAALBundleContainer;
+import org.universAAL.middleware.container.osgi.OSGiContainer;
 //import org.universAAL.middleware.input.DefaultInputPublisher;
 //import org.universAAL.middleware.input.InputPublisher;
 import org.universAAL.middleware.serialization.MessageContentSerializer;
@@ -44,7 +44,7 @@ public class Activator implements BundleActivator {
 
 	public void start(BundleContext context) throws Exception {
 		Activator.context = context;
-		Activator.moduleContext = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
+		Activator.moduleContext = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { context });
 		ser = (MessageContentSerializer) context
 				.getService(context.getServiceReference(MessageContentSerializer.class.getName()));
 		// uinput = new ISubscriber(moduleContext);
