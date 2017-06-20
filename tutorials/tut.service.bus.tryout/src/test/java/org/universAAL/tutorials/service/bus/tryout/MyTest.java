@@ -18,7 +18,7 @@
  */
 package org.universAAL.tutorials.service.bus.tryout;
 
-import org.universAAL.container.JUnit.JUnitContainer;
+import org.universAAL.middleware.container.JUnit.JUnitContainer;
 import org.universAAL.middleware.junit.MWTestCase;
 import org.universAAL.middleware.owl.OntologyManagement;
 import org.universAAL.middleware.service.DefaultServiceCaller;

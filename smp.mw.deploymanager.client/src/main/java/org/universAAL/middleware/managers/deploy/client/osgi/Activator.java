@@ -46,10 +46,9 @@ import org.universAAL.middleware.managers.api.InstallationResults;
 import org.universAAL.middleware.managers.api.InstallationResultsDetails;
 import org.universAAL.middleware.managers.api.MatchingResult;
 import org.universAAL.middleware.managers.api.UAPPPackage;
-
-import org.universAAL.middleware.deploymanager.uapp.model.AalUapp;
-import org.universAAL.middleware.deploymanager.uapp.model.ObjectFactory;
-import org.universAAL.middleware.deploymanager.uapp.model.Part;
+import org.universAAL.middleware.managers.deploy.uapp.model.AalUapp;
+import org.universAAL.middleware.managers.deploy.uapp.model.ObjectFactory;
+import org.universAAL.middleware.managers.deploy.uapp.model.Part;
 
 /**
  * Activator for the Deploymanager client

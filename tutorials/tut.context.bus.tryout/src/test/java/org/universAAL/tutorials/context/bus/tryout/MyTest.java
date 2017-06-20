@@ -18,10 +18,10 @@
  */
 package org.universAAL.tutorials.context.bus.tryout;
 
-import org.universAAL.container.JUnit.JUnitContainer;
-import org.universAAL.container.JUnit.JUnitModuleContext;
-import org.universAAL.container.JUnit.JUnitModuleContext.LogLevel;
 import org.universAAL.middleware.bus.msg.BusMessage;
+import org.universAAL.middleware.container.JUnit.JUnitContainer;
+import org.universAAL.middleware.container.JUnit.JUnitModuleContext;
+import org.universAAL.middleware.container.JUnit.JUnitModuleContext.LogLevel;
 import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.middleware.context.ContextPublisher;
 import org.universAAL.middleware.context.DefaultContextPublisher;

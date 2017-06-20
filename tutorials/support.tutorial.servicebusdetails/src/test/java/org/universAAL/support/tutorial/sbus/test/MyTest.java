@@ -1,9 +1,9 @@
 package org.universAAL.support.tutorial.sbus.test;
 
-import org.universAAL.container.JUnit.JUnitModuleContext;
-import org.universAAL.container.JUnit.JUnitModuleContext.LogLevel;
 import org.universAAL.middleware.bus.junit.BusTestCase;
 import org.universAAL.middleware.bus.permission.AccessControl;
+import org.universAAL.middleware.container.JUnit.JUnitModuleContext;
+import org.universAAL.middleware.container.JUnit.JUnitModuleContext.LogLevel;
 import org.universAAL.middleware.owl.OntologyManagement;
 import org.universAAL.ontology.location.LocationOntology;
 import org.universAAL.ontology.phThing.PhThingOntology;
