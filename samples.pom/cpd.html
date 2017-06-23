@@ -197,7 +197,7 @@
       <div id="contentBox">
         <div class="section">
 <h2><a name="CPD_Results"></a>CPD Results</h2>
-<p>The following document contains the results of PMD's  <a class="externalLink" href="http://pmd.sourceforge.net/cpd.html">CPD</a> 5.5.1.</p></div>
+<p>The following document contains the results of PMD's  <a class="externalLink" href="http://pmd.sourceforge.net/cpd.html">CPD</a> 5.6.1.</p></div>
 <div class="section">
 <h2><a name="Duplications"></a>Duplications</h2>
 <table border="0" class="bodyTable">
@@ -575,7 +575,7 @@
 	public Publisher(BundleContext context) {
 		// Instantiate the context provider info with a valid provider URI
 		cpInfo = new ContextProvider(PUBLISHER_URI_PREFIX + &quot;PersonalHealthDeviceContextProvider&quot;);
-		mc = uAALBundleContainer.THE_CONTAINER.registerModule(new Object[] { context });
+		mc = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { context });
 		// Set to type gauge (only publishes data information it senses)
 		cpInfo.setType(ContextProviderType.gauge);
 		// Set the provided events to unknown with an empty pattern
@@ -1715,7 +1715,7 @@
 <td>50</td></tr>
 <tr class="a"><td colspan='3'>
 <div>
-<pre>					Resource.uAAL_VOCABULARY_NAMESPACE + &quot;hasLocation&quot; }) })
+<pre>					Resource.VOCABULARY_NAMESPACE + &quot;hasLocation&quot; }) })
 	public Object[] getLampInfo(@Input(name = &quot;lampURI&quot;, propertyPaths = { Lighting.PROP_CONTROLS }) LightSource lamp);
 
 	@ServiceOperation
