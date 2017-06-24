@@ -28,7 +28,7 @@ under the License.
       <title>File: 8,
              Errors: 64,
              Warnings: 4,
-             Infos: 20
+             Infos: 19
       </title>
             <link>/checkstyle.html</link>
       <description>
@@ -63,7 +63,7 @@ under the License.
                   <a href="/checkstyle.html#org.universAAL.ontology.lighting.simple.LightingOntologySimplified.java">org/universAAL/ontology/lighting/simple/LightingOntologySimplified.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   0
