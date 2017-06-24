@@ -1,9 +1,9 @@
-/** 
+/**
  * Author:  Angel Martinez-Cavero
  * Email:   amartinez@tsbtecnologias.es
  * Version: 0
  * License: TSB
- * 
+ *
  * */
 
 // Package
@@ -18,16 +18,16 @@ import android.util.Log;
 // Main class
 public class WriteHdpData extends Thread {
 
-	// Attributes		
+	// Attributes
 	/** Tag for debbuging/logging */
 	private static final String TAG = "uAAL";
 
 	/** File descriptor identifier */
 	private FileDescriptor fileDescriptor;
-	
+
 	/** File output stream from manager/sink */
 	private FileOutputStream fos = null;
-	
+
 	/** Protocol state */
 	private int protocolState = -1;
 
@@ -39,11 +39,11 @@ public class WriteHdpData extends Thread {
 	}
 
 	// Methods
-	
+
 	@Override
-	public void run() {	
-		fos = new FileOutputStream(fileDescriptor);		
-		try {	
+	public void run() {
+		fos = new FileOutputStream(fileDescriptor);
+		try {
 			switch(protocolState) {
 			case Constants.COMMUNICATION_ASSOCIATION_REQUEST:
 				Log.d(TAG,"===========================================================");
@@ -65,44 +65,44 @@ public class WriteHdpData extends Thread {
 				Log.d(TAG,"Remote operation response event report configuration (manager -> agent)");
 				Log.d(TAG,"===========================================================");
 				Constants.showReceivedData(Constants.data_remote_operation_response_event_report_config,Constants.data_remote_operation_response_event_report_config.length);
-				fos.write(Constants.data_remote_operation_response_event_report_config);				
+				fos.write(Constants.data_remote_operation_response_event_report_config);
 				break;
 			case Constants.COMMUNICATION_RESPONSE_AGENT_INITIATED_MEASUREMENT_DATA_TRANSMISSION:
 				Log.d(TAG,"===========================================================");
 				Log.d(TAG,"Response to agent initiated measurement data transmission (manager -> agent)");
-				Log.d(TAG,"===========================================================");				
+				Log.d(TAG,"===========================================================");
 				Constants.showReceivedData(Constants.data_response_agent_initiated_measurement_data_transmission,Constants.data_response_agent_initiated_measurement_data_transmission.length);
-				fos.write(Constants.data_response_agent_initiated_measurement_data_transmission);				
+				fos.write(Constants.data_response_agent_initiated_measurement_data_transmission);
 				break;
 			case Constants.COMMUNICATION_MDS_ATTRIBUTES_REQUEST:
 				Log.d(TAG,"===========================================================");
 				Log.d(TAG,"Get all MDS attributes request (manager -> agent)");
 				Log.d(TAG,"===========================================================");
 				Constants.showReceivedData(Constants.data_get_MDS_attributes_request,Constants.data_get_MDS_attributes_request.length);
-				fos.write(Constants.data_get_MDS_attributes_request);				
+				fos.write(Constants.data_get_MDS_attributes_request);
 				break;
 			case Constants.COMMUNICATION_DATA_RELEASE_REQUEST:
 				Log.d(TAG,"===========================================================");
 				Log.d(TAG,"Response to data release request (manager -> agent)");
 				Log.d(TAG,"===========================================================");
 				Constants.showReceivedData(Constants.data_association_release_response,Constants.data_association_release_response.length);
-				fos.write(Constants.data_association_release_response);				
+				fos.write(Constants.data_association_release_response);
 				break;
 			case Constants.COMMUNICATION_ABORT_PROCESS:
 				Log.d(TAG,"===========================================================");
 				Log.d(TAG,"Response to abort communication process (manager -> agent)");
 				Log.d(TAG,"===========================================================");
 				Constants.showReceivedData(Constants.data_abort,Constants.data_abort.length);
-				fos.write(Constants.data_abort);				
+				fos.write(Constants.data_abort);
 				break;
 			default:
 				break;
-			}			
+			}
 		} catch(IOException ex) {}
-		// Close		
-		try {			
+		// Close
+		try {
 			if(fos != null)
-				fos.close();				
-		} catch (IOException e) {}		
+				fos.close();
+		} catch (IOException e) {}
 	}
 }

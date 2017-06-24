@@ -1,7 +1,7 @@
 /*
      Copyright 2010-2014 AIT Austrian Institute of Technology GmbH
 	 http://www.ait.ac.at
-     
+
      See the NOTICE file distributed with this work for additional
      information regarding copyright ownership
 
@@ -29,7 +29,7 @@ import org.universAAL.middleware.container.osgi.OSGiContainer;
 /**
  * This bundle is a simulator for ActivityHub events. It creates random events
  * for various ActivityHub Sensor types and sends them to the uAAL context bus.
- * 
+ *
  * @author Thomas Fuxreiter (foex@gmx.at)
  */
 

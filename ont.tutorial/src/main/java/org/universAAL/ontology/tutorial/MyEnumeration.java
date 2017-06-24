@@ -1,18 +1,18 @@
 /*
 	Copyright 2008-2014 ITACA-TSB, http://www.tsb.upv.es
-	Instituto Tecnologico de Aplicaciones de Comunicacion 
-	Avanzadas - Grupo Tecnologias para la Salud y el 
+	Instituto Tecnologico de Aplicaciones de Comunicacion
+	Avanzadas - Grupo Tecnologias para la Salud y el
 	Bienestar (TSB)
-	
-	See the NOTICE file distributed with this work for additional 
+
+	See the NOTICE file distributed with this work for additional
 	information regarding copyright ownership
-	
+
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
 	You may obtain a copy of the License at
-	
+
 	  http://www.apache.org/licenses/LICENSE-2.0
-	
+
 	Unless required by applicable law or agreed to in writing, software
 	distributed under the License is distributed on an "AS IS" BASIS,
 	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -23,12 +23,12 @@ package org.universAAL.ontology.tutorial;
 
 import org.universAAL.middleware.owl.ManagedIndividual;
 
-// Enumerations can be used for giving value to a property that must have one 
+// Enumerations can be used for giving value to a property that must have one
 // of a specific set of individual values.
-// Currently only Enumerations "without meaning" are accepted, that is, 
-// they are only represented by their type URI and individual URI. 
-// They don�t have properties. Nevertheless, in theory it should be possible 
-// to declare properties into enumerations, by merging them with the required 
+// Currently only Enumerations "without meaning" are accepted, that is,
+// they are only represented by their type URI and individual URI.
+// They don�t have properties. Nevertheless, in theory it should be possible
+// to declare properties into enumerations, by merging them with the required
 // code of normal concepts (see MyConcept). However I have not checked it.
 public class MyEnumeration extends ManagedIndividual {
 	// Make sure you use the same namespace in all your domain ontology

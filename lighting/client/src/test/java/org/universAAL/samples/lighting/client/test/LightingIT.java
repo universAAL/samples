@@ -17,9 +17,9 @@ import org.universAAL.samples.lighting.client.LightingConsumer;
  * disabled in the main middleware pom file (mw.pom). To enable them an argument
  * "-DskipTests=false" has to be added to the "mvn" invocation in the command
  * line.
- * 
+ *
  * @author rotgier
- * 
+ *
  */
 public class LightingIT extends IntegrationTest {
 
@@ -42,7 +42,7 @@ public class LightingIT extends IntegrationTest {
 
 	/**
 	 * Helper method for logging.
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void logInfo(String format, Object... args) {
@@ -53,7 +53,7 @@ public class LightingIT extends IntegrationTest {
 
 	/**
 	 * Helper method for logging.
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void logError(Throwable t, String format, Object... args) {
@@ -87,7 +87,7 @@ public class LightingIT extends IntegrationTest {
 	 * Verifies that runtime platform has correctly started. It prints basic
 	 * information about framework (vendor, version) and lists installed
 	 * bundles.
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	public void testOsgiPlatformStarts() throws Exception {
@@ -106,7 +106,7 @@ public class LightingIT extends IntegrationTest {
 	/**
 	 * Verifies the lighting sample with the use of LightingConsumer. Following
 	 * operations are tested: getControlledLamps, turnOn, turnOff, dimToValue.
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	public void testLightingClient() throws Exception {

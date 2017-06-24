@@ -1,7 +1,7 @@
 /*
 Copyright 2011-2014 AGH-UST, http://www.agh.edu.pl
 Faculty of Computer Science, Electronics and Telecommunications
-Department of Computer Science 
+Department of Computer Science
 
 See the NOTICE file distributed with this work for additional
 information regarding copyright ownership
@@ -24,9 +24,9 @@ import org.universAAL.itests.IntegrationTest;
 
 /**
  * Here developer's of this artifact should code their integration tests.
- * 
+ *
  * @author rotgier
- * 
+ *
  */
 public class ArtifactIT extends IntegrationTest {
 

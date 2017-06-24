@@ -1,7 +1,7 @@
 /*
 Copyright 2011-2014 AGH-UST, http://www.agh.edu.pl
 Faculty of Computer Science, Electronics and Telecommunications
-Department of Computer Science 
+Department of Computer Science
 
 See the NOTICE file distributed with this work for additional
 information regarding copyright ownership
@@ -24,9 +24,9 @@ package org.universAAL.ontology.lighting.simple;
  * This interface specifies all URIs related to LightingServer. The interface
  * can be either written by hand or generated automatically from annotated
  * interface of LightingServer.
- * 
+ *
  * @author mpsiuk
- * 
+ *
  */
 public interface LightingServerURIs {
 	String NAMESPACE = "http://ontology.igd.fhg.de/LightingServer.owl#";

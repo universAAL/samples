@@ -1,7 +1,7 @@
 /*
      Copyright 2010-2014 AIT Austrian Institute of Technology GmbH
 	 http://www.ait.ac.at
-     
+
      See the NOTICE file distributed with this work for additional
      information regarding copyright ownership
 
@@ -41,7 +41,7 @@ import org.universAAL.ontology.activityhub.UsageSensor;
 /**
  * Instantiates several ActivityHub devices according to config. Starts the
  * context publisher thread.
- * 
+ *
  * @author Thomas Fuxreiter (foex@gmx.at)
  */
 public class AHSimulator implements ManagedService {
@@ -281,7 +281,7 @@ public class AHSimulator implements ManagedService {
 
 	/**
 	 * Runnable helper class for access to running servers/threads.
-	 * 
+	 *
 	 * @author Thomas Fuxreiter (foex@gmx.at)
 	 */
 	private class MyThread implements Runnable {

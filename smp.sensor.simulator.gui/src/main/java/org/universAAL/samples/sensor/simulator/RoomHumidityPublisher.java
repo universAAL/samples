@@ -1,15 +1,15 @@
 /*******************************************************************************
  * Copyright 2013 Ericsson Nikola Tesla d.d.
  *
- * See the NOTICE file distributed with this work for additional 
+ * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,8 +31,8 @@ import org.universAAL.ontology.device.HumiditySensor;
 
 /**
  * Class used for publishing room humidity
- * 
- * 
+ *
+ *
  */
 public class RoomHumidityPublisher {
 
@@ -48,7 +48,7 @@ public class RoomHumidityPublisher {
 	/**
 	 * Constructor Here we set ContextEventPattern and add restrictions to it
 	 * that tell universAAL platform which infofmation we want to recieve
-	 * 
+	 *
 	 * @param context
 	 */
 	protected RoomHumidityPublisher(ModuleContext context) {
@@ -75,7 +75,7 @@ public class RoomHumidityPublisher {
 	/**
 	 * Method used for publishing context event that has HumiditySensor as a
 	 * subject and it's value as a predicate
-	 * 
+	 *
 	 * @param humiditySensor
 	 */
 	public void publishContextEvent(HumiditySensor humiditySensor) {

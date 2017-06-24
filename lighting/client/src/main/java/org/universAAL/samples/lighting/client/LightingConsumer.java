@@ -38,7 +38,7 @@ import org.universAAL.ontology.phThing.Device;
 
 /**
  * @author amarinc
- * 
+ *
  */
 public class LightingConsumer extends ContextSubscriber {
 
@@ -251,7 +251,7 @@ public class LightingConsumer extends ContextSubscriber {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see ContextSubscriber#handleContextEvent(ContextEvent)
 	 */
 	public void handleContextEvent(ContextEvent event) {
@@ -264,7 +264,7 @@ public class LightingConsumer extends ContextSubscriber {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see ContextSubscriber#communicationChannelBroken()
 	 */
 	public void communicationChannelBroken() {

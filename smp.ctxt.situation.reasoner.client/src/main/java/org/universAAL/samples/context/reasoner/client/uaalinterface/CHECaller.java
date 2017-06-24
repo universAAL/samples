@@ -1,16 +1,16 @@
-/*	
+/*
 	Copyright 2008-2014 Fraunhofer IGD, http://www.igd.fraunhofer.de
-	Fraunhofer Gesellschaft - Institut f�r Graphische Datenverarbeitung 
-	
-	See the NOTICE file distributed with this work for additional 
+	Fraunhofer Gesellschaft - Institut f�r Graphische Datenverarbeitung
+
+	See the NOTICE file distributed with this work for additional
 	information regarding copyright ownership
-	
+
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
 	You may obtain a copy of the License at
-	
+
 	  http://www.apache.org/licenses/LICENSE-2.0
-	
+
 	Unless required by applicable law or agreed to in writing, software
 	distributed under the License is distributed on an "AS IS" BASIS,
 	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -43,10 +43,10 @@ import org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivato
  * perform a SPARQL query at the CHE. This is here only used to offer the
  * functionality of a written query. For further information please have a look
  * at the other project
- * 
+ *
  * @author alfiva
  * @author amarinc
- * 
+ *
  */
 public class CHECaller extends ServiceCaller {
 	private static final String HISTORY_CLIENT_NAMESPACE = "http://ontology.itaca.es/Reasoner.owl#";
@@ -66,7 +66,7 @@ public class CHECaller extends ServiceCaller {
 	/**
 	 * Execute a SPARQL CONSTRUCT query on the CHE that will return a reasoned
 	 * event. That event will be published.
-	 * 
+	 *
 	 * @param theQuery
 	 *            The SPARQL CONSTRUCT query
 	 */
@@ -84,7 +84,7 @@ public class CHECaller extends ServiceCaller {
 
 	/**
 	 * Call the CHE service
-	 * 
+	 *
 	 * @param query
 	 *            The CONSTRUCT query
 	 * @return Serialized event constructed
@@ -108,7 +108,7 @@ public class CHECaller extends ServiceCaller {
 
 	/**
 	 * Prepare the call for CHE
-	 * 
+	 *
 	 * @param query
 	 *            The CONSTRUCT query
 	 * @return The request for the call
@@ -127,7 +127,7 @@ public class CHECaller extends ServiceCaller {
 
 	/**
 	 * Process service call response
-	 * 
+	 *
 	 * @param outputs
 	 *            The outputs of the response
 	 * @param expectedOutput

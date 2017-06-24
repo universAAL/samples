@@ -32,7 +32,7 @@ import org.universAAL.ontology.device.ValueDevice;
  * at the context bus. The events we are interested in are defined in a (set of)
  * context event pattern(s). The method
  * {@link #handleContextEvent(ContextEvent)} is our callback method.
- * 
+ *
  * @author Carsten Stockloew
  */
 public class MyContextSubscriber extends ContextSubscriber {
@@ -40,7 +40,7 @@ public class MyContextSubscriber extends ContextSubscriber {
 	/**
 	 * Create the context event patterns that describe which context events we
 	 * want to receive.
-	 * 
+	 *
 	 * @return an array of context event patterns.
 	 */
 	public static ContextEventPattern[] getContextSubscriptionParams() {

@@ -34,7 +34,7 @@ import org.universAAL.ontology.phThing.DeviceService;
  * Our tutorial application registers as a subscriber for certain service
  * profiles at the service bus. The method {@link #handleCall(ServiceCall)} is
  * our callback method.
- * 
+ *
  * @author Carsten Stockloew
  */
 public class MyServiceCallee extends ServiceCallee {
@@ -48,7 +48,7 @@ public class MyServiceCallee extends ServiceCallee {
 
 	/**
 	 * Create the service profile that describes what the service does.
-	 * 
+	 *
 	 * @return an array of service profiles.
 	 */
 	public static ServiceProfile[] getProfiles() {

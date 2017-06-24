@@ -1,7 +1,7 @@
 /*
      Copyright 2010-2014 AIT Austrian Institute of Technology GmbH
 	 http://www.ait.ac.at
-     
+
      See the NOTICE file distributed with this work for additional
      information regarding copyright ownership
 
@@ -41,7 +41,7 @@ import org.universAAL.ontology.activityhub.factory.ActivityHubFactory;
  * This class provides ontological service requests and processes the service
  * responses This class is stateless; no objects (sensors) are stored here
  * LogUtil from uAAL-Middleware is used here
- * 
+ *
  * @author Thomas Fuxreiter (foex@gmx.at)
  */
 public class MyActivityHubServiceConsumer {
@@ -67,7 +67,7 @@ public class MyActivityHubServiceConsumer {
 
 	/**
 	 * Contructor
-	 * 
+	 *
 	 * @param mc
 	 *            uAAL-Middleware ModuleContext
 	 * @param ahc
@@ -85,7 +85,7 @@ public class MyActivityHubServiceConsumer {
 
 	/**
 	 * Get a list of all available ActivityHub sensors in the system
-	 * 
+	 *
 	 * Get the ontological service request Send service request to service bus
 	 * Process the response Log errors if the call was not successful
 	 *
@@ -106,7 +106,7 @@ public class MyActivityHubServiceConsumer {
 				 * ontology.universAAL.org/ActivityHub.owl#MotionSensor]} and
 				 * uri http://ontology.universAAL.org/ActivityHubServer.owl#
 				 * controlledActivityHubDevice1/1/1
-				 * 
+				 *
 				 * ContactClosureSensor with props
 				 * {http://www.w3.org/1999/02/22-rdf-syntax-ns#type=[http://
 				 * ontology.universAAL.org/ActivityHub.owl#ContactClosureSensor]
@@ -181,7 +181,7 @@ public class MyActivityHubServiceConsumer {
 
 	/**
 	 * Get details for a specific ActivityHub sensor
-	 * 
+	 *
 	 * Get the ontological service request Send service request to service bus
 	 * Process the response Log errors if the call was not successful
 	 *
@@ -282,7 +282,7 @@ public class MyActivityHubServiceConsumer {
 				 * http://ontology.universAAL.org/ActivityHub.owl#MotionSensor
 				 * http://ontology.universAAL.org/ActivityHub.owl#
 				 * ContactClosureSensor
-				 * 
+				 *
 				 * LogUtils.logInfo(Activator.mc,
 				 * MyActivityHubServiceConsumer.class, "getSensors", new
 				 * Object[] { "Sensortype: " + ahsTypes[i], " with URI: " +
@@ -321,9 +321,9 @@ public class MyActivityHubServiceConsumer {
 	 * ActivityHubSensor is created from the Ontology according to the URIs from
 	 * the client application (client doesn't store Ontology Resource objects)
 	 * Pass this sensor object in service request
-	 * 
+	 *
 	 * Process result list from service response Send result text array to GUI
-	 * 
+	 *
 	 * @param sensorURI
 	 *            is the resourceURI
 	 * @param deviceType

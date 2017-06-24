@@ -1,9 +1,9 @@
-/** 
+/**
  * Author:  Angel Martinez-Cavero
  * Email:   amartinez@tsbtecnologias.es
  * Version: 0
  * License: TSB
- * 
+ *
  * */
 
 // Package
@@ -18,36 +18,36 @@ import android.widget.ToggleButton;
 
 //Main activity
 public class WeighingScaleActivity extends Activity implements OnClickListener {
-	
-	// Attributes	
-	
+
+	// Attributes
+
 	/** HDP manager */
-	private HdpManager hdpManager = null;	
-	
+	private HdpManager hdpManager = null;
+
 	/** Toggle button */
 	private ToggleButton toggleButtonBloodPressure = null;
-	
+
 	// Methods
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_layout_weighing_scale);	
+		setContentView(R.layout.activity_layout_weighing_scale);
 		toggleButtonBloodPressure = (ToggleButton)findViewById(R.id.toggleButtonBloodPressure);
 		toggleButtonBloodPressure.setOnClickListener(this);
-	}	
-	
+	}
+
 	public void onClick(View v) {
 		if(((ToggleButton)v).isChecked()) {
 			// Start a new health measurement
 			hdpManager = new HdpManager(toggleButtonBloodPressure);
-			if(hdpManager.isHdpManagerReady()) {				
-				hdpManager.registerApp(Constants.MDEP_DATA_TYPE_WEIGHING_SCALE);							
+			if(hdpManager.isHdpManagerReady()) {
+				hdpManager.registerApp(Constants.MDEP_DATA_TYPE_WEIGHING_SCALE);
 			}
 		} else {
 			// Stop a new health measurement
-			if(hdpManager.isHdpManagerReady()) {				
+			if(hdpManager.isHdpManagerReady()) {
 				hdpManager.unregisterApp();
 			}
-		}		
+		}
 	}
 }

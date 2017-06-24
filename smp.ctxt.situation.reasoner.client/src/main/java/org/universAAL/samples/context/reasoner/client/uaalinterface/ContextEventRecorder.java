@@ -39,16 +39,16 @@ import org.universAAL.samples.context.reasoner.client.osgi.Activator;
 import org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator;
 
 /**
- * 
+ *
  * This class records all events at the context-bus by registering itself with a
  * generic pattern (subject need to be a resource, what is true anyway). Since
  * URI's are heavily need to be used for creation of Situations and Queries it
  * can be helpful to show a user a selection of all URI's that up to now has
  * passed the system. All results will be saved and therefore are available
  * again after restarting the system.
- * 
+ *
  * @author amarinc
- * 
+ *
  */
 @SuppressWarnings("unchecked")
 public class ContextEventRecorder extends ContextSubscriber {
@@ -160,7 +160,7 @@ public class ContextEventRecorder extends ContextSubscriber {
 
 	/**
 	 * Saves all elements in the given list at the given filename.
-	 * 
+	 *
 	 * @param <O>
 	 *            Type to be saved. ToString() is used to serialize the object.
 	 * @param filename
@@ -190,7 +190,7 @@ public class ContextEventRecorder extends ContextSubscriber {
 	/**
 	 * Load the given file from the root of the client and returns an array with
 	 * lines from it.
-	 * 
+	 *
 	 * @param filename
 	 *            Filename relative to the clients home
 	 * @return List of Strings according to the lines of the input-file or an

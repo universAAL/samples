@@ -2,7 +2,7 @@ package org.universAAL.lddi.samples.device.client;
 /*
      Copyright 2010-2014 AIT Austrian Institute of Technology GmbH
 	 http://www.ait.ac.at
-     
+
      See the NOTICE file distributed with this work for additional
      information regarding copyright ownership
 
@@ -39,7 +39,7 @@ import org.universAAL.ontology.phThing.DeviceService;
  * This class provides ontological service requests and processes the service
  * responses This class is stateless; no objects (sensors) are stored here
  * LogUtil from uAAL-Middleware is used here
- * 
+ *
  * @author Thomas Fuxreiter (foex@gmx.at)
  */
 public class DeviceServiceCaller {

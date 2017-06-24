@@ -1,7 +1,7 @@
 /*
      Copyright 2010-2014 AIT Austrian Institute of Technology GmbH
 	 http://www.ait.ac.at
-     
+
      See the NOTICE file distributed with this work for additional
      information regarding copyright ownership
 
@@ -28,7 +28,7 @@ import org.universAAL.middleware.container.utils.LogUtils;
 
 /**
  * Activator for ActivityHub Client demo bundle
- * 
+ *
  * @author Thomas Fuxreiter
  *
  */
@@ -81,7 +81,7 @@ public class Activator implements BundleActivator {
 
 	/**
 	 * Runnable helper class for starting ActivityHubServiceProvider
-	 * 
+	 *
 	 * @author fuxreitert
 	 *
 	 */

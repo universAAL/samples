@@ -30,7 +30,7 @@ import org.universAAL.middleware.rdf.TypeMapper;
 /**
  * An example of a {@link ConfigurableModule}, not all implementations should be
  * like this.
- * 
+ *
  * @author amedrano
  *
  */

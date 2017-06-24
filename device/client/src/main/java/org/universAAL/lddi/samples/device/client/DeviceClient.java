@@ -1,7 +1,7 @@
 /*
      Copyright 2010-2014 AIT Austrian Institute of Technology GmbH
 	 http://www.ait.ac.at
-     
+
      See the NOTICE file distributed with this work for additional
      information regarding copyright ownership
 
@@ -43,7 +43,7 @@ import javax.swing.WindowConstants;
  * with a simple GUI. 2 Buttons are provided for 'getAllSensors' and
  * 'getSensorInfo' Furthermore, 2 textAreas for incoming context events and log
  * messages
- * 
+ *
  * @author Thomas Fuxreiter (foex@gmx.at)
  */
 public class DeviceClient extends javax.swing.JPanel {
@@ -85,7 +85,7 @@ public class DeviceClient extends javax.swing.JPanel {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param link
 	 *            to Activator
 	 */
@@ -235,7 +235,7 @@ public class DeviceClient extends javax.swing.JPanel {
 
 	/**
 	 * AbstractAction for button getSensors initiates service call to parent
-	 * 
+	 *
 	 * @return
 	 */
 	private AbstractAction getAllDevices() {
@@ -319,7 +319,7 @@ public class DeviceClient extends javax.swing.JPanel {
 
 	/**
 	 * send all text lines from the given array to addTextToDeviceArea
-	 * 
+	 *
 	 * @param multiple
 	 *            text lines for 1 device info response
 	 */
@@ -333,7 +333,7 @@ public class DeviceClient extends javax.swing.JPanel {
 	 * Helper class that displays the given text on the deviceInfoArea on the
 	 * GUI adding a line break and set focus always to the bottom of the
 	 * textArea
-	 * 
+	 *
 	 * @param text
 	 */
 	public void addTextToDeviceArea(String text) {
@@ -343,7 +343,7 @@ public class DeviceClient extends javax.swing.JPanel {
 
 	/**
 	 * send all text lines from the given array to addTextToContextArea
-	 * 
+	 *
 	 * @param multiple
 	 *            text lines for 1 context event
 	 */
@@ -356,7 +356,7 @@ public class DeviceClient extends javax.swing.JPanel {
 	/**
 	 * Helper class that displays the given text on the contextArea on the GUI
 	 * adding a line break and set focus always to the bottom of the textArea
-	 * 
+	 *
 	 * @param text
 	 */
 	public void addTextToContextArea(String text) {
@@ -367,7 +367,7 @@ public class DeviceClient extends javax.swing.JPanel {
 	/**
 	 * Helper class that displays the given text on the logArea on the GUI
 	 * adding a line break
-	 * 
+	 *
 	 * @param text
 	 */
 	public void addTextToLogArea(String text) {
@@ -375,7 +375,7 @@ public class DeviceClient extends javax.swing.JPanel {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public void deleteGui() {
 		frame.dispose();

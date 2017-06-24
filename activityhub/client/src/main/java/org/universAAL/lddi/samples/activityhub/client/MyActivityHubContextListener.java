@@ -1,7 +1,7 @@
 /*
      Copyright 2010-2014 AIT Austrian Institute of Technology GmbH
 	 http://www.ait.ac.at
-     
+
      See the NOTICE file distributed with this work for additional
      information regarding copyright ownership
 
@@ -36,7 +36,7 @@ import org.universAAL.ontology.activityhub.ActivityHubSensor;
  * This class handles ontological context events by subscribing specific event
  * patterns on the uAAL context bus This class is stateless; no objects
  * (sensors) are stored here LogUtil from uAAL-Middleware is used here
- * 
+ *
  * @author Thomas Fuxreiter (foex@gmx.at)
  */
 public class MyActivityHubContextListener extends ContextSubscriber {
@@ -53,7 +53,7 @@ public class MyActivityHubContextListener extends ContextSubscriber {
 	/**
 	 * Define the context event pattern: all Events where subject is instance of
 	 * ActivityHubSensor
-	 * 
+	 *
 	 * @return ContextEventPattern[]
 	 */
 	private static ContextEventPattern[] getContextSubscriptionParams() {
@@ -67,7 +67,7 @@ public class MyActivityHubContextListener extends ContextSubscriber {
 	/**
 	 * Constructor Registration of context event patterns on the uAAL context
 	 * bus
-	 * 
+	 *
 	 * @param mc
 	 *            uAAL Middleware ModuleContext
 	 * @param ahc
@@ -84,7 +84,7 @@ public class MyActivityHubContextListener extends ContextSubscriber {
 	/**
 	 * receive and process centext events log to console send event details to
 	 * GUI as String[]
-	 * 
+	 *
 	 * @param event
 	 *            from context bus
 	 */

@@ -24,7 +24,7 @@ import org.universAAL.middleware.container.ModuleContext;
 /**
  * The module activator handles the starting and stopping of this module. It is
  * similar to the OSGi BundleActivator.
- * 
+ *
  * @author Carsten Stockloew
  */
 public class Activator implements ModuleActivator {

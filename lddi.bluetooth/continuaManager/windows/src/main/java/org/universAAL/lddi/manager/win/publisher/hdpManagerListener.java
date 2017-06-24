@@ -23,11 +23,11 @@ package org.universAAL.lddi.manager.win.publisher;
  * Interface that should be necessary implemented by the HDP manager in order to
  * attend "connection", "disconnection" and "received data" agents (Continua
  * sources) events
- * 
+ *
  * @author Angel Martinez (amartinez@tsbtecnologias.es)
  * @author Luis Gigante (lgigante@tsbtecnologias.es) *
  * @version 0 June, 2012
- * 
+ *
  */
 
 // Imports

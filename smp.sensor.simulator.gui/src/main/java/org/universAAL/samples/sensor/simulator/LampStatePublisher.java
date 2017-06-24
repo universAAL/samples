@@ -1,15 +1,15 @@
 /*******************************************************************************
  * Copyright 2013 Ericsson Nikola Tesla d.d.
  *
- * See the NOTICE file distributed with this work for additional 
+ * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,8 +38,8 @@ import org.universAAL.ontology.lighting.LightSource;
 
 /**
  * LampStatePublisher class publishes lamp state to universAAL Context Bus
- * 
- * 
+ *
+ *
  */
 public class LampStatePublisher {
 
@@ -64,7 +64,7 @@ public class LampStatePublisher {
 	 * setting ContextEventPattern[] directly in the constructor It could be
 	 * moved to separate method just like in LocationContextPublisher class
 	 * (method getPermanentSubscription())
-	 * 
+	 *
 	 * @param context
 	 */
 	protected LampStatePublisher(ModuleContext context) {
@@ -108,7 +108,7 @@ public class LampStatePublisher {
 	 * Publishes context event that has lightSource as a subject and it's
 	 * brightness as a predicate For testing purposes we set brightness to 0 or
 	 * to 100, create new ContextEvent and publish it
-	 * 
+	 *
 	 * @param lightSource
 	 */
 	public void publishContextEvent(LightSource lightSource) {
@@ -126,7 +126,7 @@ public class LampStatePublisher {
 
 	/**
 	 * lampMap getter method
-	 * 
+	 *
 	 * @return
 	 */
 	public LampMap getLampMap() {
@@ -136,7 +136,7 @@ public class LampStatePublisher {
 	/**
 	 * Check lightSource brightness and change button color accordingly (yellow
 	 * for ON or white for OFF)
-	 * 
+	 *
 	 * @param button
 	 * @param lightSource
 	 */

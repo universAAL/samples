@@ -45,9 +45,9 @@ import org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCal
  * event-pattern there are three ComboBoxes provided to give them. To support
  * the user all the recorded URI's are already given in the boxes, but is also
  * possible to give completely new one.
- * 
+ *
  * @author amarinc
- * 
+ *
  */
 @SuppressWarnings("serial")
 public class SituationCreatorFrame extends JFrame {

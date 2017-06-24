@@ -1,7 +1,7 @@
 /*
 Copyright 2011-2014 AGH-UST, http://www.agh.edu.pl
 Faculty of Computer Science, Electronics and Telecommunications
-Department of Computer Science 
+Department of Computer Science
 
 See the NOTICE file distributed with this work for additional
 information regarding copyright ownership
@@ -31,7 +31,7 @@ public class Activator implements BundleActivator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext
 	 * )
@@ -42,7 +42,7 @@ public class Activator implements BundleActivator {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
 	 */

@@ -1,7 +1,7 @@
 /*
 Copyright 2011-2014 AGH-UST, http://www.agh.edu.pl
 Faculty of Computer Science, Electronics and Telecommunications
-Department of Computer Science 
+Department of Computer Science
 
 See the NOTICE file distributed with this work for additional
 information regarding copyright ownership
@@ -45,9 +45,9 @@ import org.universAAL.samples.lighting.server_regular.LightingProviderLevel3;
  * disabled in the main middleware pom file (mw.pom). To enable them an argument
  * "-DskipTests=false" has to be added to the "mvn" invocation in the command
  * line.
- * 
+ *
  * @author rotgier
- * 
+ *
  */
 public class LightingRegularIT extends IntegrationTest {
 
@@ -65,7 +65,7 @@ public class LightingRegularIT extends IntegrationTest {
 
 	/**
 	 * Helper method for logging.
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void logInfo(String format, Object... args) {
@@ -76,7 +76,7 @@ public class LightingRegularIT extends IntegrationTest {
 
 	/**
 	 * Helper method for logging.
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void logError(Throwable t, String format, Object... args) {
@@ -93,7 +93,7 @@ public class LightingRegularIT extends IntegrationTest {
 	 * Verifies that runtime platform has correctly started. It prints basic
 	 * information about framework (vendor, version) and lists installed
 	 * bundles.
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	public void testOsgiPlatformStarts() throws Exception {
@@ -245,7 +245,7 @@ public class LightingRegularIT extends IntegrationTest {
 	/**
 	 * Verifies the lighting sample with the use of LightingConsumer. Following
 	 * operations are tested: getControlledLamps, turnOn, turnOff, dimToValue.
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	public void testLightingClientLevel1() throws Exception {

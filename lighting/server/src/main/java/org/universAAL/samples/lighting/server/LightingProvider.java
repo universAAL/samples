@@ -1,16 +1,16 @@
 /*
 	Copyright 2008-2010 Fraunhofer IGD, http://www.igd.fraunhofer.de
-	Fraunhofer-Gesellschaft - Institute of Computer Graphics Research 
-	
-	See the NOTICE file distributed with this work for additional 
+	Fraunhofer-Gesellschaft - Institute of Computer Graphics Research
+
+	See the NOTICE file distributed with this work for additional
 	information regarding copyright ownership
-	
+
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
 	You may obtain a copy of the License at
-	
+
 	  http://www.apache.org/licenses/LICENSE-2.0
-	
+
 	Unless required by applicable law or agreed to in writing, software
 	distributed under the License is distributed on an "AS IS" BASIS,
 	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -48,7 +48,7 @@ import org.universAAL.samples.lighting.server.unit_impl.UILampsView;
 
 /**
  * @author mtazari
- * 
+ *
  */
 public class LightingProvider extends ServiceCallee implements LampStateListener {
 
@@ -233,7 +233,7 @@ public class LightingProvider extends ServiceCallee implements LampStateListener
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.universAAL.middleware.service.ServiceCallee#
 	 * communicationChannelBroken ()
 	 */
@@ -284,11 +284,11 @@ public class LightingProvider extends ServiceCallee implements LampStateListener
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.universAAL.middleware.service.ServiceCallee#handleCall(org.universAAL
 	 * .middleware.service.ServiceCall)
-	 * 
+	 *
 	 * Since this class is a child of ServiceCallee it is registered to the
 	 * service-bus Every service call that passes the restrictions will take
 	 * affect here Given by the URI of the request we know what specific
@@ -323,10 +323,10 @@ public class LightingProvider extends ServiceCallee implements LampStateListener
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.universAAL.samples.lighting.server.unit_impl.LampStateListener#
 	 * lampStateChanged(int, java.lang.String, boolean)
-	 * 
+	 *
 	 * To demonstrate the functionality of the context bus we publish an event
 	 * for every time the value of a lamp is changed
 	 */

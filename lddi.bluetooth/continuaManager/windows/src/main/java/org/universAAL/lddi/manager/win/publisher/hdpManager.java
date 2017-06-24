@@ -23,8 +23,8 @@
  Author      : Angel Martinez (amartinez@tsbtecnologias.es)
  Version     : 0
  Copyright   : TSB
- Description : HDP manager manages Bluetooth native methods and implements an interface between 
- 			   the medical device and the ISO/IEEE 11073 manager. 
+ Description : HDP manager manages Bluetooth native methods and implements an interface between
+ 			   the medical device and the ISO/IEEE 11073 manager.
  Important   : Any change at this file implies necessary generate the DLL file again.
 
  */

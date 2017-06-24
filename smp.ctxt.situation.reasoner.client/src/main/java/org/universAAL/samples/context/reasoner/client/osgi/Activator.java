@@ -1,16 +1,16 @@
-/*	
+/*
 	Copyright 2008-2014 Fraunhofer IGD, http://www.igd.fraunhofer.de
-	Fraunhofer Gesellschaft - Institut f�r Graphische Datenverarbeitung 
-	
-	See the NOTICE file distributed with this work for additional 
+	Fraunhofer Gesellschaft - Institut f�r Graphische Datenverarbeitung
+
+	See the NOTICE file distributed with this work for additional
 	information regarding copyright ownership
-	
+
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
 	You may obtain a copy of the License at
-	
+
 	  http://www.apache.org/licenses/LICENSE-2.0
-	
+
 	Unless required by applicable law or agreed to in writing, software
 	distributed under the License is distributed on an "AS IS" BASIS,
 	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,7 +27,7 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.container.osgi.OSGiContainer;
 
 /**
- * 
+ *
  * This bundle offers classes to get access and make changes on the situation
  * reasoner. The basic idea behind this to not force a programmer to take use of
  * the basic universAAL functionality but use the reasoner with simple method
@@ -37,9 +37,9 @@ import org.universAAL.middleware.container.osgi.OSGiContainer;
  * be used to offer possibilities for the elements of the Situations, Queries
  * and Rules to a user and therefore simplify the process of creating them. The
  * class CHECaller can be used to perform SPARQL-Queries at the CHE.
- * 
+ *
  * @author amarinc
- * 
+ *
  */
 public class Activator implements BundleActivator {
 	public static ModuleContext context = null;

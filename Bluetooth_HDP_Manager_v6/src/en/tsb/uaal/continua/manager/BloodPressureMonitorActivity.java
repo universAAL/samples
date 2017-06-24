@@ -1,9 +1,9 @@
-/** 
+/**
  * Author:  Angel Martinez-Cavero
  * Email:   amartinez@tsbtecnologias.es
  * Version: 0
  * License: TSB
- * 
+ *
  * */
 
 // Package
@@ -20,54 +20,54 @@ import android.widget.ToggleButton;
 
 //Main activity
 public class BloodPressureMonitorActivity extends Activity implements OnClickListener {
-	
-	// Attributes	
-	
+
+	// Attributes
+
 	/** HDP manager */
-	private HdpManager hdpManager = null;	
-	
+	private HdpManager hdpManager = null;
+
 	/** Toggle button */
 	private ToggleButton toggleButtonBloodPressure = null;
-	
+
 	/** EditText components */
 	protected static EditText sysEditText = null, diaEditText = null, pulEditText = null;
-	
+
 	private static Activity reference=null;
 
 	// Methods
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_layout_blood_pressure);	
+		setContentView(R.layout.activity_layout_blood_pressure);
 		reference=this;
 		toggleButtonBloodPressure = (ToggleButton)findViewById(R.id.toggleButtonBloodPressure);
 		sysEditText = (EditText) findViewById(R.id.sysEditText);
 		diaEditText = (EditText) findViewById(R.id.diaEditText);
 		pulEditText = (EditText) findViewById(R.id.pulEditText);
 		toggleButtonBloodPressure.setOnClickListener(this);
-	}	
+	}
 
 	public void onClick(View v) {
 		if(((ToggleButton)v).isChecked()) {
 			// Start a new health measurement
 			hdpManager = new HdpManager(toggleButtonBloodPressure);
-			if(hdpManager.isHdpManagerReady()) {				
-				hdpManager.registerApp(Constants.MDEP_DATA_TYPE_BLOOD_PRESSURE_MONITOR);							
+			if(hdpManager.isHdpManagerReady()) {
+				hdpManager.registerApp(Constants.MDEP_DATA_TYPE_BLOOD_PRESSURE_MONITOR);
 			}
 		} else {
 			// Stop a new health measurement
-			if(!hdpManager.isHdpManagerReady()) {				
+			if(!hdpManager.isHdpManagerReady()) {
 				hdpManager.unregisterApp();
 			}
 			// Reset editText components
 			sysEditText.setText("");
 			diaEditText.setText("");
 			pulEditText.setText("");
-		}		
-	}	
-	
-	
-	
+		}
+	}
+
+
+
 	@Override
 	protected void onDestroy() {
 		reference=null;
@@ -96,6 +96,6 @@ public class BloodPressureMonitorActivity extends Activity implements OnClickLis
 		}else{
 			System.out.println("Could not send measurement to uAAL");
 		}
-		
+
 	}
 }

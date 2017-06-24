@@ -50,9 +50,9 @@ import org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCal
  * display the available elements of both types and select the one you need. To
  * make the identification of the elements more easy they are display below the
  * boxes.
- * 
+ *
  * @author amarinc
- * 
+ *
  */
 @SuppressWarnings("serial")
 public class RuleCreatorFrame extends JFrame {
@@ -194,7 +194,7 @@ public class RuleCreatorFrame extends JFrame {
 	 * Returns a list of URI's from the current available situations and saves
 	 * the situation objects in a map to make them available by giving their
 	 * URI's
-	 * 
+	 *
 	 * @return List of URI's from currently available situations
 	 */
 	private List<String> refreshSituations() {
@@ -211,7 +211,7 @@ public class RuleCreatorFrame extends JFrame {
 	/**
 	 * Returns a list of URI's from the current available queries and saves the
 	 * query objects in a map to make them available by giving their URI's
-	 * 
+	 *
 	 * @return List of URI's from currently available queries
 	 */
 	private List<String> refreshQueries() {

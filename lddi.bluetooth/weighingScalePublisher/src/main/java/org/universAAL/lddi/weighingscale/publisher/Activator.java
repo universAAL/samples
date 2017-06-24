@@ -20,10 +20,10 @@
 package org.universAAL.lddi.weighingscale.publisher;
 /**
  * x073 Continua agent publisher (agent events will be published over uAAL bus)
- * 
+ *
  * @author Angel Martinez-Cavero
  * @version 0
- *  
+ *
  * TSB Technologies for Health and Well-being
  */
 

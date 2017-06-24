@@ -32,7 +32,7 @@ import org.universAAL.ontology.phThing.DeviceService;
 /**
  * An experimental callee. Run this tutorial as JUnit test (for a fast startup)
  * and set the request in MyTest.
- * 
+ *
  * @author Carsten Stockloew
  */
 public class MyServiceCallee extends ServiceCallee {
@@ -42,7 +42,7 @@ public class MyServiceCallee extends ServiceCallee {
 
 	/**
 	 * Create the service profile that describes what the service does.
-	 * 
+	 *
 	 * @return an array of service profiles.
 	 */
 	public static ServiceProfile[] getProfiles() {

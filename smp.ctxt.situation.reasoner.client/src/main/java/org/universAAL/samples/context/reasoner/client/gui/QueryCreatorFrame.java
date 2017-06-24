@@ -48,7 +48,7 @@ import org.universAAL.samples.context.reasoner.client.osgi.GUIActivator;
 import org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller;
 
 /**
- * 
+ *
  * A JFrame with the basic components to build a query for the Reasoner. The
  * result need to be a valid CONTRUCT SPARQL query. This is displayed at the
  * right side of the frame. It is possible to add URI's recorded from the
@@ -58,9 +58,9 @@ import org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCal
  * frame you can find a ComboBox where you can select an event to construct and
  * give below the search-string like needed for SPARQL. With the button in the
  * middle the query will be generated then.
- * 
+ *
  * @author amarinc
- * 
+ *
  */
 @SuppressWarnings("serial")
 public class QueryCreatorFrame extends JFrame {
@@ -317,7 +317,7 @@ public class QueryCreatorFrame extends JFrame {
 	 * Creates and returns a list of the URI's from the actually recored
 	 * context-events. The events are saved in a HashMap to be able to access
 	 * the objects by giving the URI of it.
-	 * 
+	 *
 	 * @return List of URI's from the currently recorded context-events
 	 */
 	private List<String> refreshEvents() {
@@ -333,7 +333,7 @@ public class QueryCreatorFrame extends JFrame {
 
 	/**
 	 * Add the currently given query to the Reasoner.
-	 * 
+	 *
 	 * @return True if the add process has been successful, false otherwise
 	 */
 	private boolean addQuery() {

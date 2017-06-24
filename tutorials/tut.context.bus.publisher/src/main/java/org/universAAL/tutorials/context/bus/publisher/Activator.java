@@ -31,10 +31,10 @@ import org.universAAL.ontology.device.ValueDevice;
 /**
  * The module activator handles the starting and stopping of this module. It is
  * similar to the OSGi BundleActivator.
- * 
+ *
  * In our case, we simply want to publish a context event, so we do this
  * directly in the start method.
- * 
+ *
  * @author Carsten Stockloew
  */
 public class Activator implements ModuleActivator {

@@ -1,7 +1,7 @@
 /*
 Copyright 2011-2014 AGH-UST, http://www.agh.edu.pl
 Faculty of Computer Science, Electronics and Telecommunications
-Department of Computer Science 
+Department of Computer Science
 
 See the NOTICE file distributed with this work for additional
 information regarding copyright ownership
@@ -53,9 +53,9 @@ import org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLe
  * disabled in the main middleware pom file (mw.pom). To enable them an argument
  * "-DskipTests=false" has to be added to the "mvn" invocation in the command
  * line.
- * 
+ *
  * @author rotgier
- * 
+ *
  */
 public class LightingSimpleIT extends IntegrationTest {
 
@@ -79,7 +79,7 @@ public class LightingSimpleIT extends IntegrationTest {
 
 	/**
 	 * Helper method for logging.
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void logInfo(String format, Object... args) {
@@ -90,7 +90,7 @@ public class LightingSimpleIT extends IntegrationTest {
 
 	/**
 	 * Helper method for logging.
-	 * 
+	 *
 	 * @param msg
 	 */
 	protected void logError(Throwable t, String format, Object... args) {
@@ -107,7 +107,7 @@ public class LightingSimpleIT extends IntegrationTest {
 	 * Verifies that runtime platform has correctly started. It prints basic
 	 * information about framework (vendor, version) and lists installed
 	 * bundles.
-	 * 
+	 *
 	 * @throws Exception
 	 */
 	public void testOsgiPlatformStarts() throws Exception {
