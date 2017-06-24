@@ -28,7 +28,7 @@ under the License.
       <title>File: 1,
              Errors: 3,
              Warnings: 1,
-             Infos: 2
+             Infos: 0
       </title>
             <link>http://xtras/samples/tutorials/tut.context.bus.publisher//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/tutorials/tut.context.bus.publisher//checkstyle.html#org.universAAL.tutorials.context.bus.publisher.Activator.java">org/universAAL/tutorials/context/bus/publisher/Activator.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   1

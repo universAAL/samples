@@ -28,7 +28,7 @@ under the License.
       <title>File: 2,
              Errors: 13,
              Warnings: 3,
-             Infos: 1
+             Infos: 0
       </title>
             <link>http://xtras/samples/smp.configurable.module//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/smp.configurable.module//checkstyle.html#org.universAAL.configurable.module.ConfigurationCentral.java">org/universAAL/configurable/module/ConfigurationCentral.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   3

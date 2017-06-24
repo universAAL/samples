@@ -28,7 +28,7 @@ under the License.
       <title>File: 144,
              Errors: 2324,
              Warnings: 266,
-             Infos: 884
+             Infos: 97
       </title>
             <link>http://xtras/samples/samples.pom//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server.unit_impl.UILampsController.java">org/universAAL/samples/lighting/server/unit_impl/UILampsController.java</a>
                 </td>
                 <td>
-                  18
+                  0
                 </td>
                 <td>
                   0
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.LightingProviderLevel3.java">org/universAAL/samples/lighting/server_regular/LightingProviderLevel3.java</a>
                 </td>
                 <td>
-                  9
+                  2
                 </td>
                 <td>
                   1
@@ -77,7 +77,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.utils.app.UIExample.java">org/universAAL/samples/utils/app/UIExample.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -91,7 +91,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.utils.client.UIExample.java">org/universAAL/samples/utils/client/UIExample.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -105,7 +105,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.simple.ui.ProjectActivator.java">org/universAAL/samples/simple/ui/ProjectActivator.java</a>
                 </td>
                 <td>
-                  3
+                  0
                 </td>
                 <td>
                   0
@@ -119,7 +119,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator.java">org/universAAL/samples/context/reasoner/client/osgi/UAALInterfaceActivator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -133,7 +133,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller.java">org/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller.java</a>
                 </td>
                 <td>
-                  21
+                  0
                 </td>
                 <td>
                   2
@@ -147,7 +147,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.context.bus.subscriber.Activator.java">org/universAAL/tutorials/context/bus/subscriber/Activator.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   1
@@ -161,7 +161,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.utils.server.Activator.java">org/universAAL/samples/utils/server/Activator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -175,7 +175,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.client_regular.LightingConsumerLevel1.java">org/universAAL/samples/lighting/client_regular/LightingConsumerLevel1.java</a>
                 </td>
                 <td>
-                  14
+                  8
                 </td>
                 <td>
                   3
@@ -189,7 +189,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.servserver.SCallee.java">org/universAAL/samples/servserver/SCallee.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -203,7 +203,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.hw.simulator.activityhub.Activator.java">org/universAAL/lddi/hw/simulator/activityhub/Activator.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   0
@@ -217,7 +217,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server.unit_impl.MyLighting.java">org/universAAL/samples/lighting/server/unit_impl/MyLighting.java</a>
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   0
@@ -245,7 +245,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.client_regular.LightClient.java">org/universAAL/samples/lighting/client_regular/LightClient.java</a>
                 </td>
                 <td>
-                  9
+                  3
                 </td>
                 <td>
                   8
@@ -259,7 +259,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.service.bus.tryout.MyServiceCallee.java">org/universAAL/tutorials/service/bus/tryout/MyServiceCallee.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   3
@@ -273,7 +273,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.weighingscale.publisher.Publisher.java">org/universAAL/lddi/weighingscale/publisher/Publisher.java</a>
                 </td>
                 <td>
-                  5
+                  1
                 </td>
                 <td>
                   0
@@ -301,7 +301,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.weighingscale.publisher.hdpManager.java">org/universAAL/lddi/weighingscale/publisher/hdpManager.java</a>
                 </td>
                 <td>
-                  22
+                  1
                 </td>
                 <td>
                   2
@@ -315,7 +315,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.ctxtbus.CSubscriber.java">org/universAAL/samples/ctxtbus/CSubscriber.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -329,7 +329,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.LightingProviderLevel2.java">org/universAAL/samples/lighting/server_regular/LightingProviderLevel2.java</a>
                 </td>
                 <td>
-                  8
+                  1
                 </td>
                 <td>
                   1
@@ -343,7 +343,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.Activator.java">org/universAAL/samples/lighting/server_regular/Activator.java</a>
                 </td>
                 <td>
-                  9
+                  0
                 </td>
                 <td>
                   1
@@ -357,7 +357,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.client_regular.LightingConsumerLevel3.java">org/universAAL/samples/lighting/client_regular/LightingConsumerLevel3.java</a>
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   2
@@ -371,7 +371,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_simple.unit_impl.MyLighting.java">org/universAAL/samples/lighting/server_simple/unit_impl/MyLighting.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   1
@@ -385,7 +385,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.gui.GUI.java">org/universAAL/lddi/manager/gui/GUI.java</a>
                 </td>
                 <td>
-                  4
+                  1
                 </td>
                 <td>
                   8
@@ -399,7 +399,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.TutorialActivator.java">org/universAAL/ontology/TutorialActivator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -413,7 +413,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.util.mini.Activator.java">org/universAAL/samples/util/mini/Activator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   2
@@ -427,7 +427,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.uiclient.LightingConsumer.java">org/universAAL/samples/lighting/uiclient/LightingConsumer.java</a>
                 </td>
                 <td>
-                  12
+                  3
                 </td>
                 <td>
                   1
@@ -441,7 +441,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.Activator.java">org/universAAL/samples/context/reasoner/client/osgi/Activator.java</a>
                 </td>
                 <td>
-                  10
+                  0
                 </td>
                 <td>
                   1
@@ -455,7 +455,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.lighting.simple.Activator.java">org/universAAL/ontology/lighting/simple/Activator.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   1
@@ -469,7 +469,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel2.java">org/universAAL/samples/lighting/server_simple/LightingSimplifiedServiceLevel2.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   0
@@ -483,7 +483,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.win.publisher.Activator.java">org/universAAL/lddi/manager/win/publisher/Activator.java</a>
                 </td>
                 <td>
-                  3
+                  1
                 </td>
                 <td>
                   1
@@ -497,7 +497,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.LightingProviderLevel1.java">org/universAAL/samples/lighting/server_regular/LightingProviderLevel1.java</a>
                 </td>
                 <td>
-                  7
+                  1
                 </td>
                 <td>
                   1
@@ -511,7 +511,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.client_regular.Activator.java">org/universAAL/samples/lighting/client_regular/Activator.java</a>
                 </td>
                 <td>
-                  3
+                  0
                 </td>
                 <td>
                   1
@@ -525,7 +525,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.configurable.module.ConfigurationCentral.java">org/universAAL/configurable/module/ConfigurationCentral.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   3
@@ -539,7 +539,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.samples.activityhub.client.ActivityHubClient.java">org/universAAL/lddi/samples/activityhub/client/ActivityHubClient.java</a>
                 </td>
                 <td>
-                  14
+                  2
                 </td>
                 <td>
                   8
@@ -553,7 +553,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.samples.activityhub.client.MyActivityHubServiceConsumer.java">org/universAAL/lddi/samples/activityhub/client/MyActivityHubServiceConsumer.java</a>
                 </td>
                 <td>
-                  10
+                  1
                 </td>
                 <td>
                   0
@@ -567,7 +567,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.ctxtbus.ProfileCaller.java">org/universAAL/samples/ctxtbus/ProfileCaller.java</a>
                 </td>
                 <td>
-                  21
+                  14
                 </td>
                 <td>
                   2
@@ -581,7 +581,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.hw.simulator.activityhub.AHSimulator.java">org/universAAL/lddi/hw/simulator/activityhub/AHSimulator.java</a>
                 </td>
                 <td>
-                  3
+                  0
                 </td>
                 <td>
                   0
@@ -595,7 +595,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.samples.device.client.DeviceServiceCaller.java">org/universAAL/lddi/samples/device/client/DeviceServiceCaller.java</a>
                 </td>
                 <td>
-                  5
+                  3
                 </td>
                 <td>
                   0
@@ -609,7 +609,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.service.bus.callee.Activator.java">org/universAAL/tutorials/service/bus/callee/Activator.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   1
@@ -623,7 +623,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.sensor.simulator.RoomHumidityPublisher.java">org/universAAL/samples/sensor/simulator/RoomHumidityPublisher.java</a>
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   0
@@ -665,7 +665,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.client.LightingConsumer.java">org/universAAL/samples/lighting/client/LightingConsumer.java</a>
                 </td>
                 <td>
-                  3
+                  0
                 </td>
                 <td>
                   0
@@ -679,7 +679,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder.java">org/universAAL/samples/context/reasoner/client/uaalinterface/ContextEventRecorder.java</a>
                 </td>
                 <td>
-                  5
+                  0
                 </td>
                 <td>
                   0
@@ -693,7 +693,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.SituationCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   0
@@ -707,7 +707,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.ctxtbus.GUIPanel.java">org/universAAL/samples/ctxtbus/GUIPanel.java</a>
                 </td>
                 <td>
-                  9
+                  2
                 </td>
                 <td>
                   9
@@ -721,7 +721,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.ctxtbus.SpaceCaller.java">org/universAAL/samples/ctxtbus/SpaceCaller.java</a>
                 </td>
                 <td>
-                  12
+                  5
                 </td>
                 <td>
                   18
@@ -735,7 +735,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller.java">org/universAAL/samples/context/reasoner/client/uaalinterface/CHECaller.java</a>
                 </td>
                 <td>
-                  14
+                  1
                 </td>
                 <td>
                   1
@@ -749,7 +749,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.publisher.Activator.java">org/universAAL/lddi/manager/publisher/Activator.java</a>
                 </td>
                 <td>
-                  3
+                  1
                 </td>
                 <td>
                   1
@@ -763,7 +763,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.middleware.broker.client.BrokerClientImpl.java">org/universAAL/middleware/broker/client/BrokerClientImpl.java</a>
                 </td>
                 <td>
-                  5
+                  0
                 </td>
                 <td>
                   1
@@ -777,7 +777,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.lighting.simple.LightingInterfaceLevel3.java">org/universAAL/ontology/lighting/simple/LightingInterfaceLevel3.java</a>
                 </td>
                 <td>
-                  2
+                  1
                 </td>
                 <td>
                   1
@@ -791,7 +791,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.utils.client.Activator.java">org/universAAL/samples/utils/client/Activator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -805,7 +805,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.servbus.Activator.java">org/universAAL/samples/servbus/Activator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -833,7 +833,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.servserver.ProvidedService.java">org/universAAL/samples/servserver/ProvidedService.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -847,7 +847,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.samples.activityhub.client.MyActivityHubContextListener.java">org/universAAL/lddi/samples/activityhub/client/MyActivityHubContextListener.java</a>
                 </td>
                 <td>
-                  5
+                  0
                 </td>
                 <td>
                   0
@@ -861,7 +861,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.service.bus.caller.Activator.java">org/universAAL/tutorials/service/bus/caller/Activator.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   1
@@ -875,7 +875,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server.ProvidedLightingService.java">org/universAAL/samples/lighting/server/ProvidedLightingService.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -889,7 +889,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.sensor.simulator.RoomTemperaturePublisher.java">org/universAAL/samples/sensor/simulator/RoomTemperaturePublisher.java</a>
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   0
@@ -903,7 +903,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.samples.activityhub.client.Activator.java">org/universAAL/lddi/samples/activityhub/client/Activator.java</a>
                 </td>
                 <td>
-                  4
+                  1
                 </td>
                 <td>
                   1
@@ -917,7 +917,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.simple.ui.SimpleUI.java">org/universAAL/samples/simple/ui/SimpleUI.java</a>
                 </td>
                 <td>
-                  3
+                  0
                 </td>
                 <td>
                   0
@@ -931,7 +931,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.samples.device.client.DeviceClient.java">org/universAAL/lddi/samples/device/client/DeviceClient.java</a>
                 </td>
                 <td>
-                  12
+                  2
                 </td>
                 <td>
                   10
@@ -945,7 +945,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.client_regular.LightingConsumerLevel2.java">org/universAAL/samples/lighting/client_regular/LightingConsumerLevel2.java</a>
                 </td>
                 <td>
-                  9
+                  1
                 </td>
                 <td>
                   3
@@ -987,7 +987,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel1.java">org/universAAL/samples/lighting/server_simple/LightingSimplifiedServiceLevel1.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   0
@@ -1001,7 +1001,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.service.bus.callee.MyServiceCallee.java">org/universAAL/tutorials/service/bus/callee/MyServiceCallee.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   2
@@ -1015,7 +1015,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.unit_impl.LampStateListener.java">org/universAAL/samples/lighting/server_regular/unit_impl/LampStateListener.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -1029,7 +1029,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.hw.simulator.activityhub.AHContextPublisherSimulator.java">org/universAAL/lddi/hw/simulator/activityhub/AHContextPublisherSimulator.java</a>
                 </td>
                 <td>
-                  5
+                  3
                 </td>
                 <td>
                   2
@@ -1043,7 +1043,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.sensor.simulator.SensorSimulatorGUI.java">org/universAAL/samples/sensor/simulator/SensorSimulatorGUI.java</a>
                 </td>
                 <td>
-                  7
+                  1
                 </td>
                 <td>
                   51
@@ -1057,7 +1057,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_simple.Activator.java">org/universAAL/samples/lighting/server_simple/Activator.java</a>
                 </td>
                 <td>
-                  6
+                  3
                 </td>
                 <td>
                   2
@@ -1071,7 +1071,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.ctxtbus.HistoryCaller.java">org/universAAL/samples/ctxtbus/HistoryCaller.java</a>
                 </td>
                 <td>
-                  9
+                  2
                 </td>
                 <td>
                   1
@@ -1085,7 +1085,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server.LightingProvider.java">org/universAAL/samples/lighting/server/LightingProvider.java</a>
                 </td>
                 <td>
-                  12
+                  0
                 </td>
                 <td>
                   1
@@ -1099,7 +1099,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.middleware.broker.client.osgi.Activator.java">org/universAAL/middleware/broker/client/osgi/Activator.java</a>
                 </td>
                 <td>
-                  4
+                  0
                 </td>
                 <td>
                   1
@@ -1113,7 +1113,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.TutorialFactory.java">org/universAAL/ontology/TutorialFactory.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -1127,7 +1127,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.sensor.simulator.LampStatePublisher.java">org/universAAL/samples/sensor/simulator/LampStatePublisher.java</a>
                 </td>
                 <td>
-                  10
+                  0
                 </td>
                 <td>
                   0
@@ -1141,7 +1141,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.lighting.simple.LightingSimplified.java">org/universAAL/ontology/lighting/simple/LightingSimplified.java</a>
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   0
@@ -1155,7 +1155,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server.Activator.java">org/universAAL/samples/lighting/server/Activator.java</a>
                 </td>
                 <td>
-                  9
+                  0
                 </td>
                 <td>
                   1
@@ -1169,7 +1169,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.tutorial.MyEnumeration.java">org/universAAL/ontology/tutorial/MyEnumeration.java</a>
                 </td>
                 <td>
-                  12
+                  0
                 </td>
                 <td>
                   6
@@ -1183,7 +1183,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel3.java">org/universAAL/samples/lighting/server_regular/ProvidedLightingServiceLevel3.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -1211,7 +1211,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.uibus.Activator.java">org/universAAL/samples/uibus/Activator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   2
@@ -1225,7 +1225,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server.unit_impl.UILampsView.java">org/universAAL/samples/lighting/server/unit_impl/UILampsView.java</a>
                 </td>
                 <td>
-                  17
+                  0
                 </td>
                 <td>
                   0
@@ -1239,7 +1239,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.win.gui.GUI.java">org/universAAL/lddi/manager/win/gui/GUI.java</a>
                 </td>
                 <td>
-                  4
+                  1
                 </td>
                 <td>
                   12
@@ -1253,7 +1253,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.utils.app.CalleeExample.java">org/universAAL/samples/utils/app/CalleeExample.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -1267,7 +1267,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.MyLightingOntologified.java">org/universAAL/samples/lighting/server_regular/MyLightingOntologified.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   2
@@ -1281,7 +1281,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.client.Activator.java">org/universAAL/samples/lighting/client/Activator.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   1
@@ -1295,7 +1295,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.uibus.OPublisher.java">org/universAAL/samples/uibus/OPublisher.java</a>
                 </td>
                 <td>
-                  9
+                  2
                 </td>
                 <td>
                   5
@@ -1323,7 +1323,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.utils.server.CalleeExample.java">org/universAAL/samples/utils/server/CalleeExample.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -1337,7 +1337,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel1.java">org/universAAL/samples/lighting/server_regular/ProvidedLightingServiceLevel1.java</a>
                 </td>
                 <td>
-                  6
+                  0
                 </td>
                 <td>
                   1
@@ -1351,7 +1351,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.simple.ui.MainButtonProvider.java">org/universAAL/samples/simple/ui/MainButtonProvider.java</a>
                 </td>
                 <td>
-                  3
+                  0
                 </td>
                 <td>
                   1
@@ -1365,7 +1365,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.win.publisher.ServiceProvider.java">org/universAAL/lddi/manager/win/publisher/ServiceProvider.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   0
@@ -1379,7 +1379,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.weighingscale.publisher.hdpManagerListener.java">org/universAAL/lddi/weighingscale/publisher/hdpManagerListener.java</a>
                 </td>
                 <td>
-                  10
+                  0
                 </td>
                 <td>
                   1
@@ -1393,7 +1393,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.publisher.hdpManager.java">org/universAAL/lddi/manager/publisher/hdpManager.java</a>
                 </td>
                 <td>
-                  22
+                  1
                 </td>
                 <td>
                   10
@@ -1407,7 +1407,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.win.publisher.Publisher.java">org/universAAL/lddi/manager/win/publisher/Publisher.java</a>
                 </td>
                 <td>
-                  5
+                  2
                 </td>
                 <td>
                   1
@@ -1421,7 +1421,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.lighting.simple.LightingInterfaceLevel1.java">org/universAAL/ontology/lighting/simple/LightingInterfaceLevel1.java</a>
                 </td>
                 <td>
-                  2
+                  1
                 </td>
                 <td>
                   1
@@ -1449,7 +1449,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.lighting.simple.LightingServerURIs.java">org/universAAL/ontology/lighting/simple/LightingServerURIs.java</a>
                 </td>
                 <td>
-                  3
+                  0
                 </td>
                 <td>
                   0
@@ -1463,7 +1463,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.sensor.simulator.LampMap.java">org/universAAL/samples/sensor/simulator/LampMap.java</a>
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   0
@@ -1477,7 +1477,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.win.publisher.hdpManager.java">org/universAAL/lddi/manager/win/publisher/hdpManager.java</a>
                 </td>
                 <td>
-                  4
+                  2
                 </td>
                 <td>
                   6
@@ -1491,7 +1491,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.weighingscale.publisher.Activator.java">org/universAAL/lddi/weighingscale/publisher/Activator.java</a>
                 </td>
                 <td>
-                  3
+                  1
                 </td>
                 <td>
                   1
@@ -1505,7 +1505,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.utils.client.SubscriberExample.java">org/universAAL/samples/utils/client/SubscriberExample.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -1519,7 +1519,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.middleware.broker.client.SimpleMessage.java">org/universAAL/middleware/broker/client/SimpleMessage.java</a>
                 </td>
                 <td>
-                  6
+                  0
                 </td>
                 <td>
                   0
@@ -1533,7 +1533,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server.unit_impl.LampStateListener.java">org/universAAL/samples/lighting/server/unit_impl/LampStateListener.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -1547,7 +1547,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.ctxtbus.CSubscriber2.java">org/universAAL/samples/ctxtbus/CSubscriber2.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -1561,7 +1561,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.sensor.simulator.Activator.java">org/universAAL/samples/sensor/simulator/Activator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -1603,7 +1603,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.tutorial.MyConcept.java">org/universAAL/ontology/tutorial/MyConcept.java</a>
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   1
@@ -1617,7 +1617,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.client_simple.Activator.java">org/universAAL/samples/lighting/client_simple/Activator.java</a>
                 </td>
                 <td>
-                  3
+                  0
                 </td>
                 <td>
                   1
@@ -1645,7 +1645,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.utils.app.SubscriberExample.java">org/universAAL/samples/utils/app/SubscriberExample.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -1659,7 +1659,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.sensor.simulator.LocationContextPublisher.java">org/universAAL/samples/sensor/simulator/LocationContextPublisher.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -1673,7 +1673,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.lighting.simple.LightingInterface.java">org/universAAL/ontology/lighting/simple/LightingInterface.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   0
@@ -1687,7 +1687,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.uiclient.SharedResources.java">org/universAAL/samples/lighting/uiclient/SharedResources.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -1701,7 +1701,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.utils.app.Activator.java">org/universAAL/samples/utils/app/Activator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -1715,7 +1715,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.ctxtbus.CPublisher.java">org/universAAL/samples/ctxtbus/CPublisher.java</a>
                 </td>
                 <td>
-                  14
+                  0
                 </td>
                 <td>
                   2
@@ -1729,7 +1729,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.lighting.simple.LightingInterfaceLevel2.java">org/universAAL/ontology/lighting/simple/LightingInterfaceLevel2.java</a>
                 </td>
                 <td>
-                  2
+                  1
                 </td>
                 <td>
                   1
@@ -1743,7 +1743,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel3.java">org/universAAL/samples/lighting/server_simple/LightingSimplifiedServiceLevel3.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   0
@@ -1757,7 +1757,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_simple.MyLightingOntologified.java">org/universAAL/samples/lighting/server_simple/MyLightingOntologified.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   2
@@ -1771,7 +1771,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.context.bus.subscriber.MyContextSubscriber.java">org/universAAL/tutorials/context/bus/subscriber/MyContextSubscriber.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   0
@@ -1785,7 +1785,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.publisher.hdpManagerListener.java">org/universAAL/lddi/manager/publisher/hdpManagerListener.java</a>
                 </td>
                 <td>
-                  10
+                  0
                 </td>
                 <td>
                   1
@@ -1799,7 +1799,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.context.bus.publisher.Activator.java">org/universAAL/tutorials/context/bus/publisher/Activator.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   1
@@ -1813,7 +1813,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.servserver.Activator.java">org/universAAL/samples/servserver/Activator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -1827,7 +1827,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/QueryCreatorFrame.java</a>
                 </td>
                 <td>
-                  8
+                  3
                 </td>
                 <td>
                   1
@@ -1841,7 +1841,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.hw.simulator.activityhub.util.LogTracker.java">org/universAAL/lddi/hw/simulator/activityhub/util/LogTracker.java</a>
                 </td>
                 <td>
-                  1
+                  0
                 </td>
                 <td>
                   1
@@ -1855,7 +1855,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.win.publisher.hdpManagerListener.java">org/universAAL/lddi/manager/win/publisher/hdpManagerListener.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   1
@@ -1883,7 +1883,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.ontology.tutorial.TutorialOntology.java">org/universAAL/ontology/tutorial/TutorialOntology.java</a>
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   0
@@ -1897,7 +1897,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.ctxtbus.Activator.java">org/universAAL/samples/ctxtbus/Activator.java</a>
                 </td>
                 <td>
-                  15
+                  1
                 </td>
                 <td>
                   3
@@ -1911,7 +1911,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.RuleCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/RuleCreatorFrame.java</a>
                 </td>
                 <td>
-                  5
+                  1
                 </td>
                 <td>
                   0
@@ -1925,7 +1925,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.unit_impl.MyLighting.java">org/universAAL/samples/lighting/server_regular/unit_impl/MyLighting.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -1939,7 +1939,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.samples.device.client.Activator.java">org/universAAL/lddi/samples/device/client/Activator.java</a>
                 </td>
                 <td>
-                  4
+                  1
                 </td>
                 <td>
                   1
@@ -1953,7 +1953,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.publisher.Publisher.java">org/universAAL/lddi/manager/publisher/Publisher.java</a>
                 </td>
                 <td>
-                  5
+                  2
                 </td>
                 <td>
                   1
@@ -1967,7 +1967,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.uiclient.UIProvider.java">org/universAAL/samples/lighting/uiclient/UIProvider.java</a>
                 </td>
                 <td>
-                  8
+                  0
                 </td>
                 <td>
                   0
@@ -1981,7 +1981,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel2.java">org/universAAL/samples/lighting/server_regular/ProvidedLightingServiceLevel2.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -1995,7 +1995,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.servbus.GUIPanel.java">org/universAAL/samples/servbus/GUIPanel.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -2009,7 +2009,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.samples.device.client.DeviceContextListener.java">org/universAAL/lddi/samples/device/client/DeviceContextListener.java</a>
                 </td>
                 <td>
-                  5
+                  0
                 </td>
                 <td>
                   0
@@ -2023,7 +2023,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.GUIActivator.java">org/universAAL/samples/context/reasoner/client/osgi/GUIActivator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -2037,7 +2037,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.uiclient.ServiceProvider.java">org/universAAL/samples/lighting/uiclient/ServiceProvider.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -2051,7 +2051,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.sensor.simulator.TypeOfUser.java">org/universAAL/samples/sensor/simulator/TypeOfUser.java</a>
                 </td>
                 <td>
-                  5
+                  1
                 </td>
                 <td>
                   0

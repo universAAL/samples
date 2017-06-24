@@ -568,7 +568,7 @@
 
 	/**
 	 * Publisher contructor
-	 * 
+	 *
 	 * @param context
 	 *            - framework bundle context
 	 */
@@ -900,7 +900,7 @@
 	/**
 	 * Start dbus platform for message interchanging within processes in Linux
 	 * OS.
-	 * 
+	 *
 	 * @return if the Dbus platform is correctly initialized.
 	 */
 	private native boolean startDbusPlatform();
@@ -908,7 +908,7 @@
 	/**
 	 * Get the path for the local Bluetooth adapter which is in use at the
 	 * moment.
-	 * 
+	 *
 	 * @return local bluetooth adapter path
 	 */
 	private native String getLocalBluetoothAdapterPath();
@@ -929,7 +929,7 @@
 	/**
 	 * Get the object path of a remote device given a MAC address
 	 * (format:XX:XX:XX:XX:XX:XX).
-	 * 
+	 *
 	 * @param macAddressRemoteDevice
 	 *            the MAC address of the desired remote device (the format of
 	 *            the MAC is XX:XX:XX:XX:XX:XX).
@@ -940,7 +940,7 @@
 	/**
 	 * Show all properties of a remote device (it should be first created with
 	 * getRemoteBluetoothAdapterPath method).
-	 * 
+	 *
 	 * @param remoteDevicePath
 	 *            the path for the remote Bluetooth device in the local machine.
 	 * @see showDefaultLocalBluetoothAdaptersProperties()
@@ -951,7 +951,7 @@
 	 * Modify a property of a remote device. This will be used for enabling the
 	 * &quot;Trusted&quot; property in a remote Health Device Profile capable device for
 	 * being establish a connection.
-	 * 
+	 *
 	 * @param remoteDevicePath
 	 *            the path for the remote Bluetooth device in the local machine.
 	 * @param propertyKey
@@ -964,7 +964,7 @@
 	/**
 	 * Create a new HDP application and gets the object path of the new created
 	 * application.
-	 * 
+	 *
 	 * @param dataTypeValue
 	 *            which kind of a HDP capable device will be used.
 	 * @param roleValue
@@ -984,7 +984,7 @@
 
 	/**
 	 * Destroy an HDP application.
-	 * 
+	 *
 	 * @param objectPathHDPApplication
 	 *            the path of the Health Device Profile application to be
 	 *            destroyed.
@@ -993,14 +993,14 @@
 
 	/**
 	 * Checks DBUS system availability.
-	 * 
+	 *
 	 * @return true if the Dbus system is available, or false if not.
 	 */
 	private native boolean getDbusSystemAvailability();
 
 	/**
 	 * Add a specific rule to follow HDP messages inside DBUS.
-	 * 
+	 *
 	 * @return true if the local application is subscribed to HDP messages in
 	 *         DBus.
 	 */
@@ -1014,7 +1014,7 @@
 	/**
 	 * Get the object path of the HDP channel ready to send/receive data to/from
 	 * Continua devices.
-	 * 
+	 *
 	 * @param remoteDevicePath
 	 *            the path for the remote Bluetooth device in the local machine.
 	 * @return the path of the data channel from a Health Device Profile
@@ -1024,7 +1024,7 @@
 
 	/**
 	 * Show the properties of a HDP data channel previously created.
-	 * 
+	 *
 	 * @param hdpDataChannelPath
 	 *            the path of the data channel from a Health Device Profile
 	 *            application.
@@ -1033,7 +1033,7 @@
 
 	/**
 	 * Get the file descriptor associated to a HDP data channel
-	 * 
+	 *
 	 * @param hdpDataChannelPath
 	 *            the path of the data channel from a Health Device Profile
 	 *            application.
@@ -1044,7 +1044,7 @@
 	/**
 	 * Release the file descriptor associated to this HDP data channel (HDP
 	 * application will be closed).
-	 * 
+	 *
 	 * @param hdpDataChannelPath
 	 *            the path of the data channel from a Health Device Profile
 	 *            application.
@@ -1054,7 +1054,7 @@
 	/**
 	 * Wait for HDP data frames from Continua Health devices. These frames will
 	 * be compliant with ISO/IEEE 11073 standard.
-	 * 
+	 *
 	 * @param hdpDataChannelFileDescriptor
 	 *            the file descriptor that identifies a HDP data channel.
 	 */
@@ -1064,7 +1064,7 @@
 	 * Get the input data frame from a Continua Health device. The data will be
 	 * retrieved in raw format (byte array), and will be processed by the
 	 * ISO/IEEE 11073 library included.
-	 * 
+	 *
 	 * @param hdpDataChannelFileDescriptor
 	 *            the file descriptor that identifies a HDP data channel.
 	 * @return the data a remote device sent, in raw format.
@@ -1073,7 +1073,7 @@
 
 	/**
 	 * Get the number of bytes read from input data frames.
-	 * 
+	 *
 	 * @param hdpDataChannelFileDescriptor
 	 *            the file descriptor that identifies a HDP data channel.
 	 * @return the size of the data frame received.
@@ -1082,7 +1082,7 @@
 
 	/**
 	 * Show HDP data frame received.
-	 * 
+	 *
 	 * @param hdpDataChannelFileDescriptor
 	 *            the file descriptor that identifies a HDP data channel.
 	 */
@@ -1091,7 +1091,7 @@
 	/**
 	 * Send HDP data frames to Continua Health devices after processing the ones
 	 * previously received and generate the proper response to them.
-	 * 
+	 *
 	 * @param hdpDataChannelFileDescriptor
 	 *            the file descriptor that identifies a HDP data channel.
 	 * @param hdpDataFrame
@@ -1102,7 +1102,7 @@
 
 	/**
 	 * Free all employed resources and end HDP manager in a well-known status
-	 * 
+	 *
 	 */
 	private native void closeHDPManager();
 
@@ -1295,7 +1295,7 @@
 
 	/**
 	 * AbstractAction for button getSensors initiates service call to parent
-	 * 
+	 *
 	 * @return
 	 */
 	private AbstractAction getSensors() {</pre></div></td></tr></table>
@@ -1366,7 +1366,7 @@
 
 	/**
 	 * send all text lines from the given array to addTextToDeviceArea
-	 * 
+	 *
 	 * @param multiple
 	 *            text lines for 1 device info response
 	 */
@@ -1380,7 +1380,7 @@
 	 * Helper class that displays the given text on the deviceInfoArea on the
 	 * GUI adding a line break and set focus always to the bottom of the
 	 * textArea
-	 * 
+	 *
 	 * @param text
 	 */
 	public void addTextToDeviceArea(String text) {
@@ -1390,7 +1390,7 @@
 
 	/**
 	 * send all text lines from the given array to addTextToContextArea
-	 * 
+	 *
 	 * @param multiple
 	 *            text lines for 1 context event
 	 */
@@ -1403,7 +1403,7 @@
 	/**
 	 * Helper class that displays the given text on the contextArea on the GUI
 	 * adding a line break and set focus always to the bottom of the textArea
-	 * 
+	 *
 	 * @param text
 	 */
 	public void addTextToContextArea(String text) {
@@ -1414,7 +1414,7 @@
 	/**
 	 * Helper class that displays the given text on the logArea on the GUI
 	 * adding a line break
-	 * 
+	 *
 	 * @param text
 	 */
 	public void addTextToLogArea(String text) {
@@ -1422,7 +1422,7 @@
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public void deleteGui() {
 		frame.dispose();
@@ -1564,7 +1564,7 @@
 
 	/**
 	 * Create the service profile that describes what the service does.
-	 * 
+	 *
 	 * @return an array of service profiles.
 	 */
 	public static ServiceProfile[] getProfiles() {

@@ -28,7 +28,7 @@ under the License.
       <title>File: 9,
              Errors: 270,
              Warnings: 34,
-             Infos: 80
+             Infos: 24
       </title>
             <link>http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.CPublisher.java">org/universAAL/samples/ctxtbus/CPublisher.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.CSubscriber2.java">org/universAAL/samples/ctxtbus/CSubscriber2.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -91,7 +91,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.HistoryCaller.java">org/universAAL/samples/ctxtbus/HistoryCaller.java</a>
                 </td>
                 <td>
-                  9
+                  2
                 </td>
                 <td>
                   1
@@ -105,7 +105,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.GUIPanel.java">org/universAAL/samples/ctxtbus/GUIPanel.java</a>
                 </td>
                 <td>
-                  9
+                  2
                 </td>
                 <td>
                   9
@@ -119,7 +119,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.SpaceCaller.java">org/universAAL/samples/ctxtbus/SpaceCaller.java</a>
                 </td>
                 <td>
-                  12
+                  5
                 </td>
                 <td>
                   18
@@ -133,7 +133,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.Activator.java">org/universAAL/samples/ctxtbus/Activator.java</a>
                 </td>
                 <td>
-                  8
+                  1
                 </td>
                 <td>
                   2
@@ -147,7 +147,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.CSubscriber.java">org/universAAL/samples/ctxtbus/CSubscriber.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
@@ -161,7 +161,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.ctxt.bus//checkstyle.html#org.universAAL.samples.ctxtbus.ProfileCaller.java">org/universAAL/samples/ctxtbus/ProfileCaller.java</a>
                 </td>
                 <td>
-                  21
+                  14
                 </td>
                 <td>
                   2

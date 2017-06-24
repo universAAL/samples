@@ -28,7 +28,7 @@ under the License.
       <title>File: 2,
              Errors: 17,
              Warnings: 3,
-             Infos: 4
+             Infos: 0
       </title>
             <link>http://xtras/samples/tutorials/tut.service.bus.callee//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/tutorials/tut.service.bus.callee//checkstyle.html#org.universAAL.tutorials.service.bus.callee.MyServiceCallee.java">org/universAAL/tutorials/service/bus/callee/MyServiceCallee.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   2
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/tutorials/tut.service.bus.callee//checkstyle.html#org.universAAL.tutorials.service.bus.callee.Activator.java">org/universAAL/tutorials/service/bus/callee/Activator.java</a>
                 </td>
                 <td>
-                  2
+                  0
                 </td>
                 <td>
                   1

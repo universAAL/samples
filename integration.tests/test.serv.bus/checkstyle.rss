@@ -28,7 +28,7 @@ under the License.
       <title>File: 2,
              Errors: 32,
              Warnings: 1,
-             Infos: 14
+             Infos: 0
       </title>
             <link>http://xtras/samples/integration.tests/test.serv.bus//checkstyle.html</link>
       <description>
@@ -49,7 +49,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.serv.bus//checkstyle.html#org.universAAL.samples.servbus.Activator.java">org/universAAL/samples/servbus/Activator.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   1
@@ -63,7 +63,7 @@ under the License.
                   <a href="http://xtras/samples/integration.tests/test.serv.bus//checkstyle.html#org.universAAL.samples.servbus.GUIPanel.java">org/universAAL/samples/servbus/GUIPanel.java</a>
                 </td>
                 <td>
-                  7
+                  0
                 </td>
                 <td>
                   0
