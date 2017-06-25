@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="c5204" href="./CHECaller.html" title="org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller" alt="" coords="15,17,99,42"/>
-<area shape="rect" id="node1" href="./CHECaller.html" title="&lt;TABLE&gt;" alt="" coords="5,5,109,53"/>
-<area shape="rect" id="c5205" href="./ContextEventRecorder.html" title="org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder" alt="" coords="143,17,297,42"/>
-<area shape="rect" id="node2" href="./ContextEventRecorder.html" title="&lt;TABLE&gt;" alt="" coords="133,5,307,53"/>
-<area shape="rect" id="c5206" href="./ReasoningCaller.html" title="org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller" alt="" coords="341,17,459,42"/>
-<area shape="rect" id="node3" href="./ReasoningCaller.html" title="&lt;TABLE&gt;" alt="" coords="331,5,469,53"/>
-</map>

@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 5,
              Errors: 197,
-             Warnings: 21,
-             Infos: 5
+             Warnings: 22,
+             Infos: 6
       </title>
             <link>http://xtras/samples/lddi.bluetooth/continuaManager/smp.lddi.ContinuaManagerClient.unix//checkstyle.html</link>
       <description>
@@ -77,10 +77,10 @@ under the License.
                   <a href="http://xtras/samples/lddi.bluetooth/continuaManager/smp.lddi.ContinuaManagerClient.unix//checkstyle.html#org.universAAL.lddi.manager.gui.GUI.java">org/universAAL/lddi/manager/gui/GUI.java</a>
                 </td>
                 <td>
-                  1
+                  2
                 </td>
                 <td>
-                  8
+                  9
                 </td>
                 <td>
                   116

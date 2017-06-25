@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.021458605190662606" branch-rate="0.004118616144975288" lines-covered="148" lines-valid="6897" branches-covered="5" branches-valid="1214" complexity="1.9859762675296655" version="2.1.1" timestamp="1498298566167">
+<coverage line-rate="0.021458605190662606" branch-rate="0.004118616144975288" lines-covered="148" lines-valid="6897" branches-covered="5" branches-valid="1214" complexity="1.9859762675296655" version="2.1.1" timestamp="1498360080496">
 	<sources>
 		<source>/home/travis/build/universAAL/samples/activityhub/client/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/smp.mw.broker.client/src/main/java</source>
@@ -1292,7 +1292,7 @@
 								<line number="372" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="createUaalPublisher" signature="(Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+						<method name="createPublisher" signature="(Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
 								<line number="270" hits="0" branch="false"/>
 								<line number="272" hits="0" branch="false"/>
@@ -2688,7 +2688,7 @@
 								<line number="371" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="createUaalPublisher" signature="(Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+						<method name="createPublisher" signature="(Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
 								<line number="270" hits="0" branch="false"/>
 								<line number="272" hits="0" branch="false"/>
@@ -6867,7 +6867,7 @@
 			<classes>
 				<class name="org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame" filename="org/universAAL/samples/context/reasoner/client/gui/QueryCreatorFrame.java" line-rate="0.0" branch-rate="0.0" complexity="3.4545454545454546">
 					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="68" hits="0" branch="false"/>
 								<line number="69" hits="0" branch="false"/>
@@ -7583,7 +7583,7 @@
 								<line number="65" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="185" hits="0" branch="false"/>
 								<line number="188" hits="0" branch="false"/>
@@ -7619,7 +7619,7 @@
 							<lines>
 							</lines>
 						</method>
-						<method name="access$200" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;)Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
+						<method name="access$200" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;)Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
 							</lines>
 						</method>
@@ -8381,7 +8381,7 @@
 				</class>
 				<class name="org.universAAL.samples.context.reasoner.client.gui.RuleCreatorFrame" filename="org/universAAL/samples/context/reasoner/client/gui/RuleCreatorFrame.java" line-rate="0.0" branch-rate="0.0" complexity="1.9">
 					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="60" hits="0" branch="false"/>
 								<line number="61" hits="0" branch="false"/>
@@ -8432,7 +8432,7 @@
 							<lines>
 							</lines>
 						</method>
-						<method name="access$800" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/RuleCreatorFrame;)Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
+						<method name="access$800" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/RuleCreatorFrame;)Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
 							</lines>
 						</method>
@@ -8837,7 +8837,7 @@
 				</class>
 				<class name="org.universAAL.samples.context.reasoner.client.gui.SituationCreatorFrame" filename="org/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame.java" line-rate="0.0" branch-rate="1.0" complexity="1.5">
 					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="55" hits="0" branch="false"/>
 								<line number="56" hits="0" branch="false"/>
@@ -8878,7 +8878,7 @@
 							<lines>
 							</lines>
 						</method>
-						<method name="access$600" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame;)Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
+						<method name="access$600" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame;)Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
 							</lines>
 						</method>
@@ -9185,171 +9185,9 @@
 				</class>
 			</classes>
 		</package>
-		<package name="org.universAAL.samples.context.reasoner.client.osgi" line-rate="0.0" branch-rate="0.0" complexity="1.8333333333333333">
+		<package name="org.universAAL.samples.context.reasoner.client.interfaces" line-rate="0.0" branch-rate="0.0" complexity="2.2790697674418605">
 			<classes>
-				<class name="org.universAAL.samples.context.reasoner.client.osgi.Activator" filename="org/universAAL/samples/context/reasoner/client/osgi/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
-					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="45" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="44" hits="0" branch="false"/>
-								<line number="46" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="start" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="51" hits="0" branch="false"/>
-								<line number="53" hits="0" branch="false"/>
-								<line number="55" hits="0" branch="false"/>
-								<line number="56" hits="0" branch="false"/>
-								<line number="57" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="stop" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="60" hits="0" branch="false"/>
-								<line number="61" hits="0" branch="false"/>
-								<line number="62" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="44" hits="0" branch="false"/>
-						<line number="45" hits="0" branch="false"/>
-						<line number="46" hits="0" branch="false"/>
-						<line number="51" hits="0" branch="false"/>
-						<line number="53" hits="0" branch="false"/>
-						<line number="55" hits="0" branch="false"/>
-						<line number="56" hits="0" branch="false"/>
-						<line number="57" hits="0" branch="false"/>
-						<line number="60" hits="0" branch="false"/>
-						<line number="61" hits="0" branch="false"/>
-						<line number="62" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.osgi.GUIActivator" filename="org/universAAL/samples/context/reasoner/client/osgi/GUIActivator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
-					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="29" hits="0" branch="false"/>
-								<line number="30" hits="0" branch="false"/>
-								<line number="31" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="(Lorg/osgi/framework/BundleContext;Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="33" hits="0" branch="false"/>
-								<line number="34" hits="0" branch="false"/>
-								<line number="35" hits="0" branch="false"/>
-								<line number="36" hits="0" branch="false"/>
-								<line number="37" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="stop" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="40" hits="0" branch="false"/>
-								<line number="41" hits="0" branch="false"/>
-								<line number="42" hits="0" branch="false"/>
-								<line number="43" hits="0" branch="false"/>
-								<line number="44" hits="0" branch="false"/>
-								<line number="45" hits="0" branch="false"/>
-								<line number="46" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="29" hits="0" branch="false"/>
-						<line number="30" hits="0" branch="false"/>
-						<line number="31" hits="0" branch="false"/>
-						<line number="33" hits="0" branch="false"/>
-						<line number="34" hits="0" branch="false"/>
-						<line number="35" hits="0" branch="false"/>
-						<line number="36" hits="0" branch="false"/>
-						<line number="37" hits="0" branch="false"/>
-						<line number="40" hits="0" branch="false"/>
-						<line number="41" hits="0" branch="false"/>
-						<line number="42" hits="0" branch="false"/>
-						<line number="43" hits="0" branch="false"/>
-						<line number="44" hits="0" branch="false"/>
-						<line number="45" hits="0" branch="false"/>
-						<line number="46" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator" filename="org/universAAL/samples/context/reasoner/client/osgi/UAALInterfaceActivator.java" line-rate="0.0" branch-rate="0.0" complexity="3.5">
-					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="32" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="(Lorg/osgi/framework/BundleContext;Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
-							<lines>
-								<line number="31" hits="0" branch="false"/>
-								<line number="34" hits="0" branch="false"/>
-								<line number="35" hits="0" branch="false"/>
-								<line number="38" hits="0" branch="false"/>
-								<line number="39" hits="0" branch="false"/>
-								<line number="40" hits="0" branch="false"/>
-								<line number="41" hits="0" branch="true" condition-coverage="0% (0/4)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-										<condition number="1" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="42" hits="0" branch="false"/>
-								<line number="44" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="serviceChanged" signature="(Lorg/osgi/framework/ServiceEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
-							<lines>
-								<line number="48" hits="0" branch="true" condition-coverage="0% (0/3)">
-									<conditions>
-										<condition number="0" type="switch" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="51" hits="0" branch="false"/>
-								<line number="52" hits="0" branch="false"/>
-								<line number="55" hits="0" branch="false"/>
-								<line number="59" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="31" hits="0" branch="false"/>
-						<line number="32" hits="0" branch="false"/>
-						<line number="34" hits="0" branch="false"/>
-						<line number="35" hits="0" branch="false"/>
-						<line number="38" hits="0" branch="false"/>
-						<line number="39" hits="0" branch="false"/>
-						<line number="40" hits="0" branch="false"/>
-						<line number="41" hits="0" branch="true" condition-coverage="0% (0/4)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-								<condition number="1" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="42" hits="0" branch="false"/>
-						<line number="44" hits="0" branch="false"/>
-						<line number="48" hits="0" branch="true" condition-coverage="0% (0/3)">
-							<conditions>
-								<condition number="0" type="switch" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="51" hits="0" branch="false"/>
-						<line number="52" hits="0" branch="false"/>
-						<line number="55" hits="0" branch="false"/>
-						<line number="59" hits="0" branch="false"/>
-					</lines>
-				</class>
-			</classes>
-		</package>
-		<package name="org.universAAL.samples.context.reasoner.client.uaalinterface" line-rate="0.0" branch-rate="0.0" complexity="2.2790697674418605">
-			<classes>
-				<class name="org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller" filename="org/universAAL/samples/context/reasoner/client/uaalinterface/CHECaller.java" line-rate="0.0" branch-rate="0.0" complexity="2.4285714285714284">
+				<class name="org.universAAL.samples.context.reasoner.client.interfaces.CHECaller" filename="org/universAAL/samples/context/reasoner/client/interfaces/CHECaller.java" line-rate="0.0" branch-rate="0.0" complexity="2.4285714285714284">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
@@ -9513,7 +9351,7 @@
 						<line number="157" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder" filename="org/universAAL/samples/context/reasoner/client/uaalinterface/ContextEventRecorder.java" line-rate="0.0" branch-rate="0.0" complexity="2.5714285714285716">
+				<class name="org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder" filename="org/universAAL/samples/context/reasoner/client/interfaces/ContextEventRecorder.java" line-rate="0.0" branch-rate="0.0" complexity="2.5714285714285716">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
@@ -9859,7 +9697,7 @@
 						<line number="217" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller" filename="org/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller.java" line-rate="0.0" branch-rate="0.0" complexity="2.0454545454545454">
+				<class name="org.universAAL.samples.context.reasoner.client.interfaces.ReasoningCaller" filename="org/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller.java" line-rate="0.0" branch-rate="0.0" complexity="2.0454545454545454">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
@@ -10014,7 +9852,7 @@
 								<line number="278" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getRecorder" signature="()Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ContextEventRecorder;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getRecorder" signature="()Lorg/universAAL/samples/context/reasoner/client/interfaces/ContextEventRecorder;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="347" hits="0" branch="false"/>
 							</lines>
@@ -10199,6 +10037,168 @@
 						<line number="390" hits="0" branch="false"/>
 						<line number="395" hits="0" branch="false"/>
 						<line number="396" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="org.universAAL.samples.context.reasoner.client.osgi" line-rate="0.0" branch-rate="0.0" complexity="1.8333333333333333">
+			<classes>
+				<class name="org.universAAL.samples.context.reasoner.client.osgi.Activator" filename="org/universAAL/samples/context/reasoner/client/osgi/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="45" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="start" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="53" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+								<line number="56" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="stop" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="60" hits="0" branch="false"/>
+								<line number="61" hits="0" branch="false"/>
+								<line number="62" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="44" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="53" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="60" hits="0" branch="false"/>
+						<line number="61" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.samples.context.reasoner.client.osgi.GUIActivator" filename="org/universAAL/samples/context/reasoner/client/osgi/GUIActivator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="29" hits="0" branch="false"/>
+								<line number="30" hits="0" branch="false"/>
+								<line number="31" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lorg/osgi/framework/BundleContext;Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="33" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="false"/>
+								<line number="35" hits="0" branch="false"/>
+								<line number="36" hits="0" branch="false"/>
+								<line number="37" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="stop" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+								<line number="43" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="29" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="37" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator" filename="org/universAAL/samples/context/reasoner/client/osgi/InterfaceActivator.java" line-rate="0.0" branch-rate="0.0" complexity="3.5">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="32" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lorg/osgi/framework/BundleContext;Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="31" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="false"/>
+								<line number="35" hits="0" branch="false"/>
+								<line number="38" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="42" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="serviceChanged" signature="(Lorg/osgi/framework/ServiceEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="48" hits="0" branch="true" condition-coverage="0% (0/3)">
+									<conditions>
+										<condition number="0" type="switch" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+								<line number="59" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="31" hits="0" branch="false"/>
+						<line number="32" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="42" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="true" condition-coverage="0% (0/3)">
+							<conditions>
+								<condition number="0" type="switch" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="59" hits="0" branch="false"/>
 					</lines>
 				</class>
 			</classes>
@@ -13361,7 +13361,7 @@
 								<line number="326" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="addDevicesToSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;Lorg/universAAL/ontology/phThing/Device;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="addDevicesToSpace" signature="(Lorg/universAAL/ontology/profile/Space;Lorg/universAAL/ontology/phThing/Device;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="523" hits="0" branch="false"/>
 								<line number="524" hits="0" branch="false"/>
@@ -13378,7 +13378,7 @@
 								<line number="348" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="addOntsToSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;Lorg/universAAL/ontology/profile/OntologyEntry;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="addOntsToSpace" signature="(Lorg/universAAL/ontology/profile/Space;Lorg/universAAL/ontology/profile/OntologyEntry;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="513" hits="0" branch="false"/>
 								<line number="514" hits="0" branch="false"/>
@@ -13389,18 +13389,18 @@
 								<line number="519" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="addService" signature="(Lorg/universAAL/ontology/profile/AALService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="addService" signature="(Lorg/universAAL/ontology/profile/AppService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="284" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="addServiceProf" signature="(Lorg/universAAL/ontology/profile/AALServiceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="addServiceProf" signature="(Lorg/universAAL/ontology/profile/AppServiceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="303" hits="0" branch="false"/>
 								<line number="304" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="addServicesToSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;Lorg/universAAL/ontology/profile/AALService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="addServicesToSpace" signature="(Lorg/universAAL/ontology/profile/Space;Lorg/universAAL/ontology/profile/AppService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="533" hits="0" branch="false"/>
 								<line number="534" hits="0" branch="false"/>
@@ -13411,7 +13411,7 @@
 								<line number="539" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="addServprofToServ" signature="(Lorg/universAAL/ontology/profile/AALService;Lorg/universAAL/ontology/profile/AALServiceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="addServprofToServ" signature="(Lorg/universAAL/ontology/profile/AppService;Lorg/universAAL/ontology/profile/AppServiceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="572" hits="0" branch="false"/>
 								<line number="573" hits="0" branch="false"/>
@@ -13421,18 +13421,18 @@
 								<line number="577" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="addSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="addSpace" signature="(Lorg/universAAL/ontology/profile/Space;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="244" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="addSpaceProfile" signature="(Lorg/universAAL/ontology/profile/AALSpaceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="addSpaceProfile" signature="(Lorg/universAAL/ontology/profile/SpaceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="263" hits="0" branch="false"/>
 								<line number="264" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="addSpaceprofToSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;Lorg/universAAL/ontology/profile/AALSpaceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="addSpaceprofToSpace" signature="(Lorg/universAAL/ontology/profile/Space;Lorg/universAAL/ontology/profile/SpaceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="610" hits="0" branch="false"/>
 								<line number="611" hits="0" branch="false"/>
@@ -13557,23 +13557,23 @@
 								<line number="353" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="changeService" signature="(Lorg/universAAL/ontology/profile/AALService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="changeService" signature="(Lorg/universAAL/ontology/profile/AppService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="288" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="changeServiceProf" signature="(Lorg/universAAL/ontology/profile/AALServiceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="changeServiceProf" signature="(Lorg/universAAL/ontology/profile/AppServiceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="308" hits="0" branch="false"/>
 								<line number="309" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="changeSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="changeSpace" signature="(Lorg/universAAL/ontology/profile/Space;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="248" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="changeSpaceProfile" signature="(Lorg/universAAL/ontology/profile/AALSpaceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="changeSpaceProfile" signature="(Lorg/universAAL/ontology/profile/SpaceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="268" hits="0" branch="false"/>
 								<line number="269" hits="0" branch="false"/>
@@ -13604,7 +13604,7 @@
 								<line number="382" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getAppOfServ" signature="(Lorg/universAAL/ontology/profile/AALService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getAppOfServ" signature="(Lorg/universAAL/ontology/profile/AppService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="503" hits="0" branch="false"/>
 								<line number="504" hits="0" branch="false"/>
@@ -13621,7 +13621,7 @@
 								<line number="321" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getDevicesOfSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getDevicesOfSpace" signature="(Lorg/universAAL/ontology/profile/Space;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="459" hits="0" branch="false"/>
 								<line number="460" hits="0" branch="false"/>
@@ -13631,7 +13631,7 @@
 								<line number="469" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getHROfServ" signature="(Lorg/universAAL/ontology/profile/AALService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getHROfServ" signature="(Lorg/universAAL/ontology/profile/AppService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="483" hits="0" branch="false"/>
 								<line number="484" hits="0" branch="false"/>
@@ -13642,7 +13642,7 @@
 								<line number="489" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getHWOfServ" signature="(Lorg/universAAL/ontology/profile/AALService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getHWOfServ" signature="(Lorg/universAAL/ontology/profile/AppService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="493" hits="0" branch="false"/>
 								<line number="494" hits="0" branch="false"/>
@@ -13686,7 +13686,7 @@
 								<line number="343" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getOntsOfSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getOntsOfSpace" signature="(Lorg/universAAL/ontology/profile/Space;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="473" hits="0" branch="false"/>
 								<line number="474" hits="0" branch="false"/>
@@ -13697,12 +13697,12 @@
 								<line number="479" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getService" signature="(Lorg/universAAL/ontology/profile/AALService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getService" signature="(Lorg/universAAL/ontology/profile/AppService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="280" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getServiceProf" signature="(Lorg/universAAL/ontology/profile/AALServiceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getServiceProf" signature="(Lorg/universAAL/ontology/profile/AppServiceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="298" hits="0" branch="false"/>
 								<line number="299" hits="0" branch="false"/>
@@ -13717,7 +13717,7 @@
 								<line number="437" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getServicesOfSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getServicesOfSpace" signature="(Lorg/universAAL/ontology/profile/Space;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="441" hits="0" branch="false"/>
 								<line number="442" hits="0" branch="false"/>
@@ -13728,7 +13728,7 @@
 								<line number="447" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getServprofOfServ" signature="(Lorg/universAAL/ontology/profile/AALService;)Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
+						<method name="getServprofOfServ" signature="(Lorg/universAAL/ontology/profile/AppService;)Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
 								<line number="552" hits="0" branch="false"/>
 								<line number="553" hits="0" branch="false"/>
@@ -13752,18 +13752,18 @@
 								<line number="567" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getSpace" signature="(Lorg/universAAL/ontology/profile/Space;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="240" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getSpaceProfile" signature="(Lorg/universAAL/ontology/profile/AALSpaceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getSpaceProfile" signature="(Lorg/universAAL/ontology/profile/SpaceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="258" hits="0" branch="false"/>
 								<line number="259" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getSpaceprofOfSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;)Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
+						<method name="getSpaceprofOfSpace" signature="(Lorg/universAAL/ontology/profile/Space;)Ljava/lang/String;" line-rate="0.0" branch-rate="0.0" complexity="0">
 							<lines>
 								<line number="590" hits="0" branch="false"/>
 								<line number="591" hits="0" branch="false"/>
@@ -13808,23 +13808,23 @@
 								<line number="358" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="removeService" signature="(Lorg/universAAL/ontology/profile/AALService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="removeService" signature="(Lorg/universAAL/ontology/profile/AppService;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="292" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="removeServiceProf" signature="(Lorg/universAAL/ontology/profile/AALServiceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="removeServiceProf" signature="(Lorg/universAAL/ontology/profile/AppServiceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="313" hits="0" branch="false"/>
 								<line number="314" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="removeSpace" signature="(Lorg/universAAL/ontology/profile/AALSpace;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="removeSpace" signature="(Lorg/universAAL/ontology/profile/Space;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="252" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="removeSpaceProfile" signature="(Lorg/universAAL/ontology/profile/AALSpaceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="removeSpaceProfile" signature="(Lorg/universAAL/ontology/profile/SpaceProfile;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="273" hits="0" branch="false"/>
 								<line number="274" hits="0" branch="false"/>
@@ -21641,7 +21641,7 @@
 						</method>
 						<method name="stop" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="43" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -21652,7 +21652,7 @@
 						<line number="35" hits="0" branch="false"/>
 						<line number="37" hits="0" branch="false"/>
 						<line number="38" hits="0" branch="false"/>
-						<line number="43" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.samples.simple.ui.SimpleUI" filename="org/universAAL/samples/simple/ui/SimpleUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">

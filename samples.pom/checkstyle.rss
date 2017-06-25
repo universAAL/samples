@@ -27,8 +27,8 @@ under the License.
     <item>
       <title>File: 144,
              Errors: 2324,
-             Warnings: 266,
-             Infos: 97
+             Warnings: 268,
+             Infos: 99
       </title>
             <link>http://xtras/samples/samples.pom//checkstyle.html</link>
       <description>
@@ -112,34 +112,6 @@ under the License.
                 </td>
                 <td>
                   8
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator.java">org/universAAL/samples/context/reasoner/client/osgi/UAALInterfaceActivator.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-                <td>
-                  7
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller.java">org/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  2
-                </td>
-                <td>
-                  37
                 </td>
               </tr>
                           <tr>
@@ -368,6 +340,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder.java">org/universAAL/samples/context/reasoner/client/interfaces/ContextEventRecorder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  26
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_simple.unit_impl.MyLighting.java">org/universAAL/samples/lighting/server_simple/unit_impl/MyLighting.java</a>
                 </td>
                 <td>
@@ -385,10 +371,10 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.gui.GUI.java">org/universAAL/lddi/manager/gui/GUI.java</a>
                 </td>
                 <td>
-                  1
+                  2
                 </td>
                 <td>
-                  8
+                  9
                 </td>
                 <td>
                   116
@@ -676,20 +662,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder.java">org/universAAL/samples/context/reasoner/client/uaalinterface/ContextEventRecorder.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  26
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.SituationCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame.java</a>
                 </td>
                 <td>
@@ -728,20 +700,6 @@ under the License.
                 </td>
                 <td>
                   70
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller.java">org/universAAL/samples/context/reasoner/client/uaalinterface/CHECaller.java</a>
-                </td>
-                <td>
-                  1
-                </td>
-                <td>
-                  1
-                </td>
-                <td>
-                  12
                 </td>
               </tr>
                           <tr>
@@ -812,6 +770,20 @@ under the License.
                 </td>
                 <td>
                   12
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.interfaces.ReasoningCaller.java">org/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+                <td>
+                  37
                 </td>
               </tr>
                           <tr>
@@ -1022,6 +994,34 @@ under the License.
                 </td>
                 <td>
                   1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.interfaces.CHECaller.java">org/universAAL/samples/context/reasoner/client/interfaces/CHECaller.java</a>
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  12
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator.java">org/universAAL/samples/context/reasoner/client/osgi/InterfaceActivator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  7
                 </td>
               </tr>
                           <tr>
@@ -1239,10 +1239,10 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.lddi.manager.win.gui.GUI.java">org/universAAL/lddi/manager/win/gui/GUI.java</a>
                 </td>
                 <td>
-                  1
+                  2
                 </td>
                 <td>
-                  12
+                  13
                 </td>
                 <td>
                   116

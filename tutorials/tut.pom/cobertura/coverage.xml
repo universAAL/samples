@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.15853658536585366" branch-rate="0.08333333333333333" lines-covered="13" lines-valid="82" branches-covered="1" branches-valid="12" complexity="1.4" version="2.1.1" timestamp="1498298574825">
+<coverage line-rate="0.15853658536585366" branch-rate="0.08333333333333333" lines-covered="13" lines-valid="82" branches-covered="1" branches-valid="12" complexity="1.4" version="2.1.1" timestamp="1498360093503">
 	<sources>
 		<source>/home/travis/build/universAAL/samples/tutorials/tut.service.bus.tryout/src/main/java</source>
 		<source>--source</source>

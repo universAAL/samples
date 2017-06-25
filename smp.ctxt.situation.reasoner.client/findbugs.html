@@ -113,20 +113,20 @@
 <td><a href="#org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$ElementBox">org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI$ElementBox</a></td>
 <td>1</td></tr>
 <tr class="a">
+<td><a href="#org.universAAL.samples.context.reasoner.client.interfaces.CHECaller">org.universAAL.samples.context.reasoner.client.interfaces.CHECaller</a></td>
+<td>1</td></tr>
+<tr class="b">
+<td><a href="#org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder">org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder</a></td>
+<td>3</td></tr>
+<tr class="a">
 <td><a href="#org.universAAL.samples.context.reasoner.client.osgi.Activator">org.universAAL.samples.context.reasoner.client.osgi.Activator</a></td>
 <td>3</td></tr>
 <tr class="b">
 <td><a href="#org.universAAL.samples.context.reasoner.client.osgi.GUIActivator">org.universAAL.samples.context.reasoner.client.osgi.GUIActivator</a></td>
 <td>9</td></tr>
 <tr class="a">
-<td><a href="#org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator">org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator</a></td>
-<td>2</td></tr>
-<tr class="b">
-<td><a href="#org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller">org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller</a></td>
-<td>1</td></tr>
-<tr class="a">
-<td><a href="#org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder">org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder</a></td>
-<td>3</td></tr></table></div><a name="org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame3"></a>
+<td><a href="#org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator">org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator</a></td>
+<td>2</td></tr></table></div><a name="org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame3"></a>
 <div class="section">
 <h3><a name="org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame3"></a>org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame$3</h3>
 <table border="0" class="bodyTable">
@@ -189,6 +189,48 @@
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SIC_INNER_SHOULD_BE_STATIC">SIC_INNER_SHOULD_BE_STATIC</a></td>
 <td>87</td>
+<td>Medium</td></tr></table></div><a name="org.universAAL.samples.context.reasoner.client.interfaces.CHECaller"></a>
+<div class="section">
+<h3><a name="org.universAAL.samples.context.reasoner.client.interfaces.CHECaller"></a>org.universAAL.samples.context.reasoner.client.interfaces.CHECaller</h3>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Bug</th>
+<th>Category</th>
+<th>Details</th>
+<th>Line</th>
+<th>Priority</th></tr>
+<tr class="b">
+<td>org.universAAL.samples.context.reasoner.client.interfaces.CHECaller.executeQuery(String) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
+<td>PERFORMANCE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
+<td>79</td>
+<td>Medium</td></tr></table></div><a name="org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder"></a>
+<div class="section">
+<h3><a name="org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder"></a>org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder</h3>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>Bug</th>
+<th>Category</th>
+<th>Details</th>
+<th>Line</th>
+<th>Priority</th></tr>
+<tr class="b">
+<td>Found reliance on default encoding in org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder.loadArray(String): new java.io.FileReader(File)</td>
+<td>I18N</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
+<td>206</td>
+<td>High</td></tr>
+<tr class="a">
+<td>Found reliance on default encoding in org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder.saveArray(String, ArrayList): new java.io.FileWriter(File, boolean)</td>
+<td>I18N</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
+<td>178</td>
+<td>High</td></tr>
+<tr class="b">
+<td>Exceptional return value of java.io.File.mkdirs() ignored in new org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder(ModuleContext)</td>
+<td>BAD_PRACTICE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">RV_RETURN_VALUE_IGNORED_BAD_PRACTICE</a></td>
+<td>84</td>
 <td>Medium</td></tr></table></div><a name="org.universAAL.samples.context.reasoner.client.osgi.Activator"></a>
 <div class="section">
 <h3><a name="org.universAAL.samples.context.reasoner.client.osgi.Activator"></a>org.universAAL.samples.context.reasoner.client.osgi.Activator</h3>
@@ -279,9 +321,9 @@
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
 <td>41</td>
-<td>Medium</td></tr></table></div><a name="org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator"></a>
+<td>Medium</td></tr></table></div><a name="org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator"></a>
 <div class="section">
-<h3><a name="org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator"></a>org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator</h3>
+<h3><a name="org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator"></a>org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator</h3>
 <table border="0" class="bodyTable">
 <tr class="a">
 <th>Bug</th>
@@ -290,59 +332,17 @@
 <th>Line</th>
 <th>Priority</th></tr>
 <tr class="b">
-<td>org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator.serializer isn't final and can't be protected from malicious code </td>
+<td>org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator.serializer isn't final and can't be protected from malicious code </td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#MS_CANNOT_BE_FINAL">MS_CANNOT_BE_FINAL</a></td>
 <td>32</td>
 <td>Medium</td></tr>
 <tr class="a">
-<td>Write to static field org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator.serializer from instance method org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator.serviceChanged(ServiceEvent)</td>
+<td>Write to static field org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator.serializer from instance method org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator.serviceChanged(ServiceEvent)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
 <td>51</td>
-<td>High</td></tr></table></div><a name="org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller"></a>
-<div class="section">
-<h3><a name="org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller"></a>org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller.executeQuery(String) invokes inefficient new Long(long) constructor; use Long.valueOf(long) instead</td>
-<td>PERFORMANCE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
-<td>79</td>
-<td>Medium</td></tr></table></div><a name="org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder"></a>
-<div class="section">
-<h3><a name="org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder"></a>org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>Found reliance on default encoding in org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder.loadArray(String): new java.io.FileReader(File)</td>
-<td>I18N</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td>206</td>
-<td>High</td></tr>
-<tr class="b">
-<td>Found reliance on default encoding in org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder.saveArray(String, ArrayList): new java.io.FileWriter(File, boolean)</td>
-<td>I18N</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_DEFAULT_ENCODING">DM_DEFAULT_ENCODING</a></td>
-<td>178</td>
-<td>High</td></tr>
-<tr class="a">
-<td>Exceptional return value of java.io.File.mkdirs() ignored in new org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder(ModuleContext)</td>
-<td>BAD_PRACTICE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#RV_RETURN_VALUE_IGNORED_BAD_PRACTICE">RV_RETURN_VALUE_IGNORED_BAD_PRACTICE</a></td>
-<td>84</td>
-<td>Medium</td></tr></table></div>
+<td>High</td></tr></table></div>
       </div>
     </div>
     <div class="clear">

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="1.0" lines-covered="0" lines-valid="29" branches-covered="0" branches-valid="0" complexity="1.0" version="2.1.1" timestamp="1498297795252">
+<coverage line-rate="0.0" branch-rate="1.0" lines-covered="0" lines-valid="29" branches-covered="0" branches-valid="0" complexity="1.0" version="2.1.1" timestamp="1498359189237">
 	<sources>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/simple.ui/src/main/java</source>
@@ -75,7 +75,7 @@
 						</method>
 						<method name="stop" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="43" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -86,7 +86,7 @@
 						<line number="35" hits="0" branch="false"/>
 						<line number="37" hits="0" branch="false"/>
 						<line number="38" hits="0" branch="false"/>
-						<line number="43" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.samples.simple.ui.SimpleUI" filename="org/universAAL/samples/simple/ui/SimpleUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">

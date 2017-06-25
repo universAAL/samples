@@ -15,8 +15,8 @@ org.universAAL.ontology
 org.universAAL.ontology.lighting.simple
 org.universAAL.ontology.tutorial
 org.universAAL.samples.context.reasoner.client.gui
+org.universAAL.samples.context.reasoner.client.interfaces
 org.universAAL.samples.context.reasoner.client.osgi
-org.universAAL.samples.context.reasoner.client.uaalinterface
 org.universAAL.samples.ctxtbus
 org.universAAL.samples.lighting.client
 org.universAAL.samples.lighting.client_regular

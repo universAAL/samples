@@ -10,24 +10,24 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.universAAL.lddi.hw.simulator.activityhub.util.LogTracker
-	c15520 [label=<<table title="org.universAAL.lddi.hw.simulator.activityhub.util.LogTracker" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LogTracker.html">
+	c15675 [label=<<table title="org.universAAL.lddi.hw.simulator.activityhub.util.LogTracker" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./LogTracker.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> LogTracker </td></tr>
 		</table></td></tr>
 		</table>>, URL="./LogTracker.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.universAAL.lddi.hw.simulator.activityhub.util.LogTracker extends org.osgi.util.tracker.ServiceTracker
-	c15620:p -> c15520:p [dir=back,arrowtail=empty];
+	c15775:p -> c15675:p [dir=back,arrowtail=empty];
 	//org.universAAL.lddi.hw.simulator.activityhub.util.LogTracker implements org.osgi.service.log.LogService
-	c15621:p -> c15520:p [dir=back,arrowtail=empty,style=dashed];
+	c15776:p -> c15675:p [dir=back,arrowtail=empty,style=dashed];
 	// org.osgi.service.log.LogService
-	c15621 [label=<<table title="org.osgi.service.log.LogService" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/service/log/LogService.html">
+	c15776 [label=<<table title="org.osgi.service.log.LogService" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/service/log/LogService.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> LogService </td></tr>
 		</table></td></tr>
 		</table>>, URL="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/service/log/LogService.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	// org.osgi.util.tracker.ServiceTracker<S, T>
-	c15620 [label=<<table title="org.osgi.util.tracker.ServiceTracker" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/util/tracker/ServiceTracker.html">
+	c15775 [label=<<table title="org.osgi.util.tracker.ServiceTracker" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/util/tracker/ServiceTracker.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> ServiceTracker&lt;S, T&gt; </td></tr>
 		</table></td></tr>

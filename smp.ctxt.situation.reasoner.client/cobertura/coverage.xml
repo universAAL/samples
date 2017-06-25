@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="923" branches-covered="0" branches-valid="169" complexity="2.188679245283019" version="2.1.1" timestamp="1498298286932">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="923" branches-covered="0" branches-valid="169" complexity="2.188679245283019" version="2.1.1" timestamp="1498359722267">
 	<sources>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/smp.ctxt.situation.reasoner.client/src/main/java</source>
@@ -11,7 +11,7 @@
 			<classes>
 				<class name="org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame" filename="org/universAAL/samples/context/reasoner/client/gui/QueryCreatorFrame.java" line-rate="0.0" branch-rate="0.0" complexity="3.4545454545454546">
 					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="68" hits="0" branch="false"/>
 								<line number="69" hits="0" branch="false"/>
@@ -727,7 +727,7 @@
 								<line number="65" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="185" hits="0" branch="false"/>
 								<line number="188" hits="0" branch="false"/>
@@ -763,7 +763,7 @@
 							<lines>
 							</lines>
 						</method>
-						<method name="access$200" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;)Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
+						<method name="access$200" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;)Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
 							</lines>
 						</method>
@@ -1525,7 +1525,7 @@
 				</class>
 				<class name="org.universAAL.samples.context.reasoner.client.gui.RuleCreatorFrame" filename="org/universAAL/samples/context/reasoner/client/gui/RuleCreatorFrame.java" line-rate="0.0" branch-rate="0.0" complexity="1.9">
 					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="60" hits="0" branch="false"/>
 								<line number="61" hits="0" branch="false"/>
@@ -1576,7 +1576,7 @@
 							<lines>
 							</lines>
 						</method>
-						<method name="access$800" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/RuleCreatorFrame;)Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
+						<method name="access$800" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/RuleCreatorFrame;)Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
 							</lines>
 						</method>
@@ -1981,7 +1981,7 @@
 				</class>
 				<class name="org.universAAL.samples.context.reasoner.client.gui.SituationCreatorFrame" filename="org/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame.java" line-rate="0.0" branch-rate="1.0" complexity="1.5">
 					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/ReasoningGUI;Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="55" hits="0" branch="false"/>
 								<line number="56" hits="0" branch="false"/>
@@ -2022,7 +2022,7 @@
 							<lines>
 							</lines>
 						</method>
-						<method name="access$600" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame;)Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
+						<method name="access$600" signature="(Lorg/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame;)Lorg/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller;" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
 							</lines>
 						</method>
@@ -2329,171 +2329,9 @@
 				</class>
 			</classes>
 		</package>
-		<package name="org.universAAL.samples.context.reasoner.client.osgi" line-rate="0.0" branch-rate="0.0" complexity="1.8333333333333333">
+		<package name="org.universAAL.samples.context.reasoner.client.interfaces" line-rate="0.0" branch-rate="0.0" complexity="2.2790697674418605">
 			<classes>
-				<class name="org.universAAL.samples.context.reasoner.client.osgi.Activator" filename="org/universAAL/samples/context/reasoner/client/osgi/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
-					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="45" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="44" hits="0" branch="false"/>
-								<line number="46" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="start" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="51" hits="0" branch="false"/>
-								<line number="53" hits="0" branch="false"/>
-								<line number="55" hits="0" branch="false"/>
-								<line number="56" hits="0" branch="false"/>
-								<line number="57" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="stop" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="60" hits="0" branch="false"/>
-								<line number="61" hits="0" branch="false"/>
-								<line number="62" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="44" hits="0" branch="false"/>
-						<line number="45" hits="0" branch="false"/>
-						<line number="46" hits="0" branch="false"/>
-						<line number="51" hits="0" branch="false"/>
-						<line number="53" hits="0" branch="false"/>
-						<line number="55" hits="0" branch="false"/>
-						<line number="56" hits="0" branch="false"/>
-						<line number="57" hits="0" branch="false"/>
-						<line number="60" hits="0" branch="false"/>
-						<line number="61" hits="0" branch="false"/>
-						<line number="62" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.osgi.GUIActivator" filename="org/universAAL/samples/context/reasoner/client/osgi/GUIActivator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
-					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="29" hits="0" branch="false"/>
-								<line number="30" hits="0" branch="false"/>
-								<line number="31" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="(Lorg/osgi/framework/BundleContext;Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="33" hits="0" branch="false"/>
-								<line number="34" hits="0" branch="false"/>
-								<line number="35" hits="0" branch="false"/>
-								<line number="36" hits="0" branch="false"/>
-								<line number="37" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="stop" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="40" hits="0" branch="false"/>
-								<line number="41" hits="0" branch="false"/>
-								<line number="42" hits="0" branch="false"/>
-								<line number="43" hits="0" branch="false"/>
-								<line number="44" hits="0" branch="false"/>
-								<line number="45" hits="0" branch="false"/>
-								<line number="46" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="29" hits="0" branch="false"/>
-						<line number="30" hits="0" branch="false"/>
-						<line number="31" hits="0" branch="false"/>
-						<line number="33" hits="0" branch="false"/>
-						<line number="34" hits="0" branch="false"/>
-						<line number="35" hits="0" branch="false"/>
-						<line number="36" hits="0" branch="false"/>
-						<line number="37" hits="0" branch="false"/>
-						<line number="40" hits="0" branch="false"/>
-						<line number="41" hits="0" branch="false"/>
-						<line number="42" hits="0" branch="false"/>
-						<line number="43" hits="0" branch="false"/>
-						<line number="44" hits="0" branch="false"/>
-						<line number="45" hits="0" branch="false"/>
-						<line number="46" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator" filename="org/universAAL/samples/context/reasoner/client/osgi/UAALInterfaceActivator.java" line-rate="0.0" branch-rate="0.0" complexity="3.5">
-					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="32" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="(Lorg/osgi/framework/BundleContext;Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
-							<lines>
-								<line number="31" hits="0" branch="false"/>
-								<line number="34" hits="0" branch="false"/>
-								<line number="35" hits="0" branch="false"/>
-								<line number="38" hits="0" branch="false"/>
-								<line number="39" hits="0" branch="false"/>
-								<line number="40" hits="0" branch="false"/>
-								<line number="41" hits="0" branch="true" condition-coverage="0% (0/4)">
-									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-										<condition number="1" type="jump" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="42" hits="0" branch="false"/>
-								<line number="44" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="serviceChanged" signature="(Lorg/osgi/framework/ServiceEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
-							<lines>
-								<line number="48" hits="0" branch="true" condition-coverage="0% (0/3)">
-									<conditions>
-										<condition number="0" type="switch" coverage="0%"/>
-									</conditions>
-								</line>
-								<line number="51" hits="0" branch="false"/>
-								<line number="52" hits="0" branch="false"/>
-								<line number="55" hits="0" branch="false"/>
-								<line number="59" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="31" hits="0" branch="false"/>
-						<line number="32" hits="0" branch="false"/>
-						<line number="34" hits="0" branch="false"/>
-						<line number="35" hits="0" branch="false"/>
-						<line number="38" hits="0" branch="false"/>
-						<line number="39" hits="0" branch="false"/>
-						<line number="40" hits="0" branch="false"/>
-						<line number="41" hits="0" branch="true" condition-coverage="0% (0/4)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-								<condition number="1" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="42" hits="0" branch="false"/>
-						<line number="44" hits="0" branch="false"/>
-						<line number="48" hits="0" branch="true" condition-coverage="0% (0/3)">
-							<conditions>
-								<condition number="0" type="switch" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="51" hits="0" branch="false"/>
-						<line number="52" hits="0" branch="false"/>
-						<line number="55" hits="0" branch="false"/>
-						<line number="59" hits="0" branch="false"/>
-					</lines>
-				</class>
-			</classes>
-		</package>
-		<package name="org.universAAL.samples.context.reasoner.client.uaalinterface" line-rate="0.0" branch-rate="0.0" complexity="2.2790697674418605">
-			<classes>
-				<class name="org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller" filename="org/universAAL/samples/context/reasoner/client/uaalinterface/CHECaller.java" line-rate="0.0" branch-rate="0.0" complexity="2.4285714285714284">
+				<class name="org.universAAL.samples.context.reasoner.client.interfaces.CHECaller" filename="org/universAAL/samples/context/reasoner/client/interfaces/CHECaller.java" line-rate="0.0" branch-rate="0.0" complexity="2.4285714285714284">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
@@ -2657,7 +2495,7 @@
 						<line number="157" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.uaalinterface.ContextEventRecorder" filename="org/universAAL/samples/context/reasoner/client/uaalinterface/ContextEventRecorder.java" line-rate="0.0" branch-rate="0.0" complexity="2.5714285714285716">
+				<class name="org.universAAL.samples.context.reasoner.client.interfaces.ContextEventRecorder" filename="org/universAAL/samples/context/reasoner/client/interfaces/ContextEventRecorder.java" line-rate="0.0" branch-rate="0.0" complexity="2.5714285714285716">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
@@ -3003,7 +2841,7 @@
 						<line number="217" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller" filename="org/universAAL/samples/context/reasoner/client/uaalinterface/ReasoningCaller.java" line-rate="0.0" branch-rate="0.0" complexity="2.0454545454545454">
+				<class name="org.universAAL.samples.context.reasoner.client.interfaces.ReasoningCaller" filename="org/universAAL/samples/context/reasoner/client/interfaces/ReasoningCaller.java" line-rate="0.0" branch-rate="0.0" complexity="2.0454545454545454">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
@@ -3158,7 +2996,7 @@
 								<line number="278" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getRecorder" signature="()Lorg/universAAL/samples/context/reasoner/client/uaalinterface/ContextEventRecorder;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getRecorder" signature="()Lorg/universAAL/samples/context/reasoner/client/interfaces/ContextEventRecorder;" line-rate="0.0" branch-rate="1.0" complexity="0">
 							<lines>
 								<line number="347" hits="0" branch="false"/>
 							</lines>
@@ -3343,6 +3181,168 @@
 						<line number="390" hits="0" branch="false"/>
 						<line number="395" hits="0" branch="false"/>
 						<line number="396" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="org.universAAL.samples.context.reasoner.client.osgi" line-rate="0.0" branch-rate="0.0" complexity="1.8333333333333333">
+			<classes>
+				<class name="org.universAAL.samples.context.reasoner.client.osgi.Activator" filename="org/universAAL/samples/context/reasoner/client/osgi/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="45" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="44" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="start" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="53" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+								<line number="56" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="stop" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="60" hits="0" branch="false"/>
+								<line number="61" hits="0" branch="false"/>
+								<line number="62" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="44" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="53" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="60" hits="0" branch="false"/>
+						<line number="61" hits="0" branch="false"/>
+						<line number="62" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.samples.context.reasoner.client.osgi.GUIActivator" filename="org/universAAL/samples/context/reasoner/client/osgi/GUIActivator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="29" hits="0" branch="false"/>
+								<line number="30" hits="0" branch="false"/>
+								<line number="31" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lorg/osgi/framework/BundleContext;Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="33" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="false"/>
+								<line number="35" hits="0" branch="false"/>
+								<line number="36" hits="0" branch="false"/>
+								<line number="37" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="stop" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="false"/>
+								<line number="43" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="false"/>
+								<line number="46" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="29" hits="0" branch="false"/>
+						<line number="30" hits="0" branch="false"/>
+						<line number="31" hits="0" branch="false"/>
+						<line number="33" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="37" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="false"/>
+						<line number="46" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator" filename="org/universAAL/samples/context/reasoner/client/osgi/InterfaceActivator.java" line-rate="0.0" branch-rate="0.0" complexity="3.5">
+					<methods>
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="32" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lorg/osgi/framework/BundleContext;Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="31" hits="0" branch="false"/>
+								<line number="34" hits="0" branch="false"/>
+								<line number="35" hits="0" branch="false"/>
+								<line number="38" hits="0" branch="false"/>
+								<line number="39" hits="0" branch="false"/>
+								<line number="40" hits="0" branch="false"/>
+								<line number="41" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="42" hits="0" branch="false"/>
+								<line number="44" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="serviceChanged" signature="(Lorg/osgi/framework/ServiceEvent;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="48" hits="0" branch="true" condition-coverage="0% (0/3)">
+									<conditions>
+										<condition number="0" type="switch" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+								<line number="59" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="31" hits="0" branch="false"/>
+						<line number="32" hits="0" branch="false"/>
+						<line number="34" hits="0" branch="false"/>
+						<line number="35" hits="0" branch="false"/>
+						<line number="38" hits="0" branch="false"/>
+						<line number="39" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="41" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="42" hits="0" branch="false"/>
+						<line number="44" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="true" condition-coverage="0% (0/3)">
+							<conditions>
+								<condition number="0" type="switch" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="59" hits="0" branch="false"/>
 					</lines>
 				</class>
 			</classes>
