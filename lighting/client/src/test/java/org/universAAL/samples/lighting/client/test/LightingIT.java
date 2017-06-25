@@ -26,8 +26,8 @@ public class LightingIT extends IntegrationTest {
 	/**
 	 * Constructor of each integration TestCase has to call constructor of upper
 	 * class providing path to the launch configuration and path to the
-	 * configuration directory of the uAAL runtime. Launch configuration will be
-	 * used to setup uAAL runtime for the purpose of TestCase. All bundles
+	 * configuration directory of the universAAL runtime. Launch configuration will be
+	 * used to setup universAAL runtime for the purpose of TestCase. All bundles
 	 * needed for the TestCase have to be included in the launch configuration.
 	 */
 	public LightingIT() {

@@ -64,13 +64,13 @@ public class LightingProviderLevel3 extends ServiceCallee {
 
 	// needed for publishing context events (whenever you think that it might be
 	// important to share a new info with other components in a universAAL-based
-	// AAL SPace, you have to publish that info as a context event
+	// Space, you have to publish that info as a context event
 
 	public LightingProviderLevel3(ModuleContext context) {
 		// as a service providing component, we have to extend ServiceCallee
 		// this in turn requires that we introduce which services we would like
 		// to
-		// provide to the universAAL-based AAL Space
+		// provide to the universAAL-based Space
 		super(context, ProvidedLightingServiceLevel3.profiles);
 
 		// this is just an example that wraps a faked "original server"

@@ -100,7 +100,7 @@ public class hdpManager implements hdpManagerListener {
 	private Measurement finalData = null;
 
 	// Publisher object to send events
-	private Publisher uaalPublisher = null;
+	private Publisher publisher = null;
 
 	/** Native functions */
 
@@ -315,7 +315,7 @@ public class hdpManager implements hdpManagerListener {
 
 	/** Constructor */
 	public hdpManager(Publisher p) {
-		uaalPublisher = p;
+		publisher = p;
 	}
 
 	/** Java methods */
@@ -456,9 +456,9 @@ public class hdpManager implements hdpManagerListener {
 			if (finalData != null) {
 				String valueTemp = finalData.getWeighValue();
 				if (valueTemp == null)
-					uaalPublisher.publishEvent("[x073 weighing scale] Unable to get data value");
+					publisher.publishEvent("[x073 weighing scale] Unable to get data value");
 				else
-					uaalPublisher.publishEvent(valueTemp);
+					publisher.publishEvent(valueTemp);
 			}
 		}
 	}

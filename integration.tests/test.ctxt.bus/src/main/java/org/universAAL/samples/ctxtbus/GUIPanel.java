@@ -159,10 +159,10 @@ public class GUIPanel extends javax.swing.JFrame {
 
 		panel7 = new javax.swing.JPanel();
 		combo1p7 = new javax.swing.JComboBox(new Object[] { "Get", "Add", "Change", "Remove" });
-		combo2p7 = new javax.swing.JComboBox(new Object[] { "AALSpace", "AALSpaceProfile", "AALService",
-				"AALServiceProfile", "Device", "Ontology", "HRProfile", "HWProfile", "AppProfile" });
+		combo2p7 = new javax.swing.JComboBox(new Object[] { "Space", "SpaceProfile", "Service",
+				"ServiceProfile", "Device", "Ontology", "HRProfile", "HWProfile", "AppProfile" });
 		combo3p7 = new javax.swing.JComboBox(
-				new Object[] { "Specific", "All of them", "Of/To an AALSpace", "Of/To an AALService" });
+				new Object[] { "Specific", "All of them", "Of/To a Space", "Of/To a Service" });
 		text1p7 = new javax.swing.JTextField();
 		label1p7 = new javax.swing.JLabel();
 		button1p7 = new javax.swing.JButton();

@@ -17,7 +17,7 @@
 	See the License for the specific language governing permissions and
 	limitations under the License.
  */
-package org.universAAL.samples.context.reasoner.client.uaalinterface;
+package org.universAAL.samples.context.reasoner.client.interfaces;
 
 import java.util.Iterator;
 import java.util.List;
@@ -35,7 +35,7 @@ import org.universAAL.middleware.service.ServiceResponse;
 import org.universAAL.middleware.service.owls.process.ProcessOutput;
 import org.universAAL.ontology.che.ContextHistoryService;
 import org.universAAL.samples.context.reasoner.client.osgi.Activator;
-import org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator;
+import org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator;
 
 /**
  * This class is just a shortened version of the CHE-Caller in the
@@ -75,7 +75,7 @@ public class CHECaller extends ServiceCaller {
 				ContextEvent.CONTEXT_EVENT_URI_PREFIX + StringUtils.createUniqueID());
 		String ser = callDoSPARQL(query);
 		if (!ser.isEmpty()) {
-			ContextEvent event = (ContextEvent) UAALInterfaceActivator.serializer.deserialize(ser);
+			ContextEvent event = (ContextEvent) InterfaceActivator.serializer.deserialize(ser);
 			event.setTimestamp(new Long(System.currentTimeMillis()));
 			return event;
 		}

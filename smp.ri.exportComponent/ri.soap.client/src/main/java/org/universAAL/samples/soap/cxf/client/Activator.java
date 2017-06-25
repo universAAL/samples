@@ -66,7 +66,7 @@ public class Activator implements BundleActivator {
 		// <http://ontology.universAAL.org/uAAL.owl#> .@prefix :
 		// <http://www.daml.org/services/owl-s/1.1/Process.owl#> ._:BN000000 a
 		// pvn:ServiceRequest ; pvn:theServiceCaller
-		// <urn:org.universAAL.aal_space:test_environment#13b66363885@joe-PC+73640755_6>
+		// <urn:org.universAAL.space:test_environment#13b66363885@joe-PC+73640755_6>
 		// ; pvn:requiredResult [ :withOutput ( [ a :OutputBinding ; :toParam
 		// ns:controlledLamps ; :valueForm "+"\"\"\""+" @prefix :
 		// <http://ontology.universAAL.org/Service.owl#> . _:BN000000 a
@@ -86,7 +86,7 @@ public class Activator implements BundleActivator {
 		// <http://www.daml.org/services/owl-s/1.1/Process.owl#> .@prefix :
 		// <http://ontology.universAAL.org/uAAL.owl#> ._:BN000000 a
 		// :ServiceRequest ; :theServiceCaller
-		// <urn:org.universAAL.aal_space:test_environment#13b66559ea3@joe-PC+5f6f4b69_7>
+		// <urn:org.universAAL.space:test_environment#13b66559ea3@joe-PC+5f6f4b69_7>
 		// ; :requiredResult [ a ns2:Result ; ns2:hasEffect ( [
 		// psn:affectedProperty [ a psn:PropertyPath ; psn:thePath (
 		// ns1:controls ns1:srcBrightness ) ] ; a psn:ChangeEffect ;

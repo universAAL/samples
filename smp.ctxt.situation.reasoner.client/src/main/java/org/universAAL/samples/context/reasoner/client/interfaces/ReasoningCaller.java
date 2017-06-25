@@ -17,7 +17,7 @@
 	See the License for the specific language governing permissions and
 	limitations under the License.
  */
-package org.universAAL.samples.context.reasoner.client.uaalinterface;
+package org.universAAL.samples.context.reasoner.client.interfaces;
 
 import java.util.List;
 import java.util.Random;

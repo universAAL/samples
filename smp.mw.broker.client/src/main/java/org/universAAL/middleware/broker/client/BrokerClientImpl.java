@@ -41,7 +41,7 @@ import org.universAAL.middleware.modules.listener.MessageListener;
 import com.google.gson.Gson;
 
 /**
- * Simple Broker showing how to access to an AALSpace and how to send messages
+ * Simple Broker showing how to access to an Space and how to send messages
  *
  * @author <a href="mailto:michele.girolami@isti.cnr.it">Michele Girolami</a>
  * @author <a href="mailto:francesco.furfari@isti.cnr.it">Francesco Furfari</a>
@@ -50,7 +50,7 @@ import com.google.gson.Gson;
 public class BrokerClientImpl implements Broker, MessageListener {
 
 	private ModuleContext context;
-	private SpaceManager aalSpaceManager;
+	private SpaceManager spaceManager;
 	private CommunicationModule communicationModule;
 	private boolean stop = false;
 	private String brokerName;
@@ -69,11 +69,11 @@ public class BrokerClientImpl implements Broker, MessageListener {
 		if (ref != null) {
 
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
-					new Object[] { "AALSpaceManager found!" }, null);
-			aalSpaceManager = (SpaceManager) ref;
+					new Object[] { "SpaceManager found!" }, null);
+			spaceManager = (SpaceManager) ref;
 			brokerName = getBrokerName();
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
-					new Object[] { "AALSpaceModule fetched" }, null);
+					new Object[] { "SpaceModule fetched" }, null);
 
 		} else {
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
@@ -106,35 +106,35 @@ public class BrokerClientImpl implements Broker, MessageListener {
 		LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
 				new Object[] { "---------Session 1--------------" }, null);
 
-		Set<SpaceCard> aalSpaces = aalSpaceManager.getSpaces();
-		if (aalSpaces != null)
+		Set<SpaceCard> spaces = spaceManager.getSpaces();
+		if (spaces != null)
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
-					new Object[] { "Found:" + aalSpaces.size() + " AALSpaces" }, null);
+					new Object[] { "Found:" + spaces.size() + " Spaces" }, null);
 
 		LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient", new Object[] { "----" }, null);
 
-		if (aalSpaceManager.getSpaceDescriptor() != null)
+		if (spaceManager.getSpaceDescriptor() != null)
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
-					new Object[] { "Currently member of the AALSpace: "
-							+ aalSpaceManager.getSpaceDescriptor().getSpaceCard().toString() },
+					new Object[] { "Currently member of the Space: "
+							+ spaceManager.getSpaceDescriptor().getSpaceCard().toString() },
 					null);
 
 		LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient", new Object[] { "----" }, null);
 
-		if (aalSpaceManager.getManagedSpaces() != null)
+		if (spaceManager.getManagedSpaces() != null)
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient", new Object[] {
-					"This MW instance manages: " + aalSpaceManager.getManagedSpaces().size() + " AALSpaces" }, null);
+					"This MW instance manages: " + spaceManager.getManagedSpaces().size() + " Spaces" }, null);
 
 		LogUtils.logInfo(context, BrokerClientImpl.class, "startBrokerClient", new Object[] { "-----" }, null);
 
-		if (aalSpaceManager.getPeers() != null)
+		if (spaceManager.getPeers() != null)
 
 			LogUtils.logDebug(context, BrokerClientImpl.class, "startBrokerClient",
-					new Object[] { "There are: " + aalSpaceManager.getPeers().size() + "peers" }, null);
+					new Object[] { "There are: " + spaceManager.getPeers().size() + "peers" }, null);
 
 		LogUtils.logInfo(context, BrokerClientImpl.class, "startBrokerClient", new Object[] { "Peers are: " }, null);
 
-		for (String key : aalSpaceManager.getPeers().keySet())
+		for (String key : spaceManager.getPeers().keySet())
 			LogUtils.logInfo(context, BrokerClientImpl.class, "startBrokerClient", new Object[] { "Peer: " + key },
 					null);
 
@@ -144,21 +144,21 @@ public class BrokerClientImpl implements Broker, MessageListener {
 				new Object[] { "----STEP 2: Sending Ping - Pong messages---" }, null);
 
 		// first discover the other peer
-		if (aalSpaceManager.getMyPeerCard().isCoordinator()) {
+		if (spaceManager.getMyPeerCard().isCoordinator()) {
 
 			LogUtils.logInfo(context, BrokerClientImpl.class, "startBrokerClient",
 					new Object[] { "Waiting for a Ping message..." }, null);
 
 			return;
 		} else {
-			String dest = aalSpaceManager.getSpaceDescriptor().getSpaceCard().getCoordinatorID();
+			String dest = spaceManager.getSpaceDescriptor().getSpaceCard().getCoordinatorID();
 			PeerCard dstCard = new PeerCard(dest, PeerRole.COORDINATOR);
 			SimpleMessage ping = new SimpleMessage(SimpleMessageTypes.PING);
 
 			// ...and wrap it as ChannelMessage
 			List<String> channelName = new ArrayList<String>();
 			channelName.add(getBrokerName());
-			ChannelMessage channelMessage = new ChannelMessage(aalSpaceManager.getMyPeerCard(), ping.toString(),
+			ChannelMessage channelMessage = new ChannelMessage(spaceManager.getMyPeerCard(), ping.toString(),
 					channelName);
 			communicationModule.send(channelMessage, this, dstCard);
 		}
@@ -171,7 +171,7 @@ public class BrokerClientImpl implements Broker, MessageListener {
 	public void handleSendError(ChannelMessage message, CommunicationConnectorException e) {
 
 		LogUtils.logError(context, BrokerClientImpl.class, "startBrokerClient", new Object[] {
-				"Error sending a message in the AALSPace: " + message.toString() + "with error: " + e.toString() },
+				"Error sending a message in the Space: " + message.toString() + "with error: " + e.toString() },
 				null);
 
 	}
@@ -196,7 +196,7 @@ public class BrokerClientImpl implements Broker, MessageListener {
 				// ...and wrap it as ChannelMessage
 				List<String> channelName = new ArrayList<String>();
 				channelName.add(getBrokerName());
-				ChannelMessage channelMessage = new ChannelMessage(aalSpaceManager.getMyPeerCard(), ping.toString(),
+				ChannelMessage channelMessage = new ChannelMessage(spaceManager.getMyPeerCard(), ping.toString(),
 						channelName);
 
 				communicationModule.send(channelMessage, this, message.getSender());
@@ -209,7 +209,7 @@ public class BrokerClientImpl implements Broker, MessageListener {
 				// ...and wrap it as ChannelMessage
 				List<String> channelName = new ArrayList<String>();
 				channelName.add(getBrokerName());
-				ChannelMessage channelMessage = new ChannelMessage(aalSpaceManager.getMyPeerCard(), ping.toString(),
+				ChannelMessage channelMessage = new ChannelMessage(spaceManager.getMyPeerCard(), ping.toString(),
 						channelName);
 				communicationModule.send(channelMessage, this, message.getSender());
 			}

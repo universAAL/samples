@@ -53,7 +53,7 @@ public class LightingProviderLevel2 extends ServiceCallee {
 		// as a service providing component, we have to extend ServiceCallee
 		// this in turn requires that we introduce which services we would like
 		// to
-		// provide to the universAAL-based AAL Space
+		// provide to the universAAL-based Space
 		super(context, ProvidedLightingServiceLevel2.profiles);
 
 		// this is just an example that wraps a faked "original server"

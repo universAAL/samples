@@ -102,7 +102,7 @@ public class SCallee extends ServiceCallee {
 		sr.addOutput(new ProcessOutput(ProvidedService.OUTPUT_LAMP_BRIGHTNESS, new Integer(100)));
 		// create and add a ProcessOutput-Event that binds the output URI to the
 		// location of the lamp
-		sr.addOutput(new ProcessOutput(ProvidedService.OUTPUT_LAMP_LOCATION, new Room("urn:aal_space:myHome#kitchen")));
+		sr.addOutput(new ProcessOutput(ProvidedService.OUTPUT_LAMP_LOCATION, new Room("urn:space:myHome#kitchen")));
 		return sr;
 	}
 

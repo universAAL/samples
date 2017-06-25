@@ -18,7 +18,7 @@
     limitations under the License.
  */
 /**
- * x073 Continua agent publisher (agent events will be published over uAAL bus)
+ * x073 Continua agent publisher (agent events will be published over universAAL bus)
  *
  * @author Angel Martinez-Cavero
  * @version 0
@@ -62,8 +62,8 @@ public class GUI extends JDialog implements ActionListener {
 	/** Serializable object */
 	private static final long serialVersionUID = 1L;
 
-	/** uAAL publisher window */
-	private JDialog uaalPublisher = null;
+	/** universAAL publisher window */
+	private JDialog publisher = null;
 
 	/** Main and secondary panels */
 	public static JPanel mainPanel = null;
@@ -76,31 +76,31 @@ public class GUI extends JDialog implements ActionListener {
 	private ButtonGroup radioButtonsGroup = null;
 	private JButton bloodPressureButton = null;
 	private JButton weighingScaleButton = null;
-	private JLabel uaalLogoLabel = null;
-	private JLabel uaalPublisherMainLabel = null;
-	private JLabel uaalPublisherLogoLabel = null;
-	private JLabel uaalPublisherWeightValueLabel = null;
-	public static JTextField uaalPublisherWeightValueTextfield = null;
-	private JLabel uaalPublisherWeightUnitLabel = null;
-	public static JTextField uaalPublisherWeightUnitTextfield = null;
-	private JLabel uaalPublisherBloodPressureSysValueLabel = null;
-	public static JTextField uaalPublisherBloodPressureSysValueTextfield = null;
-	private JLabel uaalPublisherBloodPressureDiaValueLabel = null;
-	public static JTextField uaalPublisherBloodPressureDiaValueTextfield = null;
-	private JLabel uaalPublisherBloodPressurePulValueLabel = null;
-	public static JTextField uaalPublisherBloodPressurePulValueTextfield = null;
-	private JButton uaalPublisherButton = null;
+	private JLabel logoLabel = null;
+	private JLabel publisherMainLabel = null;
+	private JLabel publisherLogoLabel = null;
+	private JLabel publisherWeightValueLabel = null;
+	public static JTextField publisherWeightValueTextfield = null;
+	private JLabel publisherWeightUnitLabel = null;
+	public static JTextField publisherWeightUnitTextfield = null;
+	private JLabel publisherBloodPressureSysValueLabel = null;
+	public static JTextField publisherBloodPressureSysValueTextfield = null;
+	private JLabel publisherBloodPressureDiaValueLabel = null;
+	public static JTextField publisherBloodPressureDiaValueTextfield = null;
+	private JLabel publisherBloodPressurePulValueLabel = null;
+	public static JTextField publisherBloodPressurePulValueTextfield = null;
+	private JButton publisherButton = null;
 
 	/** Constants */
 	private static final String weighingScaleImage = "ws.png";
 	private static final String bloodPressureImage = "bp.png";
-	private static final String uaalLogoImage = "uaal_logo_resized.jpg";
+	private static final String logoImage = "uaal_logo_resized.jpg";
 
 	/** Bundle context object */
 	private static BundleContext ctx = null;
 
 	/** Publisher object to send events */
-	private static Publisher uaalX73Publisher = null;
+	private static Publisher X73Publisher = null;
 
 	/** HDP manager object */
 	private hdpManager manager = null;
@@ -129,7 +129,7 @@ public class GUI extends JDialog implements ActionListener {
 		// Main dialog
 		setResizable(false);
 		setBounds(100, 100, 550, 375);
-		setTitle("uAAL Continua manager client");
+		setTitle("universAAL Continua manager client");
 		getContentPane().setLayout(new BorderLayout());
 		// Main panel (content pane)
 		mainPanel = createJPanel();
@@ -142,11 +142,11 @@ public class GUI extends JDialog implements ActionListener {
 
 	/** Create components */
 	public void createComponents() {
-		// Label (uaal image icon)
-		uaalLogoLabel = new JLabel("");
-		uaalLogoLabel.setIcon(new ImageIcon(ctx.getBundle().getResource(uaalLogoImage)));
-		uaalLogoLabel.setBounds(75, 10, 300, 81);
-		mainPanel.add(uaalLogoLabel);
+		// Label (universAAL image icon)
+		logoLabel = new JLabel("");
+		logoLabel.setIcon(new ImageIcon(ctx.getBundle().getResource(logoImage)));
+		logoLabel.setBounds(75, 10, 300, 81);
+		mainPanel.add(logoLabel);
 		// Radio buttons group
 		radiobuttonPanel = new JPanel();
 		radiobuttonPanel.setLayout(new GridLayout(1, 0));
@@ -156,7 +156,7 @@ public class GUI extends JDialog implements ActionListener {
 		realMeasurementButton.setToolTipText("Continua devices should be paired first");
 		simulatedMeasurementButton = createJRadioButton("Simulated measurement");
 		simulatedMeasurementButton
-				.setToolTipText("Random values will be published to uAAL context bus (Continua devices not required)");
+				.setToolTipText("Random values will be published to universAAL context bus (Continua devices not required)");
 		radiobuttonPanel.add(realMeasurementButton);
 		radiobuttonPanel.add(simulatedMeasurementButton);
 		mainPanel.add(radiobuttonPanel);
@@ -212,30 +212,30 @@ public class GUI extends JDialog implements ActionListener {
 			// Blood pressure device
 			if (realMeasurementButton.isSelected()) {
 				realMeasurement = true;
-				createUaalPublisher("bloodPressure", "real");
+				createPublisher("bloodPressure", "real");
 			} else if (simulatedMeasurementButton.isSelected()) {
 				realMeasurement = false;
-				createUaalPublisher("bloodPressure", "simulated");
+				createPublisher("bloodPressure", "simulated");
 			}
 		} else if (e.getActionCommand().equals("weighingScale")) {
 			// Weighing scale device
 			if (realMeasurementButton.isSelected()) {
 				realMeasurement = true;
-				createUaalPublisher("weighingScale", "real");
+				createPublisher("weighingScale", "real");
 			} else if (simulatedMeasurementButton.isSelected()) {
 				realMeasurement = false;
-				createUaalPublisher("weighingScale", "simulated");
+				createPublisher("weighingScale", "simulated");
 			}
 		} else if (e.getActionCommand().equals("publishData")) {
-			// Publish data to uAAL context bus. Ensure that values are not NULL
-			uaalX73Publisher = new Publisher(ctx);
+			// Publish data to universAAL context bus. Ensure that values are not NULL
+			X73Publisher = new Publisher(ctx);
 			if (realMeasurement) {
 				// Real values
 				if (remoteDeviceType.equals("WeightingScale")) {
 					if (finalMeasuredWeightData != -1.0) {
 						double temp_1 = shortDecimalNumber(finalMeasuredWeightData) * 1000;
 						int temp = (int) temp_1;
-						uaalX73Publisher.publishWeightEvent(temp);
+						X73Publisher.publishWeightEvent(temp);
 						// stopPublisherGUI();
 					}
 				} else {
@@ -244,69 +244,69 @@ public class GUI extends JDialog implements ActionListener {
 						int temp_0 = (int) finalSysBloodPressureData;
 						int temp_1 = (int) finalDiaBloodPressureData;
 						int temp_2 = (int) finalHrBloodPressureData;
-						uaalX73Publisher.publishBloodPressureEvent(temp_0, temp_1, temp_2);
+						X73Publisher.publishBloodPressureEvent(temp_0, temp_1, temp_2);
 						// stopPublisherGUI();
 					}
 				}
 			} else {
 				// Random values
 				if (remoteDeviceType.equals("WeightingScale")) {
-					uaalX73Publisher.publishWeightEvent(Integer.parseInt(uaalPublisherWeightValueTextfield.getText()));
+					X73Publisher.publishWeightEvent(Integer.parseInt(publisherWeightValueTextfield.getText()));
 					// stopPublisherGUI();
 				} else {
-					uaalX73Publisher.publishBloodPressureEvent(
-							Integer.parseInt(uaalPublisherBloodPressureSysValueTextfield.getText()),
-							Integer.parseInt(uaalPublisherBloodPressureDiaValueTextfield.getText()),
-							Integer.parseInt(uaalPublisherBloodPressurePulValueTextfield.getText()));
+					X73Publisher.publishBloodPressureEvent(
+							Integer.parseInt(publisherBloodPressureSysValueTextfield.getText()),
+							Integer.parseInt(publisherBloodPressureDiaValueTextfield.getText()),
+							Integer.parseInt(publisherBloodPressurePulValueTextfield.getText()));
 					// stopPublisherGUI();
 				}
 			}
 		}
 	}
 
-	/** Create and show uAAL publisher frame */
-	public void createUaalPublisher(String device, String type) {
+	/** Create and show universAAL publisher frame */
+	public void createPublisher(String device, String type) {
 		// Hide main GUI
 		setVisible(false);
 		// Create dialog frame
-		uaalPublisher = new JDialog(this, "uAAL publisher", true);
-		uaalPublisher.setResizable(false);
-		uaalPublisher.setBounds(100, 100, 650, 475);
-		uaalPublisher.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-		uaalPublisher.addWindowListener(new WindowAdapter() {
+		publisher = new JDialog(this, "universAAL publisher", true);
+		publisher.setResizable(false);
+		publisher.setBounds(100, 100, 650, 475);
+		publisher.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		publisher.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				stopPublisherGUI();
 			}
 		});
 		// Main panel
 		mainPublisherPanel = createJPanel();
-		uaalPublisher.getContentPane().add(mainPublisherPanel, BorderLayout.CENTER);
+		publisher.getContentPane().add(mainPublisherPanel, BorderLayout.CENTER);
 		// Main text label
-		uaalPublisherMainLabel = createJLabel("", 200, 5, 350, 50, Font.BOLD, 24);
+		publisherMainLabel = createJLabel("", 200, 5, 350, 50, Font.BOLD, 24);
 		// Image icon
-		uaalPublisherLogoLabel = new JLabel("");
-		uaalPublisherLogoLabel.setBounds(25, 75, 218, 145);
+		publisherLogoLabel = new JLabel("");
+		publisherLogoLabel.setBounds(25, 75, 218, 145);
 		// Check Continua agent selected
 		if (device.equals("bloodPressure")) {
-			uaalPublisherMainLabel.setText("Blood pressure monitor");
-			uaalPublisherLogoLabel.setIcon(new ImageIcon(ctx.getBundle().getResource(bloodPressureImage)));
-			uaalPublisherBloodPressureSysValueLabel = createJLabel("SYS(mmHg)", 250, 100, 100, 50, Font.PLAIN, 16);
-			uaalPublisherBloodPressureSysValueTextfield = createJTextfield(400, 100, 100, 50, Font.PLAIN, 16);
-			uaalPublisherBloodPressureDiaValueLabel = createJLabel("DIA(mmHg)", 250, 150, 100, 50, Font.PLAIN, 16);
-			uaalPublisherBloodPressureDiaValueTextfield = createJTextfield(400, 150, 100, 50, Font.PLAIN, 16);
-			uaalPublisherBloodPressurePulValueLabel = createJLabel("     BPM", 250, 200, 100, 50, Font.PLAIN, 16);
-			uaalPublisherBloodPressurePulValueTextfield = createJTextfield(400, 200, 100, 50, Font.PLAIN, 16);
+			publisherMainLabel.setText("Blood pressure monitor");
+			publisherLogoLabel.setIcon(new ImageIcon(ctx.getBundle().getResource(bloodPressureImage)));
+			publisherBloodPressureSysValueLabel = createJLabel("SYS(mmHg)", 250, 100, 100, 50, Font.PLAIN, 16);
+			publisherBloodPressureSysValueTextfield = createJTextfield(400, 100, 100, 50, Font.PLAIN, 16);
+			publisherBloodPressureDiaValueLabel = createJLabel("DIA(mmHg)", 250, 150, 100, 50, Font.PLAIN, 16);
+			publisherBloodPressureDiaValueTextfield = createJTextfield(400, 150, 100, 50, Font.PLAIN, 16);
+			publisherBloodPressurePulValueLabel = createJLabel("     BPM", 250, 200, 100, 50, Font.PLAIN, 16);
+			publisherBloodPressurePulValueTextfield = createJTextfield(400, 200, 100, 50, Font.PLAIN, 16);
 		} else {
-			uaalPublisherMainLabel.setText("Weighing scale");
-			uaalPublisherLogoLabel.setIcon(new ImageIcon(ctx.getBundle().getResource(weighingScaleImage)));
-			uaalPublisherWeightValueLabel = createJLabel("Weight value", 250, 100, 150, 50, Font.PLAIN, 16);
-			uaalPublisherWeightValueTextfield = createJTextfield(400, 100, 100, 50, Font.PLAIN, 16);
-			uaalPublisherWeightUnitLabel = createJLabel(" Weight unit", 250, 150, 150, 50, Font.PLAIN, 16);
-			uaalPublisherWeightUnitTextfield = createJTextfield(400, 150, 100, 50, Font.PLAIN, 16);
+			publisherMainLabel.setText("Weighing scale");
+			publisherLogoLabel.setIcon(new ImageIcon(ctx.getBundle().getResource(weighingScaleImage)));
+			publisherWeightValueLabel = createJLabel("Weight value", 250, 100, 150, 50, Font.PLAIN, 16);
+			publisherWeightValueTextfield = createJTextfield(400, 100, 100, 50, Font.PLAIN, 16);
+			publisherWeightUnitLabel = createJLabel(" Weight unit", 250, 150, 150, 50, Font.PLAIN, 16);
+			publisherWeightUnitTextfield = createJTextfield(400, 150, 100, 50, Font.PLAIN, 16);
 		}
-		uaalPublisherButton = createJButton(null, 250, 275, 200, 25, "publishData");
-		uaalPublisherButton.setText("Publish to uAAL");
-		uaalPublisherButton.setToolTipText("Public measured data to uAAL context bus");
+		publisherButton = createJButton(null, 250, 275, 200, 25, "publishData");
+		publisherButton.setText("Publish to universAAL");
+		publisherButton.setToolTipText("Public measured data to universAAL context bus");
 		// Check type of measurement
 		if (type.equals("real")) {
 			// Run hdp manager and wait for agent values
@@ -321,32 +321,32 @@ public class GUI extends JDialog implements ActionListener {
 			// Generate random values
 			if (device.equals("bloodPressure")) {
 				remoteDeviceType = "BloodPressureMonitor";
-				uaalPublisherBloodPressureSysValueTextfield.setText("" + getRandomValue(90, 119));
-				uaalPublisherBloodPressureDiaValueTextfield.setText("" + getRandomValue(60, 79));
-				uaalPublisherBloodPressurePulValueTextfield.setText("" + getRandomValue(49, 198));
+				publisherBloodPressureSysValueTextfield.setText("" + getRandomValue(90, 119));
+				publisherBloodPressureDiaValueTextfield.setText("" + getRandomValue(60, 79));
+				publisherBloodPressurePulValueTextfield.setText("" + getRandomValue(49, 198));
 			} else {
 				remoteDeviceType = "WeightingScale";
-				uaalPublisherWeightValueTextfield.setText("" + getRandomValue(50, 110));
-				uaalPublisherWeightUnitTextfield.setText("kg");
+				publisherWeightValueTextfield.setText("" + getRandomValue(50, 110));
+				publisherWeightUnitTextfield.setText("kg");
 			}
 		}
 		// Add components to the panel
-		mainPublisherPanel.add(uaalPublisherMainLabel);
-		mainPublisherPanel.add(uaalPublisherLogoLabel);
-		addJLabelComponent(uaalPublisherBloodPressureSysValueLabel);
-		addJLabelComponent(uaalPublisherBloodPressureSysValueTextfield);
-		addJLabelComponent(uaalPublisherBloodPressureDiaValueLabel);
-		addJLabelComponent(uaalPublisherBloodPressureDiaValueTextfield);
-		addJLabelComponent(uaalPublisherBloodPressurePulValueLabel);
-		addJLabelComponent(uaalPublisherBloodPressurePulValueTextfield);
-		addJLabelComponent(uaalPublisherWeightValueLabel);
-		addJLabelComponent(uaalPublisherWeightValueTextfield);
-		addJLabelComponent(uaalPublisherWeightUnitLabel);
-		addJLabelComponent(uaalPublisherWeightUnitTextfield);
-		mainPublisherPanel.add(uaalPublisherButton);
+		mainPublisherPanel.add(publisherMainLabel);
+		mainPublisherPanel.add(publisherLogoLabel);
+		addJLabelComponent(publisherBloodPressureSysValueLabel);
+		addJLabelComponent(publisherBloodPressureSysValueTextfield);
+		addJLabelComponent(publisherBloodPressureDiaValueLabel);
+		addJLabelComponent(publisherBloodPressureDiaValueTextfield);
+		addJLabelComponent(publisherBloodPressurePulValueLabel);
+		addJLabelComponent(publisherBloodPressurePulValueTextfield);
+		addJLabelComponent(publisherWeightValueLabel);
+		addJLabelComponent(publisherWeightValueTextfield);
+		addJLabelComponent(publisherWeightUnitLabel);
+		addJLabelComponent(publisherWeightUnitTextfield);
+		mainPublisherPanel.add(publisherButton);
 		// Show
 		// TODO cambio para review true -> false
-		uaalPublisher.setVisible(false);
+		publisher.setVisible(false);
 	}
 
 	/** Create JLabel */
@@ -379,16 +379,16 @@ public class GUI extends JDialog implements ActionListener {
 
 	/** Reset components */
 	public void resetComponentsStatus() {
-		uaalPublisherWeightValueLabel = null;
-		uaalPublisherWeightValueTextfield = null;
-		uaalPublisherWeightUnitLabel = null;
-		uaalPublisherWeightUnitTextfield = null;
-		uaalPublisherBloodPressureSysValueLabel = null;
-		uaalPublisherBloodPressureSysValueTextfield = null;
-		uaalPublisherBloodPressureDiaValueLabel = null;
-		uaalPublisherBloodPressureDiaValueTextfield = null;
-		uaalPublisherBloodPressurePulValueLabel = null;
-		uaalPublisherBloodPressurePulValueTextfield = null;
+		publisherWeightValueLabel = null;
+		publisherWeightValueTextfield = null;
+		publisherWeightUnitLabel = null;
+		publisherWeightUnitTextfield = null;
+		publisherBloodPressureSysValueLabel = null;
+		publisherBloodPressureSysValueTextfield = null;
+		publisherBloodPressureDiaValueLabel = null;
+		publisherBloodPressureDiaValueTextfield = null;
+		publisherBloodPressurePulValueLabel = null;
+		publisherBloodPressurePulValueTextfield = null;
 		remoteDeviceType = null;
 		realMeasurement = false;
 		finalMeasuredWeightData = -1.0;
@@ -414,15 +414,15 @@ public class GUI extends JDialog implements ActionListener {
 
 	// TODO
 	public static void publishDataToContextBus() {
-		// Publish data to uAAL context bus. Ensure that values are not NULL
-		uaalX73Publisher = new Publisher(ctx);
+		// Publish data to universAAL context bus. Ensure that values are not NULL
+		X73Publisher = new Publisher(ctx);
 		if (realMeasurement) {
 			// Real values
 			if (remoteDeviceType.equals("WeightingScale")) {
 				if (finalMeasuredWeightData != -1.0) {
 					double temp_1 = shortDecimalNumber(finalMeasuredWeightData) * 1000;
 					int temp = (int) temp_1;
-					uaalX73Publisher.publishWeightEvent(temp);
+					X73Publisher.publishWeightEvent(temp);
 					// stopPublisherGUI();
 				}
 			} else {
@@ -431,20 +431,20 @@ public class GUI extends JDialog implements ActionListener {
 					int temp_0 = (int) finalSysBloodPressureData;
 					int temp_1 = (int) finalDiaBloodPressureData;
 					int temp_2 = (int) finalHrBloodPressureData;
-					uaalX73Publisher.publishBloodPressureEvent(temp_0, temp_1, temp_2);
+					X73Publisher.publishBloodPressureEvent(temp_0, temp_1, temp_2);
 					// stopPublisherGUI();
 				}
 			}
 		} else {
 			// Random values
 			if (remoteDeviceType.equals("WeightingScale")) {
-				uaalX73Publisher.publishWeightEvent(Integer.parseInt(uaalPublisherWeightValueTextfield.getText()));
+				X73Publisher.publishWeightEvent(Integer.parseInt(publisherWeightValueTextfield.getText()));
 				// stopPublisherGUI();
 			} else {
-				uaalX73Publisher.publishBloodPressureEvent(
-						Integer.parseInt(uaalPublisherBloodPressureSysValueTextfield.getText()),
-						Integer.parseInt(uaalPublisherBloodPressureDiaValueTextfield.getText()),
-						Integer.parseInt(uaalPublisherBloodPressurePulValueTextfield.getText()));
+				X73Publisher.publishBloodPressureEvent(
+						Integer.parseInt(publisherBloodPressureSysValueTextfield.getText()),
+						Integer.parseInt(publisherBloodPressureDiaValueTextfield.getText()),
+						Integer.parseInt(publisherBloodPressurePulValueTextfield.getText()));
 				// stopPublisherGUI();
 			}
 		}
@@ -468,8 +468,8 @@ public class GUI extends JDialog implements ActionListener {
 				manager = null;
 			}
 			// resetComponentsStatus();
-			if (uaalPublisher != null)
-				uaalPublisher.dispose();
+			if (publisher != null)
+				publisher.dispose();
 			setVisible(false);
 		}
 	}
@@ -481,7 +481,7 @@ public class GUI extends JDialog implements ActionListener {
 			manager = null;
 		}
 		// resetComponentsStatus();
-		if (uaalPublisher != null)
-			uaalPublisher.dispose();
+		if (publisher != null)
+			publisher.dispose();
 	}
 }

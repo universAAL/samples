@@ -117,8 +117,8 @@ public class hdpManager implements hdpManagerListener {
 	public void onWeightDataReceived(String str) {
 		if (str != null) {
 			GUI.finalMeasuredWeightData = Double.parseDouble(str);
-			GUI.uaalPublisherWeightValueTextfield.setText(shortDecimalNumber(Double.parseDouble(str)));
-			GUI.uaalPublisherWeightUnitTextfield.setText("kg");
+			GUI.publisherWeightValueTextfield.setText(shortDecimalNumber(Double.parseDouble(str)));
+			GUI.publisherWeightUnitTextfield.setText("kg");
 			GUI.mainPanel.repaint();
 			// TODO cambio para la review
 			GUI.publishDataToContextBus();
@@ -128,7 +128,7 @@ public class hdpManager implements hdpManagerListener {
 	public void onDiastolicDataReceived(String str) {
 		if (str != null) {
 			GUI.finalDiaBloodPressureData = Double.parseDouble(str);
-			GUI.uaalPublisherBloodPressureDiaValueTextfield.setText(shortDecimalNumber(Double.parseDouble(str)));
+			GUI.publisherBloodPressureDiaValueTextfield.setText(shortDecimalNumber(Double.parseDouble(str)));
 			GUI.mainPanel.repaint();
 		}
 	}
@@ -136,7 +136,7 @@ public class hdpManager implements hdpManagerListener {
 	public void onSystolicDataReceived(String str) {
 		if (str != null) {
 			GUI.finalSysBloodPressureData = Double.parseDouble(str);
-			GUI.uaalPublisherBloodPressureSysValueTextfield.setText(shortDecimalNumber(Double.parseDouble(str)));
+			GUI.publisherBloodPressureSysValueTextfield.setText(shortDecimalNumber(Double.parseDouble(str)));
 			GUI.mainPanel.repaint();
 		}
 	}
@@ -144,7 +144,7 @@ public class hdpManager implements hdpManagerListener {
 	public void onHeartRateDataReceived(String str) {
 		if (str != null) {
 			GUI.finalHrBloodPressureData = Double.parseDouble(str);
-			GUI.uaalPublisherBloodPressurePulValueTextfield.setText(shortDecimalNumber(Double.parseDouble(str)));
+			GUI.publisherBloodPressurePulValueTextfield.setText(shortDecimalNumber(Double.parseDouble(str)));
 			GUI.mainPanel.repaint();
 			// TODO cambio para la review
 			GUI.publishDataToContextBus();

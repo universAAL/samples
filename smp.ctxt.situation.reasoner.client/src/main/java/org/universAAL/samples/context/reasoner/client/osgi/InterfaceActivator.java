@@ -27,11 +27,11 @@ import org.osgi.framework.ServiceReference;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.serialization.MessageContentSerializer;
 
-public class UAALInterfaceActivator implements ServiceListener {
+public class InterfaceActivator implements ServiceListener {
 	private BundleContext osgiContext = null;
 	public static MessageContentSerializer serializer = null;
 
-	UAALInterfaceActivator(BundleContext osgiContext, ModuleContext context) throws InvalidSyntaxException {
+	InterfaceActivator(BundleContext osgiContext, ModuleContext context) throws InvalidSyntaxException {
 		this.osgiContext = osgiContext;
 
 		// Look for MessageContentSerializer of mw.data.serialization

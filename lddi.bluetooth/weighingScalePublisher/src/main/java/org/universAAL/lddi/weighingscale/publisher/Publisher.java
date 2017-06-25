@@ -19,7 +19,7 @@
  */
 package org.universAAL.lddi.weighingscale.publisher;
 /**
- * x073 Continua agent publisher (agent events will be published over uAAL bus)
+ * x073 Continua agent publisher (agent events will be published over universAAL bus)
  *
  * @author Angel Martinez-Cavero (thx to Miguel-Angel Llorente)
  * @version 0
@@ -75,13 +75,13 @@ public class Publisher {
 
 	// Methods
 	/**
-	 * Publish weighting scale events to uAAL bus.
+	 * Publish weighting scale events to universAAL bus.
 	 *
 	 * @param weight
 	 *            - weight measured value
 	 */
 	public void publishEvent(String weight) {
-		System.out.println("[TEST] WS event published to uaal context bus");
+		System.out.println("[TEST] WS event published to universAAL context bus");
 		PersonWeight w = new PersonWeight();
 		w.setProperty(Measurement.PROP_VALUE, Float.parseFloat(weight));
 		WeighingScale ws = new WeighingScale("http://www.tsbtecnologias.es/WeighingScale.owl#WeighingScale");

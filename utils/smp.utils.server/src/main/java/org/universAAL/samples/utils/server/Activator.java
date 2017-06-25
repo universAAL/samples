@@ -39,10 +39,10 @@ public class Activator implements BundleActivator {
 	private static final String PROVIDER_URI = SERVER_NAMESPACE + "MyProvider";
 	public static final String LIGHT_URI_PREFIX = SERVER_NAMESPACE + "MyLight";
 	private static final String LIGHT_LOC_PREFIX = SERVER_NAMESPACE + "MyLocation";
-	// OSGi & uAAL contexts
+	// OSGi & universAAL contexts
 	public static BundleContext osgiContext = null;
 	public static ModuleContext context = null;
-	// uAAL wrappers: Context Publisher and Service Callee
+	// universAAL wrappers: Context Publisher and Service Callee
 	protected static UtilPublisher publisher;
 	protected static CalleeExample callee;
 	// The lights the app controls. It uses the ontology model directly but it
@@ -59,9 +59,9 @@ public class Activator implements BundleActivator {
 		}
 	}
 
-	// Start the wrapping to uAAL
+	// Start the wrapping to universAAL
 	public void start(BundleContext bcontext) throws Exception {
-		// Get the uAAL module context
+		// Get the universAAL module context
 		Activator.osgiContext = bcontext;
 		Activator.context = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
@@ -74,7 +74,7 @@ public class Activator implements BundleActivator {
 		callee = new CalleeExample(context);
 	}
 
-	// Stop the wrapping to uAAL
+	// Stop the wrapping to universAAL
 	public void stop(BundleContext arg0) throws Exception {
 		callee.close();
 		publisher.close();

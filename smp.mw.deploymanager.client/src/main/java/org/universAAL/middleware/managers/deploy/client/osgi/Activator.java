@@ -62,7 +62,7 @@ import org.universAAL.middleware.managers.deploy.uapp.model.Part;
 
 public class Activator implements BundleActivator {
 	private DeployManager deployManager;
-	private SpaceManager aalSpaceManager;
+	private SpaceManager spaceManager;
 	// JAXB
 	private JAXBContext jc;
 	private Unmarshaller unmarshaller;
@@ -75,7 +75,7 @@ public class Activator implements BundleActivator {
 	private final static String UAAP_ID = "prova";
 
 	private final static Object[] DEPLOY_MANAGER_FILTER = new Object[] { DeployManager.class.getName().toString() };
-	private final static Object[] AAL_SPACE_FILTER = new Object[] { SpaceManager.class.getName().toString() };
+	private final static Object[] SPACE_FILTER = new Object[] { SpaceManager.class.getName().toString() };
 
 	private Object getObject(ModuleContext mc, Object[] filter) {
 		Object sr = null;
@@ -85,12 +85,12 @@ public class Activator implements BundleActivator {
 
 	private void initClient(ModuleContext mc) {
 		Object dm = getObject(mc, DEPLOY_MANAGER_FILTER);
-		Object aalSpace = getObject(mc, AAL_SPACE_FILTER);
-		if (dm != null && aalSpace != null) {
+		Object space = getObject(mc, SPACE_FILTER);
+		if (dm != null && space != null) {
 			deployManager = (DeployManager) dm;
-			aalSpaceManager = (SpaceManager) aalSpace;
+			spaceManager = (SpaceManager) space;
 		} else {
-			throw new IllegalStateException("Either Deploy Manger or AAL Space Mangar shared object are not available");
+			throw new IllegalStateException("Either Deploy Manger or Space Mangar shared object are not available");
 		}
 	}
 
@@ -118,12 +118,12 @@ public class Activator implements BundleActivator {
 			e.printStackTrace();
 		}
 		Map<PeerCard, List<Part>> layout = new HashMap<PeerCard, List<Part>>();
-		ArrayList<PeerCard> peerList = new ArrayList<PeerCard>(aalSpaceManager.getPeers().values());
-		peerList.add(aalSpaceManager.getMyPeerCard());
+		ArrayList<PeerCard> peerList = new ArrayList<PeerCard>(spaceManager.getPeers().values());
+		peerList.add(spaceManager.getMyPeerCard());
 		PeerCard[] peers = peerList.toArray(new PeerCard[] {});
 		HashMap<String, Serializable> peersFilter = new HashMap<String, Serializable>();
 		peersFilter.put("karaf.version", null);
-		MatchingResult matchingPeers = aalSpaceManager.getMatchingPeers(peersFilter);
+		MatchingResult matchingPeers = spaceManager.getMatchingPeers(peersFilter);
 		peers = matchingPeers.getPeers();
 
 		UAPPPackage pkg = new UAPPPackage(USRV_ID, UAAP_ID, uAPPFolder, layout);

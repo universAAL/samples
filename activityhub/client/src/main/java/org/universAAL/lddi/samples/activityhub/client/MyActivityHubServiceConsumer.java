@@ -40,7 +40,7 @@ import org.universAAL.ontology.activityhub.factory.ActivityHubFactory;
 /**
  * This class provides ontological service requests and processes the service
  * responses This class is stateless; no objects (sensors) are stored here
- * LogUtil from uAAL-Middleware is used here
+ * LogUtil from universAAL-Middleware is used here
  *
  * @author Thomas Fuxreiter (foex@gmx.at)
  */
@@ -69,7 +69,7 @@ public class MyActivityHubServiceConsumer {
 	 * Contructor
 	 *
 	 * @param mc
-	 *            uAAL-Middleware ModuleContext
+	 *            universAAL-Middleware ModuleContext
 	 * @param ahc
 	 *            link to client application
 	 */

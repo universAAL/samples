@@ -26,7 +26,7 @@ import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.ontology.device.LightController;
 import org.universAAL.support.utils.context.mid.UtilSubscriber;
 
-// Context Subscriber uAAL wrapper
+// Context Subscriber universAAL wrapper
 public class SubscriberExample extends UtilSubscriber {
 
 	// Extended constructor

@@ -29,7 +29,7 @@ import org.universAAL.ontology.device.StatusValue;
 import org.universAAL.support.utils.service.mid.InvalidOntologyUtilException;
 import org.universAAL.support.utils.service.top.UtilActuatorCallee;
 
-//Service Callee uAAL wrapper for a typical actuator service with default profiles
+//Service Callee universAAL wrapper for a typical actuator service with default profiles
 public class CalleeExample extends UtilActuatorCallee {
 
 	// Extended constructor

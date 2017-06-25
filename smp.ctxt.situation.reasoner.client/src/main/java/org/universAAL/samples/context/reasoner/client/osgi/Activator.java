@@ -52,7 +52,7 @@ public class Activator implements BundleActivator {
 
 		dataHome = context.getDataFolder();
 
-		new UAALInterfaceActivator(bcontext, context);
+		new InterfaceActivator(bcontext, context);
 		gui = new GUIActivator(bcontext, context);
 	}
 

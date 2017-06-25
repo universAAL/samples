@@ -38,7 +38,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import org.universAAL.ontology.reasoner.Situation;
-import org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller;
+import org.universAAL.samples.context.reasoner.client.interfaces.ReasoningCaller;
 
 /**
  * Since a Situation consist of an URI for subject, predicate and object of an

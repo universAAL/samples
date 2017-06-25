@@ -56,7 +56,7 @@ public class Activator implements ModuleActivator {
 		// specific light actuator. All other operations (e.g. change effects or
 		// return values) only operate on those filtered instances.
 		turnOn.addValueFilter(new String[] { DeviceService.PROP_CONTROLS },
-				new LightActuator("urn:org.universAAL.aal_space:KitchenLight"));
+				new LightActuator("urn:org.universAAL.space:KitchenLight"));
 
 		// We add a change effect: at the path 'controls-hasValue' the service
 		// should change the value to 100

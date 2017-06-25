@@ -37,7 +37,7 @@ import javax.swing.ListModel;
 import javax.swing.WindowConstants;
 
 /**
- * This is the connector class to the uAAL related ontology classes, mainly
+ * This is the connector class to the universAAL related ontology classes, mainly
  * DeviceContextListener.java This class knows nothing about Ontologies! It
  * could be part of a Java application. Here, it is a single class application
  * with a simple GUI. 2 Buttons are provided for 'getAllSensors' and

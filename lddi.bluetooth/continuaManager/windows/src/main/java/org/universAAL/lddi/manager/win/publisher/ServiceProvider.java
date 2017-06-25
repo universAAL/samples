@@ -18,7 +18,7 @@
     limitations under the License.
  */
 /**
- * x073 Continua agent publisher (agent events will be published over uAAL bus)
+ * x073 Continua agent publisher (agent events will be published over universAAL bus)
  *
  * @author Angel Martinez-Cavero
  * @version 0
@@ -73,7 +73,7 @@ public class ServiceProvider extends ServiceCallee {
 	// String operation = call.getProcessURI();
 	// if(operation != null && operation.startsWith(PROF_START_UI)) {
 	// Object inputUser =
-	// call.getProperty(ServiceRequest.PROP_uAAL_INVOLVED_HUMAN_USER);
+	// call.getProperty(ServiceRequest.PROP_INVOLVED_HUMAN_USER);
 	// // Create and show main GUI frame
 	// gui.setVisible(true);
 	// return new ServiceResponse(CallStatus.succeeded);

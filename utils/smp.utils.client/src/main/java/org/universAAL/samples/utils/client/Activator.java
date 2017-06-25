@@ -34,17 +34,17 @@ public class Activator implements BundleActivator {
 	public static final String CLIENT_NAMESPACE = "http://ontology.universAAL.org/SimpleLightClient.owl#";
 	public static final String CLIENT_URL = "http://www.samples.org";
 	public static final String CLIENT_APPNAME = "Lighting Client Example";
-	// OSGi & uAAL contexts
+	// OSGi & universAAL contexts
 	public static BundleContext osgiContext = null;
 	public static ModuleContext context = null;
-	// uAAL wrappers: Service Caller, Context Subscriber and UI Caller
+	// universAAL wrappers: Service Caller, Context Subscriber and UI Caller
 	protected static ServiceCaller caller;
 	protected static SubscriberExample subscriber;
 	protected static UIExample ui;
 
-	// Start the wrapping to uAAL
+	// Start the wrapping to universAAL
 	public void start(BundleContext bcontext) throws Exception {
-		// Get the uAAL module context
+		// Get the universAAL module context
 		Activator.osgiContext = bcontext;
 		Activator.context = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
@@ -57,7 +57,7 @@ public class Activator implements BundleActivator {
 		subscriber = new SubscriberExample(context, LightController.MY_URI, LightController.PROP_HAS_VALUE, null);
 	}
 
-	// Stop the wrapping to uAAL
+	// Stop the wrapping to universAAL
 	public void stop(BundleContext arg0) throws Exception {
 		subscriber.close();
 		ui.close();

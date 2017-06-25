@@ -84,7 +84,7 @@ public class MyTest extends MWTestCase {
 	public void test() {
 		ServiceRequest turnOn = new ServiceRequest(new DeviceService(), null);
 		turnOn.addValueFilter(new String[] { DeviceService.PROP_CONTROLS },
-				new LightActuator("urn:org.universAAL.aal_space:KitchenLight"));
+				new LightActuator("urn:org.universAAL.space:KitchenLight"));
 		turnOn.addChangeEffect(new String[] { DeviceService.PROP_CONTROLS, ValueDevice.PROP_HAS_VALUE },
 				new Integer(100));
 		caller.call(turnOn);

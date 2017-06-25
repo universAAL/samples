@@ -31,7 +31,7 @@ import org.universAAL.support.utils.ui.low.Dialog;
 import org.universAAL.support.utils.ui.low.Message;
 import org.universAAL.support.utils.ui.mid.UtilUICaller;
 
-// UI Caller uAAL wrapper
+// UI Caller universAAL wrapper
 public class UIExample extends UtilUICaller {
 	// Declare URI & paths constants to be used in requests and forms
 	private static final String REF_ON = Activator.APP_NAMESPACE + "SubmitON";

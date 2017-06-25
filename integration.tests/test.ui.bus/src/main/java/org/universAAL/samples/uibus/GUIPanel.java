@@ -180,7 +180,7 @@ public class GUIPanel extends javax.swing.JFrame {
 	// return;
 	// }
 	// InputEvent ie = new InputEvent(Activator.sampleUser, null,
-	// InputEvent.uAAL_MAIN_MENU_REQUEST);
+	// InputEvent.MAIN_MENU_REQUEST);
 	// long t0 = System.currentTimeMillis();
 	// for (int i = 0; i < siz; i++) {
 	// Activator.uipub.publish(ie);
@@ -203,7 +203,7 @@ public class GUIPanel extends javax.swing.JFrame {
 
 	// private void handlerButton2ActionPerformed(ActionEvent evt) {
 	// Activator.uipub.publish(new InputEvent(Activator.sampleUser, null,
-	// InputEvent.uAAL_MAIN_MENU_REQUEST));
+	// InputEvent.MAIN_MENU_REQUEST));
 	// }
 
 }

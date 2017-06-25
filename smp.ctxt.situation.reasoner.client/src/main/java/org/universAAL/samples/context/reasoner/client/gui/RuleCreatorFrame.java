@@ -42,7 +42,7 @@ import javax.swing.WindowConstants;
 
 import org.universAAL.ontology.reasoner.Query;
 import org.universAAL.ontology.reasoner.Situation;
-import org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller;
+import org.universAAL.samples.context.reasoner.client.interfaces.ReasoningCaller;
 
 /**
  * This frame is quite easy, because all have to be done to create a rule is to

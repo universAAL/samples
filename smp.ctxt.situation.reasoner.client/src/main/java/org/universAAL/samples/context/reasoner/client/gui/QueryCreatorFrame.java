@@ -44,8 +44,8 @@ import javax.swing.WindowConstants;
 import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.middleware.owl.ManagedIndividual;
 import org.universAAL.ontology.reasoner.Query;
+import org.universAAL.samples.context.reasoner.client.interfaces.ReasoningCaller;
 import org.universAAL.samples.context.reasoner.client.osgi.GUIActivator;
-import org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller;
 
 /**
  *

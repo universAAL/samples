@@ -37,7 +37,7 @@ import org.universAAL.support.utils.service.Arg;
 import org.universAAL.support.utils.service.Path;
 import org.universAAL.support.utils.service.low.Profile;
 
-// Service Callee uAAL wrapper
+// Service Callee universAAL wrapper
 public class CalleeExample extends ServiceCallee {
 	// Declare service URI
 	public static final String MY_URI = Activator.SERVER_NAMESPACE + "MyService";

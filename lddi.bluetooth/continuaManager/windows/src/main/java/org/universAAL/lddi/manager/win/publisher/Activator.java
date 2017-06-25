@@ -18,7 +18,7 @@
     limitations under the License.
  */
 /**
- * x073 Continua agent publisher (agent events will be published over uAAL bus)
+ * x073 Continua agent publisher (agent events will be published over universAAL bus)
  *
  * @author Angel Martinez-Cavero
  * @version 0

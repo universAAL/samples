@@ -17,7 +17,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
  */
-package org.universAAL.samples.context.reasoner.client.uaalinterface;
+package org.universAAL.samples.context.reasoner.client.interfaces;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -36,7 +36,7 @@ import org.universAAL.middleware.owl.MergedRestriction;
 import org.universAAL.middleware.rdf.TypeMapper;
 import org.universAAL.ontology.reasoner.util.ElementModel;
 import org.universAAL.samples.context.reasoner.client.osgi.Activator;
-import org.universAAL.samples.context.reasoner.client.osgi.UAALInterfaceActivator;
+import org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator;
 
 /**
  *
@@ -65,7 +65,7 @@ public class ContextEventRecorder extends ContextSubscriber {
 	private static final String PREDICATE_FILENAME = "PredicateURIs.txt";
 
 	private ElementModel<ContextEvent> recordedEvents = new ElementModel(ContextEvent.class,
-			UAALInterfaceActivator.serializer, Activator.dataHome.getAbsolutePath());
+			InterfaceActivator.serializer, Activator.dataHome.getAbsolutePath());
 	/**
 	 * List of recorded instance URI's
 	 */

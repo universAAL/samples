@@ -69,7 +69,7 @@ public class LightingProvider extends ServiceCallee implements LampStateListener
 	// the following two constants and the three methods following them perform
 	// the ID mapping for this example (see THE MAPPING NOTE above)
 	static final String LAMP_URI_PREFIX = ProvidedLightingService.LIGHTING_SERVER_NAMESPACE + "controlledLamp";
-	static final String LOCATION_URI_PREFIX = "urn:aal_space:myHome#";
+	static final String LOCATION_URI_PREFIX = "urn:space:myHome#";
 
 	private static String constructLampURIfromLocalID(int localID) {
 		return LAMP_URI_PREFIX + localID;
@@ -195,7 +195,7 @@ public class LightingProvider extends ServiceCallee implements LampStateListener
 
 	// needed for publishing context events (whenever you think that it might be
 	// important to share a new info with other components in a universAAL-based
-	// AAL SPace, you have to publish that info as a context event
+	// Space, you have to publish that info as a context event
 	private ContextPublisher cp;
 
 	// the gui
@@ -205,7 +205,7 @@ public class LightingProvider extends ServiceCallee implements LampStateListener
 		// as a service providing component, we have to extend ServiceCallee
 		// this in turn requires that we introduce which services we would like
 		// to
-		// provide to the universAAL-based AAL Space
+		// provide to the universAAL-based Space
 		super(context, ProvidedLightingService.profiles);
 
 		// this is just an example that wraps a faked "original server"

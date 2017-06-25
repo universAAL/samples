@@ -28,7 +28,7 @@ import org.universAAL.middleware.container.osgi.OSGiContainer;
 
 /**
  * This bundle is a simulator for ActivityHub events. It creates random events
- * for various ActivityHub Sensor types and sends them to the uAAL context bus.
+ * for various ActivityHub Sensor types and sends them to the universAAL context bus.
  *
  * @author Thomas Fuxreiter (foex@gmx.at)
  */

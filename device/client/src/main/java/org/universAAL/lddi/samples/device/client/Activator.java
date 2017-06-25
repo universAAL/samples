@@ -50,7 +50,7 @@ public class Activator implements BundleActivator {
 					new Object[] { "client activates GUI-off mode because of no screen access" }, null);
 		}
 
-		// start uAAL bus consumer threads
+		// start universAAL bus consumer threads
 		MyThread runnable = new MyThread();
 		thread = new Thread(runnable);
 		thread.start();
@@ -66,17 +66,17 @@ public class Activator implements BundleActivator {
 		// if (serviceCaller != null)
 		// serviceCaller.deleteGui();
 		thread.interrupt();
-		// uninstall myself from uAALBundleContainer ??
-		// uAALBundleContainer.THE_CONTAINER.unregister...
+		// uninstall myself from OSGiContainer ??
+		// OSGiContainer.THE_CONTAINER.unregister...
 		// System.out.println("Stoppable: " + mc.canBeStopped(mc) ); -> false
 		// System.out.println("Uninstallable: " + mc.canBeUninstalled(mc) );
 		// ->false
 		// TODO how to stop/uninstall a bundle ???
 
 		if (mc.stop(mc)) // mc.uninstall(mc)
-			System.out.println("smp.device.client bundle successfully stopped from uAALBundleContainer!");
+			System.out.println("smp.device.client bundle successfully stopped from OSGiContainer!");
 		else
-			System.out.println("Problem stopping smp.device.client bundle in uAALBundleContainer!");
+			System.out.println("Problem stopping smp.device.client bundle in OSGiContainer!");
 	}
 
 	/**

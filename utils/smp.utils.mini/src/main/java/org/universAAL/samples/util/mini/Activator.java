@@ -46,7 +46,7 @@ import org.universAAL.support.utils.ui.Forms;
 import org.universAAL.support.utils.ui.low.Dialog;
 
 public class Activator implements BundleActivator {
-	// OSGi & uAAL contexts
+	// OSGi & universAAL contexts
 	public static BundleContext osgiContext = null;
 	public static ModuleContext context = null;
 	// Namespace constant to reuse
@@ -55,7 +55,7 @@ public class Activator implements BundleActivator {
 	private UAAL u;
 
 	public void start(BundleContext bcontext) throws Exception {
-		// Get the uAAL module context
+		// Get the universAAL module context
 		Activator.osgiContext = bcontext;
 		Activator.context = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
@@ -103,7 +103,7 @@ public class Activator implements BundleActivator {
 	}
 
 	public void stop(BundleContext arg0) throws Exception {
-		// Close uAAL wrappers and free resources
+		// Close universAAL wrappers and free resources
 		u.terminate();
 	}
 

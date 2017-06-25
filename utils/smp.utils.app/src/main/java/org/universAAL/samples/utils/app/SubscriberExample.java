@@ -25,7 +25,7 @@ import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.support.utils.context.mid.UtilSubscriber;
 
-// Context Subscriber uAAL wrapper
+// Context Subscriber universAAL wrapper
 public class SubscriberExample extends UtilSubscriber {
 
 	// Extended constructor

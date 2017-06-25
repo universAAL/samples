@@ -102,7 +102,7 @@ public class MyTest extends MWTestCase {
 		// LightActuator hasValue x
 		// In this example, the brightness of the kitchen light was dimmed to
 		// 100% (= the kitchen light was turned on)
-		ContextEvent evt = new ContextEvent(new LightActuator("urn:org.universAAL.aal_space:KitchenLight"),
+		ContextEvent evt = new ContextEvent(new LightActuator("urn:org.universAAL.space:KitchenLight"),
 				ValueDevice.PROP_HAS_VALUE, 100);
 		publisher.publish(evt);
 

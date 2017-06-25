@@ -476,17 +476,17 @@ public class hdpManager implements hdpManagerListener {
 					GUI.finalHrBloodPressureData = temp_0;
 					GUI.finalSysBloodPressureData = temp_1;
 					GUI.finalDiaBloodPressureData = temp_2;
-					GUI.uaalPublisherBloodPressurePulValueTextfield.setText(Double.toString(temp_0));
-					GUI.uaalPublisherBloodPressureSysValueTextfield.setText(Double.toString(temp_1));
-					GUI.uaalPublisherBloodPressureDiaValueTextfield.setText(Double.toString(temp_2));
+					GUI.publisherBloodPressurePulValueTextfield.setText(Double.toString(temp_0));
+					GUI.publisherBloodPressureSysValueTextfield.setText(Double.toString(temp_1));
+					GUI.publisherBloodPressureDiaValueTextfield.setText(Double.toString(temp_2));
 					GUI.mainPanel.repaint();
 				}
 			} else {
 				if (Measurement.weightMeasurement != null) {
 					Double temp = Measurement.weightMeasurement;
 					GUI.finalMeasuredWeightData = temp;
-					GUI.uaalPublisherWeightValueTextfield.setText(Double.toString(shortDecimalNumber(temp)));
-					GUI.uaalPublisherWeightUnitTextfield.setText("kg");
+					GUI.publisherWeightValueTextfield.setText(Double.toString(shortDecimalNumber(temp)));
+					GUI.publisherWeightUnitTextfield.setText("kg");
 					GUI.mainPanel.repaint();
 				}
 			}

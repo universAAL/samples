@@ -36,7 +36,7 @@ public class MyLightingOntologified {
 	public MyLightingOntologified(String namespace) {
 		/* Initializing fields with ontological constants */
 		this.LAMP_URI_PREFIX = namespace + "controlledLamp";
-		this.LOCATION_URI_PREFIX = "urn:aal_space:myHome#";
+		this.LOCATION_URI_PREFIX = "urn:space:myHome#";
 	}
 
 	/*

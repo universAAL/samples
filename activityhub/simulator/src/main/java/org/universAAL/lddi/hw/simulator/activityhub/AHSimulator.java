@@ -149,7 +149,7 @@ public class AHSimulator implements ManagedService {
 	 * Start context publisher simulator thread
 	 */
 	private void startSimulator() {
-		// start uAAL service provider
+		// start universAAL service provider
 		MyThread runnable = new MyThread(this);
 		simulaotrThread = new Thread(runnable);
 		simulaotrThread.start();

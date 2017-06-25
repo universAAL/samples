@@ -30,7 +30,7 @@ public class ProjectActivator implements BundleActivator {
 		context.logDebug("simple.ui", "Initialising Project", null);
 
 		/*
-		 * uAAL stuff
+		 * universAAL stuff
 		 */
 		service = new MainButtonProvider(context);
 
@@ -39,7 +39,5 @@ public class ProjectActivator implements BundleActivator {
 
 	public void stop(BundleContext arg0) throws Exception {
 		// TODO Auto-generated method stub
-
 	}
-
 }

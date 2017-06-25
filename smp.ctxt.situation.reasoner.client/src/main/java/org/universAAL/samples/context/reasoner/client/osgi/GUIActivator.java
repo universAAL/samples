@@ -22,8 +22,8 @@ package org.universAAL.samples.context.reasoner.client.osgi;
 import org.osgi.framework.BundleContext;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI;
-import org.universAAL.samples.context.reasoner.client.uaalinterface.CHECaller;
-import org.universAAL.samples.context.reasoner.client.uaalinterface.ReasoningCaller;
+import org.universAAL.samples.context.reasoner.client.interfaces.CHECaller;
+import org.universAAL.samples.context.reasoner.client.interfaces.ReasoningCaller;
 
 public class GUIActivator {
 	public static ReasoningCaller scaller = null;

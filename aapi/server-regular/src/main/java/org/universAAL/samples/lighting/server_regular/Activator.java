@@ -37,7 +37,7 @@ public class Activator implements BundleActivator {
 	public static final String LAMP_URI_PREFIX = LightingServerURIs.NAMESPACE + "controlledLamp";
 
 	/** Prefix of locaion URIs */
-	public static final String LOCATION_URI_PREFIX = "urn:aal_space:myHome#";
+	public static final String LOCATION_URI_PREFIX = "urn:space:myHome#";
 
 	/*
 	 * (non-Javadoc)

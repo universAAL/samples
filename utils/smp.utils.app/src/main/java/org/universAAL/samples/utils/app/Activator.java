@@ -44,10 +44,10 @@ public class Activator implements BundleActivator {
 	private static final String HEATER_URI = APP_NAMESPACE + "MyHeater";
 	private static final String LOCATION_URI = APP_NAMESPACE + "LivingRoom";
 	public static final Float THERMOSTAT = 14f;
-	// OSGi & uAAL contexts
+	// OSGi & universAAL contexts
 	public static BundleContext osgiContext = null;
 	public static ModuleContext context = null;
-	// uAAL wrappers: All
+	// universAAL wrappers: All
 	protected static UtilPublisher publisher;
 	protected static CalleeExample callee;
 	protected static ServiceCaller caller;
@@ -64,9 +64,9 @@ public class Activator implements BundleActivator {
 		heater.setValue(StatusValue.NotActivated);
 	}
 
-	// Start the wrapping to uAAL
+	// Start the wrapping to universAAL
 	public void start(BundleContext bcontext) throws Exception {
-		// Get the uAAL module context
+		// Get the universAAL module context
 		Activator.osgiContext = bcontext;
 		Activator.context = OSGiContainer.THE_CONTAINER.registerModule(new Object[] { bcontext });
 
@@ -83,7 +83,7 @@ public class Activator implements BundleActivator {
 		subscriber = new SubscriberExample(context, TemperatureSensor.MY_URI, TemperatureSensor.PROP_HAS_VALUE, null);
 	}
 
-	// Stop the wrapping to uAAL
+	// Stop the wrapping to universAAL
 	public void stop(BundleContext arg0) throws Exception {
 		subscriber.close();
 		ui.close();
@@ -91,5 +91,4 @@ public class Activator implements BundleActivator {
 		caller.close();
 		publisher.close();
 	}
-
 }

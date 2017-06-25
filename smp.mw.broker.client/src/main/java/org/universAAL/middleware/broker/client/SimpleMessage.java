@@ -28,7 +28,7 @@ import org.universAAL.middleware.interfaces.PeerCard;
 import com.google.gson.Gson;
 
 /**
- * Simple Message type exchanged among AAL-aware nodes
+ * Simple Message type exchanged among universAAL-aware nodes
  *
  * @author <a href="mailto:michele.girolami@isti.cnr.it">Michele Girolami</a>
  * @author <a href="mailto:francesco.furfari@isti.cnr.it">Francesco Furfari</a>

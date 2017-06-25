@@ -14,7 +14,7 @@ public class ProjectActivator implements ModuleActivator {
 		context = ctxt;
 		LogUtils.logDebug(context, getClass(), "start", "Starting.");
 		/*
-		 * uAAL stuff
+		 * universAAL stuff
 		 */
 		// create and initialize the configurableModule
 		module = new ConfigurationCentral();
@@ -29,7 +29,7 @@ public class ProjectActivator implements ModuleActivator {
 	public void stop(ModuleContext ctxt) throws Exception {
 		LogUtils.logDebug(context, getClass(), "stop", "Stopping.");
 		/*
-		 * close uAAL stuff
+		 * close universAAL stuff
 		 */
 		// get the configuration manager
 		ConfigurationManager configM = (ConfigurationManager) context.getContainer().fetchSharedObject(context,
