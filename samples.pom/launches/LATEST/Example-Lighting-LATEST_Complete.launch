@@ -25,12 +25,9 @@
 <booleanAttribute key="org.ops4j.pax.cursor.overwrite" value="false"/>
 <booleanAttribute key="org.ops4j.pax.cursor.overwriteSystemBundles" value="false"/>
 <booleanAttribute key="org.ops4j.pax.cursor.overwriteUserBundles" value="false"/>
-<listAttribute key="org.ops4j.pax.cursor.profiles">
-<listEntry value="obr"/>
-</listAttribute>
 <mapAttribute key="org.ops4j.pax.cursor.provisionItems">
 <mapEntry key="mvn:org.universAAL.samples/smp.lighting.client.osgi" value="true@true@2@true"/>
-<mapEntry key="mvn:org.universAAL.tools/tools.log_mon" value="true@true@3@true"/>
+<mapEntry key="mvn:org.universAAL.tools/tools.log-monitor" value="true@true@3@true"/>
 <mapEntry key="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//composite" value="true@true@1@true"/>
 </mapAttribute>
 <listAttribute key="org.ops4j.pax.cursor.runArguments">
@@ -38,10 +35,9 @@
 <listEntry value="--overwriteUserBundles=false"/>
 <listEntry value="--overwriteSystemBundles=false"/>
 <listEntry value="--log=DEBUG"/>
-<listEntry value="--profiles=obr"/>
 <listEntry value="scan-composite:mvn:org.universAAL.samples/smp.lighting.server.osgi//composite@1@update"/>
 <listEntry value="mvn:org.universAAL.samples/smp.lighting.client.osgi@2@update"/>
-<listEntry value="mvn:org.universAAL.tools/tools.log_mon@3@update"/>
+<listEntry value="mvn:org.universAAL.tools/tools.log-monitor@3@update"/>
 </listAttribute>
 <stringAttribute key="osgi_framework_id" value="--platform=felix --version=2.0.1"/>
 <stringAttribute key="pde.version" value="3.3"/>
