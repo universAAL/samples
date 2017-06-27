@@ -5,11 +5,11 @@
   <parent>
     <groupId>org.universAAL.ontology</groupId>
     <artifactId>ont.pom</artifactId>
-    <version>3.4.1-SNAPSHOT</version>
-	<relativePath>../../../ontology/ont.pom</relativePath>
+    <version>3.4.2-SNAPSHOT</version>
+    <relativePath>../../../ontology/ont.pom</relativePath>
   </parent>
   <artifactId>ont.tutorial</artifactId>
-  <version>3.4.1-SNAPSHOT</version>
+  <version>3.4.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples Ontology Tutorial Example</name>
   <description>This example shows how to convert an ontology concept into its java representation for uAAL</description>

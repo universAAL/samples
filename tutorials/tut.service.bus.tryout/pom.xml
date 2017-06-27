@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.tutorials</groupId>
     <artifactId>tut.pom</artifactId>
-    <version>3.4.1-SNAPSHOT</version>
+    <version>3.4.2-SNAPSHOT</version>
     <relativePath>../tut.pom</relativePath>
   </parent>
   <groupId>org.universAAL.tutorials</groupId>
   <artifactId>tut.service.bus.tryout</artifactId>
-  <version>3.4.1-SNAPSHOT</version>
+  <version>3.4.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Tutorials Service Bus Tryout</name>
   <description>A minimal version of a service bus caller and callee that can be run as JUnit test (-> fast start) to experiment with the matchmaking.</description>
@@ -36,19 +36,14 @@
       <artifactId>mw.junit</artifactId>
       <scope>test</scope>
     </dependency>
-	<dependency>
-		<groupId>org.osgi</groupId>
-		<artifactId>org.osgi.core</artifactId>
-	</dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.compendium</artifactId>
     </dependency>
-<!--     <dependency>
-		<groupId>org.universAAL.tools</groupId>
-		<artifactId>tools.log-monitor</artifactId>  
-		<version>3.4.1-SNAPSHOT</version>
-    </dependency> -->
   </dependencies>
   <build>
     <plugins>

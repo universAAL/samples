@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.tutorials</groupId>
     <artifactId>tut.pom</artifactId>
-    <version>3.4.1-SNAPSHOT</version>
+    <version>3.4.2-SNAPSHOT</version>
     <relativePath>../tut.pom</relativePath>
   </parent>
   <groupId>org.universAAL.tutorials</groupId>
   <artifactId>tut.service.bus.caller</artifactId>
-  <version>3.4.1-SNAPSHOT</version>
+  <version>3.4.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Tutorials Service Bus Caller</name>
   <description>A minimal version of a service bus caller</description>

@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>3.4.1-SNAPSHOT</version>
+    <version>3.4.2-SNAPSHOT</version>
     <relativePath>../../samples.pom</relativePath>
   </parent>
   <groupId>org.universAAL.tutorials</groupId>
   <artifactId>tut.pom</artifactId>
-  <version>3.4.1-SNAPSHOT</version>
+  <version>3.4.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>universAAL Tutorials Suite</name>
   <description>A set of small tutorials showing the use of specific parts of the platform.</description>
@@ -26,17 +26,32 @@
       <dependency>
         <groupId>org.universAAL.tutorials</groupId>
         <artifactId>tut.context.bus.publisher</artifactId>
-        <version>3.4.1-SNAPSHOT</version>
+        <version>3.4.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.tutorials</groupId>
         <artifactId>tut.context.bus.subscriber</artifactId>
-        <version>3.4.1-SNAPSHOT</version>
+        <version>3.4.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.middleware</groupId>
         <artifactId>mw.junit</artifactId>
         <version>3.4.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.tutorials</groupId>
+        <artifactId>tut.service.bus.callee</artifactId>
+        <version>3.4.2-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.tutorials</groupId>
+        <artifactId>tut.service.bus.caller</artifactId>
+        <version>3.4.2-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.universAAL.tutorials</groupId>
+        <artifactId>tut.service.bus.tryout</artifactId>
+        <version>3.4.2-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

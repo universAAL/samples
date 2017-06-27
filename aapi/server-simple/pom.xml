@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>3.4.1-SNAPSHOT</version>
+    <version>3.4.2-SNAPSHOT</version>
     <relativePath>../../samples.pom</relativePath>
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>smp.lighting.server-simple</artifactId>
-  <version>3.4.1-SNAPSHOT</version>
+  <version>3.4.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples AAPI Lighting Server Simplified</name>
   <description>A server based on the domain ontology of lighting services</description>
