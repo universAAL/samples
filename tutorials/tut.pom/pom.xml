@@ -17,6 +17,7 @@
   <modules>
     <module>../tut.context.bus.publisher</module>
     <module>../tut.context.bus.subscriber</module>
+    <module>../tut.context.bus.tryout</module>
     <module>../tut.service.bus.caller</module>
     <module>../tut.service.bus.callee</module>
     <module>../tut.service.bus.tryout</module>
@@ -34,9 +35,14 @@
         <version>3.4.2-SNAPSHOT</version>
       </dependency>
       <dependency>
+        <groupId>org.universAAL.tutorials</groupId>
+        <artifactId>tut.context.bus.tryout</artifactId>
+        <version>3.4.2-SNAPSHOT</version>
+      </dependency>
+      <dependency>
         <groupId>org.universAAL.middleware</groupId>
         <artifactId>mw.junit</artifactId>
-        <version>3.4.1-SNAPSHOT</version>
+        <version>3.4.2-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.universAAL.tutorials</groupId>

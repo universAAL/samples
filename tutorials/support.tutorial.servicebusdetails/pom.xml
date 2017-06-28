@@ -5,11 +5,11 @@
   <parent>
     <groupId>org.universAAL.support.samples</groupId>
     <artifactId>samples.pom</artifactId>
-    <version>3.4.1-SNAPSHOT</version>
+    <version>3.4.2-SNAPSHOT</version>
     <relativePath>../../samples.pom</relativePath>
   </parent>
   <artifactId>support.tutorial.servicebusdetails</artifactId>
-  <version>3.4.1-SNAPSHOT</version>
+  <version>3.4.2-SNAPSHOT</version>
   <name>universAAL Support Tutorial for Service Bus</name>
   <dependencies>
     <dependency>

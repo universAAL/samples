@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.universAAL.tutorials</groupId>
     <artifactId>tut.pom</artifactId>
-    <version>3.4.1-SNAPSHOT</version>
+    <version>3.4.2-SNAPSHOT</version>
     <relativePath>../tut.pom</relativePath>
   </parent>
   <groupId>org.universAAL.tutorials</groupId>
   <artifactId>tut.context.bus.tryout</artifactId>
-  <version>3.4.1-SNAPSHOT</version>
+  <version>3.4.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Tutorials Context Bus Tryout</name>
   <description>A minimal version of a context bus publisher and subscriber that can be run as JUnit test (-> fast start) to experiment with the matchmaking.</description>
