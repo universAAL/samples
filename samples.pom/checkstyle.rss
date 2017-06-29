@@ -26,8 +26,8 @@ under the License.
     <copyright>&#169;2017 universAAL Consortium</copyright>
     <item>
       <title>File: 144,
-             Errors: 2324,
-             Warnings: 268,
+             Errors: 2338,
+             Warnings: 269,
              Infos: 99
       </title>
             <link>http://xtras/samples/samples.pom//checkstyle.html</link>
@@ -122,10 +122,10 @@ under the License.
                   0
                 </td>
                 <td>
-                  1
+                  2
                 </td>
                 <td>
-                  9
+                  18
                 </td>
               </tr>
                           <tr>
@@ -1777,7 +1777,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  3
+                  8
                 </td>
               </tr>
                           <tr>

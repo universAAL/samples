@@ -26,7 +26,7 @@
           
                 <div class="xleft">
         <span id="publishDate">Last Published: 2017</span>
-                  &nbsp;| <span id="projectVersion">Version: 3.4.1-SNAPSHOT</span>
+                  &nbsp;| <span id="projectVersion">Version: 3.4.2-SNAPSHOT</span>
                       </div>
             <div class="xright">                    <a href="./" title="universAAL Samples Suite">universAAL Samples Suite</a>
             
@@ -209,8 +209,8 @@
 <tr class="b">
 <td>144</td>
 <td>99</td>
-<td>268</td>
-<td>2324</td></tr></table></div>
+<td>269</td>
+<td>2338</td></tr></table></div>
 <div class="section">
 <h2><a name="Files"></a>Files</h2>
 <table border="0" class="bodyTable">
@@ -907,13 +907,13 @@
 <tr class="a">
 <td><a href="#org.universAAL.tutorials.context.bus.subscriber.Activator.java">org/universAAL/tutorials/context/bus/subscriber/Activator.java</a></td>
 <td>0</td>
-<td>1</td>
-<td>9</td></tr>
+<td>2</td>
+<td>18</td></tr>
 <tr class="b">
 <td><a href="#org.universAAL.tutorials.context.bus.subscriber.MyContextSubscriber.java">org/universAAL/tutorials/context/bus/subscriber/MyContextSubscriber.java</a></td>
 <td>0</td>
 <td>0</td>
-<td>3</td></tr>
+<td>8</td></tr>
 <tr class="a">
 <td><a href="#org.universAAL.tutorials.service.bus.callee.Activator.java">org/universAAL/tutorials/service/bus/callee/Activator.java</a></td>
 <td>0</td>
@@ -965,7 +965,7 @@
 <tr class="b">
 <td>design</td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_design.html#DesignForExtension">DesignForExtension</a></td>
-<td>350</td>
+<td>353</td>
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td></tr>
 <tr class="a">
 <td></td>
@@ -987,7 +987,7 @@
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_design.html#VisibilityModifier">VisibilityModifier</a>
 <ul>
 <li>protectedAllowed: <tt>&quot;true&quot;</tt></li></ul></td>
-<td>135</td>
+<td>137</td>
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td></tr>
 <tr class="a">
 <td>imports</td>
@@ -997,14 +997,14 @@
 <tr class="b">
 <td>javadoc</td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_javadoc.html#JavadocMethod">JavadocMethod</a></td>
-<td>777</td>
+<td>783</td>
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td></tr>
 <tr class="a">
 <td></td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_javadoc.html#JavadocPackage">JavadocPackage</a>
 <ul>
 <li>allowLegacy: <tt>&quot;true&quot;</tt></li></ul></td>
-<td>49</td>
+<td>50</td>
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td></tr>
 <tr class="b">
 <td></td>
@@ -1019,7 +1019,7 @@
 <tr class="b">
 <td></td>
 <td><a class="externalLink" href="http://checkstyle.sourceforge.net/config_javadoc.html#JavadocVariable">JavadocVariable</a></td>
-<td>776</td>
+<td>779</td>
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td></tr>
 <tr class="a">
 <td>misc</td>
@@ -18245,6 +18245,66 @@
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Expected @throws tag for 'Exception'.</td>
+<td>49</td></tr>
+<tr class="b">
+<td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
+<td>javadoc</td>
+<td>JavadocPackage</td>
+<td>Missing package-info.java file.</td>
+<td></td></tr>
+<tr class="a">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>javadoc</td>
+<td>JavadocVariable</td>
+<td>Missing a Javadoc comment.</td>
+<td>32</td></tr>
+<tr class="b">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>design</td>
+<td>VisibilityModifier</td>
+<td>Variable 'mc' must be private and have accessor methods.</td>
+<td>32</td></tr>
+<tr class="a">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>javadoc</td>
+<td>JavadocVariable</td>
+<td>Missing a Javadoc comment.</td>
+<td>33</td></tr>
+<tr class="b">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>design</td>
+<td>DesignForExtension</td>
+<td>Method 'start' is not designed for extension - needs to be abstract, final or empty.</td>
+<td>38</td></tr>
+<tr class="a">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>javadoc</td>
+<td>JavadocMethod</td>
+<td>Expected @param tag for 'mc'.</td>
+<td>38</td></tr>
+<tr class="b">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>javadoc</td>
+<td>JavadocMethod</td>
+<td>Expected @throws tag for 'Exception'.</td>
+<td>38</td></tr>
+<tr class="a">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>design</td>
+<td>DesignForExtension</td>
+<td>Method 'stop' is not designed for extension - needs to be abstract, final or empty.</td>
+<td>49</td></tr>
+<tr class="b">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>javadoc</td>
+<td>JavadocMethod</td>
+<td>Expected @param tag for 'arg0'.</td>
+<td>49</td></tr>
+<tr class="a">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>javadoc</td>
+<td>JavadocMethod</td>
+<td>Expected @throws tag for 'Exception'.</td>
 <td>49</td></tr></table></div>
 <div class="section">
 <h3 id="org.universAAL.tutorials.context.bus.subscriber.MyContextSubscriber.java">org/universAAL/tutorials/context/bus/subscriber/MyContextSubscriber.java</h3>
@@ -18272,71 +18332,101 @@
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Expected @param tag for 'event'.</td>
-<td>74</td></tr></table></div>
+<td>74</td></tr>
+<tr class="b">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>javadoc</td>
+<td>JavadocVariable</td>
+<td>Missing a Javadoc comment.</td>
+<td>42</td></tr>
+<tr class="a">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>design</td>
+<td>VisibilityModifier</td>
+<td>Variable 'evtReceived' must be private and have accessor methods.</td>
+<td>42</td></tr>
+<tr class="b">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>javadoc</td>
+<td>JavadocMethod</td>
+<td>Missing a Javadoc comment.</td>
+<td>71</td></tr>
+<tr class="a">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>design</td>
+<td>DesignForExtension</td>
+<td>Method 'handleContextEvent' is not designed for extension - needs to be abstract, final or empty.</td>
+<td>78</td></tr>
+<tr class="b">
+<td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
+<td>javadoc</td>
+<td>JavadocMethod</td>
+<td>Expected @param tag for 'event'.</td>
+<td>78</td></tr></table></div>
 <div class="section">
 <h3 id="org.universAAL.tutorials.service.bus.callee.Activator.java">org/universAAL/tutorials/service/bus/callee/Activator.java</h3>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocPackage</td>
 <td>Missing package-info.java file.</td>
 <td></td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocVariable</td>
 <td>Missing a Javadoc comment.</td>
 <td>35</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>design</td>
 <td>VisibilityModifier</td>
 <td>Variable 'mc' must be private and have accessor methods.</td>
 <td>35</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocVariable</td>
 <td>Missing a Javadoc comment.</td>
 <td>36</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>design</td>
 <td>DesignForExtension</td>
 <td>Method 'start' is not designed for extension - needs to be abstract, final or empty.</td>
 <td>41</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Expected @param tag for 'mc'.</td>
 <td>41</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Expected @throws tag for 'Exception'.</td>
 <td>41</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>design</td>
 <td>DesignForExtension</td>
 <td>Method 'stop' is not designed for extension - needs to be abstract, final or empty.</td>
 <td>52</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Expected @param tag for 'arg0'.</td>
 <td>52</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
@@ -18345,67 +18435,67 @@
 <div class="section">
 <h3 id="org.universAAL.tutorials.service.bus.callee.MyServiceCallee.java">org/universAAL/tutorials/service/bus/callee/MyServiceCallee.java</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocVariable</td>
 <td>Missing a Javadoc comment.</td>
 <td>43</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>naming</td>
 <td>StaticVariableName</td>
 <td>Name 'SERVICE_TURN_ON' must match pattern '^[a-z][a-zA-Z0-9]*$'.</td>
 <td>43</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>design</td>
 <td>VisibilityModifier</td>
 <td>Variable 'SERVICE_TURN_ON' must be private and have accessor methods.</td>
 <td>43</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocVariable</td>
 <td>Missing a Javadoc comment.</td>
 <td>47</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>naming</td>
 <td>StaticVariableName</td>
 <td>Name 'INPUT_LIGHT_URI' must match pattern '^[a-z][a-zA-Z0-9]*$'.</td>
 <td>47</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>design</td>
 <td>VisibilityModifier</td>
 <td>Variable 'INPUT_LIGHT_URI' must be private and have accessor methods.</td>
 <td>47</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Missing a Javadoc comment.</td>
 <td>86</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Expected an @return tag.</td>
 <td>92</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>design</td>
 <td>DesignForExtension</td>
 <td>Method 'handleCall' is not designed for extension - needs to be abstract, final or empty.</td>
 <td>92</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
@@ -18414,31 +18504,31 @@
 <div class="section">
 <h3 id="org.universAAL.tutorials.service.bus.caller.Activator.java">org/universAAL/tutorials/service/bus/caller/Activator.java</h3>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocPackage</td>
 <td>Missing package-info.java file.</td>
 <td></td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>design</td>
 <td>DesignForExtension</td>
 <td>Method 'start' is not designed for extension - needs to be abstract, final or empty.</td>
 <td>41</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Missing a Javadoc comment.</td>
 <td>41</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
@@ -18447,73 +18537,73 @@
 <div class="section">
 <h3 id="org.universAAL.tutorials.service.bus.tryout.MyServiceCallee.java">org/universAAL/tutorials/service/bus/tryout/MyServiceCallee.java</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Severity</th>
 <th>Category</th>
 <th>Rule</th>
 <th>Message</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>javadoc</td>
 <td>JavadocPackage</td>
 <td>Missing package-info.java file.</td>
 <td></td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocVariable</td>
 <td>Missing a Javadoc comment.</td>
 <td>40</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>naming</td>
 <td>StaticVariableName</td>
 <td>Name 'SERVICE_TURN_ON' must match pattern '^[a-z][a-zA-Z0-9]*$'.</td>
 <td>40</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>design</td>
 <td>VisibilityModifier</td>
 <td>Variable 'SERVICE_TURN_ON' must be private and have accessor methods.</td>
 <td>40</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocVariable</td>
 <td>Missing a Javadoc comment.</td>
 <td>41</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_warning_sml.gif" alt="" />&#160;Warning</td>
 <td>naming</td>
 <td>StaticVariableName</td>
 <td>Name 'INPUT_LIGHT_URI' must match pattern '^[a-z][a-zA-Z0-9]*$'.</td>
 <td>41</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>design</td>
 <td>VisibilityModifier</td>
 <td>Variable 'INPUT_LIGHT_URI' must be private and have accessor methods.</td>
 <td>41</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Missing a Javadoc comment.</td>
 <td>58</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>
 <td>Expected an @return tag.</td>
 <td>63</td></tr>
-<tr class="a">
+<tr class="b">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>design</td>
 <td>DesignForExtension</td>
 <td>Method 'handleCall' is not designed for extension - needs to be abstract, final or empty.</td>
 <td>63</td></tr>
-<tr class="b">
+<tr class="a">
 <td><img src="images/icon_error_sml.gif" alt="" />&#160;Error</td>
 <td>javadoc</td>
 <td>JavadocMethod</td>

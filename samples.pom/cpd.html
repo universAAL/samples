@@ -26,7 +26,7 @@
           
                 <div class="xleft">
         <span id="publishDate">Last Published: 2017</span>
-                  &nbsp;| <span id="projectVersion">Version: 3.4.1-SNAPSHOT</span>
+                  &nbsp;| <span id="projectVersion">Version: 3.4.2-SNAPSHOT</span>
                       </div>
             <div class="xright">                    <a href="./" title="universAAL Samples Suite">universAAL Samples Suite</a>
             
@@ -1612,6 +1612,58 @@
 		if (operation.startsWith(SERVICE_TURN_ON)) {
 			// Get the parameter
 			Object input = call.getInputValue(INPUT_LIGHT_URI);</pre></div></td></tr></table>
+<table border="0" class="bodyTable">
+<tr class="b">
+<th>File</th>
+<th>Project</th>
+<th>Line</th></tr>
+<tr class="a">
+<td>org/universAAL/tutorials/context/bus/subscriber/MyContextSubscriber.java</td>
+<td>universAAL Tutorials Context Bus Subscriber</td>
+<td>46</td></tr>
+<tr class="b">
+<td>org/universAAL/tutorials/context/bus/subscriber/MyContextSubscriber.java</td>
+<td>universAAL Tutorials Context Bus Tryout</td>
+<td>50</td></tr>
+<tr class="a"><td colspan='3'>
+<div>
+<pre>	public static ContextEventPattern[] getContextSubscriptionParams() {
+		// I am interested in all events that the brightness of a light source
+		// has changed. According to the device ontology the event describes a
+		// triple of the form:
+		// LightActuator hasValue x
+
+		// We start with a general context event pattern that we will restrict
+		// further in the following lines..
+		ContextEventPattern cep = new ContextEventPattern();
+		// The subject of the event must be of type LightActuator
+		cep.addRestriction(
+				MergedRestriction.getAllValuesRestriction(ContextEvent.PROP_RDF_SUBJECT, LightActuator.MY_URI));
+		// The predicate of the event must be the value
+		// ValueDevice.PROP_HAS_VALUE
+		cep.addRestriction(MergedRestriction.getFixedValueRestriction(ContextEvent.PROP_RDF_PREDICATE,
+				ValueDevice.PROP_HAS_VALUE));
+
+		// We can create more patterns here and return everything in an array.
+		return new ContextEventPattern[] { cep };
+	}
+
+	public MyContextSubscriber(ModuleContext context) {
+		// The constructor register us to the context bus for some context event
+		// patterns.
+		super(context, getContextSubscriptionParams());
+	}
+
+	/** @see ContextSubscriber#handleContextEvent(ContextEvent) */
+	public void handleContextEvent(ContextEvent event) {
+		// This method is called when the desired context event is published by
+		// a context publisher. In this example, we simply log the event and its
+		// content.
+		LogUtils.logInfo(Activator.mc, MyContextSubscriber.class, &quot;handleContextEvent&quot;,
+				new Object[] { &quot;Received context event:\n&quot;, &quot;    Subject     = &quot;, event.getSubjectURI(), &quot;\n&quot;,
+						&quot;    Subject type= &quot;, event.getSubjectTypeURI(), &quot;\n&quot;, &quot;    Predicate   = &quot;,
+						event.getRDFPredicate(), &quot;\n&quot;, &quot;    Object      = &quot;, event.getRDFObject() },
+				null);</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="b">
 <th>File</th>
