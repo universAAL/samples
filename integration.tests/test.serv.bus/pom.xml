@@ -43,43 +43,6 @@
       <artifactId>ont.lighting</artifactId>
     </dependency>
   </dependencies>
-  <repositories>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>central</id>
-      <name>Central Maven Repository</name>
-      <url>http://repo1.maven.org/maven2</url>
-    </repository>
-    <repository>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <updatePolicy>daily</updatePolicy>
-      </snapshots>
-      <id>apache-snapshots</id>
-      <name>Apache Snapshots</name>
-      <url>http://people.apache.org/repo/m2-snapshot-repository</url>
-    </repository>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>uaal</id>
-      <name>universAAL Repositories</name>
-      <url>http://depot.universaal.org/maven-repo/releases/</url>
-    </repository>
-    <repository>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <id>uaal-snapshots</id>
-      <name>universAAL Snapshot Repositories</name>
-      <url>http://depot.universaal.org/maven-repo/snapshots/</url>
-    </repository>
-  </repositories>
   <build>
     <plugins>
       <plugin>

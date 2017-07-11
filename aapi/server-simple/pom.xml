@@ -56,13 +56,6 @@
       <artifactId>ont.lighting.simple</artifactId>
     </dependency>
   </dependencies>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>uaal-snapshots</id>
-      <name>universAAL Snapshot Repositories</name>
-      <url>http://depot.universaal.org/maven-repo/snapshots/</url>
-    </pluginRepository>
-  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
