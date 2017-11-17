@@ -20,6 +20,7 @@
     <module>../tut.service.bus.caller</module>
     <module>../tut.service.bus.callee</module>
     <module>../tut.service.bus.tryout</module>
+    <module>../tut.ui.bus.uicaller</module>
   </modules>
   <dependencyManagement>
     <dependencies>
