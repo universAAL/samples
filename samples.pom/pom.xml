@@ -23,7 +23,6 @@
     <module>../lighting/client</module>
     <module>../lighting/uiclient</module>
     <module>../ont.tutorial</module>
-    <module>../simple.ui</module>
     <module>../smp.sensor.simulator.gui</module>
     <module>../activityhub/client</module>
     <module>../activityhub/simulator</module>
