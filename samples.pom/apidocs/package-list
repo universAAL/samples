@@ -32,7 +32,6 @@ org.universAAL.samples.lighting.uiclient.osgi
 org.universAAL.samples.sensor.simulator
 org.universAAL.samples.servbus
 org.universAAL.samples.servserver
-org.universAAL.samples.simple.ui
 org.universAAL.samples.soap.cxf.client
 org.universAAL.samples.soap.cxf.server
 org.universAAL.samples.soap.cxf.service
@@ -46,3 +45,4 @@ org.universAAL.tutorials.context.bus.subscriber
 org.universAAL.tutorials.service.bus.callee
 org.universAAL.tutorials.service.bus.caller
 org.universAAL.tutorials.service.bus.tryout
+org.universAAL.tutorials.ui.bus.uicaller

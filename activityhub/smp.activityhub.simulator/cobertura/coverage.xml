@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="228" branches-covered="0" branches-valid="42" complexity="1.7878787878787878" version="2.1.1" timestamp="1498736001665">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="227" branches-covered="0" branches-valid="42" complexity="1.7878787878787878" version="2.1.1" timestamp="1523023593883">
 	<sources>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/activityhub/simulator/src/main/java</source>
@@ -179,7 +179,6 @@
 								<line number="328" hits="0" branch="false"/>
 								<line number="330" hits="0" branch="false"/>
 								<line number="331" hits="0" branch="false"/>
-								<line number="332" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -342,7 +341,6 @@
 						<line number="328" hits="0" branch="false"/>
 						<line number="330" hits="0" branch="false"/>
 						<line number="331" hits="0" branch="false"/>
-						<line number="332" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.lddi.hw.simulator.activityhub.AHSimulator" filename="org/universAAL/lddi/hw/simulator/activityhub/AHSimulator.java" line-rate="0.0" branch-rate="0.0" complexity="1.35">

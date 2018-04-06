@@ -1,12 +1,12 @@
 <map id="G" name="G">
-<area shape="rect" id="c4420" href="./LightingSimplifiedServiceLevel3.html" title="org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel3" alt="" coords="16,17,221,42"/>
+<area shape="rect" id="node1_0" href="./LightingSimplifiedServiceLevel3.html" title="org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel3" alt="" coords="16,16,221,43"/>
 <area shape="rect" id="node1" href="./LightingSimplifiedServiceLevel3.html" title="&lt;TABLE&gt;" alt="" coords="5,5,232,53"/>
-<area shape="rect" id="c4421" href="./LightingSimplifiedServiceLevel2.html" title="org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel2" alt="" coords="115,113,320,138"/>
-<area shape="rect" id="node2" href="./LightingSimplifiedServiceLevel2.html" title="&lt;TABLE&gt;" alt="" coords="104,101,331,149"/>
-<area shape="rect" id="c4422" href="./Activator.html" title="org.universAAL.samples.lighting.server_simple.Activator" alt="" coords="463,17,537,42"/>
-<area shape="rect" id="node3" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="453,5,547,53"/>
-<area shape="rect" id="c4423" href="./MyLightingOntologified.html" title="org.universAAL.samples.lighting.server_simple.MyLightingOntologified" alt="" coords="266,17,419,42"/>
-<area shape="rect" id="node4" href="./MyLightingOntologified.html" title="&lt;TABLE&gt;" alt="" coords="256,5,429,53"/>
-<area shape="rect" id="c4424" href="./LightingSimplifiedServiceLevel1.html" title="org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel1" alt="" coords="365,113,571,138"/>
-<area shape="rect" id="node5" href="./LightingSimplifiedServiceLevel1.html" title="&lt;TABLE&gt;" alt="" coords="355,101,581,149"/>
+<area shape="rect" id="node2_1" href="./LightingSimplifiedServiceLevel2.html" title="org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel2" alt="" coords="116,112,321,139"/>
+<area shape="rect" id="node2" href="./LightingSimplifiedServiceLevel2.html" title="&lt;TABLE&gt;" alt="" coords="105,101,332,149"/>
+<area shape="rect" id="node3_2" href="./Activator.html" title="org.universAAL.samples.lighting.server_simple.Activator" alt="" coords="466,16,539,43"/>
+<area shape="rect" id="node3" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="455,5,550,53"/>
+<area shape="rect" id="node4_3" href="./MyLightingOntologified.html" title="org.universAAL.samples.lighting.server_simple.MyLightingOntologified" alt="" coords="267,16,421,43"/>
+<area shape="rect" id="node4" href="./MyLightingOntologified.html" title="&lt;TABLE&gt;" alt="" coords="257,5,431,53"/>
+<area shape="rect" id="node5_4" href="./LightingSimplifiedServiceLevel1.html" title="org.universAAL.samples.lighting.server_simple.LightingSimplifiedServiceLevel1" alt="" coords="367,112,572,139"/>
+<area shape="rect" id="node5" href="./LightingSimplifiedServiceLevel1.html" title="&lt;TABLE&gt;" alt="" coords="356,101,583,149"/>
 </map>

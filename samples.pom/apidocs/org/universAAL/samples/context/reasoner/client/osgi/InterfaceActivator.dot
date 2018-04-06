@@ -10,13 +10,13 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator
-	c10652 [label=<<table title="org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./InterfaceActivator.html">
+	c10649 [label=<<table title="org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./InterfaceActivator.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> InterfaceActivator </td></tr>
 		</table></td></tr>
 		</table>>, URL="./InterfaceActivator.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.universAAL.samples.context.reasoner.client.osgi.InterfaceActivator implements org.osgi.framework.ServiceListener
-	c10684:p -> c10652:p [dir=back,arrowtail=empty,style=dashed];
+	c10684:p -> c10649:p [dir=back,arrowtail=empty,style=dashed];
 	// org.osgi.framework.ServiceListener
 	c10684 [label=<<table title="org.osgi.framework.ServiceListener" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/osgi/framework/ServiceListener.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">

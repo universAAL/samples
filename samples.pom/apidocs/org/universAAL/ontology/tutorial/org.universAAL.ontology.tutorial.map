@@ -1,8 +1,8 @@
 <map id="G" name="G">
-<area shape="rect" id="c1574" href="./MyEnumeration.html" title="org.universAAL.ontology.tutorial.MyEnumeration" alt="" coords="16,17,128,42"/>
+<area shape="rect" id="node1_0" href="./MyEnumeration.html" title="org.universAAL.ontology.tutorial.MyEnumeration" alt="" coords="16,16,128,43"/>
 <area shape="rect" id="node1" href="./MyEnumeration.html" title="&lt;TABLE&gt;" alt="" coords="5,5,139,53"/>
-<area shape="rect" id="c1575" href="./MyConcept.html" title="org.universAAL.ontology.tutorial.MyConcept" alt="" coords="173,17,261,42"/>
+<area shape="rect" id="node2_1" href="./MyConcept.html" title="org.universAAL.ontology.tutorial.MyConcept" alt="" coords="173,16,261,43"/>
 <area shape="rect" id="node2" href="./MyConcept.html" title="&lt;TABLE&gt;" alt="" coords="163,5,272,53"/>
-<area shape="rect" id="c1576" href="./TutorialOntology.html" title="org.universAAL.ontology.tutorial.TutorialOntology" alt="" coords="306,17,422,42"/>
-<area shape="rect" id="node3" href="./TutorialOntology.html" title="&lt;TABLE&gt;" alt="" coords="296,5,432,53"/>
+<area shape="rect" id="node3_2" href="./TutorialOntology.html" title="org.universAAL.ontology.tutorial.TutorialOntology" alt="" coords="307,16,423,43"/>
+<area shape="rect" id="node3" href="./TutorialOntology.html" title="&lt;TABLE&gt;" alt="" coords="297,5,434,53"/>
 </map>

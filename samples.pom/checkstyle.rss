@@ -23,12 +23,12 @@ under the License.
     <link>http://xtras/samples/samples.pom/</link>
     <description>universAAL Samples Suite - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2017 universAAL Consortium</copyright>
+    <copyright>&#169;2018 universAAL Consortium</copyright>
     <item>
       <title>File: 144,
-             Errors: 2338,
+             Errors: 2340,
              Warnings: 269,
-             Infos: 99
+             Infos: 100
       </title>
             <link>http://xtras/samples/samples.pom//checkstyle.html</link>
       <description>
@@ -98,20 +98,6 @@ under the License.
                 </td>
                 <td>
                   17
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.simple.ui.ProjectActivator.java">org/universAAL/samples/simple/ui/ProjectActivator.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  8
                 </td>
               </tr>
                           <tr>
@@ -662,6 +648,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.ui.bus.uicaller.MyUICaller.java">org/universAAL/tutorials/ui/bus/uicaller/MyUICaller.java</a>
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.context.reasoner.client.gui.SituationCreatorFrame.java">org/universAAL/samples/context/reasoner/client/gui/SituationCreatorFrame.java</a>
                 </td>
                 <td>
@@ -830,6 +830,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.ui.bus.uicaller.Activator.java">org/universAAL/tutorials/ui/bus/uicaller/Activator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.service.bus.caller.Activator.java">org/universAAL/tutorials/service/bus/caller/Activator.java</a>
                 </td>
                 <td>
@@ -882,20 +896,6 @@ under the License.
                 </td>
                 <td>
                   15
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.simple.ui.SimpleUI.java">org/universAAL/samples/simple/ui/SimpleUI.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  4
                 </td>
               </tr>
                           <tr>
@@ -1334,6 +1334,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.tutorials.ui.bus.uicaller.MainButtonServiceCallee.java">org/universAAL/tutorials/ui/bus/uicaller/MainButtonServiceCallee.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.lighting.server_regular.ProvidedLightingServiceLevel1.java">org/universAAL/samples/lighting/server_regular/ProvidedLightingServiceLevel1.java</a>
                 </td>
                 <td>
@@ -1344,20 +1358,6 @@ under the License.
                 </td>
                 <td>
                   8
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.samples.simple.ui.MainButtonProvider.java">org/universAAL/samples/simple/ui/MainButtonProvider.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  1
-                </td>
-                <td>
-                  9
                 </td>
               </tr>
                           <tr>

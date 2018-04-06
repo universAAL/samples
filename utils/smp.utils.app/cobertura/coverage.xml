@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="74" branches-covered="0" branches-valid="20" complexity="1.6666666666666667" version="2.1.1" timestamp="1498736050320">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="74" branches-covered="0" branches-valid="20" complexity="1.6666666666666667" version="2.1.1" timestamp="1523023662640">
 	<sources>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/utils/smp.utils.app/src/main/java</source>

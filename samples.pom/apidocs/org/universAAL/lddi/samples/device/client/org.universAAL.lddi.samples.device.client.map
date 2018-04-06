@@ -1,10 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="c2520" href="./DeviceContextListener.html" title="org.universAAL.lddi.samples.device.client.DeviceContextListener" alt="" coords="15,17,169,42"/>
+<area shape="rect" id="node1_0" href="./DeviceContextListener.html" title="org.universAAL.lddi.samples.device.client.DeviceContextListener" alt="" coords="15,16,169,43"/>
 <area shape="rect" id="node1" href="./DeviceContextListener.html" title="&lt;TABLE&gt;" alt="" coords="5,5,179,53"/>
-<area shape="rect" id="c2521" href="./DeviceServiceCaller.html" title="org.universAAL.lddi.samples.device.client.DeviceServiceCaller" alt="" coords="213,17,353,42"/>
-<area shape="rect" id="node2" href="./DeviceServiceCaller.html" title="&lt;TABLE&gt;" alt="" coords="203,5,363,53"/>
-<area shape="rect" id="c2522" href="./Activator.html" title="org.universAAL.lddi.samples.device.client.Activator" alt="" coords="397,17,470,42"/>
-<area shape="rect" id="node3" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="387,5,480,53"/>
-<area shape="rect" id="c2523" href="./DeviceClient.html" title="org.universAAL.lddi.samples.device.client.DeviceClient" alt="" coords="515,17,611,42"/>
-<area shape="rect" id="node4" href="./DeviceClient.html" title="&lt;TABLE&gt;" alt="" coords="504,5,621,53"/>
+<area shape="rect" id="node2_1" href="./DeviceServiceCaller.html" title="org.universAAL.lddi.samples.device.client.DeviceServiceCaller" alt="" coords="214,16,354,43"/>
+<area shape="rect" id="node2" href="./DeviceServiceCaller.html" title="&lt;TABLE&gt;" alt="" coords="203,5,365,53"/>
+<area shape="rect" id="node3_2" href="./Activator.html" title="org.universAAL.lddi.samples.device.client.Activator" alt="" coords="399,16,473,43"/>
+<area shape="rect" id="node3" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="389,5,483,53"/>
+<area shape="rect" id="node4_3" href="./DeviceClient.html" title="org.universAAL.lddi.samples.device.client.DeviceClient" alt="" coords="519,16,615,43"/>
+<area shape="rect" id="node4" href="./DeviceClient.html" title="&lt;TABLE&gt;" alt="" coords="508,5,625,53"/>
 </map>

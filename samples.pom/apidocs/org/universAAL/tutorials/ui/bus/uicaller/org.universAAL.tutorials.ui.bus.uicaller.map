@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node1_0" href="./Activator.html" title="org.universAAL.tutorials.ui.bus.uicaller.Activator" alt="" coords="15,16,89,43"/>
+<area shape="rect" id="node1" href="./Activator.html" title="&lt;TABLE&gt;" alt="" coords="5,5,99,53"/>
+<area shape="rect" id="node2_1" href="./MainButtonServiceCallee.html" title="org.universAAL.tutorials.ui.bus.uicaller.MainButtonServiceCallee" alt="" coords="135,16,303,43"/>
+<area shape="rect" id="node2" href="./MainButtonServiceCallee.html" title="&lt;TABLE&gt;" alt="" coords="124,5,313,53"/>
+<area shape="rect" id="node3_2" href="./MyUICaller.html" title="org.universAAL.tutorials.ui.bus.uicaller.MyUICaller" alt="" coords="349,16,435,43"/>
+<area shape="rect" id="node3" href="./MyUICaller.html" title="&lt;TABLE&gt;" alt="" coords="338,5,446,53"/>
+</map>

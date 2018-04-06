@@ -1,10 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="c1105" href="./ServiceProvider.html" title="org.universAAL.samples.lighting.uiclient.ServiceProvider" alt="" coords="15,17,129,42"/>
+<area shape="rect" id="node1_0" href="./ServiceProvider.html" title="org.universAAL.samples.lighting.uiclient.ServiceProvider" alt="" coords="15,16,129,43"/>
 <area shape="rect" id="node1" href="./ServiceProvider.html" title="&lt;TABLE&gt;" alt="" coords="5,5,139,53"/>
-<area shape="rect" id="c1106" href="./SharedResources.html" title="org.universAAL.samples.lighting.uiclient.SharedResources" alt="" coords="173,17,299,42"/>
-<area shape="rect" id="node2" href="./SharedResources.html" title="&lt;TABLE&gt;" alt="" coords="163,5,309,53"/>
-<area shape="rect" id="c1107" href="./UIProvider.html" title="org.universAAL.samples.lighting.uiclient.UIProvider" alt="" coords="344,17,427,42"/>
-<area shape="rect" id="node3" href="./UIProvider.html" title="&lt;TABLE&gt;" alt="" coords="333,5,437,53"/>
-<area shape="rect" id="c1108" href="./LightingConsumer.html" title="org.universAAL.samples.lighting.uiclient.LightingConsumer" alt="" coords="472,17,597,42"/>
-<area shape="rect" id="node4" href="./LightingConsumer.html" title="&lt;TABLE&gt;" alt="" coords="461,5,608,53"/>
+<area shape="rect" id="node2_1" href="./SharedResources.html" title="org.universAAL.samples.lighting.uiclient.SharedResources" alt="" coords="175,16,300,43"/>
+<area shape="rect" id="node2" href="./SharedResources.html" title="&lt;TABLE&gt;" alt="" coords="164,5,311,53"/>
+<area shape="rect" id="node3_2" href="./UIProvider.html" title="org.universAAL.samples.lighting.uiclient.UIProvider" alt="" coords="345,16,428,43"/>
+<area shape="rect" id="node3" href="./UIProvider.html" title="&lt;TABLE&gt;" alt="" coords="335,5,439,53"/>
+<area shape="rect" id="node4_3" href="./LightingConsumer.html" title="org.universAAL.samples.lighting.uiclient.LightingConsumer" alt="" coords="473,16,599,43"/>
+<area shape="rect" id="node4" href="./LightingConsumer.html" title="&lt;TABLE&gt;" alt="" coords="463,5,609,53"/>
 </map>

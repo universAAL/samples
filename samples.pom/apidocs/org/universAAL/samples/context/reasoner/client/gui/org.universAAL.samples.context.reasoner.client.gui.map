@@ -1,10 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="c4889" href="./RuleCreatorFrame.html" title="org.universAAL.samples.context.reasoner.client.gui.RuleCreatorFrame" alt="" coords="16,17,144,42"/>
-<area shape="rect" id="node1" href="./RuleCreatorFrame.html" title="&lt;TABLE&gt;" alt="" coords="5,5,155,53"/>
-<area shape="rect" id="c4890" href="./QueryCreatorFrame.html" title="org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame" alt="" coords="189,17,325,42"/>
-<area shape="rect" id="node2" href="./QueryCreatorFrame.html" title="&lt;TABLE&gt;" alt="" coords="179,5,336,53"/>
-<area shape="rect" id="c4891" href="./SituationCreatorFrame.html" title="org.universAAL.samples.context.reasoner.client.gui.SituationCreatorFrame" alt="" coords="371,17,523,42"/>
-<area shape="rect" id="node3" href="./SituationCreatorFrame.html" title="&lt;TABLE&gt;" alt="" coords="360,5,533,53"/>
-<area shape="rect" id="c4892" href="./ReasoningGUI.html" title="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI" alt="" coords="568,17,675,42"/>
-<area shape="rect" id="node4" href="./ReasoningGUI.html" title="&lt;TABLE&gt;" alt="" coords="557,5,685,53"/>
+<area shape="rect" id="node1_0" href="./RuleCreatorFrame.html" title="org.universAAL.samples.context.reasoner.client.gui.RuleCreatorFrame" alt="" coords="15,16,143,43"/>
+<area shape="rect" id="node1" href="./RuleCreatorFrame.html" title="&lt;TABLE&gt;" alt="" coords="4,5,153,53"/>
+<area shape="rect" id="node2_1" href="./QueryCreatorFrame.html" title="org.universAAL.samples.context.reasoner.client.gui.QueryCreatorFrame" alt="" coords="188,16,324,43"/>
+<area shape="rect" id="node2" href="./QueryCreatorFrame.html" title="&lt;TABLE&gt;" alt="" coords="177,5,335,53"/>
+<area shape="rect" id="node3_2" href="./SituationCreatorFrame.html" title="org.universAAL.samples.context.reasoner.client.gui.SituationCreatorFrame" alt="" coords="369,16,521,43"/>
+<area shape="rect" id="node3" href="./SituationCreatorFrame.html" title="&lt;TABLE&gt;" alt="" coords="359,5,532,53"/>
+<area shape="rect" id="node4_3" href="./ReasoningGUI.html" title="org.universAAL.samples.context.reasoner.client.gui.ReasoningGUI" alt="" coords="567,16,673,43"/>
+<area shape="rect" id="node4" href="./ReasoningGUI.html" title="&lt;TABLE&gt;" alt="" coords="556,5,684,53"/>
 </map>

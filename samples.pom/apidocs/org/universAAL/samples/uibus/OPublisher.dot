@@ -10,15 +10,15 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.universAAL.samples.uibus.OPublisher
-	c17184 [label=<<table title="org.universAAL.samples.uibus.OPublisher" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./OPublisher.html">
+	c17339 [label=<<table title="org.universAAL.samples.uibus.OPublisher" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./OPublisher.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> OPublisher </td></tr>
 		</table></td></tr>
 		</table>>, URL="./OPublisher.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.universAAL.samples.uibus.OPublisher extends org.universAAL.middleware.ui.UICaller
-	c17324:p -> c17184:p [dir=back,arrowtail=empty];
+	c17479:p -> c17339:p [dir=back,arrowtail=empty];
 	// org.universAAL.middleware.ui.UICaller
-	c17324 [label=<<table title="org.universAAL.middleware.ui.UICaller" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/middleware/ui/UICaller.html">
+	c17479 [label=<<table title="org.universAAL.middleware.ui.UICaller" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/middleware/ui/UICaller.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"><font face="Helvetica-Oblique"> UICaller </font></td></tr>
 		</table></td></tr>

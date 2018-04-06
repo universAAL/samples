@@ -10,13 +10,13 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.universAAL.samples.utils.client.SubscriberExample
-	c21568 [label=<<table title="org.universAAL.samples.utils.client.SubscriberExample" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SubscriberExample.html">
+	c21565 [label=<<table title="org.universAAL.samples.utils.client.SubscriberExample" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./SubscriberExample.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> SubscriberExample </td></tr>
 		</table></td></tr>
 		</table>>, URL="./SubscriberExample.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.universAAL.samples.utils.client.SubscriberExample extends org.universAAL.support.utils.context.mid.UtilSubscriber
-	c21653:p -> c21568:p [dir=back,arrowtail=empty];
+	c21653:p -> c21565:p [dir=back,arrowtail=empty];
 	// org.universAAL.support.utils.context.mid.UtilSubscriber
 	c21653 [label=<<table title="org.universAAL.support.utils.context.mid.UtilSubscriber" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/support/utils/context/mid/UtilSubscriber.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">

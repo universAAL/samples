@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.02344767694311767" branch-rate="0.004118616144975288" lines-covered="162" lines-valid="6909" branches-covered="5" branches-valid="1214" complexity="1.9859762675296655" version="2.1.1" timestamp="1498736228381">
+<coverage line-rate="0.023434109648488355" branch-rate="0.004091653027823241" lines-covered="162" lines-valid="6913" branches-covered="5" branches-valid="1222" complexity="1.9913606911447084" version="2.1.1" timestamp="1523024022758">
 	<sources>
 		<source>/home/travis/build/universAAL/samples/activityhub/client/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/smp.mw.broker.client/src/main/java</source>
@@ -9,6 +9,7 @@
 		<source>/home/travis/build/universAAL/samples/lddi.bluetooth/continuaManager/windows/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/tutorials/tut.service.bus.tryout/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/aapi/client-regular/src/main/java</source>
+		<source>/home/travis/build/universAAL/samples/tutorials/tut.ui.bus.uicaller/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/lighting/client/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/utils/smp.utils.mini/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/integration.tests/test.ui.bus/src/main/java</source>
@@ -29,7 +30,6 @@
 		<source>/home/travis/build/universAAL/samples/aapi/ont-lighting-simple/src/main/java</source>
 		<source>--source</source>
 		<source>/home/travis/build/universAAL/samples/lddi.bluetooth/weighingScalePublisher/src/main/java</source>
-		<source>/home/travis/build/universAAL/samples/simple.ui/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/tutorials/tut.service.bus.caller/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/utils/smp.utils.app/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/smp.ri.exportComponent/ri.soap.client/src/main/java</source>
@@ -422,7 +422,6 @@
 								<line number="328" hits="0" branch="false"/>
 								<line number="330" hits="0" branch="false"/>
 								<line number="331" hits="0" branch="false"/>
-								<line number="332" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
@@ -585,7 +584,6 @@
 						<line number="328" hits="0" branch="false"/>
 						<line number="330" hits="0" branch="false"/>
 						<line number="331" hits="0" branch="false"/>
-						<line number="332" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.lddi.hw.simulator.activityhub.AHSimulator" filename="org/universAAL/lddi/hw/simulator/activityhub/AHSimulator.java" line-rate="0.0" branch-rate="0.0" complexity="1.35">
@@ -3894,9 +3892,8 @@
 			<classes>
 				<class name="org.universAAL.lddi.samples.activityhub.client.Activator" filename="org/universAAL/lddi/samples/activityhub/client/Activator.java" line-rate="0.0" branch-rate="0.0" complexity="1.75">
 					<methods>
-						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="88" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="access$000" signature="()Lorg/universAAL/lddi/samples/activityhub/client/ActivityHubClient;" line-rate="1.0" branch-rate="1.0" complexity="0">
@@ -3967,7 +3964,6 @@
 						<line number="77" hits="0" branch="false"/>
 						<line number="79" hits="0" branch="false"/>
 						<line number="80" hits="0" branch="false"/>
-						<line number="88" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.lddi.samples.activityhub.client.Activator$MyThread" filename="org/universAAL/lddi/samples/activityhub/client/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.75">
@@ -4926,9 +4922,8 @@
 			<classes>
 				<class name="org.universAAL.lddi.samples.device.client.Activator" filename="org/universAAL/lddi/samples/device/client/Activator.java" line-rate="0.0" branch-rate="0.0" complexity="1.5">
 					<methods>
-						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="88" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="access$002" signature="(Lorg/universAAL/lddi/samples/device/client/Activator;Lorg/universAAL/lddi/samples/device/client/DeviceContextListener;)Lorg/universAAL/lddi/samples/device/client/DeviceContextListener;" line-rate="1.0" branch-rate="1.0" complexity="0">
@@ -4987,7 +4982,6 @@
 						<line number="77" hits="0" branch="false"/>
 						<line number="79" hits="0" branch="false"/>
 						<line number="80" hits="0" branch="false"/>
-						<line number="88" hits="0" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.universAAL.lddi.samples.device.client.Activator$MyThread" filename="org/universAAL/lddi/samples/device/client/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.5">
@@ -21574,138 +21568,6 @@
 				</class>
 			</classes>
 		</package>
-		<package name="org.universAAL.samples.simple.ui" line-rate="0.0" branch-rate="1.0" complexity="1.0">
-			<classes>
-				<class name="org.universAAL.samples.simple.ui.MainButtonProvider" filename="org/universAAL/samples/simple/ui/MainButtonProvider.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
-					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="42" hits="0" branch="false"/>
-								<line number="43" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;[Lorg/universAAL/middleware/service/owls/profile/ServiceProfile;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="37" hits="0" branch="false"/>
-								<line number="38" hits="0" branch="false"/>
-								<line number="39" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="communicationChannelBroken" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="55" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="getProfiles" signature="()[Lorg/universAAL/middleware/service/owls/profile/ServiceProfile;" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="46" hits="0" branch="false"/>
-								<line number="48" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="handleCall" signature="(Lorg/universAAL/middleware/service/ServiceCall;)Lorg/universAAL/middleware/service/ServiceResponse;" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="59" hits="0" branch="false"/>
-								<line number="60" hits="0" branch="false"/>
-								<line number="61" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="37" hits="0" branch="false"/>
-						<line number="38" hits="0" branch="false"/>
-						<line number="39" hits="0" branch="false"/>
-						<line number="42" hits="0" branch="false"/>
-						<line number="43" hits="0" branch="false"/>
-						<line number="46" hits="0" branch="false"/>
-						<line number="48" hits="0" branch="false"/>
-						<line number="55" hits="0" branch="false"/>
-						<line number="59" hits="0" branch="false"/>
-						<line number="60" hits="0" branch="false"/>
-						<line number="61" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.simple.ui.ProjectActivator" filename="org/universAAL/samples/simple/ui/ProjectActivator.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
-					<methods>
-						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="23" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="start" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="29" hits="0" branch="false"/>
-								<line number="30" hits="0" branch="false"/>
-								<line number="35" hits="0" branch="false"/>
-								<line number="37" hits="0" branch="false"/>
-								<line number="38" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="stop" signature="(Lorg/osgi/framework/BundleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="42" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="23" hits="0" branch="false"/>
-						<line number="29" hits="0" branch="false"/>
-						<line number="30" hits="0" branch="false"/>
-						<line number="35" hits="0" branch="false"/>
-						<line number="37" hits="0" branch="false"/>
-						<line number="38" hits="0" branch="false"/>
-						<line number="42" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.universAAL.samples.simple.ui.SimpleUI" filename="org/universAAL/samples/simple/ui/SimpleUI.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
-					<methods>
-						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="35" hits="0" branch="false"/>
-								<line number="36" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="communicationChannelBroken" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="40" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="dialogAborted" signature="(Ljava/lang/String;Lorg/universAAL/middleware/rdf/Resource;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="44" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="handleUIResponse" signature="(Lorg/universAAL/middleware/ui/UIResponse;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="49" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="showDialog" signature="(Lorg/universAAL/middleware/rdf/Resource;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
-							<lines>
-								<line number="52" hits="0" branch="false"/>
-								<line number="54" hits="0" branch="false"/>
-								<line number="56" hits="0" branch="false"/>
-								<line number="58" hits="0" branch="false"/>
-								<line number="59" hits="0" branch="false"/>
-								<line number="60" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="35" hits="0" branch="false"/>
-						<line number="36" hits="0" branch="false"/>
-						<line number="40" hits="0" branch="false"/>
-						<line number="44" hits="0" branch="false"/>
-						<line number="49" hits="0" branch="false"/>
-						<line number="52" hits="0" branch="false"/>
-						<line number="54" hits="0" branch="false"/>
-						<line number="56" hits="0" branch="false"/>
-						<line number="58" hits="0" branch="false"/>
-						<line number="59" hits="0" branch="false"/>
-						<line number="60" hits="0" branch="false"/>
-					</lines>
-				</class>
-			</classes>
-		</package>
 		<package name="org.universAAL.samples.soap.cxf.client" line-rate="0.0" branch-rate="0.0" complexity="1.25">
 			<classes>
 				<class name="org.universAAL.samples.soap.cxf.client.Activator" filename="org/universAAL/samples/soap/cxf/client/Activator.java" line-rate="0.0" branch-rate="1.0" complexity="1.25">
@@ -24392,6 +24254,180 @@
 						<line number="68" hits="1" branch="false"/>
 						<line number="71" hits="0" branch="false"/>
 						<line number="76" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="org.universAAL.tutorials.ui.bus.uicaller" line-rate="0.0" branch-rate="0.0" complexity="1.3636363636363635">
+			<classes>
+				<class name="org.universAAL.tutorials.ui.bus.uicaller.Activator" filename="org/universAAL/tutorials/ui/bus/uicaller/Activator.java" line-rate="0.0" branch-rate="0.0" complexity="3.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="33" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="start" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="40" hits="0" branch="false"/>
+								<line number="42" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="43" hits="0" branch="false"/>
+								<line number="45" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="46" hits="0" branch="false"/>
+								<line number="48" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="stop" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="51" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="52" hits="0" branch="false"/>
+								<line number="53" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="56" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+								<line number="59" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="33" hits="0" branch="false"/>
+						<line number="40" hits="0" branch="false"/>
+						<line number="42" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="43" hits="0" branch="false"/>
+						<line number="45" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="46" hits="0" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="52" hits="0" branch="false"/>
+						<line number="53" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="56" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="59" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.tutorials.ui.bus.uicaller.MainButtonServiceCallee" filename="org/universAAL/tutorials/ui/bus/uicaller/MainButtonServiceCallee.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;Lorg/universAAL/middleware/ui/UICaller;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="58" hits="0" branch="false"/>
+								<line number="59" hits="0" branch="false"/>
+								<line number="60" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;[Lorg/universAAL/middleware/service/owls/profile/ServiceProfile;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="54" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="communicationChannelBroken" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="80" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getProfiles" signature="()[Lorg/universAAL/middleware/service/owls/profile/ServiceProfile;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="70" hits="0" branch="false"/>
+								<line number="72" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="handleCall" signature="(Lorg/universAAL/middleware/service/ServiceCall;)Lorg/universAAL/middleware/service/ServiceResponse;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="90" hits="0" branch="false"/>
+								<line number="101" hits="0" branch="false"/>
+								<line number="106" hits="0" branch="false"/>
+								<line number="116" hits="0" branch="false"/>
+								<line number="121" hits="0" branch="false"/>
+								<line number="138" hits="0" branch="false"/>
+								<line number="142" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="54" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="58" hits="0" branch="false"/>
+						<line number="59" hits="0" branch="false"/>
+						<line number="60" hits="0" branch="false"/>
+						<line number="70" hits="0" branch="false"/>
+						<line number="72" hits="0" branch="false"/>
+						<line number="80" hits="0" branch="false"/>
+						<line number="90" hits="0" branch="false"/>
+						<line number="101" hits="0" branch="false"/>
+						<line number="106" hits="0" branch="false"/>
+						<line number="116" hits="0" branch="false"/>
+						<line number="121" hits="0" branch="false"/>
+						<line number="138" hits="0" branch="false"/>
+						<line number="142" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.universAAL.tutorials.ui.bus.uicaller.MyUICaller" filename="org/universAAL/tutorials/ui/bus/uicaller/MyUICaller.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="35" hits="0" branch="false"/>
+								<line number="36" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="communicationChannelBroken" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="43" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="dialogAborted" signature="(Ljava/lang/String;Lorg/universAAL/middleware/rdf/Resource;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="50" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="handleUIResponse" signature="(Lorg/universAAL/middleware/ui/UIResponse;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="56" hits="0" branch="false"/>
+								<line number="59" hits="0" branch="false"/>
+								<line number="65" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="35" hits="0" branch="false"/>
+						<line number="36" hits="0" branch="false"/>
+						<line number="43" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="59" hits="0" branch="false"/>
+						<line number="65" hits="0" branch="false"/>
 					</lines>
 				</class>
 			</classes>
