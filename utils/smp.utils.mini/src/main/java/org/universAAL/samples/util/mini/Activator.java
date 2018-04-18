@@ -35,15 +35,15 @@ import org.universAAL.middleware.util.Constants;
 import org.universAAL.ontology.location.Location;
 import org.universAAL.ontology.profile.User;
 import org.universAAL.ontology.profile.service.ProfilingService;
-import org.universAAL.support.utils.ICListener;
-import org.universAAL.support.utils.ISListener;
-import org.universAAL.support.utils.IUIListener;
-import org.universAAL.support.utils.UAAL;
-import org.universAAL.support.utils.context.Pattern;
-import org.universAAL.support.utils.service.Path;
-import org.universAAL.support.utils.service.mid.UtilEditor;
-import org.universAAL.support.utils.ui.Forms;
-import org.universAAL.support.utils.ui.low.Dialog;
+import org.universAAL.utilities.api.ICListener;
+import org.universAAL.utilities.api.ISListener;
+import org.universAAL.utilities.api.IUIListener;
+import org.universAAL.utilities.api.UAAL;
+import org.universAAL.utilities.api.context.Pattern;
+import org.universAAL.utilities.api.service.Path;
+import org.universAAL.utilities.api.service.mid.UtilEditor;
+import org.universAAL.utilities.api.ui.Forms;
+import org.universAAL.utilities.api.ui.low.Dialog;
 
 public class Activator implements BundleActivator {
 	// OSGi & universAAL contexts

@@ -33,7 +33,7 @@ import org.universAAL.ontology.device.HeaterActuator;
 import org.universAAL.ontology.device.StatusValue;
 import org.universAAL.ontology.device.TemperatureSensor;
 import org.universAAL.ontology.location.Location;
-import org.universAAL.support.utils.context.mid.UtilPublisher;
+import org.universAAL.utilities.api.context.mid.UtilPublisher;
 
 public class Activator implements BundleActivator {
 	// Declare constants

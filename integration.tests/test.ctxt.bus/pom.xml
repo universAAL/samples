@@ -10,7 +10,6 @@
   </parent>
   <groupId>org.universAAL.samples</groupId>
   <artifactId>test.ctxt.bus</artifactId>
-  <version>3.4.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Samples Context bus tester</name>
   <description>Context bus tester</description>
@@ -38,7 +37,7 @@
     </dependency>
     <dependency>
       <groupId>org.universAAL.support</groupId>
-      <artifactId>uAAL.utils</artifactId>
+      <artifactId>utilities.api</artifactId>
     </dependency>
     <dependency>
       <groupId>org.osgi</groupId>

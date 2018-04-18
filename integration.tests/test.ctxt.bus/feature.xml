@@ -14,7 +14,7 @@
 		<feature>uAAL-Ont.Profile.userId</feature>
 		<feature>uAAL-Ont.Device</feature>
 		<feature>uAAL-Ont.Furniture</feature>
-		<bundle>wrap:mvn:org.universAAL.support/uAAL.utils/${platform.version}</bundle>
+		<bundle>wrap:mvn:org.universAAL.support/utilities.api/${platform.version}</bundle>
 		<bundle>mvn:org.universAAL.samples/test.ctxt.bus/${project.version}</bundle>
 	</feature>
 </features>

@@ -23,7 +23,7 @@ package org.universAAL.samples.utils.app;
 
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.context.ContextEvent;
-import org.universAAL.support.utils.context.mid.UtilSubscriber;
+import org.universAAL.utilities.api.context.mid.UtilSubscriber;
 
 // Context Subscriber universAAL wrapper
 public class SubscriberExample extends UtilSubscriber {

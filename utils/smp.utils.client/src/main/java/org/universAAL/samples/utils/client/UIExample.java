@@ -28,16 +28,16 @@ import org.universAAL.middleware.ui.UIResponse;
 import org.universAAL.ontology.device.LightController;
 import org.universAAL.ontology.phThing.DeviceService;
 import org.universAAL.ontology.profile.User;
-import org.universAAL.support.utils.service.Arg;
-import org.universAAL.support.utils.service.Path;
-import org.universAAL.support.utils.service.low.Request;
-import org.universAAL.support.utils.ui.Forms;
-import org.universAAL.support.utils.ui.SelectOne;
-import org.universAAL.support.utils.ui.SelectRange;
-import org.universAAL.support.utils.ui.SubmitCmd;
-import org.universAAL.support.utils.ui.low.Dialog;
-import org.universAAL.support.utils.ui.low.Message;
-import org.universAAL.support.utils.ui.mid.UtilUICaller;
+import org.universAAL.utilities.api.service.Arg;
+import org.universAAL.utilities.api.service.Path;
+import org.universAAL.utilities.api.service.low.Request;
+import org.universAAL.utilities.api.ui.Forms;
+import org.universAAL.utilities.api.ui.SelectOne;
+import org.universAAL.utilities.api.ui.SelectRange;
+import org.universAAL.utilities.api.ui.SubmitCmd;
+import org.universAAL.utilities.api.ui.low.Dialog;
+import org.universAAL.utilities.api.ui.low.Message;
+import org.universAAL.utilities.api.ui.mid.UtilUICaller;
 
 // UI Caller universAAL wrapper
 public class UIExample extends UtilUICaller {

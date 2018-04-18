@@ -26,8 +26,8 @@ import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.ontology.device.Actuator;
 import org.universAAL.ontology.device.HeaterActuator;
 import org.universAAL.ontology.device.StatusValue;
-import org.universAAL.support.utils.service.mid.InvalidOntologyUtilException;
-import org.universAAL.support.utils.service.top.UtilActuatorCallee;
+import org.universAAL.utilities.api.service.mid.InvalidOntologyUtilException;
+import org.universAAL.utilities.api.service.top.UtilActuatorCallee;
 
 //Service Callee universAAL wrapper for a typical actuator service with default profiles
 public class CalleeExample extends UtilActuatorCallee {
