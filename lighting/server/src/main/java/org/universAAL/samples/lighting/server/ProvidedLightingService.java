@@ -19,17 +19,8 @@
  */
 package org.universAAL.samples.lighting.server;
 
-import java.util.Hashtable;
-
-import org.universAAL.middleware.owl.Enumeration;
-import org.universAAL.middleware.owl.MergedRestriction;
-import org.universAAL.middleware.owl.OntologyManagement;
-import org.universAAL.middleware.owl.SimpleOntology;
-import org.universAAL.middleware.rdf.Resource;
-import org.universAAL.middleware.rdf.ResourceFactory;
 import org.universAAL.middleware.rdf.TypeMapper;
 import org.universAAL.middleware.service.owls.profile.ServiceProfile;
-import org.universAAL.ontology.lighting.ElectricLight;
 import org.universAAL.ontology.lighting.LightSource;
 import org.universAAL.ontology.lighting.Lighting;
 import org.universAAL.ontology.location.Location;
@@ -39,7 +30,7 @@ import org.universAAL.ontology.phThing.PhysicalThing;
  * @author mtazari
  *
  */
-public class ProvidedLightingService extends Lighting {
+public class ProvidedLightingService {
 
 	// All the static Strings are used to unique identify special functions and
 	// objects
@@ -60,50 +51,13 @@ public class ProvidedLightingService extends Lighting {
 	static final String OUTPUT_LAMP_LOCATION = LIGHTING_SERVER_NAMESPACE + "location";
 
 	public static final ServiceProfile[] profiles = new ServiceProfile[4];
-	private static Hashtable serverLightingRestrictions = new Hashtable();
 	static {
-		// we need to register all classes in the ontology for the serialization
-		// of the object
-		// OntologyManagement.getInstance().register(new SimpleOntology(MY_URI,
-		// Lighting.MY_URI));
-		OntologyManagement.getInstance().register(Activator.mc,
-				new SimpleOntology(MY_URI, Lighting.MY_URI, new ResourceFactory() {
-					public Resource createInstance(String classURI, String instanceURI, int factoryIndex) {
-						return new ProvidedLightingService(instanceURI);
-					}
-				}));
-
 		// Help structures to define property paths used more than once below
 		String[] ppControls = new String[] { Lighting.PROP_CONTROLS };
 		String[] ppBrightness = new String[] { Lighting.PROP_CONTROLS, LightSource.PROP_SOURCE_BRIGHTNESS };
 
 		// The purpose of the rest of this static segment is to describe
-		// services that we want to make available. We start with some
-		// "class-level restrictions" that are inherent to the underlying
-		// service component realized in the subpackage 'unit_impl'. That is, we
-		// know from unit_impl.MyLighting.java that
-		// 1. it controls lamps
-		// 2. that can only be switched on and off
-
-		// Before adding our own restrictions, we first "inherit" the
-		// restrictions defined by the superclass
-		addRestriction((MergedRestriction) Lighting
-				.getClassRestrictionsOnProperty(Lighting.MY_URI, Lighting.PROP_CONTROLS).copy(), ppControls,
-				serverLightingRestrictions);
-
-		// then, we add a restriction stating that the type of controlled light
-		// sources is ElectricLight.lightBulb meaning that light sources
-		// controlled by this class of services are all light bulbs
-		addRestriction(MergedRestriction.getFixedValueRestriction(LightSource.PROP_HAS_TYPE, ElectricLight.lightBulb),
-				new String[] { Lighting.PROP_CONTROLS, LightSource.PROP_HAS_TYPE }, serverLightingRestrictions);
-
-		// finally, we restrict the values for the brightness of the lights to
-		// only 0 and 100 meaning that the controlled light bulbs do not support
-		// dimming
-		addRestriction(
-				MergedRestriction.getAllValuesRestrictionWithCardinality(LightSource.PROP_SOURCE_BRIGHTNESS,
-						new Enumeration(new Integer[] { new Integer(0), new Integer(100) }), 1, 1),
-				ppBrightness, serverLightingRestrictions);
+		// services that we want to make available.
 
 		/*
 		 * create the service description #1 to be registered with the service
@@ -111,7 +65,7 @@ public class ProvidedLightingService extends Lighting {
 		 */
 
 		// Create the service-object for retrieving the controlled light bulbs
-		ProvidedLightingService getControlledLamps = new ProvidedLightingService(SERVICE_GET_CONTROLLED_LAMPS);
+		Lighting getControlledLamps = new Lighting(SERVICE_GET_CONTROLLED_LAMPS);
 		// Add an output with the given URI (parameter #1) and the following
 		// additional info to the service-profile:
 		// - it delivers an indefinite number (parameters #3 & #4) of
@@ -122,7 +76,7 @@ public class ProvidedLightingService extends Lighting {
 		getControlledLamps.addOutput(OUTPUT_CONTROLLED_LAMPS, LightSource.MY_URI, 0, 0, ppControls);
 		// we are finished and can add this profile to the list of service
 		// profiles to be registered with the service bus
-		profiles[0] = getControlledLamps.myProfile;
+		profiles[0] = getControlledLamps.getProfile();
 
 		/*
 		 * create the service description #2 to be registered with the service
@@ -131,7 +85,7 @@ public class ProvidedLightingService extends Lighting {
 
 		// Create the service-object for retrieving info about the location and
 		// state of each controlled light bulb
-		ProvidedLightingService getLampInfo = new ProvidedLightingService(SERVICE_GET_LAMP_INFO);
+		Lighting getLampInfo = new Lighting(SERVICE_GET_LAMP_INFO);
 		// Add an input with the given URI (parameter #1) and the following
 		// additional info to the service-profile:
 		// - it will be used to restrict the scope of the process results (cf.
@@ -159,7 +113,7 @@ public class ProvidedLightingService extends Lighting {
 				new String[] { Lighting.PROP_CONTROLS, PhysicalThing.PROP_PHYSICAL_LOCATION });
 		// we are finished and can add this profile to the list of service
 		// profiles to be registered with the service bus
-		profiles[1] = getLampInfo.myProfile;
+		profiles[1] = getLampInfo.getProfile();
 
 		/*
 		 * create the service description #3 to be registered with the service
@@ -167,16 +121,16 @@ public class ProvidedLightingService extends Lighting {
 		 */
 
 		// Create the service-object for turning off each controlled light bulb
-		ProvidedLightingService turnOff = new ProvidedLightingService(SERVICE_TURN_OFF);
+		Lighting turnOff = new Lighting(SERVICE_TURN_OFF);
 		// We need an input parameter identical with the previous one
 		turnOff.addFilteringInput(INPUT_LAMP_URI, LightSource.MY_URI, 1, 1, ppControls);
 		// but the result of using this service is the change of the brightness
 		// (parameter #1) of the selected light bulb (cf. the input parameter)
 		// to 0 (parameter #2)
-		turnOff.myProfile.addChangeEffect(ppBrightness, new Integer(0));
+		turnOff.getProfile().addChangeEffect(ppBrightness, new Integer(0));
 		// we are finished and can add this profile to the list of service
 		// profiles to be registered with the service bus
-		profiles[2] = turnOff.myProfile;
+		profiles[2] = turnOff.getProfile();
 
 		/*
 		 * create the service description #4 to be registered with the service
@@ -184,21 +138,13 @@ public class ProvidedLightingService extends Lighting {
 		 */
 
 		// Create the service-object for turning on each controlled light bulb
-		ProvidedLightingService turnOn = new ProvidedLightingService(SERVICE_TURN_ON);
+		Lighting turnOn = new Lighting(SERVICE_TURN_ON);
 		// We need an input parameter identical with the previous one
 		turnOn.addFilteringInput(INPUT_LAMP_URI, LightSource.MY_URI, 1, 1, ppControls);
 		// but the result of using this service is the change of the brightness
 		// (parameter #1) of the selected light bulb (cf. the input parameter)
 		// to 100 (parameter #2)
-		turnOn.myProfile.addChangeEffect(ppBrightness, new Integer(100));
-		profiles[3] = turnOn.myProfile;
-	}
-
-	private ProvidedLightingService(String uri) {
-		super(uri);
-	}
-
-	public String getClassURI() {
-		return MY_URI;
+		turnOn.getProfile().addChangeEffect(ppBrightness, new Integer(100));
+		profiles[3] = turnOn.getProfile();
 	}
 }
