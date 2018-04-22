@@ -31,7 +31,7 @@ import org.universAAL.middleware.context.owl.ContextProviderType;
 import org.universAAL.middleware.rdf.TypeMapper;
 import org.universAAL.ontology.device.LightController;
 import org.universAAL.ontology.location.indoor.Room;
-import org.universAAL.support.utils.context.mid.UtilPublisher;
+import org.universAAL.utilities.api.context.mid.UtilPublisher;
 
 public class Activator implements BundleActivator {
 	// Declare constants

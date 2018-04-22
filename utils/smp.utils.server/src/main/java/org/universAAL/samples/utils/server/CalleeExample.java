@@ -33,9 +33,9 @@ import org.universAAL.middleware.service.owls.profile.ServiceProfile;
 import org.universAAL.ontology.device.LightController;
 import org.universAAL.ontology.location.Location;
 import org.universAAL.ontology.phThing.DeviceService;
-import org.universAAL.support.utils.service.Arg;
-import org.universAAL.support.utils.service.Path;
-import org.universAAL.support.utils.service.low.Profile;
+import org.universAAL.utilities.api.service.Arg;
+import org.universAAL.utilities.api.service.Path;
+import org.universAAL.utilities.api.service.low.Profile;
 
 // Service Callee universAAL wrapper
 public class CalleeExample extends ServiceCallee {

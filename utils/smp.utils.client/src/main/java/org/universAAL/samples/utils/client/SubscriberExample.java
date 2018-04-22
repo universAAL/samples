@@ -24,7 +24,7 @@ package org.universAAL.samples.utils.client;
 import org.universAAL.middleware.container.ModuleContext;
 import org.universAAL.middleware.context.ContextEvent;
 import org.universAAL.ontology.device.LightController;
-import org.universAAL.support.utils.context.mid.UtilSubscriber;
+import org.universAAL.utilities.api.context.mid.UtilSubscriber;
 
 // Context Subscriber universAAL wrapper
 public class SubscriberExample extends UtilSubscriber {

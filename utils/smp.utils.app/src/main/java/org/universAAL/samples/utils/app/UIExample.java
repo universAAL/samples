@@ -26,10 +26,10 @@ import org.universAAL.middleware.rdf.Resource;
 import org.universAAL.middleware.ui.UIResponse;
 import org.universAAL.ontology.device.StatusValue;
 import org.universAAL.ontology.profile.User;
-import org.universAAL.support.utils.ui.Forms;
-import org.universAAL.support.utils.ui.low.Dialog;
-import org.universAAL.support.utils.ui.low.Message;
-import org.universAAL.support.utils.ui.mid.UtilUICaller;
+import org.universAAL.utilities.api.ui.Forms;
+import org.universAAL.utilities.api.ui.low.Dialog;
+import org.universAAL.utilities.api.ui.low.Message;
+import org.universAAL.utilities.api.ui.mid.UtilUICaller;
 
 // UI Caller universAAL wrapper
 public class UIExample extends UtilUICaller {

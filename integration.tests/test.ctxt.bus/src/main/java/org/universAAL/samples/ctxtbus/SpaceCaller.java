@@ -46,10 +46,10 @@ import org.universAAL.ontology.profile.HWSubProfile;
 import org.universAAL.ontology.profile.OntologyEntry;
 import org.universAAL.ontology.profile.Profilable;
 import org.universAAL.ontology.profile.service.ProfilingService;
-import org.universAAL.support.utils.service.Arg;
-import org.universAAL.support.utils.service.Path;
-import org.universAAL.support.utils.service.low.Request;
-import org.universAAL.support.utils.service.mid.UtilEditor;
+import org.universAAL.utilities.api.service.Arg;
+import org.universAAL.utilities.api.service.Path;
+import org.universAAL.utilities.api.service.low.Request;
+import org.universAAL.utilities.api.service.mid.UtilEditor;
 
 public class SpaceCaller {
 	public static final int _GET = 0x000;
