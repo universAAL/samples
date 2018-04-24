@@ -37,7 +37,6 @@ public class ProvidedLightingService {
 	public static final String LIGHTING_SERVER_NAMESPACE = System.getProperty(
 			"org.universAAL.middleware.samples.lighting.server.namespace",
 			"http://ontology.igd.fhg.de/LightingServer.owl#");
-	public static final String MY_URI = LIGHTING_SERVER_NAMESPACE + "LightingService";
 
 	static final String SERVICE_GET_CONTROLLED_LAMPS = LIGHTING_SERVER_NAMESPACE + "getControlledLamps";
 	static final String SERVICE_GET_LAMP_INFO = LIGHTING_SERVER_NAMESPACE + "getLampInfo";
