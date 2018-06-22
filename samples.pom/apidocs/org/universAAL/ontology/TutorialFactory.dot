@@ -10,15 +10,15 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.universAAL.ontology.TutorialFactory
-	c21842 [label=<<table title="org.universAAL.ontology.TutorialFactory" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./TutorialFactory.html">
+	c21841 [label=<<table title="org.universAAL.ontology.TutorialFactory" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./TutorialFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> TutorialFactory </td></tr>
 		</table></td></tr>
 		</table>>, URL="./TutorialFactory.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.universAAL.ontology.TutorialFactory implements org.universAAL.middleware.rdf.ResourceFactory
-	c21963:p -> c21842:p [dir=back,arrowtail=empty,style=dashed];
+	c21962:p -> c21841:p [dir=back,arrowtail=empty,style=dashed];
 	// org.universAAL.middleware.rdf.ResourceFactory
-	c21963 [label=<<table title="org.universAAL.middleware.rdf.ResourceFactory" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/middleware/rdf/ResourceFactory.html">
+	c21962 [label=<<table title="org.universAAL.middleware.rdf.ResourceFactory" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/middleware/rdf/ResourceFactory.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> &#171;interface&#187; </td></tr>
 <tr><td align="center" balign="center"> ResourceFactory </td></tr>

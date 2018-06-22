@@ -10,15 +10,15 @@ digraph G {
 	nodesep=0.25;
 	ranksep=0.5;
 	// org.universAAL.samples.lighting.uiclient.UIProvider
-	c22766 [label=<<table title="org.universAAL.samples.lighting.uiclient.UIProvider" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./UIProvider.html">
+	c22765 [label=<<table title="org.universAAL.samples.lighting.uiclient.UIProvider" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" bgcolor="lemonChiffon" href="./UIProvider.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"> UIProvider </td></tr>
 		</table></td></tr>
 		</table>>, URL="./UIProvider.html", fontname="Helvetica", fontcolor="black", fontsize=10.0];
 	//org.universAAL.samples.lighting.uiclient.UIProvider extends org.universAAL.middleware.ui.UICaller
-	c22891:p -> c22766:p [dir=back,arrowtail=empty];
+	c22890:p -> c22765:p [dir=back,arrowtail=empty];
 	// org.universAAL.middleware.ui.UICaller
-	c22891 [label=<<table title="org.universAAL.middleware.ui.UICaller" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/middleware/ui/UICaller.html">
+	c22890 [label=<<table title="org.universAAL.middleware.ui.UICaller" border="0" cellborder="1" cellspacing="0" cellpadding="2" port="p" href="http://java.sun.com/j2se/1.4.2/docs/api/org/universAAL/middleware/ui/UICaller.html">
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="center" balign="center"><font face="Helvetica-Oblique"> UICaller </font></td></tr>
 		</table></td></tr>

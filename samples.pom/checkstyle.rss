@@ -26,9 +26,9 @@ under the License.
     <copyright>&#169;2018 universAAL Consortium</copyright>
     <item>
       <title>File: 144,
-             Errors: 2340,
+             Errors: 2336,
              Warnings: 269,
-             Infos: 100
+             Infos: 102
       </title>
             <link>http://xtras/samples/samples.pom//checkstyle.html</link>
       <description>
@@ -497,7 +497,7 @@ under the License.
                   <a href="http://xtras/samples/samples.pom//checkstyle.html#org.universAAL.configurable.module.ConfigurationCentral.java">org/universAAL/configurable/module/ConfigurationCentral.java</a>
                 </td>
                 <td>
-                  0
+                  2
                 </td>
                 <td>
                   3
@@ -867,7 +867,7 @@ under the License.
                   1
                 </td>
                 <td>
-                  15
+                  11
                 </td>
               </tr>
                           <tr>

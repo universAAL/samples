@@ -93,7 +93,7 @@
 <th>Errors</th>
 <th>Missing Classes</th></tr>
 <tr class="b">
-<td>9</td>
+<td>8</td>
 <td>7</td>
 <td>0</td>
 <td>0</td></tr></table></div>
@@ -104,33 +104,51 @@
 <th>Class</th>
 <th>Bugs</th></tr>
 <tr class="b">
-<td><a href="#org.universAAL.samples.lighting.server.LightingProvider">org.universAAL.samples.lighting.server.LightingProvider</a></td>
-<td>2</td></tr>
-<tr class="a">
-<td><a href="#org.universAAL.samples.lighting.server.ProvidedLightingService">org.universAAL.samples.lighting.server.ProvidedLightingService</a></td>
-<td>3</td></tr>
-<tr class="b">
-<td><a href="#org.universAAL.samples.lighting.server.unit_impl.MyLighting$Lamp">org.universAAL.samples.lighting.server.unit_impl.MyLighting$Lamp</a></td>
+<td><a href="#org.universAAL.samples.lighting.server.Activator">org.universAAL.samples.lighting.server.Activator</a></td>
 <td>1</td></tr>
 <tr class="a">
-<td><a href="#org.universAAL.samples.lighting.server.unit_impl.UILampsView">org.universAAL.samples.lighting.server.unit_impl.UILampsView</a></td>
-<td>1</td></tr></table></div><a name="org.universAAL.samples.lighting.server.LightingProvider"></a>
-<div class="section">
-<h3><a name="org.universAAL.samples.lighting.server.LightingProvider"></a>org.universAAL.samples.lighting.server.LightingProvider</h3>
-<table border="0" class="bodyTable">
+<td><a href="#org.universAAL.samples.lighting.server.LightingProvider">org.universAAL.samples.lighting.server.LightingProvider</a></td>
+<td>2</td></tr>
 <tr class="b">
+<td><a href="#org.universAAL.samples.lighting.server.ProvidedLightingService">org.universAAL.samples.lighting.server.ProvidedLightingService</a></td>
+<td>2</td></tr>
+<tr class="a">
+<td><a href="#org.universAAL.samples.lighting.server.unit_impl.MyLighting$Lamp">org.universAAL.samples.lighting.server.unit_impl.MyLighting$Lamp</a></td>
+<td>1</td></tr>
+<tr class="b">
+<td><a href="#org.universAAL.samples.lighting.server.unit_impl.UILampsView">org.universAAL.samples.lighting.server.unit_impl.UILampsView</a></td>
+<td>1</td></tr></table></div><a name="org.universAAL.samples.lighting.server.Activator"></a>
+<div class="section">
+<h3><a name="org.universAAL.samples.lighting.server.Activator"></a>org.universAAL.samples.lighting.server.Activator</h3>
+<table border="0" class="bodyTable">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
+<tr class="b">
+<td>org.universAAL.samples.lighting.server.Activator.mc isn't final and can't be protected from malicious code </td>
+<td>MALICIOUS_CODE</td>
+<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#MS_CANNOT_BE_FINAL">MS_CANNOT_BE_FINAL</a></td>
+<td></td>
+<td>Medium</td></tr></table></div><a name="org.universAAL.samples.lighting.server.LightingProvider"></a>
+<div class="section">
+<h3><a name="org.universAAL.samples.lighting.server.LightingProvider"></a>org.universAAL.samples.lighting.server.LightingProvider</h3>
+<table border="0" class="bodyTable">
 <tr class="a">
+<th>Bug</th>
+<th>Category</th>
+<th>Details</th>
+<th>Line</th>
+<th>Priority</th></tr>
+<tr class="b">
 <td>org.universAAL.samples.lighting.server.LightingProvider.getLampInfo(String) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
 <td>274</td>
 <td>Medium</td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.universAAL.samples.lighting.server.LightingProvider.providedEvents(MyLighting) invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
@@ -139,34 +157,34 @@
 <div class="section">
 <h3><a name="org.universAAL.samples.lighting.server.ProvidedLightingService"></a>org.universAAL.samples.lighting.server.ProvidedLightingService</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>org.universAAL.samples.lighting.server.ProvidedLightingService.&lt;static initializer for ProvidedLightingService&gt;() invokes inefficient new Integer(int) constructor; use Integer.valueOf(int) instead</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_NUMBER_CTOR">DM_NUMBER_CTOR</a></td>
-<td>103</td>
+<td>129</td>
 <td>Medium</td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.universAAL.samples.lighting.server.ProvidedLightingService.profiles should be package protected</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#MS_PKGPROTECT">MS_PKGPROTECT</a></td>
-<td>62</td>
+<td>52</td>
 <td>Medium</td></tr></table></div><a name="org.universAAL.samples.lighting.server.unit_impl.MyLightingLamp"></a>
 <div class="section">
 <h3><a name="org.universAAL.samples.lighting.server.unit_impl.MyLightingLamp"></a>org.universAAL.samples.lighting.server.unit_impl.MyLighting$Lamp</h3>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="a">
+<tr class="b">
 <td>Should org.universAAL.samples.lighting.server.unit_impl.MyLighting$Lamp be a _static_ inner class?</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SIC_INNER_SHOULD_BE_STATIC">SIC_INNER_SHOULD_BE_STATIC</a></td>
@@ -175,13 +193,13 @@
 <div class="section">
 <h3><a name="org.universAAL.samples.lighting.server.unit_impl.UILampsView"></a>org.universAAL.samples.lighting.server.unit_impl.UILampsView</h3>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="a">
+<tr class="b">
 <td>Changes to logger could be lost in org.universAAL.samples.lighting.server.unit_impl.UILampsView.&lt;static initializer for UILampsView&gt;()</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#LG_LOST_LOGGER_DUE_TO_WEAK_REFERENCE">LG_LOST_LOGGER_DUE_TO_WEAK_REFERENCE</a></td>
