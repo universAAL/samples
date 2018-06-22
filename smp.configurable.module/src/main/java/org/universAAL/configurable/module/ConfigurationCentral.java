@@ -49,7 +49,7 @@ public class ConfigurationCentral implements ConfigurableModule {
 		}
 
 		public MergedRestriction getType() {
-			return MergedRestriction.getAllValuesRestrictionWithCardinality(ConfigurationParameter.PROP_CONFIG_VALUE,
+			return MergedRestriction.getAllValuesRestrictionWithCardinality(ConfigurationParameter.PROP_CONFIG_LITERAL_VALUE,
 					TypeMapper.getDatatypeURI(String.class), 1, 1);
 		}
 
@@ -73,7 +73,7 @@ public class ConfigurationCentral implements ConfigurableModule {
 
 				public MergedRestriction getType() {
 					MergedRestriction mr = MergedRestriction.getAllValuesRestrictionWithCardinality(
-							ConfigurationParameter.PROP_CONFIG_VALUE, new IntRestriction(0, true, 10, true), 1, 1);
+							ConfigurationParameter.PROP_CONFIG_LITERAL_VALUE, new IntRestriction(0, true, 10, true), 1, 1);
 					// mr.addType();
 					return mr;
 				}
