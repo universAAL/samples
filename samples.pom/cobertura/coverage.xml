@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.021449275362318842" branch-rate="0.004091653027823241" lines-covered="148" lines-valid="6900" branches-covered="5" branches-valid="1222" complexity="1.9945828819068256" version="2.1.1" timestamp="1529686858474">
+<coverage line-rate="0.022318840579710144" branch-rate="0.004091653027823241" lines-covered="154" lines-valid="6900" branches-covered="5" branches-valid="1222" complexity="1.9945828819068256" version="2.1.1" timestamp="1541091674093">
 	<sources>
 		<source>/home/travis/build/universAAL/samples/activityhub/client/src/main/java</source>
 		<source>/home/travis/build/universAAL/samples/smp.mw.broker.client/src/main/java</source>
@@ -23980,7 +23980,7 @@
 				</class>
 			</classes>
 		</package>
-		<package name="org.universAAL.tutorials.service.bus.callee" line-rate="0.0" branch-rate="0.0" complexity="1.6666666666666667">
+		<package name="org.universAAL.tutorials.service.bus.callee" line-rate="0.24" branch-rate="0.0" complexity="1.6666666666666667">
 			<classes>
 				<class name="org.universAAL.tutorials.service.bus.callee.Activator" filename="org/universAAL/tutorials/service/bus/callee/Activator.java" line-rate="0.0" branch-rate="0.0" complexity="2.0">
 					<methods>
@@ -24036,12 +24036,12 @@
 						<line number="58" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.universAAL.tutorials.service.bus.callee.MyServiceCallee" filename="org/universAAL/tutorials/service/bus/callee/MyServiceCallee.java" line-rate="0.0" branch-rate="0.0" complexity="1.5">
+				<class name="org.universAAL.tutorials.service.bus.callee.MyServiceCallee" filename="org/universAAL/tutorials/service/bus/callee/MyServiceCallee.java" line-rate="0.4" branch-rate="0.0" complexity="1.5">
 					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="43" hits="0" branch="false"/>
-								<line number="47" hits="0" branch="false"/>
+								<line number="43" hits="1" branch="false"/>
+								<line number="47" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="(Lorg/universAAL/middleware/container/ModuleContext;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
@@ -24055,12 +24055,12 @@
 								<line number="114" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getProfiles" signature="()[Lorg/universAAL/middleware/service/owls/profile/ServiceProfile;" line-rate="0.0" branch-rate="1.0" complexity="0">
+						<method name="getProfiles" signature="()[Lorg/universAAL/middleware/service/owls/profile/ServiceProfile;" line-rate="1.0" branch-rate="1.0" complexity="0">
 							<lines>
-								<line number="66" hits="0" branch="false"/>
-								<line number="71" hits="0" branch="false"/>
-								<line number="75" hits="0" branch="false"/>
-								<line number="83" hits="0" branch="false"/>
+								<line number="66" hits="1" branch="false"/>
+								<line number="71" hits="1" branch="false"/>
+								<line number="75" hits="1" branch="false"/>
+								<line number="83" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="handleCall" signature="(Lorg/universAAL/middleware/service/ServiceCall;)Lorg/universAAL/middleware/service/ServiceResponse;" line-rate="0.0" branch-rate="0.0" complexity="0">
@@ -24079,12 +24079,12 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="43" hits="0" branch="false"/>
-						<line number="47" hits="0" branch="false"/>
-						<line number="66" hits="0" branch="false"/>
-						<line number="71" hits="0" branch="false"/>
-						<line number="75" hits="0" branch="false"/>
-						<line number="83" hits="0" branch="false"/>
+						<line number="43" hits="1" branch="false"/>
+						<line number="47" hits="1" branch="false"/>
+						<line number="66" hits="1" branch="false"/>
+						<line number="71" hits="1" branch="false"/>
+						<line number="75" hits="1" branch="false"/>
+						<line number="83" hits="1" branch="false"/>
 						<line number="88" hits="0" branch="false"/>
 						<line number="89" hits="0" branch="false"/>
 						<line number="95" hits="0" branch="false"/>
