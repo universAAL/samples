@@ -8,9 +8,7 @@
     <version>3.4.2-SNAPSHOT</version>
     <relativePath>../tut.pom</relativePath>
   </parent>
-  <groupId>org.universAAL.tutorials</groupId>
   <artifactId>tut.service.bus.callee</artifactId>
-  <version>3.4.2-SNAPSHOT</version>
   <packaging>bundle</packaging>
   <name>universAAL Tutorials Service Bus Callee</name>
   <description>A minimal version of a service bus callee</description>
@@ -22,6 +20,10 @@
     <dependency>
       <groupId>org.universAAL.ontology</groupId>
       <artifactId>ont.device</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>org.universAAL.middleware</groupId>
+    	<artifactId>mw.bus.junit</artifactId>
     </dependency>
   </dependencies>
   <build>
