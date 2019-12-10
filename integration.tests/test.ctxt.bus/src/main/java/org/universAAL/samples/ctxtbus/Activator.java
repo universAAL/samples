@@ -74,13 +74,20 @@ public class Activator implements BundleActivator, ServiceListener {
 
 	public void serviceChanged(ServiceEvent event) {
 		// Update the MessageContentSerializer
+	    MessageContentSerializerEx service;
 		switch (event.getType()) {
 		case ServiceEvent.REGISTERED:
 		case ServiceEvent.MODIFIED:
-			this.parser = ((MessageContentSerializerEx) context.getService(event.getServiceReference()));
+			service = ((MessageContentSerializerEx) context.getService(event.getServiceReference()));
+			if(service.getContentType().equals("text/turtle")){
+			    this.parser = service;
+			}
 			break;
 		case ServiceEvent.UNREGISTERING:
-			this.parser = (null);
+			service = ((MessageContentSerializerEx) context.getService(event.getServiceReference()));
+			if(service.getContentType().equals("text/turtle")){
+			    this.parser = (null);
+			}
 			break;
 		}
 	}
