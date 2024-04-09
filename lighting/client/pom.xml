@@ -45,7 +45,7 @@
       </snapshots>
       <id>uaal</id>
       <name>universAAL Repositories</name>
-      <url>http://depot.universaal.org/nexus/content/repositories/releases</url>
+      <url>https://depot.universaal.org/nexus/content/repositories/releases</url>
     </repository>
     <repository>
       <releases>
@@ -53,7 +53,7 @@
       </releases>
       <id>uaal-snapshots</id>
       <name>universAAL Snapshot Repositories</name>
-      <url>http://depot.universaal.org/nexus/content/repositories/snapshots/</url>
+      <url>https://depot.universaal.org/nexus/content/repositories/snapshots/</url>
     </repository>
   </repositories>
   <build>
